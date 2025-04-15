@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>322. Deprecated <code class="language-html">&lt;meta&gt;</code>: Keywords (<code>name=&quot;keywords&quot;</code>) - Practical Application &amp; Best Practices</h1>
+<p>Given that major search engines ignore the <code class="language-html">&lt;meta name=&quot;keywords&quot;&gt;</code> tag, what are the practical recommendations for web developers?</p>
+<p><strong>Recommendation:</strong></p>
+<ul>
+<li><strong>Generally, Omit It:</strong> For most new websites and pages targeting major search engines, it is <strong>safe and recommended to simply omit the <code class="language-html">&lt;meta name=&quot;keywords&quot;&gt;</code> tag entirely.</strong> It adds clutter to your <code class="language-html">&lt;head&gt;</code> section without providing any significant SEO benefit.</li>
+<li><strong>Do Not Waste Time:</strong> Do not spend time researching, compiling, and maintaining keyword lists specifically for this tag. Your time is much better spent on creating valuable content, optimizing titles and descriptions, building quality links, and improving user experience.</li>
+</ul>
+<p><strong>Where to Focus SEO Efforts Instead:</strong></p>
+<ul>
+<li><strong>High-Quality, Relevant Content:</strong> Create content that genuinely answers user questions and meets their needs.</li>
+<li><strong>Keyword Research (for Content):</strong> Research keywords to understand user search intent, but integrate those keywords <em>naturally</em> into your page content, headings (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>), <code class="language-html">&lt;title&gt;</code> tags, and <code class="language-html">&lt;meta name=&quot;description&quot;&gt;</code>.</li>
+<li><strong>Compelling <code class="language-html">&lt;title&gt;</code> Tags:</strong> Craft unique, descriptive titles that include primary keywords near the beginning.</li>
+<li><strong>Engaging <code class="language-html">&lt;meta name=&quot;description&quot;&gt;</code>:</strong> Write unique summaries that accurately reflect the page and encourage clicks from SERPs.</li>
+<li><strong>Logical Heading Structure:</strong> Use headings (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>) hierarchically to structure content clearly.</li>
+<li><strong>Image <code>alt</code> Text:</strong> Use descriptive <code class="language-html">alt</code> text for images.</li>
+<li><strong>Internal Linking:</strong> Use descriptive anchor text for links between your own pages.</li>
+<li><strong>User Experience &amp; Page Speed:</strong> Ensure your site is fast, mobile-friendly, and easy to navigate.</li>
+<li><strong>Quality Backlinks:</strong> Earn links from other reputable websites (a major off-page factor).</li>
+</ul>
+<p><strong>When Might You Include It?</strong></p>
+<ul>
+<li>If required by a specific, non-standard tool or platform (e.g., certain niche CMS plugins, internal search systems) that you <em>know</em> actively uses it. Check the documentation for that specific tool.</li>
+<li>For historical reasons on very old sites (though removing it likely has no negative impact).</li>
+</ul>
+<p><strong>Code Change Preparation:</strong></p>
+<p>As the tag is largely useless, our next step will be to remove it from our example <code>index.html</code>.</p>
+<p>✅ <strong>Observation:</strong> No code changes in this step. Understand the consensus: <code class="language-html">&lt;meta name=&quot;keywords&quot;&gt;</code> is obsolete for mainstream SEO. Focus your optimization efforts elsewhere.</p>
+<p>✨ <strong>Key Takeaway:</strong> It&#39;s generally best practice to omit the <code class="language-html">&lt;meta name=&quot;keywords&quot;&gt;</code> tag from modern web pages. Focus on creating high-quality content and optimizing elements that search engines <em>do</em> value, like <code class="language-html">&lt;title&gt;</code> and <code class="language-html">&lt;meta name=&quot;description&quot;&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

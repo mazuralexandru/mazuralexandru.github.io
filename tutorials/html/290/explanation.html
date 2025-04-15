@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>290. The <code>title</code> Attribute - Appropriate Use Cases</h1>
+<p>Given its significant limitations, when <em>should</em> you consider using the <code class="language-html">title</code> attribute? Its appropriate uses are quite limited and often have better alternatives.</p>
+<p><strong>Potential Use Cases (Use Sparingly):</strong></p>
+<ol>
+<li><p><strong>Expanding Abbreviations/Acronyms (with <code class="language-html">&lt;abbr&gt;</code>):</strong> This is one of the most common and accepted uses. While the <code class="language-html">&lt;abbr&gt;</code> tag itself identifies the abbreviation, adding a <code>title</code> provides the full expansion on hover for sighted mouse users.</p>
+<ul>
+<li>Example: <code class="language-html">&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;</code></li>
+<li>Note: Ensure the expansion is also available in the main text or a glossary for users who won&#39;t see the tooltip.</li>
+</ul>
+</li>
+<li><p><strong>Labeling <code class="language-html">&lt;iframe&gt;</code> Elements:</strong> Providing a <code>title</code> on an <code class="language-html">&lt;iframe&gt;</code> gives assistive technologies a label for the frame&#39;s content, helping users understand its purpose.</p>
+<ul>
+<li>Example: <code class="language-html">&lt;iframe src=&quot;...&quot; title=&quot;Embedded video player for product demo&quot;&gt;&lt;/iframe&gt;</code></li>
+</ul>
+</li>
+<li><p><strong>Clarifying Icon Buttons (Fallback):</strong> If an icon button lacks visible text, <code>title</code> <em>can</em> offer a hint on hover. However, using visually hidden text or <code>aria-label</code> is <strong>strongly preferred</strong> for accessibility, as <code>title</code> is inaccessible on touch/keyboard.</p>
+<ul>
+<li><em>Okay (but not ideal):</em> <code class="language-html">&lt;button title=&quot;Delete item&quot;&gt;&lt;img src=&quot;trash.svg&quot; alt=&quot;&quot;&gt;&lt;/button&gt;</code> (Image is decorative here).</li>
+<li><em>Better:</em> <code class="language-html">&lt;button aria-label=&quot;Delete item&quot;&gt;&lt;img src=&quot;trash.svg&quot; alt=&quot;&quot;&gt;&lt;/button&gt;</code></li>
+</ul>
+</li>
+<li><p><strong>Showing Full Text for Truncated Content:</strong> If visible text is cut off (e.g., in a table cell), <code>title</code> can reveal the full text on hover. Again, ensure the full text is accessible by other means if critical.</p>
+<ul>
+<li>Example: <code class="language-html">&lt;td title=&quot;This is a very long description that was truncated...&quot;&gt;This is a very long...&lt;/td&gt;</code></li>
+</ul>
+</li>
+<li><p><strong>Identifying Image Map Areas:</strong> The <code class="language-html">&lt;area&gt;</code> tag (used within <code class="language-html">&lt;map&gt;</code> for clickable image regions) commonly uses <code>title</code> (alongside a mandatory <code>alt</code>) to provide a label for the area.</p>
+</li>
+</ol>
+<p><strong>When to Definitely Avoid <code>title</code>:</strong></p>
+<ul>
+<li><strong>Never</strong> use it as the sole source of critical information.</li>
+<li><strong>Never</strong> use it as a replacement for <code class="language-html">&lt;label&gt;</code>, descriptive <code class="language-html">alt</code> text, or clear link text.</li>
+<li><strong>Generally avoid</strong> if the information needs to be accessible to mobile or keyboard users.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ll add an example of the most common valid use case: clarifying an abbreviation.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Global Attributes - Title&lt;/h1&gt;
+  &lt;p&gt;The &#39;title&#39; attribute provides supplementary info via tooltip (on hover).&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;p&gt;A common use is for abbreviations like &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;.&lt;/p&gt; &lt;!-- Added abbr with title --&gt;
+
+  &lt;p&gt;However, its accessibility is limited (no touch/keyboard access).&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed h1 title from previous step for clarity --&gt;
+  &lt;!-- &lt;h1 title=&quot;This is the main heading for Module 6&quot;&gt;...&lt;/h1&gt; --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p><em>(Note: We removed the <code>title</code> from the <code class="language-html">&lt;h1&gt;</code> as it wasn&#39;t a primary use case).</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;abbr&gt;</code> tag with its <code>title</code> attribute in <code class="language-text">index.html</code>.</li>
+<li>In the browser preview, hover over the word &quot;HTML&quot;. The tooltip &quot;HyperText Markup Language&quot; should appear. Some browsers might also add a default dotted underline to the <code class="language-html">&lt;abbr&gt;</code> element.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code>title</code> attribute sparingly, primarily for supplementary information like abbreviation expansions or iframe labels. Prioritize visible text and dedicated accessibility mechanisms (<code class="language-html">&lt;label&gt;</code>, <code>alt</code>, ARIA) for essential information.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

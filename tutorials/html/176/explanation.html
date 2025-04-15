@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>176. Security &amp; Performance: The Problem with <code>target=&quot;_blank&quot;</code></h1>
+<p>While opening links in a new tab using <code>target=&quot;_blank&quot;</code> is common and often user-friendly, it introduces potential security and performance risks if used without additional precautions.</p>
+<p><strong>The Underlying Mechanism:</strong></p>
+<p>When <code>Page A</code> opens <code>Page B</code> using <code>target=&quot;_blank&quot;</code>, the browser traditionally gives <code>Page B</code> limited access back to <code>Page A</code>&#39;s context through the <code>window.opener</code> property in JavaScript. <code>Page B</code>&#39;s JavaScript can reference <code>window.opener</code> to interact slightly with <code>Page A</code>.</p>
+<p><strong>The Risks:</strong></p>
+<ol>
+<li><p><strong>Security Risk: &quot;Tabnabbing&quot; / Phishing</strong></p>
+<ul>
+<li>A malicious <code>Page B</code> (the page you linked to) could execute JavaScript like:<pre class="language-javascript"><code class="language-javascript">// Code running on the MALICIOUS Page B
+if (window.opener) {
+  window.opener.location = &#39;http://fake-login-page.com&#39;;
+}
+</code></pre>
+</li>
+<li>This code changes the URL of the <em>original</em> tab (<code>Page A</code>) to a fake phishing page, without the user noticing immediately (as they are looking at <code>Page B</code>).</li>
+<li>When the user eventually switches back to <code>Page A</code>&#39;s tab, they might see a fake login prompt and unknowingly enter their credentials. This is called <strong>tabnabbing</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Performance Risk:</strong></p>
+<ul>
+<li>Historically, the new tab/window (<code>Page B</code>) might run in the same browser process or thread as the original page (<code>Page A</code>).</li>
+<li>If <code>Page B</code> runs heavy, resource-intensive JavaScript, it could potentially slow down or even freeze the original <code>Page A</code> tab, leading to a poor user experience.</li>
+</ul>
+</li>
+</ol>
+<p>These risks make it essential to mitigate the default behavior of <code>target=&quot;_blank&quot;</code>.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Understand the conceptual risks associated with using <code>target=&quot;_blank&quot;</code> naively: the linked page potentially gains some control over the original page (<code>window.opener</code>) leading to security (tabnabbing) and performance issues.</p>
+<p>✨ <strong>Key Takeaway:</strong> Using <code>target=&quot;_blank&quot;</code> alone creates security and performance risks because the newly opened page retains a connection (<code>window.opener</code>) to the original page.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>51. Focusing: Removing <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code> Examples</h1>
+<p>We&#39;ve explored the nuances of <code class="language-html">&lt;i&gt;</code> (alternate voice) and <code class="language-html">&lt;b&gt;</code> (stylistic offset) and contrasted them with the more semantically strong <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code>. While <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code> have their valid (though more limited) uses, <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> are generally more common and fundamental for conveying meaning.</p>
+<p>To simplify our example and prepare for the next set of elements (structural breaks like <code class="language-html">&lt;br&gt;</code> and <code class="language-html">&lt;hr&gt;</code>), we will now remove the <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code> examples we added.</p>
+<p><strong>Why Remove Them?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention away from the subtle distinctions between <code class="language-html">&lt;i&gt;</code>/<code class="language-html">&lt;b&gt;</code>/<code class="language-html">&lt;em&gt;</code>/<code class="language-html">&lt;strong&gt;</code> and towards upcoming structural elements.</li>
+<li><strong>Relevance:</strong> The specific examples (<code>technical terms</code>, <code>SuperWidget</code>) are no longer needed for the immediate next steps.</li>
+<li><strong>Preview Clarity:</strong> Reduces the number of differently styled inline elements, making the remaining <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> examples (including the nested one) stand out more clearly if needed for review, before they too are potentially pruned.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;i&gt;technical terms&lt;/i&gt;</code>, <code class="language-html">&lt;i&gt;Document Object Model&lt;/i&gt;</code>, and <code class="language-html">&lt;b&gt;SuperWidget&lt;/b&gt;</code> snippets from the first paragraph in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;This is the introductory paragraph. We will add &lt;em&gt;emphasis&lt;/em&gt; and &lt;strong&gt;importance&lt;/strong&gt; to text. This part is &lt;strong&gt;&lt;em&gt;very&lt;/em&gt;&lt;/strong&gt; important! &lt;!-- Removed &lt;i&gt; and &lt;b&gt; examples --&gt; &lt;/p&gt;
+&lt;!-- Removed: We might discuss &lt;i&gt;technical terms&lt;/i&gt; like the &lt;i&gt;Document Object Model&lt;/i&gt;. --&gt;
+&lt;!-- Removed: Remember to install the &lt;b&gt;SuperWidget&lt;/b&gt; driver first. --&gt;
+</code></pre>
+<p><em>(Again, surrounding text fragments were adjusted or removed for coherence.)</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code> tags and their associated text are gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview for the first paragraph should now only show the italic &quot;emphasis&quot;, bold &quot;importance&quot;, and bold-italic &quot;very&quot;.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Pruning less critical or recently covered examples helps streamline the codebase and maintain focus as the tutorial progresses through different categories of elements.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

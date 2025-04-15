@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>73. Quotations: <code class="language-html">&lt;blockquote&gt;</code> Attribution</h1>
+<p>While the <code class="language-html">cite</code> attribute provides a machine-readable link to the <em>source document</em>, how do you display the <em>attribution</em> (like the author or publication name) for the quotation visibly to the user?</p>
+<p><strong>Attribution Placement:</strong></p>
+<p>The HTML standard <strong>does not</strong> prescribe a single required way to attribute a <code class="language-html">&lt;blockquote&gt;</code>, but common best practices involve placing the attribution text <strong>outside</strong> the <code class="language-html">&lt;blockquote&gt;</code> element itself.</p>
+<p><strong>Common Patterns:</strong></p>
+<ol>
+<li><strong>Following Paragraph:</strong> Place the attribution in a separate <code class="language-html">&lt;p&gt;</code> element immediately following the <code class="language-html">&lt;blockquote&gt;</code>.<pre class="language-html"><code class="language-html">&lt;blockquote&gt;
+  &lt;p&gt;Quote content...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;— Author Name, Source Title&lt;/p&gt;
+</code></pre>
+</li>
+<li><strong>Using <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code>:</strong> For self-contained quotes that might be considered figures, wrap the <code class="language-html">&lt;blockquote&gt;</code> and its attribution within a <code class="language-html">&lt;figure&gt;</code> element, using <code class="language-html">&lt;figcaption&gt;</code> for the attribution. This semantically groups the quote and its caption.<pre class="language-html"><code class="language-html">&lt;figure&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;Quote content...&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;figcaption&gt;— Author Name, &lt;cite&gt;Source Title&lt;/cite&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+<em>(Note: We&#39;ll cover <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> in a later module, but it&#39;s relevant here. Also note the use of <code class="language-html">&lt;cite&gt;</code> for the source title - see Topic 23).</em></li>
+</ol>
+<p><strong>What NOT to Do:</strong></p>
+<p>Do <em>not</em> put the attribution text directly inside the <code class="language-html">&lt;blockquote&gt;</code> element unless it was part of the original quoted material. The <code class="language-html">&lt;blockquote&gt;</code> should only contain the text exactly as quoted.</p>
+<p>✅ <strong>Observation:</strong> No code changes in this step. We are discussing <em>how</em> to handle attribution, which typically involves adding <em>other</em> elements around the <code class="language-html">&lt;blockquote&gt;</code>, not modifying the <code class="language-html">&lt;blockquote&gt;</code> itself (beyond the optional <code>cite</code> attribute). Our current example doesn&#39;t yet include visible attribution.</p>
+<p>✨ <strong>Key Takeaway:</strong> Display the visible attribution for a <code class="language-html">&lt;blockquote&gt;</code> (author, source) in associated text <em>outside</em> the <code class="language-html">&lt;blockquote&gt;</code> element itself, often using a following <code class="language-html">&lt;p&gt;</code> or the <code class="language-html">&lt;figure&gt;</code>/<code class="language-html">&lt;figcaption&gt;</code> pattern. Use the <code>cite</code> attribute for the source URL.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

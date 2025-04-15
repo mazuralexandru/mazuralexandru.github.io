@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Multimedia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Video: Other Attributes</h1>
+  <p>The 'crossorigin' attribute handles CORS requests.</p>
+
+  <!-- Added crossorigin="anonymous" -->
+  <video controls width="480" height="270"
+         src="https://other-domain.com/video.mp4" <!-- Hypothetical cross-origin src -->
+         crossorigin="anonymous">
+    <p>Sorry, your browser doesn't support embedded videos.</p>
+  </video>
+
+  <p>Needed for JS access (e.g., Canvas) or track loading from different domains.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

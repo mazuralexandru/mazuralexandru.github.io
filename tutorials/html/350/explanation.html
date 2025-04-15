@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>350. Other <code class="language-html">&lt;head&gt;</code> Elements: The <code class="language-html">&lt;base&gt;</code> Element - Behavior &amp; Interactions</h1>
+<p>Let&#39;s clarify exactly how <code class="language-html">&lt;base href=&quot;...&quot;&gt;</code> affects relative URL resolution.</p>
+<p><strong>Resolution Process:</strong></p>
+<ol>
+<li><p><strong>No <code class="language-html">&lt;base href&gt;</code>:</strong> The browser takes the relative path (e.g., <code>images/logo.png</code>) and combines it with the directory path of the current HTML document&#39;s URL.</p>
+<ul>
+<li>If current page is <code>https://site.com/about/team.html</code>, then <code>images/logo.png</code> resolves to <code>https://site.com/about/images/logo.png</code>.</li>
+<li><code>../contact.html</code> resolves to <code>https://site.com/contact.html</code>.</li>
+<li><code>/styles/main.css</code> (root-relative) resolves to <code>https://site.com/styles/main.css</code>.</li>
+</ul>
+</li>
+<li><p><strong>With <code class="language-html">&lt;base href=&quot;https://anothersite.com/assets/&quot;&gt;</code>:</strong> The browser takes the relative path and combines it with the <code class="language-html">&lt;base&gt;</code> URL.</p>
+<ul>
+<li>If current page is <code>https://site.com/about/team.html</code>:<ul>
+<li><code>images/logo.png</code> resolves to <code>https://anothersite.com/assets/images/logo.png</code>.</li>
+<li><code>../contact.html</code> resolves to <code>https://anothersite.com/contact.html</code> (going up from <code>/assets/</code> gives <code>/</code>).</li>
+<li><code>/styles/main.css</code> (root-relative) resolves to <code>https://anothersite.com/styles/main.css</code> (uses the <em>domain</em> from <code class="language-html">&lt;base&gt;</code>, but path starts from the root).</li>
+</ul>
+</li>
+<li>Absolute URLs (e.g., <code>https://google.com</code>) in <code>href</code> or <code>src</code> are <strong>unaffected</strong> by <code class="language-html">&lt;base&gt;</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Effect on Page Resources:</strong></p>
+<ul>
+<li>As demonstrated in the previous step, if <code class="language-html">&lt;base href=&quot;...&quot;&gt;</code> is declared <em>before</em> relative <code class="language-html">&lt;link href=&quot;style.css&quot;&gt;</code> or <code class="language-html">&lt;script src=&quot;app.js&quot;&gt;</code> tags, those relative paths will be resolved against the <code class="language-html">&lt;base&gt;</code> URL, not the document&#39;s URL. This can easily break the loading of your CSS and JavaScript if they aren&#39;t actually located relative to the <code class="language-html">&lt;base&gt;</code> URL.</li>
+<li><strong>Common Fix:</strong> Place the <code class="language-html">&lt;base&gt;</code> tag <em>after</em> any <code class="language-html">&lt;link&gt;</code> or <code class="language-html">&lt;script&gt;</code> tags that use relative paths meant to be resolved against the document&#39;s location, <em>or</em> use absolute or root-relative paths for those essential resources if <code class="language-html">&lt;base&gt;</code> is needed early.</li>
+</ul>
+<p><strong>Effect of <code class="language-html">&lt;base target=&quot;...&quot;&gt;</code>:</strong></p>
+<ul>
+<li>Sets the default target for all <code class="language-html">&lt;a&gt;</code> and <code class="language-html">&lt;form&gt;</code> elements <em>without</em> their own explicit <code>target</code> attribute.</li>
+<li>Links or forms <em>with</em> their own <code>target</code> attribute will use that specific target, overriding the <code class="language-html">&lt;base&gt;</code> default.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Re-examine the code from the previous step (<code>index.html</code> lesson 349). Remind yourself why the CSS likely stopped working (because <code>href=&quot;style.css&quot;</code> was resolved against the <code class="language-html">&lt;base&gt;</code> URL). Consider how the resolution would change for different relative paths (<code>../</code>, <code>/</code>, <code>sub/dir/</code>) given the <code class="language-html">&lt;base&gt;</code> tag.</p>
+<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;base href&gt;</code> changes the base point for resolving all subsequent relative URLs in the document. <code class="language-html">&lt;base target&gt;</code> sets a default target for links/forms without their own <code>target</code>. Be mindful of the placement of <code class="language-html">&lt;base&gt;</code> relative to other resources linked with relative paths.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

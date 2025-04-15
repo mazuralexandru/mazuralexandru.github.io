@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>253. Figure Captions (<code class="language-html">&lt;figcaption&gt;</code>) - Fundamentals</h1>
+<p>While a <code class="language-html">&lt;figure&gt;</code> groups content, the <code class="language-html">&lt;figcaption&gt;</code> element provides its visible caption or legend.</p>
+<p><strong>The Figure Caption Element (<code class="language-html">&lt;figcaption&gt;</code>)</strong></p>
+<ul>
+<li><strong>Definition:</strong> Represents a caption or legend describing the rest of the content of its parent <code class="language-html">&lt;figure&gt;</code> element.</li>
+<li><strong>Purpose:</strong> To provide a <strong>visible title, description, or explanation</strong> directly associated with the figure&#39;s content (image, code, etc.).</li>
+<li><strong>Semantics:</strong> Clearly and programmatically associates the caption text with the figure. This is crucial for accessibility, as screen readers can announce the figure and its caption as a related unit.</li>
+<li><strong>Type:</strong> Typically renders as a block-level element, though its content model is flow content.</li>
+</ul>
+<p><strong>Placement:</strong></p>
+<ul>
+<li>Must be placed directly inside a <code class="language-html">&lt;figure&gt;</code> element.</li>
+<li>Only <strong>one</strong> <code class="language-html">&lt;figcaption&gt;</code> is allowed per <code class="language-html">&lt;figure&gt;</code>.</li>
+<li>It can be the <strong>first</strong> or the <strong>last</strong> child within the <code class="language-html">&lt;figure&gt;</code>. Both are valid, but placing it first is sometimes recommended for slightly better accessibility parsing in some older tools. Consistency within a project is key.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. We are introducing the <code class="language-html">&lt;figcaption&gt;</code> element conceptually before adding it to our example.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;figcaption&gt;</code> element provides a visible caption for a <code class="language-html">&lt;figure&gt;</code>, semantically linking the description to the figure&#39;s content. It must be placed inside the <code class="language-html">&lt;figure&gt;</code> (only one allowed, first or last child).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

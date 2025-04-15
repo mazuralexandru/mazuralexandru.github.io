@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>166. Linking to Fragments: Links to Other Pages (<code>href=&quot;page.html#id&quot;</code>)</h1>
+<p>You can also link directly to a specific fragment (a section with an <code>id</code>) on a <strong>different</strong> HTML page.</p>
+<p><strong>Syntax (Different Page):</strong></p>
+<p>Combine the URL of the target page (which can be absolute or relative) with the fragment identifier.</p>
+<ul>
+<li><code class="language-html">href=&quot;target_page.html#elementID&quot;</code> (Relative URL example)</li>
+<li><code class="language-html">href=&quot;/path/to/target_page.html#elementID&quot;</code> (Root-relative URL example)</li>
+<li><code class="language-html">href=&quot;https://othersite.com/page.html#elementID&quot;</code> (Absolute URL example)</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ol>
+<li>The browser first navigates to the specified page (<code>target_page.html</code> or the external URL).</li>
+<li>Once the page loads, the browser <em>then</em> attempts to scroll to the element with the matching <code>id</code> (<code>elementID</code>).</li>
+</ol>
+<p><strong>Example (Conceptual):</strong></p>
+<p>If you had a separate page named <code>faq.html</code> with a section like <code class="language-html">&lt;h2 id=&quot;billing&quot;&gt;Billing Questions&lt;/h2&gt;</code>, you could link directly to it from your current page like this:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- Conceptual Example --&gt;
+&lt;a href=&quot;faq.html#billing&quot;&gt;Jump to Billing Questions on FAQ page&lt;/a&gt;
+</code></pre>
+<p><strong>Code Change:</strong></p>
+<p>No changes are made to our <code>index.html</code> file in this step. We are explaining the concept of linking to fragments on <em>other</em> pages. Adding a functional example would require creating a second HTML file (<code>faq.html</code>) with appropriate <code>id</code>s, which is beyond the scope of simply modifying <code>index.html</code>.</p>
+<p>✅ <strong>Observation:</strong> Understand conceptually that you can append <code>#elementID</code> to any valid URL (absolute or relative) in an <code>href</code> attribute to instruct the browser to load that page and then attempt to scroll to the specified <code>id</code>.</p>
+<p>✨ <strong>Key Takeaway:</strong> To link to a specific section on a <em>different</em> page, use the format <code>href=&quot;URL_of_page#elementID&quot;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

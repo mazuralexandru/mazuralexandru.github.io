@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Multimedia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Multiple Video Sources (&lt;source&gt;)</h1>
+  <p>Adding source elements with 'src' and 'type'.</p>
+
+  <video controls width="480" height="270">
+    <!-- Added source elements -->
+    <source src="/videos/example.webm" type="video/webm"> <!-- WebM format -->
+    <source src="/videos/example.mp4" type="video/mp4">   <!-- MP4 format -->
+
+    <p>Fallback content if no format supported.</p> <!-- Adjusted fallback text -->
+  </video>
+
+  <p>Browser checks 'type' attribute first.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

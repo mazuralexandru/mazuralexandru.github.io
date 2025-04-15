@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>427. Forms: The <code>novalidate</code> Attribute (on <code class="language-html">&lt;form&gt;</code>)</h1>
+<p>HTML5 introduced built-in browser validation capabilities based on input types and attributes (<code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code>, etc.). The <code class="language-html">novalidate</code> attribute provides a way to disable this native behavior for the entire form.</p>
+<p><strong>Definition &amp; Purpose:</strong></p>
+<ul>
+<li><code class="language-html">novalidate</code> is a <strong>boolean attribute</strong>.</li>
+<li>When present on the <code class="language-html">&lt;form&gt;</code> element, it instructs the browser <strong>not to perform its default validation checks</strong> on the form&#39;s controls when the user attempts to submit it.</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li><code class="language-html">&lt;form action=&quot;...&quot; method=&quot;...&quot; novalidate&gt; ... &lt;/form&gt;</code></li>
+<li>Its presence enables the behavior; no value is needed.</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>If <code>novalidate</code> is <strong>present</strong>: The browser will attempt to submit the form immediately upon activation of a submit button, regardless of whether controls marked <code>required</code> are empty or whether values violate <code>type</code> or <code>pattern</code> constraints.</li>
+<li>If <code>novalidate</code> is <strong>absent</strong>: The browser <em>will</em> perform its native validation checks before submission. If any control is invalid, submission is blocked, and the browser typically displays error indicators.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ol>
+<li><strong>Custom JavaScript Validation:</strong> This is the primary use case. If you are implementing your own form validation logic and user interface using JavaScript (e.g., displaying custom error messages, performing complex multi-field checks), you often want to disable the browser&#39;s native validation UI to avoid conflicts or confusing duplicate messages.</li>
+<li><strong>Development/Testing:</strong> Can be useful temporarily during development to bypass validation while testing server-side handling or other aspects.</li>
+</ol>
+<p><strong>Caution:</strong></p>
+<ul>
+<li>Disabling native validation means you become <strong>fully responsible</strong> for ensuring data validity, either through comprehensive client-side JavaScript validation, robust server-side validation, or ideally both.</li>
+<li><strong>Server-side validation is always essential</strong> regardless of client-side checks, as client-side validation can be bypassed.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the <code>target</code> attribute and added the boolean <code>novalidate</code> attribute to our <code class="language-html">&lt;form&gt;</code> tag in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot; novalidate&gt; &lt;!-- Removed target, added novalidate --&gt;
+   &lt;!-- Form controls will go here --&gt;
+   &lt;!-- Browser won&#39;t check required, pattern, type etc. on submit --&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>novalidate</code> attribute in the <code class="language-html">&lt;form&gt;</code> tag.</li>
+<li>There is <strong>no visual change</strong>.</li>
+<li>If this form contained an <code class="language-html">&lt;input type=&quot;email&quot; required&gt;</code> and the user tried to submit it with an empty or invalid email address, the browser would <em>not</em> show its default error message and <em>would</em> attempt to submit the form because <code>novalidate</code> disables the check.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Add the <code class="language-html">novalidate</code> boolean attribute to <code class="language-html">&lt;form&gt;</code> to disable the browser&#39;s built-in HTML5 validation. This is mainly used when implementing custom JavaScript validation routines. Remember that server-side validation remains essential.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>348. Other <code class="language-html">&lt;head&gt;</code> Elements: The <code class="language-html">&lt;base&gt;</code> Element - Fundamentals</h1>
+<p>Now let&#39;s look at the <code class="language-html">&lt;base&gt;</code> element, which allows you to specify a base URL for all relative URLs within a document.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;base&gt;</code> element sets the <strong>base URL</strong> that the browser should use when resolving <strong>relative URLs</strong> found in attributes like <code class="language-html">href</code> (links), <code class="language-html">src</code> (images, scripts), and others throughout the <em>entire</em> document.</li>
+<li>It can also define a default <strong>target</strong> browsing context for links that don&#39;t have their own <code class="language-html">target</code> attribute.</li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>Normally, a relative URL (like <code class="language-html">images/pic.jpg</code> or <code class="language-html">../about.html</code>) is resolved based on the URL of the <em>current HTML document</em>.</li>
+<li>If a <code class="language-html">&lt;base&gt;</code> tag is present with an <code class="language-html">href</code> attribute, the browser uses the URL specified in the <code class="language-html">&lt;base&gt;</code> tag&#39;s <code>href</code> as the starting point for resolving <em>all</em> subsequent relative URLs in the document, instead of the document&#39;s own URL.</li>
+</ul>
+<p><strong>Element Category &amp; Placement:</strong></p>
+<ul>
+<li><code class="language-html">&lt;base&gt;</code> is a <strong>void (empty) element</strong> (no closing tag).</li>
+<li>It <strong>must</strong> be placed within the <code class="language-html">&lt;head&gt;</code> section.</li>
+<li>There can be <strong>at most one</strong> <code class="language-html">&lt;base&gt;</code> element per document. If multiple are present, only the <em>first</em> one&#39;s <code class="language-html">href</code> and <code class="language-html">target</code> values are used.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. Understand the core function: <code class="language-html">&lt;base&gt;</code> changes the &quot;starting point&quot; URL that the browser uses to figure out the full address for relative paths like <code>page.html</code> or <code>images/logo.png</code>.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;base&gt;</code> element, placed in the <code class="language-html">&lt;head&gt;</code>, specifies a base URL and/or a default target for resolving relative URLs and links throughout the document. Only one <code class="language-html">&lt;base&gt;</code> element is allowed.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

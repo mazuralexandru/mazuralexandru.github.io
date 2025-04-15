@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>32. Text: Paragraphs (<code class="language-html">&lt;p&gt;</code>) - Mechanics</h1>
+<p>Let&#39;s delve a bit deeper into the mechanics of the <code class="language-html">&lt;p&gt;</code> element.</p>
+<p><strong>Core Mechanics:</strong></p>
+<ol>
+<li><strong>Syntax:</strong> As we&#39;ve seen, it uses an opening <code class="language-html">&lt;p&gt;</code> tag and a closing <code class="language-html">&lt;/p&gt;</code> tag, wrapping the paragraph content.</li>
+<li><strong>Block-Level:</strong> Being a block-level element means it inherently creates structure by starting on a new line and occupying available horizontal space, pushing subsequent content downwards.</li>
+<li><strong>Content Model:</strong> What can go inside a <code class="language-html">&lt;p&gt;</code>?<ul>
+<li><strong>Allowed:</strong> Phrasing content. This includes plain text and most <em>inline</em> elements like <code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;a&gt;</code> (links), <code class="language-html">&lt;img&gt;</code> (images), <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;code&gt;</code>, etc. We&#39;ll cover many of these soon.</li>
+<li><strong>Not Allowed:</strong> Generally, you cannot nest other <em>block-level</em> elements directly inside a <code class="language-html">&lt;p&gt;</code>. This includes elements like <code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>, other <code class="language-html">&lt;p&gt;</code> tags, lists (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>), etc. Putting a block element inside a <code class="language-html">&lt;p&gt;</code> tag will implicitly close the first paragraph before the block element starts, which can lead to unexpected structure and validation errors.</li>
+</ul>
+</li>
+<li><strong>Whitespace Handling:</strong> Like most HTML elements (except <code class="language-html">&lt;pre&gt;</code>), browsers <strong>collapse whitespace</strong> within a <code class="language-html">&lt;p&gt;</code> element. This means:<ul>
+<li>Multiple consecutive spaces or tabs in your source code are rendered as a single space.</li>
+<li>Line breaks within the source code inside a <code class="language-html">&lt;p&gt;</code> tag are treated as single spaces (they don&#39;t create visual line breaks in the output, unless you use a <code class="language-html">&lt;br&gt;</code> tag).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example (Illustrative - Not Code Change):</strong></p>
+<p>If your HTML source code looked like this:</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;
+  This   paragraph   has
+  lots of       extra
+
+
+  whitespace in the source.
+&lt;/p&gt;
+</code></pre>
+<p>The browser would likely render it like this (whitespace collapsed):</p>
+<blockquote>
+<p>This paragraph has lots of extra whitespace in the source.</p>
+</blockquote>
+<p>✅ <strong>Observation:</strong> No code changes in this step. Review the <code class="language-text">index.html</code> file and the preview. Observe how the text within each paragraph flows naturally, and the paragraphs themselves form distinct blocks. The whitespace rules explain why simple line breaks in your source code editor within a <code class="language-html">&lt;p&gt;</code> don&#39;t show up in the browser preview.</p>
+<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;p&gt;</code> elements are block-level containers for inline content and text. They enforce structure and have specific rules about what can be nested inside them and how whitespace is handled.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

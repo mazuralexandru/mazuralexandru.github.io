@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>31. Text: Paragraphs (<code class="language-html">&lt;p&gt;</code>) - Fundamentals</h1>
+<p>Welcome to Module 2! We&#39;ll now explore specific HTML elements used to structure the text content within the <code class="language-html">&lt;body&gt;</code>. We&#39;ll start with the most fundamental text block: the paragraph.</p>
+<p><strong>The Paragraph Element (<code class="language-html">&lt;p&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> The <code class="language-html">&lt;p&gt;</code> element is used to define a <strong>paragraph</strong> of text. It groups related sentences into a distinct block.</li>
+<li><strong>Semantics:</strong> It semantically marks the content as being a paragraph within the document&#39;s structure. This is important for readability, accessibility, and styling.</li>
+<li><strong>Type:</strong> It&#39;s a <strong>block-level</strong> element. This means it typically starts on a new line and takes up the full width available to it (though this can be changed with CSS).</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We already had one paragraph in our <code class="language-text">index.html</code>. To better illustrate its block nature and separation, we&#39;ve added a <em>second</em> <code class="language-html">&lt;p&gt;</code> element below the first one inside the <code class="language-html">&lt;body&gt;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;p&gt;This is the body content of my first web page. It represents a single, logical block of text.&lt;/p&gt;
+  &lt;p&gt;This is a second paragraph. Notice how it starts on a new line and has some space separating it from the first paragraph.&lt;/p&gt; &lt;!-- Added second paragraph --&gt;
+
+  &lt;!-- TODO: Add more content later --&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code class="language-text">index.html</code> file and locate the new, second <code class="language-html">&lt;p&gt;</code> element.</li>
+<li>Look at the browser preview pane. You should see:<ul>
+<li>The heading (&quot;Hello World!&quot;).</li>
+<li>The first paragraph.</li>
+<li>The second paragraph, appearing <em>below</em> the first one.</li>
+<li>Notice the vertical whitespace (margin) between the heading and the first paragraph, and between the first and second paragraphs. This visual separation is a default browser behavior for <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> elements.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;p&gt;</code> element to wrap distinct paragraphs of text. Browsers render them as separate blocks with default spacing.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

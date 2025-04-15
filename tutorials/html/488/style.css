@@ -1,0 +1,30 @@
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space */
+}
+
+/* --- Added for Lesson 488 --- */
+/* Style invalid fields */
+input:invalid,
+textarea:invalid {
+  border-color: #FF6347; /* Tomato red */
+  box-shadow: 0 0 3px #FF6347;
+}
+
+/* Style valid fields (optional, less common) */
+input:valid,
+textarea:valid {
+   border-color: #90EE90; /* LightGreen */
+}
+
+/* Style required fields (optional visual cue) */
+input:required,
+textarea:required {
+  /* Could add an asterisk or different border style */
+  /* Example: border-left: 3px solid #87CEFA; */
+}
+/* --- End Added --- */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>691. Accessibility (A11y): Role of HTML (Semantic Foundation)</h1>
+<p>Let&#39;s explicitly connect the dots: why is <strong>semantic HTML</strong>, which we focused on in Module 10, the absolute <strong>foundation</strong> for web accessibility?</p>
+<p><strong>HTML Provides Structure and Meaning for AT:</strong></p>
+<p>Assistive Technologies (AT) do not &quot;see&quot; the visual layout of a page created by CSS. Instead, they primarily interact with the <strong>Document Object Model (DOM)</strong> tree that the browser builds from your HTML source code. The <em>tags</em> and <em>attributes</em> you use in your HTML are the primary source of information for AT.</p>
+<ul>
+<li><strong>Landmarks (<code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>, etc.):</strong> Tell AT about the major regions, enabling efficient navigation. <code class="language-html">&lt;div&gt;</code> provides no such information.</li>
+<li><strong>Headings (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>):</strong> Create a navigable outline and indicate content hierarchy. <code class="language-html">&lt;p&gt;</code> styled to look bold/large does not.</li>
+<li><strong>Lists (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, <code class="language-html">&lt;li&gt;</code>):</strong> Announce list structure and item count/position. Manual bullets/numbers in <code class="language-html">&lt;p&gt;</code> tags do not.</li>
+<li><strong>Tables (<code class="language-html">&lt;table&gt;</code>, <code class="language-html">&lt;th&gt;</code>, <code class="language-html">&lt;td&gt;</code>, <code class="language-html">&lt;caption&gt;</code>, <code>scope</code>):</strong> Define data relationships crucial for understanding tabular information. <code class="language-html">&lt;div&gt;</code>-based grids do not inherently convey these relationships.</li>
+<li><strong>Forms (<code class="language-html">&lt;label&gt;</code>, <code class="language-html">&lt;fieldset&gt;</code>, <code class="language-html">&lt;legend&gt;</code>):</strong> Programmatically associate labels and group related controls. Essential for understanding and filling forms. Placing text next to an input without <code class="language-html">&lt;label for=&quot;...&quot;&gt;</code> provides no link for AT.</li>
+<li><strong>Images (<code class="language-html">&lt;img&gt;</code> with <code>alt</code>):</strong> Provide text descriptions for visual content.</li>
+<li><strong>Links (<code class="language-html">&lt;a&gt;</code>):</strong> Announced as interactive links; descriptive text is key. Contrast with <code class="language-html">&lt;span onclick=&quot;...&quot;&gt;</code> which isn&#39;t announced as a link by default.</li>
+<li><strong>Emphasis/Importance (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>):</strong> Can potentially influence screen reader intonation.</li>
+<li><strong>Language (<code>lang</code>):</strong> Enables correct pronunciation.</li>
+</ul>
+<p><strong>Semantic HTML = Accessibility Built-In (Often):</strong></p>
+<p>By using standard HTML elements according to their intended meaning, you automatically gain a significant amount of built-in accessibility. Browsers and AT are designed to understand these standard semantics.</p>
+<p><strong>Non-Semantic HTML = Accessibility Barriers:</strong></p>
+<p>Relying heavily on non-semantic elements (<code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;span&gt;</code>) forces you to manually add accessibility information back in using ARIA attributes, which is:</p>
+<ul>
+<li>More complex.</li>
+<li>More error-prone.</li>
+<li>Often less robust than native HTML semantics.</li>
+<li>Still requires correct JavaScript implementation for keyboard interaction on custom controls.</li>
+</ul>
+<p><strong>The First Rule of ARIA Use:</strong> Use native HTML elements and attributes whenever they provide the required semantics and behavior <em>before</em> resorting to ARIA.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Review the semantic elements learned in previous modules. Understand that using <code class="language-html">&lt;nav&gt;</code> instead of <code class="language-html">&lt;div class=&quot;nav&quot;&gt;</code>, or <code class="language-html">&lt;h1&gt;</code> instead of <code class="language-html">&lt;p class=&quot;title&quot;&gt;</code>, directly provides essential structural and semantic information needed by assistive technologies.</p>
+<p>✨ <strong>Key Takeaway:</strong> Correctly using semantic HTML elements is the most important first step towards building accessible websites. These elements provide the necessary structure and meaning for assistive technologies to interpret and present content effectively.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

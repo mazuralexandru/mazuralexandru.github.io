@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>268. The <code>id</code> Attribute - Value Requirements</h1>
+<p>While the uniqueness rule is paramount, there are also specific rules and best practices for the <em>value</em> you assign to an <code class="language-html">id</code> attribute.</p>
+<p><strong>Value Requirements &amp; Constraints:</strong></p>
+<ul>
+<li><strong>HTML5 Naming Rules (Technical Minimum):</strong><ul>
+<li>Must contain at least one character.</li>
+<li>Must <strong>not</strong> contain any space characters (spaces, tabs, line breaks, etc.).</li>
+</ul>
+</li>
+<li><strong>Best Practices &amp; Compatibility Naming Rules:</strong>
+While HTML5 is quite permissive, following stricter rules ensures better compatibility with CSS selectors, JavaScript, and older standards. It&#39;s highly recommended to:<ul>
+<li>Start the value with a <strong>letter</strong> (a-z, A-Z).</li>
+<li>Use only <strong>letters</strong>, <strong>digits</strong> (0-9), <strong>hyphens (<code>-</code>)</strong>, and <strong>underscores (<code>_</code>)</strong> for subsequent characters.</li>
+<li>Avoid using characters like colons (<code>:</code>) or periods (<code>.</code>) which, while technically allowed in HTML5 IDs, can require special escaping in CSS selectors (<code>\:</code>, <code>\.</code>) and are best avoided.</li>
+<li>Avoid starting with a digit or a hyphen, as this can also complicate CSS selection in some older contexts or require escaping.</li>
+<li><strong>Recommendation:</strong> Use descriptive, meaningful, lowercase names, with hyphens separating words.<ul>
+<li>Good: <code class="language-html">id=&quot;main-navigation&quot;</code>, <code class="language-html">id=&quot;product-summary-table&quot;</code>, <code class="language-html">id=&quot;contact-form-submit&quot;</code></li>
+<li>Okay (but less common): <code class="language-html">id=&quot;user_profile_section&quot;</code></li>
+<li>Avoid: <code class="language-html">id=&quot;1stSection&quot;</code>, <code class="language-html">id=&quot;-some-id&quot;</code>, <code class="language-html">id=&quot;section:header&quot;</code>, <code class="language-html">id=&quot;my ID&quot;</code> (contains space - invalid!)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Case Sensitivity:</strong> Remember, <code class="language-html">id</code> values <strong>are case-sensitive</strong>. <code class="language-html">id=&quot;mainNav&quot;</code> and <code class="language-html">id=&quot;mainnav&quot;</code> would be treated as different IDs. Sticking to a consistent case (usually lowercase) is recommended.</li>
+</ul>
+<p><strong>Code Example (Illustrative - No Code Change):</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!-- Good ID examples --&gt;
+&lt;div id=&quot;user-settings&quot;&gt;...&lt;/div&gt;
+&lt;table id=&quot;results-table-2&quot;&gt;...&lt;/table&gt;
+&lt;button id=&quot;confirm-deletion-button&quot;&gt;...&lt;/button&gt;
+
+&lt;!-- Technically valid HTML5 but potentially problematic/less readable IDs --&gt;
+&lt;!-- &lt;div id=&quot;section:header&quot;&gt;...&lt;/div&gt; --&gt;
+&lt;!-- &lt;div id=&quot;1stPlace&quot;&gt;...&lt;/div&gt; --&gt;
+
+&lt;!-- INVALID IDs --&gt;
+&lt;!-- &lt;div id=&quot;my id&quot;&gt;...&lt;/div&gt; &lt;!-- Contains space --&gt;
+&lt;!-- &lt;div id=&quot;&quot;&gt;...&lt;/div&gt; &lt;!-- Empty --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong> No changes to <code class="language-text">index.html</code>. The ID we used (<code class="language-html">main-page-title</code>) follows the recommended best practices (starts with letter, lowercase, hyphen-separated). Review the naming rules and recommendations above.</p>
+<p>✨ <strong>Key Takeaway:</strong> <code>id</code> values must be unique and contain no spaces. Follow best practices: start with a letter, use only letters, numbers, hyphens, or underscores, and prefer lowercase hyphen-separated names for readability and compatibility.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

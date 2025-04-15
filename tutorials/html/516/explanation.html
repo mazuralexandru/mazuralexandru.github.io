@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>516. Sectioning Content: <code class="language-html">&lt;article&gt;</code> vs. <code class="language-html">&lt;section&gt;</code> vs. <code class="language-html">&lt;div&gt;</code></h1>
+<p>Choosing between <code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, and <code class="language-html">&lt;div&gt;</code> can sometimes be confusing. Let&#39;s clarify their distinct roles:</p>
+<p><strong><code class="language-html">&lt;article&gt;</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Self-contained, independently distributable/reusable content.</li>
+<li><strong>Test:</strong> Could this piece make sense on its own if syndicated (e.g., via RSS)? Could it stand alone as a complete unit?</li>
+<li><strong>Examples:</strong> Blog post, news article, forum post, individual comment, product description block.</li>
+<li><strong>Contains:</strong> Often its own header/footer, multiple sections. Can be nested.</li>
+</ul>
+<p><strong><code class="language-html">&lt;section&gt;</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Generic thematic grouping of content <em>within</em> a larger context (like an article or the main page content). Represents a distinct topic or functional area that belongs in the document outline.</li>
+<li><strong>Test:</strong> Does this group of content deal with a specific theme, and does it make sense to give it a heading in the document&#39;s outline?</li>
+<li><strong>Examples:</strong> Chapters within an article, different tab panels in a UI, introduction/features/conclusion sections on a marketing page.</li>
+<li><strong>Requires Heading:</strong> Should almost always have a heading (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>) to identify its theme.</li>
+<li><strong>Not Self-Contained:</strong> Usually only makes full sense within the context of its parent document or article.</li>
+</ul>
+<p><strong><code class="language-html">&lt;div&gt;</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Generic grouping element with <strong>no semantic meaning</strong>.</li>
+<li><strong>Test:</strong> Is there <em>any</em> semantic element (<code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;aside&gt;</code>, <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;footer&gt;</code>, <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;ul&gt;</code>, etc.) that accurately describes this content or its role?</li>
+<li><strong>Use Case:</strong> Only use when no semantic element fits, primarily for:<ul>
+<li>Styling hooks (applying <code>class</code> or <code>id</code> for CSS).</li>
+<li>Layout wrappers (e.g., creating containers for Flexbox/Grid items purely for positioning).</li>
+<li>JavaScript hooks.</li>
+</ul>
+</li>
+<li><strong>Avoid As Substitute:</strong> Do not use <code class="language-html">&lt;div class=&quot;article&quot;&gt;</code> instead of <code class="language-html">&lt;article&gt;</code>, or <code class="language-html">&lt;div class=&quot;sidebar&quot;&gt;</code> instead of <code class="language-html">&lt;aside&gt;</code>, etc.</li>
+</ul>
+<p><strong>Relationship Summary:</strong></p>
+<ul>
+<li>An <code class="language-html">&lt;article&gt;</code> can contain multiple <code class="language-html">&lt;section&gt;</code>s.</li>
+<li>A <code class="language-html">&lt;section&gt;</code> can contain multiple <code class="language-html">&lt;article&gt;</code>s (e.g., a &quot;Latest News&quot; section containing several article summaries).</li>
+<li>Both <code class="language-html">&lt;article&gt;</code> and <code class="language-html">&lt;section&gt;</code> can contain <code class="language-html">&lt;div&gt;</code>s used for purely presentational grouping inside them.</li>
+<li><code class="language-html">&lt;article&gt;</code> and <code class="language-html">&lt;section&gt;</code> contribute to the document outline (especially with headings); <code class="language-html">&lt;div&gt;</code> does not.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the structure in the previous lesson&#39;s code (<code>index.html</code> lesson 515). We have an <code class="language-html">&lt;article&gt;</code> (self-contained post) containing a <code class="language-html">&lt;section&gt;</code> (thematic subsection). The <code class="language-html">&lt;main&gt;</code> element acts as a container, potentially styled with <code>&lt;div&gt;</code>s if needed for layout, but the core semantic structure uses <code class="language-html">&lt;article&gt;</code> and <code class="language-html">&lt;section&gt;</code>. The <code class="language-html">&lt;aside&gt;</code> is separate because its content is tangential.</p>
+<p>✨ <strong>Key Takeaway:</strong> Choose <code class="language-html">&lt;article&gt;</code> for independent, self-contained content. Choose <code class="language-html">&lt;section&gt;</code> for thematic groupings <em>within</em> a larger context (always with a heading). Use <code class="language-html">&lt;div&gt;</code> only as a last resort for non-semantic grouping for styling/layout.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>233. Writing Effective <code>alt</code> Text</h1>
+<p>Writing good <code class="language-html">alt</code> text is more art than science, but crucial for accessibility and usability. The key is <strong>context</strong>. Ask yourself: <em>Why is this image here? What information does it convey that a user needs to understand the surrounding content?</em></p>
+<p><strong>Key Principles:</strong></p>
+<ol>
+<li><p><strong>Be Accurate and Concise:</strong> Describe what the image <em>is</em> or <em>shows</em> efficiently. Avoid unnecessary words.</p>
+<ul>
+<li><em>Okay:</em> <code class="language-html">alt=&quot;A photograph showing a brown dog running on green grass&quot;</code></li>
+<li><em>Better:</em> <code class="language-html">alt=&quot;Brown dog running on grass&quot;</code></li>
+</ul>
+</li>
+<li><p><strong>Focus on Content/Function, Not Appearance:</strong> Describe the information or purpose, not just the visual details, unless those details are the relevant information.</p>
+<ul>
+<li><em>Image:</em> A red &quot;Warning&quot; icon.</li>
+<li><em>Bad:</em> <code class="language-html">alt=&quot;Red octagon with exclamation mark&quot;</code> (Describes appearance)</li>
+<li><em>Good:</em> <code class="language-html">alt=&quot;Warning:&quot;</code> (Describes function/meaning)</li>
+</ul>
+</li>
+<li><p><strong>Consider Context:</strong> The same image might need different <code class="language-html">alt</code> text depending on the surrounding content.</p>
+<ul>
+<li><em>Image:</em> Graph showing rising sales.</li>
+<li><em>Context 1 (Caption below describes details):</em> <code class="language-html">alt=&quot;Bar chart showing quarterly sales.&quot;</code> (Concise description)</li>
+<li><em>Context 2 (No caption, graph illustrates point in text):</em> <code class="language-html">alt=&quot;Bar chart demonstrating significant sales increase in Q4.&quot;</code> (Summarizes the conveyed info)</li>
+</ul>
+</li>
+<li><p><strong>Avoid Redundancy:</strong> If the surrounding text fully describes the image, repeating that information in <code class="language-html">alt</code> can be annoying for screen reader users. In such cases, a decorative <code class="language-html">alt=&quot;&quot;</code> might be appropriate (see next lesson).</p>
+</li>
+<li><p><strong>Skip &quot;Image of...&quot;, &quot;Picture of...&quot;:</strong> Screen readers announce the element as an image. Adding these phrases is usually redundant.</p>
+<ul>
+<li><em>Bad:</em> <code class="language-html">alt=&quot;Picture of the Eiffel Tower&quot;</code></li>
+<li><em>Good:</em> <code class="language-html">alt=&quot;Eiffel Tower at sunset&quot;</code></li>
+</ul>
+</li>
+<li><p><strong>Transcribe Text within Images:</strong> If an image contains important text (e.g., a graphic button, a diagram label), the <code class="language-html">alt</code> text <em>must</em> include that text verbatim. <strong>However, avoid using images of text whenever possible.</strong> Use actual HTML text and style it with CSS for better accessibility, SEO, and maintainability.</p>
+</li>
+<li><p><strong>Functional Images (Links/Buttons):</strong> As covered in Module 4, if the image is the only content of a link or button, the <code class="language-html">alt</code> text <em>must</em> describe the link&#39;s destination or the button&#39;s action.</p>
+<ul>
+<li><code class="language-html">&lt;a href=&quot;search.html&quot;&gt;&lt;img src=&quot;magnifying-glass.svg&quot; alt=&quot;Search Site&quot;&gt;&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li><p><strong>Use Punctuation:</strong> End <code class="language-html">alt</code> text with a period or appropriate punctuation. This helps screen readers pause correctly, improving the listening experience.</p>
+</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Review the principles above. Look at the <code class="language-html">alt</code> text in our current example: <code class="language-html">alt=&quot;Placeholder image: 150x75 pixels, sky blue background, white text saying Sample Image&quot;</code>. Is this good <code class="language-html">alt</code> text? It accurately describes <em>what</em> the image shows, which is appropriate for a placeholder. If it were a real image (e.g., a company logo), the <code class="language-html">alt</code> text would need to describe <em>that</em> content instead (e.g., <code class="language-html">alt=&quot;Example Corp Logo&quot;</code>).</p>
+<p>✨ <strong>Key Takeaway:</strong> Writing effective <code class="language-html">alt</code> text requires describing the image&#39;s content and purpose accurately and concisely within its specific context, avoiding redundancy, and focusing on function for interactive images.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

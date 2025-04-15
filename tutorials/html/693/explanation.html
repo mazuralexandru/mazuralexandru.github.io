@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>693. Accessibility (A11y): Content Element Semantics Review</h1>
+<p>Let&#39;s review how other semantic content elements contribute to accessibility.</p>
+<p><strong>1. Lists (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, <code class="language-html">&lt;li&gt;</code>, <code class="language-html">&lt;dl&gt;</code>, <code class="language-html">&lt;dt&gt;</code>, <code class="language-html">&lt;dd&gt;</code>) Recap:</strong></p>
+<ul>
+<li><strong>Accessibility Impact:</strong><ul>
+<li>Screen readers announce the start and end of lists, the list type (list, ordered list, description list), and often the number of items.</li>
+<li>Users can navigate item by item.</li>
+<li>Ordered lists announce the item number (e.g., &quot;1. First step&quot;).</li>
+<li>Description lists clearly associate terms (<code class="language-html">&lt;dt&gt;</code>) with their descriptions (<code class="language-html">&lt;dd&gt;</code>).</li>
+</ul>
+</li>
+<li><strong>Failure Example:</strong> Creating lists using <code class="language-html">&lt;p&gt;</code> tags with manual bullets (<code>*</code>) or numbers (<code>1.</code>) provides no structural information; screen readers just see paragraphs.</li>
+</ul>
+<p><strong>2. Tables (<code class="language-html">&lt;table&gt;</code>, <code class="language-html">&lt;caption&gt;</code>, <code class="language-html">&lt;th&gt;</code>, <code class="language-html">&lt;td&gt;</code>, <code>scope</code>) Recap:</strong></p>
+<ul>
+<li><strong>Accessibility Impact:</strong><ul>
+<li><code class="language-html">&lt;caption&gt;</code> provides the table&#39;s accessible name.</li>
+<li><code class="language-html">&lt;th&gt;</code> identifies header cells.</li>
+<li><code>scope=&quot;col&quot;</code> / <code>scope=&quot;row&quot;</code> programmatically links header cells to data cells. Screen readers use this to announce the relevant headers when reading a data cell, providing context.</li>
+</ul>
+</li>
+<li><strong>Failure Example:</strong> Using <code>&lt;div&gt;</code>s and CSS to create a visual grid provides no semantic relationships for screen readers. Using <code class="language-html">&lt;table&gt;</code> for layout forces a nonsensical reading order. Forgetting <code>scope</code> makes data cell context ambiguous.</li>
+</ul>
+<p><strong>3. Links (<code class="language-html">&lt;a&gt;</code>) Recap:</strong></p>
+<ul>
+<li><strong>Accessibility Impact:</strong><ul>
+<li>Announced as &quot;Link&quot;.</li>
+<li>Descriptive link text is crucial (Module 4) because users often navigate by listing links out of context. &quot;Click here&quot; is unhelpful.</li>
+</ul>
+</li>
+<li><strong>Failure Example:</strong> Using generic link text. Using non-link elements (<code class="language-html">&lt;span&gt;</code> with <code>onclick</code>) styled as links - these aren&#39;t announced as links and aren&#39;t keyboard focusable/activatable by default.</li>
+</ul>
+<p><strong>4. Emphasis/Importance (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>) Recap:</strong></p>
+<ul>
+<li><strong>Accessibility Impact:</strong> May influence screen reader voice inflection (variable support). Clearly conveys semantic meaning regardless of visual styling.</li>
+<li><strong>Failure Example:</strong> Using <code class="language-html">&lt;i&gt;</code>/<code class="language-html">&lt;b&gt;</code> or CSS <code>font-style</code>/<code>font-weight</code> when semantic emphasis/importance is intended – the meaning is lost for AT.</li>
+</ul>
+<p><strong>5. Other Elements (<code class="language-html">&lt;abbr&gt;</code>, <code class="language-html">&lt;time&gt;</code>, <code class="language-html">&lt;address&gt;</code>, etc.) Recap:</strong></p>
+<ul>
+<li>Provide specific semantic meaning that can be interpreted by AT (e.g., <code class="language-html">&lt;abbr title=&quot;...&quot;&gt;</code> for expansion, <code class="language-html">&lt;time datetime=&quot;...&quot;&gt;</code> for unambiguous date/time).</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the semantic elements for lists, tables, links, and inline text. Reinforce how using the <em>correct</em> tag provides built-in accessibility information that non-semantic alternatives lack.</p>
+<p>✨ <strong>Key Takeaway:</strong> Properly using semantic elements for lists, tables, links, emphasis, and other specific content types provides essential context and structure for assistive technologies, making the content more understandable and navigable.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

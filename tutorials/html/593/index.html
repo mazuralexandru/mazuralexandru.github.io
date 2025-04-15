@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Canvas</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    canvas {
+      border: 1px dashed skyblue;
+      /* Reverting CSS size to match attributes for clarity */
+      width: 300px;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <h1>The &lt;canvas&gt; Element</h1>
+  <p>Getting the 2D rendering context using JavaScript.</p>
+
+  <canvas id="myFirstCanvas" width="300" height="150">
+    Your browser does not support the canvas element.
+  </canvas>
+
+  <p>JS selects the element by ID and calls getContext('2d').</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

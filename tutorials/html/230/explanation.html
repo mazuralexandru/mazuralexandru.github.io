@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>230. <code class="language-html">&lt;img&gt;</code> Loading &amp; Error Handling (Conceptual)</h1>
+<p>Let&#39;s briefly discuss what happens when the browser processes an <code class="language-html">&lt;img&gt;</code> tag and handles potential errors.</p>
+<p><strong>Asynchronous Loading:</strong></p>
+<ul>
+<li>When the browser parses the HTML and encounters an <code class="language-html">&lt;img&gt;</code> tag with a valid <code class="language-html">src</code> attribute, it initiates a <strong>separate HTTP request</strong> to fetch the image file from the specified URL.</li>
+<li>Crucially, this fetching process happens <strong>asynchronously</strong>. The browser doesn&#39;t usually wait for the image to download before continuing to parse and render the rest of the HTML and CSS below the <code class="language-html">&lt;img&gt;</code> tag.</li>
+<li>This prevents large images from blocking the rendering of the rest of the page content, improving perceived performance.</li>
+<li>Once the image data is downloaded, the browser decodes it and paints it into the reserved space on the page. (This is why <code class="language-html">width</code> and <code class="language-html">height</code> attributes are important to reserve the space correctly beforehand - see Topic 51).</li>
+</ul>
+<p><strong>Error Handling: Broken Images</strong></p>
+<ul>
+<li>What happens if the <code class="language-html">src</code> URL is incorrect, the server cannot find the file (404 error), the file is corrupted, or there&#39;s a network issue preventing the download?</li>
+<li>The browser cannot display the intended image. Instead, it typically:<ol>
+<li>Displays a <strong>&quot;broken image&quot; icon</strong> (the appearance varies between browsers).</li>
+<li>Crucially, it <strong>should display the content of the <code class="language-html">alt</code> attribute</strong> as fallback text within the space reserved for the image. This makes the <code class="language-html">alt</code> text vital not only for screen readers but also as a fallback for sighted users when images fail to load.</li>
+</ol>
+</li>
+</ul>
+<p><strong>Code Change Preparation:</strong></p>
+<p>To prepare for adding the essential <code class="language-html">alt</code> attribute next, we will remove the current <code class="language-html">&lt;img&gt;</code> tag example, as it doesn&#39;t yet have <code class="language-html">alt</code> and we want to introduce the complete, valid structure together.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Embedding Images&lt;/h1&gt;
+  &lt;p&gt;Next, we add the crucial &#39;alt&#39; attribute for accessibility and fallback.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed img example without alt --&gt;
+  &lt;!-- &lt;img src=&quot;images/logo.png&quot;&gt; --&gt;
+
+  &lt;p&gt;The alt attribute describes the image content.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the <code class="language-html">&lt;img&gt;</code> tag example has been removed from <code class="language-text">index.html</code>.</li>
+<li>The browser preview now only shows the heading and paragraphs, ready for the introduction of <code class="language-html">alt</code>.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Images load asynchronously. If an image fails to load, the browser shows a broken image icon and should display the <code class="language-html">alt</code> text as a fallback.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

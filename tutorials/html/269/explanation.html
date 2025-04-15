@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>269. The <code>id</code> Attribute - Consequences of Non-Unique IDs</h1>
+<p>We keep emphasizing that <code class="language-html">id</code> values <em>must</em> be unique within a page. What actually happens if you break this rule?</p>
+<p><strong>Consequences:</strong></p>
+<ol>
+<li><p><strong>Invalid HTML:</strong> Your HTML document will <strong>fail validation</strong> checks. This indicates a structural error according to the HTML standard. While browsers often <em>try</em> to render invalid HTML, it&#39;s a sign of poor code quality.</p>
+</li>
+<li><p><strong>Unpredictable CSS Styling:</strong></p>
+<ul>
+<li>CSS uses the <code>#id-value</code> selector to target elements by ID (e.g., <code class="language-css">#main-page-title { color: red; }</code>).</li>
+<li>The CSS specification doesn&#39;t strictly define what browsers should do if multiple elements have the same ID.</li>
+<li>In practice, most browsers will apply the ID-based style only to the <strong>first element</strong> they encounter in the HTML source code with that specific ID. Other elements with the same ID will likely not receive the style. Relying on this inconsistent behavior is very risky.</li>
+</ul>
+</li>
+<li><p><strong>Unpredictable JavaScript Behavior:</strong></p>
+<ul>
+<li>The standard JavaScript method <code class="language-js">document.getElementById(&#39;id-value&#39;)</code> is specifically designed based on the uniqueness assumption. It is guaranteed to return only <strong>one</strong> element object (the first one found in document order) or <code class="language-js">null</code> if none exists. It <em>will not</em> return multiple elements, even if they erroneously share the same ID.</li>
+<li>Other selection methods like <code class="language-js">document.querySelector(&#39;#id-value&#39;)</code> also return only the first match.</li>
+<li>While <code class="language-js">document.querySelectorAll(&#39;#id-value&#39;)</code> <em>might</em> return multiple elements if duplicate IDs exist, writing code that expects or relies on duplicate IDs is fundamentally flawed and goes against the purpose of <code class="language-html">id</code>.</li>
+<li>Trying to target or manipulate elements based on non-unique IDs will lead to bugs and unexpected results, as you&#39;ll likely only affect the first element found.</li>
+</ul>
+</li>
+<li><p><strong>Broken Fragment Links:</strong></p>
+<ul>
+<li>URL fragments (<code class="language-html">#id-value</code>) are meant to link to a single, specific point on the page.</li>
+<li>If multiple elements share the same ID, the browser&#39;s behavior when navigating to that fragment is undefined. It might scroll to the first matching element, or behave erratically.</li>
+</ul>
+</li>
+<li><p><strong>Incorrect Label Association:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;label for=&quot;id-value&quot;&gt;</code> relies on the <code class="language-html">id</code> being unique on the associated form control (<code class="language-html">&lt;input&gt;</code>, <code class="language-html">&lt;select&gt;</code>, etc.). Duplicate IDs will break the explicit association for assistive technologies and clicking the label might not focus the correct (or any) input field reliably.</li>
+</ul>
+</li>
+<li><p><strong>ARIA Association Issues:</strong></p>
+<ul>
+<li>Accessibility attributes like <code class="language-html">aria-labelledby</code> and <code class="language-html">aria-describedby</code> use ID references. Duplicate IDs will make these associations ambiguous and unreliable for assistive technology users.</li>
+</ul>
+</li>
+</ol>
+<p><strong>In short:</strong> Duplicate IDs break the fundamental contract of the <code class="language-html">id</code> attribute, leading to invalid code, unpredictable styling and scripting, broken links, and accessibility failures.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Understand the serious negative consequences of using the same <code class="language-html">id</code> value on more than one element within a single HTML page.</p>
+<p>✨ <strong>Key Takeaway:</strong> <strong>Always ensure <code class="language-html">id</code> values are unique within your HTML document.</strong> Use validation tools to catch duplicate IDs early in development.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

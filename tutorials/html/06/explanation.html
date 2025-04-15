@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>06. Elements &amp; Tags: Defining Elements and Tags</h1>
+<p>Now we start diving into the actual syntax of HTML. The core building blocks are <strong>elements</strong> and <strong>tags</strong>.</p>
+<p><strong>What is an HTML Element?</strong></p>
+<p>An <strong>element</strong> is a fundamental conceptual unit of an HTML document. It represents a distinct piece of content and its semantic meaning or purpose. Think of elements as the different types of building blocks you can use:</p>
+<ul>
+<li>A paragraph of text</li>
+<li>A main heading</li>
+<li>An image</li>
+<li>A list of items</li>
+<li>A hyperlink</li>
+</ul>
+<p><strong>What is an HTML Tag?</strong></p>
+<p><strong>Tags</strong> are the specific text codes you write in your HTML file to <em>create</em> an element. They act as markers, telling the browser where an element begins and ends, and what type of element it is.</p>
+<ul>
+<li>Tags are always enclosed in <strong>angle brackets</strong> (<code class="language-html">&lt;</code> and <code class="language-html">&gt;</code>).</li>
+<li>The text inside the angle brackets indicates the <em>type</em> of element (e.g., <code class="language-html">p</code> for paragraph, <code class="language-html">h1</code> for level-1 heading).</li>
+</ul>
+<p><strong>First Code!</strong></p>
+<p>We&#39;ve added a special type of text to our <code class="language-text">index.html</code> file:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- Content will go here soon! --&gt;
+</code></pre>
+<p>This is an <strong>HTML comment</strong>. We&#39;ll discuss comments in detail later (Lesson 9), but for now, know that anything between <code class="language-html">&lt;!--</code> and <code class="language-html">--&gt;</code> is ignored by the browser when displaying the page. It&#39;s a note for humans reading the code.</p>
+<p>✅ <strong>Observation:</strong> Check the <code class="language-text">index.html</code> file in your editor. You should see the comment line. The browser preview pane will still be blank because comments are not visible content.</p>
+<p>✨ <strong>Key Takeaway:</strong> Elements are the conceptual building blocks (paragraph, heading). Tags (<code class="language-html">&lt;tagname&gt;</code>) are the code you write to create those elements.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

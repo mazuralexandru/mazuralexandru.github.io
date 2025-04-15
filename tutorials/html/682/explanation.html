@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>682. Reset &amp; Validation in the Development Workflow</h1>
+<p>We&#39;ve explored what validation is, why it&#39;s important, the tools available, and common errors. Now, let&#39;s discuss how to integrate validation effectively into your regular development workflow.</p>
+<p><strong>Resetting:</strong></p>
+<p>Remove the previous common error examples.</p>
+<p><strong>Integrating Validation:</strong></p>
+<p>Validation shouldn&#39;t be an afterthought performed only at the very end of a project. Incorporating it regularly saves time and prevents errors from accumulating.</p>
+<ol>
+<li><strong>Validate Early, Validate Often:</strong><ul>
+<li>Don&#39;t wait until you&#39;ve written hundreds of lines of HTML. Validate small sections or individual components as you build them.</li>
+<li>Use <strong>editor/IDE integration</strong> (Lesson 670) for real-time feedback as you type or save. This catches most syntax and simple structural errors immediately.</li>
+</ul>
+</li>
+<li><strong>Use Authoritative Checks:</strong><ul>
+<li>Supplement editor checks with periodic validation using an <strong>online service</strong> (W3C/Nu, Lesson 668) or a local <strong>command-line tool</strong> (like v.Nu, Lesson 671), especially before committing code or deploying changes. These tools provide the most accurate check against the official specifications.</li>
+</ul>
+</li>
+<li><strong>Part of Debugging:</strong> If you encounter unexpected rendering issues or JavaScript errors related to the DOM, <strong>run a validator</strong> as one of your first debugging steps. Invalid HTML is a common source of such problems.</li>
+<li><strong>Automate (Advanced):</strong> For larger projects or team environments, integrate automated validation checks into your <strong>build process</strong> or <strong>CI/CD pipeline</strong> (Lesson 671) to enforce validity systematically.</li>
+<li><strong>Aim for Zero Errors:</strong> Make it a goal to resolve all validation <em>errors</em>. Understand and address <em>warnings</em>, particularly those related to deprecated features or potential accessibility issues.</li>
+</ol>
+<p><strong>Benefits of Workflow Integration:</strong></p>
+<ul>
+<li>Catches errors when they are introduced and easiest to fix.</li>
+<li>Prevents accumulation of technical debt from invalid markup.</li>
+<li>Builds good habits and reinforces understanding of HTML rules.</li>
+<li>Ensures a higher quality, more robust final product.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the common error examples from the <code class="language-html">&lt;body&gt;</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;title&gt;</code>, and paragraph text to focus on workflow.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;HTML Validation Workflow&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Validation in Workflow&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Integrating validation into your development process.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed error examples --&gt;
+  &lt;!-- &lt;center&gt;...&lt;/center&gt; --&gt;
+  &lt;!-- &lt;div style=&quot;...&quot;&gt;...&lt;/div&gt; --&gt;
+
+  &lt;p&gt;Validate early, validate often!&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong> Review the workflow steps described above. Consider how integrating validation checks directly into your coding process (via editor plugins) and performing final checks (via online validators or build tools) leads to better code quality compared to only checking at the very end.</p>
+<p>✨ <strong>Key Takeaway:</strong> Make HTML validation a regular part of your development workflow using editor integration and authoritative online/CLI tools. Validate frequently to catch errors early, improve code quality, and aid debugging. Aim for zero validation errors.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

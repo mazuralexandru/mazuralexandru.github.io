@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scalable Vector Graphics (SVG)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    svg {
+      border: 1px dashed skyblue;
+      margin: 10px;
+      fill: lightcoral; /* Default fill for shapes */
+      stroke: none; /* Default stroke */
+    }
+  </style>
+</head>
+<body>
+  <h1>Inline SVG Example</h1>
+  <p>Reusing shapes with &lt;defs&gt; and &lt;use&gt;.</p>
+
+  <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Define reusable shapes -->
+    <defs>
+      <rect id="my-rectangle" width="50" height="30" rx="3"/>
+      <circle id="my-circle" r="15"/>
+    </defs>
+
+    <!-- Use the defined shapes -->
+    <use href="#my-rectangle" x="10" y="10"/> <!-- Instance 1 of rect -->
+    <use href="#my-circle" x="100" y="30"/> <!-- Instance 1 of circle -->
+    <use href="#my-rectangle" x="130" y="20" fill="skyblue"/> <!-- Instance 2 (override fill) -->
+
+  </svg>
+
+  <p>Define once in 'defs', instantiate multiple times with 'use'.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

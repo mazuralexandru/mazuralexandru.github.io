@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Input Attributes: Value</h1>
+  <p>For checkboxes and radio buttons, 'value' is the submitted data.</p>
+
+  <form action="/submit-data" method="POST">
+    <fieldset>
+      <legend>Options (Checkboxes):</legend>
+       <input type="checkbox" id="cb1" name="options" value="option1"> <!-- Checkbox value -->
+       <label for="cb1">Option 1</label><br>
+       <input type="checkbox" id="cb2" name="options" value="option2"> <!-- Checkbox value -->
+       <label for="cb2">Option 2</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Choice (Radio):</legend>
+        <input type="radio" id="rb1" name="choice" value="A"> <!-- Radio value -->
+        <label for="rb1">Choice A</label><br>
+        <input type="radio" id="rb2" name="choice" value="B"> <!-- Radio value -->
+        <label for="rb2">Choice B</label>
+    </fieldset>
+  </form>
+
+  <p>The value is NOT the visible label; it's sent only if checked/selected.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

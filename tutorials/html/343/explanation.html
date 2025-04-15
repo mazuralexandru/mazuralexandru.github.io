@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>343. Common <code class="language-html">&lt;link&gt;</code> Types: Linking Favicons (<code>rel=&quot;icon&quot;</code>) - Fundamentals</h1>
+<p>A <strong>favicon</strong> (short for &quot;favorites icon&quot;) is a small icon file associated with a website or web page. It&#39;s used to visually identify your site in various browser UI locations.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li><strong>Branding &amp; Recognition:</strong> Provides a recognizable visual marker for your site in browser tabs, the bookmarks bar, history lists, etc.</li>
+<li><strong>User Experience:</strong> Helps users quickly locate your site&#39;s tab among potentially many open tabs.</li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>You use the <code class="language-html">&lt;link&gt;</code> element within the <code class="language-html">&lt;head&gt;</code> section to tell the browser where to find the icon file(s).</li>
+<li>The <code class="language-html">rel</code> attribute value <code class="language-html">icon</code> is the standard way to indicate that the linked resource is an icon for the page.</li>
+</ul>
+<p><strong>Historical Note:</strong></p>
+<ul>
+<li>Historically, browsers would often automatically look for a file named <code>favicon.ico</code> in the website&#39;s root directory (<code>/favicon.ico</code>). While many still do this as a fallback, explicitly declaring your favicon(s) using <code class="language-html">&lt;link&gt;</code> tags is the reliable and recommended method.</li>
+<li>The <code>rel</code> value <code>shortcut icon</code> is often seen alongside or instead of <code>icon</code>. This is a non-standard, legacy value originating from Internet Explorer but still widely supported. Using just <code>rel=&quot;icon&quot;</code> is sufficient for modern browsers, but sometimes <code>rel=&quot;shortcut icon&quot;</code> or even <code>rel=&quot;icon shortcut&quot;</code> is included for maximum backward compatibility, although arguably unnecessary now. We&#39;ll stick to <code>rel=&quot;icon&quot;</code>.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. Understand the purpose of favicons (visual identification in browser UI) and that <code class="language-html">&lt;link rel=&quot;icon&quot;&gt;</code> is the primary way to declare them.</p>
+<p>✨ <strong>Key Takeaway:</strong> Favicons are small icons representing your website, declared using <code class="language-html">&lt;link rel=&quot;icon&quot; href=&quot;...&quot;&gt;</code> within the <code class="language-html">&lt;head&gt;</code> to improve branding and user navigation in browser interfaces.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

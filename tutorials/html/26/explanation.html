@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>26. Context: The HTML Standard &amp; Validation</h1>
+<p>Let&#39;s briefly revisit the concept of HTML standards and introduce validation.</p>
+<p><strong>The &quot;Living Standard&quot;:</strong></p>
+<p>As mentioned earlier (Lesson 3), HTML (specifically HTML5 and beyond) is maintained by the WHATWG as a <strong>&quot;Living Standard&quot;</strong>. This means it evolves continuously based on browser implementation needs and community feedback, rather than having distinct, numbered versions released years apart. This allows the web platform to adapt more quickly.</p>
+<p><strong>Why Adhere to Standards?</strong></p>
+<p>Writing HTML that follows the rules defined in the standard (often called &quot;valid HTML&quot;) is important because:</p>
+<ul>
+<li><strong>Predictability:</strong> Standard-compliant code is much more likely to be interpreted correctly and consistently by different browsers (Chrome, Firefox, Safari, Edge, etc.) and assistive technologies (screen readers).</li>
+<li><strong>Maintainability:</strong> Clean, valid code is easier for you and others to read, understand, and modify later.</li>
+<li><strong>Future-Proofing:</strong> Browsers are built to support the standard. While they often have error-correction for invalid code, relying on that is risky. Sticking to the standard makes your pages more robust against future browser updates.</li>
+<li><strong>Debugging:</strong> Errors in invalid HTML can sometimes cause strange and hard-to-diagnose problems in CSS or JavaScript. Starting with valid HTML eliminates a potential source of bugs.</li>
+</ul>
+<p><strong>HTML Validation:</strong></p>
+<p>How do you know if your HTML is valid? You can use <strong>HTML validators</strong>.</p>
+<ul>
+<li><strong>What they do:</strong> These are tools (often online services, like the official W3C Nu Html Checker, or built into code editors) that check your HTML code against the rules of the HTML standard.</li>
+<li><strong>What they report:</strong> They report errors (code that violates the standard) and sometimes warnings (code that is valid but might be risky or bad practice).</li>
+<li><strong>Why use them:</strong> Regularly validating your HTML during development is a great way to catch mistakes early (like forgotten closing tags, improper nesting, or incorrect attribute usage) and ensure you&#39;re writing high-quality, compliant code.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This is about best practices surrounding the code we write. The HTML we&#39;ve written so far <em>should</em> be valid according to the HTML5 standard.</p>
+<p>✨ <strong>Key Takeaway:</strong> Write standards-compliant HTML for consistency and predictability. Use HTML validators to check your code for errors and ensure quality.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

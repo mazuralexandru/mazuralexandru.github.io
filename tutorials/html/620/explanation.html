@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>620. Canvas vs. SVG: Technology, Scalability, Performance</h1>
+<p>Let&#39;s begin comparing <code class="language-html">&lt;canvas&gt;</code> and <code class="language-html">&lt;svg&gt;</code> across key criteria.</p>
+<p><strong>1. Underlying Technology:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;canvas&gt;</code>:</strong><ul>
+<li><strong>Bitmap/Raster:</strong> Renders graphics onto a pixel grid.</li>
+<li><strong>Immediate Mode API:</strong> Drawing is done via JavaScript commands (<code>ctx.fillRect</code>, <code>ctx.lineTo</code>, etc.). The browser doesn&#39;t retain a model of the drawn objects.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;svg&gt;</code>:</strong><ul>
+<li><strong>Vector:</strong> Describes graphics using mathematical shapes defined in XML markup.</li>
+<li><strong>Retained Mode DOM:</strong> The browser builds and retains a DOM tree representing the shapes. Changes are made by modifying this DOM.</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. Scalability &amp; Resolution:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;canvas&gt;</code>:</strong> <strong>Resolution-Dependent.</strong> Scaling the element larger than its <code>width</code>/<code>height</code> attribute buffer size causes blurriness/pixelation. Requires special handling for high-DPI displays to remain crisp.</li>
+<li><strong><code class="language-html">&lt;svg&gt;</code>:</strong> <strong>Resolution-Independent.</strong> Scales infinitely up or down without any loss of quality. Lines and text remain perfectly sharp at any size or zoom level. Naturally suited for high-DPI displays.</li>
+</ul>
+<p><strong>3. Performance:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;canvas&gt;</code>:</strong><ul>
+<li><strong>Strengths:</strong> Generally performs better when rendering a <strong>very large number</strong> (thousands) of simple objects or when doing intensive <strong>pixel-level manipulation</strong>. Better suited for complex, <strong>high-frame-rate animations</strong> or games where DOM overhead would be too high. WebGL context leverages GPU acceleration effectively.</li>
+<li><strong>Weaknesses:</strong> Performance can degrade significantly as the <strong>canvas pixel area</strong> (<code>width</code> * <code>height</code>) increases. Redrawing complex static scenes repeatedly can be inefficient if not optimized.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;svg&gt;</code>:</strong><ul>
+<li><strong>Strengths:</strong> Generally performs better for graphics with a <strong>smaller number of complex objects</strong>, especially over <strong>large surface areas</strong>. Redrawing is handled automatically by the browser when the DOM changes, which can be efficient for static or moderately interactive graphics.</li>
+<li><strong>Weaknesses:</strong> Performance can degrade as the <strong>number of elements in the SVG DOM increases</strong>. Very complex SVGs with thousands of nodes can become slow to render and manipulate. Complex filters can also be costly.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Compare these fundamental differences. Think about a simple icon versus a complex real-time game scene – which technology seems better suited for each based on scalability and performance characteristics?</p>
+<p>✨ <strong>Key Takeaway:</strong> Choose <code class="language-html">&lt;svg&gt;</code> for scalability and when dealing with fewer, potentially complex objects. Choose <code class="language-html">&lt;canvas&gt;</code> for performance with large numbers of simple objects, pixel manipulation, or high-framerate animations, but be mindful of resolution dependence and canvas size impact.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Spanning Columns & Rows</h1>
+  <p>Using 'colspan' on a header cell (th):</p> <!-- Adjusted P -->
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"></th> <!-- Row Header Column -->
+        <th scope="col" colspan="2">Measurement Range</th> <!-- Header spanning 2 cols -->
+        <!-- No third th needed here because of colspan="2" -->
+      </tr>
+      <tr>
+        <th scope="col"></th> <!-- Empty cell aligned with Row Header Column -->
+        <th scope="col">Min Value</th> <!-- Sub-header 1 -->
+        <th scope="col">Max Value</th> <!-- Sub-header 2 -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Sensor A</th> <!-- Row header -->
+        <td>10</td> <!-- Data for Min -->
+        <td>100</td> <!-- Data for Max -->
+      </tr>
+      <tr>
+        <th scope="row">Sensor B</th> <!-- Row header -->
+        <td>15</td> <!-- Data for Min -->
+        <td>120</td> <!-- Data for Max -->
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The "Measurement Range" header spans two columns.</p> <!-- Adjusted P -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

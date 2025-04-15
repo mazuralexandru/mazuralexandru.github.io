@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Form Validation Attributes</h1>
+  <p>The 'required' attribute makes input mandatory.</p>
+
+  <form action="/submit-data" method="POST">
+    <p>
+      <label for="email_req">Email (Required):</label>
+      <input type="email" id="email_req" name="email_required" required> <!-- Added required -->
+    </p>
+     <p>
+      <label for="comment_opt">Comment (Optional):</label>
+      <textarea id="comment_opt" name="comment_optional"></textarea> <!-- No required -->
+    </p>
+    <p><button type="submit">Submit</button></p>
+  </form>
+
+  <p>Browser prevents submission if required fields are empty.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

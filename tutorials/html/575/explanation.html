@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>575. Legacy Embedding: Historical Context &amp; Purpose (<code class="language-html">&lt;embed&gt;</code>, <code class="language-html">&lt;object&gt;</code>)</h1>
+<p>Before HTML5 standardized <code class="language-html">&lt;video&gt;</code>, <code class="language-html">&lt;audio&gt;</code>, <code class="language-html">&lt;svg&gt;</code>, and <code class="language-html">&lt;canvas&gt;</code>, there wasn&#39;t a universal, built-in way for browsers to handle diverse types of non-HTML content (like Flash animations, Java applets, PDFs, multimedia players).</p>
+<p><strong>The Role of Plugins:</strong></p>
+<ul>
+<li>Browsers relied heavily on third-party <strong>plugins</strong> (NPAPI, ActiveX controls in IE) – separate software components installed into the browser – to render this external content. Examples included Adobe Flash Player, Adobe Acrobat Reader (for PDFs), Apple QuickTime, Windows Media Player, RealPlayer, Java Runtime Environment.</li>
+</ul>
+<p><strong>The Generic Embedding Elements:</strong></p>
+<ul>
+<li><code class="language-html">&lt;embed&gt;</code> and <code class="language-html">&lt;object&gt;</code> were introduced as generic ways to invoke these plugins within an HTML page.</li>
+<li>They essentially told the browser: &quot;Here is a resource at this URL (<code>src</code> or <code>data</code>), and its type is specified (<code>type</code>). Find the appropriate installed plugin to handle it and display it in this allocated space.&quot;</li>
+</ul>
+<p><strong>Problems with the Plugin Era:</strong></p>
+<ul>
+<li><strong>Security:</strong> Plugins were a major source of browser security vulnerabilities (Flash was notorious).</li>
+<li><strong>Stability:</strong> Plugins often caused browser crashes or performance issues.</li>
+<li><strong>Installation Burden:</strong> Users had to manually find, install, and keep plugins updated.</li>
+<li><strong>Cross-Platform Issues:</strong> Plugins weren&#39;t available on all operating systems or devices (especially mobile, where Flash was largely absent).</li>
+<li><strong>Accessibility:</strong> Plugin content was often a &quot;black box&quot; inaccessible to screen readers.</li>
+<li><strong>Proprietary Technology:</strong> Many plugins were based on proprietary technologies.</li>
+</ul>
+<p><strong>The Shift to Native HTML5:</strong></p>
+<ul>
+<li>HTML5 aimed to replace the need for most common plugins by building support for video, audio, vector graphics (SVG), and dynamic graphics (Canvas) directly into the browser standards.</li>
+<li>This led to the <strong>deprecation of most browser plugins</strong>, most notably Flash Player, which is no longer supported by any major browser.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Understand the history: <code class="language-html">&lt;embed&gt;</code> and <code class="language-html">&lt;object&gt;</code> were necessary in the past to load content via external plugins (like Flash). HTML5&#39;s native media and graphics elements have largely replaced this need, making plugins obsolete and these embedding tags much less relevant for their original primary purpose.</p>
+<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;embed&gt;</code> and <code class="language-html">&lt;object&gt;</code> were historically used to include content requiring browser plugins (Flash, Java, etc.). HTML5 native elements (<code class="language-html">&lt;video&gt;</code>, <code class="language-html">&lt;audio&gt;</code>, <code class="language-html">&lt;svg&gt;</code>, etc.) have largely superseded this plugin-dependent approach due to security, compatibility, accessibility, and performance reasons.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

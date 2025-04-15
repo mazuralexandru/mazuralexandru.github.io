@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>605. Graphics: SVG (<code class="language-html">&lt;svg&gt;</code>) - The <code class="language-html">&lt;svg&gt;</code> Root Element</h1>
+<p>Let&#39;s start building an SVG graphic by adding the root <code class="language-html">&lt;svg&gt;</code> element directly into our HTML (inline SVG).</p>
+<p><strong>The <code class="language-html">&lt;svg&gt;</code> Element:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Acts as the <strong>container</strong> for all elements defining an SVG graphic when embedded inline or as the root element of an <code>.svg</code> file. It establishes the <strong>viewport</strong> (the display area) and the internal <strong>coordinate system</strong>.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;svg ...attributes...&gt; ... SVG content (shapes, text, etc.) ... &lt;/svg&gt;</code></li>
+<li>Requires opening and closing tags.</li>
+</ul>
+<p><strong>Key Attributes for <code class="language-html">&lt;svg&gt;</code> Root:</strong></p>
+<ol>
+<li><strong><code>width</code> &amp; <code>height</code>:</strong><ul>
+<li>Specify the size of the SVG viewport <strong>as rendered on the HTML page</strong>.</li>
+<li>Can use CSS units (px, em, %) or be unitless numbers (interpreted as pixels).</li>
+<li>Similar to <code class="language-html">&lt;img&gt;</code> dimensions, defines the space the SVG occupies.</li>
+</ul>
+</li>
+<li><strong><code>viewBox=&quot;min-x min-y width height&quot;</code> [Crucial for Scaling]:</strong><ul>
+<li>Defines the boundaries and aspect ratio of the SVG&#39;s <strong>internal coordinate system</strong>. It specifies a rectangular region in user space that is mapped onto the viewport defined by <code>width</code>/<code>height</code>.</li>
+<li><code>min-x</code>, <code>min-y</code>: Coordinates of the top-left corner of the viewbox.</li>
+<li><code>width</code>, <code>height</code>: The width and height of the viewbox in user units. These numbers define the scale of your drawing coordinates.</li>
+<li><strong>Example:</strong> <code class="language-html">viewBox=&quot;0 0 100 50&quot;</code> means the internal coordinate system goes from (0,0) to (100,50). If the <code class="language-html">&lt;svg&gt;</code> element has <code>width=&quot;200&quot; height=&quot;100&quot;</code>, the internal 100x50 drawing will be scaled up 2x to fit the 200x100 viewport.</li>
+<li>Using <code>viewBox</code> allows you to draw using convenient internal coordinates and have the browser automatically scale the graphic to fit the <code>width</code>/<code>height</code> attributes, maintaining aspect ratio by default.</li>
+</ul>
+</li>
+<li><strong><code>preserveAspectRatio</code> [Optional]:</strong> Controls alignment and scaling if the <code>viewBox</code> aspect ratio doesn&#39;t match the <code>width</code>/<code>height</code> aspect ratio. (Defaults to <code>xMidYMid meet</code> - center the graphic and scale it down to fit entirely).</li>
+<li><strong><code>xmlns=&quot;http://www.w3.org/2000/svg&quot;</code> [Often Included]:</strong> XML namespace declaration. Technically required for XML validity, browsers usually handle inline SVG in HTML5 without it, but including it is good practice for robustness and tool compatibility.</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a basic, empty inline <code class="language-html">&lt;svg&gt;</code> element to <code>index.html</code> with <code>width</code>, <code>height</code>, and <code>viewBox</code>. We&#39;ve also added temporary CSS to visualize its boundary.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;head&gt;
+  ...
+  &lt;style&gt;
+    svg { /* Basic SVG styling */
+      border: 1px dashed skyblue;
+      margin: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Inline SVG Example&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Placing &amp;lt;svg&amp;gt; markup directly in HTML.&lt;/p&gt;
+
+  &lt;!-- Added Inline SVG --&gt;
+  &lt;svg width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+     &lt;!-- Shapes will go inside here --&gt;
+     &lt;!-- Title and Desc for accessibility added later --&gt;
+  &lt;/svg&gt;
+
+  &lt;p&gt;Requires width, height attributes. ViewBox controls coordinate system.&lt;/p&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;svg&gt;</code> element in <code>index.html</code>. Note the <code>width</code>, <code>height</code>, and <code>viewBox</code> attributes. (Here, the aspect ratios match).</li>
+<li>Look at the browser preview. You should see an <strong>empty square box</strong> (100x100 pixels) with a dashed sky blue border. This is the viewport defined by the <code class="language-html">&lt;svg&gt;</code> element, ready for drawing inside.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;svg&gt;</code> element is the container for SVG graphics. Use <code>width</code> and <code>height</code> to set its display size and <code>viewBox</code> to define the internal coordinate system and enable scaling.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

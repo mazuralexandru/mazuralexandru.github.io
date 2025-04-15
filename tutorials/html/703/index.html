@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Introduction to ARIA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .icon-button { background: #555; border: 1px solid #888; padding: 5px; cursor: pointer; display: inline-block; }
+    .icon-button img { vertical-align: middle; }
+    .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <h1>Introduction to ARIA</h1>
+  <p>ARIA Roles, States, and Properties provide extra semantics.</p>
+
+  <h2>Example: Icon Button Accessible Name</h2>
+
+  <!-- Problem: No visible text label -->
+  <button type="button" class="icon-button">
+    <img src="/icons/close.svg" alt=""> <!-- Decorative alt -->
+  </button>
+  <span>(Button with no accessible name - BAD)</span>
+
+  <br><br>
+
+  <!-- Solution 1: aria-label -->
+  <button type="button" class="icon-button" aria-label="Close dialog"> <!-- Added aria-label -->
+    <img src="/icons/close.svg" alt="">
+  </button>
+  <span>(Button with aria-label - GOOD)</span>
+
+   <br><br>
+
+  <!-- Solution 2: Visually hidden text (Often preferred over aria-label) -->
+  <button type="button" class="icon-button">
+    <img src="/icons/close.svg" alt="">
+    <span class="visually-hidden">Close dialog</span> <!-- Visually hidden text -->
+  </button>
+  <span>(Button with visually hidden text - ALSO GOOD)</span>
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>466. Forms: Options (<code class="language-html">&lt;option&gt;</code>) - <code>selected</code> and <code>disabled</code> Attributes</h1>
+<p>Two useful boolean attributes can be applied to <code class="language-html">&lt;option&gt;</code> elements: <code>selected</code> and <code>disabled</code>.</p>
+<p><strong>1. <code>selected</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies that this <code class="language-html">&lt;option&gt;</code> should be <strong>pre-selected</strong> when the page loads.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;option value=&quot;...&quot; selected&gt;...&lt;/option&gt;</code></li>
+<li><strong>Behavior:</strong><ul>
+<li>The text of the <code>selected</code> option is displayed in the <code class="language-html">&lt;select&gt;</code> box by default.</li>
+<li>If no <code>selected</code> attribute is present on any <code class="language-html">&lt;option&gt;</code>, the browser typically selects the <em>first</em> option in the list by default.</li>
+<li>In a single-choice <code class="language-html">&lt;select&gt;</code> (default), only <strong>one</strong> <code class="language-html">&lt;option&gt;</code> should have the <code>selected</code> attribute. If multiple have it, the browser usually selects the <em>last</em> one marked as <code>selected</code> in the source order.</li>
+<li>In a multi-select <code class="language-html">&lt;select multiple&gt;</code>, multiple options can have the <code>selected</code> attribute.</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. <code>disabled</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Disables an <code class="language-html">&lt;option&gt;</code>, making it <strong>unselectable</strong> by the user.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;option value=&quot;...&quot; disabled&gt;...&lt;/option&gt;</code></li>
+<li><strong>Behavior:</strong><ul>
+<li>The option appears in the dropdown list, but it&#39;s typically greyed out and cannot be chosen.</li>
+<li>Often used for placeholder options (like &quot;-- Please select --&quot;) or options that are temporarily unavailable.</li>
+<li>A <code>disabled</code> option cannot be submitted. If a <code>disabled</code> option also has <code>selected</code>, the form control might behave as if no option is selected initially (depending on browser).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve modified the <code class="language-html">&lt;option&gt;</code> elements in <code class="language-text">index.html</code>:</p>
+<ol>
+<li>Added a first, disabled, selected option as a placeholder.</li>
+<li>Removed <code>selected</code> from the &quot;Canada&quot; option (now the placeholder is selected).</li>
+<li>Added the <code>disabled</code> attribute to the &quot;United Kingdom&quot; option.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;country-select&quot;&gt;Choose a country:&lt;/label&gt;
+    &lt;select name=&quot;country&quot; id=&quot;country-select&quot;&gt;
+      &lt;option value=&quot;&quot; disabled selected&gt;-- Please select --&lt;/option&gt; &lt;!-- Placeholder --&gt;
+      &lt;option value=&quot;US&quot;&gt;United States&lt;/option&gt;
+      &lt;option value=&quot;CA&quot;&gt;Canada&lt;/option&gt;
+      &lt;option value=&quot;GB&quot; disabled&gt;United Kingdom (Unavailable)&lt;/option&gt; &lt;!-- Disabled option --&gt;
+      &lt;option value=&quot;AU&quot;&gt;Australia&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the attributes on the <code class="language-html">&lt;option&gt;</code> tags. Note <code>disabled selected</code> on the first and <code>disabled</code> on the fourth.</li>
+<li>Look at the browser preview:<ul>
+<li>The text displayed in the box initially is &quot;-- Please select --&quot;.</li>
+<li>Click the dropdown. The &quot;-- Please select --&quot; option might be slightly greyed out or unselectable.</li>
+<li>The &quot;United Kingdom (Unavailable)&quot; option should appear greyed out and you should not be able to select it.</li>
+<li>You can select &quot;United States&quot;, &quot;Canada&quot;, or &quot;Australia&quot;.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the boolean <code>selected</code> attribute to pre-select a default <code class="language-html">&lt;option&gt;</code>. Use the boolean <code>disabled</code> attribute to make an <code class="language-html">&lt;option&gt;</code> visible but unselectable. A common pattern is <code class="language-html">&lt;option value=&quot;&quot; disabled selected&gt;-- Please select --&lt;/option&gt;</code> for placeholder instructions.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

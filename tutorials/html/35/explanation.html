@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>35. Text: Headings (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>) - Fundamentals</h1>
+<p>After paragraphs, the next most important elements for structuring text content are <strong>headings</strong>. Headings create a hierarchy and outline for your document.</p>
+<p><strong>Heading Elements (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Define headings for sections and subsections of a document. They signal the topic of the content that follows them.</li>
+<li><strong>Hierarchy:</strong> There are six levels of headings:<ul>
+<li><code class="language-html">&lt;h1&gt;</code>: The highest level, typically used for the main title of the entire page or document.</li>
+<li><code class="language-html">&lt;h2&gt;</code>: Represents a major section heading.</li>
+<li><code class="language-html">&lt;h3&gt;</code>: Represents a subsection within an <code class="language-html">&lt;h2&gt;</code> section.</li>
+<li><code class="language-html">&lt;h4&gt;</code>, <code class="language-html">&lt;h5&gt;</code>, <code class="language-html">&lt;h6&gt;</code>: Represent progressively lower levels of subsections.</li>
+</ul>
+</li>
+<li><strong>Semantics:</strong> Headings establish the <strong>structure</strong> and <strong>outline</strong> of your content. They are crucial for understanding the organization of the information.</li>
+<li><strong>Type:</strong> Like paragraphs, headings are <strong>block-level</strong> elements. They start on new lines and typically have default top and bottom margins.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve made a few changes to <code class="language-text">index.html</code>:</p>
+<ol>
+<li>Updated the <code class="language-html">&lt;title&gt;</code> to be more relevant.</li>
+<li>Removed the instructional HTML comments from the previous module to reduce clutter.</li>
+<li>Kept the existing <code class="language-html">&lt;h1&gt;</code>.</li>
+<li>Added an <code class="language-html">&lt;h2&gt;</code> element to represent the start of a major section.</li>
+<li>Adjusted the paragraph text slightly for context.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Structuring Text&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;!-- Comments removed --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt; &lt;!-- Existing h1 --&gt;
+  &lt;p&gt;This is the introductory paragraph following the main title.&lt;/p&gt;
+
+  &lt;h2&gt;A Major Section Title (h2)&lt;/h2&gt; &lt;!-- Added h2 --&gt;
+  &lt;p&gt;This paragraph belongs to the first major section, introduced by the h2 heading above.&lt;/p&gt;
+  &lt;p&gt;Another paragraph within the same section.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the updated <code class="language-text">index.html</code>. Note the structure: <code class="language-html">&lt;h1&gt;</code> followed by <code class="language-html">&lt;p&gt;</code>, then <code class="language-html">&lt;h2&gt;</code> followed by more <code class="language-html">&lt;p&gt;</code>s.</li>
+<li>Look at the browser preview. You should see:<ul>
+<li>The <code class="language-html">&lt;h1&gt;</code> text rendered in a large, bold font (default browser style).</li>
+<li>The <code class="language-html">&lt;h2&gt;</code> text rendered below the first paragraph, also bold, but slightly smaller than the <code class="language-html">&lt;h1&gt;</code> (default browser style).</li>
+<li>Clear visual hierarchy established by the different heading sizes and spacing.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use heading elements <code class="language-html">&lt;h1&gt;</code> through <code class="language-html">&lt;h6&gt;</code> to define the structural outline of your page, with <code class="language-html">&lt;h1&gt;</code> being the most important and <code class="language-html">&lt;h6&gt;</code> the least.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

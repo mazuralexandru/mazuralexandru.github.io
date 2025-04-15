@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>204. Link Content: Best Practices for Writing Link Text</h1>
+<p>Based on the previous examples, let&#39;s summarize some key best practices for writing effective link text:</p>
+<ol>
+<li><p><strong>Be Specific and Descriptive:</strong> The link text should clearly and accurately describe the content the user will find or the action that will occur when they click the link. Integrate the description naturally into the sentence where possible.</p>
+<ul>
+<li><em>Instead of:</em> &quot;Click here for the report.&quot;</li>
+<li><em>Try:</em> &quot;View the <a href="...">Quarterly Sales Report</a>.&quot;</li>
+</ul>
+</li>
+<li><p><strong>Be Concise (But Clear):</strong> While descriptive, avoid overly long or verbose link text. Find a balance between clarity and brevity.</p>
+<ul>
+<li><em>Okay:</em> &quot;<a href="...">Read the full minutes from the committee meeting held on Tuesday discussing budget allocations</a>.&quot;</li>
+<li><em>Better:</em> &quot;<a href="...">Read the full minutes from the budget committee meeting</a>.&quot; (Assuming context makes date clear).</li>
+</ul>
+</li>
+<li><p><strong>Avoid Generic Phrases:</strong> Actively avoid uninformative phrases like &quot;Click Here,&quot; &quot;More,&quot; &quot;Read More,&quot; &quot;Link,&quot; &quot;Info,&quot; etc., <em>unless</em> the surrounding context or an ARIA attribute provides the necessary description (prefer making the link text itself descriptive).</p>
+</li>
+<li><p><strong>Indicate File Types/Actions:</strong> If linking to a non-HTML resource, inform the user.</p>
+<ul>
+<li>&quot;Download <a href="...">Application Form (PDF)</a>&quot;</li>
+<li>&quot;View <a href="...">Product Image (JPG)</a>&quot;</li>
+<li>&quot;<a href="mailto:...">Email Support</a>&quot;</li>
+<li>&quot;<a href="tel:...">Call Sales</a>&quot;</li>
+</ul>
+</li>
+<li><p><strong>Front-Load Information:</strong> Place the most important identifying words at the <em>beginning</em> of the link text. This helps users scanning the page or listening via screen reader grasp the link&#39;s purpose faster.</p>
+<ul>
+<li><em>Less Good:</em> &quot;Information about <a href="...">our company history</a> can be found here.&quot;</li>
+<li><em>Better:</em> &quot;Read about <a href="...">our company history</a>.&quot;</li>
+</ul>
+</li>
+<li><p><strong>Maintain Consistency:</strong> Use a consistent style and tone for link text throughout your website.</p>
+</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Review the &quot;Good Examples&quot; list from the previous step (<code class="language-text">index.html</code> lesson 203) and see how they align with these best practices (descriptive, specific, indicate file type).</p>
+<p>✨ <strong>Key Takeaway:</strong> Writing effective link text involves being specific, descriptive, reasonably concise, avoiding generic terms, indicating file types/actions, and placing key information early.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic landmark/section visualization */
+    body > header, body > nav, body > main, body > footer, main article, main section, main aside {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    nav ul { list-style: none; padding: 0; } /* Basic nav list style */
+    nav li { display: inline-block; margin-right: 10px; }
+    article header h2 { margin: 0 0 0.5em 0; } /* Basic article heading style */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Site Title / Logo Area</h1>
+    <nav aria-label="Primary site navigation">
+      <ul>...</ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Main Content Title (Blog Page Example)</h1> <!-- Updated main title -->
+
+    <!-- Added article element -->
+    <article>
+      <header> <!-- Article header -->
+        <h2>Blog Post Title One</h2>
+        <p>Published on <time datetime="2024-03-15">March 15, 2024</time></p>
+      </header>
+      <p>This is the first paragraph of the blog post. It stands alone as a self-contained piece of content...</p>
+      <p>More content for the first blog post...</p>
+    </article>
+
+  </main>
+
+  <footer>...</footer>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

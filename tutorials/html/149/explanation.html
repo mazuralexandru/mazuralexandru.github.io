@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>149. Anchor Element (<code class="language-html">&lt;a&gt;</code>): Basic Syntax Structure</h1>
+<p>Let&#39;s write our first (though not yet functional) anchor element.</p>
+<p><strong>Basic Syntax:</strong></p>
+<p>The anchor element uses an opening tag (<code class="language-html">&lt;a&gt;</code>) and a closing tag (<code class="language-html">&lt;/a&gt;</code>). The content that the user sees and interacts with goes between these tags.</p>
+<pre class="language-html"><code class="language-html">&lt;a&gt;Link Content Goes Here&lt;/a&gt;
+</code></pre>
+<p><strong>Attributes are Key:</strong></p>
+<p>While this structure creates the element, an anchor element is only a functional <em>hyperlink</em> when it includes the crucial <code class="language-html">href</code> attribute to specify the destination. Without <code>href</code>, it&#39;s considered a <strong>placeholder link</strong>.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a very basic <code class="language-html">&lt;a&gt;</code> element containing text to <code class="language-text">index.html</code>. Notice that it <strong>does not have an <code>href</code> attribute yet</strong>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;Here is an anchor element: &lt;a&gt;Empty Anchor&lt;/a&gt;&lt;/p&gt; &lt;!-- Added simple &lt;a&gt; tag --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;a&gt;Empty Anchor&lt;/a&gt;</code> code in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. You&#39;ll see the text &quot;Empty Anchor&quot;. How does it look?<ul>
+<li>It will likely appear as <strong>plain text</strong>, indistinguishable from the surrounding paragraph text.</li>
+<li>It will <strong>not</strong> have the typical link styling (like blue color and underlining) because it lacks the <code>href</code> attribute that makes it a true hyperlink.</li>
+<li>It might be focusable if you use the Tab key (depending on browser), but clicking it will do nothing.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The basic structure of an anchor element is <code class="language-html">&lt;a&gt;...&lt;/a&gt;</code>. Without an <code>href</code> attribute, it acts as a non-functional placeholder link and typically lacks default link styling.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

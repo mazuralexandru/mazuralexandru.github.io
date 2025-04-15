@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>531. Embedding: IFrames (<code class="language-html">&lt;iframe&gt;</code>) - The <code>sandbox</code> Attribute</h1>
+<p>When embedding content, especially from third-party sources you don&#39;t fully control, the <code class="language-html">sandbox</code> attribute is a crucial security feature.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">sandbox</code> attribute imposes a set of <strong>restrictions</strong> on the content loaded within the <code class="language-html">&lt;iframe&gt;</code>.</li>
+<li>It allows the embedding page to limit the capabilities of the embedded content, reducing the potential attack surface if the embedded content is untrusted or malicious.</li>
+</ul>
+<p><strong>Syntax &amp; Values:</strong></p>
+<ul>
+<li><strong>Boolean Attribute (<code class="language-html">sandbox</code>):</strong> If present without any value, it enables <strong>all</strong> possible restrictions. This is the most secure default but might break legitimate functionality if the embedded content needs certain permissions.
+<code class="language-html">&lt;iframe src=&quot;...&quot; title=&quot;...&quot; sandbox&gt;&lt;/iframe&gt;</code></li>
+<li><strong>With Allow Tokens (<code class="language-html">sandbox=&quot;value1 value2 ...&quot;</code>):</strong> You can specify space-separated tokens to <strong>relax</strong> specific restrictions, allowing certain capabilities. If any tokens are specified, only those capabilities are granted; all other restrictions remain in place.<ul>
+<li><strong>Common Allow Tokens:</strong><ul>
+<li><code>allow-forms</code>: Permits form submission.</li>
+<li><code>allow-scripts</code>: Permits script execution (use with extreme caution if content is untrusted).</li>
+<li><code>allow-same-origin</code>: Allows the content to be treated as being from its actual origin (enabling access to cookies, localStorage, etc., from that origin). Without this, content is treated as being from a unique, opaque origin, blocking most data access.</li>
+<li><code>allow-popups</code>: Permits popups (e.g., <code>window.open()</code>, <code>target=&quot;_blank&quot;</code>).</li>
+<li><code>allow-modals</code>: Permits modal dialogs (<code>alert()</code>, <code>confirm()</code>, <code>prompt()</code>).</li>
+<li><code>allow-top-navigation</code>: Allows the content to navigate the top-level browsing context (the main window).</li>
+<li><code>allow-top-navigation-by-user-activation</code>: Allows top-level navigation only if triggered by user interaction.</li>
+<li><code>allow-pointer-lock</code>: Allows use of the Pointer Lock API.</li>
+<li><code>allow-presentation</code>: Allows use of the Presentation API.</li>
+<li><em>(And others...)</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Security Best Practice:</strong></p>
+<ul>
+<li><strong>Apply <code>sandbox</code> whenever embedding potentially untrusted third-party content.</strong></li>
+<li><strong>Start with maximum restrictions</strong> (just <code class="language-html">sandbox</code> or <code class="language-html">sandbox=&quot;&quot;</code>).</li>
+<li><strong>Only add specific <code>allow-*</code> tokens</strong> that are absolutely necessary for the embedded content to function correctly. Grant the minimum privileges required.</li>
+<li><strong>Be especially cautious</strong> with <code>allow-scripts</code> and <code>allow-same-origin</code> together, as this significantly reduces the sandbox&#39;s effectiveness if the embedded content&#39;s origin might host malicious scripts.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added the <code class="language-html">sandbox</code> attribute to our <code>iframe</code> example, allowing only scripts and same-origin access (a potentially common but still risky configuration). We&#39;ve also changed the <code>src</code> to a generic domain for the sandboxing concept.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Embedding External Content (&amp;lt;iframe&amp;gt;)&lt;/h1&gt;
+  &lt;p&gt;Using the &#39;sandbox&#39; attribute to restrict iframe capabilities:&lt;/p&gt;
+
+  &lt;!-- Added sandbox attribute --&gt;
+  &lt;iframe width=&quot;560&quot; height=&quot;315&quot;
+          src=&quot;https://www.example.com/&quot; &lt;!-- Changed src --&gt;
+          title=&quot;Sandboxed Example Domain&quot; &lt;!-- Updated title --&gt;
+          sandbox=&quot;allow-scripts allow-same-origin&quot;&gt; &lt;!-- Added sandbox with specific permissions --&gt;
+    &lt;!-- Note: Allowing scripts AND same-origin is potentially risky --&gt;
+    &lt;p&gt;Your browser does not support iframes.&lt;/p&gt;
+  &lt;/iframe&gt;
+
+  &lt;p&gt;Sandbox enhances security by limiting embedded content actions.&lt;/p&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>sandbox=&quot;allow-scripts allow-same-origin&quot;</code> attribute in the <code class="language-html">&lt;iframe&gt;</code> tag.</li>
+<li>The browser preview will attempt to load <code>example.com</code> within the frame.</li>
+<li><strong>(Conceptual):</strong> Because of the <code>sandbox</code> attribute (even with these <code>allow</code> tokens), <code>example.com</code> loaded in this iframe would be prevented from doing many things by default, such as submitting forms, opening popups, or navigating the top-level window, unless those specific permissions were also added to the <code>sandbox</code> attribute value. It <em>can</em> run its own scripts (<code>allow-scripts</code>) and potentially access its own origin&#39;s data (<code>allow-same-origin</code>).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">sandbox</code> attribute on <code class="language-html">&lt;iframe&gt;</code> to restrict the capabilities of embedded content, enhancing security. Start with maximum restrictions (<code>sandbox</code> alone) and add specific <code>allow-*</code> tokens only as needed. <strong>Essential</strong> for untrusted content.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

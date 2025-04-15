@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>182. Linking to Non-HTML Resources: Examples</h1>
+<p>Anchor elements aren&#39;t limited to linking just to other HTML web pages. You can use the <code class="language-html">href</code> attribute to point directly to various other types of files.</p>
+<p><strong>Concept:</strong></p>
+<p>The <code>href</code> value simply needs to be the correct URL (absolute or relative) pointing to the desired file on a web server.</p>
+<p><strong>Common Examples:</strong></p>
+<ul>
+<li><strong>PDF Documents:</strong> Linking to user manuals, reports, articles.</li>
+<li><strong>Image Files:</strong> Linking to view a larger version of an image, or for download.</li>
+<li><strong>Zip Archives / Other Downloads:</strong> Linking to software, data files, project archives.</li>
+<li><strong>Word Documents, Spreadsheets, Presentations:</strong> Linking to office documents.</li>
+<li><strong>Media Files:</strong> Linking directly to video or audio files (though embedding using <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code> is often preferred for playback).</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added several examples of links pointing to hypothetical non-HTML files using relative URLs in <code class="language-text">index.html</code>. We&#39;ve used <code class="language-html">&lt;br&gt;</code> tags simply to stack the links vertically for this demonstration.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;
+  Example Links (will likely show &#39;Not Found&#39; here):&lt;br&gt;
+  &lt;a href=&quot;/docs/user-manual.pdf&quot;&gt;User Manual (PDF)&lt;/a&gt;&lt;br&gt; &lt;!-- PDF Link --&gt;
+  &lt;a href=&quot;/images/logo-large.png&quot;&gt;Large Logo (PNG)&lt;/a&gt;&lt;br&gt; &lt;!-- Image Link --&gt;
+  &lt;a href=&quot;/downloads/archive.zip&quot;&gt;Download Archive (ZIP)&lt;/a&gt; &lt;!-- ZIP Link --&gt;
+&lt;/p&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code>href</code> attributes in the new links. Note how they point to file extensions like <code>.pdf</code>, <code>.png</code>, and <code>.zip</code>.</li>
+<li>In the browser preview, you see the three links styled as hyperlinks.</li>
+<li><strong>Behavior:</strong> Clicking these links in our current tutorial environment will almost certainly result in a &quot;File Not Found&quot; error because these files (<code>user-manual.pdf</code>, etc.) don&#39;t actually exist in our project. On a live website where these files <em>were</em> uploaded to the specified paths, clicking them would trigger the browser to handle the file (as discussed next).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> You can create links pointing directly to non-HTML files (PDFs, images, ZIPs, etc.) by setting the <code>href</code> attribute to the URL of that file.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

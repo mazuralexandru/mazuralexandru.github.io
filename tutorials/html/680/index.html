@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Validation Errors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Common Validation Errors</h1>
+
+  <h2>Error: Unescaped Characters</h2>
+
+  <!-- Bad Example -->
+  <p>Less than: 5 < 10</p> <!-- Unescaped '<' -->
+  <p>Ampersand: Cats & Dogs</p> <!-- Unescaped '&' -->
+  <p><a href="test.php?a=1&b=2">Link with unescaped &amp;</a></p> <!-- Unescaped '&' in href -->
+
+  <hr> <!-- Separator -->
+
+  <!-- Good Example -->
+  <p>Less than: 5 &lt; 10</p> <!-- Correctly escaped -->
+  <p>Ampersand: Cats &amp; Dogs</p> <!-- Correctly escaped -->
+  <p><a href="test.php?a=1&amp;b=2">Link with escaped &amp;</a></p> <!-- Correctly escaped -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

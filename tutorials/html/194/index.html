@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Links</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Special Link Protocols</h1>
+  <p>Adding a 'body' parameter (requires careful encoding):</p>
+
+  <p>
+    <!-- %0D%0A represents a line break -->
+    <a href="mailto:support@example.com?subject=Support%20Request&body=Dear%20Support%20Team,%0D%0A%0D%0AI%20need%20help%20with...">
+      Email Support (with Body)
+    </a> <!-- Added &body=... with encoded line breaks -->
+  </p>
+
+  <p>Line breaks (%0D%0A) and other special characters must be encoded.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

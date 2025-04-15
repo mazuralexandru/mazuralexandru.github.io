@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Entities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Entity Parsing & Semicolons</h1> <!-- Updated H1 -->
+  <p>How browsers process entity codes.</p> <!-- Adjusted P -->
+
+  <!-- Removed comparison paragraph -->
+
+  <p>The trailing semicolon ';' is technically required for named entities and strongly recommended for numeric ones to avoid ambiguity.</p>
+
+  <p>Correct: <code>&amp;amp;</code> renders as &amp;<br> <!-- Use code tag for literal rendering -->
+     Lenient (Avoid): <code>&amp;amp</code> might render as &amp in some browsers, but is risky.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

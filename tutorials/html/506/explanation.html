@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>506. Reset: Preparing for Landmark Elements (<code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;footer&gt;</code>, etc.)</h1>
+<p>We&#39;ve established the difference between semantic and non-semantic elements and the appropriate use of generic containers (<code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;span&gt;</code>).</p>
+<p>Now, let&#39;s dive into the specific HTML5 elements designed to define the <strong>major structural regions</strong> or <strong>landmarks</strong> of a typical web page: <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;footer&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, and <code class="language-html">&lt;main&gt;</code>.</p>
+<p>To focus on these elements, we will remove the <code class="language-html">&lt;div&gt;</code> and <code class="language-html">&lt;span&gt;</code> examples and the temporary CSS used to style them.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Isolate the concept of landmark elements and their specific semantic roles.</li>
+<li><strong>Clean Slate:</strong> Provide an empty <code class="language-html">&lt;body&gt;</code> structure where we can build a basic page layout using semantic landmarks.</li>
+<li><strong>Remove Demo Styles:</strong> Eliminate the temporary CSS associated with the <code>div</code>/<code>span</code> examples.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code class="language-html">&lt;div class=&quot;content-wrapper&quot;&gt;</code> block (and its contents) from the <code class="language-html">&lt;body&gt;</code> of <code class="language-text">index.html</code>.</li>
+<li>Removed the temporary <code class="language-html">&lt;style&gt;</code> block from the <code class="language-html">&lt;head&gt;</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Semantic HTML&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;!-- Removed temporary styles --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Page Structure Landmarks&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Resetting page to demonstrate structural landmark elements.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed div/span example --&gt;
+  &lt;!-- &lt;div class=&quot;content-wrapper&quot;&gt;...&lt;/div&gt; --&gt;
+
+  &lt;p&gt;We&#39;ll add header, nav, main, and footer elements.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of the <code class="language-html">&lt;div&gt;</code> example from the <code class="language-html">&lt;body&gt;</code> and the <code class="language-html">&lt;style&gt;</code> block from the <code class="language-html">&lt;head&gt;</code>.</li>
+<li>The browser preview should show only the heading and introductory paragraphs against the base dark theme. The dashed border and highlighted span text are gone.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Clearing the non-semantic examples prepares a clean page structure for demonstrating the use of core HTML5 landmark elements (<code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;footer&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

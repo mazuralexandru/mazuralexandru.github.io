@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>565. Multimedia: Video Tracks (<code class="language-html">&lt;track&gt;</code>) - WebVTT Format Overview</h1>
+<p>The external files linked via the <code class="language-html">&lt;track&gt;</code> element&#39;s <code>src</code> attribute need to be in a specific format. The standard format is <strong>WebVTT (Web Video Text Tracks)</strong>.</p>
+<p><strong>WebVTT Format:</strong></p>
+<ul>
+<li><strong>File Extension:</strong> <code>.vtt</code></li>
+<li><strong>MIME Type:</strong> <code>text/vtt</code></li>
+<li><strong>Purpose:</strong> Defines timed text cues (text + start/end times) and associated metadata.</li>
+<li><strong>Simple Text File:</strong> You can create/edit <code>.vtt</code> files using a basic text editor.</li>
+</ul>
+<p><strong>Basic Structure:</strong></p>
+<ol>
+<li><strong>Signature:</strong> Must start with the line <code>WEBVTT</code> optionally followed by a space and text header.</li>
+<li><strong>Blank Line:</strong> Requires at least one blank line after the signature.</li>
+<li><strong>Cues:</strong> Consists of one or more text track cues. Each cue typically has:<ul>
+<li><strong>(Optional) Cue Identifier:</strong> A unique name for the cue (e.g., <code>chapter-1</code>). Followed by a line break.</li>
+<li><strong>Timings:</strong> Start time --&gt; End time (e.g., <code>00:00:05.000 --&gt; 00:00:08.500</code>). Format is <code>HH:MM:SS.sss</code> or <code>MM:SS.sss</code>. Followed by a line break.</li>
+<li><strong>(Optional) Settings:</strong> Cue settings like <code>align:start</code>, <code>line:90%</code>, <code>position:10%</code>, <code>size:50%</code>, <code>vertical:lr</code>. Appear after timings on the same line, space-separated.</li>
+<li><strong>Payload Text:</strong> The actual text to be displayed during the cue&#39;s time range. Can span multiple lines. Must be followed by a blank line to separate it from the next cue.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example <code>.vtt</code> File (<code>captions_en.vtt</code>):</strong></p>
+<pre class="language-vtt"><code class="language-vtt">WEBVTT - English Captions for Example Video
+
+NOTE This is a comment and will be ignored.
+
+1 - intro
+00:00:03.500 --&gt; 00:00:07.200 align:middle
+Welcome to this demonstration
+of HTML5 video captions!
+
+2
+00:00:08.000 --&gt; 00:00:11.500
+Here we see the speaker talking.
+[Background music fades]
+
+00:00:12.100 --&gt; 00:00:14.900
+Now showing the code example...
+</code></pre>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Strict formatting is required (blank lines between cues are essential).</li>
+<li>Comments start with <code>NOTE</code>.</li>
+<li>Timestamps define when text appears and disappears.</li>
+<li>Payload text is what gets displayed or read.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No changes to <code>index.html</code>. Examine the example <code>.vtt</code> structure above. Understand that this is the kind of file you would create and link to using the <code class="language-html">&lt;track src=&quot;...&quot;&gt;</code> attribute. Creating accurate, synchronized VTT files often requires specialized captioning tools or services.</p>
+<p>✨ <strong>Key Takeaway:</strong> Timed text tracks for <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code> use the WebVTT (<code>.vtt</code>) format, which defines text cues with specific start and end times. Correct formatting is crucial.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

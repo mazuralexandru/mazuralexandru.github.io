@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>272. The <code>id</code> Attribute - Behavior &amp; Interactions: Fragment Identifiers</h1>
+<p>We briefly encountered fragment identifiers when discussing links in Module 4. The <code class="language-html">id</code> attribute is the key component that makes them work.</p>
+<p><strong>Mechanism Recap:</strong></p>
+<ol>
+<li><strong>Target Definition:</strong> You assign a unique <code class="language-html">id</code> attribute to the element you want to be able to link <em>to</em>.<pre class="language-html"><code class="language-html">&lt;h2 id=&quot;section-two&quot;&gt;Section Two&lt;/h2&gt;
+</code></pre>
+</li>
+<li><strong>Link Creation:</strong> You create an anchor (<code class="language-html">&lt;a&gt;</code>) element where the <code class="language-html">href</code> attribute value consists of a hash symbol (<code>#</code>) followed by the exact <code class="language-html">id</code> value of the target element.<pre class="language-html"><code class="language-html">&lt;a href=&quot;#section-two&quot;&gt;Go to Section Two&lt;/a&gt;
+</code></pre>
+</li>
+<li><strong>Browser Action:</strong> When the user clicks the link:<ul>
+<li>The browser looks for the element within the <strong>current document</strong> (if the <code class="language-html">href</code> is just <code>#id</code>) or the <strong>target document</strong> (if the <code class="language-html">href</code> is <code>page.html#id</code>) that has the matching <code class="language-html">id</code>.</li>
+<li>If found, the browser <strong>scrolls the page</strong> to bring that target element into view.</li>
+<li>The URL in the address bar is usually updated to include the fragment identifier (e.g., <code>current-page.html#section-two</code>).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Enables deep linking directly to specific sections of a web page.</li>
+<li>Facilitates intra-page navigation (e.g., tables of contents, &quot;skip to content&quot; links, &quot;back to top&quot; links).</li>
+</ul>
+<p><strong>Adding Elements for Demonstration:</strong></p>
+<p>To demonstrate this, we need:</p>
+<ol>
+<li>More content to make the page scrollable.</li>
+<li>A target element with an <code class="language-html">id</code>.</li>
+<li>A link pointing to that <code class="language-html">id</code>.</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Added temporary <code class="language-html">&lt;style&gt;</code> for spacing (normally in <code>style.css</code>).</li>
+<li>Added a second heading (<code class="language-html">&lt;h2&gt;</code>) with <code class="language-html">id=&quot;content-section&quot;</code>.</li>
+<li>Added spacer divs and extra paragraphs to create scrollable height.</li>
+<li>Added a &quot;Skip to Content&quot; link near the top targeting <code>#content-section</code>.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;HTML Global Attributes - ID&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;style&gt;
+    /* Temp styles for scrolling demo */
+    .spacer { height: 60vh; border-bottom: 1px dashed #555; margin-bottom: 1em; }
+    #content-section { margin-top: 1em; }
+    nav a { margin-right: 15px;}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav&gt; &lt;!-- Added nav for link placement --&gt;
+    &lt;a href=&quot;#content-section&quot;&gt;Skip to Content&lt;/a&gt; &lt;!-- Link to fragment --&gt;
+  &lt;/nav&gt;
+
+  &lt;h1 id=&quot;main-page-title&quot;&gt;Global Attributes - ID &amp; Fragments&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;The &#39;id&#39; attribute enables linking directly to page sections (fragments).&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;div class=&quot;spacer&quot;&gt;Scroll down to find the target section...&lt;/div&gt;
+
+  &lt;h2 id=&quot;content-section&quot;&gt;Main Content Section&lt;/h2&gt; &lt;!-- Target element with id --&gt;
+  &lt;p&gt;This is the section the &quot;Skip to Content&quot; link should jump to.&lt;/p&gt;
+  &lt;p&gt;Adding more text here just to ensure there is enough content below the target point for the scroll effect to be noticeable.&lt;/p&gt;
+  &lt;p&gt;Without sufficient content below, the browser might not appear to scroll much as the target is already near the bottom of the viewport.&lt;/p&gt;
+
+
+  &lt;!-- Removed old paras --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the added elements: the <code class="language-html">&lt;nav&gt;</code> with the link <code class="language-html">href=&quot;#content-section&quot;</code>, the spacer divs, and the <code class="language-html">&lt;h2&gt;</code> with <code class="language-html">id=&quot;content-section&quot;</code>.</li>
+<li>The preview page should now be taller.</li>
+<li>Click the &quot;Skip to Content&quot; link at the top. The browser should instantly scroll down, bringing the &quot;Main Content Section&quot; heading into view.</li>
+<li>Check your browser&#39;s address bar (if visible in your preview environment) – it likely now ends with <code>#content-section</code>.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">id</code> attribute serves as the target for fragment identifier links (<code class="language-html">href=&quot;#id&quot;</code>), enabling direct navigation to specific elements within a page. This is crucial for accessibility (&quot;skip links&quot;) and user navigation (tables of contents).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

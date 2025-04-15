@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic landmark/section visualization */
+    body > header, body > nav, body > main, body > footer, main article, main section, main aside {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    main { display: flex; gap: 20px; } /* Basic layout for main/aside */
+    main article { flex-grow: 1; } /* Allow article to grow */
+    main aside { flex-basis: 200px; flex-shrink: 0; } /* Fixed width aside */
+
+    nav ul { list-style: none; padding: 0; }
+    nav li { display: inline-block; margin-right: 10px; }
+    article header h2, section h3, aside h3 { margin: 0 0 0.5em 0; }
+  </style>
+</head>
+<body>
+  <header>...</header> <!-- Header assumed -->
+
+  <main> <!-- Display set to flex -->
+    <article>
+      <header>
+        <h2>Blog Post Title One</h2>
+        <p>Published on <time datetime="2024-03-15">March 15, 2024</time></p>
+      </header>
+      <p>This is the introductory paragraph of the blog post...</p>
+      <section>
+        <h3>Subsection: Key Features</h3>
+        <p>This section details the key features discussed in the blog post.</p>
+        <ul>...</ul>
+      </section>
+      <p>Concluding paragraph for the blog post...</p>
+    </article>
+
+    <!-- Added aside element (sibling to article, inside main) -->
+    <aside>
+      <h3>Related Links</h3>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+      <p>This sidebar content is tangentially related to the main article.</p>
+    </aside>
+
+  </main>
+
+  <footer>...</footer> <!-- Footer assumed -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

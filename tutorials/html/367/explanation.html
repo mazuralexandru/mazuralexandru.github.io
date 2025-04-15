@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>367. Reset: Preparing for Module Recap</h1>
+<p>We have now covered the main elements typically found within the <code class="language-html">&lt;head&gt;</code> section beyond the basics: <code class="language-html">&lt;meta&gt;</code> (with <code>charset</code>, <code>description</code>, <code>keywords</code>, <code>author</code>, <code>viewport</code>), <code class="language-html">&lt;link&gt;</code> (for <code>stylesheet</code> and <code>icon</code>), <code class="language-html">&lt;base&gt;</code>, <code class="language-html">&lt;style&gt;</code>, <code class="language-html">&lt;script&gt;</code>, and <code class="language-html">&lt;noscript&gt;</code>.</p>
+<p>This concludes the introduction of new elements and attributes for Module 7. To prepare for the module recap, we will remove the <code class="language-html">&lt;noscript&gt;</code> examples from our <code>index.html</code>.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift to summarizing all the metadata concepts covered in Module 7.</li>
+<li><strong>Clean Slate:</strong> Provide a minimal page structure containing only the most essential <code class="language-html">&lt;head&gt;</code> elements (<code>charset</code>, <code>title</code>, <code>link</code> to CSS) for the recap context.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code class="language-html">&lt;noscript&gt;</code> block from the <code class="language-html">&lt;head&gt;</code>.</li>
+<li>Removed the <code class="language-html">&lt;noscript&gt;</code> block from the <code class="language-html">&lt;body&gt;</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text for the recap.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;HTML Metadata Recap&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+
+  &lt;!-- Removed noscript block from head --&gt;
+  &lt;!-- Other meta tags will be added here --&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Module 7 Recap&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Preparing to recap Module 7: Metadata and the Document Head.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed noscript block from body --&gt;
+
+  &lt;p&gt;Let&#39;s summarize the key elements and their functions.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of both <code class="language-html">&lt;noscript&gt;</code> blocks from <code class="language-text">index.html</code>. The <code class="language-html">&lt;head&gt;</code> should now only contain <code>charset</code>, <code>title</code>, and the stylesheet <code>link</code>.</li>
+<li>The browser preview shows the &quot;Module 7 Recap&quot; heading and introductory paragraphs, ready for the summary.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the final <code class="language-html">&lt;noscript&gt;</code> examples resets the page to a basic state, suitable for summarizing the metadata elements covered in Module 7.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

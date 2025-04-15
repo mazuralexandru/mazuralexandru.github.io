@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>142. Module 3 Recap: Core Principle - Semantics First</h1>
+<p>Let&#39;s explicitly reiterate the single most important principle woven throughout this module (and indeed, all of HTML): <strong>Choose elements based on their semantic meaning, not their default visual appearance.</strong></p>
+<p><strong>Applying to Lists:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;ul&gt;</code> vs. <code class="language-html">&lt;ol&gt;</code>:</strong> The decision rests entirely on whether the <em>sequence</em> of items is meaningful. If yes, use <code class="language-html">&lt;ol&gt;</code>. If no, use <code class="language-html">&lt;ul&gt;</code>. Don&#39;t choose <code class="language-html">&lt;ol&gt;</code> just because you want numbers visually if the items have no inherent order.</li>
+<li><strong><code class="language-html">&lt;dl&gt;</code> vs. Others:</strong> Use <code class="language-html">&lt;dl&gt;</code> only for actual term/description or key/value pairs. Don&#39;t force other list types into a <code class="language-html">&lt;dl&gt;</code> just to achieve a specific layout (use CSS) or misuse <code class="language-html">&lt;dl&gt;</code> for general indentation.</li>
+<li><strong>Attributes vs. CSS:</strong><ul>
+<li>Don&#39;t use <code class="language-html">&lt;ol type=&quot;...&quot;&gt;</code> just to get letters or Roman numerals for styling; use CSS <code>list-style-type</code>. Only consider <code>type</code> if the marker style itself has semantic meaning (rare).</li>
+<li>Don&#39;t use <code class="language-html">&lt;ol start/reversed&gt;</code> or <code class="language-html">&lt;li value=&quot;...&quot;&gt;</code> to achieve visual numbering effects that could be better handled with CSS Counters, especially for complex schemes. Use these attributes when the starting point, direction, or specific value has <em>semantic relevance</em> to the content&#39;s meaning.</li>
+<li>Don&#39;t use <code class="language-html">&lt;dl&gt;</code>/<code class="language-html">&lt;dt&gt;</code>/<code class="language-html">&lt;dd&gt;</code> or nested <code class="language-html">&lt;ul&gt;</code>/<code class="language-html">&lt;ol&gt;</code> just for visual indentation; use CSS <code>padding</code> or <code>margin</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why is Semantics Paramount?</strong></p>
+<ol>
+<li><strong>Accessibility:</strong> Semantic HTML provides the structure needed by assistive technologies to convey meaning accurately to users with disabilities. Visual styling provides no such information.</li>
+<li><strong>Maintainability:</strong> Code based on meaning is easier to understand, update, and restyle later. If you want to change how all ordered lists look, you change the CSS for <code>ol</code>, not hunt down misused tags.</li>
+<li><strong>Interoperability:</strong> Search engines, browser reader modes, content scrapers, and future web technologies rely on semantic structure to interpret content correctly.</li>
+<li><strong>Future-Proofing:</strong> Designs change, but the meaning of content often remains stable. Semantic HTML is more resilient to redesigns than HTML based purely on visual presentation.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. This is a conceptual reinforcement of the core principle applied to lists.</p>
+<p>✨ <strong>Key Takeaway:</strong> Structure first, presentation second. Choose <code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, or <code class="language-html">&lt;dl&gt;</code> based on the meaning and relationship of the items. Control appearance with CSS. This is the foundation of robust, accessible, and maintainable web development.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

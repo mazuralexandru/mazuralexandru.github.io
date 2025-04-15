@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>706. Module 15 Recap: Core Principles Reinforced</h1>
+<p>Let&#39;s conclude by explicitly reinforcing the core principles woven throughout our discussion of HTML accessibility:</p>
+<ol>
+<li><strong>Accessibility is Foundational, Not an Add-on:</strong> Build accessibility considerations into your design and development process from the very beginning. Retrofitting accessibility onto an inaccessible structure is much harder and less effective.</li>
+<li><strong>Semantic HTML First:</strong> Leverage the built-in accessibility features of native HTML elements whenever possible. Use elements according to their meaning. This provides the most robust and widely understood foundation for assistive technologies.</li>
+<li><strong>Keyboard Operability is Key:</strong> Ensure <em>all</em> interactive functionality can be operated solely with the keyboard, providing clear visual focus indicators. This benefits a wide range of users.</li>
+<li><strong>Provide Text Alternatives:</strong> All non-text content (images, video, audio) must have appropriate text alternatives (<code>alt</code>, captions, descriptions, transcripts) for users who cannot perceive the original format.</li>
+<li><strong>Structure and Relationships Matter:</strong> Use headings, landmarks, lists, tables (with scope), and form labeling (<code class="language-html">&lt;label&gt;</code>, <code class="language-html">&lt;fieldset&gt;</code>) correctly to convey the logical structure and relationships within your content.</li>
+<li><strong>Use ARIA as an Enhancement, Not a Crutch:</strong> Only use ARIA when native HTML is insufficient, follow the Rules of ARIA Use carefully, and understand that ARIA often requires corresponding JavaScript implementation (especially for keyboard interaction and state management). &quot;No ARIA is better than Bad ARIA.&quot;</li>
+<li><strong>Test, Test, Test:</strong> Automated tools (validators, accessibility checkers like axe/WAVE) are helpful but insufficient. Perform manual testing using keyboard-only navigation and screen readers to uncover real-world usability issues. Ideally, involve users with disabilities in testing.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. This step reinforces the fundamental mindset and principles for building accessible web experiences.</p>
+<p>✨ <strong>Key Takeaway:</strong> Building accessible websites requires a commitment to using semantic HTML correctly, ensuring keyboard operability, providing text alternatives, using ARIA judiciously where needed, and testing thoroughly with assistive technologies. It&#39;s an integral part of professional web development.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

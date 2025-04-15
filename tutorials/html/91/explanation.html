@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>91. Introduction to Lists: Types Overview</h1>
+<p>HTML offers three primary types of lists, each serving a different semantic purpose:</p>
+<ol>
+<li><p><strong>Unordered Lists (<code class="language-html">&lt;ul&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Used when the <strong>order</strong> of the items in the list does <strong>not</strong> matter. Changing the sequence wouldn&#39;t change the list&#39;s fundamental meaning.</li>
+<li><strong>Analogy:</strong> A shopping list (before organizing by aisle), a list of features, bullet points summarizing ideas.</li>
+<li><strong>Structure:</strong> Uses the <code class="language-html">&lt;ul&gt;</code> container tag, with each item enclosed in an <code class="language-html">&lt;li&gt;</code> (List Item) tag.</li>
+<li><strong>Default Marker:</strong> Typically rendered with bullet points (like •, ○, or ▪︎).</li>
+</ul>
+</li>
+<li><p><strong>Ordered Lists (<code class="language-html">&lt;ol&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Used when the <strong>order</strong> or sequence of the items <em>is</em> significant. Changing the sequence <em>would</em> change the meaning.</li>
+<li><strong>Analogy:</strong> Steps in a recipe, turn-by-turn directions, ranked items (Top 10), outline points.</li>
+<li><strong>Structure:</strong> Uses the <code class="language-html">&lt;ol&gt;</code> container tag, also with each item enclosed in an <code class="language-html">&lt;li&gt;</code> tag.</li>
+<li><strong>Default Marker:</strong> Typically rendered with sequential markers like numbers (1, 2, 3...), letters (a, b, c...), or Roman numerals (i, ii, iii...).</li>
+</ul>
+</li>
+<li><p><strong>Description Lists (<code class="language-html">&lt;dl&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Used to structure lists of <strong>name-value groups</strong> or <strong>term-description pairs</strong>.</li>
+<li><strong>Analogy:</strong> A glossary, dictionary entries, metadata lists (property: value), FAQ (question: answer).</li>
+<li><strong>Structure:</strong> Uses the <code class="language-html">&lt;dl&gt;</code> (Description List) container. Each group typically consists of one or more <code class="language-html">&lt;dt&gt;</code> (Description Term) tags followed by one or more <code class="language-html">&lt;dd&gt;</code> (Description Details/Definition) tags.</li>
+<li><strong>Default Marker:</strong> No markers are typically used; default styling often involves indenting the <code class="language-html">&lt;dd&gt;</code>.</li>
+</ul>
+</li>
+</ol>
+<p>We will explore each of these list types in detail, starting with Unordered Lists (<code class="language-html">&lt;ul&gt;</code>).</p>
+<p>✅ <strong>Observation:</strong> Still no code changes. This step conceptually introduces the three distinct list types and their core purpose, setting the stage for learning the specific syntax and usage of each.</p>
+<p>✨ <strong>Key Takeaway:</strong> Choose the HTML list type (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, or <code class="language-html">&lt;dl&gt;</code>) that best reflects the <strong>semantic meaning</strong> and relationship between the items you are listing.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

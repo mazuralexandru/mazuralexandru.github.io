@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>138. Description Lists (<code class="language-html">&lt;dl&gt;</code>): Accessibility</h1>
+<p>Correctly structured description lists (<code class="language-html">&lt;dl&gt;</code>, <code class="language-html">&lt;dt&gt;</code>, <code class="language-html">&lt;dd&gt;</code>) provide significant value for users of assistive technologies like screen readers.</p>
+<p><strong>How Screen Readers Handle <code class="language-html">&lt;dl&gt;</code>:</strong></p>
+<p>The key benefit comes from the explicitly defined <strong>association</strong> between terms (<code class="language-html">&lt;dt&gt;</code>) and their descriptions (<code class="language-html">&lt;dd&gt;</code>). Screen readers typically:</p>
+<ol>
+<li><strong>Identify the List:</strong> Announce the start of a description list (or association list, terminology may vary).</li>
+<li><strong>Associate Term and Description:</strong> Clearly read the term (<code class="language-html">&lt;dt&gt;</code>) and then immediately read its corresponding description (<code class="language-html">&lt;dd&gt;</code>), making the relationship explicit. For example, they might announce something like: &quot;Term: Term 1. Description: Description 1. Term: Term 2. Description: Description 2.&quot;</li>
+<li><strong>Handle Multiple <code>dt</code>/<code>dd</code>:</strong> Correctly associate multiple terms with their shared description, or a single term with its multiple descriptions, based on the valid group structures.</li>
+<li><strong>Enable Navigation:</strong> Often provide specific shortcuts allowing users to jump between terms (<code class="language-html">&lt;dt&gt;</code>) or potentially between term/description pairs within the list.</li>
+</ol>
+<p><strong>Why This Matters:</strong></p>
+<ul>
+<li><strong>Understanding Relationships:</strong> For glossaries, metadata, or FAQs, the connection between the term/key/question and its description/value/answer is crucial. <code class="language-html">&lt;dl&gt;</code> makes this connection explicit for non-visual users.</li>
+<li><strong>Context:</strong> Users understand they are hearing associated pairs of information, rather than just unrelated blocks of text.</li>
+<li><strong>Efficiency:</strong> Navigation shortcuts allow users to quickly find the specific term or description they are interested in.</li>
+</ul>
+<p><strong>Contrast with Inaccessible Alternatives:</strong></p>
+<p>Trying to simulate a description list using other elements (e.g., bolded paragraphs followed by indented paragraphs) fails to convey the semantic relationship:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- Visually similar, but semantically incorrect and inaccessible --&gt;
+&lt;p&gt;&lt;strong&gt;Term 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;Description 1.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Term 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;margin-left: 40px;&quot;&gt;Description 2.&lt;/p&gt;
+</code></pre>
+<p>A screen reader would just announce these as separate paragraphs, possibly mentioning the bolding. The vital term-description association is completely lost.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Review the simple <code class="language-html">&lt;dl&gt;</code> structure in <code class="language-text">index.html</code>. Understand that this structure allows screen readers to explicitly announce the term-description pairings, providing essential context and relationship information.</p>
+<p>✨ <strong>Key Takeaway:</strong> Using <code class="language-html">&lt;dl&gt;</code>, <code class="language-html">&lt;dt&gt;</code>, and <code class="language-html">&lt;dd&gt;</code> correctly is essential for accessibility, enabling screen readers to clearly communicate the relationship between terms and their descriptions. Avoid simulating this structure with other elements and CSS.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

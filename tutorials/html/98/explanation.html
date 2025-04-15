@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>98. List Items (<code class="language-html">&lt;li&gt;</code>): Content Model (Inline Content)</h1>
+<p>What kind of content can you put inside an <code class="language-html">&lt;li&gt;</code> element? The answer is: quite a lot! <code class="language-html">&lt;li&gt;</code> elements are very flexible containers.</p>
+<p><strong>Content Model: Flow Content</strong></p>
+<p>Technically, <code class="language-html">&lt;li&gt;</code> accepts <strong>flow content</strong>. This is a broad category that includes most elements you&#39;d typically use within the <code class="language-html">&lt;body&gt;</code> of a page.</p>
+<p><strong>Simple Content: Text &amp; Inline Elements</strong></p>
+<p>The most common content for list items is:</p>
+<ul>
+<li><strong>Plain Text:</strong> As we&#39;ve seen (<code class="language-html">&lt;li&gt;First item&lt;/li&gt;</code>).</li>
+<li><strong>Phrasing Content (Inline Elements):</strong> You can freely use inline elements learned in Module 2 within an <code class="language-html">&lt;li&gt;</code> to add semantic meaning or formatting to parts of the item&#39;s text. Examples include:<ul>
+<li><code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code></li>
+<li><code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, <code class="language-html">&lt;s&gt;</code></li>
+<li><code class="language-html">&lt;code&gt;</code></li>
+<li><code class="language-html">&lt;a&gt;</code> (links - Module 4)</li>
+<li><code class="language-html">&lt;img&gt;</code> (images - Module 5)</li>
+<li><code class="language-html">&lt;span&gt;</code> (for CSS styling hooks)</li>
+<li><code class="language-html">&lt;sub&gt;</code>, <code class="language-html">&lt;sup&gt;</code></li>
+<li>And others...</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve modified the content of the <code class="language-html">&lt;li&gt;</code> elements in <code class="language-text">index.html</code> to show plain text and text including <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> tags.</p>
+<pre class="language-html"><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Just plain text.&lt;/li&gt; &lt;!-- Simple text content --&gt;
+  &lt;li&gt;Text with &lt;em&gt;inline emphasis&lt;/em&gt;.&lt;/li&gt; &lt;!-- Inline element inside li --&gt;
+  &lt;li&gt;Content can be quite &lt;strong&gt;flexible&lt;/strong&gt;.&lt;/li&gt; &lt;!-- Inline element inside li --&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the content inside the <code class="language-html">&lt;li&gt;</code> tags in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. You should see:<ul>
+<li>The first item as plain text.</li>
+<li>The second item with &quot;inline emphasis&quot; rendered in <em>italics</em>.</li>
+<li>The third item with &quot;flexible&quot; rendered in <strong>bold</strong>.</li>
+<li>All items still appear as distinct list items with bullet points.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;li&gt;</code> elements can contain plain text and any inline/phrasing elements (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;a&gt;</code>, <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;code&gt;</code>, etc.) to structure and format the item&#39;s content.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

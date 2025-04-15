@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>648. Reset &amp; UTF-8 Interaction</h1>
+<p>Let&#39;s explicitly demonstrate the preference for direct UTF-8 character input over entities when possible.</p>
+<p><strong>Resetting the Page:</strong></p>
+<p>We&#39;ll remove the previous context examples to show a direct comparison.</p>
+<p><strong>UTF-8 Advantage Recap:</strong></p>
+<ul>
+<li>With UTF-8 correctly declared (<code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code>) and files saved as UTF-8, you can directly include most symbols and accented characters in your HTML source.</li>
+<li><strong>Benefits:</strong> Improves source code readability and maintainability compared to using obscure entity codes. Often results in smaller file sizes.</li>
+</ul>
+<p><strong>When Entities Are Still Needed (with UTF-8):</strong></p>
+<ul>
+<li>Primarily only for the 5 reserved characters when they need to appear literally:<ul>
+<li><code>&lt;</code> -&gt; <code class="language-text">&amp;lt;</code></li>
+<li><code>&gt;</code> -&gt; <code class="language-text">&amp;gt;</code></li>
+<li><code>&amp;</code> -&gt; <code class="language-text">&amp;amp;</code></li>
+<li><code>&quot;</code> -&gt; <code class="language-text">&amp;quot;</code> (in attributes delimited by <code>&quot;</code>).</li>
+<li><code>&#39;</code> -&gt; <code class="language-text">&amp;apos;</code> (in attributes delimited by <code>&#39;</code>).</li>
+</ul>
+</li>
+<li>And for the non-breaking space: <code class="language-text">&amp;nbsp;</code>.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the previous context examples and added paragraphs directly comparing the input methods for common symbols.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;UTF-8 vs. Entities&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Resetting to compare direct UTF-8 with entities.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed context examples --&gt;
+
+  &lt;h2&gt;Comparison:&lt;/h2&gt;
+  &lt;!-- Assumes file is saved as UTF-8 and meta charset is present --&gt;
+  &lt;p&gt;Using Direct UTF-8 (Recommended): Copyright © 2024, Euro €&lt;/p&gt;
+  &lt;p&gt;Using Named Entities: Copyright &amp;copy; 2024, Euro &amp;euro;&lt;/p&gt;
+  &lt;p&gt;Using Numeric Entities: Copyright &amp;#169; 2024, Euro &amp;#x20AC;&lt;/p&gt;
+  &lt;!-- Note use of &amp;#169; (decimal) and &amp;#x20AC; (hex) --&gt;
+
+  &lt;p&gt;All render the same with proper UTF-8 setup.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the three paragraphs under the &quot;Comparison&quot; heading. Note the direct symbols (<code>©</code>, <code>€</code>), the named entities (<code class="language-text">&amp;copy;</code>, <code class="language-text">&amp;euro;</code>), and the numeric entities (<code class="language-text">&amp;#169;</code>, <code class="language-text">&amp;#x20AC;</code>).</li>
+<li>Look at the browser preview. <strong>All three paragraphs should render identically</strong>, displaying &quot;Copyright © 2024, Euro €&quot;.</li>
+<li>This demonstrates that when UTF-8 is correctly set up, direct character input achieves the same result as using entities for these symbols, but the direct input (<code>©</code>, <code>€</code>) is much more readable in the source code.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Prioritize using direct UTF-8 characters in your source code for symbols and accented letters when your document encoding is correctly set to UTF-8. Reserve entities primarily for escaping <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>, <code>&#39;</code> and for using <code>&amp;nbsp;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

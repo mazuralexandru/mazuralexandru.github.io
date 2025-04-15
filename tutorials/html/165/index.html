@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Links - Fragments</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add some temporary height/spacing for scrolling demo */
+    .spacer { height: 80vh; border-bottom: 1px dashed #555; margin-bottom: 20px;}
+    h2 { margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <h1>Linking to Page Fragments</h1>
+  <p>We need target elements with unique 'id' attributes.</p>
+
+  <nav>
+      <p>Navigation:</p>
+      <ul>
+        <li><a href="#section1">Go to Section 1</a></li> <!-- Added same-page fragment link -->
+        <li><a href="#section2">Go to Section 2</a></li> <!-- Added same-page fragment link -->
+      </ul>
+  </nav>
+
+  <div class="spacer">Scroll down...</div>
+
+  <h2 id="section1">Section One</h2>
+  <p>This is the content of the first section. Lots of text here to make the page scrollable...</p>
+  <p>More content for section one...</p>
+
+  <div class="spacer">Scroll down further...</div>
+
+  <h2 id="section2">Section Two</h2>
+  <p>This is the content of the second section. Even more text here...</p>
+  <p>More content for section two...</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

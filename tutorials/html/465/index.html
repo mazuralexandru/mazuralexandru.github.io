@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Dropdown Selects (&lt;select&gt;)</h1>
+  <p>Adding options using the &lt;option&gt; element.</p>
+
+  <form action="/submit-data" method="POST">
+    <p>
+      <label for="country-select">Choose a country:</label>
+      <select name="country" id="country-select">
+        <option value="US">United States</option> <!-- Added option -->
+        <option value="CA">Canada</option> <!-- Added option -->
+        <option value="GB">United Kingdom</option> <!-- Added option -->
+        <option value="AU">Australia</option> <!-- Added option -->
+      </select>
+    </p>
+    <p><button type="submit">Submit</button></p> <!-- Added submit -->
+  </form>
+
+  <p>The 'value' attribute is submitted; text between tags is displayed.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

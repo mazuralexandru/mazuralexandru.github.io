@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>517. Sectioning Content: Accessibility Name Requirement (<code class="language-html">&lt;section&gt;</code>, <code class="language-html">&lt;aside&gt;</code>)</h1>
+<p>While <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>, <code class="language-html">&lt;header&gt;</code> (top-level), and <code class="language-html">&lt;footer&gt;</code> (top-level) automatically map to specific ARIA landmark roles (<code>navigation</code>, <code>main</code>, <code>banner</code>, <code>contentinfo</code>), the <code class="language-html">&lt;section&gt;</code> and <code class="language-html">&lt;aside&gt;</code> elements have slightly different accessibility behavior.</p>
+<p><strong><code class="language-html">&lt;section&gt;</code> and <code class="language-html">&lt;aside&gt;</code> Landmarks:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;section&gt;</code>:</strong> Only maps to the generic ARIA <code>region</code> landmark role <strong>if it is given an accessible name</strong>.</li>
+<li><strong><code class="language-html">&lt;aside&gt;</code>:</strong> Maps to the ARIA <code>complementary</code> landmark role. While this role itself is useful, giving the <code>aside</code> an accessible name is still <strong>highly recommended</strong>, especially if there might be multiple <code>aside</code> elements on a page.</li>
+</ul>
+<p><strong>Why Provide an Accessible Name?</strong></p>
+<ul>
+<li>Without an accessible name, screen readers might just announce &quot;region&quot; (for <code class="language-html">&lt;section&gt;</code>) or &quot;complementary&quot; (for <code class="language-html">&lt;aside&gt;</code>), which isn&#39;t very helpful if there are multiple such regions.</li>
+<li>Providing a name allows the screen reader to announce the specific purpose of the section or aside (e.g., &quot;Region: Key Features&quot;, &quot;Complementary: Related Links&quot;), making landmark navigation much more effective.</li>
+</ul>
+<p><strong>How to Provide an Accessible Name:</strong></p>
+<p>There are two primary methods:</p>
+<ol>
+<li><p><strong><code>aria-labelledby=&quot;id_of_heading&quot;</code>:</strong> (Preferred Method)</p>
+<ul>
+<li>Associate the sectioning element with its visible heading using <code>aria-labelledby</code>.</li>
+<li>Give the heading element (<code class="language-html">&lt;h2&gt;</code>-<code class="language-html">&lt;h6&gt;</code>) inside the section/aside a unique <code>id</code>.</li>
+<li>Add <code>aria-labelledby</code> to the <code class="language-html">&lt;section&gt;</code> or <code class="language-html">&lt;aside&gt;</code> tag, setting its value to the <code>id</code> of the heading.</li>
+<li>This uses the existing visible heading text as the accessible name.</li>
+</ul>
+</li>
+<li><p><strong><code>aria-label=&quot;Concise Label Text&quot;</code>:</strong></p>
+<ul>
+<li>If there&#39;s no suitable visible heading, you can provide an accessible name directly using <code>aria-label</code> on the <code class="language-html">&lt;section&gt;</code> or <code class="language-html">&lt;aside&gt;</code> tag.</li>
+<li>This label is <em>only</em> exposed to assistive technologies, not visually displayed. Use this if a visible heading is undesirable or redundant.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added <code>id</code> attributes to the headings within our <code class="language-html">&lt;section&gt;</code> and <code class="language-html">&lt;aside&gt;</code> elements and used <code>aria-labelledby</code> on the parent <code class="language-html">&lt;section&gt;</code> and <code class="language-html">&lt;aside&gt;</code> tags to associate them.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    ...
+    &lt;!-- Added ARIA relationship --&gt;
+    &lt;section aria-labelledby=&quot;features-heading&quot;&gt;
+      &lt;h3 id=&quot;features-heading&quot;&gt;Subsection: Key Features&lt;/h3&gt; &lt;!-- Added id --&gt;
+      ...
+    &lt;/section&gt;
+    ...
+  &lt;/article&gt;
+
+  &lt;!-- Added ARIA relationship --&gt;
+  &lt;aside aria-labelledby=&quot;related-links-heading&quot;&gt;
+    &lt;h3 id=&quot;related-links-heading&quot;&gt;Related Links&lt;/h3&gt; &lt;!-- Added id --&gt;
+    ...
+  &lt;/aside&gt;
+&lt;/main&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>id</code> attributes on the <code class="language-html">&lt;h3&gt;</code> tags inside <code class="language-html">&lt;section&gt;</code> and <code class="language-html">&lt;aside&gt;</code>.</li>
+<li>Locate the <code>aria-labelledby</code> attributes on the <code class="language-html">&lt;section&gt;</code> and <code class="language-html">&lt;aside&gt;</code> tags, pointing to the respective heading <code>id</code>s.</li>
+<li>There is <strong>no visual change</strong> in the browser preview. These ARIA attributes provide crucial information for assistive technologies.</li>
+<li><strong>(Conceptual):</strong> A screen reader navigating by landmarks could now potentially announce &quot;Region: Subsection: Key Features&quot; and &quot;Complementary: Related Links&quot;, making the purpose of these sections much clearer.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> To ensure <code class="language-html">&lt;section&gt;</code> elements are announced as distinct regions and <code class="language-html">&lt;aside&gt;</code> elements are clearly identified, provide them with an accessible name, preferably by associating them with their visible heading using <code>id</code> and <code>aria-labelledby</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

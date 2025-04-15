@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>340. Common <code class="language-html">&lt;link&gt;</code> Types: Linking External CSS (<code>rel=&quot;stylesheet&quot;</code>) - Behavior &amp; Interactions</h1>
+<p>Let&#39;s focus on the browser behavior related to linked stylesheets.</p>
+<p><strong>CSS Fetching &amp; Parsing:</strong></p>
+<ul>
+<li>When the browser encounters <code class="language-html">&lt;link rel=&quot;stylesheet&quot;&gt;</code>, it initiates a high-priority network request to download the specified CSS file.</li>
+<li>Once downloaded, the browser parses the CSS file, constructing an internal representation of the style rules (often called the CSS Object Model or CSSOM).</li>
+</ul>
+<p><strong>Render Blocking:</strong></p>
+<ul>
+<li>As mentioned earlier, <strong>external stylesheets linked via <code class="language-html">&lt;link rel=&quot;stylesheet&quot;&gt;</code> are render-blocking by default.</strong></li>
+<li><strong>Why?</strong> To prevent a Flash of Unstyled Content (FOUC), where the user briefly sees the raw, unstyled HTML before the styles are applied, causing a jarring visual shift. The browser waits for the CSSOM to be ready so it can combine it with the DOM and calculate the initial layout and styles correctly before painting anything to the screen.</li>
+<li><strong>Impact:</strong> Too many large CSS files linked in the <code class="language-html">&lt;head&gt;</code> can significantly delay the &quot;First Contentful Paint&quot; (FCP), a key web performance metric.</li>
+<li><strong>Optimization Note:</strong> Techniques exist to mitigate this (e.g., loading non-critical CSS asynchronously, inlining critical CSS), but the default behavior is blocking.</li>
+</ul>
+<p><strong>The CSS Cascade &amp; Order:</strong></p>
+<ul>
+<li>If you link multiple external stylesheets, their rules combine according to the standard CSS cascade rules:<ul>
+<li><strong>Order Matters:</strong> Rules from stylesheets linked <em>later</em> in the HTML source code will override rules from earlier stylesheets if they target the same elements with the <em>same specificity</em>.</li>
+<li><strong>Specificity:</strong> More specific selectors (e.g., an ID selector <code class="language-css">#myId</code>) will override less specific ones (e.g., a class selector <code class="language-css">.myClass</code> or type selector <code class="language-css">p</code>), regardless of source order.</li>
+<li><strong>Importance:</strong> Rules marked <code>!important</code> override other rules (use sparingly).</li>
+<li><strong>Origin:</strong> User-agent (browser default) styles are overridden by author (your CSS) styles, which are overridden by user styles (if set), except for <code>!important</code> rules.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Interaction with <code class="language-html">&lt;style&gt;</code> and <code>style</code> Attribute:</strong></p>
+<ul>
+<li>Styles defined in external sheets (<code class="language-html">&lt;link&gt;</code>) are generally considered the base layer in the author origin.</li>
+<li>Styles defined in internal sheets (<code class="language-html">&lt;style&gt;</code> blocks within the <code class="language-html">&lt;head&gt;</code> or <code class="language-html">&lt;body&gt;</code>) typically override external styles of the same specificity if the <code class="language-html">&lt;style&gt;</code> block appears later in the source.</li>
+<li>Inline styles (<code class="language-html">style</code> attribute on an element) have the highest specificity (except for <code>!important</code>) and will override styles from external or internal stylesheets targeting the same element and property.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Look at the <code class="language-html">&lt;link&gt;</code> tags in <code>index.html</code>. Understand that the browser fetches <code>style.css</code>, <code>print-styles.css</code>, and <code>mobile-styles.css</code>. It waits for <code>style.css</code> (and potentially <code>mobile-styles.css</code> if the media query matches) to download and parse before rendering the <code class="language-html">&lt;body&gt;</code>. The rules from these files will combine based on order and specificity.</p>
+<p>✨ <strong>Key Takeaway:</strong> Linked stylesheets (<code>rel=&quot;stylesheet&quot;</code>) are typically render-blocking. The order of <code class="language-html">&lt;link&gt;</code> tags matters for the CSS cascade, and external styles interact with internal (<code class="language-html">&lt;style&gt;</code>) and inline (<code>style</code> attribute) styles based on standard cascade rules (specificity and order).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

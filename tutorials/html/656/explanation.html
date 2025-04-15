@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>656. Validation: What Validation Checks - Syntax</h1>
+<p>What specific kinds of rules does an HTML validator check? Let&#39;s start with fundamental <strong>syntax rules</strong>.</p>
+<p><strong>2.1. Syntax Checks:</strong></p>
+<p>Validators meticulously examine the basic construction of your HTML code:</p>
+<ul>
+<li><strong>Correct Tag Opening/Closing:</strong> Ensures that every non-void element (like <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;em&gt;</code>) has a corresponding closing tag (<code class="language-html">&lt;/p&gt;</code>, <code class="language-html">&lt;/div&gt;</code>, <code class="language-html">&lt;/em&gt;</code>) placed correctly. It flags unclosed tags or stray end tags.<ul>
+<li><em>Example Error:</em> <code>Error: End tag for element &quot;p&quot; which is not open.</code></li>
+</ul>
+</li>
+<li><strong>Correct Void Element Syntax:</strong> Verifies that void elements (like <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;br&gt;</code>, <code class="language-html">&lt;hr&gt;</code>, <code class="language-html">&lt;input&gt;</code>) do <strong>not</strong> have closing tags. While HTML5 parsers ignore optional self-closing slashes (<code class="language-html">&lt;br /&gt;</code>), validators ensuring strict adherence might flag unnecessary slashes or expect their absence depending on configuration, though the core check is against having a separate closing tag like <code class="language-html">&lt;/br&gt;</code>.<ul>
+<li><em>Example Error:</em> <code>Error: End tag &quot;br&quot;.</code> (if <code class="language-html">&lt;/br&gt;</code> was used)</li>
+</ul>
+</li>
+<li><strong>Proper Attribute Syntax:</strong> Checks that attributes follow the <code class="language-html">name=&quot;value&quot;</code> pattern (or just <code>name</code> for boolean attributes). Critically, it enforces the use of <strong>quotes</strong> around attribute values. While browsers might parse unquoted values in simple cases, validation requires quotes for robustness.<ul>
+<li><em>Example Error:</em> <code>Error: Attribute value must be quoted.</code> (if <code>class=my-class</code> was used)</li>
+</ul>
+</li>
+<li><strong>Correct Character Escaping (Entities):</strong> Verifies that reserved characters (<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and sometimes <code>&quot;</code>/<code>&#39;</code> in attributes) are correctly escaped using HTML entities (<code class="language-text">&amp;lt;</code>, <code class="language-text">&amp;gt;</code>, <code class="language-text">&amp;amp;amp;</code>, <code class="language-text">&amp;quot;</code>, <code class="language-text">&amp;apos;</code>). Flags unescaped characters that could break parsing.<ul>
+<li><em>Example Error:</em> <code>Error: &quot;&amp;&quot; did not start a character reference.</code> (if <code>R&amp;D</code> was used instead of <code>R&amp;amp;D</code>)</li>
+</ul>
+</li>
+</ul>
+<p>These syntax checks form the most basic layer of validation, ensuring the code is fundamentally readable by the HTML parser according to the language&#39;s grammar.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Review the list of syntax checks. Consider common typing errors like forgetting a closing tag or omitting quotes around an attribute value – these are precisely the kinds of errors a validator excels at finding instantly.</p>
+<p>✨ <strong>Key Takeaway:</strong> HTML validation rigorously checks fundamental syntax rules, including proper tag opening/closing, void element format, attribute quoting, and correct character escaping, catching many common coding errors.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

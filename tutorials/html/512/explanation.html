@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>512. Reset: Preparing for Sectioning Content (<code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, <code class="language-html">&lt;aside&gt;</code>)</h1>
+<p>We have established the main landmark structure of a page using <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>, and <code class="language-html">&lt;footer&gt;</code>.</p>
+<p>Now, we need to explore the elements used to structure the content <em>within</em> these landmarks, particularly within <code class="language-html">&lt;main&gt;</code>. These are the <strong>sectioning content elements</strong>: <code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, and <code class="language-html">&lt;aside&gt;</code> (which we&#39;ll also consider as potentially being alongside <code class="language-html">&lt;main&gt;</code>).</p>
+<p>To focus on these, we will simplify the content <em>inside</em> the <code class="language-html">&lt;main&gt;</code> element from the previous step, removing the placeholder <code class="language-html">&lt;h2&gt;</code>/<code class="language-html">&lt;p&gt;</code> to make way for <code class="language-html">&lt;article&gt;</code> examples. We&#39;ll also add an <code>aria-label</code> to the <code class="language-html">&lt;nav&gt;</code> as discussed for best practice with landmarks.</p>
+<p><strong>Why Reset/Adjust?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Isolate the sectioning content elements and their specific roles within the main content area.</li>
+<li><strong>Clarity:</strong> Build up the internal structure (<code>article</code>, <code>section</code>) piece by piece.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Added <code>aria-label=&quot;Primary site navigation&quot;</code> to the <code class="language-html">&lt;nav&gt;</code> element (good practice).</li>
+<li>Replaced the content inside <code class="language-html">&lt;main&gt;</code> with a new placeholder heading and paragraph.</li>
+<li>Adjusted the temporary CSS to also visualize <code>article</code>, <code>section</code>, and <code>aside</code> when they are added inside <code>main</code>.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;head&gt;
+  ...
+  &lt;style&gt;
+    /* Basic landmark/section visualization */
+    body &gt; header, body &gt; nav, body &gt; main, body &gt; footer, /* Added main children */ main article, main section, main aside {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    nav ul { list-style: none; padding: 0; } /* Basic nav list style */
+    nav li { display: inline-block; margin-right: 10px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Site Title / Logo Area&lt;/h1&gt;
+    &lt;nav aria-label=&quot;Primary site navigation&quot;&gt; &lt;!-- Added aria-label --&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt; &lt;!-- Content inside main reset --&gt;
+    &lt;h1&gt;Main Content Title (Maybe H2 if H1 is Site Title)&lt;/h1&gt;
+    &lt;p&gt;Introductory paragraph for the main content.&lt;/p&gt;
+
+    &lt;!-- Article goes here --&gt;
+
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&lt;small&gt;&amp;copy; 2024 Your Website Name. All rights reserved.&lt;/small&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/privacy&quot;&gt;Privacy Policy&lt;/a&gt; | &lt;a href=&quot;/terms&quot;&gt;Terms of Service&lt;/a&gt;&lt;/p&gt;
+  &lt;/footer&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the updated content within the <code class="language-html">&lt;main&gt;</code> element and the added <code>aria-label</code> on <code class="language-html">&lt;nav&gt;</code>. Note the updated CSS selector in the <code class="language-html">&lt;style&gt;</code> block.</li>
+<li>The browser preview shows the header, the new main content intro, and the footer, all with dashed borders. The <code class="language-html">&lt;main&gt;</code> section is ready for sectioning content examples.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Resetting the content within <code class="language-html">&lt;main&gt;</code> prepares a clean space for demonstrating the specific semantic roles of <code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, and <code class="language-html">&lt;aside&gt;</code> in structuring the primary content area.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

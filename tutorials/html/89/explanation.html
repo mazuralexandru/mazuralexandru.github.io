@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>89. Module 2 Recap: Structuring Text Content</h1>
+<p>This module focused on essential HTML elements used to structure and add semantic meaning to text content within the <code class="language-html">&lt;body&gt;</code>. Let&#39;s recap the key elements and concepts:</p>
+<p><strong>Block-Level Text Structuring:</strong></p>
+<ul>
+<li><strong>Paragraphs (<code class="language-html">&lt;p&gt;</code>):</strong> Define distinct blocks of text, grouping related sentences. Crucial for readability and accessibility. Don&#39;t use for spacing or misuse <code class="language-html">&lt;br&gt;</code> instead.</li>
+<li><strong>Headings (<code class="language-html">&lt;h1&gt;</code> - <code class="language-html">&lt;h6&gt;</code>):</strong> Establish the document&#39;s hierarchical outline. Use in logical order without skipping levels. <code class="language-html">&lt;h1&gt;</code> is typically the main page title (one per page). Vital for navigation (esp. screen readers) and SEO. Use for structure, not just style.</li>
+</ul>
+<p><strong>Inline Text Semantics (Emphasis &amp; Importance):</strong></p>
+<ul>
+<li><strong>Emphasis (<code class="language-html">&lt;em&gt;</code>):</strong> Apply stress emphasis, changing sentence meaning (like vocal stress). Defaults to <em>italic</em>.</li>
+<li><strong>Strong Importance (<code class="language-html">&lt;strong&gt;</code>):</strong> Indicate strong importance, seriousness, or urgency. Defaults to <strong>bold</strong>.</li>
+<li><strong>Key Principle:</strong> Choose <code class="language-html">&lt;em&gt;</code>/<code class="language-html">&lt;strong&gt;</code> based on <em>meaning</em>, not just desired style. Use CSS for purely visual italics/bolding.</li>
+</ul>
+<p><strong>Inline Presentation vs. Semantics:</strong></p>
+<ul>
+<li><strong>Italic (<code class="language-html">&lt;i&gt;</code>):</strong> Alternate voice/mood (technical terms, thoughts, foreign words). Defaults to <em>italic</em>.</li>
+<li><strong>Bold (<code class="language-html">&lt;b&gt;</code>):</strong> Stylistic offset without added importance (keywords, product names). Defaults to <strong>bold</strong>.</li>
+<li><strong>Underline (<code class="language-html">&lt;u&gt;</code>):</strong> Non-textual annotation (e.g., misspelling). <strong>Discouraged</strong> due to confusion with links. Defaults to underline.</li>
+<li><strong>Preference:</strong> Prefer <code class="language-html">&lt;em&gt;</code>/<code class="language-html">&lt;strong&gt;</code> for semantic emphasis/importance. Use CSS for purely visual styling. Use <code class="language-html">&lt;i&gt;</code>/<code class="language-html">&lt;b&gt;</code>/<code class="language-html">&lt;u&gt;</code> only for their specific, narrow semantic meanings if appropriate.</li>
+</ul>
+<p><strong>Structural Formatting Elements:</strong></p>
+<ul>
+<li><strong>Line Break (<code class="language-html">&lt;br&gt;</code>):</strong> Force a line break <em>within</em> a block (e.g., addresses, poetry). Void element. Do <em>not</em> use multiple <code>&lt;br&gt;</code>s for spacing.</li>
+<li><strong>Horizontal Rule (<code class="language-html">&lt;hr&gt;</code>):</strong> Represents a <strong>thematic break</strong> between paragraph-level content (topic shift, scene change). Void, block-level element. Defaults to a horizontal line. Use for semantic breaks, not just visual lines (use CSS borders for that).</li>
+</ul>
+<p><strong>Specialized Text Containers:</strong></p>
+<ul>
+<li><strong>Preformatted Text (<code class="language-html">&lt;pre&gt;</code>):</strong> Preserves whitespace (spaces, line breaks) exactly as in the source. Block-level, defaults to monospace font. Requires HTML escaping (<code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code>) for literal <code>&lt; &gt; &amp;</code>. Use CSS for overflow control.</li>
+<li><strong>Inline Code (<code class="language-html">&lt;code&gt;</code>):</strong> Semantically marks inline fragments of code (variable/function names, etc.). Defaults to monospace font.</li>
+<li><strong>Code Blocks (<code class="language-html">&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code>):</strong> The standard pattern for multi-line code blocks, combining <code class="language-html">&lt;pre&gt;</code>&#39;s formatting with <code class="language-html">&lt;code&gt;</code>&#39;s semantics. Essential for syntax highlighting compatibility. Remember to escape HTML inside.</li>
+</ul>
+<p><strong>Quotation Elements:</strong></p>
+<ul>
+<li><strong>Block Quote (<code class="language-html">&lt;blockquote&gt;</code>):</strong> For long, block-level quotations from another source. Often indented by default. Use <code>cite</code> attribute for source URL (not displayed). Attribution goes <em>outside</em> the tag.</li>
+<li><strong>Inline Quote (<code class="language-html">&lt;q&gt;</code>):</strong> For short, inline quotations. Browsers add language-appropriate quotes automatically (don&#39;t type them in). Can also use <code>cite</code> attribute.</li>
+<li><strong>Citation (<code class="language-html">&lt;cite&gt;</code>):</strong> Marks up the <strong>title of a creative work</strong> (book, film, article, etc.). Inline, defaults to <em>italic</em>. Use <em>only</em> for titles.</li>
+</ul>
+<p><strong>Other Inline Semantics:</strong></p>
+<ul>
+<li><strong>Small Print (<code class="language-html">&lt;small&gt;</code>):</strong> For side comments, legal text, copyright. Defaults to smaller font. Use semantically, not just for size.</li>
+<li><strong>Subscript (<code class="language-html">&lt;sub&gt;</code>):</strong> For chemical formulas, math indices. Lowers baseline. Crucial for accessibility.</li>
+<li><strong>Superscript (<code class="language-html">&lt;sup&gt;</code>):</strong> For exponents, ordinals, footnote markers. Raises baseline. Crucial for accessibility.</li>
+<li><strong>Strikethrough (<code class="language-html">&lt;s&gt;</code>):</strong> For text no longer accurate/relevant (e.g., old price). Defaults to strikethrough. Use semantically, not just for style.</li>
+</ul>
+<p><strong>Core Principle Revisited:</strong> Choose HTML elements based on their <strong>semantic meaning</strong> first and foremost. Use CSS to control <strong>visual presentation</strong>.</p>
+<p>✅ <strong>Observation:</strong> No code changes. This is a summary of Module 2.</p>
+<p>✨ <strong>Looking Ahead:</strong> Having learned how to structure paragraphs, headings, and apply various inline semantics, the next logical step (Module 3) is to explore <strong>Lists</strong>, which provide structured ways to group related items (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, <code class="language-html">&lt;li&gt;</code>, and description lists).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

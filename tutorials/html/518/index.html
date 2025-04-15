@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic landmark/section visualization */
+    body > header, body > nav, body > main, body > footer, main article, main section, main aside {
+      /* border: 1px dashed skyblue; */ /* Removing borders for next topic */
+      padding: 10px;
+      margin: 10px 0;
+    }
+    main { display: block; gap: 0; } /* Revert flex layout */
+    main article { flex-grow: 0; }
+    main aside { flex-basis: auto; flex-shrink: 1; }
+
+    nav ul { list-style: none; padding: 0; }
+    nav li { display: inline-block; margin-right: 10px; }
+    article header h2, section h3, aside h3 { margin: 0 0 0.5em 0; }
+  </style>
+</head>
+<body>
+  <h1>Headings &amp; Document Outline</h1> <!-- Updated H1 -->
+
+  <!-- Removed explicit landmark elements for now -->
+  <!-- <header>...</header> -->
+
+  <h2>Section 1 (H2)</h2>
+  <p>Content for section 1.</p>
+  <h3>Subsection 1.1 (H3)</h3>
+  <p>Content for subsection 1.1.</p>
+  <h3>Subsection 1.2 (H3)</h3>
+  <p>Content for subsection 1.2.</p>
+
+  <h2>Section 2 (H2)</h2>
+  <p>Content for section 2.</p>
+  <h4>Sub-subsection 2.1.a (H4 under H2 - OK)</h4> <!-- Changed from H3 -->
+  <p>Content for 2.1.a.</p>
+
+  <!-- Removed main/article/section/aside/footer -->
+  <!-- <main>...</main> -->
+  <!-- <footer>...</footer> -->
+
+
+  <p>Next: Discussing the Outline Algorithm.</p>
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

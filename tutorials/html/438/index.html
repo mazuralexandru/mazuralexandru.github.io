@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Input Type: Date</h1> <!-- Updated H1 -->
+  <p>Provides a native date picker interface.</p>
+
+  <form action="/submit-data" method="POST">
+    <!-- Tel field removed for focus -->
+    <p> <!-- Added Date Field -->
+       <label for="appt-date">Appointment Date:</label> <!-- Added Label -->
+       <input type="date" id="appt-date" name="appointment_date" value="2024-07-15" min="2024-01-01" max="2025-12-31"> <!-- Added type="date" -->
+    </p>
+  </form>
+
+  <p>Appearance varies; supports min, max attributes.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

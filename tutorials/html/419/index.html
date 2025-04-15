@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>The &lt;form&gt; Element: GET vs. POST</h1> <!-- Updated H1 -->
+  <p>Choosing between GET and POST depends on the form's purpose:</p>
+
+  <form action="/submit-form-data" method=""> <!-- Removed method -->
+    <!-- Form controls will go here -->
+  </form>
+
+  <ul>
+      <li><b>GET:</b> Data in URL, visible, length limits, idempotent (searches, filtering). Default.</li>
+      <li><b>POST:</b> Data in body, hidden, no length limit, not idempotent (logins, updates, uploads).</li>
+  </ul>
+
+  <p>Next: Encoding data with 'enctype'.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

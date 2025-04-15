@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>42. Inline Semantics: Strong Importance (<code class="language-html">&lt;strong&gt;</code>)</h1>
+<p>Similar to <code class="language-html">&lt;em&gt;</code>, the <code class="language-html">&lt;strong&gt;</code> element adds semantic meaning to inline text, but its purpose is different.</p>
+<p><strong>The Strong Importance Element (<code class="language-html">&lt;strong&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Used to indicate that its content has <strong>strong importance, seriousness, or urgency</strong> compared to surrounding text. It implies the content is significant.</li>
+<li><strong>Semantics:</strong> Marks the enclosed text as having high importance. Think of warnings, key terms essential for understanding, or text that needs to stand out due to its weightiness.</li>
+<li><strong>Type:</strong> Like <code class="language-html">&lt;em&gt;</code>, it&#39;s an <strong>inline</strong> element.</li>
+<li><strong>Syntax:</strong> Uses an opening <code class="language-html">&lt;strong&gt;</code> and a closing <code class="language-html">&lt;/strong&gt;</code> tag.</li>
+</ul>
+<p><strong>Default Rendering:</strong></p>
+<p>Browsers typically render text within <code class="language-html">&lt;strong&gt;</code> tags in a <strong>bold</strong> font weight by default. Again, this is a visual convention tied to the semantic meaning of <em>importance</em>. CSS can change this appearance.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve now wrapped the word &quot;importance&quot; in the first paragraph and the word &quot;second&quot; in the second paragraph with <code class="language-html">&lt;strong&gt;</code> tags in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;This is the introductory paragraph. We will add &lt;em&gt;emphasis&lt;/em&gt; and &lt;strong&gt;importance&lt;/strong&gt; to text within paragraphs like this one.&lt;/p&gt; &lt;!-- Added &lt;strong&gt; --&gt;
+
+&lt;p&gt;This is another paragraph. It serves as a &lt;strong&gt;second&lt;/strong&gt; block of text for our examples.&lt;/p&gt; &lt;!-- Added &lt;strong&gt; --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;strong&gt;importance&lt;/strong&gt;</code> and <code class="language-html">&lt;strong&gt;second&lt;/strong&gt;</code> tags in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. You should see:<ul>
+<li>The word &quot;emphasis&quot; still in italics (from <code class="language-html">&lt;em&gt;</code>).</li>
+<li>The word &quot;importance&quot; now rendered in <strong>bold</strong>.</li>
+<li>The word &quot;second&quot; in the second paragraph also rendered in <strong>bold</strong>.</li>
+<li>Both <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> elements flow inline within their respective paragraphs.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;strong&gt;</code> element to mark text that has strong importance, seriousness, or urgency. It&#39;s an inline element, typically rendered as bold by default.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

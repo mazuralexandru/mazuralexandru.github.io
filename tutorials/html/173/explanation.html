@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>173. <code>target</code> Attribute: <code>_parent</code> &amp; <code>_top</code> (Frames Context)</h1>
+<p>Besides <code>_self</code> and <code>_blank</code>, there are two other standard <code>target</code> keywords primarily relevant when dealing with <strong>HTML frames</strong> (using <code class="language-html">&lt;iframe&gt;</code> or the older, deprecated <code class="language-html">&lt;frameset&gt;</code> elements). While less common in modern full-page design, they are important to know if working with embedded content.</p>
+<p><strong><code>target=&quot;_parent&quot;</code></strong></p>
+<ul>
+<li><strong>Behavior:</strong> Opens the linked document in the <strong>parent browsing context</strong> of the current one.</li>
+<li><strong>Context:</strong> Imagine <code>Page C</code> is loaded inside an <code class="language-html">&lt;iframe&gt;</code> within <code>Page B</code>, which itself might be in an <code class="language-html">&lt;iframe&gt;</code> within <code>Page A</code>. A link in <code>Page C</code> with <code>target=&quot;_parent&quot;</code> would load the linked document into the context of <code>Page B</code>, replacing <code>Page B</code>&#39;s content (including the iframe holding <code>Page C</code>).</li>
+<li><strong>No Parent:</strong> If the current browsing context has no parent (i.e., it&#39;s the top-level tab or window), <code>_parent</code> behaves the same as <code>_self</code>.</li>
+</ul>
+<p><strong><code>target=&quot;_top&quot;</code></strong></p>
+<ul>
+<li><strong>Behavior:</strong> Opens the linked document in the <strong>top-level browsing context</strong>, effectively breaking out of all containing frames.</li>
+<li><strong>Context:</strong> Using the same A-B-C frame example, a link in <code>Page C</code> with <code>target=&quot;_top&quot;</code> would load the linked document into the main browser tab/window (<code>Page A</code>&#39;s context), replacing <em>all</em> content (A, B, and C).</li>
+<li><strong>Already Top-Level:</strong> If the current browsing context is already the top-level one, <code>_top</code> behaves the same as <code>_self</code>.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><code>_parent</code>: Used within a frame to load content into the frame that contains it.</li>
+<li><code>_top</code>: Used within a frame to &quot;break out&quot; and load content into the main browser window, often used for main navigation links within a framed site (though framesets are largely obsolete).</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Our current example doesn&#39;t involve frames, so we cannot directly demonstrate <code>_parent</code> or <code>_top</code>. Understand conceptually that these values relate specifically to navigating out of nested browsing contexts (iframes).</p>
+<p>✨ <strong>Key Takeaway:</strong> <code>target=&quot;_parent&quot;</code> loads the link into the immediate parent frame/window. <code>target=&quot;_top&quot;</code> loads the link into the main, top-level browser window, breaking out of all frames. They behave like <code>_self</code> if there&#39;s no parent or if already at the top level, respectively.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

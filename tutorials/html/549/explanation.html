@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>549. Multimedia: Video (<code class="language-html">&lt;video&gt;</code>) - <code>playsinline</code> Attribute</h1>
+<p>The <code class="language-html">playsinline</code> attribute addresses a specific behavior primarily on iOS devices (iPhone, iPad).</p>
+<p><strong>The <code>playsinline</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> A boolean attribute that hints to the browser (especially mobile Safari on iOS) that the video should be allowed to play <strong>&quot;inline&quot;</strong> within the element&#39;s playback area in the document, rather than automatically entering fullscreen mode when playback begins.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;video src=&quot;...&quot; playsinline&gt;</code></li>
+<li><strong>Historical Context:</strong> By default, older versions of iOS Safari would force videos to enter fullscreen mode upon playback. <code>playsinline</code> was introduced to override this for use cases like background videos or videos embedded as part of the page design.</li>
+<li><strong>Modern Behavior:</strong> While still important for ensuring inline playback on iOS, default behaviors might vary on newer OS versions or other mobile browsers. Including it provides the strongest hint for inline playback.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><strong>Essential</strong> for background videos that should remain part of the page layout while playing.</li>
+<li>Necessary for any video where you want playback to occur within its container on the page (e.g., in a card component, alongside text) on iOS devices, without forcing fullscreen.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the <code>preload</code> attribute from the previous example and added the boolean <code>playsinline</code> attribute.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+  &lt;!-- Removed preload, added playsinline --&gt;
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;
+         src=&quot;/videos/example.mp4&quot; &lt;!-- Hypothetical path --&gt;
+         playsinline&gt;
+    &lt;p&gt;Sorry, your browser doesn&#39;t support embedded videos.&lt;/p&gt;
+  &lt;/video&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>playsinline</code> attribute on the <code class="language-html">&lt;video&gt;</code> tag.</li>
+<li>The browser preview on a desktop machine will likely show no difference.</li>
+<li><strong>(Conceptual):</strong> If you viewed this page on an iPhone and played the video (if it existed), the <code>playsinline</code> attribute would instruct Safari to play it within the 480x270 area defined on the page. Without <code>playsinline</code>, Safari might automatically switch to its native fullscreen player when play is initiated.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the boolean <code>playsinline</code> attribute on <code class="language-html">&lt;video&gt;</code> elements to enable inline playback (preventing automatic fullscreen) on iOS devices and potentially other mobile browsers. Essential for background videos or videos integrated into page layouts on iOS.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

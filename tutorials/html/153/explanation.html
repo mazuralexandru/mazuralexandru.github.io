@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>153. <code>href</code> URL Types: Absolute URLs (Definition &amp; Syntax)</h1>
+<p>The first type of URL we&#39;ll use in the <code class="language-html">href</code> attribute is an <strong>absolute URL</strong>.</p>
+<p><strong>Definition:</strong></p>
+<ul>
+<li>An absolute URL provides the <strong>full, complete web address</strong> required to locate a resource on the internet. It contains all the information needed, independent of the current page&#39;s location.</li>
+</ul>
+<p><strong>Syntax / Structure:</strong></p>
+<p>An absolute URL typically follows this structure (though some parts are optional):</p>
+<p><code class="language-text">scheme://domain:port/path?query#fragment</code></p>
+<p>Let&#39;s break that down:</p>
+<ol>
+<li><strong><code>scheme</code>:</strong> The protocol used to access the resource. Common schemes for web links are:<ul>
+<li><code class="language-text">https</code> (HyperText Transfer Protocol Secure - Preferred for web)</li>
+<li><code class="language-text">http</code> (HyperText Transfer Protocol - Less secure)</li>
+<li>Other schemes exist like <code>ftp:</code>, <code>file:</code>, etc., but <code>http</code>/<code>https</code> are most common for web links.</li>
+</ul>
+</li>
+<li><strong><code>://</code>:</strong> Standard separator characters following the scheme.</li>
+<li><strong><code>domain</code>:</strong> The domain name (e.g., <code class="language-text">www.example.com</code>, <code class="language-text">developer.mozilla.org</code>) or IP address of the server hosting the resource.</li>
+<li><strong><code>:port</code> (Optional):</strong> The specific network port number on the server. Usually omitted as standard ports (80 for HTTP, 443 for HTTPS) are assumed.</li>
+<li><strong><code>/path</code> (Optional):</strong> The specific path to the resource (file or directory) on the server, starting from the server&#39;s root for that domain (e.g., <code>/docs/Web/HTML/Element/a</code>).</li>
+<li><strong><code>?query</code> (Optional):</strong> A query string, starting with <code>?</code>, used to pass parameters to the server (e.g., <code>?search=html&amp;page=2</code>). Parameters are often <code>key=value</code> pairs separated by <code>&amp;</code>.</li>
+<li><strong><code>#fragment</code> (Optional):</strong> A fragment identifier, starting with <code>#</code>, pointing to a specific section (element with a matching <code>id</code>) within the target HTML document.</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve updated the paragraphs in <code class="language-text">index.html</code> to introduce absolute URLs and show their general format using <code class="language-html">&lt;code&gt;</code> for clarity. We haven&#39;t added an actual link element yet.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Links and Navigation&lt;/h1&gt;
+  &lt;p&gt;Absolute URLs provide the full web address.&lt;/p&gt;
+
+  &lt;p&gt;Format: &lt;code&gt;scheme://domain:port/path?query#fragment&lt;/code&gt;&lt;/p&gt;
+  &lt;!-- Example link added in next step --&gt;
+
+  &lt;p&gt;Used mainly for external links.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Review the updated paragraph text in <code class="language-text">index.html</code>.</li>
+<li>The browser preview shows the definition. No actual link is present yet.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Absolute URLs contain the full address (scheme, domain, path, etc.) needed to locate a resource independently and are essential for linking to external websites.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

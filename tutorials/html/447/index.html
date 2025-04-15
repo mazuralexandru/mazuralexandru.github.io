@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Form Labels (&lt;label&gt;)</h1>
+  <p>Associating labels explicitly using 'for' and 'id'.</p>
+
+  <form action="/submit-data" method="POST">
+     <p> <!-- Wrap for spacing -->
+       <!-- Label's 'for' attribute value MUST match Input's 'id' value -->
+       <label for="first_name">First Name:</label>
+       <input type="text" id="first_name" name="first_name">
+     </p>
+     <p> <!-- Wrap for spacing -->
+       <label for="accept_terms">I agree to the terms</label> <!-- Label text placement flexible -->
+       <input type="checkbox" id="accept_terms" name="terms">
+     </p>
+  </form>
+
+  <p>This is the preferred method for accessibility.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

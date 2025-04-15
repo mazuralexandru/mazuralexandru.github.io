@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>14. Minimal HTML Document: The DOCTYPE Declaration</h1>
+<p>The very first thing in any HTML document <strong>must</strong> be the <strong>Document Type Declaration</strong>, commonly known as the <strong>DOCTYPE</strong>.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>It tells the web browser which version of HTML the document is written in. For modern web development, we use the HTML5 DOCTYPE.</li>
+<li>Crucially, it signals to the browser to render the page in <strong>&quot;standards mode&quot;</strong>. This ensures the browser follows current web standards as closely as possible, leading to more predictable and consistent rendering across different browsers.</li>
+</ul>
+<p><strong>Syntax (HTML5):</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+</code></pre>
+<ul>
+<li>It starts with <code class="language-html">&lt;!</code> and ends with <code class="language-html">&gt;</code>.</li>
+<li>The keyword <code class="language-text">DOCTYPE</code> is case-insensitive, but typically written in uppercase by convention.</li>
+<li><code class="language-text">html</code> indicates the HTML5 standard.</li>
+</ul>
+<p><strong>Placement:</strong></p>
+<ul>
+<li><strong>Rule:</strong> The DOCTYPE <strong>must</strong> be the absolute first line of your HTML file. Nothing else can come before it – not even comments or whitespace.</li>
+</ul>
+<p><strong>What Happens Without It?</strong></p>
+<p>If you omit the DOCTYPE, or if it&#39;s incorrect or placed wrongly, browsers may fall back into <strong>&quot;quirks mode&quot;</strong>. In quirks mode, browsers try to emulate the behavior of much older, non-standard browsers to maintain compatibility with outdated websites. This often results in inconsistent layouts and unexpected behavior. <strong>Always include the HTML5 DOCTYPE.</strong></p>
+<p><strong>Historical Context:</strong></p>
+<p>Older HTML versions (like HTML 4.01 or XHTML 1.0) had much longer, more complex DOCTYPE declarations that referenced specific Document Type Definitions (DTDs). HTML5 greatly simplified this.</p>
+<p><strong>Code Change:</strong></p>
+<p>We have added the DOCTYPE declaration as the very first line in <code class="language-text">index.html</code>:</p>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt; &lt;!-- Added this line --&gt;
+&lt;!-- We will build the standard document structure soon --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that <code class="language-text">index.html</code> now starts with <code class="language-html">&lt;!DOCTYPE html&gt;</code>.</li>
+<li>The browser preview pane will still appear blank. The DOCTYPE is an instruction <em>to</em> the browser; it doesn&#39;t produce visible output itself.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Always start your HTML file with <code class="language-html">&lt;!DOCTYPE html&gt;</code> on the very first line to ensure standards-compliant rendering.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>677. Reset &amp; Common Errors: Missing Required Attribute (<code>alt</code>)</h1>
+<p>Some HTML elements require specific attributes to be present for the element to be valid and function correctly, especially for accessibility. Forgetting these is a common validation error.</p>
+<p><strong>Resetting:</strong></p>
+<p>Remove the previous nesting error examples.</p>
+<p><strong>Error: Missing Required Attribute</strong></p>
+<ul>
+<li><strong>Problem:</strong> An element is used without one of its mandatory attributes. The most frequent example is omitting the <code>alt</code> attribute on an <code class="language-html">&lt;img&gt;</code> element.</li>
+<li><strong>Impact:</strong> Directly harms accessibility (screen readers have no alternative for the image), prevents fallback text display for broken images, and results in invalid HTML. Other examples include missing <code>kind</code> on <code class="language-html">&lt;track&gt;</code> or potentially <code>label</code> on <code class="language-html">&lt;optgroup&gt;</code>.</li>
+<li><strong>Validator Message (Example):</strong> <code>Error: Element &quot;img&quot; is missing required attribute &quot;alt&quot;.</code></li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the previous nesting examples from <code>index.html</code>.</li>
+<li>Added a &quot;Bad Example&quot; showing an <code class="language-html">&lt;img&gt;</code> tag missing the <code>alt</code> attribute.</li>
+<li>Added a &quot;Good Example&quot; showing the <code class="language-html">&lt;img&gt;</code> tag with a proper <code>alt</code> attribute, and another example using the valid empty <code>alt=&quot;&quot;</code> for decorative images.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Common Validation Errors&lt;/h1&gt;
+
+  &lt;h2&gt;Error: Missing Required Attribute&lt;/h2&gt;
+
+  &lt;!-- Bad Example (Missing alt) --&gt;
+  &lt;p&gt;An image without alt text: &lt;img src=&quot;/images/placeholder.png&quot;&gt;&lt;/p&gt;
+
+  &lt;hr&gt; &lt;!-- Separator --&gt;
+
+  &lt;!-- Good Example --&gt;
+  &lt;p&gt;An image with alt text: &lt;img src=&quot;/images/placeholder.png&quot; alt=&quot;Placeholder image&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;A decorative image: &lt;img src=&quot;/images/decor.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p><em>(Note: Image paths are hypothetical and will show as broken).</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of previous examples and the addition of the <code class="language-html">&lt;img&gt;</code> examples. Note the missing <code>alt</code> in the first image.</li>
+<li>The browser preview shows broken image icons.</li>
+<li><strong>(Conceptual):</strong> Running the &quot;Bad Example&quot; through <code>validator.w3.org</code> would report an error because the <code>alt</code> attribute is missing. The &quot;Good Example&quot; code would validate correctly because <code>alt</code> is present (even if empty for the decorative case).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Always include required attributes defined by the HTML specification for elements like <code class="language-html">&lt;img&gt;</code> (<code>alt</code>), <code class="language-html">&lt;track&gt;</code> (<code>kind</code>), <code class="language-html">&lt;optgroup&gt;</code> (<code>label</code>), etc. Validators are essential for catching these omissions, which often have significant accessibility implications.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

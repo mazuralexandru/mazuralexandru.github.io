@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>551. Multimedia: Video (<code class="language-html">&lt;video&gt;</code>) - <code>crossorigin</code> Attribute</h1>
+<p>The <code class="language-html">crossorigin</code> attribute controls whether Cross-Origin Resource Sharing (CORS) should be used when fetching the media specified by <code>src</code> (or <code class="language-html">&lt;source&gt;</code>). This is relevant when the media file is hosted on a <strong>different domain</strong> (origin) than your HTML page.</p>
+<p><strong>The <code>crossorigin</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> To configure how the browser makes requests for cross-origin media assets and determines whether your scripts can access the content of that media (e.g., pixel data for <code class="language-html">&lt;canvas&gt;</code>).</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;video src=&quot;...&quot; crossorigin=&quot;value&quot;&gt;</code></li>
+<li><strong>Values:</strong><ul>
+<li><strong><code>anonymous</code>:</strong><ul>
+<li>Sends a cross-origin request <strong>without</strong> sending user credentials (like cookies or HTTP authentication) associated with the target domain.</li>
+<li>If the server responds <em>without</em> proper CORS headers (like <code>Access-Control-Allow-Origin: *</code> or <code>Access-Control-Allow-Origin: your-site.com</code>), the media will still load and play, but it becomes <strong>&quot;tainted&quot;</strong>. JavaScript access to its internal content (e.g., drawing it onto a canvas) will be blocked by the browser for security.</li>
+<li>If the server <em>does</em> send appropriate CORS headers allowing your origin, the media loads, plays, <em>and</em> can potentially be accessed by scripts.</li>
+</ul>
+</li>
+<li><strong><code>use-credentials</code>:</strong><ul>
+<li>Sends a cross-origin request <strong>with</strong> any relevant user credentials (cookies, etc.) for the target domain.</li>
+<li>Requires the server to respond with very specific CORS headers, including <code>Access-Control-Allow-Origin: your-site.com</code> (cannot be <code>*</code>) and <code>Access-Control-Allow-Credentials: true</code>.</li>
+<li>If the server doesn&#39;t respond with these exact headers, the media <strong>will fail to load entirely</strong>.</li>
+<li>If successful, allows credentialed access <em>and</em> script interaction if permitted by other CORS headers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Attribute Omitted:</strong> If <code>crossorigin</code> is omitted, the request is sent <em>without</em> CORS headers. The media loads and plays, but it&#39;s treated as tainted, blocking script access. This is the default behavior.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>You <strong>must</strong> use <code>crossorigin</code> (usually <code>anonymous</code>) if you need to:<ul>
+<li>Load WebVTT tracks (<code class="language-html">&lt;track&gt;</code>) from a different domain than your video.</li>
+<li>Access the video&#39;s pixel data using JavaScript and the <code class="language-html">&lt;canvas&gt;</code> element (e.g., for custom effects, frame capture). Requires appropriate server CORS headers.</li>
+</ul>
+</li>
+<li>Use <code>use-credentials</code> only if the cross-origin server requires authentication cookies <em>and</em> is configured to allow credentialed CORS requests from your origin.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve re-added a hypothetical cross-origin <code>src</code> and added <code class="language-html">crossorigin=&quot;anonymous&quot;</code> to the <code class="language-html">&lt;video&gt;</code> tag.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+  &lt;!-- Added crossorigin=&quot;anonymous&quot; --&gt;
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;
+         src=&quot;https://other-domain.com/video.mp4&quot; &lt;!-- Hypothetical cross-origin src --&gt;
+         crossorigin=&quot;anonymous&quot;&gt;
+    &lt;p&gt;Sorry, your browser doesn&#39;t support embedded videos.&lt;/p&gt;
+  &lt;/video&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>crossorigin=&quot;anonymous&quot;</code> attribute.</li>
+<li>There is <strong>no direct visual change</strong> in the preview.</li>
+<li><strong>(Conceptual):</strong> If this video existed and the server <code>other-domain.com</code> responded with <code>Access-Control-Allow-Origin: *</code> (or allowing our origin), this setting would enable us to potentially draw frames from this video onto a <code class="language-html">&lt;canvas&gt;</code> using JavaScript. Without <code>crossorigin=&quot;anonymous&quot;</code>, that action would be blocked even if the video played correctly.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code>crossorigin</code> attribute (<code>anonymous</code> or <code>use-credentials</code>) on <code class="language-html">&lt;video&gt;</code> (and <code class="language-html">&lt;audio&gt;</code>, <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;link&gt;</code>, <code class="language-html">&lt;script&gt;</code>) when fetching resources from a different domain and you need to enable CORS for script access (like with Canvas) or loading associated resources (like cross-origin <code>&lt;track&gt;</code>s). Requires corresponding CORS headers from the server hosting the resource.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

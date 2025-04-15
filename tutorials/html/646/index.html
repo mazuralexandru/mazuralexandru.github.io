@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Entities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Entity Context: Text vs. Attributes</h1> <!-- Updated H1 -->
+  <p>Resetting to demonstrate context differences.</p> <!-- Adjusted P -->
+
+  <!-- Removed previous parsing examples -->
+
+  <h2>In Text Content:</h2>
+  <p>Requires escaping &lt;, &gt;, and &amp;.</p>
+  <p>Example: <code>5 &lt; 10</code> means 5 is less than 10. Use <code>&lt;code&gt;</code> for code.</p>
+
+  <h2>In Attribute Values:</h2>
+  <p>Requires escaping '&amp;' always. Escape quotes (' or ") if they match delimiter.</p>
+  <p><a href="results.php?page=2&amp;sort=asc" title="Page 2, Ascending ('&amp;' escaped)">Link with Query</a></p>
+  <p><button title='Use &apos;s for possessives (like it&apos;s) in single quotes'>Button</button></p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

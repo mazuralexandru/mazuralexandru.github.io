@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>60. Preparing for Code Elements: Removing <code class="language-html">&lt;hr&gt;</code> Example</h1>
+<p>We&#39;ve discussed the semantic meaning and styling considerations for the thematic break element (<code class="language-html">&lt;hr&gt;</code>). Now, to prepare for the next section focusing on elements used for displaying code and preformatted text (<code class="language-html">&lt;pre&gt;</code> and <code class="language-html">&lt;code&gt;</code>), we will remove the <code class="language-html">&lt;hr&gt;</code> from our example.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention completely to the upcoming concepts of whitespace preservation and semantic code markup.</li>
+<li><strong>Relevance:</strong> The thematic break is not directly needed for understanding <code class="language-html">&lt;pre&gt;</code> or <code class="language-html">&lt;code&gt;</code>.</li>
+<li><strong>Clean Slate:</strong> Provides simple paragraph structure as a baseline before introducing block-level preformatted text.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;hr&gt;</code> element from between the two paragraphs in <code class="language-text">index.html</code>. We also adjusted the paragraph text slightly.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt;
+  &lt;p&gt;This is the introductory paragraph. We will now look at elements for code and preformatted text.&lt;/p&gt; &lt;!-- Adjusted text --&gt;
+
+  &lt;!-- Removed hr --&gt;
+  &lt;!-- &lt;hr&gt; --&gt;
+
+  &lt;p&gt;This is another paragraph, ready for new examples.&lt;/p&gt; &lt;!-- Adjusted text --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Confirm that the <code class="language-html">&lt;hr&gt;</code> tag is no longer present in <code class="language-text">index.html</code>.</li>
+<li>The browser preview should revert to showing the heading followed by two plain paragraphs without the horizontal line separator.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The cycle of introducing an element, explaining its purpose and nuances, and then potentially removing it to focus on the next concept is a key part of our granular learning approach. We removed the <code class="language-html">&lt;hr&gt;</code> to prepare for <code class="language-html">&lt;pre&gt;</code> and <code class="language-html">&lt;code&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

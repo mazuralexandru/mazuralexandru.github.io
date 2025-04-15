@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>82. Other Inline Semantics: Subscript (<code class="language-html">&lt;sub&gt;</code>)</h1>
+<p>Now let&#39;s look at the <code class="language-html">&lt;sub&gt;</code> element, used for subscript text.</p>
+<p><strong>The Subscript Element (<code class="language-html">&lt;sub&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Renders text as <strong>subscript</strong>, meaning it appears slightly below the normal baseline and often in a slightly smaller font size.</li>
+<li><strong>Semantics:</strong> Represents text that should be subscript according to established typographical conventions, primarily for mathematical or chemical notation.</li>
+<li><strong>Type:</strong> Inline element.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;sub&gt;...&lt;/sub&gt;</code></li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<p>The semantic meaning restricts its use primarily to:</p>
+<ul>
+<li><strong>Chemical Formulas:</strong> Like the &#39;2&#39; in H₂O.</li>
+<li><strong>Mathematical Indices:</strong> Like the &#39;i&#39; or &#39;n&#39; in variables like xᵢ or y&lt;0xE2&gt;&lt;0x82&gt;&lt;0x99&gt;. (Often referred to as subscripts in math).</li>
+</ul>
+<p><strong>Default Rendering:</strong></p>
+<p>Browsers lower the baseline of the text inside <code class="language-html">&lt;sub&gt;</code> and may slightly reduce its font size.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added examples of <code class="language-html">&lt;sub&gt;</code> in the paragraphs of <code class="language-text">index.html</code> for both chemical and mathematical notation.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Other Inline Semantics&lt;/h1&gt;
+  &lt;p&gt;Subscript is used for things like chemical formulas: H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt; &lt;!-- Added &lt;sub&gt; --&gt;
+
+  &lt;p&gt;It&#39;s also used for mathematical indices, like x&lt;sub&gt;i&lt;/sub&gt; or y&lt;sub&gt;n&lt;/sub&gt;.&lt;/p&gt; &lt;!-- Added &lt;sub&gt; --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;sub&gt;</code> tags in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. You should see:<ul>
+<li>The &#39;2&#39; in H₂O appearing slightly lower than the &#39;H&#39; and &#39;O&#39;.</li>
+<li>The &#39;i&#39; in xᵢ and the &#39;n&#39; in y&lt;0xE2&gt;&lt;0x82&gt;&lt;0x99&gt; appearing slightly lower than the &#39;x&#39; and &#39;y&#39;.</li>
+<li>The subscripted characters might also appear slightly smaller.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the inline <code class="language-html">&lt;sub&gt;</code> element semantically to represent subscript text according to typographical conventions, primarily for chemical formulas and mathematical indices.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

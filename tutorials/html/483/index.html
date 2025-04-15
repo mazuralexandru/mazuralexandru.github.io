@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Form Validation Attributes</h1>
+  <p>Attributes 'min', 'max', and 'step' constrain numeric/date inputs.</p>
+
+  <form action="/submit-data" method="POST">
+    <!-- Removed postcode example -->
+    <p>
+       <label for="rating">Rating (1-5, step 1):</label>
+       <input type="number" id="rating" name="rating"
+              min="1" max="5" step="1" value="3" required> <!-- Added min/max/step -->
+    </p>
+    <p>
+       <label for="event_date">Event Date (This Year):</label>
+       <input type="date" id="event_date" name="event_date"
+              min="2024-01-01" max="2024-12-31" required> <!-- Added min/max -->
+    </p>
+    <p><button type="submit">Submit</button></p>
+  </form>
+
+  <p>Browser validates against these ranges on submit.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

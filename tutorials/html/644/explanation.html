@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>644. Finding Entity Codes (Named &amp; Numeric)</h1>
+<p>How do you find the correct entity name or numeric code point for a character you need?</p>
+<p><strong>Methods:</strong></p>
+<ol>
+<li><strong>Common Entities Lists:</strong> For frequently used characters (reserved, copyright, trademark, basic symbols), developers often memorize them or refer to common cheat sheets.<ul>
+<li>Examples: MDN Web Docs has excellent lists. Many HTML reference sites provide them.</li>
+</ul>
+</li>
+<li><strong>Searching Online:</strong> Search for &quot;HTML entity for [character name]&quot; (e.g., &quot;HTML entity for copyright symbol&quot;, &quot;HTML entity for left double quote&quot;).</li>
+<li><strong>Unicode Character Lookup:</strong><ul>
+<li>Every character has a unique <strong>Unicode Code Point</strong> (a number).</li>
+<li>You can find the code point using:<ul>
+<li><strong>Operating System Character Map Utilities:</strong> Most OSes (Windows Character Map, macOS Character Viewer) allow you to find characters, view their details, and see their Unicode code point (often shown in hexadecimal, like <code>U+00A9</code> for ©).</li>
+<li><strong>Online Unicode Tables/Search:</strong> Websites like unicode-table.com allow searching for characters and viewing their code points (decimal and hex).</li>
+</ul>
+</li>
+<li>Once you have the code point, you can construct the numeric entity:<ul>
+<li>If code point is <code>U+00A9</code> (hex), the entities are <code class="language-text">&amp;#xA9;</code> (hex) or <code class="language-text">&amp;#169;</code> (decimal 169).</li>
+<li>If code point is <code>U+20AC</code> (hex) for Euro €, entities are <code class="language-text">&amp;#x20AC;</code> or <code class="language-text">&amp;#8364;</code> (decimal).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Browser Developer Tools:</strong> You can often inspect a character already rendered on a web page using browser dev tools (Inspect Element) and sometimes find its code point or entity representation in the DOM view or computed styles.</li>
+<li><strong>Text Editor Features:</strong> Some code editors have plugins or built-in features for inserting or converting characters to entities.</li>
+</ol>
+<p><strong>Preference Recap:</strong> Remember the hierarchy: Direct UTF-8 &gt; Named Entity &gt; Numeric Entity. Only look up entities when direct input isn&#39;t suitable or for the core reserved characters.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Try using your operating system&#39;s character map/viewer or an online tool to find the Unicode code point for a symbol like the Pi symbol (π) or a specific accented letter like &#39;Ö&#39;. Convert the code point to both decimal and hexadecimal numeric entities (π is U+03C0, hex <code>&amp;#x3C0;</code>, decimal <code>&amp;#960;</code>).</p>
+<p>✨ <strong>Key Takeaway:</strong> Use online references (like MDN), OS character maps, or Unicode lookup tools to find the appropriate named entity or the Unicode code point needed to construct a numeric entity (<code>&amp;#decimal;</code> or <code>&amp;#xhex;</code>) when required.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

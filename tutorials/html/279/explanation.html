@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>279. The <code>class</code> Attribute - Behavior &amp; Interactions: JavaScript</h1>
+<p>Classes are also essential for <strong>JavaScript</strong> interaction, providing a flexible way to select and manipulate groups of elements.</p>
+<p><strong>JavaScript Selection Methods:</strong></p>
+<ol>
+<li><p><strong><code class="language-js">document.getElementsByClassName(&#39;classname&#39;)</code></strong></p>
+<ul>
+<li><strong>Purpose:</strong> Selects all elements in the document that have the specified class name.</li>
+<li><strong>Return Value:</strong> Returns a <strong>live <code>HTMLCollection</code></strong>. This is an array-like object containing all matching elements. &quot;Live&quot; means if elements with this class are added or removed from the DOM <em>after</em> the collection was created, the collection updates automatically.</li>
+<li><strong>Iteration:</strong> You typically need to loop through the <code>HTMLCollection</code> to access individual elements (e.g., using a <code>for...of</code> loop or <code>Array.from().forEach()</code>).</li>
+<li><strong>Example:</strong> <code class="language-js">let highlightedItems = document.getElementsByClassName(&#39;highlight&#39;);</code></li>
+</ul>
+</li>
+<li><p><strong><code class="language-js">document.querySelectorAll(&#39;.classname&#39;)</code></strong></p>
+<ul>
+<li><strong>Purpose:</strong> Selects all elements matching the provided CSS selector (in this case, a class selector).</li>
+<li><strong>Return Value:</strong> Returns a <strong>static <code>NodeList</code></strong>. This is also an array-like object, but &quot;static&quot; means it&#39;s a snapshot of the elements that matched <em>at the time the query was run</em>. It does <em>not</em> automatically update if matching elements are later added or removed.</li>
+<li><strong>Iteration:</strong> Also typically requires looping (e.g., <code>NodeList.forEach()</code> is available directly, or use <code>for...of</code>).</li>
+<li><strong>Versatility:</strong> Can use more complex CSS selectors (e.g., <code class="language-js">document.querySelectorAll(&#39;p.info-text&#39;)</code>). Generally preferred over <code>getElementsByClassName</code> due to its static nature (often less surprising behavior) and versatility with selectors.</li>
+<li><strong>Example:</strong> <code class="language-js">let infoParagraphs = document.querySelectorAll(&#39;.info-text&#39;);</code></li>
+</ul>
+</li>
+<li><p><strong>Scoped Selection:</strong> You can also use these methods on a specific parent element to find descendants with a certain class:</p>
+<ul>
+<li><code class="language-js">parentElement.getElementsByClassName(&#39;classname&#39;)</code></li>
+<li><code class="language-js">parentElement.querySelectorAll(&#39;.classname&#39;)</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>JavaScript Class Manipulation (<code>element.classList</code>)</strong></p>
+<ul>
+<li>As discussed previously (when comparing <code>id</code> and <code>class</code>), the <code class="language-js">element.classList</code> API is the modern and best way to dynamically add, remove, toggle, or check for classes on an element using JavaScript.<ul>
+<li><code class="language-js">element.classList.add(&#39;is-active&#39;);</code></li>
+<li><code class="language-js">element.classList.remove(&#39;is-hidden&#39;);</code></li>
+<li><code class="language-js">element.classList.toggle(&#39;highlighted&#39;);</code></li>
+<li><code class="language-js">element.classList.contains(&#39;error&#39;);</code></li>
+</ul>
+</li>
+<li><strong>Use Case:</strong> This is fundamental for creating dynamic user interfaces. For example, clicking a button might add an <code class="language-html">is-active</code> class to a menu using JavaScript, and CSS rules defined for <code class="language-css">.is-active</code> would then make the menu visible.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This lesson focuses on how JavaScript uses the <code class="language-html">class</code> attributes we added. Imagine JavaScript code selecting all elements with <code class="language-html">class=&quot;highlight&quot;</code> to perhaps add an event listener to them, or dynamically adding/removing a class like <code class="language-html">is-selected</code> based on user interaction.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">class</code> attribute is essential for JavaScript, allowing the selection of multiple elements using methods like <code class="language-js">document.querySelectorAll()</code> and dynamic manipulation of element states or appearances using the <code class="language-js">element.classList</code> API.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

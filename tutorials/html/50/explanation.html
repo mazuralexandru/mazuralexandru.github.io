@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>50. Tidying Up: Removing Discouraged <code class="language-html">&lt;u&gt;</code> Example</h1>
+<p>As discussed previously, the <code class="language-html">&lt;u&gt;</code> element is generally discouraged due to its potential to be confused with hyperlinks. While we added it briefly for illustrative purposes, it&#39;s best practice not to leave potentially confusing or problematic code in our examples unless we are specifically analyzing it.</p>
+<p><strong>Why Remove It?</strong></p>
+<ul>
+<li><strong>Best Practices:</strong> Reinforces the recommendation to avoid <code class="language-html">&lt;u&gt;</code>.</li>
+<li><strong>Clarity:</strong> Removes a potentially confusing element from the preview.</li>
+<li><strong>Focus:</strong> Keeps the example focused on more commonly and appropriately used inline semantic elements.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;u&gt;this&lt;/u&gt;</code> snippet from the first paragraph in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt; ... Remember to install the &lt;b&gt;SuperWidget&lt;/b&gt; driver first. &lt;!-- Removed &lt;u&gt; example --&gt; &lt;/p&gt;
+&lt;!-- Removed: Spelling erors like &lt;u&gt;this&lt;/u&gt; are sometimes marked. --&gt;
+</code></pre>
+<p><em>(Note: The surrounding sentence fragment was also removed as it no longer made sense without the example.)</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Confirm that the <code class="language-html">&lt;u&gt;</code> tag and its surrounding text fragment (&quot;Spelling erors...&quot;) are no longer present in <code class="language-text">index.html</code>.</li>
+<li>The browser preview should no longer show the underlined word &quot;this&quot;.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Actively removing examples of discouraged practices, after explaining <em>why</em> they are discouraged, helps reinforce best practices and keeps the code examples clean.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

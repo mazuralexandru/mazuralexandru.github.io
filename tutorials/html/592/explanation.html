@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>592. Graphics: Canvas (<code class="language-html">&lt;canvas&gt;</code>) - Attribute vs. CSS Sizing</h1>
+<p>Let&#39;s clarify the crucial difference between setting canvas dimensions using HTML attributes (<code class="language-html">width</code>/<code class="language-html">height</code>) versus using CSS properties (<code class="language-css">width</code>/<code class="language-css">height</code>).</p>
+<p><strong>HTML <code>width</code>/<code>height</code> Attributes:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Define the dimensions of the <strong>drawing buffer</strong> – the actual grid of pixels that JavaScript drawing commands operate on. Sets the size of the canvas&#39;s coordinate system.</li>
+<li><strong>Effect:</strong> Determines the intrinsic resolution of the canvas bitmap.</li>
+<li><strong>Default:</strong> <code>width=&quot;300&quot;</code>, <code>height=&quot;150&quot;</code>.</li>
+</ul>
+<p><strong>CSS <code>width</code>/<code>height</code> Properties:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Define the dimensions of the <strong>canvas element itself</strong> as it appears in the page layout. Controls how much space the element takes up on the screen.</li>
+<li><strong>Effect:</strong> Styles the container element. If the CSS dimensions differ from the HTML attribute dimensions (and don&#39;t maintain the same aspect ratio), the browser <strong>scales</strong> the canvas bitmap (like scaling a raster image), which usually results in distortion (blurriness or pixelation).</li>
+<li><strong>Default:</strong> Depends on CSS rules; might be <code>auto</code> or inherited.</li>
+</ul>
+<p><strong>Why Use Both (Responsive Canvas):</strong></p>
+<p>For a responsive canvas that maintains crisp drawing quality:</p>
+<ol>
+<li><strong>Set HTML Attributes:</strong> Use <code class="language-html">width</code> and <code class="language-html">height</code> to define the desired <em>maximum</em> or <em>native</em> resolution of your drawing buffer (e.g., <code>width=&quot;800&quot; height=&quot;400&quot;</code>).</li>
+<li><strong>Set CSS Styles:</strong> Use CSS to control the <em>displayed</em> size, often using relative units or max-width to make it fit its container. Critically, use <code class="language-css">height: auto;</code> to maintain the aspect ratio defined by the HTML attributes.<pre class="language-css"><code class="language-css">/* Example CSS for responsive canvas */
+canvas#myCanvas {
+  width: 100%; /* Make element fill container width */
+  max-width: 800px; /* Limit max size based on buffer */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Optional: for margin control */
+}
+</code></pre>
+The browser uses the HTML attributes (<code>800</code>/<code>400</code> -&gt; 2:1 ratio) to calculate the correct <code>auto</code> height based on the CSS <code>width</code> (100% of container).</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We will add CSS to <code>style.css</code> to illustrate scaling the element, while keeping the HTML attributes fixed.</p>
+<pre class="language-css"><code class="language-css">/* style.css - Add this AFTER base styles */
+canvas {
+  /* Make the element display larger than its drawing buffer */
+  width: 450px;
+  height: 225px;
+  /* (Maintains 2:1 aspect ratio, but scales the 300x150 buffer up) */
+
+  border: 1px dashed skyblue; /* Keep border */
+}
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the addition of the <code class="language-css">canvas</code> rule in <code>style.css</code>. The HTML <code class="language-html">width=&quot;300&quot;</code> and <code class="language-html">height=&quot;150&quot;</code> remain unchanged in <code>index.html</code>.</li>
+<li>Look at the browser preview. The dashed blue box representing the <code class="language-html">&lt;canvas&gt;</code> element should now appear <strong>larger</strong> (450x225 pixels) than its internal drawing buffer (300x150 pixels).</li>
+<li><strong>(Conceptual):</strong> If we were drawing content onto this canvas, it would appear <strong>blurry or pixelated</strong> because the 300x150 pixel drawing is being stretched by CSS to fill the larger 450x225 element size. This demonstrates the importance of coordinating attribute and CSS dimensions, especially for responsiveness.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> HTML <code>width</code>/<code>height</code> attributes set the canvas drawing buffer size (resolution). CSS <code>width</code>/<code>height</code> style the element&#39;s display size. For crisp results, set attributes to the native resolution and use CSS for responsive scaling (<code>max-width: 100%; height: auto;</code>). Mismatching attributes and CSS aspect ratios causes distortion.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

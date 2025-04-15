@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>468. Forms: Option Groups (<code class="language-html">&lt;optgroup&gt;</code>)</h1>
+<p>For long <code class="language-html">&lt;select&gt;</code> lists, it&#39;s helpful to group related options under headings. The <code class="language-html">&lt;optgroup&gt;</code> element provides this functionality.</p>
+<p><strong>The <code class="language-html">&lt;optgroup&gt;</code> Element:</strong></p>
+<ul>
+<li><strong>Definition:</strong> Creates a grouping for a set of <code class="language-html">&lt;option&gt;</code> elements within a <code class="language-html">&lt;select&gt;</code> list.</li>
+<li><strong>Purpose:</strong> Improves the organization and scannability of long dropdown lists by visually separating options into logical categories.</li>
+<li><strong>Placement:</strong> Must be a direct child of a <code class="language-html">&lt;select&gt;</code> element. Contains <code class="language-html">&lt;option&gt;</code> elements as its children. Cannot be nested inside another <code class="language-html">&lt;optgroup&gt;</code>.</li>
+</ul>
+<p><strong>Syntax &amp; Core Mechanics:</strong></p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;optgroup label=&quot;Group Heading Text&quot;&gt; ... &lt;option&gt; elements ... &lt;/optgroup&gt;</code></li>
+<li>Requires opening <code class="language-html">&lt;optgroup&gt;</code> and closing <code class="language-html">&lt;/optgroup&gt;</code> tags.</li>
+<li><strong><code>label</code> Attribute [Required]:</strong> Specifies the text that will be displayed as the <strong>heading</strong> for the group within the dropdown list. This heading is typically rendered visually distinct (e.g., bold or italic) and is <strong>not selectable</strong> itself.</li>
+<li><strong><code>disabled</code> (Boolean Attribute):</strong> If present on the <code class="language-html">&lt;optgroup&gt;</code>, it disables <strong>all</strong> the <code class="language-html">&lt;option&gt;</code> elements nested within that specific group, making them unselectable.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve restructured the <code class="language-html">&lt;select&gt;</code> element in <code class="language-text">index.html</code> to demonstrate <code class="language-html">&lt;optgroup&gt;</code>:</p>
+<ol>
+<li>Reverted back to a single-select dropdown (removed <code>multiple</code> and <code>size</code>).</li>
+<li>Added <code class="language-html">&lt;optgroup&gt;</code> elements with <code>label</code> attributes (&quot;North America&quot;, &quot;Europe&quot;, &quot;Asia&quot;).</li>
+<li>Placed <code class="language-html">&lt;option&gt;</code> elements within their respective <code>&lt;optgroup&gt;</code>s.</li>
+<li>Added a disabled <code class="language-html">&lt;option&gt;</code> within a group and a disabled entire <code class="language-html">&lt;optgroup&gt;</code>.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;city-select&quot;&gt;Choose a city:&lt;/label&gt;&lt;br&gt;
+    &lt;select name=&quot;city&quot; id=&quot;city-select&quot;&gt; &lt;!-- Reset to single select --&gt;
+      &lt;option value=&quot;&quot;&gt;-- Select City --&lt;/option&gt;
+      &lt;optgroup label=&quot;North America&quot;&gt; &lt;!-- Added optgroup --&gt;
+        &lt;option value=&quot;nyc&quot;&gt;New York&lt;/option&gt;
+        &lt;option value=&quot;tor&quot;&gt;Toronto&lt;/option&gt;
+      &lt;/optgroup&gt;
+      &lt;optgroup label=&quot;Europe&quot;&gt; &lt;!-- Added optgroup --&gt;
+        &lt;option value=&quot;lon&quot;&gt;London&lt;/option&gt;
+        &lt;option value=&quot;par&quot;&gt;Paris&lt;/option&gt;
+        &lt;option value=&quot;ber&quot; disabled&gt;Berlin (Coming Soon)&lt;/option&gt; &lt;!-- Disabled option --&gt;
+      &lt;/optgroup&gt;
+       &lt;optgroup label=&quot;Asia&quot; disabled&gt; &lt;!-- Disabled optgroup --&gt;
+        &lt;option value=&quot;tok&quot;&gt;Tokyo&lt;/option&gt;
+      &lt;/optgroup&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code class="language-html">&lt;optgroup&gt;</code> elements wrapping sets of <code>&lt;option&gt;</code>s within the <code class="language-html">&lt;select&gt;</code>. Note the required <code>label</code> attribute and the use of <code>disabled</code>.</li>
+<li>Look at the browser preview and click the dropdown:<ul>
+<li>You should see the options grouped under the non-selectable headings &quot;North America&quot;, &quot;Europe&quot;, and &quot;Asia&quot;.</li>
+<li>The headings might be visually distinct (e.g., bold).</li>
+<li>The &quot;Berlin&quot; option under Europe should be disabled (greyed out).</li>
+<li>The entire &quot;Asia&quot; group (including &quot;Tokyo&quot;) should be disabled because the <code>disabled</code> attribute is on the <code class="language-html">&lt;optgroup&gt;</code> itself.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;optgroup label=&quot;...&quot;&gt;</code> inside <code class="language-html">&lt;select&gt;</code> to group related <code class="language-html">&lt;option&gt;</code> elements under a non-selectable heading, improving organization for long lists. The <code>disabled</code> attribute can apply to individual options or entire groups.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

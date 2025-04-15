@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>127. Description Lists (<code class="language-html">&lt;dl&gt;</code>): Fundamentals</h1>
+<p>Let&#39;s introduce the container element for description lists: <code class="language-html">&lt;dl&gt;</code>.</p>
+<p><strong>The Description List Element (<code class="language-html">&lt;dl&gt;</code>)</strong></p>
+<ul>
+<li><strong>Definition:</strong> The <code class="language-html">&lt;dl&gt;</code> element represents an <strong>association list</strong> or <strong>description list</strong>. It consists of zero or more groups, where each group associates one or more terms/names (<code class="language-html">&lt;dt&gt;</code>) with one or more descriptions/values (<code class="language-html">&lt;dd&gt;</code>).</li>
+<li><strong>Purpose:</strong> To structure content that naturally forms pairs of related information, like terms and definitions, metadata keys and values, questions and answers, or speakers and dialogue.</li>
+<li><strong>Semantic Meaning:</strong> Conveys these term-description relationships. It&#39;s distinct from a simple list of items (<code class="language-html">&lt;ul&gt;</code>/<code class="language-html">&lt;ol&gt;</code>).</li>
+<li><strong>Type:</strong> Block-level element.</li>
+</ul>
+<p><strong>Analogy:</strong></p>
+<ul>
+<li>A glossary section.</li>
+<li>A dictionary entry structure.</li>
+<li>Product specification (Feature: Detail).</li>
+<li>FAQ list (Question: Answer).</li>
+</ul>
+<p><strong>Structure Note:</strong> Unlike <code class="language-html">&lt;ul&gt;</code> and <code class="language-html">&lt;ol&gt;</code> which contain only <code class="language-html">&lt;li&gt;</code> children, the <code class="language-html">&lt;dl&gt;</code> element has a specific structure involving two different child elements: <code class="language-html">&lt;dt&gt;</code> (Description Term) and <code class="language-html">&lt;dd&gt;</code> (Description Details), which we will introduce next.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added an empty <code class="language-html">&lt;dl&gt;</code> element to <code class="language-text">index.html</code> and adjusted the paragraph text.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Description Lists (dl)&lt;/h1&gt;
+  &lt;p&gt;A description list uses dl, dt (term), and dd (description).&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;dl&gt; &lt;!-- Added empty dl --&gt;
+    &lt;!-- dt and dd elements will go here --&gt;
+  &lt;/dl&gt;
+
+  &lt;p&gt;Used for glossaries, metadata, key-value pairs.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the empty <code class="language-html">&lt;dl&gt;&lt;/dl&gt;</code> structure in <code class="language-text">index.html</code>.</li>
+<li>The browser preview will show the surrounding paragraphs, but the <code class="language-html">&lt;dl&gt;</code> itself will be invisible as it contains no content yet. Like other empty block elements, it occupies space in the flow but doesn&#39;t render visually.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;dl&gt;</code> element is the container for a description list, used to group term/description pairs. It requires specific child elements (<code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code>) to structure its content.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

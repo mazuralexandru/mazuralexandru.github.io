@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>252. Figures (<code class="language-html">&lt;figure&gt;</code>) - Content Model &amp; Use Cases</h1>
+<p>Let&#39;s look more closely at what can go inside a <code class="language-html">&lt;figure&gt;</code> and its typical uses.</p>
+<p><strong>Content Model:</strong></p>
+<ul>
+<li>A <code class="language-html">&lt;figure&gt;</code> element typically contains:<ul>
+<li><strong>One or more main content elements:</strong> This could be <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;svg&gt;</code>, <code class="language-html">&lt;video&gt;</code>, <code class="language-html">&lt;audio&gt;</code>, <code class="language-html">&lt;canvas&gt;</code>, <code class="language-html">&lt;pre&gt;&lt;code&gt;</code>, <code class="language-html">&lt;table&gt;</code>, <code class="language-html">&lt;blockquote&gt;</code>, or even just paragraphs (<code class="language-html">&lt;p&gt;</code>) if the text itself constitutes the self-contained figure.</li>
+<li><strong>Optionally, ONE <code class="language-html">&lt;figcaption&gt;</code> element:</strong> This provides the caption for the figure (covered next). The <code class="language-html">&lt;figcaption&gt;</code> can appear as the first or last child within the <code class="language-html">&lt;figure&gt;</code>.</li>
+<li>Other flow content as needed to structure the figure.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Use Cases Recap:</strong></p>
+<ul>
+<li>Image(s) with a caption.</li>
+<li>Illustration or diagram with a title/description.</li>
+<li>Code snippet with an explanatory caption.</li>
+<li>Blockquote with attribution provided in a caption.</li>
+<li>A video or audio embed with a title.</li>
+<li>A table presenting data, with a caption explaining it.</li>
+</ul>
+<p><strong>Distinction from <code class="language-html">&lt;div&gt;</code>:</strong></p>
+<ul>
+<li>While you <em>could</em> use a <code class="language-html">&lt;div&gt;</code> to group an image and some text, <code class="language-html">&lt;figure&gt;</code> provides specific <strong>semantic meaning</strong>: &quot;This is a self-contained unit of content, likely referenced elsewhere, that could potentially be moved without disrupting the main flow.&quot; A <code class="language-html">&lt;div&gt;</code> is a generic container with no inherent semantic meaning. Use <code class="language-html">&lt;figure&gt;</code> when this specific semantic is appropriate.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Our current <code class="language-html">&lt;figure&gt;</code> contains only an <code class="language-html">&lt;img&gt;</code>, which is a valid and common use case. Understand that other elements like code blocks or multiple images could also reside within it, and that a <code class="language-html">&lt;figcaption&gt;</code> is often included.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;figure&gt;</code> element is a versatile semantic container for various types of self-contained content (images, code, quotes, etc.), optionally paired with a single <code class="language-html">&lt;figcaption&gt;</code>. Use it when the content functions as a distinct, referencable unit.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

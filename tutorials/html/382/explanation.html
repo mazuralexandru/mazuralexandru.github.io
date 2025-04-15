@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>382. Header Scope: The <code>scope</code> Attribute - Fundamentals</h1>
+<p>While visually the browser often distinguishes <code class="language-html">&lt;th&gt;</code> from <code class="language-html">&lt;td&gt;</code>, simply using the correct tags isn&#39;t always enough to guarantee that assistive technologies (like screen readers) correctly associate the headers with their corresponding data cells, especially in more complex tables.</p>
+<p>The <code class="language-html">scope</code> attribute provides an explicit way to define this association.</p>
+<p><strong>The <code>scope</code> Attribute:</strong></p>
+<ul>
+<li><strong>Definition:</strong> An attribute added <strong>exclusively to <code class="language-html">&lt;th&gt;</code> elements</strong>.</li>
+<li><strong>Purpose:</strong> Explicitly specifies the set of data cells (<code class="language-html">&lt;td&gt;</code>) for which the current <code class="language-html">&lt;th&gt;</code> element provides header information. It defines the <strong>direction</strong> of the header&#39;s scope.</li>
+<li><strong>Core Concept:</strong> It removes ambiguity by telling assistive technology &quot;This header applies to the cells in this column&quot; or &quot;This header applies to the cells in this row&quot;.</li>
+</ul>
+<p><strong>Why is it Important?</strong></p>
+<ul>
+<li><strong>Accessibility:</strong> Screen readers rely heavily on correctly associated headers to provide context when reading out data cells. Hearing &quot;Column: Name, Row: Product A, Cell: Widget&quot; is much clearer than just hearing &quot;Widget&quot;. Explicit <code>scope</code> attributes make this association robust and reliable, significantly improving the experience for screen reader users.</li>
+<li><strong>Robustness:</strong> While browsers <em>try</em> to infer scope if the attribute is missing (based on position), this inference can fail in complex tables (with <code>colspan</code>/<code>rowspan</code>) or might differ between browsers/assistive tools. Explicit <code>scope</code> is the most reliable method.</li>
+<li><strong>WCAG Compliance:</strong> Correctly associating headers and data cells using techniques like <code>scope</code> is often a requirement for meeting Web Content Accessibility Guidelines (WCAG) success criteria for data tables.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. Understand the purpose of <code>scope</code>: to explicitly tell assistive technologies which data cells a specific header cell applies to (column-wise or row-wise).</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code>scope</code> attribute on <code class="language-html">&lt;th&gt;</code> elements is crucial for accessibility, explicitly defining whether a header applies to a column (<code>col</code>) or a row (<code>row</code>), ensuring screen readers can correctly associate headers with data cells.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

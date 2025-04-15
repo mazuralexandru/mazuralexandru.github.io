@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>236. When NOT to Use <code>alt=&quot;&quot;</code></h1>
+<p>Using <code class="language-html">alt=&quot;&quot;</code> correctly is important, but it&#39;s equally important to know when <em>not</em> to use it. Misusing it can make content inaccessible.</p>
+<p><strong>Do NOT use <code class="language-html">alt=&quot;&quot;</code> if:</strong></p>
+<ol>
+<li><strong>The Image Conveys Information:</strong> If the image contains data, illustrates a concept, shows details not in the text, or contributes in any way to understanding the content, it needs descriptive <code class="language-html">alt</code> text.<ul>
+<li><em>Example:</em> A chart showing sales figures. <code class="language-html">alt=&quot;&quot;</code> is wrong. Use <code class="language-html">alt=&quot;Chart showing sales increased 20% in Q4.&quot;</code> (or similar).</li>
+</ul>
+</li>
+<li><strong>The Image Contains Text:</strong> If there&#39;s text within the image that&#39;s important for the user to read, that text <em>must</em> be included in the <code class="language-html">alt</code> attribute. (Again, try to avoid images of text altogether if possible).<ul>
+<li><em>Example:</em> An image of a button saying &quot;Submit Order&quot;. <code class="language-html">alt=&quot;&quot;</code> is wrong. Use <code class="language-html">alt=&quot;Submit Order&quot;</code>.</li>
+</ul>
+</li>
+<li><strong>The Image Is Functional (Link/Button):</strong> If the image acts as a link or button, it <em>must</em> have <code class="language-html">alt</code> text describing the destination or action. <code class="language-html">alt=&quot;&quot;</code> would make the link/button completely inaccessible to screen reader users.<ul>
+<li><em>Example:</em> A shopping cart icon link. <code class="language-html">alt=&quot;&quot;</code> is wrong. Use <code class="language-html">alt=&quot;View Shopping Cart&quot;</code>.</li>
+</ul>
+</li>
+<li><strong>The Image Sets a Mood or Tone:</strong> Sometimes images don&#39;t convey hard data but contribute to the feel or context (e.g., a landscape photo opening an article about travel). While concise, some description is usually better than <code class="language-html">alt=&quot;&quot;</code> in these cases. <code class="language-html">alt=&quot;Sun setting over a tranquil beach.&quot;</code></li>
+<li><strong>It&#39;s a Logo:</strong> Company logos represent brand identity and should generally have <code class="language-html">alt</code> text identifying the company (e.g., <code class="language-html">alt=&quot;Example Corp&quot;</code>). If the logo is also a link to the homepage, describe the destination (e.g., <code class="language-html">alt=&quot;Example Corp Homepage&quot;</code>).</li>
+</ol>
+<p><strong>Common Mistake Review:</strong></p>
+<ul>
+<li><strong>Omitting <code class="language-html">alt</code>:</strong> Invalid HTML. Leads to unpredictable screen reader behavior (reading filename, etc.).</li>
+<li><strong>Using <code class="language-html">alt=&quot;&quot;</code> Incorrectly:</strong> Making informative or functional images invisible to screen reader users.</li>
+</ul>
+<p><strong>Decision Tree Recap:</strong> Always ask: &quot;If this image was removed, would the user lose any information or functionality?&quot; If yes, provide descriptive <code class="language-html">alt</code> text. If no, use <code class="language-html">alt=&quot;&quot;</code>.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Review the examples in the previous step. The first image (logo) needs descriptive <code class="language-html">alt</code>. The second image (decorative border) is correctly marked with <code class="language-html">alt=&quot;&quot;</code>. Consider other types of images and whether <code class="language-html">alt=&quot;&quot;</code> would be appropriate.</p>
+<p>✨ <strong>Key Takeaway:</strong> Only use <code class="language-html">alt=&quot;&quot;</code> for images that are <em>truly</em> decorative and provide zero informational or functional value. When in doubt, provide descriptive <code class="language-html">alt</code> text.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

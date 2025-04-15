@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>244. Common Web Image Formats: PNG</h1>
+<p>Next is <strong>PNG (Portable Network Graphics)</strong>, another very common and versatile format.</p>
+<p><strong>PNG (Portable Network Graphics)</strong></p>
+<ul>
+<li><strong>File Extension:</strong> <code class="language-text">.png</code></li>
+<li><strong>Best Use Cases:</strong><ul>
+<li>Images requiring <strong>transparency</strong> (logos, icons, graphics overlaid on other content).</li>
+<li>Images with sharp lines, text, or large areas of flat color (logos, diagrams, illustrations, screenshots) where preserving detail is important.</li>
+</ul>
+</li>
+<li><strong>Compression:</strong> Uses <strong>lossless compression</strong>. This means it reduces file size without discarding <em>any</em> image data. The original quality is perfectly preserved.<ul>
+<li><strong>Advantage:</strong> Excellent quality, especially for graphics with sharp edges.</li>
+<li><strong>Disadvantage:</strong> File sizes can be significantly larger than JPEGs, especially for photographic images.</li>
+</ul>
+</li>
+<li><strong>Transparency:</strong> Supports <strong>alpha transparency</strong>. This allows for varying levels of opacity, from fully opaque to fully transparent, enabling smooth blending with backgrounds. (Unlike GIF&#39;s basic on/off transparency).</li>
+<li><strong>Color:</strong> Supports millions of colors (PNG-24) or a limited palette (PNG-8, similar to GIF, for smaller file sizes when few colors are needed).</li>
+<li><strong>Animation:</strong> Does not natively support animation (unlike GIF, WebP, AVIF). There&#39;s an APNG variant, but support is less universal.</li>
+</ul>
+<p><strong>When to Use PNG:</strong></p>
+<ul>
+<li>Whenever you need <strong>transparency</strong>.</li>
+<li>For logos, icons, illustrations, diagrams, and text-heavy images where sharp details and crisp edges are crucial.</li>
+<li>When image quality must be perfectly preserved (lossless).</li>
+</ul>
+<p><strong>When NOT to Use PNG:</strong></p>
+<ul>
+<li>Generally not the best choice for <strong>photographs</strong> due to potentially large file sizes compared to JPEG or modern formats like WebP/AVIF.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This lesson provides conceptual information about the PNG format.</p>
+<p>✨ <strong>Key Takeaway:</strong> PNG (<code class="language-text">.png</code>) excels at lossless compression and alpha transparency, making it ideal for logos, icons, diagrams, and images where crispness or transparency is required. It&#39;s generally less efficient for photographs than JPEG or WebP/AVIF.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

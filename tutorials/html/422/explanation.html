@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>422. Forms: <code>enctype=&quot;multipart/form-data&quot;</code> (File Uploads)</h1>
+<p>When your form includes a file input (<code class="language-html">&lt;input type=&quot;file&quot;&gt;</code>), you <strong>must</strong> change the encoding type using the <code>enctype</code> attribute.</p>
+<p><strong><code>enctype=&quot;multipart/form-data&quot;</code>:</strong></p>
+<ul>
+<li><strong>Requirement:</strong> This <code>enctype</code> <strong>is mandatory</strong> whenever your form allows users to upload files.</li>
+<li><strong>Behavior:</strong><ol>
+<li>Instead of encoding the data into one long string, the browser packages the form data into <strong>multiple distinct parts</strong> within the POST request body.</li>
+<li>Each form control (including the file input) gets its own part, typically separated by a boundary string defined in the request&#39;s <code>Content-Type</code> header (which also changes to <code>multipart/form-data</code>).</li>
+<li>Crucially, <strong>no character encoding</strong> (like percent-encoding) is applied to the data values within these parts. This allows binary file data to be transmitted raw without corruption.</li>
+</ol>
+</li>
+<li><strong>Use Cases:</strong> Any form containing <code class="language-html">&lt;input type=&quot;file&quot;&gt;</code>. Can also be used for forms submitting non-ASCII text where preserving exact characters without encoding is desired, though less common than for files.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added <code class="language-html">enctype=&quot;multipart/form-data&quot;</code> to our <code class="language-html">&lt;form&gt;</code> tag in <code class="language-text">index.html</code> (which still has <code>method=&quot;POST&quot;</code>). We&#39;ve also added comments illustrating its purpose.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;The &amp;lt;form&amp;gt; Element: Enctype&lt;/h1&gt;
+  &lt;p&gt;Required for file uploads: enctype=&quot;multipart/form-data&quot;&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Form configured for file upload --&gt;
+  &lt;form action=&quot;/upload-file&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt; &lt;!-- Added enctype --&gt;
+     &lt;!-- &lt;input type=&quot;file&quot; name=&quot;user_file&quot;&gt; --&gt;
+     &lt;!-- File content sent in separate parts, no encoding --&gt;
+  &lt;/form&gt;
+
+  &lt;p&gt;Sends data in parts; needed for &amp;lt;input type=&quot;file&quot;&amp;gt;.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">enctype=&quot;multipart/form-data&quot;</code> attribute added to the <code class="language-html">&lt;form&gt;</code> tag.</li>
+<li>Understand that if this form contained an <code class="language-html">&lt;input type=&quot;file&quot;&gt;</code> and was submitted, the browser would package the file data (and any other form data) into separate sections within the POST request body without applying percent-encoding.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> You <strong>must</strong> set <code class="language-html">enctype=&quot;multipart/form-data&quot;</code> on your <code class="language-html">&lt;form&gt;</code> element (along with <code>method=&quot;POST&quot;</code>) if the form includes an <code class="language-html">&lt;input type=&quot;file&quot;&gt;</code> element, to ensure files are uploaded correctly.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

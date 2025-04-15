@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>288. The <code>title</code> Attribute - Fundamentals &amp; Syntax</h1>
+<p>The <code class="language-html">title</code> global attribute provides a mechanism for adding advisory information to an element.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">title</code> attribute offers <strong>supplementary, non-essential information</strong> about the element it&#39;s applied to.</li>
+<li>It&#39;s intended for hints, explanations, definitions, or clarifications that aren&#39;t part of the main content flow but might be helpful to some users.</li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>It associates a piece of text (the attribute&#39;s value) with an element, which browsers typically reveal through a specific user interaction (usually hovering).</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li><code class="language-html">title=&quot;Supplementary advisory text here&quot;</code></li>
+<li>The attribute is added to the opening tag of almost any HTML element.</li>
+<li>The value is a string of plain text. While you <em>can</em> put HTML entities (like <code class="language-html">&amp;amp;amp;</code>) inside, browsers generally don&#39;t interpret HTML <em>tags</em> within the <code class="language-html">title</code> value when displaying the tooltip. Line breaks might be preserved by some browsers in the tooltip.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a <code class="language-html">title</code> attribute to the <code class="language-html">&lt;h1&gt;</code> element in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1 title=&quot;This is the main heading for Module 6&quot;&gt;Global Attributes - Title&lt;/h1&gt; &lt;!-- Added title --&gt;
+  &lt;p&gt;Let&#39;s explore the &#39;title&#39; attribute.&lt;/p&gt;
+
+  &lt;p&gt;It provides supplementary information, often shown as a tooltip.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">title=&quot;...&quot;</code> attribute added to the <code class="language-html">&lt;h1&gt;</code> tag.</li>
+<li>Look at the browser preview. Visually, the heading appears unchanged.</li>
+<li><strong>Hover your mouse pointer</strong> over the &quot;Global Attributes - Title&quot; heading for a second or two. A small <strong>tooltip</strong> should appear, displaying the text &quot;This is the main heading for Module 6&quot;. (Tooltip appearance varies by browser/OS).</li>
+<li>Move the mouse away, and the tooltip disappears.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">title</code> attribute provides advisory text associated with an element. Browsers typically display this text as a tooltip when the user hovers over the element.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

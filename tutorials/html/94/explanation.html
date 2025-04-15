@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>94. Unordered Lists (<code class="language-html">&lt;ul&gt;</code>): Content Model (Permitted Children)</h1>
+<p>A crucial rule governs what can be placed directly inside a <code class="language-html">&lt;ul&gt;</code> element.</p>
+<p><strong>Content Model Rule:</strong></p>
+<ul>
+<li>The <strong>only</strong> permitted children directly inside a <code class="language-html">&lt;ul&gt;</code> element are <strong>zero or more <code class="language-html">&lt;li&gt;</code> (List Item) elements</strong>.</li>
+<li>Whitespace (spaces, tabs, line breaks) between the <code class="language-html">&lt;li&gt;</code> elements is allowed and ignored by the browser for rendering flow.</li>
+<li><em>(Technical Note: The HTML specification also allows <code class="language-html">&lt;script&gt;</code> and <code class="language-html">&lt;template&gt;</code> elements, but these are script-supporting elements and not typically used directly within <code class="language-html">&lt;ul&gt;</code> for visible content structure.)</em></li>
+</ul>
+<p><strong>What is NOT Allowed Directly Inside <code class="language-html">&lt;ul&gt;</code>:</strong></p>
+<p>You <strong>cannot</strong> place other elements directly inside the <code class="language-html">&lt;ul&gt;</code> tags, such as:</p>
+<ul>
+<li>Plain text nodes (text not wrapped in an <code class="language-html">&lt;li&gt;</code>).</li>
+<li>Paragraphs (<code class="language-html">&lt;p&gt;</code>).</li>
+<li>Headings (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>).</li>
+<li>Divisions (<code class="language-html">&lt;div&gt;</code>).</li>
+<li>Spans (<code class="language-html">&lt;span&gt;</code>).</li>
+<li>Other lists (<code class="language-html">&lt;ul&gt;</code> or <code class="language-html">&lt;ol&gt;</code>) - nested lists must go <em>inside</em> an <code class="language-html">&lt;li&gt;</code>.</li>
+</ul>
+<p><strong>Why This Rule Matters:</strong></p>
+<ul>
+<li><strong>Structure:</strong> This rule enforces the correct semantic structure of a list – a container (<code class="language-html">&lt;ul&gt;</code>) holding a series of individual items (<code class="language-html">&lt;li&gt;</code>).</li>
+<li><strong>Validation:</strong> Placing invalid content directly inside <code class="language-html">&lt;ul&gt;</code> will cause HTML validation errors.</li>
+<li><strong>Browser Behavior:</strong> While browsers might try to render incorrectly placed content, the result can be unpredictable and often differs from the intended structure. Assistive technologies will likely be confused.</li>
+</ul>
+<p><strong>Example (Conceptual - Incorrect Usage):</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!-- INCORRECT HTML - DO NOT DO THIS --&gt;
+&lt;ul&gt;
+  This text is directly inside the ul. &lt;!-- Invalid --&gt;
+  &lt;p&gt;A paragraph directly inside the ul.&lt;/p&gt; &lt;!-- Invalid --&gt;
+  &lt;li&gt;Item One&lt;/li&gt; &lt;!-- Valid --&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong> No code changes yet. Our <code class="language-text">index.html</code> currently has an empty <code class="language-html">&lt;ul&gt;</code>. This step emphasizes the rule we must follow when we start adding content in the next steps: any list content must be wrapped in <code class="language-html">&lt;li&gt;</code> tags.</p>
+<p>✨ <strong>Key Takeaway:</strong> A <code class="language-html">&lt;ul&gt;</code> element can <strong>only</strong> contain <code class="language-html">&lt;li&gt;</code> elements (and technically <code class="language-html">&lt;script&gt;</code>/<code class="language-html">&lt;template&gt;</code>) as direct children. All list content must be placed within <code class="language-html">&lt;li&gt;</code> tags.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

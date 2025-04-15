@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>660. Validation: What Validation Does NOT Check - Misconceptions</h1>
+<p>It&#39;s important to understand the <strong>limits</strong> of HTML validation. Passing validation confirms your code adheres to the HTML <em>standard&#39;s syntax and structure rules</em>, but it doesn&#39;t guarantee other aspects of quality.</p>
+<p><strong>What Validation Does NOT Typically Check:</strong></p>
+<ol>
+<li><strong>CSS Validity:</strong> HTML validators focus solely on the HTML markup. They do not parse or validate the correctness of any linked (<code class="language-html">&lt;link&gt;</code>) or embedded (<code class="language-html">&lt;style&gt;</code>) CSS code. CSS requires its own separate validation process (e.g., using the W3C CSS Validation Service).</li>
+<li><strong>JavaScript Functionality/Errors:</strong> Validation does not execute or check JavaScript (<code class="language-html">&lt;script&gt;</code>) for syntax errors, runtime errors, or logical flaws. JavaScript requires its own linting tools (like ESLint) and debugging using browser developer consoles.</li>
+<li><strong>Link Integrity (Broken Links):</strong> Validators do not check if the URLs in <code>href</code> or <code>src</code> attributes actually point to existing, accessible resources. Checking for broken links requires separate tools (link checkers) or manual testing. A link can be syntactically valid in HTML but lead to a 404 Not Found error.</li>
+<li><strong>Visual Rendering / Design:</strong> A page can be perfectly valid HTML but still look visually broken or poorly designed due to incorrect or insufficient CSS. Validation confirms structural correctness, not aesthetic quality or cross-browser visual consistency.</li>
+<li><strong>Full Accessibility Compliance:</strong> While validity is a <em>necessary foundation</em> for accessibility (ensuring a parsable structure, presence of <code>alt</code> text, correct label association), it doesn&#39;t guarantee full compliance with accessibility standards like WCAG. Many accessibility requirements (e.g., sufficient color contrast, keyboard operability of custom widgets, logical focus order, appropriate ARIA usage) need separate testing with accessibility tools (like axe, WAVE) and manual checks.</li>
+<li><strong>Semantic Appropriateness:</strong> Validation checks if elements are <em>allowed</em> in a certain context, but not if they are the <em>most semantically appropriate</em> choice. For example, using <code class="language-html">&lt;b&gt;</code> instead of <code class="language-html">&lt;strong&gt;</code> when strong importance is intended might pass validation but is semantically suboptimal. Using <code class="language-html">&lt;div&gt;</code> everywhere instead of landmarks will validate but creates poor semantics. Requires developer judgment.</li>
+<li><strong>Content Quality:</strong> Validators do not check for spelling errors, grammatical mistakes, factual accuracy, clarity, or the overall quality of the text and media content within the page.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Understand that validation is a powerful tool for checking HTML <em>rules</em>, but it&#39;s not a comprehensive check for CSS correctness, JavaScript functionality, link validity, visual design, full accessibility compliance, or content quality. These require separate tools and testing processes.</p>
+<p>✨ <strong>Key Takeaway:</strong> HTML validation checks code against the HTML standard but does not validate CSS, JavaScript, link targets, visual appearance, full accessibility, or content quality. It&#39;s a crucial but not sufficient step in ensuring overall website quality.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

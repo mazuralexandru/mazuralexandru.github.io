@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Form Validation Attributes</h1>
+  <p>Attributes 'minlength' and 'maxlength' constrain text length.</p>
+
+  <form action="/submit-data" method="POST">
+    <!-- Removed number/date examples -->
+    <p>
+       <label for="feedback">Feedback (10-100 chars):</label><br>
+       <textarea id="feedback" name="feedback" rows="4" cols="40"
+                 minlength="10" maxlength="100" required></textarea> <!-- Added min/maxlength -->
+    </p>
+     <p>
+       <label for="code">Code (exactly 6 chars):</label>
+       <input type="text" id="code" name="code"
+              minlength="6" maxlength="6" required> <!-- Added min/maxlength -->
+    </p>
+    <p><button type="submit">Submit</button></p>
+  </form>
+
+  <p>'maxlength' prevents typing; 'minlength' validated on submit.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

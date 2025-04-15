@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>292. The <code>lang</code> Attribute - Revisited (Element-Level Use)</h1>
+<p>We know the <code class="language-html">lang</code> attribute is crucial on the <code class="language-html">&lt;html&gt;</code> tag to declare the primary language of the entire document. However, <code class="language-html">lang</code> is also a <strong>global attribute</strong>, meaning you can apply it to <em>any</em> element to indicate that the content of <em>that specific element</em> (and its children, unless overridden again) is in a different language.</p>
+<p><strong>Purpose (Element-Level):</strong></p>
+<ul>
+<li>To correctly identify the language of specific words, phrases, paragraphs, or sections when they differ from the main document language.</li>
+</ul>
+<p><strong>Why It Matters (Recap):</strong></p>
+<ul>
+<li><strong>Accessibility:</strong> Enables screen readers to switch pronunciation rules and voices, ensuring accurate rendering of foreign words or quotes.</li>
+<li><strong>Browser Behavior:</strong> Can influence spell checking, hyphenation, font selection, and translation tool behavior for that specific piece of content.</li>
+<li><strong>SEO:</strong> Helps search engines understand the multilingual nature of your content.</li>
+</ul>
+<p><strong>Syntax &amp; Values (Recap):</strong></p>
+<ul>
+<li><code class="language-html">lang=&quot;language-tag&quot;</code> (e.g., <code class="language-html">lang=&quot;fr&quot;</code>, <code class="language-html">lang=&quot;es-MX&quot;</code>, <code class="language-html">lang=&quot;ja&quot;</code>). Uses BCP 47 language tags.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added examples to the paragraphs in <code class="language-text">index.html</code>, marking specific phrases with the <code class="language-html">lang</code> attribute using <code class="language-html">&lt;span&gt;</code> as a neutral inline wrapper.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Global Attributes - Lang &amp; Dir&lt;/h1&gt;
+  &lt;p&gt;The document language is English (`lang=html:&lt;html lang=&quot;en&quot;&gt;`). But we can mark specific parts in other languages, like this French phrase: &lt;span lang=&quot;fr&quot;&gt;C&#39;est la vie&lt;/span&gt;.&lt;/p&gt; &lt;!-- Added lang=&quot;fr&quot; --&gt;
+
+  &lt;p&gt;This helps screen readers use correct pronunciation. Another example in Spanish: &lt;span lang=&quot;es&quot;&gt;Hola Mundo&lt;/span&gt;.&lt;/p&gt; &lt;!-- Added lang=&quot;es&quot; --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;span&gt;</code> elements with <code class="language-html">lang=&quot;fr&quot;</code> and <code class="language-html">lang=&quot;es&quot;</code> attributes in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. Visually, the text &quot;C&#39;est la vie&quot; and &quot;Hola Mundo&quot; will likely appear identical to the surrounding English text (unless you have specific fonts installed or browser settings that trigger different rendering based on <code class="language-html">lang</code>).</li>
+<li><strong>Crucially:</strong> Although there&#39;s no visual change, the semantic information has been added. A screen reader encountering <code class="language-html">&lt;span lang=&quot;fr&quot;&gt;C&#39;est la vie&lt;/span&gt;</code> would know to switch to French pronunciation rules for that phrase, significantly improving the experience for a listener.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">lang</code> attribute on specific inline or block elements (often using a <code class="language-html">&lt;span&gt;</code> for inline phrases) to declare the language of content that differs from the primary document language set on the <code class="language-html">&lt;html&gt;</code> tag. This is essential for accessibility.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

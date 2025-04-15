@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Input Type: Search</h1> <!-- Updated H1 -->
+  <p>Semantically identifies a search input field.</p>
+
+  <form action="/search" method="GET"> <!-- Changed action/method -->
+    <!-- Date field removed for focus -->
+    <p> <!-- Added Search Field -->
+       <label for="query">Search Site:</label> <!-- Added Label -->
+       <input type="search" id="query" name="q"> <!-- Added type="search", common name 'q' -->
+    </p>
+    <p><button type="submit">Search</button></p> <!-- Added Submit Button -->
+  </form>
+
+  <p>May render with clear ('x') button; hints mobile keyboard.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

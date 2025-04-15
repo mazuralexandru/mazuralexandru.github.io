@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>664. Why Validate? - Benefit 3: Accessibility Foundation</h1>
+<p>Valid HTML is a <strong>critical foundation</strong> for building accessible websites. While validity alone doesn&#39;t guarantee full accessibility, <strong>invalid HTML often creates significant accessibility barriers</strong>.</p>
+<p><strong>How Validity Supports Accessibility:</strong></p>
+<ol>
+<li><strong>Reliable DOM Structure:</strong> Assistive technologies (AT) like screen readers, screen magnifiers, and voice control software rely on parsing the HTML to build an internal representation of the page structure (often based on the browser&#39;s DOM or a dedicated accessibility tree). Invalid HTML (especially incorrect nesting or unclosed tags) can lead to a malformed or unpredictable DOM, preventing AT from correctly interpreting:<ul>
+<li>Content hierarchy (headings, sections).</li>
+<li>Relationships between elements (list items in lists, table cells and headers, labels and controls).</li>
+<li>Logical reading order.</li>
+</ul>
+</li>
+<li><strong>Correct Parsing of Semantics:</strong> Validation ensures that semantic elements (<code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>, <code class="language-html">&lt;th&gt;</code>, <code class="language-html">&lt;label&gt;</code>, etc.) are used correctly according to the standard. This allows AT to identify these elements and provide appropriate context or navigation mechanisms to the user (e.g., announcing &quot;Navigation region,&quot; associating a label with its input). Incorrect usage flagged by the validator often corresponds to an accessibility issue.</li>
+<li><strong>Enforces Accessible Requirements:</strong> Validation directly catches errors that are also accessibility failures, such as:<ul>
+<li><strong>Missing <code>alt</code> attribute on <code class="language-html">&lt;img&gt;</code>:</strong> Prevents screen readers from describing image content.</li>
+<li><strong>Duplicate <code>id</code> attributes:</strong> Breaks label (<code>for</code>/<code>id</code>) association and ARIA relationships (<code>aria-labelledby</code>).</li>
+<li><strong>Missing <code class="language-html">&lt;caption&gt;</code> on <code class="language-html">&lt;table&gt;</code>:</strong> Fails to provide an accessible name for the table.</li>
+<li><strong>Improper form control grouping/labeling:</strong> Invalid structure often hinders AT from associating labels or legends correctly.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Invalid HTML = Accessibility Risk:</strong></p>
+<p>If the HTML structure cannot be reliably parsed by assistive technology due to validation errors, users relying on that technology may be unable to understand the content, navigate efficiently, or interact with form controls correctly. Fixing validation errors is often the first step in resolving underlying accessibility problems.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Recall the importance of unique IDs for <code class="language-html">&lt;label for=&quot;...&quot;&gt;</code> (Lesson 273) and the <code>alt</code> attribute for <code class="language-html">&lt;img&gt;</code> (Lesson 231). Validators automatically check for these essential accessibility prerequisites. Consider how an unclosed <code class="language-html">&lt;ul&gt;</code> might prevent a screen reader from correctly announcing the end of a list.</p>
+<p>✨ <strong>Key Takeaway:</strong> Valid HTML ensures a predictable and parsable document structure, which is the necessary foundation for assistive technologies to function correctly. Validation helps catch errors that directly impede accessibility, such as missing <code>alt</code> text or duplicate <code>id</code>s.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

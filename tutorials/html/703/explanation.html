@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>703. Accessibility: ARIA Basics - Roles, States, Properties (Brief Examples)</h1>
+<p>ARIA attributes fall into three main categories. We&#39;ll introduce them briefly with a common example: providing an accessible name for an icon-only button.</p>
+<p><strong>Attribute Categories:</strong></p>
+<ol>
+<li><p><strong>Roles (<code>role=&quot;...&quot;</code>):</strong></p>
+<ul>
+<li>Define the <em>type</em> or <em>purpose</em> of an element, overriding its native semantics. Tells AT &quot;what this element <em>is</em>&quot;.</li>
+<li><em>Example:</em> <code class="language-html">&lt;div role=&quot;button&quot;&gt;</code> tells AT to treat the div like a button (but still requires JS for keyboard interaction).</li>
+<li><em>Landmark Roles:</em> <code>role=&quot;navigation&quot;</code>, <code>role=&quot;main&quot;</code>, <code>role=&quot;search&quot;</code>, etc. (often added automatically by semantic HTML elements).</li>
+<li><em>Widget Roles:</em> <code>role=&quot;tablist&quot;</code>, <code>role=&quot;tab&quot;</code>, <code>role=&quot;slider&quot;</code>, <code>role=&quot;checkbox&quot;</code>, <code>role=&quot;dialog&quot;</code>, etc. (for custom controls).</li>
+<li><em>Abstract Roles:</em> <code>role=&quot;presentation&quot;</code> or <code>role=&quot;none&quot;</code> removes semantics.</li>
+</ul>
+</li>
+<li><p><strong>Properties (<code>aria-*</code>):</strong></p>
+<ul>
+<li>Define <em>characteristics</em> or <em>relationships</em> of an element that generally don&#39;t change frequently with user interaction. Tells AT about the element&#39;s nature.</li>
+<li><em>Examples:</em><ul>
+<li><strong><code>aria-label=&quot;string&quot;</code>:</strong> Provides the accessible name directly (overrides content/label).</li>
+<li><strong><code>aria-labelledby=&quot;idRef&quot;</code>:</strong> Provides the accessible name by referencing other element(s).</li>
+<li><strong><code>aria-describedby=&quot;idRef&quot;</code>:</strong> Provides accessible description by reference.</li>
+<li><code>aria-required=&quot;true&quot;</code>: Indicates required input.</li>
+<li><code>aria-haspopup=&quot;true&quot;</code>: Indicates it triggers a popup.</li>
+<li><code>aria-controls=&quot;idRef&quot;</code>: Indicates it controls another element.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>States (<code>aria-*</code>):</strong></p>
+<ul>
+<li>Define the <em>current condition</em> of an element, often changing dynamically via JavaScript based on interaction. Tells AT &quot;how this element <em>is</em> right now&quot;.</li>
+<li><em>Examples:</em><ul>
+<li><code>aria-expanded=&quot;true|false&quot;</code></li>
+<li><code>aria-selected=&quot;true|false&quot;</code></li>
+<li><code>aria-checked=&quot;true|false|mixed&quot;</code></li>
+<li><code>aria-pressed=&quot;true|false|mixed&quot;</code></li>
+<li><code>aria-disabled=&quot;true|false&quot;</code></li>
+<li><code>aria-invalid=&quot;true|false&quot;</code></li>
+<li><code>aria-hidden=&quot;true|false&quot;</code> (Hides from AT).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example: Accessible Name for Icon Button</strong></p>
+<ul>
+<li><strong>Problem:</strong> A button containing only an icon (<code class="language-html">&lt;img&gt;</code>) needs an accessible name. The icon might be decorative (<code>alt=&quot;&quot;</code>).</li>
+<li><strong>Solution 1 (<code>aria-label</code>):</strong> Add <code>aria-label</code> directly to the <code class="language-html">&lt;button&gt;</code>.</li>
+<li><strong>Solution 2 (Visually Hidden Text):</strong> Include descriptive text inside the <code class="language-html">&lt;button&gt;</code> but visually hide it using CSS. This text becomes the accessible name. Often preferred as it works even if CSS fails.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added three button examples to <code>index.html</code>:</p>
+<ol>
+<li>An inaccessible icon button (no name).</li>
+<li>An icon button using <code>aria-label</code>.</li>
+<li>An icon button using visually hidden text (requires CSS).
+We also added temporary CSS for <code>.icon-button</code> and <code>.visually-hidden</code>.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;head&gt;
+  ...
+  &lt;style&gt;
+    .icon-button { background: #555; border: 1px solid #888; padding: 5px; cursor: pointer; display: inline-block; }
+    .icon-button img { vertical-align: middle; width: 16px; height: 16px; } /* Basic icon size */
+    /* Simple visually hidden class */
+    .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Introduction to ARIA&lt;/h1&gt;
+  ...
+  &lt;h2&gt;Example: Icon Button Accessible Name&lt;/h2&gt;
+
+  &lt;!-- Problem: No visible text label --&gt;
+  &lt;button type=&quot;button&quot; class=&quot;icon-button&quot;&gt;
+    &lt;img src=&quot;/icons/close.svg&quot; alt=&quot;&quot;&gt; &lt;!-- Decorative alt --&gt;
+  &lt;/button&gt;
+  &lt;span&gt;(Button with no accessible name - BAD)&lt;/span&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;!-- Solution 1: aria-label --&gt;
+  &lt;button type=&quot;button&quot; class=&quot;icon-button&quot; aria-label=&quot;Close dialog&quot;&gt; &lt;!-- Added aria-label --&gt;
+    &lt;img src=&quot;/icons/close.svg&quot; alt=&quot;&quot;&gt;
+  &lt;/button&gt;
+  &lt;span&gt;(Button with aria-label - GOOD)&lt;/span&gt;
+   &lt;br&gt;&lt;br&gt;
+  &lt;!-- Solution 2: Visually hidden text --&gt;
+  &lt;button type=&quot;button&quot; class=&quot;icon-button&quot;&gt;
+    &lt;img src=&quot;/icons/close.svg&quot; alt=&quot;&quot;&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Close dialog&lt;/span&gt; &lt;!-- Visually hidden text --&gt;
+  &lt;/button&gt;
+  &lt;span&gt;(Button with visually hidden text - ALSO GOOD)&lt;/span&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the three buttons in <code>index.html</code>. Note the missing label on the first, the <code>aria-label</code> on the second, and the <code class="language-html">&lt;span class=&quot;visually-hidden&quot;&gt;</code> on the third. Note the basic CSS.</li>
+<li>In the preview, all three buttons look similar (a grey box with a broken image icon inside, as <code>/icons/close.svg</code> doesn&#39;t exist).</li>
+<li><strong>(Conceptual):</strong> A screen reader encountering these would announce something like:<ul>
+<li>Button 1: &quot;Button&quot; (Unhelpful!)</li>
+<li>Button 2: &quot;Close dialog, button&quot; (Uses <code>aria-label</code>)</li>
+<li>Button 3: &quot;Close dialog, button&quot; (Uses the visually hidden span text)
+This demonstrates how <code>aria-label</code> or visually hidden text provides the necessary accessible name when visible text is absent.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> ARIA provides <code>role</code>, state (<code>aria-expanded</code>, <code>aria-checked</code>, etc.), and property (<code>aria-label</code>, <code>aria-labelledby</code>, etc.) attributes to add missing semantics for accessibility. Use <code>aria-label</code> or visually hidden text to provide accessible names for controls like icon buttons. Follow the ARIA rules, prioritizing native HTML.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

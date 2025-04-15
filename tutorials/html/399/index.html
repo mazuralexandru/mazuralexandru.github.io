@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Spanning Columns & Rows</h1>
+  <p>Using 'rowspan' on a header cell (th):</p> <!-- Adjusted P -->
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="2">Alpha</th> <!-- Row Header spanning 2 rows -->
+        <td>A1</td>
+        <td>A2</td>
+      </tr>
+      <tr>
+        <!-- No th needed here for Type column due to rowspan -->
+        <td>B1</td> <!-- This cell is in the 'Name' column -->
+        <td>B2</td> <!-- This cell is in the 'Value' column -->
+      </tr>
+      <tr> <!-- Third Row -->
+        <th scope="row">Beta</th>
+        <td>C1</td>
+        <td>C2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The "Alpha" header spans two rows vertically.</p> <!-- Adjusted P -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

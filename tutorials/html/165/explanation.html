@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>165. Linking to Fragments: Same-Page Links (<code>href=&quot;#id&quot;</code>)</h1>
+<p>Now that we have target elements with <code>id</code> attributes, we can create links that jump to those locations <em>within the same page</em>.</p>
+<p><strong>Syntax (Same Page):</strong></p>
+<p>To link to an element with a specific <code>id</code> on the <em>current</em> page, set the <code class="language-html">href</code> attribute value to <code>#</code> followed immediately by the <code>id</code> value.</p>
+<ul>
+<li><code class="language-html">href=&quot;#elementID&quot;</code></li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have added two anchor elements inside the navigation (<code class="language-html">&lt;nav&gt;</code>) section of <code class="language-text">index.html</code>. Their <code>href</code> attributes point to the <code>id</code>s (<code>#section1</code> and <code>#section2</code>) we created in the previous step. We wrapped them in a <code class="language-html">&lt;ul&gt;</code> for structure.</p>
+<pre class="language-html"><code class="language-html">  &lt;nav&gt;
+      &lt;p&gt;Navigation:&lt;/p&gt;
+      &lt;ul&gt; &lt;!-- Added ul for structure --&gt;
+        &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;Go to Section 1&lt;/a&gt;&lt;/li&gt; &lt;!-- Added same-page fragment link --&gt;
+        &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;Go to Section 2&lt;/a&gt;&lt;/li&gt; &lt;!-- Added same-page fragment link --&gt;
+      &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;div class=&quot;spacer&quot;&gt;Scroll down...&lt;/div&gt;
+
+  &lt;h2 id=&quot;section1&quot;&gt;Section One&lt;/h2&gt;
+  ...
+
+  &lt;div class=&quot;spacer&quot;&gt;Scroll down further...&lt;/div&gt;
+
+  &lt;h2 id=&quot;section2&quot;&gt;Section Two&lt;/h2&gt;
+  ...
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the new <code class="language-html">&lt;a&gt;</code> tags within the <code class="language-html">&lt;nav&gt;</code> section in <code class="language-text">index.html</code>. Note their <code>href</code> values (<code>#section1</code>, <code>#section2</code>).</li>
+<li>Look at the browser preview. You should see the two links (&quot;Go to Section 1&quot;, &quot;Go to Section 2&quot;) near the top of the page.</li>
+<li><strong>Try clicking the links!</strong><ul>
+<li>Clicking &quot;Go to Section 1&quot; should instantly scroll the page down so that the &quot;Section One&quot; heading is at or near the top of the viewport.</li>
+<li>Clicking &quot;Go to Section 2&quot; should scroll down further to bring the &quot;Section Two&quot; heading into view.</li>
+<li>Notice the URL in your browser&#39;s address bar might now include <code>#section1</code> or <code>#section2</code> at the end.</li>
+<li>The page does <strong>not</strong> reload; the browser just navigates <em>within</em> the current document.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code>href=&quot;#elementID&quot;</code> to create links that smoothly scroll the browser to the element with the corresponding <code>id</code> on the same page.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>420. Forms: The <code>enctype</code> Attribute - Fundamentals</h1>
+<p>When using <code>method=&quot;POST&quot;</code>, the browser needs to know <em>how</em> to encode the form data before putting it in the HTTP request body. The <code class="language-html">enctype</code> attribute controls this encoding.</p>
+<p><strong>Definition &amp; Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">enctype</code> (Encoding Type) attribute specifies the <strong>MIME type</strong> used to encode the form data set when it&#39;s submitted using the <code>POST</code> method.</li>
+<li>It ensures the server receiving the data understands the format it&#39;s arriving in.</li>
+<li><strong>It is ignored if <code>method=&quot;GET&quot;</code>.</strong></li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>Different encoding types handle spaces, special characters, and file uploads differently. Choosing the correct <code>enctype</code> is essential for the server to parse the data correctly, especially when files are involved.</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li><code class="language-html">&lt;form action=&quot;...&quot; method=&quot;POST&quot; enctype=&quot;encoding-type&quot;&gt; ... &lt;/form&gt;</code></li>
+</ul>
+<p><strong>Default Value:</strong></p>
+<ul>
+<li>If <code>method=&quot;POST&quot;</code> is used and the <code>enctype</code> attribute is <strong>omitted</strong>, the browser defaults to <code>application/x-www-form-urlencoded</code>.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added <code>method=&quot;POST&quot;</code> back to our form (as <code>enctype</code> applies only to POST) and updated the text to introduce <code>enctype</code>. We haven&#39;t added the <code>enctype</code> attribute itself yet.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;The &amp;lt;form&amp;gt; Element: Enctype&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;The &#39;enctype&#39; attribute specifies how POST data is encoded.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;form action=&quot;/submit-form-data&quot; method=&quot;POST&quot;&gt; &lt;!-- Added method=&quot;POST&quot; back --&gt;
+    &lt;!-- Form controls will go here --&gt;
+    &lt;!-- Enctype attribute added later --&gt;
+  &lt;/form&gt;
+
+  &lt;p&gt;It&#39;s ignored for GET. Default is &#39;application/x-www-form-urlencoded&#39;.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify <code>method=&quot;POST&quot;</code> is back on the <code class="language-html">&lt;form&gt;</code> tag.</li>
+<li>Note the introductory text about <code>enctype</code>.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">enctype</code> attribute, used only with <code>method=&quot;POST&quot;</code>, defines how form data is encoded for submission. The default is <code>application/x-www-form-urlencoded</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>05. The Web Trio: HTML vs. CSS vs. JavaScript (Part 2: Interaction &amp; Separation)</h1>
+<p>Let&#39;s refine how HTML, CSS, and JavaScript work together and why keeping them separate is important.</p>
+<p><strong>Interaction Model:</strong></p>
+<ol>
+<li><strong>HTML is Foundational:</strong> The browser first parses the HTML to build the basic structure of the page. This internal representation is often called the <strong>Document Object Model (DOM)</strong> - essentially a tree-like map of all the elements on the page.</li>
+<li><strong>CSS Targets HTML:</strong> CSS rules are written to <em>select</em> specific HTML elements (or groups of elements) and apply styles to them. The browser uses the DOM to figure out which styles apply to which elements.</li>
+<li><strong>JavaScript Manipulates HTML (via DOM):</strong> JavaScript code can access and modify the DOM. It can add, remove, or change HTML elements and their attributes, often in response to user actions. This is how dynamic updates and interactivity happen.</li>
+</ol>
+<p><strong>Separation of Concerns:</strong></p>
+<p>This is a core principle in web development: keeping the responsibilities of structure (HTML), presentation (CSS), and behavior (JS) in separate files or sections.</p>
+<ul>
+<li><strong>HTML File (<code class="language-text">.html</code>):</strong> Contains only the structure and content.</li>
+<li><strong>CSS File (<code class="language-text">.css</code>):</strong> Contains only the styling rules.</li>
+<li><strong>JavaScript File (<code class="language-text">.js</code>):</strong> Contains only the interactive logic.</li>
+</ul>
+<p>We link these files together using specific HTML tags (which we&#39;ll learn about later, like <code class="language-html">&lt;link&gt;</code> for CSS and <code class="language-html">&lt;script&gt;</code> for JS).</p>
+<p><strong>Benefits of Separation:</strong></p>
+<ul>
+<li><strong>Maintainability:</strong> Easier to update the look of a site (modify CSS) without accidentally breaking the structure (HTML) or functionality (JS).</li>
+<li><strong>Collaboration:</strong> Different team members can work on HTML, CSS, and JS simultaneously with less conflict.</li>
+<li><strong>Accessibility:</strong> Clean, semantic HTML is easier for assistive technologies to parse when not cluttered with styling or scripting information.</li>
+<li><strong>Flexibility &amp; Reusability:</strong> Styles (CSS) and scripts (JS) can be easily applied to multiple HTML pages, promoting consistency and reducing code duplication. A complete redesign might only involve changing the CSS files.</li>
+<li><strong>Readability:</strong> Code is cleaner and easier to understand when each language focuses on its specific task.</li>
+</ul>
+<p><strong>Practical Example:</strong> Imagine you want to change the font of every paragraph on a 100-page website.</p>
+<ul>
+<li><strong>Bad (Mixed):</strong> If font information was embedded directly within each HTML paragraph tag, you&#39;d have to edit hundreds or thousands of tags across 100 files.</li>
+<li><strong>Good (Separated):</strong> With separate CSS, you change <em>one line</em> in your single CSS file, and the browser applies that change to all paragraphs across all pages linked to that stylesheet.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> Files are still empty. We&#39;re establishing best practices.</p>
+<p>✨ <strong>Key Takeaway:</strong> Separation of Concerns (HTML for structure, CSS for presentation, JS for behavior) is crucial for building maintainable, flexible, and accessible websites. We will follow this principle throughout the tutorial.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>402. Tables: Styling Note - Separating Structure from Presentation</h1>
+<p>It&#39;s crucial to reinforce the principle of <strong>separation of concerns</strong> when working with HTML tables.</p>
+<p><strong>HTML Role: Structure &amp; Semantics</strong></p>
+<ul>
+<li>Your HTML code, using elements like <code class="language-html">&lt;table&gt;</code>, <code class="language-html">&lt;caption&gt;</code>, <code class="language-html">&lt;thead&gt;</code>, <code class="language-html">&lt;tbody&gt;</code>, <code class="language-html">&lt;tfoot&gt;</code>, <code class="language-html">&lt;tr&gt;</code>, <code class="language-html">&lt;th&gt;</code> (with <code>scope</code>), and <code class="language-html">&lt;td&gt;</code> (with <code>colspan</code>/<code>rowspan</code> where needed), defines the <strong>logical structure</strong> and <strong>semantic meaning</strong> of your tabular data. It answers: &quot;What <em>is</em> this data, and how is it related?&quot;</li>
+</ul>
+<p><strong>CSS Role: Presentation &amp; Appearance</strong></p>
+<ul>
+<li>The visual appearance – borders, cell spacing, padding, background colors, text alignment, font styles, widths, responsive behavior – should <strong>all</strong> be controlled using <strong>CSS</strong>. CSS answers: &quot;How should this table <em>look</em>?&quot;</li>
+</ul>
+<p><strong>Rejection of Deprecated Presentational Attributes (IMPORTANT):</strong></p>
+<ul>
+<li>HTML 4 included several attributes directly on table elements to control presentation (e.g., <code class="language-html">&lt;table border=&quot;1&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; bgcolor=&quot;#f0f0f0&quot;&gt;</code>, <code class="language-html">&lt;td align=&quot;right&quot; valign=&quot;top&quot;&gt;</code>).</li>
+<li>These attributes are <strong>deprecated</strong> in HTML5 and <strong>must not be used</strong>.<ul>
+<li>They mix presentation directly into the HTML structure.</li>
+<li>They are inflexible and hard to maintain compared to CSS.</li>
+<li>They often have inconsistent rendering across browsers.</li>
+<li>They lack the power and sophistication of CSS styling options.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Common CSS Properties for Tables (Conceptual Preview):</strong></p>
+<p>While detailed styling is a CSS topic, be aware of key properties used:</p>
+<ul>
+<li><strong>Borders/Spacing:</strong> <code>border</code>, <code>border-collapse</code> (set to <code>collapse</code> for single borders or <code>separate</code>), <code>border-spacing</code> (for space between cells when separate).</li>
+<li><strong>Cell Layout:</strong> <code>padding</code> (space inside cells), <code>text-align</code>, <code>vertical-align</code>.</li>
+<li><strong>Table Layout:</strong> <code>width</code>, <code>table-layout</code> (<code>auto</code> vs <code>fixed</code>).</li>
+<li><strong>Visual Enhancements:</strong> <code>background-color</code> (e.g., for headers or zebra-striping using <code>tbody tr:nth-child(even)</code>), <code>font-weight</code>, <code>font-style</code>.</li>
+<li><strong>Caption:</strong> <code>caption-side</code>.</li>
+</ul>
+<p><strong>Targeting with CSS Selectors:</strong></p>
+<ul>
+<li>You use CSS selectors to target specific table parts:<ul>
+<li>Type selectors: <code>table</code>, <code>caption</code>, <code>thead</code>, <code>tbody</code>, <code>tfoot</code>, <code>tr</code>, <code>th</code>, <code>td</code></li>
+<li>Class/ID selectors: <code>.data-summary</code>, <code>#main-report-table</code></li>
+<li>Attribute selectors: <code>th[scope=&quot;row&quot;]</code></li>
+<li>Structural pseudo-classes: <code>tbody tr:nth-child(odd)</code></li>
+<li>Combinators: <code>thead th</code>, <code>tbody &gt; tr</code></li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Look at the clean HTML table structure in <code>index.html</code>. Understand that all visual styling (borders, colors, spacing, alignment) would be handled by CSS rules targeting these elements (e.g., <code>table { border-collapse: collapse; width: 100%; }</code>, <code>th, td { border: 1px solid #555; padding: 8px; text-align: left; }</code>, <code>thead { background-color: #333; }</code>).</p>
+<p>✨ <strong>Key Takeaway:</strong> HTML defines the table&#39;s structure and semantic meaning. Use CSS exclusively for controlling its visual presentation (borders, padding, alignment, colors, etc.). Never use deprecated presentational HTML attributes like <code>border</code>, <code>cellpadding</code>, or <code>bgcolor</code> on table elements.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

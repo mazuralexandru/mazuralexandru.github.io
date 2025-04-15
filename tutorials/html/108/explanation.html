@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>108. Ordered Lists (<code class="language-html">&lt;ol&gt;</code>): The <code>type</code> Attribute</h1>
+<p>While the default marker for <code class="language-html">&lt;ol&gt;</code> is decimal numbers (1, 2, 3...), HTML provides the <code class="language-html">type</code> attribute to change this marker style.</p>
+<p><strong>The <code>type</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies the kind of sequential marker to use for the list items.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;ol type=&quot;value&quot;&gt;</code></li>
+<li><strong>Common Values:</strong><ul>
+<li><code class="language-html">1</code>: Decimal numbers (1, 2, 3...) - <strong>This is the default.</strong></li>
+<li><code class="language-html">a</code>: Lowercase letters (a, b, c...).</li>
+<li><code class="language-html">A</code>: Uppercase letters (A, B, C...).</li>
+<li><code class="language-html">i</code>: Lowercase Roman numerals (i, ii, iii...).</li>
+<li><code class="language-html">I</code>: Uppercase Roman numerals (I, II, III...).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Important Consideration: Styling vs. Semantics</strong></p>
+<ul>
+<li>Using the <code class="language-html">type</code> attribute directly mixes presentational concerns (how the marker looks) with the structural markup (HTML).</li>
+<li><strong>Best Practice:</strong> For purely visual styling of markers, it&#39;s strongly recommended to use the CSS <code class="language-css">list-style-type</code> property instead. This keeps presentation rules separate in your CSS file.</li>
+<li><strong>When to Use <code>type</code>?:</strong> You <em>might</em> use the HTML <code>type</code> attribute if the specific numbering style (e.g., using Roman numerals for top-level sections in a legal document) has inherent semantic meaning in that context, beyond just visual appearance. However, even then, CSS is often preferred for consistency and control.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added the <code class="language-html">type=&quot;a&quot;</code> attribute to the opening <code class="language-html">&lt;ol&gt;</code> tag in <code class="language-text">index.html</code> and updated the text slightly.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;The &#39;type&#39; attribute can change the marker style:&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+&lt;ol type=&quot;a&quot;&gt; &lt;!-- Added type=&quot;a&quot; --&gt;
+  &lt;li&gt;First step (now &#39;a&#39;)&lt;/li&gt;
+  &lt;li&gt;Second step (now &#39;b&#39;)&lt;/li&gt;
+  &lt;li&gt;Third step (now &#39;c&#39;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Other types include A, i, I.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">type=&quot;a&quot;</code> attribute in the <code class="language-html">&lt;ol&gt;</code> tag in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. The list markers should have changed from &quot;1.&quot;, &quot;2.&quot;, &quot;3.&quot; to lowercase letters: <strong>a.</strong>, <strong>b.</strong>, <strong>c.</strong> (or similar, depending on browser formatting).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">type</code> attribute on <code class="language-html">&lt;ol&gt;</code> changes the marker style (1, a, A, i, I). However, using the CSS <code>list-style-type</code> property is generally preferred for styling markers to maintain separation of concerns.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

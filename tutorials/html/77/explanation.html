@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>77. Citations: <code class="language-html">&lt;cite&gt;</code> Element Clarifications</h1>
+<p>Let&#39;s reinforce the correct usage of the <code class="language-html">&lt;cite&gt;</code> element by highlighting what it <em>shouldn&#39;t</em> be used for.</p>
+<p><strong>Recap: Use <code class="language-html">&lt;cite&gt;</code> ONLY for Titles of Works</strong></p>
+<p>The primary and intended semantic meaning of <code class="language-html">&lt;cite&gt;</code> in HTML5 is strictly to identify the title of a creative work (book, film, song, article, etc.) or legal/reference document.</p>
+<p><strong>Common Mistakes to Avoid:</strong></p>
+<ol>
+<li><strong>Don&#39;t Use <code class="language-html">&lt;cite&gt;</code> for Author/Person Names:</strong><ul>
+<li><strong>Incorrect:</strong> <code class="language-html">&lt;p&gt;Quote attributed to &lt;cite&gt;John Doe&lt;/cite&gt;.&lt;/p&gt;</code></li>
+<li><strong>Correct:</strong> <code class="language-html">&lt;p&gt;Quote attributed to John Doe.&lt;/p&gt;</code> (Use plain text for names unless more specific markup like microdata is being used for other purposes).</li>
+</ul>
+</li>
+<li><strong>Don&#39;t Use <code class="language-html">&lt;cite&gt;</code> for the Quotation Text:</strong><ul>
+<li><strong>Incorrect:</strong> <code class="language-html">&lt;p&gt;&lt;cite&gt;To be or not to be, that is the question.&lt;/cite&gt;&lt;/p&gt;</code></li>
+<li><strong>Correct:</strong> <code class="language-html">&lt;p&gt;&lt;q&gt;To be or not to be, that is the question.&lt;/q&gt;&lt;/p&gt;</code> (Use <code class="language-html">&lt;q&gt;</code> for inline quotes or <code class="language-html">&lt;blockquote&gt;</code> for block quotes).</li>
+</ul>
+</li>
+<li><strong>Don&#39;t Confuse <code class="language-html">&lt;cite&gt;</code> Element with <code>cite</code> Attribute:</strong><ul>
+<li><code class="language-html">&lt;cite&gt;Title of Work&lt;/cite&gt;</code>: An <strong>element</strong> wrapping the visible title text. Renders as italics by default.</li>
+<li><code class="language-html">&lt;blockquote cite=&quot;URL&quot;&gt;</code>: An <strong>attribute</strong> within another tag, holding a URL. Not displayed visually.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why Precision Matters:</strong></p>
+<p>Using <code class="language-html">&lt;cite&gt;</code> correctly maintains the semantic integrity of your document. It allows assistive technologies, search engines, and potentially other tools to accurately identify references to creative works. Misusing it dilutes its meaning and can lead to incorrect interpretations by machines or confusion for developers reading the code.</p>
+<p>✅ <strong>Observation:</strong> No code changes in this step. Review the examples in <code class="language-text">index.html</code> from the previous lesson. Confirm that <code class="language-html">&lt;cite&gt;</code> is only used around the titles (&quot;HTML 5.2&quot;, &quot;The Lord of the Rings&quot;) and not around author names (none present) or the quoted text within the <code class="language-html">&lt;blockquote&gt;</code> or <code class="language-html">&lt;q&gt;</code>.</p>
+<p>✨ <strong>Key Takeaway:</strong> Be precise with <code class="language-html">&lt;cite&gt;</code>. Use it exclusively for the titles of creative works to ensure correct semantic meaning and avoid common misuse patterns.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

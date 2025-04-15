@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>49. Inline Semantics: Prioritizing Semantics &amp; CSS</h1>
+<p>We&#39;ve now seen four pairs of inline elements with overlapping default visual styles:</p>
+<ul>
+<li><code class="language-html">&lt;em&gt;</code> (Emphasis) -&gt; <em>Italic</em></li>
+<li><code class="language-html">&lt;i&gt;</code> (Alternate Voice) -&gt; <em>Italic</em></li>
+<li><code class="language-html">&lt;strong&gt;</code> (Importance) -&gt; <strong>Bold</strong></li>
+<li><code class="language-html">&lt;b&gt;</code> (Stylistic Offset) -&gt; <strong>Bold</strong></li>
+<li>(And <code class="language-html">&lt;u&gt;</code> -&gt; Underline, which we discourage)</li>
+</ul>
+<p>This overlap reinforces a critical principle: <strong>Prioritize semantic meaning over default appearance.</strong></p>
+<p><strong>Decision Flow:</strong></p>
+<p>When deciding how to mark up inline text, follow this general thought process:</p>
+<ol>
+<li><strong>Is there Stress Emphasis?</strong> Does stressing this word change the sentence&#39;s meaning?<ul>
+<li>Yes -&gt; Use <code class="language-html">&lt;em&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Is the text Strongly Important, Serious, or Urgent?</strong><ul>
+<li>Yes -&gt; Use <code class="language-html">&lt;strong&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Does the text represent an Alternate Voice/Mood?</strong> (Technical term, foreign word, thought, etc.)<ul>
+<li>Yes -&gt; Use <code class="language-html">&lt;i&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Does the text need Stylistic Offsetting without added importance?</strong> (Keyword, product name, etc.)<ul>
+<li>Yes -&gt; Use <code class="language-html">&lt;b&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Does the text need an Annotation?</strong> (Misspelling - use with extreme caution)<ul>
+<li>Yes -&gt; Consider <code class="language-html">&lt;u&gt;</code> (but alternatives are usually better).</li>
+</ul>
+</li>
+<li><strong>Do you just want the text to <em>look</em> italic, bold, or underlined for purely presentation reasons, with no specific semantic meaning intended?</strong><ul>
+<li>Yes -&gt; <strong>Use CSS.</strong> Apply <code class="language-css">font-style: italic;</code>, <code class="language-css">font-weight: bold;</code>, or <code class="language-css">text-decoration: underline;</code> using a CSS class applied to a neutral <code class="language-html">&lt;span&gt;</code> element or directly to another appropriate element.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why CSS is Preferred for Pure Styling:</strong></p>
+<ul>
+<li><strong>Separation of Concerns:</strong> Keeps structural markup (HTML) clean and focused on meaning, while presentation rules (CSS) handle the visuals.</li>
+<li><strong>Maintainability:</strong> Easier to change the look of all purely stylistic bold text sitewide by modifying one CSS rule, rather than hunting down potentially misused <code class="language-html">&lt;b&gt;</code> or <code class="language-html">&lt;strong&gt;</code> tags.</li>
+<li><strong>Clarity:</strong> Avoids diluting the meaning of true semantic elements like <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the examples of <code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, and <code class="language-html">&lt;u&gt;</code> in <code class="language-text">index.html</code>. Reinforce the idea that the tag choice should reflect the intended <em>meaning</em>, not just the desired visual outcome.</p>
+<p>✨ <strong>Key Takeaway:</strong> Always choose inline HTML elements based on the most accurate <strong>semantic meaning</strong> first. For purely presentational styling (making text italic, bold, underlined, etc., without a specific semantic reason), use CSS properties applied via classes or selectors.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

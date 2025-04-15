@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>355. Other <code class="language-html">&lt;head&gt;</code> Elements: The <code class="language-html">&lt;style&gt;</code> Element - Behavior &amp; Interactions</h1>
+<p>How do internal styles within <code class="language-html">&lt;style&gt;</code> tags interact with external stylesheets (<code class="language-html">&lt;link&gt;</code>) and inline styles (<code>style</code> attribute)?</p>
+<p><strong>CSS Cascade Integration:</strong></p>
+<ul>
+<li>Styles defined within <code class="language-html">&lt;style&gt;</code> tags participate fully in the <strong>CSS Cascade</strong> along with external and inline styles.</li>
+<li>The browser combines rules from all sources (user-agent defaults, external sheets, internal sheets, inline styles) and applies them based on:<ol>
+<li><strong>Origin and Importance:</strong> (<code>!important</code> rules override normal rules; author styles override user-agent styles).</li>
+<li><strong>Specificity:</strong> More specific selectors override less specific ones (e.g., <code class="language-css">#id</code> &gt; <code class="language-css">.class</code> &gt; <code class="language-css">element</code>).</li>
+<li><strong>Source Order:</strong> For rules with the <em>same</em> origin, importance, and specificity, the rule that appears <strong>later</strong> in the overall source code (considering linked sheets and style blocks together) wins.</li>
+</ol>
+</li>
+</ul>
+<p><strong><code class="language-html">&lt;style&gt;</code> vs. <code class="language-html">&lt;link&gt;</code>:</strong></p>
+<ul>
+<li>If an external stylesheet (<code class="language-html">&lt;link&gt;</code>) and an internal stylesheet (<code class="language-html">&lt;style&gt;</code>) define rules with the exact same selector and specificity (e.g., both have <code>h1 { color: ...; }</code>), the one that appears <strong>later</strong> in the <code class="language-html">&lt;head&gt;</code> section will take precedence.</li>
+<li>In our current example (<code>index.html</code> lesson 354), the <code class="language-html">&lt;style&gt;</code> block comes <em>after</em> the <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code>. Therefore, the <code>h1 { color: orange; ... }</code> rule inside <code class="language-html">&lt;style&gt;</code> would override any potential <code>h1 { color: ...; }</code> rule that might exist inside <code>style.css</code>.</li>
+</ul>
+<p><strong><code class="language-html">&lt;style&gt;</code> vs. <code>style</code> Attribute (Inline):</strong></p>
+<ul>
+<li>Inline styles (using the <code class="language-html">style</code> attribute on an element) have <strong>higher specificity</strong> than styles defined in either internal (<code class="language-html">&lt;style&gt;</code>) or external (<code class="language-html">&lt;link&gt;</code>) stylesheets (unless <code>!important</code> is used in the stylesheet).</li>
+<li>Therefore, an inline style like <code class="language-html">&lt;h1 style=&quot;color: blue;&quot;&gt;</code> would override the <code>color: orange;</code> set in our internal <code class="language-html">&lt;style&gt;</code> block.</li>
+</ul>
+<p><strong>Render Blocking:</strong></p>
+<ul>
+<li>Like external stylesheets, internal <code class="language-html">&lt;style&gt;</code> blocks are also generally <strong>render-blocking</strong>. The browser needs to parse these rules to understand how to lay out the page before rendering the <code class="language-html">&lt;body&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the order in the <code class="language-html">&lt;head&gt;</code>: <code class="language-html">&lt;link&gt;</code> then <code class="language-html">&lt;style&gt;</code>. Understand that if <code>style.css</code> also had an <code>h1 { color: purple; }</code> rule, the <code>color: orange;</code> from the <code class="language-html">&lt;style&gt;</code> block would win because it appears later in the source. Recognize that adding <code>style=&quot;color: blue;&quot;</code> directly to the <code class="language-html">&lt;h1&gt;</code> tag would override both the external and internal styles for color due to higher specificity.</p>
+<p>✨ <strong>Key Takeaway:</strong> Internal styles (<code class="language-html">&lt;style&gt;</code>) participate in the CSS cascade. Their precedence relative to external styles (<code class="language-html">&lt;link&gt;</code>) depends on source order (for equal specificity), and they are generally overridden by inline styles (<code>style</code> attribute) due to specificity rules.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

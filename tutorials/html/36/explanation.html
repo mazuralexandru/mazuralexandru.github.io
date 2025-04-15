@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>36. Text: Headings (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>) - Hierarchy and Best Practices</h1>
+<p>Using headings correctly involves understanding their hierarchical nature and some important best practices.</p>
+<p><strong>1. Heading Hierarchy Rule:</strong></p>
+<ul>
+<li><strong>Concept:</strong> Headings should form a logical, ordered hierarchy. You should start with the highest-level heading appropriate for the section (usually <code class="language-html">&lt;h1&gt;</code> for the page) and step down sequentially without skipping levels.</li>
+<li><strong>Example:</strong><ul>
+<li><strong>Correct:</strong> <code class="language-html">&lt;h1&gt;</code> -&gt; <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code> -&gt; <code class="language-html">&lt;h2&gt;</code></li>
+<li><strong>Incorrect:</strong> <code class="language-html">&lt;h1&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code> (Skipped <code class="language-html">&lt;h2&gt;</code>)</li>
+<li><strong>Incorrect:</strong> <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h4&gt;</code> (Skipped <code class="language-html">&lt;h3&gt;</code>)</li>
+</ul>
+</li>
+<li><strong>Why it Matters:</strong> Skipping levels can confuse users, especially those using screen readers who rely on the heading structure to navigate and understand the document&#39;s organization. It breaks the logical outline.</li>
+</ul>
+<p><strong>2. The <code class="language-html">&lt;h1&gt;</code> Element:</strong></p>
+<ul>
+<li><strong>Best Practice:</strong> Generally, use <strong>only one</strong> <code class="language-html">&lt;h1&gt;</code> element per page. This <code class="language-html">&lt;h1&gt;</code> should represent the main topic or title of that specific page. Think of it like the title of a book or a chapter.</li>
+<li><strong>HTML5 Nuance:</strong> While the HTML5 specification technically allows multiple <code class="language-html">&lt;h1&gt;</code> elements if each is the primary heading of its own &quot;sectioning content&quot; element (like <code class="language-html">&lt;article&gt;</code> or <code class="language-html">&lt;section&gt;</code>), having a single, clear <code class="language-html">&lt;h1&gt;</code> for the overall page is still widely considered the best practice for clarity and SEO. We will stick to the one-<code class="language-html">&lt;h1&gt;</code>-per-page rule for this tutorial.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>To illustrate the hierarchy, we&#39;ve added an <code class="language-html">&lt;h3&gt;</code> element logically nested under the <code class="language-html">&lt;h2&gt;</code> within <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt;
+  &lt;p&gt;This is the introductory paragraph following the main title.&lt;/p&gt;
+
+  &lt;h2&gt;A Major Section Title (h2)&lt;/h2&gt;
+  &lt;p&gt;This paragraph belongs to the first major section, introduced by the h2 heading above.&lt;/p&gt;
+
+  &lt;h3&gt;A Subsection Title (h3)&lt;/h3&gt; &lt;!-- Added h3 --&gt;
+  &lt;p&gt;This paragraph discusses a specific point within the major section, under the h3 subheading.&lt;/p&gt;
+
+  &lt;p&gt;Another paragraph within the same section (under the h2, but after the h3 subsection).&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Note how the last paragraph still logically falls under the <code class="language-html">&lt;h2&gt;</code> because no new <code class="language-html">&lt;h2&gt;</code> or <code class="language-html">&lt;h1&gt;</code> has started.</p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>See the new <code class="language-html">&lt;h3&gt;</code> in <code class="language-text">index.html</code>.</li>
+<li>In the preview, observe the <code class="language-html">&lt;h3&gt;</code> text. It should be bold (by default) but smaller than the <code class="language-html">&lt;h2&gt;</code> and significantly smaller than the <code class="language-html">&lt;h1&gt;</code>, visually reinforcing the hierarchy (H1 &gt; H2 &gt; H3).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use headings in a strict hierarchical order (<code>h1</code> -&gt; <code>h2</code> -&gt; <code>h3</code>...) without skipping levels. Aim for one main <code class="language-html">&lt;h1&gt;</code> per page. This creates a logical and accessible document structure.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

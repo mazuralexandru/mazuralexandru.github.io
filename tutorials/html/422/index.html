@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>The &lt;form&gt; Element: Enctype</h1>
+  <p>Required for file uploads: enctype="multipart/form-data"</p> <!-- Adjusted P -->
+
+  <!-- Form configured for file upload -->
+  <form action="/upload-file" method="POST" enctype="multipart/form-data"> <!-- Added enctype -->
+     <!-- <input type="file" name="user_file"> -->
+     <!-- File content sent in separate parts, no encoding -->
+  </form>
+
+  <p>Sends data in parts; needed for &lt;input type="file"&gt;.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic landmark/section visualization */
+    body > header, body > nav, body > main, body > footer, main article, main section, main aside {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    main { display: flex; gap: 20px; } /* Basic layout for main/aside */
+    main article { flex-grow: 1; } /* Allow article to grow */
+    main aside { flex-basis: 200px; flex-shrink: 0; } /* Fixed width aside */
+
+    nav ul { list-style: none; padding: 0; }
+    nav li { display: inline-block; margin-right: 10px; }
+    article header h2, section h3, aside h3 { margin: 0 0 0.5em 0; }
+  </style>
+</head>
+<body>
+  <header>...</header> <!-- Content assumed present -->
+
+  <main>
+    <article>
+      <header>
+        <h2>Blog Post Title One</h2>
+        <p>Published on <time datetime="2024-03-15">March 15, 2024</time></p>
+      </header>
+      <p>This is the introductory paragraph of the blog post...</p>
+
+      <section aria-labelledby="features-heading"> <!-- Added ARIA for name -->
+        <h3 id="features-heading">Subsection: Key Features</h3> <!-- Added id -->
+        <p>This section details the key features discussed in the blog post.</p>
+        <ul>...</ul>
+      </section>
+
+      <p>Concluding paragraph for the blog post...</p>
+    </article>
+
+    <aside aria-labelledby="related-links-heading"> <!-- Added ARIA for name -->
+      <h3 id="related-links-heading">Related Links</h3> <!-- Added id -->
+      <ul>...</ul>
+      <p>This sidebar content is tangentially related to the main article.</p>
+    </aside>
+
+  </main>
+
+  <footer>...</footer> <!-- Content assumed present -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

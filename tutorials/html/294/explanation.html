@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>294. The <code>dir</code> Attribute - Practical Application &amp; Example</h1>
+<p>Let&#39;s see <code class="language-html">dir</code> in action.</p>
+<p><strong>Document-Level Direction:</strong></p>
+<ul>
+<li>For documents primarily written in an RTL language, you should set <code class="language-html">dir=&quot;rtl&quot;</code> on the <code class="language-html">&lt;html&gt;</code> element, usually alongside the appropriate <code class="language-html">lang</code> attribute.<ul>
+<li>Example: <code class="language-html">&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Element-Level Direction:</strong></p>
+<ul>
+<li>You apply <code class="language-html">dir</code> to specific elements when their content&#39;s direction differs from the inherited direction.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a new paragraph containing an Arabic phrase. Since our document&#39;s base direction is LTR (implied default, or explicitly set on <code class="language-html">&lt;html&gt;</code>), we need to wrap the Arabic phrase in an element (like <code class="language-html">&lt;span&gt;</code>) and apply <code class="language-html">dir=&quot;rtl&quot;</code> to ensure it renders correctly. We also add <code class="language-html">lang=&quot;ar&quot;</code> for good measure.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Global Attributes - Lang &amp; Dir&lt;/h1&gt;
+  &lt;p&gt;The document language is English (&lt;span lang=&quot;fr&quot;&gt;C&#39;est la vie&lt;/span&gt;). Default direction is LTR.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;p&gt;Use &#39;dir&#39; for content in a different direction, like this Arabic phrase: &lt;span lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;مرحبا بالعالم&lt;/span&gt;.&lt;/p&gt; &lt;!-- Added RTL example --&gt;
+  &lt;!-- The Arabic text reads &quot;Marhaban bil-&#39;alam&quot; (Hello World) --&gt;
+
+  &lt;p&gt;Setting &#39;dir&#39; ensures correct text flow and alignment for RTL scripts.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+
+  &lt;!-- Removed previous Spanish example for focus --&gt;
+  &lt;!-- &lt;p&gt;... Another example in Spanish: &lt;span lang=&quot;es&quot;&gt;Hola Mundo&lt;/span&gt;.&lt;/p&gt; --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;span&gt;</code> containing the Arabic text. Note both <code class="language-html">lang=&quot;ar&quot;</code> and <code class="language-html">dir=&quot;rtl&quot;</code>.</li>
+<li>Look at the browser preview. Observe the Arabic phrase &quot;مرحبا بالعالم&quot;.<ul>
+<li>The characters themselves should flow <strong>right-to-left</strong>.</li>
+<li>The punctuation (period <code>.</code>) should appear on the <strong>left</strong> end of the phrase, which is correct for RTL context adjacent to LTR text.</li>
+<li>Without <code class="language-html">dir=&quot;rtl&quot;</code>, the browser might struggle to render the isolated RTL phrase correctly within the LTR paragraph, potentially misplacing the punctuation or even rendering characters in the wrong order depending on the surrounding LTR characters and browser implementation of the Bidi algorithm. Explicitly setting <code class="language-html">dir</code> provides the necessary context.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Apply <code class="language-html">dir=&quot;rtl&quot;</code> to elements containing right-to-left text when the surrounding context is left-to-right (or vice-versa with <code class="language-html">dir=&quot;ltr&quot;</code>). This ensures correct rendering according to the script&#39;s directionality, especially important for punctuation and mixing scripts. Set <code>dir</code> on the <code class="language-html">&lt;html&gt;</code> tag for documents primarily in RTL languages.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

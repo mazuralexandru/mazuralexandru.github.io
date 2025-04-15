@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>113. Ordered Lists (<code class="language-html">&lt;ol&gt;</code>): Combining <code>start</code> and <code>reversed</code></h1>
+<p>The <code class="language-html">start</code> and <code class="language-html">reversed</code> attributes can be used together on an <code class="language-html">&lt;ol&gt;</code> element.</p>
+<p><strong>Interaction:</strong></p>
+<ul>
+<li>When both <code class="language-html">reversed</code> and <code class="language-html">start</code> are present, the <code>start</code> attribute specifies the number for the <strong>first item</strong> in the list (which will be the highest number in the countdown).</li>
+<li>The list then counts down sequentially from that <code>start</code> value.</li>
+</ul>
+<p><strong>Example Scenario:</strong></p>
+<p>Imagine you want to list the Top 3 items, but you want to start the numbering explicitly from 3 and count down (3, 2, 1). You would use <code>start=&quot;3&quot;</code> and <code>reversed</code>. If you wanted to show items ranked 10, 9, and 8, you would use <code>start=&quot;10&quot;</code> and <code>reversed</code>.</p>
+<p><strong>Code Change:</strong></p>
+<p>We have added both <code class="language-html">reversed</code> and <code class="language-html">start=&quot;10&quot;</code> attributes to the <code class="language-html">&lt;ol&gt;</code> tag in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;Combining &#39;start&#39; and &#39;reversed&#39;:&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+&lt;ol reversed start=&quot;10&quot;&gt; &lt;!-- Added reversed and start --&gt;
+  &lt;li&gt;Item numbered 10&lt;/li&gt; &lt;!-- Text updated --&gt;
+  &lt;li&gt;Item numbered 9&lt;/li&gt;
+  &lt;li&gt;Item numbered 8&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Starts countdown from the &#39;start&#39; value.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code class="language-html">&lt;ol&gt;</code> tag in <code class="language-text">index.html</code> with both <code>reversed</code> and <code>start=&quot;10&quot;</code>.</li>
+<li>Look at the browser preview. The list markers should now count down starting from 10: <strong>10.</strong>, <strong>9.</strong>, <strong>8.</strong>.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> When <code>reversed</code> and <code>start</code> are used together on <code class="language-html">&lt;ol&gt;</code>, the list counts down starting from the value specified in the <code>start</code> attribute.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

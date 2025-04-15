@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>629. Entities: What are HTML Entities? - Core Definition</h1>
+<p>Let&#39;s start with the basic definition.</p>
+<p><strong>Definition:</strong></p>
+<ul>
+<li><strong>HTML Entities</strong> are special sequences of text (codes) used within HTML markup to represent specific characters. These characters might be:<ul>
+<li><strong>Reserved Characters:</strong> Characters like <code>&lt;</code>, <code>&gt;</code>, and <code>&amp;</code> that have structural meaning in HTML itself and need to be &quot;escaped&quot; to be displayed literally.</li>
+<li><strong>Invisible Characters:</strong> Characters like the non-breaking space.</li>
+<li><strong>Other Characters:</strong> Symbols or characters not easily typable on a standard keyboard (though direct UTF-8 input is often preferred for these now).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<p>HTML entities typically come in two main forms:</p>
+<ol>
+<li><p><strong>Named Character References:</strong></p>
+<ul>
+<li>Start with an ampersand (<code>&amp;</code>).</li>
+<li>End with a semicolon (<code>;</code>).</li>
+<li>Contain a predefined, case-sensitive entity name between the <code>&amp;</code> and <code>;</code>.</li>
+<li>Example: <code class="language-html">&amp;lt;</code> represents the <code>&lt;</code> character.</li>
+</ul>
+</li>
+<li><p><strong>Numeric Character References:</strong></p>
+<ul>
+<li>Start with an ampersand and a hash (<code>&amp;#</code>).</li>
+<li>End with a semicolon (<code>;</code>).</li>
+<li>Contain a number representing the character&#39;s Unicode code point between the <code>&amp;#</code> and <code>;</code>.</li>
+<li>Can be <strong>Decimal:</strong> <code class="language-html">&amp;#&lt;number&gt;;</code> (e.g., <code class="language-html">&amp;#60;</code> for <code>&lt;</code>).</li>
+<li>Or <strong>Hexadecimal:</strong> <code class="language-html">&amp;#x&lt;hex-number&gt;;</code> (e.g., <code class="language-html">&amp;#x3C;</code> for <code>&lt;</code>).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Purpose Recap:</strong></p>
+<p>Entities allow us to reliably include characters in our HTML content that might otherwise be misinterpreted by the browser&#39;s parser or are difficult to type directly. The browser replaces the entity code with the actual character during rendering.</p>
+<p><strong>Analogy:</strong> Think of them as &quot;escape codes&quot; or placeholders that tell the browser, &quot;Don&#39;t treat this sequence like normal markup; display the specific character it represents instead.&quot;</p>
+<p>✅ <strong>Observation:</strong> No code changes yet. Focus on the definition and the two syntax forms (named like <code class="language-html">&amp;name;</code> and numeric like <code class="language-html">&amp;#number;</code> or <code class="language-html">&amp;#xhex;</code>).</p>
+<p>✨ <strong>Key Takeaway:</strong> HTML entities are special codes (<code class="language-html">&amp;name;</code> or <code class="language-html">&amp;#number;</code>) used to represent reserved characters or other specific characters within HTML markup.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

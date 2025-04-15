@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Native Browser Validation</h1>
+  <p>Browser checks constraints (required, type, pattern etc.) on submit.</p>
+
+  <form action="/submit-data" method="POST">
+     <p>
+       <label for="email_field">Email (Required):</label>
+       <input type="email" id="email_field" name="email" required> <!-- Required + Type Validation -->
+    </p>
+    <p>
+       <label for="code_field">Code (Pattern: 3 letters):</label>
+       <input type="text" id="code_field" name="code" pattern="[A-Za-z]{3}" title="Enter exactly 3 letters"> <!-- Pattern Validation -->
+    </p>
+     <p><button type="submit">Submit</button></p>
+  </form>
+
+  <p>If invalid, submission is blocked & default error shown (unless novalidate used).</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>456. Forms: Submit Buttons (<code>type=&quot;submit&quot;</code>) - <code class="language-html">&lt;input&gt;</code> vs. <code class="language-html">&lt;button&gt;</code></h1>
+<p>The most crucial button type in a form is the one that triggers the submission process. This functionality is enabled by setting the <code>type</code> attribute to <code>submit</code>. There are two elements that can function as submit buttons:</p>
+<p><strong>1. <code class="language-html">&lt;input type=&quot;submit&quot;&gt;</code></strong></p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;input type=&quot;submit&quot; name=&quot;optional_name&quot; value=&quot;Button Label&quot;&gt;</code></li>
+<li><strong>Appearance:</strong> Renders as a standard platform button.</li>
+<li><strong>Label:</strong> The text displayed on the button is determined <em>solely</em> by its <code>value</code> attribute. If <code>value</code> is omitted, it defaults to &quot;Submit&quot;.</li>
+<li><strong>Content:</strong> Cannot contain other HTML elements (it&#39;s a void element).</li>
+</ul>
+<p><strong>2. <code class="language-html">&lt;button type=&quot;submit&quot;&gt;</code></strong></p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;button type=&quot;submit&quot; name=&quot;optional_name&quot; value=&quot;optional_submitted_value&quot;&gt;Button Label Content&lt;/button&gt;</code></li>
+<li><strong>Appearance:</strong> Also renders as a standard platform button.</li>
+<li><strong>Label:</strong> The content displayed on the button is everything placed <em>between</em> the <code class="language-html">&lt;button&gt;</code> and <code class="language-html">&lt;/button&gt;</code> tags. This content can include text, inline formatting (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>), and even images (<code class="language-html">&lt;img&gt;</code>).</li>
+<li><strong><code>value</code> Attribute:</strong> Specifies the value sent to the server <em>if</em> this button is used to submit the form and <em>if</em> it has a <code>name</code> attribute. It does <strong>not</strong> set the visible label.</li>
+<li><strong>Flexibility:</strong> The ability to include HTML content makes <code class="language-html">&lt;button&gt;</code> much more flexible for styling and creating visually rich buttons.</li>
+</ul>
+<p><strong>Why <code class="language-html">&lt;button type=&quot;submit&quot;&gt;</code> is Preferred:</strong></p>
+<ul>
+<li><strong>Richer Content:</strong> Allows embedding icons, images, or specific text formatting directly within the button label.</li>
+<li><strong>Clearer Separation:</strong> Separates the button&#39;s visible label (content) from its submitted value (<code>value</code> attribute), which can be useful in complex forms.</li>
+<li><strong>Consistency:</strong> Matches the syntax of <code class="language-html">&lt;button type=&quot;reset&quot;&gt;</code> and <code class="language-html">&lt;button type=&quot;button&quot;&gt;</code> more closely.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added examples of both types of submit buttons to our form in <code class="language-text">index.html</code>. We also added a simple text input so there&#39;s some data to potentially submit.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;p&gt; &lt;!-- Added basic input --&gt;
+    &lt;label for=&quot;data&quot;&gt;Data:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;data&quot; name=&quot;data_field&quot; value=&quot;Test&quot;&gt;
+  &lt;/p&gt;
+
+  &lt;!-- Method 1: Input Submit --&gt;
+  &lt;p&gt;
+     &lt;input type=&quot;submit&quot; value=&quot;Submit via Input&quot;&gt; &lt;!-- Input submit --&gt;
+  &lt;/p&gt;
+
+  &lt;!-- Method 2: Button Submit --&gt;
+   &lt;p&gt;
+     &lt;button type=&quot;submit&quot; name=&quot;action&quot; value=&quot;save&quot;&gt; &lt;!-- Button submit --&gt;
+       Submit via Button &lt;em&gt;(Recommended)&lt;/em&gt; &lt;!-- Rich content --&gt;
+     &lt;/button&gt;
+  &lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine both the <code class="language-html">&lt;input type=&quot;submit&quot;&gt;</code> and the <code class="language-html">&lt;button type=&quot;submit&quot;&gt;</code> elements. Note how the label is set differently (<code>value</code> attribute vs. inner content). Note the <code class="language-html">&lt;em&gt;</code> tag inside the <code class="language-html">&lt;button&gt;</code>.</li>
+<li>Look at the browser preview:<ul>
+<li>Both elements render as clickable buttons.</li>
+<li>The first button&#39;s text is &quot;Submit via Input&quot; (from its <code>value</code>).</li>
+<li>The second button&#39;s text is &quot;Submit via Button <em>(Recommended)</em>&quot;, with the &quot;(Recommended)&quot; part likely italicized due to the nested <code class="language-html">&lt;em&gt;</code>.</li>
+<li>Clicking <em>either</em> button would attempt to submit the form data (including <code>data_field=Test</code>) via POST to <code>/submit-data</code>. If the second button was clicked, the pair <code>action=save</code> would <em>also</em> be submitted because it has both a <code>name</code> and a <code>value</code>.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Both <code class="language-html">&lt;input type=&quot;submit&quot;&gt;</code> and <code class="language-html">&lt;button type=&quot;submit&quot;&gt;</code> trigger form submission. <code class="language-html">&lt;button type=&quot;submit&quot;&gt;</code> is generally preferred because its content model allows for richer labels (text, images, formatting) compared to the plain text <code>value</code> attribute of <code class="language-html">&lt;input type=&quot;submit&quot;&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

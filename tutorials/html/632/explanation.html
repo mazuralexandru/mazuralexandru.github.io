@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>632. Escaping Reserved Characters: Greater Than (<code>&amp;gt;</code>)</h1>
+<p>Next is the greater-than sign (<code>&gt;</code>).</p>
+<p><strong>The Problem:</strong></p>
+<ul>
+<li>The <code>&gt;</code> character signifies the end of an HTML tag (e.g., <code class="language-html">&lt;p&gt;</code>). While browsers are often more lenient with unescaped <code>&gt;</code> characters in text content compared to <code>&lt;</code>, using it literally can still cause issues in certain contexts (especially within code examples or near other markup) and is considered bad practice for robustness.</li>
+</ul>
+<p><strong>The Solution: <code>&amp;gt;</code></strong></p>
+<ul>
+<li>Use the named entity <code class="language-text">&amp;gt;</code> (stands for &quot;greater than&quot;) to represent the literal <code>&gt;</code> character.</li>
+<li>The browser will parse <code class="language-text">&amp;gt;</code> and render it visually as <code>&gt;</code>.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Displaying mathematical comparisons (e.g., <code>10 &gt; 5</code>).</li>
+<li>Crucially, showing code examples containing HTML tags. To display the text <code class="language-html">&lt;p&gt;</code>, you must write <code class="language-text">&amp;lt;p&amp;gt;</code>.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a new section and paragraphs demonstrating <code class="language-text">&amp;gt;</code> and combining it with <code class="language-text">&amp;lt;</code> to show an example tag.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;HTML Entities: Escaping Reserved Characters&lt;/h1&gt;
+  ...
+  &lt;h2&gt;Displaying Greater Than (&amp;gt;)&lt;/h2&gt; &lt;!-- Added section --&gt;
+  &lt;p&gt;To show the greater than sign, use &amp;amp;gt; like this: 10 &amp;gt; 5.&lt;/p&gt; &lt;!-- Used &amp;gt; --&gt;
+  &lt;p&gt;Crucial for displaying code like &amp;lt;p&amp;gt; (using &amp;amp;lt;p&amp;amp;gt;).&lt;/p&gt; &lt;!-- Combined example --&gt;
+
+  &lt;!-- Example of what NOT to do (less likely to break than &lt;, but still bad practice) --&gt;
+  &lt;!-- &lt;p&gt;Potentially okay but unsafe: 10 &gt; 5 &lt;/p&gt; --&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the new section and the use of <code class="language-text">&amp;gt;</code> in the first paragraph and <code class="language-text">&amp;lt;p&amp;gt;</code> in the second paragraph.</li>
+<li>Look at the browser preview. The first paragraph should render as: <strong>10 &gt; 5</strong>. The second should render as: <strong>Crucial for displaying code like <p> (using &lt;p&gt;).</strong>. The browser correctly replaced <code class="language-text">&amp;gt;</code> with <code>&gt;</code> and the combination with <code class="language-html">&lt;p&gt;</code>.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> While browsers might tolerate unescaped <code>&gt;</code>, always use the entity <code class="language-text">&amp;gt;</code> to display a literal greater-than sign (<code>&gt;</code>) for robustness, especially when showing code examples (<code class="language-text">&amp;lt;tagname&amp;gt;</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

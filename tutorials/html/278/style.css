@@ -1,0 +1,27 @@
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space */
+}
+
+/* Style elements with the 'intro-paragraph' class */
+.intro-paragraph {
+  font-style: italic;
+  margin-bottom: 2em; /* Add extra space below */
+}
+
+/* Style elements with the 'highlight' class */
+.highlight {
+  background-color: #444; /* Slightly lighter dark background */
+  border-left: 3px solid #F0E68C; /* Khaki border */
+  padding: 10px;
+}
+
+/* Style elements with the 'info-text' class */
+.info-text {
+  font-size: 0.9em;
+  color: #BDBDBD; /* Lighter grey text */
+}

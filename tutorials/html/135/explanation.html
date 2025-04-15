@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>135. Description Lists (<code class="language-html">&lt;dl&gt;</code>): Layout &amp; CSS</h1>
+<p>The default browser rendering of <code class="language-html">&lt;dl&gt;</code> (term on one line, indented description below) is functional but often not what&#39;s desired for layout, especially for metadata lists or definitions where a side-by-side presentation might be preferred.</p>
+<p><strong>Default Rendering Issues:</strong></p>
+<ul>
+<li><strong>Indentation:</strong> Relies on default browser margins, which can vary and may not align perfectly with a specific design grid.</li>
+<li><strong>Wasted Space:</strong> The simple indented style can take up significant vertical space.</li>
+</ul>
+<p><strong>CSS for Layout:</strong></p>
+<p>Description lists are excellent candidates for modern CSS layout techniques like <strong>CSS Grid</strong> or <strong>CSS Flexbox</strong>, applied to the <code class="language-html">&lt;dl&gt;</code> container itself.</p>
+<ul>
+<li><strong>Goal:</strong> To arrange the <code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code> elements in more sophisticated layouts, such as two columns (term in the left column, description in the right).</li>
+<li><strong>Approach (Conceptual):</strong><ul>
+<li><strong>CSS Grid:</strong> Set <code>display: grid;</code> on the <code class="language-html">&lt;dl&gt;</code>. Define grid columns (e.g., <code>grid-template-columns: auto 1fr;</code>). You might need to handle how <code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code> span rows or columns, potentially using <code>grid-column: span 2;</code> on elements that should take the full width.</li>
+<li><strong>CSS Flexbox:</strong> Set <code>display: flex;</code> on the <code class="language-html">&lt;dl&gt;</code> (often with <code>flex-wrap: wrap;</code>). Style <code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code> elements with specific widths (e.g., <code>dt { flex-basis: 30%; }</code>, <code>dd { flex-basis: 70%; margin-left: 0; }</code>). Requires careful handling of margins and wrapping.</li>
+<li><em>(Note: Actually implementing these layouts is beyond the scope of this HTML tutorial, but it&#39;s crucial to know that <code class="language-html">&lt;dl&gt;</code> provides the semantic structure that CSS can then style effectively).</em></li>
+</ul>
+</li>
+</ul>
+<p><strong>Removing Default Indentation:</strong></p>
+<p>When using Grid or Flexbox for layout, you almost always want to <strong>remove the default browser indentation</strong> on the <code class="language-html">&lt;dd&gt;</code> element by setting <code>margin-left: 0;</code> (or <code>margin: 0;</code>) in your CSS.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Examine the simple <code class="language-html">&lt;dl&gt;</code> structure in the preview. Imagine how you might want it to look different (e.g., side-by-side). Understand that CSS Grid or Flexbox applied to the <code class="language-html">&lt;dl&gt;</code> element is the modern way to achieve such layouts, providing control beyond the default indentation.</p>
+<p>✨ <strong>Key Takeaway:</strong> Don&#39;t rely on the default browser rendering of <code class="language-html">&lt;dl&gt;</code> for complex layouts. Use CSS Grid or Flexbox on the <code class="language-html">&lt;dl&gt;</code> container, combined with styling on <code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code> (often removing default <code class="language-html">&lt;dd&gt;</code> margins), to achieve desired visual arrangements like columns.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

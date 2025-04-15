@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>11. Void / Empty Elements (Part 2: Examples &amp; Syntax)</h1>
+<p>Let&#39;s look at the syntax of a couple of common void elements: <code class="language-html">&lt;hr&gt;</code> and <code class="language-html">&lt;br&gt;</code>.</p>
+<p><strong>Code Changes:</strong></p>
+<p>We&#39;ve added two void elements and another paragraph to <code class="language-text">index.html</code>:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!-- Content will go here soon! --&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;hr&gt; &lt;!-- Added this horizontal rule --&gt;
+&lt;p&gt;This is another paragraph.&lt;br&gt;This text appears on a new line.&lt;/p&gt; &lt;!-- Added this paragraph with a line break --&gt;
+</code></pre>
+<p><strong>Examples:</strong></p>
+<ol>
+<li><p><strong><code class="language-html">&lt;hr&gt;</code> (Thematic Break / Horizontal Rule):</strong></p>
+<ul>
+<li>Represents a thematic break between paragraph-level elements. It&#39;s often displayed visually as a horizontal line by default, but its semantic meaning is about separation.</li>
+<li>Syntax: <code class="language-html">&lt;hr&gt;</code> - Just the single tag.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-html">&lt;br&gt;</code> (Line Break):</strong></p>
+<ul>
+<li>Represents a line break within a block of text. It forces the content that follows it onto a new line <em>without</em> starting a new paragraph (which would typically add more vertical space).</li>
+<li>Syntax: <code class="language-html">&lt;br&gt;</code> - Just the single tag. Notice how it&#39;s placed <em>within</em> the second <code class="language-html">&lt;p&gt;</code> element&#39;s content.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Syntax Variations (Self-Closing Slash):</strong></p>
+<p>You might sometimes see void elements written with a trailing slash, like <code class="language-html">&lt;hr /&gt;</code> or <code class="language-html">&lt;br /&gt;</code>.</p>
+<ul>
+<li><strong>HTML5 Syntax:</strong> The slash is <strong>optional</strong> and generally <strong>omitted</strong>. <code class="language-html">&lt;hr&gt;</code> and <code class="language-html">&lt;br&gt;</code> are preferred.</li>
+<li><strong>XHTML Syntax:</strong> In the older, stricter XHTML standard, this slash was <strong>required</strong> for void elements (called &quot;self-closing tags&quot;).</li>
+<li><strong>Explanation:</strong> Modern HTML5 browsers understand both forms. The trailing slash is mostly ignored.</li>
+<li><strong>Best Practice:</strong> For HTML5, consistently use the simpler form without the slash (<code class="language-html">&lt;hr&gt;</code>, <code class="language-html">&lt;br&gt;</code>, <code class="language-html">&lt;img&gt;</code>). Be aware that you might encounter the other style in older code or code aiming for XML compatibility.</li>
+</ul>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine <code class="language-text">index.html</code>. Note the placement of <code class="language-html">&lt;hr&gt;</code> <em>between</em> the paragraphs and <code class="language-html">&lt;br&gt;</code> <em>inside</em> the second paragraph.</li>
+<li>Look at the preview pane. You should see:<ul>
+<li>The first paragraph.</li>
+<li>A horizontal line below it (the <code class="language-html">&lt;hr&gt;</code>).</li>
+<li>The second paragraph, with the text after <code class="language-html">&lt;br&gt;</code> appearing directly on the line below the preceding text within that same paragraph.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Void elements like <code class="language-html">&lt;hr&gt;</code> and <code class="language-html">&lt;br&gt;</code> use a single tag. The trailing slash (<code class="language-html">/</code>) is optional in HTML5 and usually omitted.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

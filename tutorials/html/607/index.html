@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scalable Vector Graphics (SVG)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    svg {
+      border: 1px dashed skyblue;
+      margin: 10px;
+      fill: none;
+      stroke: lightgreen;
+      stroke-width: 2;
+    }
+    svg .filled-shape {
+        fill: lightcoral;
+        stroke: none;
+    }
+    svg .complex-path { /* Style for path */
+        stroke: orange;
+        stroke-width: 3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inline SVG Example</h1>
+  <p>Adding a complex shape using &lt;path&gt;.</p> <!-- Adjusted P -->
+
+  <svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+     <!-- <rect ... /> --> <!-- Removed rect for focus -->
+     <!-- <circle ... /> --> <!-- Removed circle for focus -->
+
+     <!-- Added path element -->
+     <path d="M 10 80 Q 50 10, 90 80 T 130 80" class="complex-path" />
+     <!-- M=MoveTo, Q=Quadratic Bezier, T=Smooth Quadratic -->
+
+  </svg>
+
+  <p>The 'd' attribute contains path drawing commands.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

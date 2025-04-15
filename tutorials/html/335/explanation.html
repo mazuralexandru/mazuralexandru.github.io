@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>335. Metadata: The <code class="language-html">&lt;link&gt;</code> Element - Core Mechanics</h1>
+<p>Let&#39;s examine the core syntax and key attributes used with the <code class="language-html">&lt;link&gt;</code> element.</p>
+<p><strong>Basic Syntax:</strong></p>
+<ul>
+<li><code class="language-html">&lt;link attribute1=&quot;value1&quot; attribute2=&quot;value2&quot; ...&gt;</code> (No closing tag)</li>
+</ul>
+<p><strong>Key Attributes:</strong></p>
+<ol>
+<li><p><strong><code>rel</code> (Relationship) [Required]:</strong></p>
+<ul>
+<li>Defines the <strong>relationship</strong> between the current document and the linked resource specified by <code>href</code>.</li>
+<li>This is the most crucial attribute, determining the link&#39;s purpose.</li>
+<li>Common values include: <code>stylesheet</code>, <code>icon</code>, <code>preconnect</code>, <code>preload</code>, <code>prefetch</code>, <code>dns-prefetch</code>, <code>alternate</code>, <code>canonical</code>, <code>author</code>, <code>license</code>, <code>help</code>, <code>next</code>, <code>prev</code>, <code>search</code>, <code>manifest</code>. (We&#39;ll cover some of these).</li>
+</ul>
+</li>
+<li><p><strong><code>href</code> (Hypertext Reference) [Usually Required]:</strong></p>
+<ul>
+<li>Specifies the <strong>URL</strong> (absolute or relative) of the external resource being linked.</li>
+<li>Required for most <code>rel</code> types (like <code>stylesheet</code>, <code>icon</code>, <code>preload</code>). Might be optional for purely informational <code>rel</code> types in some contexts, but usually present.</li>
+</ul>
+</li>
+<li><p><strong><code>type</code> (MIME Type Hint):</strong></p>
+<ul>
+<li>Provides a hint about the MIME type of the linked resource (e.g., <code>type=&quot;text/css&quot;</code> for stylesheets, <code>type=&quot;image/png&quot;</code> for icons).</li>
+<li>Often <strong>optional</strong> for well-known types like CSS (<code>rel=&quot;stylesheet&quot;</code> implies <code>text/css</code>) or when the server sends the correct <code>Content-Type</code> header. It&#39;s good practice for less common types or for clarity.</li>
+</ul>
+</li>
+<li><p><strong><code>media</code> (Media Query):</strong></p>
+<ul>
+<li>Specifies the media conditions under which the linked resource (usually a stylesheet) should be applied.</li>
+<li>Uses standard media types (e.g., <code>screen</code>, <code>print</code>) or media query syntax (e.g., <code>(max-width: 600px)</code>).</li>
+</ul>
+</li>
+<li><p><strong><code>hreflang</code> (Href Language):</strong></p>
+<ul>
+<li>Used with <code>rel=&quot;alternate&quot;</code> to indicate the language of an alternate version of the page.</li>
+<li>Example: <code class="language-html">&lt;link rel=&quot;alternate&quot; hreflang=&quot;fr&quot; href=&quot;french-page.html&quot;&gt;</code></li>
+</ul>
+</li>
+<li><p><strong><code>as</code> (Resource Type):</strong></p>
+<ul>
+<li><strong>Required</strong> when using <code>rel=&quot;preload&quot;</code> (and <code>rel=&quot;modulepreload&quot;</code>).</li>
+<li>Specifies the <em>type</em> of content being preloaded (e.g., <code>as=&quot;style&quot;</code>, <code>as=&quot;script&quot;</code>, <code>as=&quot;font&quot;</code>, <code>as=&quot;image&quot;</code>, <code>as=&quot;fetch&quot;</code>). Helps the browser prioritize the fetch correctly.</li>
+</ul>
+</li>
+<li><p><strong><code>crossorigin</code> (Cross-Origin Settings):</strong></p>
+<ul>
+<li>Used when fetching resources (especially fonts, scripts, or via <code>preload</code>) from a different origin (domain) to configure CORS (Cross-Origin Resource Sharing) behavior (<code>anonymous</code>, <code>use-credentials</code>).</li>
+</ul>
+</li>
+<li><p><strong><code>sizes</code> (Icon Sizes):</strong></p>
+<ul>
+<li>Used with <code>rel=&quot;icon&quot;</code> (or <code>apple-touch-icon</code>) to specify the size(s) of the linked icon, helping the browser choose the best match.</li>
+<li>Value can be <code>any</code> (for vector icons like SVG) or space-separated <code>WidthxHeight</code> pairs (e.g., <code>sizes=&quot;16x16 32x32&quot;</code>).</li>
+</ul>
+</li>
+<li><p><strong><code>title</code> (Alternate Stylesheet Title):</strong></p>
+<ul>
+<li>Used with <code>rel=&quot;stylesheet&quot;</code> or <code>rel=&quot;alternate stylesheet&quot;</code> to define names for user-selectable stylesheets.</li>
+</ul>
+</li>
+<li><p><strong><code>disabled</code> (Disable Stylesheet):</strong></p>
+<ul>
+<li>Boolean attribute to disable a linked stylesheet, usually manipulated via JavaScript.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Placement:</strong></p>
+<ul>
+<li><code class="language-html">&lt;link&gt;</code> elements <strong>must</strong> be placed within the <code class="language-html">&lt;head&gt;</code> section.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the list of common attributes for <code class="language-html">&lt;link&gt;</code>. Notice how <code>rel</code> and <code>href</code> are almost always present, while others (<code>type</code>, <code>media</code>, <code>as</code>, <code>sizes</code>, etc.) provide additional context or control depending on the <code>rel</code> value.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;link&gt;</code> element uses attributes like <code>rel</code> (required, defines relationship), <code>href</code> (usually required, specifies URL), and others (<code>type</code>, <code>media</code>, <code>as</code>, <code>sizes</code>, etc.) to connect external resources and provide context about them within the <code class="language-html">&lt;head&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

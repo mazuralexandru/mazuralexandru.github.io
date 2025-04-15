@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>519. Headings &amp; Outline: The Implicit Outline (Headings Only)</h1>
+<p>Before HTML5 introduced explicit sectioning elements, the structure or &quot;outline&quot; of a document was determined <em>solely</em> by the hierarchy of heading elements (<code class="language-html">&lt;h1&gt;</code> - <code class="language-html">&lt;h6&gt;</code>). This implicit outline mechanism still plays a role.</p>
+<p><strong>How Headings Define Structure:</strong></p>
+<ul>
+<li><code class="language-html">&lt;h1&gt;</code>: Represents the main topic or title of the entire page. <strong>Rule:</strong> Should generally only be <strong>one</strong> <code class="language-html">&lt;h1&gt;</code> per page.</li>
+<li><code class="language-html">&lt;h2&gt;</code>: Represents a major section directly under the <code class="language-html">&lt;h1&gt;</code>.</li>
+<li><code class="language-html">&lt;h3&gt;</code>: Represents a subsection under the preceding <code class="language-html">&lt;h2&gt;</code>.</li>
+<li><code class="language-html">&lt;h4&gt;</code>, <code class="language-html">&lt;h5&gt;</code>, <code class="language-html">&lt;h6&gt;</code>: Represent progressively deeper levels of subsections.</li>
+</ul>
+<p><strong>The Cardinal Rule: Do Not Skip Levels</strong></p>
+<ul>
+<li>The most important rule when using headings is to maintain a <strong>logical, sequential hierarchy</strong>. Start with <code class="language-html">&lt;h1&gt;</code>, use <code class="language-html">&lt;h2&gt;</code> for main sections, <code class="language-html">&lt;h3&gt;</code> for subsections of <code class="language-html">&lt;h2&gt;</code>, etc.</li>
+<li><strong>Never skip heading levels</strong> purely for visual styling. For example, do not jump from an <code class="language-html">&lt;h2&gt;</code> directly to an <code class="language-html">&lt;h4&gt;</code> just because you want smaller text. Use CSS to control heading appearance.<ul>
+<li>Correct: <code class="language-html">&lt;h1&gt;</code> -&gt; <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code> -&gt; <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code></li>
+<li><strong>Incorrect:</strong> <code class="language-html">&lt;h1&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code> (Skipped <code class="language-html">&lt;h2&gt;</code>)</li>
+<li><strong>Incorrect:</strong> <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h4&gt;</code> (Skipped <code class="language-html">&lt;h3&gt;</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why Skipping Levels is Bad:</strong></p>
+<ul>
+<li><strong>Accessibility:</strong> Screen reader users rely heavily on navigating by heading levels (e.g., jumping to the next H2, then the next H3). Skipping levels breaks this logical structure, making the page confusing and hard to navigate efficiently. They might miss entire sections or misunderstand the content hierarchy.</li>
+<li><strong>SEO:</strong> Search engines use heading structure to understand content organization. While not as severe as missing headings altogether, illogical skipping might slightly hinder their understanding.</li>
+<li><strong>Maintainability:</strong> Creates illogical code structure.</li>
+</ul>
+<p><strong>Our Example&#39;s Implicit Outline:</strong></p>
+<p>Looking at <code>index.html</code> from the previous step:</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

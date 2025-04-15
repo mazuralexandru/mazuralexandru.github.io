@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>131. Description Lists (<code class="language-html">&lt;dl&gt;</code>): Multiple <code class="language-html">&lt;dt&gt;</code> per Group</h1>
+<p>The structure of a description list group is flexible. One common variation is having <strong>multiple terms (<code class="language-html">&lt;dt&gt;</code>)</strong> associated with the <strong>same description (<code class="language-html">&lt;dd&gt;</code>)</strong>.</p>
+<p><strong>Syntax:</strong></p>
+<p>You simply list the consecutive <code class="language-html">&lt;dt&gt;</code> elements first, followed by the single <code class="language-html">&lt;dd&gt;</code> element that applies to all of them.</p>
+<pre class="language-html"><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;Term 1&lt;/dt&gt;
+  &lt;dt&gt;Term 2&lt;/dt&gt;
+  &lt;dd&gt;Description that applies to both Term 1 and Term 2.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<p><strong>Use Case:</strong></p>
+<p>This is useful when several different terms or labels refer to the same concept or have the same definition (e.g., synonyms, acronyms and full names).</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a new group to our <code class="language-html">&lt;dl&gt;</code> in <code class="language-text">index.html</code> where two <code class="language-html">&lt;dt&gt;</code> elements (&quot;JS&quot; and &quot;JavaScript&quot;) are followed by a single <code class="language-html">&lt;dd&gt;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;dl&gt;
+   &lt;dt&gt;HTML&lt;/dt&gt;
+   &lt;dd&gt;HyperText Markup Language - used for structuring web content.&lt;/dd&gt;
+
+   &lt;dt&gt;CSS&lt;/dt&gt;
+   &lt;dd&gt;Cascading Style Sheets - used for styling web content.&lt;/dd&gt;
+
+   &lt;dt&gt;JS&lt;/dt&gt; &lt;!-- Added third dt --&gt;
+   &lt;dt&gt;JavaScript&lt;/dt&gt; &lt;!-- Added fourth dt --&gt;
+   &lt;dd&gt;A programming language for web interactivity.&lt;/dd&gt; &lt;!-- Single dd for preceding two dt --&gt;
+&lt;/dl&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the last group in the <code class="language-html">&lt;dl&gt;</code> in <code class="language-text">index.html</code>. Notice the two <code class="language-html">&lt;dt&gt;</code> tags followed by one <code class="language-html">&lt;dd&gt;</code> tag.</li>
+<li>Look at the browser preview:<ul>
+<li>The terms &quot;JS&quot; and &quot;JavaScript&quot; should appear one after the other (both unindented, maybe bold).</li>
+<li>The single description (&quot;A programming language...&quot;) should appear below them, indented, clearly associated with both preceding terms.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> You can associate multiple consecutive <code class="language-html">&lt;dt&gt;</code> elements with the subsequent <code class="language-html">&lt;dd&gt;</code> element(s) in a description list group.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

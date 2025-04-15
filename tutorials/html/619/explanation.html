@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>619. Reset: Preparing for Canvas vs. SVG Comparison</h1>
+<p>We have now explored both <code class="language-html">&lt;canvas&gt;</code> and <code class="language-html">&lt;svg&gt;</code> individually, covering their fundamentals, mechanics, key features, accessibility, and performance aspects.</p>
+<p>The next logical step is to directly <strong>compare</strong> these two powerful graphics technologies to help you decide which one to use in different situations.</p>
+<p>To facilitate this comparison, we will reset the page, removing the previous inline SVG example and its associated styles.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift to a conceptual comparison of the two technologies, presenting their pros and cons side-by-side.</li>
+<li><strong>Clean Slate:</strong> The comparison doesn&#39;t require specific code examples to be visible.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code class="language-html">&lt;svg&gt;</code> element and its contents from the <code class="language-html">&lt;body&gt;</code> of <code class="language-text">index.html</code>.</li>
+<li>Removed the temporary SVG styles from the <code class="language-html">&lt;style&gt;</code> block in the <code class="language-html">&lt;head&gt;</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;title&gt;</code>, and paragraph text for the comparison section.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Canvas vs. SVG&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;style&gt;
+    /* Removed svg styles */
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Canvas vs. SVG&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Resetting page to compare Canvas and SVG directly.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed SVG example --&gt;
+  &lt;!-- &lt;svg ...&gt; ... &lt;/svg&gt; --&gt;
+
+  &lt;p&gt;Choosing the right technology depends on the requirements.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of the <code class="language-html">&lt;svg&gt;</code> element and its styles. The <code class="language-html">&lt;body&gt;</code> should only contain the <code class="language-html">&lt;h1&gt;</code> and introductory paragraphs.</li>
+<li>The browser preview shows only this basic text against the base theme, ready for the comparison discussion.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Resetting the page provides a clean environment for conceptually comparing the features, strengths, and weaknesses of Canvas and SVG.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

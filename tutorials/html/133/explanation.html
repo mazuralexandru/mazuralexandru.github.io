@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>133. Description Details (<code class="language-html">&lt;dd&gt;</code>): Content Model (Flow Content)</h1>
+<p>A key feature of the <code class="language-html">&lt;dd&gt;</code> element is its flexible content model.</p>
+<p><strong>Content Model: Flow Content</strong></p>
+<p>Unlike <code class="language-html">&lt;dt&gt;</code> (which primarily takes phrasing content), the <code class="language-html">&lt;dd&gt;</code> element accepts <strong>flow content</strong>. This means you can put almost any standard body content inside a <code class="language-html">&lt;dd&gt;</code>, including:</p>
+<ul>
+<li>Plain text</li>
+<li>Inline elements (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;code&gt;</code>, <code class="language-html">&lt;a&gt;</code>, etc.)</li>
+<li>Paragraphs (<code class="language-html">&lt;p&gt;</code>)</li>
+<li>Other lists (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, even nested <code class="language-html">&lt;dl&gt;</code>)</li>
+<li>Images (<code class="language-html">&lt;img&gt;</code>)</li>
+<li>Blockquotes (<code class="language-html">&lt;blockquote&gt;</code>)</li>
+<li>And more...</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<p>This flexibility allows descriptions or values in a <code class="language-html">&lt;dl&gt;</code> to be rich and well-structured. A definition might span multiple paragraphs, include code examples, or contain links to further resources, all nested within a single <code class="language-html">&lt;dd&gt;</code>.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve modified the <code class="language-html">&lt;dd&gt;</code> element associated with <code class="language-html">&lt;dt&gt;CSS&lt;/dt&gt;</code> in <code class="language-text">index.html</code> to include two <code class="language-html">&lt;p&gt;</code> elements, one of which also contains a <code class="language-html">&lt;strong&gt;</code> tag. We also simplified the last <code class="language-html">&lt;dt&gt;</code> group for brevity.</p>
+<pre class="language-html"><code class="language-html">&lt;dl&gt;
+   &lt;dt&gt;HTML&lt;/dt&gt;
+   &lt;dd&gt;HyperText Markup Language.&lt;/dd&gt;
+   &lt;dd&gt;Used for structuring web content.&lt;/dd&gt;
+
+   &lt;dt&gt;CSS&lt;/dt&gt;
+   &lt;dd&gt; &lt;!-- dd content changed --&gt;
+     &lt;p&gt;&lt;strong&gt;Cascading Style Sheets&lt;/strong&gt;&lt;/p&gt; &lt;!-- Added p and strong --&gt;
+     &lt;p&gt;Used for styling web content, including layout, fonts, and colors.&lt;/p&gt; &lt;!-- Added second p --&gt;
+   &lt;/dd&gt;
+
+   &lt;dt&gt;JS / JavaScript&lt;/dt&gt; &lt;!-- Combined terms --&gt;
+   &lt;dd&gt;A programming language for web interactivity.&lt;/dd&gt; &lt;!-- Simplified last group --&gt;
+&lt;/dl&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code class="language-html">&lt;dd&gt;</code> element following <code class="language-html">&lt;dt&gt;CSS&lt;/dt&gt;</code> in <code class="language-text">index.html</code>. Note the nested <code class="language-html">&lt;p&gt;</code> tags inside it.</li>
+<li>Look at the browser preview. The description for CSS now spans two paragraphs, both correctly indented under the &quot;CSS&quot; term. The first line within the description is also bolded due to the <code class="language-html">&lt;strong&gt;</code> tag. This demonstrates that block-level content renders correctly within a <code class="language-html">&lt;dd&gt;</code>.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;dd&gt;</code> element is very flexible and can contain complex structures, including paragraphs, other lists, and various inline elements, allowing for rich descriptions or values associated with a term (<code class="language-html">&lt;dt&gt;</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

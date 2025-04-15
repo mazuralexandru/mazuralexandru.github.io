@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>363. Other <code class="language-html">&lt;head&gt;</code> Elements: The <code class="language-html">&lt;noscript&gt;</code> Element - Fundamentals</h1>
+<p>What happens if a user visits your JavaScript-dependent website with JavaScript disabled or using a browser that doesn&#39;t support it? The <code class="language-html">&lt;noscript&gt;</code> element provides a way to handle this scenario.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;noscript&gt;</code> element defines a section of HTML content that is <strong>only parsed and rendered</strong> by the browser if <strong>scripting is disabled</strong> or unsupported in the current user agent.</li>
+<li>It provides a <strong>fallback mechanism</strong> for script-reliant features.</li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>If the browser supports and has scripting enabled, it completely <strong>ignores</strong> the content inside the <code class="language-html">&lt;noscript&gt;</code> tags.</li>
+<li>If scripting is unavailable, the browser treats the content inside <code class="language-html">&lt;noscript&gt;</code> as standard HTML markup and renders it accordingly.</li>
+</ul>
+<p><strong>Element Category &amp; Placement:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;noscript&gt;</code> element itself can be placed in:<ul>
+<li>The <strong><code class="language-html">&lt;head&gt;</code></strong> section: In this context, it <strong>must only contain</strong> <code class="language-html">&lt;link&gt;</code>, <code class="language-html">&lt;style&gt;</code>, and <code class="language-html">&lt;meta&gt;</code> elements. It cannot contain elements like <code class="language-html">&lt;p&gt;</code> or <code class="language-html">&lt;div&gt;</code> when inside <code class="language-html">&lt;head&gt;</code>.</li>
+<li>The <strong><code class="language-html">&lt;body&gt;</code></strong> section: In this context, it can contain standard flow content (paragraphs, headings, images, etc.) that should be displayed as fallback content if scripts are off.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li>Requires opening <code class="language-html">&lt;noscript&gt;</code> and closing <code class="language-html">&lt;/noscript&gt;</code> tags.</li>
+<li>The fallback content (specific elements depending on placement in <code class="language-html">&lt;head&gt;</code> or <code class="language-html">&lt;body&gt;</code>) goes between the tags.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. Understand the fundamental purpose: <code class="language-html">&lt;noscript&gt;</code> holds content that <em>only</em> appears or applies if JavaScript is unavailable.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;noscript&gt;</code> element defines fallback content or metadata links/styles to be used only when browser scripting is disabled or unsupported.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>168. Linking to Fragments: <code>#top</code> and Use Cases</h1>
+<p>Let&#39;s discuss linking specifically to the top of the page and common use cases for fragment links.</p>
+<p><strong>Linking to the Top (<code>#top</code>)</strong></p>
+<ul>
+<li>Historically, <code>href=&quot;#&quot;</code> was commonly used as a &quot;back to top&quot; link. While it often works, its primary meaning is just &quot;the current document&#39;s base URL plus an empty fragment&quot;.</li>
+<li>Some browsers interpret <code>href=&quot;#top&quot;</code> as an instruction to scroll to the top, even without an explicit <code class="language-html">&lt;... id=&quot;top&quot;&gt;</code> element.</li>
+<li><strong>Best Practice:</strong> For clarity and reliability, if you want a dedicated &quot;Back to Top&quot; link, it&#39;s often better to add an empty element with a specific <code>id</code> near the beginning of your <code class="language-html">&lt;body&gt;</code> (e.g., <code class="language-html">&lt;div id=&quot;top-of-page&quot;&gt;&lt;/div&gt;</code>) and link explicitly to that (<code>href=&quot;#top-of-page&quot;</code>). This avoids ambiguity.</li>
+</ul>
+<p><strong>Common Use Cases for Fragment Links:</strong></p>
+<ol>
+<li><strong>Table of Contents:</strong> Creating a list of links at the beginning of a long document, where each link (<code>href=&quot;#section-id&quot;</code>) points to the corresponding section heading (<code>id=&quot;section-id&quot;</code>).</li>
+<li><strong>&quot;Back to Top&quot; Links:</strong> Placing links (<code>href=&quot;#top-of-page&quot;</code>) at the end of long sections or in the footer to allow users to quickly return to the top without manual scrolling.</li>
+<li><strong>FAQs:</strong> Linking directly from a question list to the corresponding answer element further down the page.</li>
+<li><strong>Contextual Linking:</strong> Linking from one part of the text to a related definition, figure, or explanation elsewhere on the same page.</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added:</p>
+<ol>
+<li>An empty <code class="language-html">&lt;div&gt;</code> with <code>id=&quot;top-of-page&quot;</code> at the beginning of the <code class="language-html">&lt;body&gt;</code>.</li>
+<li>&quot;Back to Top&quot; links (<code class="language-html">&lt;a href=&quot;#top-of-page&quot;&gt;</code>) within each section.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;div id=&quot;top-of-page&quot;&gt;&lt;/div&gt; &lt;!-- Optional explicit top target --&gt;
+  &lt;h1&gt;Linking to Page Fragments&lt;/h1&gt;
+  ...
+  &lt;h2 id=&quot;section1&quot;&gt;Section One&lt;/h2&gt;
+  ...
+  &lt;p&gt;&lt;a href=&quot;#top-of-page&quot;&gt;Back to Top&lt;/a&gt;&lt;/p&gt; &lt;!-- Added Back to Top link --&gt;
+  ...
+  &lt;h2 id=&quot;section2&quot;&gt;Section Two&lt;/h2&gt;
+  ...
+  &lt;p&gt;&lt;a href=&quot;#top-of-page&quot;&gt;Back to Top&lt;/a&gt;&lt;/p&gt; &lt;!-- Added Back to Top link --&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the new <code class="language-html">&lt;div id=&quot;top-of-page&quot;&gt;</code> and the &quot;Back to Top&quot; links in <code class="language-text">index.html</code>.</li>
+<li>In the preview, scroll down to Section 1 or Section 2. Click the &quot;Back to Top&quot; link within that section. The page should scroll back up to the very top.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Fragment links are widely used for creating tables of contents and &quot;Back to Top&quot; functionality, significantly improving navigation within long documents. Linking explicitly to an element with <code>id=&quot;top-of-page&quot;</code> (or similar) is often more robust than relying on <code>href=&quot;#&quot;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>553. Reset: Preparing for Video Behavior/Accessibility/Performance Review</h1>
+<p>We have now covered the <code class="language-html">&lt;video&gt;</code> element and its primary attributes (<code>src</code>, <code>controls</code>, <code>width</code>, <code>height</code>, <code>poster</code>, <code>autoplay</code>, <code>muted</code>, <code>loop</code>, <code>preload</code>, <code>playsinline</code>, <code>crossorigin</code>), as well as applying global attributes like <code>id</code> and <code>class</code>.</p>
+<p>Before moving on to providing multiple sources with <code class="language-html">&lt;source&gt;</code>, let&#39;s consolidate the key behavioral, accessibility, and performance considerations for using <code class="language-html">&lt;video&gt;</code>.</p>
+<p>To do this, we will reset the <code class="language-html">&lt;video&gt;</code> element to a very basic state, removing the <code>id</code>, <code>class</code>, and specific attribute examples, keeping only the essential <code>controls</code> and <code>width</code>/<code>height</code> for context. We will also remove the associated CSS styles added in the previous step.</p>
+<p><strong>Why Reset?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Discuss general principles and considerations applicable to <em>any</em> <code class="language-html">&lt;video&gt;</code> implementation.</li>
+<li><strong>Simplify:</strong> Remove specific attribute configurations that might distract from the overall review.</li>
+<li><strong>Clean Slate:</strong> Provide a basic visual for the conceptual review.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code>id</code> and <code>class</code> attributes from the <code class="language-html">&lt;video&gt;</code> tag in <code class="language-text">index.html</code>.</li>
+<li>Simplified the fallback content.</li>
+<li>Removed the video-specific CSS rules (<code>.video-player</code>, <code>#promo-video</code>) from <code class="language-text">style.css</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Video: Behavior, Accessibility, Performance&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Resetting video element for final review.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;&gt; &lt;!-- Simple video tag --&gt;
+     &lt;p&gt;Fallback content&lt;/p&gt;
+  &lt;/video&gt;
+
+  &lt;p&gt;Reviewing key considerations for using video.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Base styles ... */
+
+/* Removed video specific styles */
+/* .video-player { ... } */
+/* #promo-video { ... } */
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of <code>id</code>, <code>class</code> from the <code class="language-html">&lt;video&gt;</code> tag in <code>index.html</code> and the video styles from <code>style.css</code>.</li>
+<li>The browser preview shows the basic, unstyled (except for base body styles) video player container with controls. The border and shadow are gone.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Resetting the <code class="language-html">&lt;video&gt;</code> element provides a simple base for summarizing key behavioral, accessibility, and performance best practices applicable to all video embedding.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

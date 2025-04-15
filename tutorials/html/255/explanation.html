@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>255. <code class="language-html">&lt;figcaption&gt;</code> Accessibility &amp; Relation to <code>alt</code></h1>
+<p>The primary benefit of using <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> together is semantic structure, which directly translates to better accessibility.</p>
+<p><strong>Accessibility:</strong></p>
+<ul>
+<li><strong>Screen Reader Association:</strong> Screen readers typically recognize the <code class="language-html">&lt;figure&gt;</code>/<code class="language-html">&lt;figcaption&gt;</code> relationship. When navigating, they might announce something like: &quot;Figure, [Image Alt Text], Caption: [Figcaption Text]&quot;.</li>
+<li><strong>Context:</strong> This provides crucial context for users who cannot see the image. They get both the description of the image itself (from <code class="language-html">alt</code>) and the author-provided caption or explanation (from <code class="language-html">&lt;figcaption&gt;</code>).</li>
+<li><strong>Structure:</strong> Helps users understand that the image and its caption form a single, related unit distinct from the main text flow.</li>
+</ul>
+<p><strong><code class="language-html">&lt;figcaption&gt;</code> vs. <code>alt</code> Text:</strong></p>
+<p>It&#39;s vital to understand their distinct roles:</p>
+<ul>
+<li><strong><code class="language-html">alt</code> attribute (on <code class="language-html">&lt;img&gt;</code>):</strong><ul>
+<li><strong>Describes the image content itself.</strong> Answers: &quot;What does this image show?&quot; or &quot;What is the function of this image (if interactive)?&quot;</li>
+<li><strong>Crucial fallback</strong> if the image fails to load.</li>
+<li><strong>Primary accessibility description</strong> of the image visual.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;figcaption&gt;</code> element:</strong><ul>
+<li><strong>Describes the figure as a whole.</strong> Answers: &quot;What is this figure about?&quot;, &quot;What is its title or legend?&quot;, &quot;What context does it provide?&quot;</li>
+<li>Provides <strong>additional context or explanation</strong> beyond what the image visually shows.</li>
+<li>Is <strong>visible</strong> to all users by default.</li>
+</ul>
+</li>
+</ul>
+<p><strong>They are NOT interchangeable:</strong></p>
+<ul>
+<li>A <code class="language-html">&lt;figcaption&gt;</code> does <strong>not</strong> replace the need for meaningful <code class="language-html">alt</code> text on the image within the figure (unless the image is purely decorative (<code class="language-html">alt=&quot;&quot;</code>) and the <code class="language-html">&lt;figcaption&gt;</code> <em>fully</em> conveys all necessary information).</li>
+<li>Good <code class="language-html">alt</code> text describes the visual; good <code class="language-html">&lt;figcaption&gt;</code> explains the figure&#39;s role or context.</li>
+</ul>
+<p><strong>Example Distinction:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;figure&gt;
+  &lt;img src=&quot;sales-chart.png&quot; alt=&quot;Bar chart showing Q1: $10k, Q2: $15k, Q3: $12k, Q4: $20k.&quot; width=&quot;400&quot; height=&quot;250&quot;&gt;
+  &lt;figcaption&gt;Figure 1: Quarterly Sales Revenue. Note the significant increase in Q4 after the marketing campaign launch.&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+<ul>
+<li><code class="language-html">alt</code>: Describes <em>what the chart visually shows</em> (the data points).</li>
+<li><code class="language-html">&lt;figcaption&gt;</code>: Provides a <em>title</em> and <em>interpretation/context</em> for the chart.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the example in <code class="language-text">index.html</code>. The <code class="language-html">alt</code> text describes the placeholder image&#39;s appearance. The <code class="language-html">&lt;figcaption&gt;</code> provides a label (&quot;Fig. 1&quot;) and context for the figure. They serve different roles.</p>
+<p>✨ <strong>Key Takeaway:</strong> Use both <code class="language-html">alt</code> (on <code class="language-html">&lt;img&gt;</code>) and <code class="language-html">&lt;figcaption&gt;</code> (inside <code class="language-html">&lt;figure&gt;</code>) appropriately. <code class="language-html">alt</code> describes the image; <code class="language-html">&lt;figcaption&gt;</code> describes/captions the figure as a whole. This combination provides the best accessibility.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

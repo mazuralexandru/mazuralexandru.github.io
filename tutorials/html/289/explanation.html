@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>289. The <code>title</code> Attribute - Behavior &amp; Accessibility Limitations</h1>
+<p>While the tooltip behavior seems helpful, the <code class="language-html">title</code> attribute has significant limitations, especially regarding accessibility and usability on different devices.</p>
+<p><strong>Default Behavior (Tooltips):</strong></p>
+<ul>
+<li><strong>Desktop Browsers:</strong> Display the <code>title</code> value as a tooltip on mouse hover.</li>
+<li><strong>Discoverability:</strong> Tooltips are often not easily discoverable; users have to happen to hover over the element long enough.</li>
+<li><strong>Mobile Devices:</strong> <strong>Generally inaccessible</strong>. Touch devices typically lack a consistent &quot;hover&quot; state equivalent to a desktop mouse pointer. Tapping an element usually activates it (like following a link), it doesn&#39;t trigger a tooltip. Therefore, <code>title</code> content is usually invisible to mobile users.</li>
+<li><strong>Keyboard Navigation:</strong> <strong>Generally inaccessible</strong>. Tabbing to an element typically shows its focus indicator (<code class="language-css">:focus</code> style) but does not trigger the <code>title</code> tooltip. Keyboard-only users will likely miss this information.</li>
+<li><strong>Styling:</strong> Tooltips cannot be styled using standard CSS. Their appearance is determined by the browser and operating system.</li>
+</ul>
+<p><strong>Accessibility Implications (CRITICAL):</strong></p>
+<ul>
+<li><strong>Screen Readers:</strong> Support is <strong>inconsistent and unreliable</strong>.<ul>
+<li>Some screen readers might ignore <code>title</code> attributes by default.</li>
+<li>Others might only announce it if verbosity settings are increased.</li>
+<li>Some might announce it only on specific elements (like form controls or frames) but not others.</li>
+<li>It is <strong>NOT</strong> a reliable way to provide essential information to screen reader users.</li>
+</ul>
+</li>
+<li><strong>NOT a Substitute for Accessible Names/Descriptions:</strong><ul>
+<li><strong>Do NOT</strong> use <code>title</code> as the primary label for a form control (use <code class="language-html">&lt;label for=&quot;id&quot;&gt;</code>).</li>
+<li><strong>Do NOT</strong> use <code>title</code> as the primary alternative text for a meaningful image (use <code class="language-html">alt</code>).</li>
+<li><strong>Do NOT</strong> use <code>title</code> as the primary description for a link (use descriptive link text).</li>
+<li>Relying on <code>title</code> for these critical accessibility functions will make your content inaccessible to many users.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Conclusion:</strong> The <code>title</code> attribute provides information that is often hidden from mobile users, keyboard users, and potentially screen reader users. It should <strong>never</strong> be used for critical information.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Hover over the heading in the preview again to see the tooltip. Now, try navigating to the heading using the <code>Tab</code> key (you might need to click in the preview area first to give it focus). Notice that tabbing to the heading likely only shows a focus outline (if styled) and does <em>not</em> display the tooltip. This demonstrates the keyboard inaccessibility. Imagine trying to access this on a touchscreen phone – there&#39;s no hover.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code>title</code> attribute&#39;s tooltip behavior is primarily limited to desktop mouse users. It is <strong>not accessible</strong> for touch or keyboard-only users and has <strong>unreliable support</strong> in screen readers. <strong>Never use <code>title</code> for essential information.</strong></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

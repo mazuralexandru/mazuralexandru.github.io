@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>643. Reset &amp; Named vs. Numeric Entities</h1>
+<p>We&#39;ve covered the reasons for using entities (escaping, symbols, whitespace control). Now let&#39;s compare the two syntax forms: Named vs. Numeric Character References.</p>
+<p><strong>Resetting the Page:</strong></p>
+<p>To focus on this comparison, we will remove the non-breaking space examples.</p>
+<p><strong>Named Character References (<code>&amp;name;</code>)</strong></p>
+<ul>
+<li><strong>Syntax:</strong> <code>&amp;entityname;</code> (e.g., <code class="language-text">&amp;copy;</code>, <code class="language-text">&amp;lt;</code>, <code class="language-text">&amp;euro;</code>)</li>
+<li><strong>Pros:</strong><ul>
+<li><strong>Readability:</strong> Much easier for humans to read and understand the intended character directly from the source code.</li>
+<li><strong>Memorability:</strong> Common entity names are often easier to remember than numeric codes.</li>
+</ul>
+</li>
+<li><strong>Cons:</strong><ul>
+<li><strong>Limited Set:</strong> Named entities only exist for a specific (though large in HTML5) subset of Unicode characters. Many less common characters or symbols do not have named entities.</li>
+<li><strong>Case-Sensitive:</strong> Names must be typed exactly correctly (<code>&amp;Eacute;</code> vs <code>&amp;eacute;</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Numeric Character References (<code>&amp;#number;</code> or <code>&amp;#xhex;</code>)</strong></p>
+<ul>
+<li><strong>Syntax:</strong> <code>&amp;#DecimalNumber;</code> (e.g., <code class="language-text">&amp;#169;</code>) or <code>&amp;#xHexNumber;</code> (e.g., <code class="language-text">&amp;#xA9;</code>)</li>
+<li><strong>Pros:</strong><ul>
+<li><strong>Universality:</strong> Can represent <strong>any</strong> character in the entire Unicode standard by using its unique code point number.</li>
+</ul>
+</li>
+<li><strong>Cons:</strong><ul>
+<li><strong>Readability:</strong> Much harder for humans to read the source code and immediately know which character is represented without looking it up.</li>
+<li><strong>Typo-Prone:</strong> Easier to make mistakes when typing numeric codes.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Recommendation:</strong></p>
+<ol>
+<li><strong>Use UTF-8:</strong> Prioritize direct character input with UTF-8 encoding for most non-reserved characters.</li>
+<li><strong>Escape Reserved:</strong> Use <strong>named entities</strong> (<code class="language-text">&amp;lt;</code>, <code class="language-text">&amp;gt;</code>, <code class="language-text">&amp;amp;</code>, <code class="language-text">&amp;quot;</code>, <code class="language-text">&amp;apos;</code>) for the essential reserved HTML characters.</li>
+<li><strong>Common Symbols:</strong> Use <strong>named entities</strong> (<code class="language-text">&amp;copy;</code>, <code class="language-text">&amp;reg;</code>, <code class="language-text">&amp;euro;</code>, <code class="language-text">&amp;mdash;</code>, etc.) for commonly needed symbols where readability is helpful.</li>
+<li><strong>Rare Characters:</strong> Only resort to <strong>numeric entities</strong> if a character lacks a named entity <em>and</em> you cannot (or choose not to) use the direct UTF-8 character in your source file for some specific reason.</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code>&amp;nbsp;</code> example paragraphs.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text.</li>
+<li>Added a paragraph directly comparing named and numeric representations for the copyright symbol.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Named vs. Numeric Entities&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Comparing the two ways to represent entities.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed &amp;nbsp; examples --&gt;
+
+  &lt;p&gt;Named: &amp;copy; (Readability) vs. Numeric: &amp;#169; or &amp;#xA9; (Universality)&lt;/p&gt; &lt;!-- Added example --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p><em>(Note: We use <code>&amp;amp;#169;</code> and <code>&amp;amp;#xA9;</code> in the explanation paragraph to display the literal numeric entity codes).</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of the <code>&amp;nbsp;</code> content.</li>
+<li>Locate the paragraph showing the comparison. Note <code class="language-text">&amp;copy;</code>, <code class="language-text">&amp;#169;</code>, and <code class="language-text">&amp;#xA9;</code>.</li>
+<li>Look at the browser preview. All three entities should render identically as the <strong>©</strong> symbol. This shows that both named and numeric forms produce the same visual character.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Prefer direct UTF-8 characters first. Use named entities (<code>&amp;name;</code>) for readability when escaping reserved characters or representing common symbols. Use numeric entities (<code>&amp;#number;</code>/<code>&amp;#xhex;</code>) only as a fallback when a named entity doesn&#39;t exist and direct UTF-8 input isn&#39;t feasible.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

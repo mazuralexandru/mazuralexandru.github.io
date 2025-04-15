@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>104. Preparing for Ordered Lists: Removing <code class="language-html">&lt;ul&gt;</code> Example</h1>
+<p>We have thoroughly explored the fundamentals, mechanics, styling hooks, best practices, and accessibility aspects of unordered lists (<code class="language-html">&lt;ul&gt;</code>).</p>
+<p>Now, we will transition to the second major list type: <strong>ordered lists</strong> (<code class="language-html">&lt;ol&gt;</code>). To ensure a clear focus, we will first remove the <code class="language-html">&lt;ul&gt;</code> example from our <code class="language-text">index.html</code>.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> To introduce <code class="language-html">&lt;ol&gt;</code> without the visual distraction of the previous <code class="language-html">&lt;ul&gt;</code> example.</li>
+<li><strong>Clear Comparison:</strong> Starting fresh makes it easier to directly compare the behavior and appearance of <code class="language-html">&lt;ol&gt;</code> with what we just learned about <code class="language-html">&lt;ul&gt;</code>.</li>
+<li><strong>Clean Slate:</strong> Resets the main content area for the new list type.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the entire <code class="language-html">&lt;ul&gt;...&lt;/ul&gt;</code> block and its contained <code class="language-html">&lt;li&gt;</code> elements. We&#39;ve also updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text to introduce ordered lists.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Ordered Lists (ol)&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Preparing to demonstrate ordered lists.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed ul --&gt;
+  &lt;!--
+  &lt;ul&gt;
+    &lt;li&gt;Item One&lt;/li&gt;
+    &lt;li&gt;Item Two&lt;/li&gt;
+    &lt;li&gt;Item Three&lt;/li&gt;
+  &lt;/ul&gt;
+  --&gt;
+
+  &lt;p&gt;Ordered lists are used when sequence matters.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the <code class="language-html">&lt;ul&gt;</code> element and its list items are gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview should now show only the new heading and the two introductory paragraphs, ready for the <code class="language-html">&lt;ol&gt;</code> example.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the <code class="language-html">&lt;ul&gt;</code> example provides a clean transition to learning about ordered lists (<code class="language-html">&lt;ol&gt;</code>), allowing for focused learning and comparison.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

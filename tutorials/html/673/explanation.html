@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>673. How to Validate: Interpreting Results</h1>
+<p>Understanding the output of an HTML validator is key to fixing errors effectively.</p>
+<p><strong>Components of the Results Page (W3C/Nu):</strong></p>
+<ol>
+<li><strong>Overall Status:</strong> A clear message at the top indicates success (green) or failure (red, listing number of errors/warnings).</li>
+<li><strong>Error/Warning List:</strong> If issues are found, they are listed sequentially. Each item typically includes:<ul>
+<li><strong>Type:</strong> &quot;Error&quot; (must fix for validity) or &quot;Warning&quot; (potential issue, should review).</li>
+<li><strong>Location:</strong> &quot;From line X, column Y; to line A, column B&quot;. This pinpoints the exact location in your <em>source code</em> where the issue was detected. <strong>Pay close attention to line numbers.</strong></li>
+<li><strong>Message:</strong> A description of the specific rule that was violated (e.g., &quot;Stray end tag <code>p</code>.&quot;, &quot;Attribute <code>alt</code> must be specified on element <code>img</code>.&quot;).</li>
+<li><strong>Source Extract:</strong> A snippet of your HTML code showing the context around the error location.</li>
+<li><strong>Specification Link (Helpful):</strong> Often includes a link to the relevant section of the W3C/WHATWG HTML specification that defines the rule being checked. Clicking this can provide deeper understanding.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Interpreting the Feedback:</strong></p>
+<ul>
+<li><strong>Errors vs. Warnings:</strong> Prioritize fixing <strong>Errors</strong> first, as they represent definite violations of the standard. Review <strong>Warnings</strong> afterwards; they often indicate deprecated features, potential accessibility issues, or things that might cause problems even if technically allowed.</li>
+<li><strong>Location is Key:</strong> Use the line and column numbers to quickly find the problematic code in your editor.</li>
+<li><strong>Read the Message Carefully:</strong> Understand <em>what</em> rule is being broken. Is it a missing tag, wrong attribute, incorrect nesting, etc.?</li>
+<li><strong>Check the Source Extract:</strong> Verify the validator is highlighting the code you expect.</li>
+</ul>
+<p><strong>The Iterative Fixing Process:</strong></p>
+<ol>
+<li><strong>Validate:</strong> Run the validator on your code.</li>
+<li><strong>Address First Error:</strong> Focus on the <em>first</em> error listed. Sometimes, fixing one early error (like an unclosed tag) will automatically resolve multiple subsequent errors that were just symptoms of the initial problem.</li>
+<li><strong>Fix in Editor:</strong> Go to the specified line number in your code editor and correct the mistake based on the error message.</li>
+<li><strong>Save:</strong> Save your changes.</li>
+<li><strong>Re-Validate:</strong> Run the validator again on the updated code.</li>
+<li><strong>Repeat:</strong> Continue fixing the <em>new</em> first error until all errors are resolved.</li>
+<li><strong>Address Warnings:</strong> Once errors are gone, review and address any warnings.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. This step is purely about understanding how to read the validator output. Imagine seeing an error message like &quot;Error: End tag <code>li</code> implied, but there were open elements.&quot; at line 50, column 10. You would go to line 50 in your HTML, look around column 10, and likely find an unclosed element (like <code class="language-html">&lt;em&gt;</code> or <code class="language-html">&lt;a&gt;</code>) inside that <code class="language-html">&lt;li&gt;</code> before its closing <code class="language-html">&lt;/li&gt;</code> tag.</p>
+<p>✨ <strong>Key Takeaway:</strong> Interpret validator results by focusing on the Error/Warning type, the precise Line/Column location, and the descriptive Message. Fix errors iteratively, starting with the first one listed, and re-validate until the code passes.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

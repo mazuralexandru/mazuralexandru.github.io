@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyboard Accessibility</title> <!-- Updated title -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Visible focus style */
+    a:focus, button:focus, input:focus, textarea:focus, select:focus {
+      outline: 3px solid orange; /* MUST have a visible focus style */
+      outline-offset: 1px;
+    }
+    /* Never do this! */
+    /* :focus { outline: none; } */
+
+    .interactive { /* For tabindex demo */
+       display: inline-block;
+       padding: 5px 10px;
+       border: 1px solid grey;
+       cursor: pointer;
+       margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Keyboard Navigation</h1> <!-- Updated H1 -->
+  <p>Ensuring content is operable via keyboard.</p> <!-- Adjusted P -->
+
+  <p>Focusable elements: <a href="#">Link 1</a> <button type="button">Button 1</button> <input type="text" placeholder="Text Input"></p>
+
+  <p>Non-focusable by default: <span>Span</span> <p>Paragraph</p></p>
+
+  <p>Making non-native element focusable: <span class="interactive" tabindex="0">Focusable Span</span></p> <!-- tabindex="0" -->
+
+  <p>Try navigating with the Tab key.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

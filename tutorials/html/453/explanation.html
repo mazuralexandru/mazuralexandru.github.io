@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>453. Forms: The <code>value</code> Attribute - Buttons (<code class="language-html">&lt;input&gt;</code>)</h1>
+<p>The <code class="language-html">value</code> attribute also has a specific meaning when used with button-like input types: <code class="language-html">submit</code>, <code class="language-html">reset</code>, and <code class="language-html">button</code>.</p>
+<p><strong><code>value</code> on Button Inputs:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> For <code class="language-html">&lt;input&gt;</code> elements with <code>type=&quot;submit&quot;</code>, <code>type=&quot;reset&quot;</code>, or <code>type=&quot;button&quot;</code>, the <code>value</code> attribute determines the <strong>text displayed visually on the button itself</strong>.</li>
+<li><strong>Default Labels:</strong> If the <code>value</code> attribute is omitted:<ul>
+<li><code>type=&quot;submit&quot;</code> defaults to &quot;Submit&quot; (or a localized equivalent).</li>
+<li><code>type=&quot;reset&quot;</code> defaults to &quot;Reset&quot; (or localized equivalent).</li>
+<li><code>type=&quot;button&quot;</code> typically displays no text (or might have a default depending on the browser/OS), making <code>value</code> usually necessary for this type.</li>
+</ul>
+</li>
+<li><strong>Submission Behavior (for Submit/Reset):</strong> The <code>value</code> attribute for <code>type=&quot;submit&quot;</code> and <code>type=&quot;reset&quot;</code> primarily controls the label. While a submit button&#39;s <code>name=value</code> pair <em>can</em> be submitted (if <code>name</code> is present) to indicate which button was pressed, the primary submitted data comes from the other form controls. Reset buttons don&#39;t submit data.</li>
+<li><strong>Contrast with <code class="language-html">&lt;button&gt;</code> Element:</strong> Remember that for the <code class="language-html">&lt;button&gt;</code> element (which we&#39;ll cover separately), the text <em>between</em> the opening and closing tags (<code class="language-html">&lt;button&gt;Label Here&lt;/button&gt;</code>) defines the button&#39;s label, and its <code>value</code> attribute has a different meaning (the value submitted with its <code>name</code>).</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the previous fieldsets and added examples of <code class="language-html">&lt;input&gt;</code> buttons, using the <code>value</code> attribute to set their visible labels. We&#39;ve also added a simple inline <code>onclick</code> to the generic button for demonstration.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;!-- Removed checkbox/radio fieldsets --&gt;
+  &lt;p&gt;
+     &lt;input type=&quot;submit&quot; value=&quot;Send Data&quot;&gt; &lt;!-- Value sets label --&gt;
+  &lt;/p&gt;
+   &lt;p&gt;
+     &lt;input type=&quot;reset&quot; value=&quot;Clear Form&quot;&gt; &lt;!-- Value sets label --&gt;
+  &lt;/p&gt;
+   &lt;p&gt;
+     &lt;input type=&quot;button&quot; value=&quot;Do Something (JS)&quot; onclick=&quot;alert(&#39;Button clicked!&#39;);&quot;&gt; &lt;!-- Value sets label --&gt;
+  &lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the three <code class="language-html">&lt;input&gt;</code> elements. Note how the <code>value</code> attribute corresponds to the desired button text.</li>
+<li>Look at the browser preview. You should see three buttons labeled &quot;Send Data&quot;, &quot;Clear Form&quot;, and &quot;Do Something (JS)&quot;, respectively. The text comes directly from their <code>value</code> attributes.</li>
+<li>Click the &quot;Do Something (JS)&quot; button – an alert box should pop up. This shows the button is functional via its <code>onclick</code>. Clicking the others would attempt to submit or reset the (currently empty) form.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> For <code class="language-html">&lt;input type=&quot;submit&quot;&gt;</code>, <code class="language-html">&lt;input type=&quot;reset&quot;&gt;</code>, and <code class="language-html">&lt;input type=&quot;button&quot;&gt;</code>, the <code>value</code> attribute specifies the text displayed on the button face.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

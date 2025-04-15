@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>645. Parsing, Rendering, and Semicolon Importance</h1>
+<p>Let&#39;s clarify how browsers handle entities during parsing and why the trailing semicolon is important.</p>
+<p><strong>Parsing Process:</strong></p>
+<ol>
+<li><strong>Detection:</strong> When the HTML parser encounters an ampersand (<code>&amp;</code>) in the content, it looks ahead.</li>
+<li><strong>Numeric Check:</strong> If the next character is a hash (<code>#</code>), it expects a numeric reference (decimal or hex) followed by a semicolon (<code>;</code>). It reads the number, finds the corresponding Unicode character, and replaces the entity sequence with that character.</li>
+<li><strong>Named Check:</strong> If the next character is a letter, it starts matching the sequence against the list of known named entity references. It reads characters until it finds a match <em>or</em> encounters a non-alphanumeric character.</li>
+<li><strong>Semicolon Confirmation:</strong> If a potential named entity match is found, the browser checks if it&#39;s immediately followed by a semicolon (<code>;</code>).<ul>
+<li>If yes: The match is confirmed, and the entity sequence is replaced with the character.</li>
+<li>If no: Historically, some browsers had complex rules for inferring entities even without a semicolon if the following character couldn&#39;t be part of the entity name (e.g., <code>&amp;lt</code> followed by a space might be treated as <code>&lt;</code>). <strong>This is ambiguous and unreliable.</strong> Modern standards emphasize the semicolon.</li>
+</ul>
+</li>
+<li><strong>Replacement:</strong> The identified entity sequence (<code>&amp;name;</code>, <code>&amp;#num;</code>, <code>&amp;#xhex;</code>) is replaced in the browser&#39;s internal representation (DOM) with the single character it represents.</li>
+<li><strong>Rendering:</strong> The browser then renders the resulting character visually.</li>
+</ol>
+<p><strong>The Importance of the Semicolon (<code>;</code>)</strong></p>
+<ul>
+<li><strong>Named Entities:</strong> Technically <strong>required</strong> by the HTML5 specification for named entities. Omitting it makes the HTML invalid and relies on legacy browser error handling, which can be unpredictable, especially if the text following the intended entity name could be misinterpreted as part of a longer (or different) entity name.</li>
+<li><strong>Numeric Entities:</strong> While browsers <em>might</em> correctly parse numeric entities without the final semicolon if followed by a non-digit/non-hex character, it&#39;s <strong>strongly recommended</strong> to always include it for clarity and to avoid any potential ambiguity or parsing issues.</li>
+<li><strong>Rule:</strong> <strong>Always include the trailing semicolon</strong> for both named and numeric entities.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve updated the content in <code>index.html</code> to explicitly discuss the semicolon and show examples using <code class="language-html">&lt;code&gt;</code> tags to display the literal entity code in the rendered output.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Entity Parsing &amp; Semicolons&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;How browsers process entity codes.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed comparison paragraph --&gt;
+
+  &lt;p&gt;The trailing semicolon &#39;;&#39; is technically required for named entities and strongly recommended for numeric ones to avoid ambiguity.&lt;/p&gt;
+
+  &lt;!-- Using &lt;code&gt; for literal display; browser renders the entity INSIDE code --&gt;
+  &lt;p&gt;Correct: &lt;code&gt;&amp;amp;amp;&lt;/code&gt; renders as &amp;amp;&lt;br&gt;
+     Lenient (Avoid): &lt;code&gt;&amp;amp;amp&lt;/code&gt; might render as &amp;amp in some browsers, but is risky.&lt;/p&gt;
+  &lt;!-- Note: We use &amp;amp;amp; to show literal &#39;&amp;amp;&#39; --&gt;
+
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the use of <code class="language-html">&lt;code&gt;</code> tags in the last paragraph. Notice how <code class="language-text">&amp;amp;amp;</code> is used inside the <code class="language-html">&lt;code&gt;</code> tag to display the literal entity <code>&amp;amp;</code> on the page. The text outside the <code class="language-html">&lt;code&gt;</code> tag (<code class="language-text">&amp;amp;</code>) renders as the actual ampersand symbol <code>&amp;</code>.</li>
+<li>This demonstrates how the browser parses entities within normal text flow but displays the code literally within <code class="language-html">&lt;code&gt;</code> (though the entity <em>within</em> the code tag is <em>also</em> rendered by the browser in this case - a nuance of putting entities inside code tags without further escaping).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The HTML parser replaces recognized entity sequences (starting with <code>&amp;</code>, ending with <code>;</code>) with their corresponding characters before rendering. Always include the trailing semicolon (<code>;</code>) for both named and numeric entities to ensure correct parsing and validity.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

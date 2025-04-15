@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>562. Reset: Preparing for <code class="language-html">&lt;track&gt;</code> Element</h1>
+<p>We have explored using <code class="language-html">&lt;source&gt;</code> to provide multiple video formats and responsive versions.</p>
+<p>Now, we turn to a crucial element for multimedia accessibility: the <strong><code class="language-html">&lt;track&gt;</code></strong> element, used to add timed text tracks like captions, subtitles, and audio descriptions.</p>
+<p>To focus on <code class="language-html">&lt;track&gt;</code> and its attributes, we will reset our <code class="language-html">&lt;video&gt;</code> element slightly, removing the <code>media</code> attribute example and reverting to the standard dual-source (WebM/MP4) setup.</p>
+<p><strong>Why Reset?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Isolate the <code class="language-html">&lt;track&gt;</code> element and its role in adding text-based accessibility layers.</li>
+<li><strong>Clarity:</strong> Demonstrate adding <code class="language-html">&lt;track&gt;</code> elements within the standard <code class="language-html">&lt;video&gt;</code> structure containing <code class="language-html">&lt;source&gt;</code> elements.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code>media</code> attribute from the first <code class="language-html">&lt;source&gt;</code> tag in <code class="language-text">index.html</code>.</li>
+<li>Adjusted the <code>src</code> values back to simple examples.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Video Text Tracks (&amp;lt;track&amp;gt;)&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Resetting video to demonstrate the &#39;track&#39; element.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;&gt;
+    &lt;source src=&quot;/videos/example.webm&quot; type=&quot;video/webm&quot;&gt;
+    &lt;source src=&quot;/videos/example.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;!-- Removed media attribute, reverted to simple sources --&gt;
+    &lt;!-- Track elements go here --&gt;
+    &lt;p&gt;Fallback content&lt;/p&gt;
+  &lt;/video&gt;
+
+  &lt;p&gt;Used for captions, subtitles, descriptions, chapters.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the simplified <code class="language-html">&lt;source&gt;</code> elements in <code class="language-text">index.html</code>. The <code class="language-html">&lt;video&gt;</code> structure now contains just the two standard format sources and fallback content.</li>
+<li>The browser preview shows the video player ready for track examples.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Resetting the <code class="language-html">&lt;video&gt;</code> element by removing the responsive <code class="language-html">&lt;source&gt;</code> example provides a clean base for introducing the <code class="language-html">&lt;track&gt;</code> element and its accessibility functions.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

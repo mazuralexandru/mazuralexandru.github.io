@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic layout visualization */
+    body > header, body > nav, body > main, body > footer, main article, main section, main aside {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+      min-height: 50px; /* Ensure visibility */
+    }
+    main { display: flex; gap: 20px; }
+    main article { flex-grow: 1; }
+    main aside { flex-basis: 200px; flex-shrink: 0; }
+    nav ul { list-style: none; padding: 0; }
+    nav li { display: inline-block; margin-right: 10px; }
+    h1, h2, h3 { margin: 0 0 0.5em 0; }
+  </style>
+</head>
+<body>
+  <h1>Structuring a Typical Page</h1> <!-- Updated H1 -->
+  <p>Putting semantic elements together:</p> <!-- Adjusted P -->
+
+  <!-- Removed data examples -->
+
+  <!-- Adding full page structure -->
+  <header>
+    <h1>Site Title</h1>
+    <nav aria-label="Primary Navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <header>
+        <h2>Main Article Title</h2>
+        <p>Published: <time datetime="2024-01-01">Jan 1, 2024</time></p>
+      </header>
+      <section aria-labelledby="sec1-heading">
+        <h3 id="sec1-heading">Section One</h3>
+        <p>Content for section one...</p>
+      </section>
+      <section aria-labelledby="sec2-heading">
+        <h3 id="sec2-heading">Section Two</h3>
+        <p>Content for section two...</p>
+      </section>
+      <footer>
+         <p>Article tags: <mark>semantic</mark>, <mark>html</mark>.</p>
+      </footer>
+    </article>
+
+    <aside aria-labelledby="sidebar-heading">
+       <h3 id="sidebar-heading">Related Info</h3>
+       <p>Tangential content goes here.</p>
+       <nav aria-label="Secondary Navigation">
+         <ul><li><a href="#">Related Link 1</a></li></ul>
+       </nav>
+    </aside>
+  </main>
+
+  <footer>
+    <p><small>&copy; 2024 Site Name</small></p>
+    <address>Contact: <a href="mailto:x@y.com">Email Us</a></address>
+  </footer>
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

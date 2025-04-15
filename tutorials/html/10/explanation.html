@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>10. Void / Empty Elements (Part 1: Definition &amp; Purpose)</h1>
+<p>Not all HTML elements follow the <code class="language-html">&lt;opening&gt;Content&lt;/closing&gt;</code> pattern. Some elements are <strong>void</strong> or <strong>empty</strong>.</p>
+<p><strong>Definition:</strong></p>
+<ul>
+<li><strong>Void Elements</strong> (the term used in the HTML specification) are elements that, by definition, <strong>cannot have any content</strong> inside them.</li>
+<li>Because they can&#39;t have content, they <strong>do not need</strong> (and must not have) a closing tag. They consist of just a single tag.</li>
+</ul>
+<p><strong>Purpose:</strong></p>
+<p>Void elements are used to insert something specific into the document at a particular point, rather than wrapping around content. Common uses include:</p>
+<ul>
+<li>Inserting a line break (<code class="language-html">&lt;br&gt;</code>).</li>
+<li>Adding a thematic break or horizontal rule (<code class="language-html">&lt;hr&gt;</code>).</li>
+<li>Embedding an image (<code class="language-html">&lt;img&gt;</code>).</li>
+<li>Creating input fields in forms (<code class="language-html">&lt;input&gt;</code>).</li>
+<li>Linking external resources like CSS files (<code class="language-html">&lt;link&gt;</code>).</li>
+<li>Providing metadata about the document (<code class="language-html">&lt;meta&gt;</code>).</li>
+</ul>
+<p><strong>Why No Closing Tag?</strong></p>
+<p>Think about it: what content would you put <em>inside</em> a line break element? It doesn&#39;t make sense. A line break is an instruction to break the line <em>at that point</em>. Similarly, an image tag (<code class="language-html">&lt;img&gt;</code>) points to an image file; it doesn&#39;t <em>contain</em> the image data within tags. Their definitions in the HTML standard specify them as being empty.</p>
+<p>✅ <strong>Observation:</strong> No code changes in this step. We&#39;re introducing the concept of void elements. In the next step, we&#39;ll see some examples and their syntax.</p>
+<p>✨ <strong>Key Takeaway:</strong> Void elements are single-tag elements (<code class="language-html">&lt;tagname&gt;</code>) used for inserting things like line breaks or images. They don&#39;t have content and don&#39;t use closing tags.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

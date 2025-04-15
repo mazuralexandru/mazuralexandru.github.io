@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>310. Essential <code class="language-html">&lt;meta&gt;</code>: Character Encoding (<code>charset</code>) - Core Mechanics</h1>
+<p>Let&#39;s focus on the syntax and critical placement rules for the character encoding declaration.</p>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li>The modern and standard syntax in HTML5 is concise:
+<code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></li>
+<li>The value (<code class="language-html">UTF-8</code>) is case-insensitive according to the standard, but using uppercase <code>UTF-8</code> is the prevailing convention.</li>
+</ul>
+<p><strong>Placement Rule (CRITICAL):</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;meta charset=&quot;...&quot;&gt;</code> declaration <strong>must</strong> appear <strong>as early as possible</strong> within the <code class="language-html">&lt;head&gt;</code> element.</li>
+<li>Specifically, it needs to be <strong>within the first 1024 bytes</strong> of the HTML document source code.</li>
+<li><strong>Best Practice:</strong> To ensure it&#39;s processed correctly and early, make it the <strong>very first element immediately following the opening <code class="language-html">&lt;head&gt;</code> tag.</strong></li>
+</ul>
+<p><strong>Reason for Early Placement:</strong></p>
+<ul>
+<li>The browser needs to know the encoding <em>before</em> it starts processing any content that might rely on that encoding. This includes:<ul>
+<li>Text content within the <code class="language-html">&lt;title&gt;</code> element.</li>
+<li>Attribute values in other <code class="language-html">&lt;meta&gt;</code> or <code class="language-html">&lt;link&gt;</code> tags.</li>
+<li>Any characters outside the basic ASCII range anywhere in the document.</li>
+</ul>
+</li>
+<li>Placing it later might mean the browser initially guesses an encoding (often incorrectly) and then has to re-parse the document once it finds the <code>charset</code> declaration, potentially leading to errors or inconsistencies.</li>
+</ul>
+<p><strong>Legacy Method (Avoid):</strong></p>
+<ul>
+<li>Older HTML versions used <code class="language-html">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</code>.</li>
+<li>This is longer, more complex, and the <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> syntax was specifically introduced in HTML5 to simplify this common declaration. <strong>Always use <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></strong>.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We will ensure the <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> tag is present and is the first element inside the <code class="language-html">&lt;head&gt;</code> in <code class="language-text">index.html</code>. (It should already be there from our initial setup, but this step explicitly focuses on its presence and position).</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- Ensure this is present and FIRST --&gt;
+  &lt;title&gt;HTML Metadata&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;!-- Other meta tags will be added here --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Metadata: Character Encoding&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;The &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt; tag declares the character encoding.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;p&gt;It MUST appear early in the &amp;lt;head&amp;gt;, ideally first.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify in <code class="language-text">index.html</code> that <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> exists and is the very first line inside the opening <code class="language-html">&lt;head&gt;</code> tag.</li>
+<li>The browser preview remains visually unchanged, as this tag affects text <em>decoding</em>, not rendering style.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Always include <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> as the very first element within your <code class="language-html">&lt;head&gt;</code> section for reliable character encoding declaration.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

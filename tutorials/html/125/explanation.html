@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>125. Nested Lists: Accessibility &amp; Best Practices</h1>
+<p>Correctly structured nested lists are essential for accessibility and maintainability.</p>
+<p><strong>Accessibility:</strong></p>
+<ul>
+<li><strong>Hierarchy Communication:</strong> Screen readers announce the nesting level when entering or leaving a nested list (e.g., &quot;List level 2, 2 items&quot;). This clearly communicates the hierarchical structure to users who cannot see the visual indentation.</li>
+<li><strong>Navigation:</strong> Users can typically navigate between items at the same level or jump between different nesting levels using screen reader commands.</li>
+<li><strong>Importance of Correct Placement:</strong> If nested lists are <em>not</em> placed correctly inside the parent <code class="language-html">&lt;li&gt;</code>, the hierarchical relationship is broken, and screen readers will likely announce them as separate, sibling lists, completely losing the intended structure for the user.</li>
+</ul>
+<p><strong>Best Practices:</strong></p>
+<ol>
+<li><strong>Correct Placement:</strong> Always ensure nested <code class="language-html">&lt;ul&gt;</code>/<code class="language-html">&lt;ol&gt;</code> elements are placed <strong>directly inside</strong> the parent <code class="language-html">&lt;li&gt;</code> they relate to. This is the most critical rule.</li>
+<li><strong>Source Code Indentation:</strong> Use clear and consistent indentation in your HTML source code to visually mirror the nesting structure. This makes the code much easier for developers to read, understand, and maintain.<pre class="language-html"><code class="language-html">&lt;!-- Good Indentation --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;
+    Item 2
+    &lt;ul&gt;  &lt;!-- Indented --&gt;
+      &lt;li&gt;Sub A&lt;/li&gt; &lt;!-- Indented further --&gt;
+      &lt;li&gt;Sub B&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li><strong>Semantic Depth:</strong> Avoid excessive nesting (e.g., more than 3-4 levels deep) if possible, as deeply nested structures can become difficult to follow, both visually and for screen reader users. Consider if restructuring the content might be clearer.</li>
+<li><strong>CSS for Appearance:</strong> Rely on CSS for consistent control over indentation (<code>padding-left</code>) and marker styles (<code>list-style-type</code>, <code>::marker</code>) across different nesting levels and browsers.</li>
+<li><strong>Validation:</strong> Regularly validate your HTML to catch incorrect nesting structures, which are common errors.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Review the nested list structure in <code class="language-text">index.html</code> from the previous step. Appreciate how the correct HTML nesting allows assistive technologies to understand the hierarchy, and how indenting the source code improves developer readability.</p>
+<p>✨ <strong>Key Takeaway:</strong> Correctly nesting lists (placing nested lists inside the parent <code class="language-html">&lt;li&gt;</code>) is crucial for accessibility. Use clear source code indentation for maintainability and CSS for controlling visual presentation. Avoid excessively deep nesting where possible.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

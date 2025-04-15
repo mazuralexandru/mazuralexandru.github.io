@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>152. Reset: Removing Placeholder Links</h1>
+<p>We&#39;ve established the basic <code class="language-html">&lt;a&gt;</code> structure, the essential role of the <code class="language-html">href</code> attribute, and the difference between placeholder anchors and placeholder links (<code>href=&quot;#&quot;</code>).</p>
+<p>Now, to move on to creating <em>functional</em> links that navigate to actual destinations, let&#39;s clear out the placeholder examples we just created.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift from understanding placeholders to understanding actual URL types (Absolute, Relative, Fragment).</li>
+<li><strong>Clarity:</strong> Remove potentially confusing non-functional or minimal-function links before introducing links that cause real navigation.</li>
+<li><strong>Clean Slate:</strong> Prepare the <code class="language-html">&lt;body&gt;</code> for examples using specific URL formats in the <code>href</code> attribute.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the paragraphs containing the placeholder <code class="language-html">&lt;a&gt;</code> examples (both with and without <code>href</code>) from <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Links and Navigation&lt;/h1&gt;
+  &lt;p&gt;Preparing to add functional links with actual URLs.&lt;/p&gt;
+
+  &lt;!-- Removed placeholder link examples --&gt;
+  &lt;!-- &lt;p&gt;1. Placeholder Link (no href): &lt;a&gt;Not a Link&lt;/a&gt;&lt;/p&gt; --&gt;
+  &lt;!-- &lt;p&gt;2. Placeholder Link (href=&quot;#&quot;): &lt;a href=&quot;#&quot;&gt;Goes Nowhere (Top)&lt;/a&gt;&lt;/p&gt; --&gt;
+  &lt;!-- &lt;p&gt;3. Functional Link (href=&quot;...&quot;): &lt;/p&gt; --&gt;
+
+  &lt;p&gt;Next: Absolute URLs.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the placeholder <code class="language-html">&lt;a&gt;</code> examples are gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview should now only show the heading and the two paragraphs introducing the next topic.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing placeholder examples clears the way to focus on creating functional hyperlinks using different types of URLs in the <code>href</code> attribute.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

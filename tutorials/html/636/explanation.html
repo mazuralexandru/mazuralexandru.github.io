@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>636. Reset &amp; Reason 2: Representing Symbols (Copyright, Trademarks)</h1>
+<p>We&#39;ve thoroughly covered escaping reserved characters. Now let&#39;s look at the second major reason for using entities: representing symbols that might not be on a standard keyboard or where using an entity ensures consistency.</p>
+<p><strong>Resetting the Page:</strong></p>
+<p>To focus on symbol entities, we will remove the previous examples related to escaping <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>, and <code>&#39;</code>.</p>
+<p><strong>Reason 2 Recap:</strong> Convenience/Compatibility for Symbols</p>
+<ul>
+<li>Entities provide a standard way to include common symbols.</li>
+<li>While direct UTF-8 input is often possible and preferred, entities can be useful for clarity or specific workflows.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the previous sections explaining reserved character escaping from the <code class="language-html">&lt;body&gt;</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text to focus on symbols.</li>
+<li>Added examples using named entities for Copyright (©), Registered Trademark (®), and Trademark (™).</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;HTML Entities: Symbols&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Entities can represent symbols not easily typed.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed escaping examples --&gt;
+
+  &lt;h2&gt;Copyright &amp;amp; Trademarks&lt;/h2&gt;
+  &lt;p&gt;Copyright: &amp;copy; 2024&lt;/p&gt; &lt;!-- Added &amp;copy; --&gt;
+  &lt;p&gt;Registered Trademark: Widget&amp;reg;&lt;/p&gt; &lt;!-- Added &amp;reg; --&gt;
+  &lt;p&gt;Trademark: SuperGizmo&amp;trade;&lt;/p&gt; &lt;!-- Added &amp;trade; --&gt;
+
+  &lt;p&gt;Using named entities for common symbols.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of the previous examples and the addition of the new content in <code>index.html</code>.</li>
+<li>Locate the entities <code class="language-text">&amp;copy;</code>, <code class="language-text">&amp;reg;</code>, and <code class="language-text">&amp;trade;</code>.</li>
+<li>Look at the browser preview. You should see the actual symbols rendered: <strong>©</strong>, <strong>®</strong>, and <strong>™</strong>. The browser replaced the named entities with the corresponding symbols.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use named entities like <code class="language-text">&amp;copy;</code>, <code class="language-text">&amp;reg;</code>, and <code class="language-text">&amp;trade;</code> to reliably display these common symbols.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Global Attributes - ID</title> <!-- Updated title -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Temp styles for scrolling demo */
+    .spacer { height: 60vh; border-bottom: 1px dashed #555; margin-bottom: 1em; }
+    #content-section { margin-top: 1em; }
+    nav a { margin-right: 15px;}
+  </style>
+</head>
+<body>
+  <nav> <!-- Added nav for link placement -->
+    <a href="#content-section">Skip to Content</a> <!-- Link to fragment -->
+  </nav>
+
+  <h1 id="main-page-title">Global Attributes - ID & Fragments</h1> <!-- Updated H1 -->
+  <p>The 'id' attribute enables linking directly to page sections (fragments).</p> <!-- Adjusted P -->
+
+  <div class="spacer">Scroll down to find the target section...</div>
+
+  <h2 id="content-section">Main Content Section</h2> <!-- Target element with id -->
+  <p>This is the section the "Skip to Content" link should jump to.</p>
+  <p>Adding more text here just to ensure there is enough content below the target point for the scroll effect to be noticeable.</p>
+  <p>Without sufficient content below, the browser might not appear to scroll much as the target is already near the bottom of the viewport.</p>
+
+
+  <!-- Removed old paras -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>508. Landmarks: <code class="language-html">&lt;nav&gt;</code> Element - Fundamentals</h1>
+<p>Next, let&#39;s add the <code class="language-html">&lt;nav&gt;</code> element, used specifically for major navigation blocks.</p>
+<p><strong>Definition &amp; Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;nav&gt;</code> element represents a section of a page whose purpose is to provide <strong>navigation links</strong>.</li>
+<li>It&#39;s intended for <strong>major navigation blocks</strong>, such as the primary site menu, secondary menus, breadcrumbs, tables of contents, or pagination controls. It&#39;s <em>not</em> meant for every single group of links on a page (e.g., simple links within footer text don&#39;t usually warrant a <code class="language-html">&lt;nav&gt;</code>).</li>
+</ul>
+<p><strong>Scope &amp; Placement:</strong></p>
+<ul>
+<li>Can appear in various places, often:<ul>
+<li>Inside the main page <code class="language-html">&lt;header&gt;</code>.</li>
+<li>Directly under <code class="language-html">&lt;body&gt;</code> (e.g., if header doesn&#39;t contain the main nav).</li>
+<li>Within an <code class="language-html">&lt;aside&gt;</code> for sidebar navigation.</li>
+<li>Within an <code class="language-html">&lt;article&gt;</code> or <code class="language-html">&lt;section&gt;</code> for intra-page navigation (like a table of contents).</li>
+</ul>
+</li>
+<li>A document can have multiple <code class="language-html">&lt;nav&gt;</code> elements.</li>
+</ul>
+<p><strong>Core Mechanics:</strong></p>
+<ul>
+<li>Block-level element.</li>
+<li>Syntax: <code class="language-html">&lt;nav&gt; ... &lt;/nav&gt;</code></li>
+<li>Content: Flow content, but typically contains an unordered list (<code class="language-html">&lt;ul&gt;</code>) of links (<code class="language-html">&lt;li&gt;&lt;a&gt;...&lt;/a&gt;&lt;/li&gt;</code>). Can also include a heading (<code class="language-html">&lt;h2&gt;</code>, etc.) to label the navigation section, especially if there are multiple <code class="language-html">&lt;nav&gt;</code> elements on the page.</li>
+</ul>
+<p><strong>Accessibility:</strong></p>
+<ul>
+<li>Maps to the ARIA <code class="language-text">navigation</code> landmark role. Allows screen reader users to quickly find and jump to navigation sections.</li>
+<li>If multiple <code class="language-html">&lt;nav&gt;</code> elements exist, use <code>aria-label</code> or <code>aria-labelledby</code> to give each one a unique accessible name (e.g., <code class="language-html">&lt;nav aria-label=&quot;Primary site navigation&quot;&gt;</code>, <code class="language-html">&lt;nav aria-label=&quot;Pagination&quot;&gt;</code>).</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a <code class="language-html">&lt;nav&gt;</code> element containing a basic <code class="language-html">&lt;ul&gt;</code> of placeholder links <em>inside</em> the existing <code class="language-html">&lt;header&gt;</code> element in <code>index.html</code>. We&#39;ve also added minimal CSS to style the list horizontally for a typical nav appearance.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;head&gt;
+  ...
+  &lt;style&gt;
+    /* Basic landmark visualization */
+    body &gt; header, body &gt; nav, body &gt; main, body &gt; footer { ... }
+    /* Basic nav list style */
+    nav ul { list-style: none; padding: 0; }
+    nav li { display: inline-block; margin-right: 10px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Site Title / Logo Area&lt;/h1&gt;
+    &lt;!-- Added nav inside header --&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;p&gt;The &amp;lt;nav&amp;gt; element groups major navigation links.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">&lt;nav&gt;</code> element nested inside the <code class="language-html">&lt;header&gt;</code>. Note the common pattern of using <code class="language-html">&lt;ul&gt;&lt;li&gt;&lt;a&gt;</code> for the links. Note the added CSS for basic horizontal styling.</li>
+<li>In the browser preview, the &quot;Home&quot;, &quot;About&quot;, &quot;Contact&quot; links should appear horizontally below the &quot;Site Title&quot; area, all within the dashed border of the <code class="language-html">&lt;header&gt;</code>. The <code class="language-html">&lt;nav&gt;</code> element itself doesn&#39;t add a border here, but it groups the navigation links semantically.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;nav&gt;</code> element to wrap major blocks of navigation links (site menus, pagination, etc.). Typically contains a list (<code class="language-html">&lt;ul&gt;</code>) of links (<code class="language-html">&lt;a&gt;</code>). Provides an essential <code>navigation</code> landmark for accessibility.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

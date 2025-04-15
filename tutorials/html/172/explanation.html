@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>172. <code>target</code> Attribute: <code>_blank</code> (New Tab/Window)</h1>
+<p>A very common requirement is to open a link in a new browser tab or window, keeping the original page open. This is achieved using <code>target=&quot;_blank&quot;</code>.</p>
+<p><strong><code>target=&quot;_blank&quot;</code></strong></p>
+<ul>
+<li><strong>Value:</strong> <code class="language-html">_blank</code></li>
+<li><strong>Behavior:</strong> Opens the linked document in a <strong>new, unnamed browsing context</strong>. This usually means:<ul>
+<li>A new browser <strong>tab</strong>.</li>
+<li>Sometimes, depending on browser settings, a new browser <strong>window</strong>.</li>
+</ul>
+</li>
+<li>Each click on a link with <code>target=&quot;_blank&quot;</code> typically opens another new tab/window.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><strong>External Links:</strong> Often used when linking to external websites, allowing the user to explore the external site without losing their place on your site.</li>
+<li><strong>Documents/Files:</strong> Useful for links to resources like PDFs, images, or documents that the user might want to view or download separately while keeping your page open.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have added <code class="language-html">target=&quot;_blank&quot;</code> to the anchor element in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;
+  Example Link (_blank):
+  &lt;a href=&quot;https://developer.mozilla.org/&quot; target=&quot;_blank&quot;&gt;MDN Home (New Tab)&lt;/a&gt; &lt;!-- Added target=&quot;_blank&quot; --&gt;
+&lt;/p&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code class="language-html">target=&quot;_blank&quot;</code> attribute in the <code class="language-html">&lt;a&gt;</code> tag in <code class="language-text">index.html</code>.</li>
+<li>In the preview, click the &quot;MDN Home (New Tab)&quot; link.</li>
+<li>Observe that the MDN homepage opens in a <strong>new browser tab</strong> (or possibly window), leaving your original lesson page open in the previous tab.</li>
+</ol>
+<p>⚠️ <strong>Important Note:</strong> As we&#39;ll discuss next, using <code>target=&quot;_blank&quot;</code> has security and performance implications that require using the <code>rel</code> attribute as well.</p>
+<p>✨ <strong>Key Takeaway:</strong> Use <code>target=&quot;_blank&quot;</code> to make a link open in a new browser tab or window.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

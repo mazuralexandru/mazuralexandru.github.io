@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>386. Reset: Preparing for Table Structure Elements (<code class="language-html">&lt;thead&gt;</code>, <code class="language-html">&lt;tbody&gt;</code>, <code class="language-html">&lt;tfoot&gt;</code>)</h1>
+<p>We&#39;ve established the core table grid (<code class="language-html">&lt;tr&gt;</code>, <code class="language-html">&lt;td&gt;</code>) and the importance of header cells (<code class="language-html">&lt;th&gt;</code>) with explicit scope (<code class="language-html">scope</code>).</p>
+<p>Now, we&#39;ll introduce elements that add further semantic structure by grouping rows into logical sections: <strong><code class="language-html">&lt;thead&gt;</code></strong>, <strong><code class="language-html">&lt;tbody&gt;</code></strong>, and <strong><code class="language-html">&lt;tfoot&gt;</code></strong>.</p>
+<p>To focus on these grouping elements, we&#39;ll reset our table slightly, removing the row headers for simplicity, and keeping just the column headers and a couple of data rows.</p>
+<p><strong>Why Reset?</strong></p>
+<ul>
+<li><strong>Focus:</strong> To clearly demonstrate how <code class="language-html">&lt;thead&gt;</code>, <code class="language-html">&lt;tbody&gt;</code>, and <code class="language-html">&lt;tfoot&gt;</code> wrap existing <code class="language-html">&lt;tr&gt;</code> elements.</li>
+<li><strong>Clarity:</strong> A simpler table makes the grouping structure more obvious.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Modified the table in <code class="language-text">index.html</code> back to a structure with only column headers (<code>scope=&quot;col&quot;</code>) and standard data rows (<code class="language-html">&lt;td&gt;</code>).</li>
+<li>Updated the paragraph text to introduce the grouping elements.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Structuring Table Content&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Using thead, tbody, and tfoot to group rows semantically.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;table&gt;
+    &lt;!-- Grouping elements will wrap these rows --&gt;
+    &lt;tr&gt; &lt;!-- Header Row --&gt;
+      &lt;th scope=&quot;col&quot;&gt;Header 1&lt;/th&gt; &lt;!-- Reset header --&gt;
+      &lt;th scope=&quot;col&quot;&gt;Header 2&lt;/th&gt; &lt;!-- Reset header --&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; &lt;!-- Data Row 1 --&gt;
+      &lt;td&gt;Data A1&lt;/td&gt; &lt;!-- Reset data --&gt;
+      &lt;td&gt;Data B1&lt;/td&gt; &lt;!-- Reset data --&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt; &lt;!-- Data Row 2 --&gt;
+      &lt;td&gt;Data A2&lt;/td&gt; &lt;!-- Reset data --&gt;
+      &lt;td&gt;Data B2&lt;/td&gt; &lt;!-- Reset data --&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;p&gt;These elements add semantic structure and enable features like scrolling/printing.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the updated table structure in <code class="language-text">index.html</code> – one header row with <code>&lt;th&gt; scope=&quot;col&quot;</code>, followed by two data rows with <code class="language-html">&lt;td&gt;</code>.</li>
+<li>The browser preview shows this simple table structure (headers likely bold/centered, data cells normal).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Resetting the table to a basic column-header structure provides a clean foundation for demonstrating how to wrap rows within <code class="language-html">&lt;thead&gt;</code>, <code class="language-html">&lt;tbody&gt;</code>, and <code class="language-html">&lt;tfoot&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

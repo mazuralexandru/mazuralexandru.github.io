@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>180. Security Note: Modern Browser Defaults</h1>
+<p>It&#39;s worth noting that browser vendors are aware of the security risks associated with <code>target=&quot;_blank&quot;</code>.</p>
+<p><strong>Implicit <code>noopener</code> Behavior:</strong></p>
+<ul>
+<li>Most major modern browsers (including Chrome, Firefox, Safari, Edge) have changed their default behavior.</li>
+<li>Now, if an <code class="language-html">&lt;a&gt;</code> tag has <code>target=&quot;_blank&quot;</code> but <strong>does not</strong> explicitly have <code>rel=&quot;noopener&quot;</code> (or <code>rel=&quot;noreferrer&quot;</code>), the browser often <strong>implicitly applies the <code>noopener</code> behavior anyway</strong>. It sets <code>window.opener</code> to <code>null</code> by default for <code>_blank</code> targets as a security measure.</li>
+</ul>
+<p><strong>Should You Still Use <code>rel=&quot;noopener noreferrer&quot;</code>?</strong></p>
+<p><strong>Yes, absolutely!</strong> Here&#39;s why relying on the implicit browser behavior is not sufficient:</p>
+<ol>
+<li><strong>Backward Compatibility:</strong> Older browsers or less common browsers may not have implemented this implicit <code>noopener</code> behavior. Explicitly adding <code>rel=&quot;noopener noreferrer&quot;</code> ensures protection across a wider range of user agents.</li>
+<li><strong>Explicit Intent:</strong> It clearly communicates your intention in the code to disable the opener access and referrer, making the code more understandable and self-documenting.</li>
+<li><strong><code>noreferrer</code> Benefit:</strong> The implicit behavior usually only covers <code>noopener</code>. If you also want the privacy benefit of not sending the <code>Referer</code> header, you <em>must</em> explicitly include <code>noreferrer</code>.</li>
+<li><strong>Future Changes:</strong> Browser defaults <em>could</em> theoretically change again, although unlikely for this specific security feature. Explicit attributes are more future-proof.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Understand that while modern browsers <em>try</em> to help by implicitly adding <code>noopener</code> to <code>target=&quot;_blank&quot;</code>, you should <em>always</em> explicitly include <code>rel=&quot;noopener noreferrer&quot;</code> in your HTML for maximum safety, compatibility, and clarity.</p>
+<p>✨ <strong>Key Takeaway:</strong> Do not rely on implicit browser defaults. Always explicitly add <code>rel=&quot;noopener noreferrer&quot;</code> to links using <code>target=&quot;_blank&quot;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

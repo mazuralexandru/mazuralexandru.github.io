@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>265. Global Attributes: Definition and Scope</h1>
+<p>Now let&#39;s formally define <strong>Global Attributes</strong>.</p>
+<ul>
+<li><strong>Definition:</strong> Global attributes are attributes that can be specified on <strong>all standard HTML elements</strong>. While they are <em>valid</em> on any element, they might not always have a practical or semantic effect on every single one (e.g., adding a <code class="language-html">title</code> attribute to the <code class="language-html">&lt;head&gt;</code> element itself usually has no effect).</li>
+<li><strong>Purpose:</strong> They provide universal mechanisms common across different elements, allowing for consistent ways to:<ul>
+<li>Uniquely identify elements (<code class="language-html">id</code>).</li>
+<li>Classify elements for styling or scripting (<code class="language-html">class</code>).</li>
+<li>Apply direct inline styles (<code class="language-html">style</code>).</li>
+<li>Provide advisory information (<code class="language-html">title</code>).</li>
+<li>Specify language and text direction (<code class="language-html">lang</code>, <code class="language-html">dir</code>).</li>
+<li>Influence accessibility and interactivity (<code class="language-html">tabindex</code>, <code class="language-html">hidden</code>, ARIA attributes).</li>
+<li>Store custom data for scripts (<code class="language-html">data-*</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Core Global Attributes in this Module:</strong></p>
+<p>We will focus on the following fundamental global attributes in the upcoming lessons:</p>
+<ol>
+<li><code class="language-html">id</code></li>
+<li><code class="language-html">class</code></li>
+<li><code class="language-html">style</code></li>
+<li><code class="language-html">title</code></li>
+<li><code class="language-html">lang</code> (Revisiting its use on specific elements)</li>
+<li><code class="language-html">dir</code></li>
+</ol>
+<p><strong>Other Notable Global Attributes (Brief Mention):</strong></p>
+<p>There are other global attributes you might encounter, which often relate to more advanced topics covered in later modules (like Accessibility or JavaScript):</p>
+<ul>
+<li><code class="language-html">tabindex</code>: Controls keyboard focusability and tab order.</li>
+<li><code class="language-html">hidden</code>: Hides elements visually and from assistive technology.</li>
+<li><code class="language-html">draggable</code>, <code class="language-html">dropzone</code>: Part of the HTML Drag and Drop API.</li>
+<li><code class="language-html">contenteditable</code>: Allows users to edit the element&#39;s content.</li>
+<li><code class="language-html">spellcheck</code>: Hints if content should be spell-checked.</li>
+<li><code class="language-html">data-*</code>: Custom data attributes for use by JavaScript.</li>
+<li>ARIA Attributes (<code class="language-html">role</code>, <code class="language-html">aria-*</code>): Attributes specifically for enhancing accessibility.</li>
+</ul>
+<p>We&#39;ll start by examining the <code class="language-html">id</code> attribute in detail.</p>
+<p>✅ <strong>Observation:</strong> No code changes. This step introduces the concept of global attributes and lists the key ones we will cover in this module.</p>
+<p>✨ <strong>Key Takeaway:</strong> Global attributes are common attributes applicable to most HTML elements, providing universal functionalities like identification (<code class="language-html">id</code>), classification (<code class="language-html">class</code>), styling (<code class="language-html">style</code>), and more.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

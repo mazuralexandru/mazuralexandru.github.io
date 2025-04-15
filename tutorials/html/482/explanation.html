@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>482. Forms: Validation - The <code>pattern</code> Attribute</h1>
+<p>For input types that accept text (<code>text</code>, <code>tel</code>, <code>email</code>, <code>url</code>, <code>password</code>, <code>search</code>), the <code class="language-html">pattern</code> attribute allows you to specify a <strong>JavaScript Regular Expression (regex)</strong> that the entered value must match to be considered valid.</p>
+<p><strong>The <code>pattern</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Enables fine-grained client-side validation of specific input formats beyond what the basic <code>type</code> attribute provides (especially useful for <code>type=&quot;text&quot;</code> or <code>type=&quot;tel&quot;</code>).</li>
+<li><strong>Applies To:</strong> Textual <code class="language-html">&lt;input&gt;</code> types.</li>
+<li><strong>Syntax:</strong> <code class="language-html">pattern=&quot;regex&quot;</code></li>
+<li><strong>Value:</strong> A valid JavaScript regular expression string. <strong>Important:</strong> The regex is implicitly anchored; it must match the <em>entire</em> value entered, as if wrapped with <code>^(?:</code> and <code>)$</code>. Do not include the slashes (<code>/</code>) typically used to delimit regex literals in JavaScript.</li>
+<li><strong>Behavior (Native Validation):</strong><ul>
+<li>When the form is submitted (and <code>novalidate</code> is not present), the browser checks if the input value matches the specified <code>pattern</code>.</li>
+<li>If it doesn&#39;t match, the submission is blocked, and the browser displays a default validation error (often generic, like &quot;Please match the requested format.&quot;).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Using <code>title</code> for User Guidance:</strong></p>
+<ul>
+<li>Because the default error message for a <code>pattern</code> mismatch is often unhelpful, it&#39;s <strong>highly recommended</strong> to also include a <code class="language-html">title</code> attribute on the same input field.</li>
+<li>The <code>title</code> should clearly explain the <strong>expected format</strong> to the user in human-readable terms.</li>
+<li>Browsers often incorporate the <code>title</code> attribute&#39;s text into the validation error message bubble displayed when the <code>pattern</code> fails, providing much better guidance to the user on how to fix the input.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a text input for a UK postcode, using a <code>pattern</code> attribute with a regex to validate the format and a <code>title</code> attribute to explain it.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;!-- Removed search/textarea examples --&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;postcode&quot;&gt;Postcode (UK Format):&lt;/label&gt;
+    &lt;!-- Example pattern for simple UK postcode format --&gt;
+    &lt;input type=&quot;text&quot; id=&quot;postcode&quot; name=&quot;postcode&quot;
+           required
+           pattern=&quot;[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][A-Za-z]{2}&quot;
+           title=&quot;Please enter a valid UK postcode (e.g., SW1A 0AA)&quot;&gt; &lt;!-- Added pattern &amp; title --&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+<p><em>(Note: Writing accurate and comprehensive regex can be complex).</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code>pattern</code> and <code>title</code> attributes on the <code class="language-html">&lt;input&gt;</code>.</li>
+<li>In the preview, try submitting the form with the field empty (it should fail due to <code>required</code>).</li>
+<li>Enter text that <em>doesn&#39;t</em> match the pattern (e.g., &quot;ABC 123&quot;, &quot;SE1&quot;). Click Submit. The browser should block submission and display an error message. This error message will likely include the text from the <code>title</code> attribute (&quot;Please enter a valid UK postcode...&quot;).</li>
+<li>Enter text that <em>does</em> match the pattern (e.g., &quot;SW1A 0AA&quot;, &quot;M1 1AE&quot;, &quot;B1 1AE&quot;). Click Submit. The validation should now pass (though submission will fail here).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code>pattern</code> attribute with a JavaScript regular expression to enforce specific formats for textual input fields. Always accompany <code>pattern</code> with a descriptive <code>title</code> attribute to explain the required format to users, which browsers often incorporate into validation error messages.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

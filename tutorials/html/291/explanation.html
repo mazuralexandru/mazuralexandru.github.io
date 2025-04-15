@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>291. Reset: Preparing for <code>lang</code> Attribute</h1>
+<p>We have now covered the <code class="language-html">id</code>, <code class="language-html">class</code>, <code class="language-html">style</code>, and <code class="language-html">title</code> global attributes.</p>
+<p>Next, we will revisit the <code class="language-html">lang</code> attribute, which we initially introduced on the <code class="language-html">&lt;html&gt;</code> element (Lesson 18), and explore its use on specific inline or block elements to denote language changes <em>within</em> a document. We will also introduce its companion attribute, <code class="language-html">dir</code>.</p>
+<p>To prepare, let&#39;s remove the <code class="language-html">title</code> and <code class="language-html">&lt;abbr&gt;</code> examples.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention to language (<code class="language-html">lang</code>) and directionality (<code class="language-html">dir</code>) attributes.</li>
+<li><strong>Clean Slate:</strong> Provide simple paragraph structure as a baseline.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the paragraph containing the <code class="language-html">&lt;abbr&gt;</code> example.</li>
+<li>Updated the remaining paragraph text to introduce <code class="language-html">lang</code> and <code class="language-html">dir</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;title&gt;</code> for the new topic.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt; &lt;!-- Base language is English --&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;HTML Global Attributes - Lang &amp; Dir&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Global Attributes - Lang &amp; Dir&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Revisiting the &#39;lang&#39; attribute for inline language changes.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed abbr example paragraph --&gt;
+
+  &lt;p&gt;We will also introduce the &#39;dir&#39; attribute for text direction.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of the <code class="language-html">&lt;abbr&gt;</code> example paragraph from <code class="language-text">index.html</code>.</li>
+<li>The browser preview shows the updated heading and two plain introductory paragraphs, ready for the <code class="language-html">lang</code> and <code class="language-html">dir</code> examples. Note the <code class="language-html">lang=&quot;en&quot;</code> still present on the <code class="language-html">&lt;html&gt;</code> tag, setting the document&#39;s primary language.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the <code class="language-html">title</code> example clears the stage for revisiting the <code class="language-html">lang</code> attribute in more detail and introducing the related <code class="language-html">dir</code> attribute.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

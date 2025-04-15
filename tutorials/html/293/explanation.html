@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>293. The <code>dir</code> Attribute - Fundamentals &amp; Syntax</h1>
+<p>Now let&#39;s introduce the <code class="language-html">dir</code> global attribute, which controls text directionality.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">dir</code> attribute specifies the base <strong>text direction</strong> for the content of the element it&#39;s applied to: Left-to-Right (LTR) or Right-to-Left (RTL).</li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>Different languages are written in different directions (e.g., English is LTR, Arabic and Hebrew are RTL). This attribute ensures the browser renders the text flow correctly according to the language&#39;s conventions.</li>
+<li>It&#39;s also crucial for handling bidirectional text (mixing LTR and RTL scripts within the same block).</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li><code class="language-html">dir=&quot;direction&quot;</code></li>
+<li>Placed within the opening tag of an element.</li>
+</ul>
+<p><strong>Attribute Values:</strong></p>
+<ol>
+<li><strong><code class="language-html">ltr</code></strong><ul>
+<li>Specifies <strong>Left-to-Right</strong> text direction.</li>
+<li>This is the <strong>default</strong> direction for most browsers and for HTML itself if <code class="language-html">dir</code> is not specified. You usually only need to set it explicitly if overriding an inherited RTL direction.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">rtl</code></strong><ul>
+<li>Specifies <strong>Right-to-Left</strong> text direction.</li>
+<li>Essential for correctly displaying languages like Arabic, Hebrew, Persian, Urdu, etc.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">auto</code></strong><ul>
+<li>Lets the <strong>browser determine</strong> the direction based on the <em>first strongly-typed character</em> within the element&#39;s content (using the Unicode Bidirectional Algorithm).</li>
+<li>Useful for user-generated content where the language/direction is unknown beforehand.</li>
+<li><strong>Caution:</strong> Can be unreliable if the content starts with directionally neutral characters (like punctuation or numbers).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Inheritance:</strong></p>
+<ul>
+<li>Like <code class="language-html">lang</code>, the <code class="language-html">dir</code> attribute is inherited by child elements unless explicitly overridden on a descendant.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. This step introduces the <code class="language-html">dir</code> attribute, its purpose (controlling text flow direction), and its possible values (<code>ltr</code>, <code>rtl</code>, <code>auto</code>).</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">dir</code> attribute specifies text directionality (LTR or RTL) and is essential for correctly displaying right-to-left languages and handling bidirectional text.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

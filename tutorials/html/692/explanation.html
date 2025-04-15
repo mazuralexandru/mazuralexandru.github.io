@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>692. Accessibility (A11y): Semantic HTML Review (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>, Landmarks)</h1>
+<p>Let&#39;s specifically review how the semantic elements related to document structure contribute to accessibility.</p>
+<p><strong>1. Heading Structure (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>) Recap:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Define the hierarchical outline of the page content.</li>
+<li><strong>Accessibility Impact:</strong><ul>
+<li>Screen readers use the heading structure (<code>H</code> key, <code>1</code>-<code>6</code> keys) as a primary navigation method. Users can quickly jump between sections.</li>
+<li>Provides a mental map of the page organization.</li>
+<li><strong>Rule:</strong> Must be hierarchical (no skipped levels). Only one <code class="language-html">&lt;h1&gt;</code> per page recommended. Use for structure, not styling.</li>
+</ul>
+</li>
+<li><strong>Failure Example:</strong> Using styled <code class="language-html">&lt;p&gt;</code> tags instead of headings, or skipping levels (H1 -&gt; H3), breaks this navigation and understanding.</li>
+</ul>
+<p><strong>2. Landmark Elements Recap:</strong></p>
+<ul>
+<li><strong>Elements:</strong> <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>, <code class="language-html">&lt;footer&gt;</code>, <code class="language-html">&lt;aside&gt;</code>, <code class="language-html">&lt;section&gt;</code> (if named), <code class="language-html">&lt;form&gt;</code> (if named).</li>
+<li><strong>Purpose:</strong> Define the major functional regions of a page.</li>
+<li><strong>Accessibility Impact:</strong><ul>
+<li>Mapped to ARIA landmark roles (<code>banner</code>, <code>navigation</code>, <code>main</code>, <code>contentinfo</code>, <code>complementary</code>, <code>region</code>, <code>search</code>, <code>form</code>).</li>
+<li>Screen readers announce these landmarks and allow users to list them and jump directly to a specific region (e.g., &quot;Jump to main content&quot;). This bypasses repetitive header/navigation blocks.</li>
+</ul>
+</li>
+<li><strong>Best Practices:</strong><ul>
+<li>Use landmark elements appropriately for their intended purpose.</li>
+<li>Ensure <code class="language-html">&lt;main&gt;</code> wraps the primary content.</li>
+<li>Provide accessible names for multiple instances of the same landmark (e.g., multiple <code>&lt;nav&gt;</code>s using <code>aria-label</code>).</li>
+<li>Ensure <code class="language-html">&lt;section&gt;</code> has a heading (or <code>aria-label</code>/<code>labelledby</code>) to potentially become a <code>region</code> landmark.</li>
+</ul>
+</li>
+<li><strong>Failure Example:</strong> Using only <code class="language-html">&lt;div&gt;</code> elements for page structure provides no landmark information, forcing users to navigate linearly.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Recall the page structure example from Module 10 (Lesson 527) which used <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;main&gt;</code>, <code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, <code class="language-html">&lt;aside&gt;</code>, <code class="language-html">&lt;footer&gt;</code> and appropriate heading levels. Visualize how a screen reader could announce &quot;Banner region... Navigation region... Main region... Article... Region: Section One... Complementary region... Contentinfo region...&quot;, allowing efficient jumps.</p>
+<p>✨ <strong>Key Takeaway:</strong> Correct use of heading hierarchy and HTML5 landmark elements provides the fundamental structure that enables efficient navigation and comprehension for assistive technology users.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

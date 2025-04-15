@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>22. Saving and Viewing HTML Files (Conceptual)</h1>
+<p>Now that we have a basic HTML file with structure and content, let&#39;s discuss how you actually work with these files.</p>
+<p><strong>1. Saving Files:</strong></p>
+<ul>
+<li><strong>File Extension:</strong> As we&#39;re doing in this tool, HTML files <strong>must</strong> be saved with an <code class="language-text">.html</code> (or occasionally <code class="language-text">.htm</code>) extension. This extension tells your operating system and web browsers that the file contains HTML code. <code class="language-text">.html</code> is the modern standard.</li>
+<li><strong>Filename Conventions:</strong><ul>
+<li>Use descriptive, lowercase names (e.g., <code class="language-text">about-us.html</code>, <code class="language-text">contact.html</code>).</li>
+<li>Avoid spaces; use hyphens (<code class="language-text">-</code>) instead.</li>
+<li>The name <code class="language-text">index.html</code> is special. Web servers usually serve this file by default when a user requests a directory (e.g., visiting <code>www.example.com/</code> might load <code>www.example.com/index.html</code>).</li>
+</ul>
+</li>
+<li><strong>Character Encoding:</strong> Crucially, ensure your text editor is set to save files using <strong>UTF-8</strong> encoding. This matches the <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> declaration in your HTML and prevents character display issues. Most modern code editors (like VS Code) default to UTF-8.</li>
+<li><strong>File Organization:</strong> For websites with multiple pages, organize your files into folders (directories) for better management (e.g., an <code>images</code> folder, a <code>css</code> folder).</li>
+</ul>
+<p><strong>2. Viewing Files:</strong></p>
+<ul>
+<li><strong>Locally:</strong> You can simply double-click an <code>.html</code> file on your computer, or use your browser&#39;s &quot;File &gt; Open File...&quot; menu. The browser will open and render the page. You&#39;ll typically see a <code class="language-text">file:///...</code> address in the browser&#39;s address bar. (This is similar to how the preview pane in our tool works).</li>
+<li><strong>Via Web Server:</strong> For actual websites, files are placed on a web server. Users access them via <code class="language-text">http://</code> or <code class="language-text">https://</code> URLs. While basic HTML often renders the same locally vs. on a server, some advanced features (especially involving JavaScript security or server-side interaction) require a server environment.</li>
+<li><strong>Browser Rendering Process (Simplified):</strong><ol>
+<li>Browser requests/opens the HTML file.</li>
+<li>Reads the HTML code.</li>
+<li>Parses tags/content, building the internal DOM tree.</li>
+<li>Applies any linked CSS rules (we&#39;ll add CSS soon).</li>
+<li>Executes any linked JavaScript.</li>
+<li>Renders the final visual result on the screen.</li>
+</ol>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No file changes in this step. This is conceptual information about handling the files we are creating. Our current <code class="language-text">index.html</code> is viewable in the preview pane because the tool simulates this local viewing process.</p>
+<p>✨ <strong>Key Takeaway:</strong> Save files with <code>.html</code> extension using UTF-8 encoding. You can view them directly in a browser locally (<code>file:///</code>) or deploy them to a web server (<code>http://</code> or <code>https://</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

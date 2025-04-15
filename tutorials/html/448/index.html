@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Form Labels (&lt;label&gt;)</h1>
+  <p>Alternative: Implicit Association (Wrapping Control).</p>
+
+  <form action="/submit-data" method="POST">
+     <p>
+       <!-- Explicit Association (Preferred) -->
+       <label for="first_name">First Name:</label>
+       <input type="text" id="first_name" name="first_name">
+     </p>
+     <p>
+        <!-- Implicit Association (Less Preferred) -->
+        <label>
+            Last Name: <!-- Label Text -->
+            <input type="text" name="last_name"> <!-- Input INSIDE Label -->
+        </label>
+     </p>
+  </form>
+
+  <p>Wrapping is simpler but less flexible and potentially less robust.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>471. Forms: File Inputs (<code class="language-html">&lt;input type=&quot;file&quot;&gt;</code>) - Attributes (<code>accept</code>, <code>multiple</code>)</h1>
+<p>Let&#39;s explore the key attributes that modify the behavior of <code class="language-html">&lt;input type=&quot;file&quot;&gt;</code>.</p>
+<p><strong>1. <code>accept</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Provides a <strong>hint</strong> to the browser&#39;s file selection dialog about the types of files that are preferred or acceptable.</li>
+<li><strong>Syntax:</strong> <code class="language-html">accept=&quot;comma-separated-list&quot;</code></li>
+<li><strong>Value:</strong> A comma-separated list of one or more:<ul>
+<li><strong>File Extensions:</strong> Starting with a period (e.g., <code>.jpg</code>, <code>.pdf</code>, <code>.docx</code>).</li>
+<li><strong>MIME Types:</strong> (e.g., <code>image/jpeg</code>, <code>application/pdf</code>, <code>audio/*</code>, <code>video/*</code>, <code>image/*</code>). Using MIME types is generally more robust than relying only on extensions.</li>
+</ul>
+</li>
+<li><strong>Behavior:</strong> The browser <em>may</em> use this hint to filter the files displayed in the file picker dialog by default (e.g., showing only image files if <code>accept=&quot;image/*&quot;</code> is used). However, users can usually override this filter.</li>
+<li><strong>NOT Security/Validation:</strong> The <code>accept</code> attribute is <strong>purely a user interface hint</strong>. It does <strong>not</strong> prevent users from selecting other file types, nor does it validate the type of the uploaded file. <strong>Server-side validation of the file type, size, and content is absolutely mandatory</strong> for security and application integrity.</li>
+</ul>
+<p><strong>2. <code>multiple</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Allows the user to select <strong>more than one file</strong> at a time from the file selection dialog.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;input type=&quot;file&quot; name=&quot;...&quot; multiple&gt;</code> (Boolean attribute).</li>
+<li><strong>Behavior:</strong> Modifies the file picker to allow multiple selections (e.g., using Shift-click or Ctrl/Cmd-click).</li>
+<li><strong>Submission:</strong> If multiple files are selected, the browser sends them as multiple parts associated with the same <code>name</code> in the <code>multipart/form-data</code> request. The server-side script must be designed to handle receiving an array or list of files for that input name.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ll add <code>accept</code> and <code>multiple</code> attributes to our file input example.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/upload-handler&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;user_file&quot;&gt;Choose Image(s):&lt;/label&gt; &lt;!-- Updated label --&gt;
+    &lt;input type=&quot;file&quot; id=&quot;user_file&quot; name=&quot;uploaded_images&quot;
+           accept=&quot;image/png, image/jpeg, image/gif&quot;
+           multiple&gt; &lt;!-- Added accept and multiple --&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Upload File(s)&lt;/button&gt;&lt;/p&gt; &lt;!-- Updated button text --&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the updated <code class="language-html">&lt;input type=&quot;file&quot;&gt;</code> tag. Note the <code>accept</code> attribute listing image MIME types and the presence of the <code>multiple</code> attribute.</li>
+<li>Look at the browser preview. The visual appearance of the button might not change significantly.</li>
+<li><strong>Interaction:</strong> Click the &quot;Choose File&quot; (or similar) button.<ul>
+<li>The file selection dialog <em>might</em> now default to showing only files matching the types listed in <code>accept</code> (e.g., PNG, JPG, GIF).</li>
+<li>You should be able to select <strong>multiple</strong> files from the dialog using Shift/Ctrl/Cmd keys.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code>accept</code> attribute on <code class="language-html">&lt;input type=&quot;file&quot;&gt;</code> to provide a hint for filtering files in the selection dialog (but always validate server-side). Use the <code>multiple</code> attribute to allow users to select and upload multiple files at once (requires server-side handling of multiple files).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>38. Text: Headings (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>) - Structure vs. Style</h1>
+<p>A crucial principle when working with headings (and indeed, most HTML elements) is to distinguish between <strong>structure</strong> and <strong>style</strong>.</p>
+<p><strong>Semantic Priority: Use Headings for Structure ONLY</strong></p>
+<ul>
+<li><strong>Purpose:</strong> <code class="language-html">&lt;h1&gt;</code> through <code class="language-html">&lt;h6&gt;</code> elements exist to define the <em>structural hierarchy</em> and <em>outline</em> of your document content. Their primary role is semantic.</li>
+<li><strong>Anti-Pattern:</strong> Do <strong>not</strong> choose a heading level simply because you want the text to look a certain way (e.g., picking <code class="language-html">&lt;h2&gt;</code> just because you want large, bold text, even if it doesn&#39;t represent a major section heading).</li>
+<li><strong>Why it&#39;s Wrong:</strong> Misusing headings for purely visual reasons breaks the logical structure of the document, harming accessibility and SEO (as discussed in the previous lesson). If you used an <code class="language-html">&lt;h2&gt;</code> for something that wasn&#39;t actually a major section title, a screen reader user navigating by headings would be misled about the document&#39;s organization.</li>
+</ul>
+<p><strong>Controlling Appearance: Use CSS for Style</strong></p>
+<ul>
+<li><strong>Solution:</strong> If you need text to be larger, smaller, bold, italic, a different color, etc., for purely presentational reasons <em>without</em> it representing a structural heading, you should use <strong>CSS</strong>.</li>
+<li><strong>How:</strong><ul>
+<li>Apply styles directly using CSS properties like <code class="language-css">font-size</code>, <code class="language-css">font-weight</code>, <code class="language-css">color</code>, etc.</li>
+<li>Often, you&#39;ll wrap the text in a semantically neutral element like <code class="language-html">&lt;span&gt;</code> (for inline text) or <code class="language-html">&lt;div&gt;</code> (for block-level text) and apply a CSS <strong>class</strong> to it. Then, define the styles for that class in your <code class="language-text">style.css</code> file.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example (Conceptual):</strong></p>
+<ul>
+<li><strong>Incorrect (Using heading for style):</strong> <code class="language-html">&lt;h3&gt;Make this text big and bold!&lt;/h3&gt;</code> (if it&#39;s not actually a level-3 subheading).</li>
+<li><strong>Correct (Using CSS for style):</strong><ul>
+<li>HTML: <code class="language-html">&lt;p&gt;&lt;span class=&quot;large-bold-text&quot;&gt;Make this text big and bold!&lt;/span&gt;&lt;/p&gt;</code></li>
+<li>CSS: <code>.large-bold-text { font-size: 1.5em; font-weight: bold; }</code></li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the headings in <code class="language-text">index.html</code>. We are currently using them appropriately for structure (Page Title -&gt; Section -&gt; Subsection). The visual appearance (large/bold) comes from default browser styles for these semantic tags, which is fine, but we didn&#39;t choose them <em>for</em> that appearance.</p>
+<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code> strictly to define the logical outline and hierarchy of your content. Use CSS to control visual presentation like size, weight, and color. Separate structure (HTML) from style (CSS).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

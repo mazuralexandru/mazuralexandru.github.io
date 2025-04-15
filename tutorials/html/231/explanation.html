@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>231. The <code>alt</code> Attribute - Definition &amp; Purpose</h1>
+<p>Alongside <code class="language-html">src</code>, the <strong><code class="language-html">alt</code> attribute is the other essential attribute</strong> for the <code class="language-html">&lt;img&gt;</code> element.</p>
+<p><strong>The <code class="language-html">alt</code> (Alternative Text) Attribute:</strong></p>
+<ul>
+<li><p><strong>Definition:</strong> Provides a <strong>textual alternative</strong> that describes the content or function of the image.</p>
+</li>
+<li><p><strong>Purpose (Multi-faceted and CRITICAL):</strong></p>
+<ol>
+<li><strong>Accessibility (Primary):</strong> This is the <em>most</em> important reason. Screen readers read the <code class="language-html">alt</code> text aloud to users who are visually impaired, allowing them to understand what the image conveys. Without meaningful <code class="language-html">alt</code> text, images are inaccessible barriers.</li>
+<li><strong>Fallback Content:</strong> If the image file fails to load for any reason (broken URL, network error, user has images disabled), browsers display the <code class="language-html">alt</code> text in place of the image. This provides context even when the visual is missing.</li>
+<li><strong>SEO:</strong> Search engine crawlers cannot interpret the visual content of images directly. They rely heavily on the <code class="language-html">alt</code> text (along with filenames and surrounding content) to understand what an image is about and index it correctly for image search results. Using relevant keywords appropriately in <code class="language-html">alt</code> text can improve image SEO.</li>
+</ol>
+</li>
+<li><p><strong>Requirement:</strong> The <code class="language-html">alt</code> attribute is <strong>mandatory</strong> according to the HTML specification. Every <code class="language-html">&lt;img&gt;</code> tag MUST have an <code class="language-html">alt</code> attribute present for the HTML to be valid. (As we&#39;ll see, the value can sometimes be empty - <code class="language-html">alt=&quot;&quot;</code> - but the attribute itself must be there). Omitting <code class="language-html">alt</code> entirely results in invalid HTML.</p>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. This step focuses on defining the <code class="language-html">alt</code> attribute and explaining its critical roles in accessibility, fallback, and SEO.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">alt</code> attribute is mandatory for all <code class="language-html">&lt;img&gt;</code> elements. It provides essential alternative text for accessibility (screen readers), fallback display (broken images), and context for search engines.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

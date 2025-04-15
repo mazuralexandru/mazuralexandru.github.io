@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Multimedia</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     embed { border: 1px dashed red; min-height: 50px; display: block; margin-top: 10px;}
+  </style>
+</head>
+<body>
+  <h1>Legacy Embedding (&lt;embed&gt;)</h1>
+  <p>The 'embed' element was used for external applications/plugins.</p>
+
+  <!-- Example embed (likely won't display anything useful now) -->
+  <embed type="application/pdf"
+         src="/documents/legacy-file.pdf"
+         width="500"
+         height="300">
+         <!-- Note: No fallback content inside -->
+
+  <p>Modern use is discouraged; prefer native elements or iframe.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

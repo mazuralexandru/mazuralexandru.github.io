@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyboard Accessibility</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Visible focus style */
+    :focus-visible { /* Prefer :focus-visible over :focus */
+      outline: 3px solid orange;
+      outline-offset: 1px;
+    }
+    .interactive {
+       display: inline-block; padding: 5px 10px;
+       border: 1px solid grey; cursor: pointer; margin: 5px;
+    }
+    /* Style for the dynamically focused element */
+    #modal { border: 2px solid red; padding: 1em; margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h1>The 'tabindex' Attribute</h1> <!-- Updated H1 -->
+  <p>Controls keyboard focus behavior.</p>
+
+  <p>Natively focusable: <button type="button">Button</button></p>
+
+  <p>Made focusable (in tab order): <span class="interactive" tabindex="0">Span (tabindex 0)</span></p>
+
+  <p>Focusable only via script: <span class="interactive" id="progFocus" tabindex="-1">Span (tabindex -1)</span></p>
+  <p><button type="button" onclick="document.getElementById('progFocus').focus()">Focus Span Above</button></p>
+
+  <p>Positive tabindex (AVOID!): <input type="text" tabindex="1" placeholder="Tabindex 1"> <input type="text" tabindex="2" placeholder="Tabindex 2"></p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>122. Nested Lists: Nesting <code class="language-html">&lt;ol&gt;</code> inside <code class="language-html">&lt;ul&gt;</code></h1>
+<p>You are not restricted to nesting the same type of list. You can nest an ordered list (<code class="language-html">&lt;ol&gt;</code>) inside an unordered list item (<code class="language-html">&lt;ul&gt;&lt;li&gt;</code>), or vice-versa.</p>
+<p><strong>Scenario: Ordered Sub-items in an Unordered List</strong></p>
+<p>Imagine a list of general topics (<code class="language-html">&lt;ul&gt;</code>), where one topic needs to be broken down into specific, ordered steps (<code class="language-html">&lt;ol&gt;</code>).</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve modified the nested list example in <code class="language-text">index.html</code>. The outer list is still a <code class="language-html">&lt;ul&gt;</code>, but the nested list inside the second <code class="language-html">&lt;li&gt;</code> is now an <code class="language-html">&lt;ol&gt;</code> with <code>type=&quot;a&quot;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;h1&gt;Nested Lists&lt;/h1&gt;
+&lt;p&gt;Nesting different list types (ol inside ul):&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+&lt;ul&gt; &lt;!-- Outer ul --&gt;
+  &lt;li&gt;Topic Alpha&lt;/li&gt;
+  &lt;li&gt;Topic Beta &lt;!-- Outer li STARTS --&gt;
+    &lt;ol type=&quot;a&quot;&gt; &lt;!-- Nested ol START (inside li) --&gt;
+      &lt;li&gt;Sub-point a&lt;/li&gt;
+      &lt;li&gt;Sub-point b&lt;/li&gt;
+    &lt;/ol&gt; &lt;!-- Nested ol END (inside li) --&gt;
+  &lt;/li&gt; &lt;!-- Outer li END --&gt;
+  &lt;li&gt;Topic Gamma&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the structure in <code class="language-text">index.html</code>. Note the <code class="language-html">&lt;ul&gt;</code> containing an <code class="language-html">&lt;li&gt;</code> which, in turn, contains an <code class="language-html">&lt;ol&gt;</code>.</li>
+<li>Look at the browser preview:<ul>
+<li>&quot;Topic Alpha&quot; and &quot;Topic Gamma&quot; have the default <code class="language-html">&lt;ul&gt;</code> bullet point marker (•).</li>
+<li>&quot;Topic Beta&quot; also has the default <code class="language-html">&lt;ul&gt;</code> bullet point marker.</li>
+<li>The sub-items &quot;Sub-point a&quot; and &quot;Sub-point b&quot; appear below &quot;Topic Beta&quot;, indented further.</li>
+<li>Crucially, the sub-items are marked with sequential <strong>letters</strong> (<strong>a.</strong>, <strong>b.</strong>) because they are inside an <code class="language-html">&lt;ol&gt;</code> with <code>type=&quot;a&quot;</code>. The <code class="language-html">&lt;ol&gt;</code> controls their markers.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> You can nest <code class="language-html">&lt;ol&gt;</code> inside <code class="language-html">&lt;ul&gt;&lt;li&gt;</code> (or vice-versa) when the hierarchy requires changing between ordered and unordered sub-items. The nested list follows its own rules for markers (<code class="language-html">&lt;ol&gt;</code> uses numbers/letters, <code class="language-html">&lt;ul&gt;</code> uses bullets). Remember the placement rule: the nested list always goes inside the parent <code class="language-html">&lt;li&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

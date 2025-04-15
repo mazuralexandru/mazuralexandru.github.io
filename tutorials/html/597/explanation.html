@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>597. Graphics: Canvas (<code class="language-html">&lt;canvas&gt;</code>) - Performance &amp; Resolution Dependence</h1>
+<p>Performance and handling different screen resolutions are key considerations when using <code class="language-html">&lt;canvas&gt;</code>.</p>
+<p><strong>Performance Characteristics:</strong></p>
+<ul>
+<li><strong>Strengths:</strong> Can be very performant for rendering a <strong>large number of simple objects</strong> (e.g., thousands of particles) or complex scenes involving <strong>pixel-level manipulations</strong>, especially where the DOM structure of SVG would become a bottleneck. WebGL context leverages hardware acceleration for 3D.</li>
+<li><strong>Potential Bottlenecks:</strong><ul>
+<li><strong>CPU-Intensive:</strong> Complex 2D drawing logic, frequent redraws in animation loops, or extensive pixel manipulation (<code>getImageData</code>/<code>putImageData</code>) can be CPU-intensive and impact performance, potentially blocking the main UI thread.</li>
+<li><strong>Canvas Size:</strong> Performance degrades as the canvas <code>width</code> and <code>height</code> (number of pixels) increase. Drawing on very large canvases can be slow.</li>
+</ul>
+</li>
+<li><strong>Optimization:</strong> Techniques include minimizing redraw areas, offscreen rendering (drawing complex static parts to a hidden canvas first), simplifying drawing logic, using Web Workers with <code>OffscreenCanvas</code>, and optimizing JavaScript execution.</li>
+</ul>
+<p><strong>Resolution Dependence &amp; High-DPI Displays:</strong></p>
+<ul>
+<li><strong>Bitmap Nature:</strong> The canvas drawing buffer has a fixed number of pixels defined by the <code>width</code> and <code>height</code> attributes.</li>
+<li><strong>CSS Scaling Issue:</strong> If CSS scales the <em>element</em> size larger than the <em>attribute</em> size (e.g., <code class="language-html">width=&quot;300&quot;</code> but <code class="language-css">width: 600px;</code>), the browser stretches the 300-pixel-wide bitmap to fit the 600px element space, resulting in <strong>blurriness</strong>.</li>
+<li><strong>High-DPI (&quot;Retina&quot;) Displays:</strong> These screens have a higher density of physical pixels per CSS pixel (<code>window.devicePixelRatio</code> &gt; 1, often 2 or 3). If you draw on a canvas with <code class="language-html">width=&quot;300&quot;</code> and display it on a high-DPI screen where 300 CSS pixels actually occupy 600 physical pixels, the 300-pixel drawing will look blurry because it&#39;s being scaled up by the display itself.</li>
+<li><strong>Solution for Crisp High-DPI Rendering:</strong><ol>
+<li>Detect the <code>devicePixelRatio</code> (e.g., <code>const dpr = window.devicePixelRatio || 1;</code>).</li>
+<li>Set the canvas <strong>attribute</strong> dimensions to the desired CSS size <em>multiplied</em> by the DPR (e.g., <code>canvas.width = cssWidth * dpr; canvas.height = cssHeight * dpr;</code>). This creates a higher-resolution drawing buffer.</li>
+<li>Set the canvas <strong>CSS</strong> dimensions to the desired final display size (e.g., <code>canvas.style.width = cssWidth + &#39;px&#39;; canvas.style.height = cssHeight + &#39;px&#39;;</code>).</li>
+<li>Use <code>ctx.scale(dpr, dpr)</code> in your JavaScript <em>before</em> drawing. This scales the coordinate system so your drawing commands (e.g., <code>fillRect(10, 10, ...)</code> still use CSS pixel units, but they render onto the larger, higher-resolution buffer, resulting in crisp graphics on high-DPI displays.</li>
+</ol>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Understand the trade-offs: canvas can be fast for many objects but performance depends on size and complexity. Recognize that canvas bitmaps are resolution-dependent and require specific handling (scaling attributes and using <code>ctx.scale()</code>) to look sharp on high-DPI displays.</p>
+<p>✨ <strong>Key Takeaway:</strong> Optimize canvas performance by managing redraws and complexity. Address resolution dependence and achieve crisp high-DPI rendering by scaling the canvas attributes based on <code>devicePixelRatio</code> and using <code>ctx.scale()</code> in JavaScript, while setting the desired display size via CSS.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

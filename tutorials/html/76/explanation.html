@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>76. Citations: Identifying Titles with <code class="language-html">&lt;cite&gt;</code></h1>
+<p>We&#39;ve used the <code class="language-html">cite</code> <em>attribute</em> on <code class="language-html">&lt;blockquote&gt;</code> and <code class="language-html">&lt;q&gt;</code> to link to a source URL. Now let&#39;s look at the <strong><code class="language-html">&lt;cite&gt;</code> element</strong>, which has a different but related purpose: marking up the <strong>title of a creative work</strong>.</p>
+<p><strong>The Citation Element (<code class="language-html">&lt;cite&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Used to identify the title of a creative work. This includes things like:<ul>
+<li>Books (<code class="language-html">&lt;cite&gt;War and Peace&lt;/cite&gt;</code>)</li>
+<li>Articles (<code class="language-html">&lt;cite&gt;A Brief History of Time&lt;/cite&gt;</code>)</li>
+<li>Essays, Poems, Songs, Scripts</li>
+<li>Films (<code class="language-html">&lt;cite&gt;Citizen Kane&lt;/cite&gt;</code>)</li>
+<li>TV Shows, Games, Operas, Musicals</li>
+<li>Paintings, Sculptures, Exhibitions</li>
+<li>It can also be used for legal documents like court cases or statutes.</li>
+</ul>
+</li>
+<li><strong>Type:</strong> Inline element.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;cite&gt;...&lt;/cite&gt;</code></li>
+</ul>
+<p><strong>Default Rendering:</strong></p>
+<p>Browsers typically render the content of a <code class="language-html">&lt;cite&gt;</code> element in <em>italics</em>.</p>
+<p><strong>Important Distinction:</strong></p>
+<ul>
+<li>Use <code class="language-html">&lt;cite&gt;</code> ONLY for the <strong>title of the work</strong>.</li>
+<li>Do <strong>NOT</strong> use <code class="language-html">&lt;cite&gt;</code> for:<ul>
+<li>The name of the author/creator (just plain text, or perhaps specific microdata if needed).</li>
+<li>The quote itself (use <code class="language-html">&lt;blockquote&gt;</code> or <code class="language-html">&lt;q&gt;</code>).</li>
+<li>A URL (use the <code class="language-html">cite</code> <em>attribute</em> on <code class="language-html">&lt;blockquote&gt;</code>/<code class="language-html">&lt;q&gt;</code>, or an <code class="language-html">&lt;a&gt;</code> tag for a visible link).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve restructured the content slightly and added two examples of the <code class="language-html">&lt;cite&gt;</code> element:</p>
+<ol>
+<li>In the paragraph attributing the blockquote (referencing the HTML specification title).</li>
+<li>In a new paragraph mentioning a book title.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Quotation Elements &amp; Citations&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Use &lt;q&gt;inline quotes&lt;/q&gt; or &lt;blockquote&gt; for longer ones. To cite the title of a work, use the cite element.&lt;/p&gt; &lt;!-- Simplified P, removed cite attribute from q --&gt;
+
+  &lt;blockquote cite=&quot;https://www.w3.org/TR/html52/textlevel-semantics.html#the-blockquote-element&quot;&gt;
+    &lt;p&gt;This is a longer quotation, potentially spanning multiple paragraphs, taken from another source.&lt;/p&gt; &lt;!-- Simplified blockquote --&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;The source for the above quote can be found in the HTML specification titled &lt;cite&gt;HTML 5.2&lt;/cite&gt;.&lt;/p&gt; &lt;!-- Added attribution P with &lt;cite&gt; --&gt;
+
+  &lt;p&gt;Another example: I enjoyed reading &lt;cite&gt;The Lord of the Rings&lt;/cite&gt; recently.&lt;/p&gt; &lt;!-- Added second &lt;cite&gt; example --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p><em>(Note: We removed the <code>cite</code> attribute from <code class="language-html">&lt;q&gt;</code> and simplified the blockquote content for clarity).</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the two <code class="language-html">&lt;cite&gt;</code> elements in <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. The text &quot;HTML 5.2&quot; and &quot;The Lord of the Rings&quot; should both be rendered in <em>italics</em>, indicating they are titles of works according to the <code class="language-html">&lt;cite&gt;</code> tag&#39;s semantics and default styling.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the inline <code class="language-html">&lt;cite&gt;</code> element specifically to mark up the title of a creative work. Do not use it for author names or quotes themselves. It typically renders as italics by default.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

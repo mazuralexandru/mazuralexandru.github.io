@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>181. Reset: Removing <code>target</code>/<code>rel</code> Example</h1>
+<p>We have now covered the <code class="language-html">target</code> attribute and the essential <code>rel=&quot;noopener noreferrer&quot;</code> addition for <code>target=&quot;_blank&quot;</code>.</p>
+<p>Next, we will explore how anchor elements can link to specific types of resources beyond standard web pages, such as files (<code>.pdf</code>, <code>.zip</code>), and special protocols like <code>mailto:</code> and <code>tel:</code>.</p>
+<p>To prepare, let&#39;s remove the link example we used for demonstrating <code>target</code> and <code>rel</code>.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention to the <code>href</code> attribute again, but this time focusing on the <em>type</em> of resource or protocol it points to.</li>
+<li><strong>Clean Slate:</strong> Remove the specific external link to MDN, which isn&#39;t needed for demonstrating links to files or protocols.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;a&gt;</code> element example from <code class="language-text">index.html</code> and updated the surrounding text.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Linking to Resources&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Preparing to demonstrate links to non-HTML resources.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;p&gt;
+    &lt;!-- Removed previous link example --&gt;
+    &lt;!-- &lt;a href=&quot;https://developer.mozilla.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; MDN Home (New Tab, Safest) &lt;/a&gt; --&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;Anchors can link to PDFs, images, etc.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the previous anchor link example is gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview shows the heading and introductory text for the next section.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the <code>target</code>/<code>rel</code> example prepares the page for demonstrating how <code>href</code> can be used to link to different kinds of resources and protocols.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

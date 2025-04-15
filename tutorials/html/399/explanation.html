@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>399. Spanning Rows: <code>rowspan</code> Example</h1>
+<p>Let&#39;s apply <code class="language-html">rowspan</code> to create a row header that spans multiple data rows.</p>
+<p><strong>Scenario:</strong> Imagine our table now groups items by type, and we want the &quot;Type&quot; header (like &quot;Alpha&quot;) to apply to multiple rows of associated names/values.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve modified the <code class="language-html">&lt;tbody&gt;</code> in <code class="language-text">index.html</code>:</p>
+<ol>
+<li>Added <code>rowspan=&quot;2&quot;</code> to the first row header (<code class="language-html">&lt;th scope=&quot;row&quot;&gt;Alpha&lt;/th&gt;</code>).</li>
+<li>Added data cells for the first row (<code>A1</code>, <code>A2</code>).</li>
+<li>The <strong>second row</strong> now <strong>omits the first <code class="language-html">&lt;th&gt;</code> cell</strong> because the &quot;Alpha&quot; cell from the row above spans down into this row&#39;s first column slot. It starts directly with the <code class="language-html">&lt;td&gt;</code> for the &quot;Name&quot; column (<code>B1</code>).</li>
+<li>Added a third row to show a different type (&quot;Beta&quot;).</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Spanning Columns &amp; Rows&lt;/h1&gt;
+  &lt;p&gt;Using &#39;rowspan&#39; on a header cell (th):&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;col&quot;&gt;Type&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;Name&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot; rowspan=&quot;2&quot;&gt;Alpha&lt;/th&gt; &lt;!-- Row Header spanning 2 rows --&gt;
+        &lt;td&gt;A1&lt;/td&gt;
+        &lt;td&gt;A2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;!-- No th needed here for Type column due to rowspan --&gt;
+        &lt;td&gt;B1&lt;/td&gt; &lt;!-- This cell is in the &#39;Name&#39; column --&gt;
+        &lt;td&gt;B2&lt;/td&gt; &lt;!-- This cell is in the &#39;Value&#39; column --&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt; &lt;!-- Third Row --&gt;
+        &lt;th scope=&quot;row&quot;&gt;Beta&lt;/th&gt;
+        &lt;td&gt;C1&lt;/td&gt;
+        &lt;td&gt;C2&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;p&gt;The &quot;Alpha&quot; header spans two rows vertically.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code class="language-html">&lt;tbody&gt;</code> structure carefully in <code class="language-text">index.html</code>. Note the <code>rowspan=&quot;2&quot;</code> on the first <code class="language-html">&lt;th&gt;</code>. Critically, observe that the <em>second</em> <code class="language-html">&lt;tr&gt;</code> only contains <em>two</em> <code class="language-html">&lt;td&gt;</code> elements, lacking the initial <code class="language-html">&lt;th&gt;</code>.</li>
+<li>Look at the browser preview:<ul>
+<li>The cell containing &quot;Alpha&quot; visually extends downwards, covering the vertical space next to both the &quot;A1/A2&quot; row and the &quot;B1/B2&quot; row.</li>
+<li>The &quot;B1&quot; and &quot;B2&quot; cells correctly align under the &quot;Name&quot; and &quot;Value&quot; column headers, respectively.</li>
+<li>The &quot;Beta&quot; row appears below the spanned &quot;Alpha&quot; section.</li>
+<li>The <code>rowspan</code> attribute created the desired merged vertical cell.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Apply <code class="language-html">rowspan=&quot;number&quot;</code> to a <code class="language-html">&lt;th&gt;</code> or <code class="language-html">&lt;td&gt;</code> to make it span <code>number</code> rows vertically. Ensure you <strong>omit</strong> the corresponding cells from the subsequent <code>number - 1</code> rows in the HTML source code to accommodate the span.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

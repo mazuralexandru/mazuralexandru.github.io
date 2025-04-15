@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>564. Multimedia: Video Tracks (<code class="language-html">&lt;track&gt;</code>) - Core Mechanics (<code>kind</code>, <code>src</code>, <code>srclang</code>, <code>label</code>, <code>default</code>)</h1>
+<p>Let&#39;s add <code class="language-html">&lt;track&gt;</code> elements and examine their essential attributes.</p>
+<p><strong>Syntax Recap:</strong></p>
+<ul>
+<li><code class="language-html">&lt;track kind=&quot;...&quot; src=&quot;...&quot; srclang=&quot;...&quot; label=&quot;...&quot; default&gt;</code></li>
+<li>Void element, child of <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code>, after <code class="language-html">&lt;source&gt;</code>.</li>
+</ul>
+<p><strong>Key Attributes:</strong></p>
+<ol>
+<li><strong><code>kind</code> [Required]:</strong> Defines the <em>type</em> of text track. Crucial for browser/assistive technology interpretation.<ul>
+<li><code class="language-html">subtitles</code>: Translations of dialogue for users who don&#39;t understand the audio language.</li>
+<li><code class="language-html">captions</code>: Transcription of dialogue <strong>plus</strong> descriptions of important sounds (e.g., <code>[Door slams]</code>). For deaf/hard-of-hearing users. <strong>Often the most critical type for accessibility.</strong></li>
+<li><code class="language-html">descriptions</code>: Text descriptions of key visual information needed by visually impaired users. Intended to be read aloud.</li>
+<li><code class="language-html">chapters</code>: Chapter titles for navigating the media.</li>
+<li><code class="language-html">metadata</code>: Not user-visible; provides timed cues for JavaScript interaction.</li>
+</ul>
+</li>
+<li><strong><code>src</code> [Required]:</strong> URL (absolute or relative) of the WebVTT (<code>.vtt</code>) file containing the timed text cues.</li>
+<li><strong><code>srclang</code> [Required for <code>subtitles</code>/<code>captions</code>/<code>descriptions</code>]:</strong> The language of the track text (e.g., <code>en</code>, <code>es</code>). Helps users select the correct language track.</li>
+<li><strong><code>label</code> [Required]:</strong> A user-friendly title for the track displayed in the browser&#39;s track selection menu (e.g., &quot;English Captions&quot;, &quot;Audio Description&quot;).</li>
+<li><strong><code>default</code> (Boolean):</strong> If present, this track should be enabled by default (subject to user preferences). Only one track <em>per kind</em> should be marked <code>default</code>.</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added several <code class="language-html">&lt;track&gt;</code> elements inside the <code class="language-html">&lt;video&gt;</code> tag in <code>index.html</code>, demonstrating different <code>kind</code> values and the required attributes. Paths are hypothetical.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;&gt;
+    &lt;source src=&quot;/videos/example.webm&quot; type=&quot;video/webm&quot;&gt;
+    &lt;source src=&quot;/videos/example.mp4&quot; type=&quot;video/mp4&quot;&gt;
+
+    &lt;!-- Added track elements --&gt;
+    &lt;track kind=&quot;captions&quot; src=&quot;/videos/captions_en.vtt&quot; srclang=&quot;en&quot; label=&quot;English Captions&quot; default&gt;
+    &lt;track kind=&quot;subtitles&quot; src=&quot;/videos/subtitles_es.vtt&quot; srclang=&quot;es&quot; label=&quot;Español Subtítulos&quot;&gt;
+    &lt;track kind=&quot;descriptions&quot; src=&quot;/videos/desc_en.vtt&quot; srclang=&quot;en&quot; label=&quot;English Descriptions&quot;&gt;
+    &lt;track kind=&quot;chapters&quot; src=&quot;/videos/chapters_en.vtt&quot; srclang=&quot;en&quot; label=&quot;Chapters&quot;&gt;
+
+    &lt;p&gt;Fallback content&lt;/p&gt;
+  &lt;/video&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the different <code class="language-html">&lt;track&gt;</code> elements within <code class="language-html">&lt;video&gt;</code>. Note how each has <code>kind</code>, <code>src</code>, <code>srclang</code> (where appropriate), and <code>label</code>. Note the <code>default</code> attribute on the English captions.</li>
+<li>Look at the browser preview. The video player itself looks the same (still likely showing an error for the non-existent video source).</li>
+<li><strong>UI Change:</strong> However, if you examine the default <code>controls</code>, you might now see a new button or menu specifically for <strong>captions/subtitles</strong> (often looking like a speech bubble or &quot;CC&quot;). Clicking this (if the video were playing) would reveal the available tracks based on their <code>label</code> attributes (&quot;English Captions&quot;, &quot;Español Subtítulos&quot;, etc.), allowing the user to turn them on or off. The &quot;English Captions&quot; would be selected initially because of the <code>default</code> attribute.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;track&gt;</code> elements after <code class="language-html">&lt;source&gt;</code> inside <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code>. Specify the track&#39;s purpose with <code>kind</code>, its location with <code>src</code>, its language with <code>srclang</code>, its menu title with <code>label</code>, and optionally set one per kind as <code>default</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

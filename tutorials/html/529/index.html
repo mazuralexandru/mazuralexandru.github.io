@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML - IFrames</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add basic iframe style */
+    iframe {
+      border: 1px solid skyblue; /* Visualize the frame */
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Embedding External Content (&lt;iframe&gt;)</h1>
+  <p>Embedding an external page (e.g., a video player).</p> <!-- Adjusted P -->
+
+  <!-- Added iframe example -->
+  <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" <!-- Example YouTube embed URL -->
+          title="YouTube video player: Rick Astley - Never Gonna Give You Up" <!-- CRITICAL title -->
+          frameborder="0" <!-- Legacy attribute, use CSS border:none; instead -->
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen> <!-- Allow fullscreen -->
+    <!-- Fallback content for browsers that don't support iframe -->
+    <p>Your browser does not support iframes. <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Watch video on YouTube</a>.</p>
+  </iframe>
+
+  <p>Requires 'src' and 'title' attributes.</p>
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

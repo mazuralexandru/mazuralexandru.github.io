@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>670. How to Validate: IDE / Editor Integration</h1>
+<p>Perhaps the most efficient way to catch validation errors <em>during</em> development is by integrating validation tools directly into your code editor or Integrated Development Environment (IDE).</p>
+<p><strong>Linters &amp; Validation Plugins:</strong></p>
+<ul>
+<li><strong>Concept:</strong> Most modern code editors (like Visual Studio Code, Sublime Text, Atom, WebStorm, etc.) have a rich ecosystem of extensions or plugins. Many of these provide &quot;linting&quot; or validation capabilities for various languages, including HTML.</li>
+<li><strong>How they Work:</strong> These extensions typically run a validation engine in the background as you type or when you save a file. They analyze your HTML code and highlight potential errors or warnings directly in the editor interface.</li>
+<li><strong>Common Engines Used:</strong><ul>
+<li><strong>HTMLHint:</strong> A popular, configurable static code analysis tool for HTML. Often available as an editor extension. Focuses on best practices and common errors, not always strict spec validation.</li>
+<li><strong>Nu Html Checker Integration:</strong> Some extensions allow integration with a local installation of the official Nu Html Checker (requires Java), providing authoritative validation feedback directly in the editor.</li>
+<li>Other linters or custom rule sets.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Features &amp; Benefits:</strong></p>
+<ul>
+<li><strong>Real-time Feedback:</strong> Errors and warnings are often highlighted immediately (e.g., with underlines or icons in the margin) as you type, allowing for instant correction.</li>
+<li><strong>Problem Lists:</strong> Most integrations provide a panel or list summarizing all detected issues in the current file, often with clickable links to jump directly to the relevant line of code.</li>
+<li><strong>Convenience:</strong> Validation happens within your primary development environment, avoiding the need to constantly switch to an online validator or browser extension. Faster feedback loop.</li>
+<li><strong>Configurability:</strong> Many linters (like HTMLHint) allow you to configure which rules to enforce, enabling customization based on project standards (though sticking close to official spec validation is generally best).</li>
+</ul>
+<p><strong>Considerations:</strong></p>
+<ul>
+<li><strong>Setup:</strong> Requires finding and installing the appropriate extension for your editor. Nu Html Checker integration might require installing Java and the checker itself.</li>
+<li><strong>Accuracy:</strong> Ensure the extension uses an up-to-date validation engine or rule set if strict HTML5 compliance is critical. Results might occasionally differ slightly from the official online validators.</li>
+<li><strong>Configuration:</strong> May require some initial configuration to set rule preferences or point to a local validator engine.</li>
+</ul>
+<p><strong>Recommendation:</strong> Integrating an HTML linter/validator into your code editor is <strong>highly recommended</strong> for catching errors early and improving code quality throughout the development process. Supplement this with occasional checks using an authoritative online validator (W3C/Nu) for final verification.</p>
+<p>✅ <strong>Observation:</strong> No code changes. If you are using an editor like VS Code, explore its &quot;Extensions&quot; marketplace and search for &quot;HTMLHint&quot; or &quot;HTML Validator&quot; to see examples of available plugins. Notice how they promise real-time feedback within the editor.</p>
+<p>✨ <strong>Key Takeaway:</strong> Integrating HTML validation directly into your code editor/IDE via extensions (using engines like HTMLHint or Nu Html Checker) provides immediate feedback during development, significantly improving efficiency and code quality.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>587. Graphics: Overview - Beyond <code class="language-html">&lt;img&gt;</code></h1>
+<p>Let&#39;s start by quickly revisiting standard images (<code class="language-html">&lt;img&gt;</code>) and understanding why we need other graphics technologies.</p>
+<p><strong><code class="language-html">&lt;img&gt;</code> Recap:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Displays pre-existing image files (JPEG, PNG, GIF, WebP, AVIF, SVG).</li>
+<li><strong>Nature:</strong> Primarily displays static content (though animated GIFs/WebP/AVIF exist).</li>
+<li><strong>Limitations:</strong><ul>
+<li><strong>Resolution Dependence (Bitmap):</strong> For formats like JPEG, PNG, GIF, WebP, AVIF (which are raster/bitmap), scaling them <em>up</em> significantly leads to pixelation and loss of quality. They have fixed pixel dimensions.</li>
+<li><strong>Limited Interactivity:</strong> Difficult to interact with individual <em>parts</em> of a raster image using CSS or JavaScript.</li>
+<li><strong>Dynamic Generation:</strong> Cannot easily generate complex graphics dynamically on the client-side based on data or user input using only <code class="language-html">&lt;img&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Need for Dynamic/Scalable Graphics:</strong></p>
+<p>Many web scenarios require more than static images:</p>
+<ul>
+<li><strong>Resolution Independence:</strong> Logos and icons that need to look crisp on any screen size or zoom level (including high-DPI/Retina displays).</li>
+<li><strong>Interactivity:</strong> Graphics where users can interact with specific parts (clicking shapes in a diagram, hovering over chart segments).</li>
+<li><strong>Dynamic Data Visualization:</strong> Charts and graphs generated based on changing data.</li>
+<li><strong>Animation:</strong> Complex visual effects or character animations beyond simple GIFs.</li>
+<li><strong>Games:</strong> Real-time rendering of game scenes.</li>
+<li><strong>Image Manipulation:</strong> Client-side photo editing or effects generation.</li>
+</ul>
+<p><strong>HTML5 Solutions: <code class="language-html">&lt;canvas&gt;</code> and <code class="language-html">&lt;svg&gt;</code></strong></p>
+<p>These two technologies address the limitations of <code class="language-html">&lt;img&gt;</code>:</p>
+<ol>
+<li><strong><code class="language-html">&lt;canvas&gt;</code>:</strong> Provides a <strong>bitmap</strong> drawing surface controlled by <strong>JavaScript</strong>. Excellent for dynamic graphics, pixel manipulation, and complex scenes where performance is key. Resolution-dependent.</li>
+<li><strong><code class="language-html">&lt;svg&gt;</code>:</strong> Defines <strong>vector</strong> graphics using <strong>XML markup</strong>. Scales infinitely without quality loss. Ideal for logos, icons, illustrations. Integrates with CSS and DOM/JavaScript.</li>
+</ol>
+<p>We&#39;ll explore the fundamental differences next.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Understand the limitations of standard bitmap images (<code class="language-html">&lt;img&gt;</code>) concerning scaling and interactivity, setting the stage for why <code class="language-html">&lt;canvas&gt;</code> and <code class="language-html">&lt;svg&gt;</code> are necessary for other types of graphics.</p>
+<p>✨ <strong>Key Takeaway:</strong> While <code class="language-html">&lt;img&gt;</code> is for displaying existing images, <code class="language-html">&lt;canvas&gt;</code> (bitmap, JS-driven) and <code class="language-html">&lt;svg&gt;</code> (vector, XML-based) provide native HTML mechanisms for creating dynamic, interactive, or resolution-independent graphics.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

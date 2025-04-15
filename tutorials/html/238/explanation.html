@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>238. The <code>width</code> and <code>height</code> Attributes - Definition &amp; Syntax</h1>
+<p>Besides <code class="language-html">src</code> and <code class="language-html">alt</code>, two other very important attributes for the <code class="language-html">&lt;img&gt;</code> element are <code class="language-html">width</code> and <code class="language-html">height</code>.</p>
+<p><strong>The <code class="language-html">width</code> and <code class="language-html">height</code> Attributes:</strong></p>
+<ul>
+<li><strong>Definition:</strong> Specify the <strong>intrinsic dimensions</strong> (the actual size) of the image file.</li>
+<li><strong>Purpose:</strong> Primarily used by the browser to <strong>reserve space</strong> in the page layout <em>before</em> the image file finishes downloading. This helps prevent content jumping around as images load (Layout Shift).</li>
+<li><strong>Syntax:</strong><pre class="language-html"><code class="language-html">&lt;img src=&quot;...&quot; alt=&quot;...&quot; width=&quot;value&quot; height=&quot;value&quot;&gt;
+</code></pre>
+<ul>
+<li>The <code class="language-html">value</code> for both attributes should be an <strong>integer representing pixels</strong>.</li>
+<li><strong>Crucially, do NOT include units like <code class="language-text">px</code></strong>. Just the number is required (e.g., <code class="language-html">width=&quot;300&quot;</code>, not <code class="language-html">width=&quot;300px&quot;</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why Pixels?</strong></p>
+<ul>
+<li>Even though CSS allows various units, the HTML <code class="language-html">width</code> and <code class="language-html">height</code> attributes historically (and currently) expect unitless integer values representing pixels. The browser uses these pixel dimensions to calculate the image&#39;s aspect ratio for layout reservation.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. We are defining the <code class="language-html">width</code> and <code class="language-html">height</code> attributes and their syntax before applying them.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">width</code> and <code class="language-html">height</code> attributes specify the image&#39;s dimensions in pixels (using unitless integer values) and are vital for layout stability during page load.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

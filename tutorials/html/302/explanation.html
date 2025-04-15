@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>302. Metadata: The <code class="language-html">&lt;head&gt;</code> Element Revisited - Core Mechanics</h1>
+<p>Let&#39;s review the structural rules and permitted contents of the <code class="language-html">&lt;head&gt;</code> element.</p>
+<p><strong>Placement &amp; Context:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;head&gt;</code> element <strong>must</strong> be the <strong>first element</strong> directly inside the root <code class="language-html">&lt;html&gt;</code> element.</li>
+<li>It is always followed immediately by the <code class="language-html">&lt;body&gt;</code> element.</li>
+<li>Only <strong>one</strong> <code class="language-html">&lt;head&gt;</code> element is allowed per document.</li>
+<li>Syntax: It requires opening <code class="language-html">&lt;head&gt;</code> and closing <code class="language-html">&lt;/head&gt;</code> tags.</li>
+</ul>
+<p><strong>Permitted Content (Metadata Elements):</strong></p>
+<p>The <code class="language-html">&lt;head&gt;</code> element is designed to contain specific types of child elements that define metadata or link resources. The primary ones are:</p>
+<ol>
+<li><strong><code class="language-html">&lt;title&gt;</code> (Required):</strong> Exactly one <code class="language-html">&lt;title&gt;</code> element defining the document&#39;s title <em>must</em> be present within the <code class="language-html">&lt;head&gt;</code>.</li>
+<li><strong><code class="language-html">&lt;meta&gt;</code> (Zero or more):</strong> Used for various types of metadata (character set, viewport, description, keywords, etc.). We&#39;ll focus heavily on this element soon.</li>
+<li><strong><code class="language-html">&lt;link&gt;</code> (Zero or more):</strong> Used to link external resources, most commonly CSS stylesheets (<code class="language-html">rel=&quot;stylesheet&quot;</code>) but also icons (<code class="language-html">rel=&quot;icon&quot;</code>), fonts, alternate page versions, etc.</li>
+<li><strong><code class="language-html">&lt;style&gt;</code> (Zero or more):</strong> Used to embed CSS styles directly within the HTML document (internal styles). Generally less preferred than external stylesheets via <code class="language-html">&lt;link&gt;</code>.</li>
+<li><strong><code class="language-html">&lt;script&gt;</code> (Zero or more):</strong> Used to embed JavaScript code or link to external JavaScript files. While allowed in <code class="language-html">&lt;head&gt;</code>, scripts can also appear in <code class="language-html">&lt;body&gt;</code> (often placed just before the closing <code class="language-html">&lt;/body&gt;</code> tag for performance reasons).</li>
+<li><strong><code class="language-html">&lt;base&gt;</code> (Zero or one):</strong> Specifies a base URL against which all relative URLs in the document are resolved.</li>
+<li><strong><code class="language-html">&lt;noscript&gt;</code> (Zero or more):</strong> Contains content that is rendered only if JavaScript is disabled in the browser. Can contain <code>link</code>, <code>style</code>, and <code>meta</code> elements when used within <code class="language-html">&lt;head&gt;</code>.</li>
+</ol>
+<p><strong>Prohibited Content:</strong></p>
+<p>It&#39;s crucial to remember that elements intended for the main visible content of the page, such as <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>, <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;div&gt;</code>, etc., are <strong>invalid</strong> if placed directly inside the <code class="language-html">&lt;head&gt;</code> element. They belong in the <code class="language-html">&lt;body&gt;</code>.</p>
+<p>✅ <strong>Observation:</strong> Look again at the <code class="language-text">index.html</code> file structure. Verify the placement of <code class="language-html">&lt;head&gt;</code> between <code class="language-html">&lt;html&gt;</code> and <code class="language-html">&lt;body&gt;</code>. Identify the current children within <code class="language-html">&lt;head&gt;</code> (<code class="language-html">&lt;meta&gt;</code>, <code class="language-html">&lt;title&gt;</code>, <code class="language-html">&lt;link&gt;</code>) – these all fit the permitted content model.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;head&gt;</code> contains specific metadata elements (<code class="language-html">&lt;title&gt;</code>, <code class="language-html">&lt;meta&gt;</code>, <code class="language-html">&lt;link&gt;</code>, <code class="language-html">&lt;style&gt;</code>, <code class="language-html">&lt;script&gt;</code>, <code class="language-html">&lt;base&gt;</code>, <code class="language-html">&lt;noscript&gt;</code>) and must not contain visible content elements like <code class="language-html">&lt;p&gt;</code> or <code class="language-html">&lt;h1&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

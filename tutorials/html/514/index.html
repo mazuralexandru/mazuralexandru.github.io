@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic landmark/section visualization */
+    body > header, body > nav, body > main, body > footer, main article, main section, main aside {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    nav ul { list-style: none; padding: 0; } /* Basic nav list style */
+    nav li { display: inline-block; margin-right: 10px; }
+    article header h2, section h3 { margin: 0 0 0.5em 0; } /* Basic heading style */
+  </style>
+</head>
+<body>
+  <header>...</header>
+
+  <main>
+    <h1>Main Content Title (Blog Page Example)</h1>
+
+    <article>
+      <header>
+        <h2>Blog Post Title One</h2>
+        <p>Published on <time datetime="2024-03-15">March 15, 2024</time></p>
+      </header>
+      <p>This is the introductory paragraph of the blog post...</p>
+
+      <!-- Added section element -->
+      <section>
+        <h3>Subsection: Key Features</h3> <!-- Heading REQUIRED for section -->
+        <p>This section details the key features discussed in the blog post.</p>
+        <ul>
+          <li>Feature A</li>
+          <li>Feature B</li>
+        </ul>
+      </section>
+
+      <p>Concluding paragraph for the blog post...</p>
+    </article>
+
+  </main>
+
+  <footer>...</footer>
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>284. The <code>style</code> Attribute - Behavior &amp; Interactions (Specificity)</h1>
+<p>A key aspect of inline styles is their impact on the <strong>CSS Cascade and Specificity</strong>.</p>
+<p><strong>Highest Specificity:</strong></p>
+<ul>
+<li>As mentioned in the introduction to CSS Specificity (Lesson 270 regarding IDs), styles applied directly using the <code class="language-html">style</code> attribute have the <strong>highest level of specificity</strong>, surpassed only by CSS rules marked with <code class="language-css">!important</code>.</li>
+<li><strong>Order:</strong> Inline Styles &gt; ID Selectors &gt; Class/Attribute/Pseudo-class Selectors &gt; Type Selectors.</li>
+</ul>
+<p><strong>Overriding Power:</strong></p>
+<ul>
+<li>This high specificity means that an inline style will <strong>override</strong> conflicting styles for the same property defined in external stylesheets (<code class="language-html">&lt;link&gt;</code>), internal stylesheets (<code class="language-html">&lt;style&gt;</code>), or through less specific CSS selectors (like type or class selectors).</li>
+</ul>
+<p><strong>Example Scenario:</strong></p>
+<p>Imagine you have this CSS in <code class="language-text">style.css</code>:</p>
+<pre class="language-css"><code class="language-css">p { /* Type selector - low specificity */
+  color: lightblue;
+  border: none;
+}
+
+.special-paragraph { /* Class selector - medium specificity */
+  color: yellow;
+}
+</code></pre>
+<p>And this HTML:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- Conceptual Example --&gt;
+&lt;p class=&quot;special-paragraph&quot; style=&quot;color: limegreen; border: 1px solid green;&quot;&gt;
+  This paragraph has conflicting styles.
+&lt;/p&gt;
+</code></pre>
+<p><strong>Outcome:</strong></p>
+<ul>
+<li>The text color will be <strong>limegreen</strong> (from the inline <code class="language-html">style</code>), because inline style overrides both the class (<code class="language-css">yellow</code>) and type (<code class="language-css">lightblue</code>) selector rules for <code class="language-css">color</code>.</li>
+<li>The paragraph will have a <strong>1px solid green border</strong> (from the inline <code class="language-html">style</code>), overriding the <code class="language-css">border: none;</code> from the type selector.</li>
+<li>The paragraph <em>might</em> inherit other styles from the <code class="language-css">p</code> or <code class="language-css">.special-paragraph</code> rules if those properties weren&#39;t set inline (e.g., <code>font-family</code> if not set inline).</li>
+</ul>
+<p><strong>Why This Matters (and Why It&#39;s Often Problematic):</strong></p>
+<ul>
+<li>The high specificity makes inline styles <strong>difficult to override</strong> with external CSS rules. If you need to change the style later, you might be forced to edit the HTML directly or use <code class="language-css">!important</code> in your CSS (which is generally considered bad practice as it makes debugging harder).</li>
+<li>This lack of flexibility is a major reason why inline styles are discouraged for general page styling. Centralizing styles in CSS files using classes provides much better control and maintainability.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Look at the styled paragraph in the preview. Understand that its red color and border (defined inline) would override any <code class="language-css">color</code> or <code class="language-css">border</code> rules defined for <code class="language-css">p</code> elements in the <code class="language-text">style.css</code> file, because the inline style has higher specificity.</p>
+<p>✨ <strong>Key Takeaway:</strong> Inline styles have the highest specificity (except for <code class="language-css">!important</code>), meaning they override styles from external/internal stylesheets and less specific selectors. This makes them powerful but difficult to manage and override.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

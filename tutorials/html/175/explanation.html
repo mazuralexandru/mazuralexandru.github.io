@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>175. <code>target</code> Attribute: Use Cases Review</h1>
+<p>Let&#39;s quickly summarize the primary use cases for the common <code class="language-html">target</code> attribute values:</p>
+<ul>
+<li><p><strong><code>_self</code> (or omitted):</strong></p>
+<ul>
+<li><strong>Use Case:</strong> Default behavior. Used for standard navigation <em>within</em> your own website, moving from one page to the next in the same browser tab/window. Keeps the user in a single, continuous flow.</li>
+<li><strong>Example:</strong> Links in your main navigation menu, &quot;Read more&quot; links to internal articles, links between related product pages.</li>
+</ul>
+</li>
+<li><p><strong><code>_blank</code>:</strong></p>
+<ul>
+<li><strong>Use Case:</strong> Opening links in a <em>new</em> tab or window. Primarily used for:<ul>
+<li><strong>External Links:</strong> Linking to other websites while keeping your site open.</li>
+<li><strong>Documents/Files:</strong> Linking to resources like PDFs, spreadsheets, or images that users might want to view or download separately.</li>
+</ul>
+</li>
+<li><strong>Mandatory Addition:</strong> Requires <code>rel=&quot;noopener noreferrer&quot;</code> for security and performance (covered next).</li>
+</ul>
+</li>
+<li><p><strong><code>_parent</code> / <code>_top</code>:</strong></p>
+<ul>
+<li><strong>Use Case:</strong> Primarily used in the context of nested <code class="language-html">&lt;iframe&gt;</code> elements to control navigation out of frames. Less common in modern designs that avoid heavy framing.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-html">&lt;framename&gt;</code>:</strong></p>
+<ul>
+<li><strong>Use Case:</strong> Loading content into a <em>specific named iframe</em> on the page. Used for certain types of embedded content interactions.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Choosing the Right <code>target</code>:</strong></p>
+<p>The choice depends on the desired user experience:</p>
+<ul>
+<li>Want to keep the user flowing through your site? Use the default (<code>_self</code>).</li>
+<li>Want to let the user explore an external site or document without losing their place on your site? Use <code>_blank</code> (with <code>rel=&quot;noopener noreferrer&quot;</code>).</li>
+<li>Working with frames? Consider <code>_parent</code>, <code>_top</code>, or <code class="language-html">&lt;framename&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the link in the preview (<code>target=&quot;_blank&quot;</code>). Consider why <code>_blank</code> might be chosen for this link (it goes to an external site, MDN). Think about internal links on a typical website and why they usually use the default <code>_self</code> behavior.</p>
+<p>✨ <strong>Key Takeaway:</strong> Choose the <code>target</code> attribute value based on whether you want the link to open in the same context (<code>_self</code>/default) or a new one (<code>_blank</code>), considering user experience and the nature of the linked resource. Use frame-specific targets only when necessary.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

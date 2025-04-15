@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>246. Common Web Image Formats: SVG</h1>
+<p>A fundamentally different type of image format is <strong>SVG (Scalable Vector Graphics)</strong>.</p>
+<p><strong>SVG (Scalable Vector Graphics)</strong></p>
+<ul>
+<li><strong>File Extension:</strong> <code class="language-text">.svg</code></li>
+<li><strong>Best Use Cases:</strong> <strong>Logos, icons, illustrations, diagrams, charts</strong> – essentially any graphic that is <em>not</em> photographic and can be represented by lines, shapes, and curves.</li>
+<li><strong>Nature:</strong> It&#39;s a <strong>vector</strong> format, not a raster (pixel-based) format like JPEG, PNG, or GIF.<ul>
+<li><strong>Vector:</strong> Describes the image mathematically using shapes, lines, curves, and text defined in an <strong>XML</strong> markup language.</li>
+<li><strong>Raster:</strong> Stores the image as a grid of colored pixels.</li>
+</ul>
+</li>
+<li><strong>Scalability:</strong> Because it&#39;s vector-based, SVG images can be <strong>scaled up or down to any size without any loss of quality</strong> or pixelation. This is a major advantage for responsive design and high-resolution displays (like Retina screens).</li>
+<li><strong>File Size:</strong> Typically results in very <strong>small file sizes</strong> for simple to moderately complex graphics compared to equivalent raster formats. File size increases with complexity (number of points/shapes).</li>
+<li><strong>Editability &amp; Styling:</strong> SVG code (being XML) can be edited in text editors. Crucially, SVG elements can be styled using <strong>CSS</strong> (changing colors, strokes, fills, etc.) and manipulated using <strong>JavaScript</strong> (animating elements, making parts interactive).</li>
+<li><strong>Embedding:</strong> Can be embedded directly into HTML using the <code class="language-html">&lt;svg&gt;</code> tag or referenced externally via the <code class="language-html">&lt;img&gt;</code> tag&#39;s <code class="language-html">src</code> attribute.</li>
+<li><strong>Transparency:</strong> Naturally supports transparency.</li>
+</ul>
+<p><strong>When to Use SVG:</strong></p>
+<ul>
+<li>The preferred format for logos, icons, and illustrations whenever possible, due to scalability and small file sizes.</li>
+<li>When you need to style or animate parts of an image using CSS/JS.</li>
+</ul>
+<p><strong>When NOT to Use SVG:</strong></p>
+<ul>
+<li><strong>Photographs:</strong> Vector graphics are not suitable for representing the complex, continuous tonal variations of photographs. Use JPEG, WebP, or AVIF.</li>
+<li>Extremely complex illustrations with intricate textures might result in large SVG file sizes.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This lesson provides conceptual information about the SVG format.</p>
+<p>✨ <strong>Key Takeaway:</strong> SVG (<code class="language-text">.svg</code>) is an XML-based vector format ideal for logos, icons, and illustrations. Its key advantages are infinite scalability without quality loss, small file sizes for non-complex graphics, and the ability to be styled and manipulated with CSS and JavaScript. It&#39;s not suitable for photographs.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

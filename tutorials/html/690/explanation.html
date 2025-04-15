@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>690. Accessibility (A11y): Assistive Technologies (AT) Overview</h1>
+<p>To design accessible experiences, it&#39;s helpful to understand the types of <strong>Assistive Technologies (AT)</strong> that people with disabilities use to interact with the web. Well-structured, semantic HTML is the key interface between your website and these technologies.</p>
+<p><strong>Common Categories of Assistive Technologies:</strong></p>
+<ol>
+<li><p><strong>Screen Readers:</strong></p>
+<ul>
+<li><strong>Function:</strong> Software that reads the content of the screen aloud (text-to-speech) or outputs it to a refreshable Braille display. Users navigate using keyboard commands.</li>
+<li><strong>Users:</strong> Primarily people who are blind, but also users with low vision or certain cognitive/learning disabilities.</li>
+<li><strong>Relies On:</strong> Semantic HTML structure (headings, landmarks, lists, tables with scope), <code>alt</code> text for images, accessible names for controls (<code class="language-html">&lt;label&gt;</code>, ARIA), keyboard focus management.</li>
+<li><strong>Examples:</strong> JAWS (Windows), NVDA (Windows, free), VoiceOver (macOS/iOS), TalkBack (Android).</li>
+</ul>
+</li>
+<li><p><strong>Screen Magnifiers:</strong></p>
+<ul>
+<li><strong>Function:</strong> Software that enlarges a portion (or all) of the screen content.</li>
+<li><strong>Users:</strong> People with low vision.</li>
+<li><strong>Relies On:</strong> Content that reflows well when zoomed, sufficient color contrast, clear visual layout. <code>rem</code>/<code>em</code> units for text sizing help. Avoid fixed-size containers that hide content when zoomed.</li>
+</ul>
+</li>
+<li><p><strong>Keyboard-Only Navigation:</strong></p>
+<ul>
+<li><strong>Function:</strong> Using only the keyboard (<code>Tab</code>, <code>Shift+Tab</code>, <code>Enter</code>, <code>Space</code>, Arrow Keys) to navigate and interact with all page elements.</li>
+<li><strong>Users:</strong> People with motor impairments, screen reader users, power users, users with temporary injuries.</li>
+<li><strong>Relies On:</strong> All interactive elements being natively focusable or made focusable (<code>tabindex=&quot;0&quot;</code>), a <strong>visible focus indicator</strong>, a logical focus order (matching visual order), standard key interactions for controls.</li>
+</ul>
+</li>
+<li><p><strong>Speech Recognition / Voice Control:</strong></p>
+<ul>
+<li><strong>Function:</strong> Software allowing users to control the computer and dictate text using voice commands (e.g., &quot;Click Submit button,&quot; &quot;Scroll down&quot;).</li>
+<li><strong>Users:</strong> People with motor impairments, users performing hands-free tasks.</li>
+<li><strong>Relies On:</strong> Clear, unambiguous visible labels for controls and links (so users know what command to speak), well-defined interactive elements.</li>
+</ul>
+</li>
+<li><p><strong>Switch Devices:</strong></p>
+<ul>
+<li><strong>Function:</strong> Input devices (buttons, sip-and-puff controllers, etc.) used by people with severe motor impairments, often emulating keyboard input (like <code>Tab</code> and <code>Enter</code>).</li>
+<li><strong>Relies On:</strong> Everything that keyboard-only navigation relies on (focusable elements, visible focus, logical order).</li>
+</ul>
+</li>
+<li><p><strong>Other:</strong> Braille displays, alternative keyboards, reading aids, color contrast adjustment tools, etc.</p>
+</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Consider how each type of AT relies on different aspects of well-built HTML and CSS (semantics, focus management, contrast, responsive layout) to function effectively.</p>
+<p>✨ <strong>Key Takeaway:</strong> Assistive technologies like screen readers, magnifiers, and keyboard navigation depend heavily on semantic, well-structured, and keyboard-accessible HTML to provide access for users with disabilities.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

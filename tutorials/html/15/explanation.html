@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>15. Minimal HTML Document: The <code class="language-html">&lt;html&gt;</code> Element</h1>
+<p>After the DOCTYPE, the next essential part is the <strong><code class="language-html">&lt;html&gt;</code> element</strong>.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Acts as the <strong>root element</strong> for the entire HTML document.</li>
+<li>It&#39;s the main container that encloses <em>all</em> other HTML elements on the page (except for the <code class="language-html">&lt;!DOCTYPE html&gt;</code> declaration itself).</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li>It uses an opening tag <code class="language-html">&lt;html&gt;</code> and a closing tag <code class="language-html">&lt;/html&gt;</code>.</li>
+<li>All other page content and structure (like the <code class="language-html">&lt;head&gt;</code> and <code class="language-html">&lt;body&gt;</code> elements we&#39;ll add next) must be nested <em>inside</em> the <code class="language-html">&lt;html&gt;</code> element.</li>
+</ul>
+<p><strong>Placement:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;html&gt;</code> tag should appear immediately after the <code class="language-html">&lt;!DOCTYPE html&gt;</code> declaration.</li>
+<li>The <code class="language-html">&lt;/html&gt;</code> closing tag will be the very last thing in the HTML file.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added the <code class="language-html">&lt;html&gt;</code> opening and closing tags after the DOCTYPE in <code class="language-text">index.html</code>. We&#39;ve also moved the comment <em>inside</em> the <code class="language-html">&lt;html&gt;</code> element, as comments should reside within the structure.</p>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt; &lt;!-- Added opening tag --&gt;
+
+&lt;!-- Moved comment inside --&gt;
+&lt;!-- We will build the standard document structure soon --&gt;
+
+&lt;/html&gt; &lt;!-- Added closing tag --&gt;
+</code></pre>
+<p><em>Note: Indentation here is for readability; HTML ignores most whitespace.</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Check <code class="language-text">index.html</code>. Confirm the presence of the <code class="language-html">&lt;html&gt;</code> and <code class="language-html">&lt;/html&gt;</code> tags wrapping the comment.</li>
+<li>The browser preview is still blank. The <code class="language-html">&lt;html&gt;</code> element provides the overall container but doesn&#39;t have visible content itself.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;html&gt;</code> element is the root container for all your HTML code, placed immediately after the DOCTYPE.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

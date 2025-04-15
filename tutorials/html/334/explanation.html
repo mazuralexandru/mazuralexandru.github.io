@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>334. Metadata: The <code class="language-html">&lt;link&gt;</code> Element - Fundamentals</h1>
+<p>Let&#39;s formally introduce the <code class="language-html">&lt;link&gt;</code> element, which we&#39;ve already been using for our CSS.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;link&gt;</code> element specifies <strong>relationships</strong> between the current HTML document and <strong>external resources</strong>.</li>
+<li>It&#39;s used to link assets like stylesheets, icons, fonts, or provide hints about related documents (like alternate language versions or canonical URLs).</li>
+</ul>
+<p><strong>Element Category:</strong></p>
+<ul>
+<li><code class="language-html">&lt;link&gt;</code> is a <strong>void (or empty) element</strong>. It represents a relationship or connection, not content itself, so it <strong>has no closing tag</strong>.</li>
+<li>It belongs in the <strong><code class="language-html">&lt;head&gt;</code></strong> section of the HTML document.</li>
+</ul>
+<p><strong>Core Concept:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;link&gt;</code> tag doesn&#39;t directly embed content like <code class="language-html">&lt;img&gt;</code> or <code class="language-html">&lt;script&gt;</code>. Instead, it defines a <em>link</em> to an external resource and, crucially, describes the <em>type</em> of that link or the <em>relationship</em> of that resource to the current document using the mandatory <code class="language-html">rel</code> attribute.</li>
+<li>The browser uses the <code class="language-html">rel</code> attribute to understand how to use the resource specified in the <code class="language-html">href</code> attribute.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes yet. Review the existing <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code> in the <code class="language-html">&lt;head&gt;</code> of <code>index.html</code>. Understand that <code>link</code> connects to an external file, and <code>rel=&quot;stylesheet&quot;</code> tells the browser <em>how</em> to use that file (apply it as CSS).</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;link&gt;</code> element, placed in the <code class="language-html">&lt;head&gt;</code>, is a void element used to define relationships between the current document and external resources like stylesheets, icons, or related pages. The <code>rel</code> attribute is key to defining this relationship.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

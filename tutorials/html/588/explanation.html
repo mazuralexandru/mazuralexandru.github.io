@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>588. Graphics: Bitmap (Raster) vs. Vector - Fundamental Distinction 1</h1>
+<p>Before diving into <code class="language-html">&lt;canvas&gt;</code> and <code class="language-html">&lt;svg&gt;</code> specifically, it&#39;s crucial to understand the fundamental difference between the two main types of digital graphics they represent: <strong>Bitmap (Raster)</strong> and <strong>Vector</strong>.</p>
+<p><strong>1. Bitmap Graphics (Raster Graphics)</strong></p>
+<ul>
+<li><strong>Representation:</strong> Stores the image as a <strong>grid of individual pixels</strong> (picture elements). Each pixel has a specific color value.</li>
+<li><strong>Examples:</strong> Common image formats like JPEG (<code class="language-text">.jpg</code>), PNG (<code class="language-text">.png</code>), GIF (<code class="language-text">.gif</code>), WebP (<code class="language-text">.webp</code>), AVIF (<code class="language-text">.avif</code>). The HTML <code class="language-html">&lt;canvas&gt;</code> element creates a bitmap drawing surface.</li>
+<li><strong>Scalability:</strong> <strong>Resolution-dependent.</strong> They have a fixed number of pixels. Scaling a bitmap image <em>larger</em> than its original size causes the browser to guess the colors of the new pixels, resulting in <strong>blurriness or pixelation</strong> (loss of quality). Scaling down can also lose detail.</li>
+<li><strong>File Size:</strong> Depends on the number of pixels (width x height) and the color depth/complexity, as well as the compression algorithm used (lossy like JPEG, or lossless like PNG). Large dimensions or many colors generally mean larger files.</li>
+<li><strong>Editing:</strong> Edits typically involve changing the color values of individual pixels (like using a paintbrush tool).</li>
+<li><strong>Best For:</strong> Complex images with continuous tones and subtle color variations, like <strong>photographs</strong>.</li>
+</ul>
+<p><strong>2. Vector Graphics</strong></p>
+<ul>
+<li><strong>Representation:</strong> Stores the image as a set of <strong>mathematical instructions</strong> describing geometric shapes: points, lines, curves, polygons, text. It defines objects based on their attributes (position, size, color, stroke, etc.).</li>
+<li><strong>Examples:</strong> SVG (<code class="language-text">.svg</code>) is the primary vector format for the web. Other vector formats exist (AI, EPS) but aren&#39;t directly rendered by browsers without conversion.</li>
+<li><strong>Scalability:</strong> <strong>Resolution-independent.</strong> Because the image is described mathematically, it can be scaled up or down to <strong>any size without any loss of quality or clarity</strong>. Lines and curves remain perfectly sharp.</li>
+<li><strong>File Size:</strong> Depends on the <strong>complexity</strong> of the graphic (number of shapes, points, effects). Simple vector graphics (like logos or icons) are often very small. Very complex illustrations can become large. File size is independent of display dimensions.</li>
+<li><strong>Editing:</strong> Edits involve modifying the mathematical descriptions of the shapes (moving points, changing stroke widths, altering colors).</li>
+<li><strong>Best For:</strong> Graphics composed of distinct shapes, lines, and text, such as <strong>logos, icons, illustrations, diagrams, typography, infographics.</strong></li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This is a core conceptual distinction. Think about zooming into a photograph (JPEG) versus zooming into a company logo (often SVG) – the photo becomes blurry, while the logo stays sharp. <code class="language-html">&lt;canvas&gt;</code> operates on pixels (like JPEG/PNG), while <code class="language-html">&lt;svg&gt;</code> operates on shapes.</p>
+<p>✨ <strong>Key Takeaway:</strong> Bitmap/Raster graphics (<code class="language-html">&lt;canvas&gt;</code>, JPEG, PNG) are grids of pixels and lose quality when scaled. Vector graphics (<code class="language-html">&lt;svg&gt;</code>) use mathematical descriptions and scale perfectly without quality loss. Choose based on content type (photos vs. illustrations/icons).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

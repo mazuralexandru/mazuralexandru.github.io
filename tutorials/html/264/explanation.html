@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>264. Attributes: Syntax Recap</h1>
+<p>Let&#39;s solidify the syntax rules for writing attributes.</p>
+<p><strong>Core Syntax (<code class="language-html">name=&quot;value&quot;</code>)</strong></p>
+<ul>
+<li><strong>Placement:</strong> Attributes are <strong>always</strong> placed within the <strong>opening tag</strong> of an element, after the element name.<ul>
+<li>Correct: <code class="language-html">&lt;p lang=&quot;en&quot;&gt;</code></li>
+<li>Incorrect: <code class="language-html">&lt;p&gt; lang=&quot;en&quot;&lt;/p&gt;</code> or <code class="language-html">&lt;p lang=&quot;en&quot;&gt;&lt;/p lang=&quot;en&quot;&gt;</code></li>
+</ul>
+</li>
+<li><strong>Structure:</strong> Typically consists of the attribute <code>name</code>, followed by an equals sign (<code>=</code>), followed by the attribute <code>value</code> enclosed in quotes.</li>
+<li><strong>Whitespace:</strong><ul>
+<li>Space(s) must separate the element name from the first attribute, and between multiple attributes.<ul>
+<li>Example: <code class="language-html">&lt;img src=&quot;...&quot; alt=&quot;...&quot; width=&quot;...&quot;&gt;</code></li>
+</ul>
+</li>
+<li>Whitespace around the equals sign (<code class="language-html">name = &quot;value&quot;</code>) is technically allowed but unconventional. Standard practice is <code class="language-html">name=&quot;value&quot;</code>.</li>
+</ul>
+</li>
+<li><strong>Value Quoting:</strong><ul>
+<li><strong>Double Quotes (<code class="language-html">&quot;value&quot;</code>):</strong> This is the <strong>most common and recommended</strong> convention. It&#39;s clear and handles most values easily.<ul>
+<li>Example: <code class="language-html">class=&quot;error-message&quot;</code></li>
+</ul>
+</li>
+<li><strong>Single Quotes (<code class="language-html">&#39;value&#39;</code>):</strong> Also valid. Useful if the attribute value itself needs to contain double quotes.<ul>
+<li>Example: <code class="language-html">onclick=&#39;alert(&quot;Hello!&quot;);&#39;</code> (Though inline JS is generally discouraged).</li>
+</ul>
+</li>
+<li><strong>Unquoted Values (Discouraged):</strong> Technically valid <em>only</em> if the value contains no whitespace, <code>&quot;</code>, <code>&#39;</code>, <code>=</code>, <code>&lt;</code>, <code>&gt;</code>, or <code>`</code> characters. This is considered <strong>bad practice</strong> as it&#39;s error-prone and less readable. <strong>Always use quotes.</strong><ul>
+<li>Example (Valid but Bad): <code class="language-html">&lt;input type=text&gt;</code></li>
+<li>Example (Invalid): <code class="language-html">&lt;div class=error message&gt;</code> (Space requires quotes).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Boolean Attributes</strong></p>
+<ul>
+<li><strong>Syntax:</strong> For attributes that represent a true/false state, you only need to include the attribute name; its presence implies <code>true</code>.<ul>
+<li>Example: <code class="language-html">&lt;input type=&quot;checkbox&quot; checked&gt;</code> (The <code>checked</code> attribute is present).</li>
+<li>Example: <code class="language-html">&lt;input type=&quot;checkbox&quot;&gt;</code> (The <code>checked</code> attribute is absent, implying false).</li>
+</ul>
+</li>
+<li><strong>Historical Note:</strong> XHTML required boolean attributes to be written as <code class="language-html">name=&quot;name&quot;</code> (e.g., <code class="language-html">checked=&quot;checked&quot;</code>). HTML5 simplifies this to just the name.</li>
+</ul>
+<p><strong>Case Sensitivity</strong></p>
+<ul>
+<li><strong>Attribute Names:</strong> Are case-insensitive in HTML (e.g., <code class="language-html">CLASS</code> works like <code class="language-html">class</code>). <strong>Best Practice:</strong> Always use <strong>lowercase</strong> for consistency and compatibility.</li>
+<li><strong>Attribute Values:</strong> Sensitivity depends on the specific attribute. <code>id</code> and <code>class</code> values <em>are</em> case-sensitive. Keyword values (like <code class="language-html">_blank</code>, <code class="language-html">en</code>) are often case-insensitive, but following the standard casing (e.g., lowercase language codes) is recommended.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This is a review of syntax rules learned implicitly before. Ensure you understand where attributes go, the <code class="language-html">name=&quot;value&quot;</code> structure, and the importance of quoting values.</p>
+<p>✨ <strong>Key Takeaway:</strong> Place attributes in the opening tag, use <code class="language-html">name=&quot;value&quot;</code> format, always quote values (preferably double quotes), use lowercase for attribute names, and understand boolean attribute syntax.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

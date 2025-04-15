@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>78. Preparing for Next Section: Removing <code class="language-html">&lt;cite&gt;</code> Examples</h1>
+<p>We&#39;ve now covered the quotation elements <code class="language-html">&lt;blockquote&gt;</code> and <code class="language-html">&lt;q&gt;</code>, their <code>cite</code> attributes, and the separate <code class="language-html">&lt;cite&gt;</code> element for marking up titles.</p>
+<p>To prepare for the next section, which focuses on other miscellaneous inline semantic elements (<code class="language-html">&lt;small&gt;</code>, <code class="language-html">&lt;sub&gt;</code>, <code class="language-html">&lt;sup&gt;</code>, <code class="language-html">&lt;s&gt;</code>), we will clean up our current examples by removing the paragraphs containing the <code class="language-html">&lt;cite&gt;</code> element.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention away from quotations and citations towards the next set of specific inline tags.</li>
+<li><strong>Relevance:</strong> The citation examples are not needed for understanding elements like <code class="language-html">&lt;small&gt;</code> or <code class="language-html">&lt;sub&gt;</code>/<code class="language-html">&lt;sup&gt;</code>.</li>
+<li><strong>Clean Slate:</strong> Simplifies the page structure before introducing new inline elements.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the two paragraphs that contained the <code class="language-html">&lt;cite&gt;</code> element examples from <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Quotation Elements &amp; Citations&lt;/h1&gt;
+  &lt;p&gt;Use &lt;q&gt;inline quotes&lt;/q&gt; or &lt;blockquote&gt; for longer ones. To cite the title of a work, use the cite element.&lt;/p&gt; &lt;!-- Keep this intro P for now --&gt;
+
+  &lt;blockquote cite=&quot;https://www.w3.org/TR/html52/textlevel-semantics.html#the-blockquote-element&quot;&gt;
+    &lt;p&gt;This is a longer quotation, potentially spanning multiple paragraphs, taken from another source.&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;!-- Removed attribution P with &lt;cite&gt; --&gt;
+  &lt;!-- &lt;p&gt;The source for the above quote can be found in the HTML specification titled &lt;cite&gt;HTML 5.2&lt;/cite&gt;.&lt;/p&gt; --&gt;
+
+  &lt;!-- Removed second &lt;cite&gt; example P --&gt;
+  &lt;!-- &lt;p&gt;Another example: I enjoyed reading &lt;cite&gt;The Lord of the Rings&lt;/cite&gt; recently.&lt;/p&gt; --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the paragraphs containing <code class="language-html">&lt;cite&gt;HTML 5.2&lt;/cite&gt;</code> and <code class="language-html">&lt;cite&gt;The Lord of the Rings&lt;/cite&gt;</code> are no longer present in <code class="language-text">index.html</code>.</li>
+<li>The browser preview now shows the heading, the introductory paragraph (still mentioning <code class="language-html">&lt;cite&gt;</code>), the blockquote, and the commented-out paragraph.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the specific examples of <code class="language-html">&lt;cite&gt;</code> helps clear the page, making way for the next group of inline semantic elements. We will tidy the remaining introductory text in the next step.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

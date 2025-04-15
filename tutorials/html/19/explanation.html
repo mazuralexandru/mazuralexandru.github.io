@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>19. Minimal HTML Document: Character Encoding (<code class="language-html">&lt;meta charset&gt;</code>)</h1>
+<p>Inside the <code class="language-html">&lt;head&gt;</code> section, one of the most crucial pieces of metadata is the <strong>character encoding declaration</strong>.</p>
+<p><strong>What is Character Encoding?</strong></p>
+<p>Computers store text as numbers (bytes). A character encoding defines the mapping between specific characters (letters, numbers, symbols) and the numbers used to represent them.</p>
+<ul>
+<li>Using the wrong encoding can cause characters to display incorrectly (e.g., showing strange symbols like <code>â€</code> or <code>&lt;?&gt;</code> instead of expected characters).</li>
+<li><strong>UTF-8</strong> is the universal standard encoding for the web. It can represent virtually any character from any language, making it the ideal choice.</li>
+</ul>
+<p><strong>The <code class="language-html">&lt;meta charset&gt;</code> Element:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Tells the browser which character encoding the HTML file is saved in, so it can interpret the bytes correctly and display the text properly.</li>
+<li><strong>Syntax (HTML5):</strong> <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code><ul>
+<li><code class="language-html">&lt;meta&gt;</code>: A generic tag for specifying metadata. It&#39;s a <strong>void element</strong> (no closing tag needed).</li>
+<li><code class="language-html">charset</code>: An attribute specific to the <code class="language-html">&lt;meta&gt;</code> tag when declaring the encoding.</li>
+<li><code class="language-html">&quot;UTF-8&quot;</code>: The value specifying the encoding. Always use <code class="language-text">UTF-8</code> for new web projects.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Placement:</strong></p>
+<ul>
+<li><strong>Rule:</strong> The <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> declaration should be placed <strong>as early as possible</strong> within the <code class="language-html">&lt;head&gt;</code> section.</li>
+<li><strong>Reason:</strong> The browser needs to know the encoding <em>before</em> it starts interpreting characters that might be affected by it, including potentially characters within the <code class="language-html">&lt;title&gt;</code> tag itself. Ideally, it should be the very first element inside <code class="language-html">&lt;head&gt;</code>.</li>
+</ul>
+<p><strong>Saving Files:</strong></p>
+<p>Remember (from Topic 8, which we&#39;ll revisit formally) that you also need to ensure your text editor actually <em>saves</em> the <code>.html</code> file using UTF-8 encoding. Declaring it in the HTML is only half the battle; the file itself must be saved correctly. Most modern editors default to UTF-8.</p>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added the essential <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> tag as the first item inside the <code class="language-html">&lt;head&gt;</code> section.</p>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- Added character set declaration --&gt;
+  &lt;!-- Metadata goes here --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Visible content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Check <code class="language-text">index.html</code> to see the new <code class="language-html">&lt;meta&gt;</code> tag inside <code class="language-html">&lt;head&gt;</code>.</li>
+<li>The preview is still blank. This tag affects how text <em>would</em> be displayed if there were any, ensuring it displays correctly across different languages and symbols.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Always include <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> as the first element inside your <code class="language-html">&lt;head&gt;</code> section to ensure correct text display. Make sure your editor saves files as UTF-8.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

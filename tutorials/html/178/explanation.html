@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>178. Security Solution: <code>rel=&quot;noreferrer&quot;</code></h1>
+<p>Another related <code class="language-html">rel</code> attribute value often used with <code>target=&quot;_blank&quot;</code> is <code>noreferrer</code>.</p>
+<p><strong><code>rel=&quot;noreferrer&quot;</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Instructs the browser <strong>not to send the <code>Referer</code> HTTP header</strong> when the user follows the hyperlink.</li>
+<li><strong>The <code>Referer</code> Header:</strong> Normally, when you navigate from <code>Page A</code> to <code>Page B</code>, the browser sends an HTTP header called <code>Referer</code> (yes, misspelled in the original spec) along with the request for <code>Page B</code>. This header contains the URL of <code>Page A</code>, telling <code>Page B</code> where the traffic came from.</li>
+<li><strong>Effect of <code>noreferrer</code>:</strong><ul>
+<li><strong>Privacy:</strong> Prevents the destination site (<code>Page B</code>) from knowing the URL of the page the user clicked the link on (<code>Page A</code>). This can be desirable for privacy reasons or to avoid leaking potentially sensitive information in URLs.</li>
+<li><strong>Implied <code>noopener</code>:</strong> Importantly, adding <code>rel=&quot;noreferrer&quot;</code> also provides the <strong>same security and performance benefits as <code>rel=&quot;noopener&quot;</code></strong>. Modern browsers treat <code>noreferrer</code> as implicitly including the <code>noopener</code> behavior (setting <code>window.opener</code> to <code>null</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve changed the <code>rel</code> attribute value on our link in <code class="language-text">index.html</code> from <code>&quot;noopener&quot;</code> to <code>&quot;noreferrer&quot;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;
+  Example Link (_blank + noreferrer):
+  &lt;a href=&quot;https://developer.mozilla.org/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt; &lt;!-- Changed rel to &quot;noreferrer&quot; --&gt;
+    MDN Home (New Tab, No Referrer)
+  &lt;/a&gt;
+&lt;/p&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Note the <code>rel=&quot;noreferrer&quot;</code> attribute in the <code class="language-html">&lt;a&gt;</code> tag.</li>
+<li>Clicking the link still opens MDN in a new tab. Visually, the behavior is the same as with <code>noopener</code>. The difference is the absence of the <code>Referer</code> header sent to the MDN server (which we can&#39;t easily observe here) and the implied <code>noopener</code> protection.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code>rel=&quot;noreferrer&quot;</code> on links (especially those with <code>target=&quot;_blank&quot;</code>) when you want to prevent the destination site from knowing the source URL (for privacy) and gain the security/performance benefits of <code>noopener</code> simultaneously.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

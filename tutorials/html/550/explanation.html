@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>550. Reset: Preparing for Other Video Attributes (<code>crossorigin</code>)</h1>
+<p>We have covered the main attributes related to video source (<code class="language-html">src</code>), display (<code class="language-html">controls</code>, <code class="language-html">width</code>, <code class="language-html">height</code>, <code class="language-html">poster</code>), and playback (<code class="language-html">autoplay</code>, <code class="language-html">muted</code>, <code class="language-html">loop</code>, <code class="language-html">preload</code>, <code class="language-html">playsinline</code>).</p>
+<p>Next, we&#39;ll briefly touch upon the <code class="language-html">crossorigin</code> attribute, which relates to fetching media from different domains and interacting with it via JavaScript.</p>
+<p>To focus on <code>crossorigin</code>, we will reset the <code class="language-html">&lt;video&gt;</code> element again, removing the <code>src</code> and <code>playsinline</code> attributes added in the previous steps.</p>
+<p><strong>Why Reset/Adjust?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Isolate the <code>crossorigin</code> attribute and its purpose related to CORS.</li>
+<li><strong>Clarity:</strong> Demonstrate the attribute without the context of specific playback modes.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code>src</code> and <code>playsinline</code> attributes from the <code class="language-html">&lt;video&gt;</code> tag in <code class="language-text">index.html</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Video: Other Attributes&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Resetting video element to discuss other attributes.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;&gt; &lt;!-- Removed playsinline/src --&gt;
+    &lt;!-- Attributes like crossorigin go here --&gt;
+    &lt;p&gt;Sorry, your browser doesn&#39;t support embedded videos.&lt;/p&gt;
+  &lt;/video&gt;
+
+  &lt;p&gt;Attributes like &#39;crossorigin&#39; relate to fetching from other domains.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of <code>src</code> and <code>playsinline</code> from the <code class="language-html">&lt;video&gt;</code> tag.</li>
+<li>The browser preview shows an empty video player area with controls, ready for the next attribute discussion.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Resetting the <code class="language-html">&lt;video&gt;</code> element provides a clean baseline for introducing the <code>crossorigin</code> attribute and its role in cross-domain resource requests.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

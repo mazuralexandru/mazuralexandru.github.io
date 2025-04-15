@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>The &lt;form&gt; Element: Novalidate Attribute</h1> <!-- Updated H1 -->
+  <p>The 'novalidate' attribute disables native browser validation.</p> <!-- Adjusted P -->
+
+  <form action="/submit-data" method="POST" novalidate> <!-- Removed target, added novalidate -->
+     <!-- Form controls will go here -->
+     <!-- Browser won't check required, pattern, type etc. on submit -->
+  </form>
+
+  <p>Useful when implementing custom JS validation.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

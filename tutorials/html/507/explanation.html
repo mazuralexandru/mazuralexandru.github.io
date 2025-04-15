@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>507. Landmarks: <code class="language-html">&lt;header&gt;</code> Element - Fundamentals</h1>
+<p>Let&#39;s start building our semantic page structure with the <code class="language-html">&lt;header&gt;</code> element.</p>
+<p><strong>Definition &amp; Purpose:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;header&gt;</code> element represents <strong>introductory content</strong> for its nearest sectioning ancestor (or the page itself if it&#39;s a direct child of <code class="language-html">&lt;body&gt;</code>).</li>
+<li>It typically contains elements like:<ul>
+<li>The main site title or logo (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>, <code class="language-html">&lt;img&gt;</code>).</li>
+<li>Primary site navigation (<code class="language-html">&lt;nav&gt;</code>).</li>
+<li>A search form.</li>
+<li>Introductory paragraphs or taglines.</li>
+<li>Author information (for an <code class="language-html">&lt;article&gt;</code> header).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Scope &amp; Usage:</strong></p>
+<ul>
+<li><strong>Page Header:</strong> When used as a direct child of <code class="language-html">&lt;body&gt;</code>, it usually defines the main header for the entire website, consistent across pages.</li>
+<li><strong>Section Header:</strong> Can also be used inside <code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;section&gt;</code>, <code class="language-html">&lt;aside&gt;</code>, or <code class="language-html">&lt;nav&gt;</code> to provide introductory content <em>specifically for that section</em>.</li>
+<li><strong>Multiple Headers:</strong> A document can have multiple <code class="language-html">&lt;header&gt;</code> elements (e.g., one for the page, one for each article).</li>
+</ul>
+<p><strong>Core Mechanics:</strong></p>
+<ul>
+<li>Block-level element.</li>
+<li>Syntax: <code class="language-html">&lt;header&gt; ... &lt;/header&gt;</code></li>
+<li>Content: Flow content, but cannot directly nest another <code class="language-html">&lt;header&gt;</code> or <code class="language-html">&lt;footer&gt;</code>.</li>
+</ul>
+<p><strong>Accessibility:</strong></p>
+<ul>
+<li>When used as a top-level header (direct child of <code class="language-html">&lt;body&gt;</code>, or sometimes sectioning elements depending on context), it maps to the ARIA <code class="language-text">banner</code> landmark role. This allows screen reader users to quickly jump to the site header area.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a top-level <code class="language-html">&lt;header&gt;</code> element directly inside the <code class="language-html">&lt;body&gt;</code> of <code class="language-text">index.html</code>, containing a placeholder <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code>. We&#39;ve also added temporary CSS to visualize landmark boundaries.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;head&gt;
+  ...
+  &lt;style&gt;
+    /* Basic landmark visualization */
+    body &gt; header, body &gt; nav, body &gt; main, body &gt; footer {
+      border: 1px dashed skyblue;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Added header --&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Site Title / Logo Area&lt;/h1&gt;
+    &lt;p&gt;Introductory content or tagline.&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;p&gt;The &amp;lt;header&amp;gt; element contains introductory content.&lt;/p&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the new <code class="language-html">&lt;header&gt;</code> element and its content in <code>index.html</code>. Note the added temporary CSS targeting direct children of <code class="language-html">&lt;body&gt;</code>.</li>
+<li>In the browser preview, you should see the <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> content enclosed within a dashed sky blue border. This border visually represents the <code class="language-html">&lt;header&gt;</code> landmark area.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;header&gt;</code> element to semantically group introductory content (logos, titles, navigation, search) for the page or specific sections like <code class="language-html">&lt;article&gt;</code> or <code class="language-html">&lt;section&gt;</code>. Top-level headers provide an important <code>banner</code> landmark for accessibility.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

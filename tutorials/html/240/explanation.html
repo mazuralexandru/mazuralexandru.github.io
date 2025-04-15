@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>240. <code>width</code> &amp; <code>height</code>: Interaction with Image Dimensions</h1>
+<p>It&#39;s crucial that the values you provide for the <code class="language-html">width</code> and <code class="language-html">height</code> attributes <strong>accurately reflect the actual dimensions of the image file</strong> they refer to.</p>
+<p><strong>Best Practice: Match Intrinsic Dimensions</strong></p>
+<ul>
+<li>Find the actual pixel width and height of your image file (using image editing software, file properties, browser developer tools after loading it, etc.).</li>
+<li>Use these exact numbers as the values for the <code class="language-html">width</code> and <code class="language-html">height</code> attributes.<ul>
+<li><em>Example:</em> If <code class="language-text">photo.jpg</code> is truly 800 pixels wide and 600 pixels tall, use <code class="language-html">width=&quot;800&quot; height=&quot;600&quot;</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>What Happens if They Don&#39;t Match?</strong></p>
+<ul>
+<li>If you provide <code class="language-html">width</code> and <code class="language-html">height</code> values that <em>differ</em> from the image file&#39;s actual dimensions, the browser will <strong>stretch or squash</strong> the image to fit the dimensions specified in the HTML attributes (unless overridden by CSS).</li>
+<li><strong>Result:</strong> This typically leads to <strong>image distortion</strong> and poor visual quality (pixelation if scaling up, loss of detail or unnatural appearance if scaling down or changing the aspect ratio).</li>
+</ul>
+<p><strong>Example of Distortion (Conceptual):</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!-- Image file is actually 200x200 pixels --&gt;
+&lt;img src=&quot;square.png&quot; alt=&quot;Square&quot; width=&quot;400&quot; height=&quot;100&quot;&gt;
+&lt;!-- Browser will stretch the 200x200 image into a 400x100 rectangle --&gt;
+</code></pre>
+<p><strong>Getting Dimensions:</strong></p>
+<ul>
+<li>Most operating systems let you view image dimensions via file properties (right-click -&gt; Properties/Get Info).</li>
+<li>Image editing tools (Photoshop, GIMP, etc.) clearly show dimensions.</li>
+<li>You can open the image directly in a browser and use Developer Tools (F12 -&gt; Inspect) to see its intrinsic size.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Look at our example: <code class="language-html">width=&quot;150&quot; height=&quot;50&quot;</code>. We are <em>assuming</em> our non-existent <code class="language-text">logo.png</code> file is actually 150x50 pixels. If the real file were, say, 300x100, the browser (if displaying it) would render it at 150x50, scaling it down. If the real file were 150x150 (square), the browser would squash it into a 150x50 rectangle based on the attributes.</p>
+<p>✨ <strong>Key Takeaway:</strong> Ensure the <code class="language-html">width</code> and <code class="language-html">height</code> attribute values match the actual pixel dimensions of the image file to prevent distortion and ensure accurate space reservation for layout stability.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

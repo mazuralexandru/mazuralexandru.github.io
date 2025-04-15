@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>93. Unordered Lists (<code class="language-html">&lt;ul&gt;</code>): Core Mechanics (Syntax &amp; Type)</h1>
+<p>Let&#39;s look at the basic syntax and element type for <code class="language-html">&lt;ul&gt;</code>.</p>
+<p><strong>Syntax:</strong></p>
+<ul>
+<li>The unordered list is created using an opening <code class="language-html">&lt;ul&gt;</code> tag and a closing <code class="language-html">&lt;/ul&gt;</code> tag.<pre class="language-html"><code class="language-html">&lt;ul&gt;
+  &lt;!-- Content (specifically &lt;li&gt; elements) goes here --&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li>These tags act as the container for the entire list.</li>
+</ul>
+<p><strong>Element Category: Block-Level</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;ul&gt;</code> element is a <strong>block-level</strong> element.</li>
+<li>This means, by default:<ul>
+<li>It starts on a new line.</li>
+<li>It typically occupies the full width available to it within its parent container (though its content might not fill that width).</li>
+<li>It creates vertical separation from preceding and succeeding elements (usually via default browser margins).</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>No changes to the code in <code class="language-text">index.html</code> for this step. We are still looking at the empty <code class="language-html">&lt;ul&gt;</code> element we added.</li>
+<li>Review the preview. The <code class="language-html">&lt;ul&gt;</code> element itself doesn&#39;t have direct visible content yet, but its block-level nature ensures the paragraph following it appears on a new line below the list&#39;s allocated space.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;ul&gt;</code> uses opening and closing tags and behaves as a block-level element, creating structure and separation in the document flow.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

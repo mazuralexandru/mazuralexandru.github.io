@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>39. Preparing for Emphasis: Removing Subsection Heading</h1>
+<p>Now that we&#39;ve thoroughly explored headings (<code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>) and their importance for structure, hierarchy, accessibility, and SEO, let&#39;s simplify our example page slightly to prepare for the next topic: inline emphasis.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> We want to keep the preview pane clean and focused on the elements we&#39;ll be introducing next (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, etc.).</li>
+<li><strong>Relevance:</strong> While the <code class="language-html">&lt;h3&gt;</code> was useful for demonstrating heading hierarchy, it&#39;s not directly needed for understanding inline emphasis elements. Keeping too many structural levels can clutter the example when we shift focus to inline semantics within paragraphs.</li>
+<li><strong>Active Pruning:</strong> This aligns with our principle of actively managing code complexity and removing elements that are no longer serving the immediate pedagogical goal.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;h3&gt;</code> element and the paragraph immediately following it from <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt;
+  &lt;p&gt;This is the introductory paragraph following the main title.&lt;/p&gt;
+
+  &lt;h2&gt;A Major Section Title (h2)&lt;/h2&gt;
+  &lt;p&gt;This paragraph belongs to the first major section, introduced by the h2 heading above.&lt;/p&gt;
+
+  &lt;!-- Removed h3 and its paragraph --&gt;
+  &lt;!--&lt;h3&gt;A Subsection Title (h3)&lt;/h3&gt;--&gt;
+  &lt;!--&lt;p&gt;This paragraph discusses a specific point within the major section, under the h3 subheading.&lt;/p&gt;--&gt;
+
+  &lt;p&gt;Another paragraph within the same section (under the h2).&lt;/p&gt; &lt;!-- Text updated slightly --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Confirm that the <code class="language-html">&lt;h3&gt;</code> and its associated paragraph are gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview should now show only the <code class="language-html">&lt;h1&gt;</code>, the first paragraph, the <code class="language-html">&lt;h2&gt;</code>, and the two paragraphs belonging to that section. The structure is slightly flatter, making it easier to focus on the paragraph content in the next steps.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing code that has served its illustrative purpose helps maintain focus and prepares the workspace for new concepts. We removed the subsection heading to simplify the structure before exploring inline elements.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

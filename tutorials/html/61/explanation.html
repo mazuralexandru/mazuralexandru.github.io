@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>61. Specialized Text: Preformatted Text (<code class="language-html">&lt;pre&gt;</code>)</h1>
+<p>Now let&#39;s explore elements designed for specific types of text content. We&#39;ll start with <code class="language-html">&lt;pre&gt;</code>, used for <strong>preformatted text</strong>.</p>
+<p><strong>The Preformatted Text Element (<code class="language-html">&lt;pre&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Defines a block of text where <strong>whitespace</strong> (spaces, tabs, line breaks) found in the HTML source code is <strong>preserved</strong> exactly as written. Standard HTML whitespace collapsing rules do <em>not</em> apply within <code class="language-html">&lt;pre&gt;</code>.</li>
+<li><strong>Type:</strong> Block-level element.</li>
+<li><strong>Syntax:</strong> Uses an opening <code class="language-html">&lt;pre&gt;</code> and closing <code class="language-html">&lt;/pre&gt;</code> tag.</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li><strong>Whitespace Preservation:</strong> This is its key feature. Multiple spaces won&#39;t collapse into one, and line breaks in the source code will render as line breaks on the page.</li>
+<li><strong>Default Font:</strong> Browsers typically display text inside <code class="language-html">&lt;pre&gt;</code> using a <strong>monospace font</strong> (like Courier or Consolas), where all characters have the same width. This is ideal for aligning text vertically, such as in code examples or ASCII art.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Displaying blocks of computer code.</li>
+<li>Showing ASCII art.</li>
+<li>Presenting formatted output from programs or command lines.</li>
+<li>Any situation where the exact spacing and line breaks of the text are significant and need to be maintained.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a <code class="language-html">&lt;pre&gt;</code> block between the two paragraphs in <code class="language-text">index.html</code>, containing text with deliberate extra spaces and line breaks.</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;This paragraph introduces preformatted text:&lt;/p&gt;
+
+&lt;pre&gt;
+Text inside a pre element
+  preserves       whitespace
+like     spaces and
+line breaks.
+&lt;/pre&gt; &lt;!-- Added &lt;pre&gt; block --&gt;
+
+&lt;p&gt;This paragraph follows the preformatted text.&lt;/p&gt; &lt;!-- Adjusted text --&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code class="language-html">&lt;pre&gt;</code> block in <code class="language-text">index.html</code>. Pay close attention to the exact spacing and line breaks within the tags.</li>
+<li>Look at the browser preview. You should see:<ul>
+<li>The text from the <code class="language-html">&lt;pre&gt;</code> block rendered in a monospace font.</li>
+<li>The <strong>exact spacing and line breaks</strong> from the source code are preserved in the output. Compare the preview carefully with the source code inside the <code class="language-html">&lt;pre&gt;</code> tags.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;pre&gt;</code> element when you need to display text exactly as it is formatted in your HTML source, preserving all whitespace and typically rendering in a monospace font. It&#39;s essential for code blocks and ASCII art.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

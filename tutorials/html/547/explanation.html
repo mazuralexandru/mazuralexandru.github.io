@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>547. Multimedia: Video (<code class="language-html">&lt;video&gt;</code>) - <code>autoplay</code>, <code>muted</code>, <code>loop</code> Attributes</h1>
+<p>Let&#39;s explore the boolean attributes that control automatic playback, audio state, and repetition.</p>
+<p><strong>1. <code>autoplay</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Hints that the video should start playing automatically as soon as possible without waiting for the user to initiate playback.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;video autoplay&gt;</code></li>
+<li><strong>Restrictions (Critical):</strong> Modern browsers heavily restrict autoplay with sound to prevent user annoyance. Autoplay usually <strong>only works if <code>muted</code> is also present</strong>, or based on user interaction history/browser settings. <strong>Do not rely on autoplay with sound.</strong></li>
+<li><strong>Use Cases:</strong> Often used with <code>muted</code> and <code>loop</code> for background videos. Otherwise, generally discouraged in favor of user-initiated playback via <code>controls</code>.</li>
+</ul>
+<p><strong>2. <code>muted</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Mutes the audio track of the video by default.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;video muted&gt;</code></li>
+<li><strong>Behavior:</strong> Video starts silent. Users can typically unmute using the player controls (if visible). Often necessary to enable <code>autoplay</code>.</li>
+</ul>
+<p><strong>3. <code>loop</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Causes the video to automatically loop back to the beginning and play again once it reaches the end.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;video loop&gt;</code></li>
+<li><strong>Use Cases:</strong> Background videos, short repeating animations or clips.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added <code>autoplay</code>, <code>muted</code>, and <code>loop</code> attributes to our <code class="language-html">&lt;video&gt;</code> tag. We&#39;ve also re-added a hypothetical <code>src</code> attribute pointing to a short video file, as these attributes only have an effect if there&#39;s a video source.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+  &lt;!-- Added autoplay, muted, loop --&gt;
+  &lt;video controls width=&quot;480&quot; height=&quot;270&quot;
+         src=&quot;/videos/short-loop.mp4&quot; &lt;!-- Hypothetical short video --&gt;
+         autoplay muted loop&gt;
+    &lt;p&gt;Sorry, your browser doesn&#39;t support embedded videos.&lt;/p&gt;
+  &lt;/video&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>autoplay</code>, <code>muted</code>, and <code>loop</code> boolean attributes added to the <code class="language-html">&lt;video&gt;</code> tag. Note the presence of <code>src</code> again.</li>
+<li>Look at the browser preview.</li>
+<li><strong>(Conceptual):</strong> If <code>/videos/short-loop.mp4</code> existed and contained a playable video:<ul>
+<li>The video would attempt to start playing <strong>automatically</strong> (<code>autoplay</code>).</li>
+<li>It would start <strong>silently</strong> (<code>muted</code>).</li>
+<li>When it reached the end, it would <strong>restart</strong> from the beginning (<code>loop</code>).</li>
+<li>The <code>controls</code> would still be visible, allowing the user to pause, unmute, etc.</li>
+<li>(In our environment, it will still likely show an error as the file doesn&#39;t exist).</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code>autoplay</code> (usually requires <code>muted</code>) to attempt automatic playback. Use <code>muted</code> to start the video without sound. Use <code>loop</code> to make the video repeat automatically. Use <code>autoplay</code> sparingly and responsibly.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

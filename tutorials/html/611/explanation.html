@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>611. Graphics: SVG (<code class="language-html">&lt;svg&gt;</code>) - The <code class="language-html">&lt;symbol&gt;</code> Element (Brief Mention)</h1>
+<p>Closely related to <code class="language-html">&lt;defs&gt;</code> and <code class="language-html">&lt;use&gt;</code> is the <code class="language-html">&lt;symbol&gt;</code> element. While functionally similar in defining reusable graphics, it offers slightly different behavior, particularly relevant for icon systems.</p>
+<p><strong>The <code class="language-html">&lt;symbol&gt;</code> Element:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Defines reusable graphical templates. Like elements in <code class="language-html">&lt;defs&gt;</code>, <code>&lt;symbol&gt;</code>s are not rendered directly but are instantiated using the <code class="language-html">&lt;use&gt;</code> element.</li>
+<li><strong>Key Differences from Defining in <code class="language-html">&lt;defs&gt;</code>:</strong><ol>
+<li><strong><code>viewBox</code> and <code>preserveAspectRatio</code>:</strong> A <code class="language-html">&lt;symbol&gt;</code> can have its <em>own</em> <code>viewBox</code> and <code>preserveAspectRatio</code> attributes. This allows the symbol itself to define its internal coordinate system and scaling behavior, independent of the main <code class="language-html">&lt;svg&gt;</code> or the <code class="language-html">&lt;use&gt;</code> element.</li>
+<li><strong>No Direct Rendering:</strong> Unlike defining a shape with an <code>id</code> directly within the <code class="language-html">&lt;svg&gt;</code> (outside <code class="language-html">&lt;defs&gt;</code>), <code class="language-html">&lt;symbol&gt;</code> content is guaranteed <em>not</em> to be rendered unless instantiated by <code class="language-html">&lt;use&gt;</code>.</li>
+</ol>
+</li>
+<li><strong>Placement:</strong> Typically placed within a <code class="language-html">&lt;defs&gt;</code> block or directly within the main <code class="language-html">&lt;svg&gt;</code> (often hidden using CSS <code class="language-css">display: none;</code> if placed outside <code class="language-html">&lt;defs&gt;</code>).</li>
+<li><strong>Use Case:</strong> Very commonly used for <strong>SVG icon systems</strong>. You define each icon as a <code class="language-html">&lt;symbol&gt;</code> with a specific <code>viewBox</code> and <code>id</code> within a hidden SVG block or external file. Then, you use <code class="language-html">&lt;use href=&quot;#icon-id&quot; width=&quot;...&quot; height=&quot;...&quot;&gt;</code> elsewhere in your HTML to display instances of the icon, easily controlling the size of each instance via the <code class="language-html">&lt;use&gt;</code> element&#39;s <code>width</code>/<code>height</code> attributes (which interact with the symbol&#39;s <code>viewBox</code>).</li>
+</ul>
+<p><strong>Example (Conceptual):</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!-- Hidden SVG Sprite --&gt;
+&lt;svg style=&quot;display: none;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;symbol id=&quot;icon-search&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+    &lt;title&gt;Search Icon&lt;/title&gt; &lt;!-- Accessibility --&gt;
+    &lt;path d=&quot;M15.5 14h-.79l-.28-.27A6.471...&quot;/&gt; &lt;!-- Icon path data --&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;icon-user&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+     &lt;title&gt;User Icon&lt;/title&gt;
+     &lt;path d=&quot;M12 12c2.21 0 4-1.79 4-4s-1.79-4...&quot;/&gt;
+  &lt;/symbol&gt;
+&lt;/svg&gt;
+
+&lt;!-- Using the icons --&gt;
+&lt;svg class=&quot;icon icon-search&quot; width=&quot;1em&quot; height=&quot;1em&quot;&gt;&lt;use href=&quot;#icon-search&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+&lt;svg class=&quot;icon icon-user&quot; width=&quot;1em&quot; height=&quot;1em&quot;&gt;&lt;use href=&quot;#icon-user&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong> No code changes to <code>index.html</code>. Understand that <code class="language-html">&lt;symbol&gt;</code> is similar to defining elements in <code class="language-html">&lt;defs&gt;</code> for reuse with <code class="language-html">&lt;use&gt;</code>, but it offers better encapsulation and scaling control via its own <code>viewBox</code>, making it ideal for creating SVG icon sprites.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;symbol&gt;</code> element defines reusable SVG templates, often used for icon systems. It allows its own <code>viewBox</code> for better scaling control when instantiated with <code class="language-html">&lt;use&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

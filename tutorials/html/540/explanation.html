@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>540. Native Multimedia: Contrast with <code class="language-html">&lt;img&gt;</code> and <code class="language-html">&lt;iframe&gt;</code></h1>
+<p>It&#39;s useful to distinguish <code class="language-html">&lt;video&gt;</code> and <code class="language-html">&lt;audio&gt;</code> from other embedding elements we&#39;ve already discussed.</p>
+<p><strong><code class="language-html">&lt;img&gt;</code> vs. <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code>:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;img&gt;</code>:</strong> Embeds <strong>static raster or vector images</strong> (JPEG, PNG, GIF, SVG, WebP, AVIF). It represents a single visual frame. Void element.</li>
+<li><strong><code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code>:</strong> Embed non-static, <strong>time-based media</strong> (video with/without sound, standalone audio). They represent content that progresses over time and typically have playback controls. Not void elements (they have fallback content).</li>
+</ul>
+<p><strong><code class="language-html">&lt;iframe&gt;</code> vs. <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code>:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;iframe&gt;</code>:</strong> Embeds an <strong>entire, independent HTML document</strong> within the current page. This embedded document <em>might</em> contain <code class="language-html">&lt;video&gt;</code> or <code class="language-html">&lt;audio&gt;</code> elements (like a YouTube embed page), but the <code class="language-html">&lt;iframe&gt;</code> itself isn&#39;t the media element. It creates a nested browsing context.</li>
+<li><strong><code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code>:</strong> Embed the media stream <strong>directly</strong> into the current document&#39;s context, allowing for more direct control via JavaScript (within same-origin policy) and integration with the parent page&#39;s accessibility features (like tracks).</li>
+</ul>
+<p><strong>When to Choose Which:</strong></p>
+<ul>
+<li>Need to display a static picture? Use <code class="language-html">&lt;img&gt;</code>.</li>
+<li>Need to play a video file hosted on your server or a compatible source? Use <code class="language-html">&lt;video&gt;</code>.</li>
+<li>Need to play an audio file? Use <code class="language-html">&lt;audio&gt;</code>.</li>
+<li>Need to embed a complex widget, interactive application, or player from a third-party service (like YouTube, Vimeo, Google Maps) that provides an embeddable <em>page</em> URL? Use <code class="language-html">&lt;iframe&gt;</code> (with <code>title</code> and <code>sandbox</code>).</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Solidify the distinctions: <code class="language-html">&lt;img&gt;</code> for static visuals, <code class="language-html">&lt;video&gt;</code>/<code class="language-html">&lt;audio&gt;</code> for direct playback of time-based media files, <code class="language-html">&lt;iframe&gt;</code> for embedding separate HTML documents (which might <em>contain</em> media).</p>
+<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;video&gt;</code> and <code class="language-html">&lt;audio&gt;</code> for direct embedding and playback of video/audio files. Use <code class="language-html">&lt;img&gt;</code> for static images. Use <code class="language-html">&lt;iframe&gt;</code> for embedding external documents or complex third-party players.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

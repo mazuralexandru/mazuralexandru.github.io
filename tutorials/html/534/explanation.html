@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>534. Module 10 Recap: Semantic HTML - Meaning and Structure</h1>
+<p>This module focused on the crucial concept of <strong>Semantic HTML</strong>: using HTML elements according to their intended meaning to structure content logically and accessibly.</p>
+<p><strong>Key Concepts Reviewed:</strong></p>
+<ul>
+<li><strong>What is Semantic HTML?:</strong> Using tags (<code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;em&gt;</code>, etc.) to describe the <em>meaning</em> or <em>role</em> of the content, not just its appearance. Contrasted with older, presentational HTML practices.</li>
+<li><strong>Why Use Semantic HTML?:</strong><ul>
+<li><strong>Accessibility:</strong> Provides structure and context for assistive technologies (landmarks, headings, lists, etc.).</li>
+<li><strong>SEO:</strong> Helps search engines understand content structure, hierarchy, and relevance.</li>
+<li><strong>Maintainability/Readability:</strong> Creates clearer, more self-documenting code for developers.</li>
+<li><strong>Future Compatibility:</strong> More adaptable to new devices and user agents.</li>
+</ul>
+</li>
+<li><strong>Non-Semantic Containers (<code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;span&gt;</code>):</strong><ul>
+<li>Generic block (<code class="language-html">&lt;div&gt;</code>) and inline (<code class="language-html">&lt;span&gt;</code>) wrappers with no semantic meaning.</li>
+<li>Use <strong>only</strong> when no specific semantic element is appropriate, primarily for styling or layout hooks (<code>class</code>/<code>id</code>). Avoid &quot;Divitis&quot;.</li>
+</ul>
+</li>
+<li><strong>Page Structure Landmarks:</strong><ul>
+<li><code class="language-html">&lt;header&gt;</code>: Introductory content for page/section (ARIA: <code>banner</code>).</li>
+<li><code class="language-html">&lt;footer&gt;</code>: Concluding content for page/section (ARIA: <code>contentinfo</code>).</li>
+<li><code class="language-html">&lt;nav&gt;</code>: Major navigation blocks (ARIA: <code>navigation</code>). Use <code>aria-label</code> if multiple.</li>
+<li><code class="language-html">&lt;main&gt;</code>: Primary, unique content of the page (ARIA: <code>main</code>). Only one per page, crucial &quot;skip link&quot; target.</li>
+</ul>
+</li>
+<li><strong>Sectioning Content:</strong><ul>
+<li><code class="language-html">&lt;article&gt;</code>: Complete, self-contained, independently distributable content (blog post, news item, comment). (ARIA: <code>article</code>).</li>
+<li><code class="language-html">&lt;section&gt;</code>: Generic thematic grouping within a larger context. Should have a heading. (ARIA: <code>region</code> <em>if</em> named via <code>aria-label</code>/<code>labelledby</code>).</li>
+<li><code class="language-html">&lt;aside&gt;</code>: Tangentially related content (sidebar, pull quote, ads). (ARIA: <code>complementary</code>). Should ideally be named via ARIA if ambiguous.</li>
+</ul>
+</li>
+<li><strong>Headings &amp; Document Outline:</strong><ul>
+<li><code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code> define hierarchy. Use one <code class="language-html">&lt;h1&gt;</code> per page (recommended).</li>
+<li><strong>Never skip heading levels.</strong> Crucial for accessibility navigation.</li>
+<li>Sectioning content elements create nested outline scopes. Headings inside define the hierarchy for that section.</li>
+</ul>
+</li>
+<li><strong>Other Semantic Elements:</strong><ul>
+<li><code class="language-html">&lt;address&gt;</code>: Contact information for the document/article (often in <code class="language-html">&lt;footer&gt;</code>).</li>
+<li><code class="language-html">&lt;time&gt;</code>: Represents dates/times; <code>datetime</code> attribute provides machine-readable value.</li>
+<li><code class="language-html">&lt;mark&gt;</code>: Highlights text for relevance/notation (like search results).</li>
+<li><code class="language-html">&lt;data&gt;</code>: Links human-readable text to a machine-readable <code>value</code>.</li>
+</ul>
+</li>
+<li><strong>Embedding (<code class="language-html">&lt;iframe&gt;</code>):</strong><ul>
+<li>Embeds external documents.</li>
+<li><strong>Requires <code>title</code> attribute</strong> for accessibility.</li>
+<li><strong>Use <code>sandbox</code> attribute</strong> for security with untrusted content.</li>
+<li>Consider performance (<code>loading=&quot;lazy&quot;</code>) and alternatives (APIs, Web Components).</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This is a conceptual summary of Module 10. Review the different categories of semantic elements and their specific roles.</p>
+<p>✨ <strong>Key Takeaway:</strong> Writing semantic HTML involves choosing the most appropriate element based on the meaning and structure of the content. This leads to more accessible, maintainable, SEO-friendly, and future-proof web pages compared to relying heavily on non-semantic <code class="language-html">&lt;div&gt;</code> and <code class="language-html">&lt;span&gt;</code> elements.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

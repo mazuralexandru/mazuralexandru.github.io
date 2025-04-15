@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Spanning Columns & Rows</h1>
+  <p>Preparing to demonstrate the 'rowspan' attribute.</p> <!-- Adjusted P -->
+
+  <table>
+    <thead> <!-- Simplified thead -->
+      <tr>
+        <th scope="col">Type</th> <!-- Row Header Column Label -->
+        <th scope="col">Name</th> <!-- Data Column 1 Label -->
+        <th scope="col">Value</th> <!-- Data Column 2 Label -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr> <!-- Reset Row 1 -->
+        <th scope="row">Alpha</th> <!-- Row Header -->
+        <td>A1</td>
+        <td>A2</td>
+      </tr>
+      <tr> <!-- Reset Row 2 -->
+        <th scope="row">Beta</th> <!-- Row Header -->
+        <td>B1</td>
+        <td>B2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Rowspan allows a cell to span multiple rows vertically.</p> <!-- Adjusted P -->
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>678. Reset &amp; Common Errors: Duplicate <code>id</code></h1>
+<p>As emphasized when discussing the <code>id</code> attribute, its value <strong>must be unique</strong> within the document. Using the same <code>id</code> on multiple elements is a critical validation error.</p>
+<p><strong>Resetting:</strong></p>
+<p>Remove the previous <code class="language-html">&lt;img&gt;</code> examples.</p>
+<p><strong>Error: Duplicate ID</strong></p>
+<ul>
+<li><strong>Problem:</strong> Two or more elements within the same HTML document are assigned the exact same value for their <code>id</code> attribute.</li>
+<li><strong>Impact:</strong> Breaks the fundamental purpose of <code>id</code> as a <em>unique</em> identifier. Causes unpredictable behavior for CSS (<code>#id</code> selector usually only targets the first), JavaScript (<code>document.getElementById()</code> only returns the first), fragment links (<code>#id</code>), label association (<code>for=&quot;id&quot;</code>), and ARIA relationships (<code>aria-labelledby</code>). Results in invalid HTML.</li>
+<li><strong>Validator Message (Example):</strong> <code>Error: Duplicate ID &quot;item1&quot;.</code></li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the previous <code class="language-html">&lt;img&gt;</code> examples from <code>index.html</code>.</li>
+<li>Added a &quot;Bad Example&quot; showing two <code class="language-html">&lt;p&gt;</code> elements with the same <code>id=&quot;item1&quot;</code>.</li>
+<li>Added a &quot;Good Example&quot; showing two <code class="language-html">&lt;p&gt;</code> elements with unique IDs (<code>itemA</code>, <code>itemB</code>).</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Common Validation Errors&lt;/h1&gt;
+
+  &lt;h2&gt;Error: Duplicate ID&lt;/h2&gt;
+
+  &lt;!-- Bad Example --&gt;
+  &lt;p id=&quot;item1&quot;&gt;First item with ID &#39;item1&#39;.&lt;/p&gt;
+  &lt;p id=&quot;item1&quot;&gt;Second item conflicting ID &#39;item1&#39;.&lt;/p&gt; &lt;!-- Duplicate ID --&gt;
+
+  &lt;hr&gt; &lt;!-- Separator --&gt;
+
+  &lt;!-- Good Example --&gt;
+  &lt;p id=&quot;itemA&quot;&gt;First item with unique ID &#39;itemA&#39;.&lt;/p&gt;
+  &lt;p id=&quot;itemB&quot;&gt;Second item with unique ID &#39;itemB&#39;.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of previous examples and the addition of the <code>id</code> examples. Note the duplicated <code>id=&quot;item1&quot;</code> in the &quot;Bad Example&quot;.</li>
+<li>The browser preview shows the paragraphs, but the duplicate ID issue is structural, not visual.</li>
+<li><strong>(Conceptual):</strong> Running the &quot;Bad Example&quot; through <code>validator.w3.org</code> would report a &quot;Duplicate ID&quot; error. <code>document.getElementById(&#39;item1&#39;)</code> in JavaScript would only ever return the <em>first</em> paragraph. A link <code>href=&quot;#item1&quot;</code> would have unpredictable behavior.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Validators strictly enforce the rule that all <code>id</code> attribute values must be unique within a document. Duplicate IDs are invalid HTML and break styling, scripting, linking, and accessibility features relying on unique identification.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

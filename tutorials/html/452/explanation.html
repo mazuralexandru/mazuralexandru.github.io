@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>452. Forms: The <code>value</code> Attribute - Checkboxes &amp; Radio Buttons</h1>
+<p>The meaning of the <code class="language-html">value</code> attribute is significantly different for checkboxes (<code class="language-html">type=&quot;checkbox&quot;</code>) and radio buttons (<code class="language-html">type=&quot;radio&quot;</code>).</p>
+<p><strong><code>value</code> on Checkboxes &amp; Radio Buttons:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies the value that is <strong>sent to the server</strong> <em>if</em> that specific checkbox or radio button is <strong>selected</strong> (checked) when the form is submitted.</li>
+<li><strong>Not Displayed:</strong> The <code>value</code> attribute&#39;s content is <strong>not directly visible</strong> to the user on the page. The visible description comes from the associated <code class="language-html">&lt;label&gt;</code> element.</li>
+<li><strong>Importance:</strong> It&#39;s crucial to provide a meaningful <code>value</code> for each checkbox and radio button option. If you omit the <code>value</code> attribute:<ul>
+<li>Browsers often default to sending the value <code>&quot;on&quot;</code> if the control is checked.</li>
+<li>Receiving just <code>name=on</code> on the server is usually unhelpful, as you don&#39;t know <em>which specific</em> checkbox/radio button was selected if multiple share the same <code>name</code>.</li>
+<li>Therefore, <strong>always define a unique and meaningful <code>value</code></strong> for each checkbox/radio button option that needs to be identified server-side.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the text inputs and added two fieldsets: one with checkboxes and one with radio buttons. Crucially, each <code class="language-html">&lt;input&gt;</code> now has a specific <code>value</code> attribute.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Options (Checkboxes):&lt;/legend&gt;
+     &lt;input type=&quot;checkbox&quot; id=&quot;cb1&quot; name=&quot;options&quot; value=&quot;option1&quot;&gt; &lt;!-- Checkbox value --&gt;
+     &lt;label for=&quot;cb1&quot;&gt;Option 1&lt;/label&gt;&lt;br&gt;
+     &lt;input type=&quot;checkbox&quot; id=&quot;cb2&quot; name=&quot;options&quot; value=&quot;option2&quot;&gt; &lt;!-- Checkbox value --&gt;
+     &lt;label for=&quot;cb2&quot;&gt;Option 2&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Choice (Radio):&lt;/legend&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;rb1&quot; name=&quot;choice&quot; value=&quot;A&quot;&gt; &lt;!-- Radio value --&gt;
+      &lt;label for=&quot;rb1&quot;&gt;Choice A&lt;/label&gt;&lt;br&gt;
+      &lt;input type=&quot;radio&quot; id=&quot;rb2&quot; name=&quot;choice&quot; value=&quot;B&quot;&gt; &lt;!-- Radio value --&gt;
+      &lt;label for=&quot;rb2&quot;&gt;Choice B&lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code>value</code> attributes on the checkboxes (<code>value=&quot;option1&quot;</code>, <code>value=&quot;option2&quot;</code>) and radio buttons (<code>value=&quot;A&quot;</code>, <code>value=&quot;B&quot;</code>).</li>
+<li>In the preview, select &quot;Option 2&quot; checkbox and &quot;Choice A&quot; radio button.</li>
+<li><strong>Submission (Conceptual):</strong> If submitted, the data sent would include <code>options=option2</code> and <code>choice=A</code>. If &quot;Option 1&quot; was also checked, the data would include <code>options=option1&amp;options=option2&amp;choice=A</code>. The <code>value</code> attributes provide the actual data transmitted for the selected controls.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> For checkboxes and radio buttons, the <code>value</code> attribute defines the data submitted for that option <em>when selected</em>. It is not displayed visually (the <code class="language-html">&lt;label&gt;</code> is) but is essential for identifying the user&#39;s choice(s) on the server. Provide a unique and meaningful <code>value</code> for each option.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

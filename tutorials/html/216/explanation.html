@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>216. Links vs. Buttons: The <code class="language-html">&lt;a href=&quot;#&quot;&gt;</code> Anti-Pattern</h1>
+<p>A common anti-pattern, especially in older code or when developers are less familiar with semantics, is using an anchor element with a placeholder <code>href</code> (like <code class="language-html">href=&quot;#&quot;</code>, <code class="language-html">href=&quot;javascript:void(0);&quot;</code> or even no <code>href</code>) and attaching JavaScript <code>click</code> event handlers to make it <em>behave</em> like a button.</p>
+<p><strong>Example Anti-Pattern:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!-- INCORRECT - DO NOT DO THIS FOR ACTIONS --&gt;
+&lt;a href=&quot;#&quot; class=&quot;button-style&quot; onclick=&quot;doSomething(); return false;&quot;&gt;Perform Action&lt;/a&gt;
+</code></pre>
+<p><strong>Why This is Bad Practice:</strong></p>
+<ol>
+<li><strong>Incorrect Semantics:</strong> It declares the element as a link (navigation) when its actual purpose is an action. This confuses assistive technologies and search engines.</li>
+<li><strong>Poor Accessibility:</strong><ul>
+<li>Screen readers announce &quot;Link, Perform Action&quot;, setting the wrong expectation.</li>
+<li>It doesn&#39;t activate with the <code>Space</code> key like a native button, breaking standard keyboard interaction patterns.</li>
+<li>Requires extra JavaScript (<code>return false;</code> or <code>event.preventDefault()</code>) to stop the link from navigating (scrolling to top), adding unnecessary complexity.</li>
+</ul>
+</li>
+<li><strong>Less Robust:</strong> Relies entirely on JavaScript being enabled and running correctly for the element to function. A native <code class="language-html">&lt;button&gt;</code> often has meaningful default behavior (like form submission) even without JavaScript.</li>
+</ol>
+<p><strong>The Correct Approach for Actions:</strong></p>
+<p>Use a <code class="language-html">&lt;button&gt;</code> element, typically with <code>type=&quot;button&quot;</code> if it&#39;s not submitting a form. Attach JavaScript event listeners to the button if needed. Style it with CSS.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- CORRECT APPROACH FOR ACTIONS --&gt;
+&lt;button type=&quot;button&quot; class=&quot;button-style&quot; onclick=&quot;doSomething();&quot;&gt;Perform Action&lt;/button&gt;
+</code></pre>
+<p><em>(Or better yet, attach the event listener using JavaScript&#39;s <code>addEventListener</code> rather than the inline <code>onclick</code> attribute).</em></p>
+<p>✅ <strong>Observation:</strong> No code changes. Understand why using <code class="language-html">&lt;a href=&quot;#&quot;&gt;</code> with JavaScript to simulate button behavior is an anti-pattern that harms semantics and accessibility.</p>
+<p>✨ <strong>Key Takeaway:</strong> Always use <code class="language-html">&lt;button type=&quot;button&quot;&gt;</code> (or <code class="language-html">&lt;input type=&quot;button&quot;&gt;</code>) for elements that trigger actions on the current page. Reserve <code class="language-html">&lt;a&gt;</code> for actual navigation. Do not use placeholder <code>href</code> values on <code class="language-html">&lt;a&gt;</code> tags to mimic buttons.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

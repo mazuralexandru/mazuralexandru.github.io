@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>The &lt;form&gt; Element: Enctype</h1>
+  <p>Default enctype: application/x-www-form-urlencoded</p>
+
+  <!-- Form using the default enctype -->
+  <form action="/submit-data" method="POST">
+     <!-- <input type="text" name="query" value="Special Chars: &?"> -->
+     <!-- Data like "query=Special+Chars%3A+%26%3F" would be sent -->
+  </form>
+
+  <p>Suitable for most text data; encodes spaces (+) and special chars (%XX).</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

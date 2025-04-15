@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>260. Module 5 Recap: Core Principles Reinforced</h1>
+<p>Let&#39;s quickly revisit the core web development principles emphasized in this module on images:</p>
+<ol>
+<li><p><strong>Accessibility First:</strong></p>
+<ul>
+<li>The mandatory <code class="language-html">alt</code> attribute is paramount. Meaningful <code class="language-html">alt</code> text makes visual content accessible to screen reader users and provides essential fallback information.</li>
+<li>Using <code class="language-html">alt=&quot;&quot;</code> correctly for purely decorative images prevents unnecessary auditory clutter for screen reader users. Omitting <code class="language-html">alt</code> is an accessibility failure.</li>
+<li>Using <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> provides crucial semantic context for images and other figures, aiding comprehension for all users, especially those using assistive technologies.</li>
+</ul>
+</li>
+<li><p><strong>Performance Matters:</strong></p>
+<ul>
+<li>Choosing appropriate image file formats (<code class="language-text">WebP</code>, <code class="language-text">AVIF</code>, <code class="language-text">SVG</code> often preferred over older formats) significantly impacts file size.</li>
+<li><strong>Optimizing images</strong> (resizing to appropriate dimensions, using compression tools) is non-negotiable for fast page load times.</li>
+<li>Using <code class="language-html">width</code> and <code class="language-html">height</code> attributes correctly prevents Cumulative Layout Shift (CLS), a key performance metric and user experience factor.</li>
+</ul>
+</li>
+<li><p><strong>Semantics Over Presentation:</strong></p>
+<ul>
+<li>Use <code class="language-html">&lt;img&gt;</code> for <em>content</em> images, not purely for layout (where CSS backgrounds are often better).</li>
+<li>Use <code class="language-html">&lt;figure&gt;</code> when the semantic meaning of a self-contained, referenced unit is appropriate, not just as a generic wrapper (where <code class="language-html">&lt;div&gt;</code> might suffice).</li>
+<li>Write <code class="language-html">alt</code> text based on the image&#39;s <em>meaning and function</em> in context, not just its visual appearance.</li>
+</ul>
+</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. This step reinforces the underlying principles demonstrated throughout the module.</p>
+<p>✨ <strong>Key Takeaway:</strong> Building accessible, performant, and semantically correct web pages requires careful consideration of image <code class="language-html">alt</code> text, image optimization (format, size, compression), layout stability (<code class="language-html">width</code>/<code class="language-html">height</code>), and structural elements like <code class="language-html">&lt;figure&gt;</code>/<code class="language-html">&lt;figcaption&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

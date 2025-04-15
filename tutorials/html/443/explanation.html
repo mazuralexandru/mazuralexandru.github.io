@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>443. Selection Inputs: Checkbox vs. Radio - Semantic Choice</h1>
+<p>Let&#39;s explicitly compare checkboxes and radio buttons to ensure you choose the semantically correct one.</p>
+<p><strong>The Key Difference: Single vs. Multiple Selection</strong></p>
+<ul>
+<li><strong><code>type=&quot;radio&quot;</code>:</strong> Use when the user must select <strong>exactly one</strong> option from a list of two or more mutually exclusive choices. Selecting one deselects others in the same <code>name</code> group.<ul>
+<li><em>Keywords:</em> Choose <strong>one</strong>, Select <strong>an</strong> option, Preferred method.</li>
+<li><em>Examples:</em> Yes/No, Gender, Payment Type, Shipping Speed, Single Answer Multiple Choice.</li>
+</ul>
+</li>
+<li><strong><code>type=&quot;checkbox&quot;</code>:</strong> Use when the user can select <strong>zero, one, or multiple</strong> options from a list. Each checkbox operates independently (within the same <code>name</code> group for submission).<ul>
+<li><em>Keywords:</em> Select <strong>all that apply</strong>, Choose <strong>any</strong>, Optional features, Agree to terms.</li>
+<li><em>Examples:</em> Interests, Toppings, Subscribe to lists, Optional settings, Agree to Terms &amp; Conditions (single checkbox).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Choosing Incorrectly:</strong></p>
+<ul>
+<li><strong>Using Checkboxes for Single Choice:</strong> If you use checkboxes when only one option should be selected (e.g., for a Yes/No question), users <em>could</em> check both, leading to invalid data submission unless you add complex JavaScript validation to enforce single selection. Using radio buttons enforces this constraint naturally via HTML.</li>
+<li><strong>Using Radio Buttons for Multiple Choices:</strong> If you use radio buttons when multiple selections should be allowed (e.g., for selecting multiple interests), users will only ever be able to select one, preventing them from providing the intended input. Checkboxes are required for multi-select scenarios.</li>
+</ul>
+<p><strong>Accessibility &amp; Usability:</strong></p>
+<ul>
+<li>Using the correct type ensures that assistive technologies announce the control type correctly (&quot;Radio button, 1 of 3&quot; vs. &quot;Checkbox&quot;) and that standard keyboard interactions (arrow keys for radio groups, spacebar for toggling) work as expected.</li>
+<li>It provides clear visual cues (circle vs. square) that align with user expectations for single or multiple selections.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Review the radio button example in the preview (<code>index.html</code> lesson 442). Contrast its behavior (only one selectable) with how the checkboxes behaved in the previous example (multiple selectable). This difference is driven solely by <code>type=&quot;radio&quot;</code> vs. <code>type=&quot;checkbox&quot;</code> and the shared <code>name</code> attribute for radios.</p>
+<p>✨ <strong>Key Takeaway:</strong> Choose <code>type=&quot;radio&quot;</code> for single-choice selections from a group (use the same <code>name</code>). Choose <code>type=&quot;checkbox&quot;</code> for zero-or-more selections. This semantic choice is critical for functionality and accessibility.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

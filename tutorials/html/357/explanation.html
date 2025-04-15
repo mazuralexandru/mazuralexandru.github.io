@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>357. Reset: Preparing for <code class="language-html">&lt;script&gt;</code> Element</h1>
+<p>We&#39;ve explored internal stylesheets using the <code class="language-html">&lt;style&gt;</code> element and contrasted this approach with the preferred method of linking external CSS files.</p>
+<p>Next, we&#39;ll look at the <code class="language-html">&lt;script&gt;</code> element, used for including JavaScript in our HTML documents. JavaScript adds interactivity and dynamic behavior to web pages.</p>
+<p>To focus on the <code class="language-html">&lt;script&gt;</code> element, we will remove the <code class="language-html">&lt;style&gt;</code> block we added to the <code class="language-html">&lt;head&gt;</code> in the previous steps.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Isolate the <code class="language-html">&lt;script&gt;</code> element and its attributes/behavior.</li>
+<li><strong>Clean Slate:</strong> Remove the internal CSS rules to avoid visual distraction when discussing JavaScript concepts.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<ol>
+<li>Removed the <code class="language-html">&lt;style&gt;...&lt;/style&gt;</code> block from the <code class="language-html">&lt;head&gt;</code> of <code class="language-text">index.html</code>.</li>
+<li>Updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;HTML Metadata - Script Element&lt;/title&gt; &lt;!-- Updated title --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; &lt;!-- External CSS --&gt;
+
+  &lt;!-- Removed style block --&gt;
+  &lt;!-- &lt;style&gt; h1 { ... } &lt;/style&gt; --&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Metadata: The &amp;lt;script&amp;gt; Element&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Now let&#39;s look at the &#39;script&#39; element for JavaScript.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;p&gt;Scripts add interactivity and dynamic behavior.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify the removal of the <code class="language-html">&lt;style&gt;</code> block from the <code class="language-html">&lt;head&gt;</code> of <code class="language-text">index.html</code>.</li>
+<li>Look at the browser preview. The <code class="language-html">&lt;h1&gt;</code> element should revert to its default styling (inheriting from the base <code>body</code> style in <code>style.css</code>, no longer orange with a wavy underline).</li>
+<li>The page shows the updated heading and paragraphs, ready for the <code class="language-html">&lt;script&gt;</code> element introduction.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the internal <code class="language-html">&lt;style&gt;</code> block clears the example and allows a focused introduction to embedding and linking JavaScript using the <code class="language-html">&lt;script&gt;</code> element.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

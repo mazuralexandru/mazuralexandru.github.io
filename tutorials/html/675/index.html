@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Validation Errors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Common Validation Errors</h1>
+
+  <h2>Error: Unclosed/Stray Tags</h2>
+
+  <!-- Bad Example (Unclosed <em>) -->
+  <p>This text has <em>emphasis that never ends...
+  <p>...and affects this paragraph too.</p>
+
+  <hr> <!-- Separator -->
+
+  <!-- Good Example -->
+  <p>This text has <em>emphasis that ends correctly</em>.</p>
+  <p>This paragraph is unaffected.</p>
+
+  <!-- Stray Tag Example (will be removed next step) -->
+  <p>Oops, an extra closing tag here.</div></p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

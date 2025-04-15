@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>339. Common <code class="language-html">&lt;link&gt;</code> Types: Linking External CSS (<code>rel=&quot;stylesheet&quot;</code>) - Core Mechanics</h1>
+<p>Let&#39;s delve deeper into the specific attributes commonly used when linking stylesheets.</p>
+<p><strong>Basic Syntax:</strong></p>
+<p><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/styles.css&quot;&gt;</code></p>
+<p><strong>Attribute Deep Dive:</strong></p>
+<ol>
+<li><p><strong><code>rel=&quot;stylesheet&quot;</code> [Required]:</strong></p>
+<ul>
+<li>This value explicitly identifies the linked resource as a stylesheet that the browser should fetch, parse, and apply to render the document.</li>
+</ul>
+</li>
+<li><p><strong><code>href=&quot;path/to/styles.css&quot;</code> [Required]:</strong></p>
+<ul>
+<li>Provides the URL (absolute or relative) of the <code>.css</code> file. Relative paths are standard for stylesheets belonging to the same website.</li>
+</ul>
+</li>
+<li><p><strong><code>type=&quot;text/css&quot;</code> [Optional/Obsolete]:</strong></p>
+<ul>
+<li>Historically used to specify the MIME type.</li>
+<li>Browsers automatically assume <code>text/css</code> for links with <code>rel=&quot;stylesheet&quot;</code>.</li>
+<li>It is <strong>no longer necessary</strong> and can be safely omitted in modern HTML5. Including it doesn&#39;t hurt, but it adds verbosity.</li>
+</ul>
+</li>
+<li><p><strong><code>media</code> Attribute [Conditional Styling]:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Allows you to specify <em>conditions</em> under which the stylesheet should be applied. This is key for loading different styles for different outputs (screen, print) or different device characteristics (responsive design).</li>
+<li><strong>Syntax:</strong> <code class="language-html">media=&quot;media-type | media-query&quot;</code></li>
+<li><strong>Examples:</strong><ul>
+<li><code class="language-html">media=&quot;screen&quot;</code>: Applies only to screen devices (default if <code>media</code> is omitted).</li>
+<li><code class="language-html">media=&quot;print&quot;</code>: Applies only when the page is being printed or print-previewed. Used for creating printer-friendly layouts (e.g., hiding navigation, different fonts/colors).</li>
+<li><code class="language-html">media=&quot;(max-width: 768px)&quot;</code>: Applies only if the viewport width is 768 pixels or less (a common breakpoint for tablets/small laptops).</li>
+<li><code class="language-html">media=&quot;(min-width: 1025px)&quot;</code>: Applies only to larger screens.</li>
+<li><code class="language-html">media=&quot;screen and (orientation: landscape)&quot;</code>: Combines type and feature.</li>
+</ul>
+</li>
+<li><strong>Behavior:</strong> The browser downloads <em>all</em> linked stylesheets regardless of the <code>media</code> attribute, but it only <em>applies</em> the styles from those whose media conditions currently match the device/viewport.</li>
+</ul>
+</li>
+<li><p><strong><code>title</code> Attribute [Alternate Stylesheets]:</strong></p>
+<ul>
+<li>Used in conjunction with <code class="language-html">rel=&quot;alternate stylesheet&quot;</code> or just <code class="language-html">rel=&quot;stylesheet&quot;</code> to define named groups of stylesheets. Some browsers offer UI for users to switch between stylesheets with different <code>title</code> values (e.g., different themes). Less commonly used now than theme switching via JavaScript/CSS variables.</li>
+</ul>
+</li>
+<li><p><strong><code>disabled</code> Attribute [Dynamic Control]:</strong></p>
+<ul>
+<li>Boolean attribute. If present, the stylesheet is not applied. Primarily intended to be manipulated via JavaScript (<code class="language-js">linkElement.disabled = true;</code>) to dynamically enable/disable stylesheets.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ll add examples showing the <code>media</code> attribute.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;HTML Metadata - Link Element&lt;/title&gt;
+  &lt;!-- Default stylesheet for all media --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;!-- Stylesheet specifically for printing --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;print-styles.css&quot; media=&quot;print&quot;&gt; &lt;!-- Added print media --&gt;
+  &lt;!-- Stylesheet for small screens --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;mobile-styles.css&quot; media=&quot;(max-width: 600px)&quot;&gt; &lt;!-- Added media query --&gt;
+
+  &lt;!-- Other meta tags will be added here --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Metadata: Linking CSS&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;The &#39;media&#39; attribute allows conditional CSS loading:&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+  &lt;code&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;print.css&quot; media=&quot;print&quot;&amp;gt;&lt;/code&gt;&lt;br&gt;
+  &lt;code&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;mobile.css&quot; media=&quot;(max-width: 600px)&quot;&amp;gt;&lt;/code&gt;
+
+  &lt;p&gt;The &#39;type=&quot;text/css&quot;&#39; attribute is generally omitted now.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p><em>(Note: <code>print-styles.css</code> and <code>mobile-styles.css</code> are hypothetical and won&#39;t load).</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the new <code class="language-html">&lt;link&gt;</code> tags with <code>media=&quot;print&quot;</code> and <code>media=&quot;(max-width: 600px)&quot;</code>.</li>
+<li>The browser preview won&#39;t change visually based <em>only</em> on these tags being present (unless your preview window is &lt;= 600px and <code>mobile-styles.css</code> actually existed and contained rules).</li>
+<li>Understand conceptually: <code>style.css</code> always applies (to screen media). <code>print-styles.css</code> would <em>only</em> apply during printing. <code>mobile-styles.css</code> would <em>only</em> apply if the viewport width is 600px or less.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot;&gt;</code> to link CSS. Omit <code>type=&quot;text/css&quot;</code>. Use the <code>media</code> attribute to apply styles conditionally for print, different screen sizes (RWD), or other media contexts.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

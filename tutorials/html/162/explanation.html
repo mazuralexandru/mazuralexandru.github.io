@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>162. Reset: Removing Relative URL Example</h1>
+<p>We&#39;ve explored the different forms of relative URLs used for internal linking. Now, we&#39;ll move on to another type of linking: creating links that jump to specific <strong>sections within a page</strong> (using fragment identifiers).</p>
+<p>To prepare, let&#39;s remove the root-relative link example.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention from linking <em>between</em> pages/resources to linking <em>within</em> a single page.</li>
+<li><strong>Clear Space:</strong> Make room in the <code class="language-html">&lt;body&gt;</code> for adding elements with <code>id</code> attributes that will serve as targets for our fragment links.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;a&gt;</code> tag containing the root-relative link example from <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Links and Navigation&lt;/h1&gt;
+  &lt;p&gt;Preparing to demonstrate linking to page fragments (sections).&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- Removed relative link example --&gt;
+  &lt;!-- &lt;p&gt;&lt;a href=&quot;/images/logo.png&quot;&gt;Site Logo&lt;/a&gt;&lt;/p&gt; --&gt;
+
+  &lt;p&gt;This uses the &#39;#&#39; symbol and element IDs.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Confirm that the anchor tag example is gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview shows only the heading and introductory paragraphs for the next topic.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the previous relative link example clears the stage for demonstrating fragment identifier links and their corresponding target elements.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

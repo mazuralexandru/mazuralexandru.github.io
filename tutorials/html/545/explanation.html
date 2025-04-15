@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>545. Multimedia: Video (<code class="language-html">&lt;video&gt;</code>) - <code>width</code>, <code>height</code>, <code>poster</code> Attributes</h1>
+<p>Similar to images, providing dimensions and a placeholder image improves the loading experience for videos.</p>
+<p><strong>1. <code>width</code> and <code>height</code> Attributes:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specify the intended display dimensions of the video player in CSS pixels (unitless integer values).</li>
+<li><strong>Syntax:</strong> <code class="language-html">width=&quot;&lt;number&gt;&quot; height=&quot;&lt;number&gt;&quot;</code></li>
+<li><strong>Behavior:</strong><ul>
+<li><strong>Layout Stability (Prevents CLS):</strong> Just like with <code class="language-html">&lt;img&gt;</code>, these attributes allow the browser to reserve the correct amount of space in the layout <em>before</em> the video metadata (which contains the intrinsic dimensions) loads. This prevents the page content from jumping around when the video player initializes.</li>
+<li><strong>Aspect Ratio:</strong> Use values that match the video&#39;s aspect ratio (e.g., <code>width=&quot;640&quot; height=&quot;360&quot;</code> for 16:9) to avoid distortion if the browser uses these directly or to ensure correct space reservation when CSS makes the video responsive.</li>
+<li><strong>CSS Interaction:</strong> CSS <code>width</code>/<code>height</code> can override these for responsive sizing, but the HTML attributes are still needed for the initial space reservation based on aspect ratio.</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. <code>poster</code> Attribute:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies the URL of an image to display in the video player area <em>before</em> the video starts playing or while it&#39;s downloading.</li>
+<li><strong>Syntax:</strong> <code class="language-html">poster=&quot;path/to/image.jpg&quot;</code></li>
+<li><strong>Behavior:</strong> Shows a static image placeholder (like a thumbnail or custom splash screen) until the user hits play or the first video frame is ready. Improves visual appeal and perceived performance, giving users something to see immediately.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added <code>width</code>, <code>height</code>, and <code>poster</code> attributes to our <code class="language-html">&lt;video&gt;</code> tag in <code class="language-text">index.html</code>. Paths are hypothetical.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+  &lt;video src=&quot;/videos/example.mp4&quot;
+         controls
+         width=&quot;480&quot; height=&quot;270&quot; &lt;!-- Added width/height (16:9 ratio) --&gt;
+         poster=&quot;/images/video-poster.jpg&quot;&gt; &lt;!-- Added poster --&gt;
+    &lt;!-- Fallback content... --&gt;
+    &lt;p&gt;Sorry, your browser doesn&#39;t support embedded videos.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/videos/example.mp4&quot;&gt;Download the video&lt;/a&gt; instead.&lt;/p&gt;
+  &lt;/video&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the <code>width</code>, <code>height</code>, and <code>poster</code> attributes added to the <code class="language-html">&lt;video&gt;</code> tag.</li>
+<li>Look at the browser preview.<ul>
+<li>The video player area should now have a defined size (approximately 480x270 pixels).</li>
+<li>Instead of just an error or black box, you should see a <strong>broken image icon</strong> representing the <code>poster</code> image (since <code>/images/video-poster.jpg</code> doesn&#39;t exist). If the poster <em>did</em> exist, that image would be displayed initially within the player area.</li>
+<li>The <code>controls</code> are still visible.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Add <code>width</code> and <code>height</code> attributes (matching the video&#39;s aspect ratio) to <code class="language-html">&lt;video&gt;</code> to prevent layout shift. Use the <code>poster</code> attribute to specify an image placeholder displayed before playback begins.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

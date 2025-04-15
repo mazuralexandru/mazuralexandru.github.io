@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>190. Email Links (<code>mailto:</code>): Introduction</h1>
+<p>Besides <code>http:</code> and <code>https:</code>, the <code class="language-html">href</code> attribute can use other <strong>URI (Uniform Resource Identifier) schemes</strong> to trigger specific actions. A very common one is <code>mailto:</code>, used to create links that open the user&#39;s email client.</p>
+<p><strong>The <code>mailto:</code> Scheme:</strong></p>
+<ul>
+<li><strong>Definition:</strong> A URI scheme specifically designed for email addresses.</li>
+<li><strong>Purpose:</strong> When used in an <code>href</code> attribute (<code class="language-html">href=&quot;mailto:...&quot;</code>), it instructs the browser to attempt to launch the user&#39;s <strong>default desktop email client</strong> (e.g., Outlook, Apple Mail, Thunderbird) and pre-fill a new email message.</li>
+<li><strong>Goal:</strong> To provide users a convenient way to start sending an email to a specific address without needing to manually copy and paste it.</li>
+</ul>
+<p><strong>Basic Structure:</strong></p>
+<p>The simplest form just includes the email address after the <code>mailto:</code> prefix. We&#39;ll add parameters like subject and body later.</p>
+<p><strong>Behavior Note:</strong> The functionality entirely depends on the user having a default email client configured on their operating system. If no client is set up, clicking the link might do nothing or result in an error message. It doesn&#39;t reliably open webmail services like Gmail in the browser unless the user has specifically configured handlers for <code>mailto:</code> links.</p>
+<p>✅ <strong>Observation:</strong> No code changes yet. This step introduces the concept of the <code>mailto:</code> URI scheme and its purpose: triggering the user&#39;s default email application.</p>
+<p>✨ <strong>Key Takeaway:</strong> The <code>mailto:</code> URI scheme used in an <code>href</code> attribute creates a link that attempts to open the user&#39;s default email client.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

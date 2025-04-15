@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>12. Preparing for Structure: Clearing Examples</h1>
+<p>Before we build the <em>correct</em> minimal structure for an HTML document, let&#39;s clean up the examples we just added.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Our next steps involve creating the foundational <code class="language-html">&lt;!DOCTYPE&gt;</code>, <code class="language-html">&lt;html&gt;</code>, <code class="language-html">&lt;head&gt;</code>, and <code class="language-html">&lt;body&gt;</code> elements. The paragraphs and breaks we added were just for demonstrating basic tag syntax. Keeping them now would clutter the view as we focus on the overall document structure.</li>
+<li><strong>Relevance:</strong> Those specific examples (<code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;hr&gt;</code>, <code class="language-html">&lt;br&gt;</code>) are not directly needed for understanding the core document structure itself. We&#39;ll re-introduce content elements <em>inside</em> the <code class="language-html">&lt;body&gt;</code> later.</li>
+<li><strong>Incremental Learning:</strong> We introduce concepts (like <code class="language-html">&lt;p&gt;</code>), demonstrate them, and then sometimes clear the stage to focus on the next core concept without distraction.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the paragraph and void elements from <code class="language-text">index.html</code>, leaving only a comment indicating our next steps.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
+&lt;!-- We will build the standard document structure soon --&gt;
+</code></pre>
+<ul>
+<li><strong>Removed:</strong><pre class="language-html"><code class="language-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is another paragraph.&lt;br&gt;This text appears on a new line.&lt;/p&gt;
+</code></pre>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Confirm that <code class="language-text">index.html</code> now only contains the single comment line.</li>
+<li>The browser preview pane should be completely blank again, as there is no renderable content.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Actively removing code that is no longer relevant to the immediate learning goal is an important part of managing complexity and maintaining focus during development and learning. We cleared the temporary examples to prepare for building the fundamental HTML document structure.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

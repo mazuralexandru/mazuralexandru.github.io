@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>205. Link Content: Image Links and <code>alt</code> Text</h1>
+<p>Sometimes, the entire content of a link is an image (<code class="language-html">&lt;img&gt;</code>) rather than text. This is common for logos linking to a homepage or icons representing actions.</p>
+<p><strong>Syntax:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;a href=&quot;destination.html&quot;&gt;
+  &lt;img src=&quot;path/to/image.png&quot; alt=&quot;Crucial description here&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p><strong>Accessibility Challenge:</strong></p>
+<p>If there is no text within the <code class="language-html">&lt;a&gt;</code> tags, a screen reader needs alternative text to understand what the link is for. Simply describing the image visually might not be enough.</p>
+<p><strong>The Role of <code>alt</code> Text:</strong></p>
+<ul>
+<li>When an <code class="language-html">&lt;img&gt;</code> element is the <em>sole</em> content of an <code class="language-html">&lt;a&gt;</code> element, the <code class="language-html">alt</code> attribute of the image <strong>must</strong> describe the <strong>destination or function of the link</strong>, not just the image itself.</li>
+<li>The screen reader will typically announce the <code>alt</code> text as the link&#39;s accessible name.</li>
+</ul>
+<p><strong>Good vs. Bad <code>alt</code> Text for Image Links:</strong></p>
+<ul>
+<li><strong>Scenario:</strong> A company logo image (<code>logo.png</code>) links to the homepage (<code>/</code>).<ul>
+<li><strong>BAD:</strong> <code>alt=&quot;Example Corp Logo&quot;</code> (Describes the image, but not where the link goes). A screen reader would announce &quot;Link: Example Corp Logo&quot;.</li>
+<li><strong>GOOD:</strong> <code>alt=&quot;Example Corp Homepage&quot;</code> or <code>alt=&quot;Go to Example Corp Homepage&quot;</code> (Describes the link&#39;s destination/function). A screen reader would announce &quot;Link: Example Corp Homepage&quot;.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the previous list examples and added an example of an image link in <code class="language-text">index.html</code>. We&#39;re using a placeholder image path, but the focus is on the <code>alt</code> text.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Link Content &amp; Accessibility&lt;/h1&gt;
+  &lt;p&gt;Links containing only images need descriptive alt text.&lt;/p&gt;
+
+  &lt;h2&gt;Image Link Example:&lt;/h2&gt;
+  &lt;p&gt;
+    &lt;!-- Assume logo.png is the company logo linking to homepage --&gt;
+    &lt;a href=&quot;/&quot;&gt; &lt;!-- Root-relative link to homepage --&gt;
+       &lt;img src=&quot;/images/placeholder-logo.png&quot; alt=&quot;Go to Example Corp Homepage&quot;&gt;
+       &lt;!-- Alt text describes link DESTINATION, not just the image --&gt;
+    &lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;(Placeholder image used)&lt;/p&gt;
+
+  &lt;!-- Removed previous ul examples --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the code. Note the <code class="language-html">&lt;a&gt;</code> tag wrapping only an <code class="language-html">&lt;img&gt;</code> tag.</li>
+<li>Crucially, read the <code>alt</code> text: <code>&quot;Go to Example Corp Homepage&quot;</code>. It describes where the link leads.</li>
+<li>The preview will likely show a broken image (as <code>/images/placeholder-logo.png</code> doesn&#39;t exist), but the link structure is correct. Imagine it&#39;s a clickable logo.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> If an image is the only content inside a link (<code class="language-html">&lt;a&gt;&lt;img&gt;&lt;/a&gt;</code>), the image&#39;s <code>alt</code> text <strong>must</strong> describe the link&#39;s destination or purpose to be accessible.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

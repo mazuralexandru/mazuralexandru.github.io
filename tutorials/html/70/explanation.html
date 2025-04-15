@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>70. Final Code Cleanup: Removing Inline Code Reference</h1>
+<p>In the previous step, we removed the main <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> block. However, one of the introductory paragraphs still contained an inline <code class="language-html">&lt;code&gt;</code> tag used when discussing that block.</p>
+<p>To ensure the page is completely free of code-related elements before we start with quotations, we&#39;ll remove that last inline <code class="language-html">&lt;code&gt;</code> reference as well.</p>
+<p><strong>Why Remove It?</strong></p>
+<ul>
+<li><strong>Complete Topic Separation:</strong> Ensures no remnants of the previous topic (code display) linger as we move into quotations.</li>
+<li><strong>Consistency:</strong> Makes the cleanup from the previous section fully complete.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the inline <code class="language-html">&lt;code&gt;</code> tags and the text they contained from the first paragraph in <code class="language-text">index.html</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Quotation Elements&lt;/h1&gt;
+  &lt;p&gt;Now we will look at elements used for quoting text from other sources.&lt;/p&gt;
+  &lt;!-- Removed inline code reference --&gt;
+  &lt;!-- Removed: Use the &lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;...&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt; pattern... --&gt;
+
+
+  &lt;p&gt;These elements help provide semantic context for quoted material.&lt;/p&gt;
+  &lt;!-- Removed old P referring to escaping --&gt;
+
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p><em>(Note: The entire paragraph content was effectively replaced in the previous step, this step just ensures any lingering inline code tags accidentally left are confirmed gone. In this specific flow, step 69 already removed the relevant inline code, so this step mainly serves as a context reset confirmation.)</em></p>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Double-check <code class="language-text">index.html</code> to ensure no <code class="language-html">&lt;pre&gt;</code> or <code class="language-html">&lt;code&gt;</code> tags remain within the main content.</li>
+<li>The browser preview remains unchanged from the previous step – heading and two plain paragraphs focused on the upcoming topic of quotations.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Thorough cleanup between distinct topics includes removing not just the main block examples but also any inline references related to the concluded topic.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

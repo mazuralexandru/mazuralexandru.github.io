@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>595. Graphics: Canvas (<code class="language-html">&lt;canvas&gt;</code>) - Pixel Manipulation &amp; Exporting (Conceptual)</h1>
+<p>Beyond drawing shapes and text, the Canvas API allows for direct manipulation of pixel data and exporting the canvas content as an image.</p>
+<p><strong>Pixel Manipulation:</strong></p>
+<ul>
+<li><strong><code>ctx.getImageData(sx, sy, sw, sh)</code>:</strong> Reads a rectangular block of pixel data from the canvas.<ul>
+<li>Returns an <code>ImageData</code> object.</li>
+<li>The <code>ImageData.data</code> property is a flat <code>Uint8ClampedArray</code> containing RGBA (Red, Green, Blue, Alpha) values for each pixel, sequentially ([R1, G1, B1, A1, R2, G2, B2, A2, ...]). Values range from 0 to 255.</li>
+</ul>
+</li>
+<li><strong><code>ctx.putImageData(imageData, dx, dy)</code>:</strong> Writes pixel data from an <code>ImageData</code> object back onto the canvas at a specified location. Can also write partial areas (<code>dirtyX</code>, <code>dirtyY</code>, <code>dirtyWidth</code>, <code>dirtyHeight</code> arguments).</li>
+<li><strong><code>ctx.createImageData(width, height)</code> or <code>ctx.createImageData(anotherImageData)</code>:</strong> Creates a new, blank <code>ImageData</code> object.</li>
+<li><strong>Use Cases:</strong> Image filtering (brightness, contrast, grayscale), color analysis, collision detection in games (checking pixel alpha), procedural texture generation.</li>
+<li><strong>Performance Note:</strong> <code>getImageData</code> and <code>putImageData</code> can be relatively slow operations, especially on large canvases. Avoid calling them excessively within animation loops if possible. OffscreenCanvas can help for heavy processing.</li>
+</ul>
+<p><strong>Exporting Canvas Content:</strong></p>
+<p>You can convert the current state of the canvas bitmap into an image file format, typically represented as a Data URL or a Blob.</p>
+<ul>
+<li><strong><code>canvasElement.toDataURL(type, quality)</code>:</strong><ul>
+<li>Returns a <strong>Data URL</strong> string representing the canvas image (e.g., <code>data:image/png;base64,iVBORw0KGg...</code>).</li>
+<li><code>type</code> (Optional): MIME type like <code>image/png</code> (default), <code>image/jpeg</code>, <code>image/webp</code>.</li>
+<li><code>quality</code> (Optional): For lossy types like <code>image/jpeg</code> or <code>image/webp</code>, a number between 0 and 1 indicating quality (default varies).</li>
+<li>Use Cases: Creating downloadable image snapshots, easily embedding the generated image in another <code class="language-html">&lt;img&gt;</code> tag (<code class="language-html">&lt;img src=&quot;data:...&quot;&gt;</code>), saving image data temporarily.</li>
+</ul>
+</li>
+<li><strong><code>canvasElement.toBlob(callback, type, quality)</code>:</strong><ul>
+<li>Asynchronously creates a <code>Blob</code> object representing the canvas image data.</li>
+<li>The <code>callback</code> function receives the <code>Blob</code> object as an argument.</li>
+<li><code>type</code> and <code>quality</code> arguments are similar to <code>toDataURL</code>.</li>
+<li>Use Cases: Preferred for handling large image data (avoids huge Data URL strings), uploading the generated image to a server using <code>FormData</code> and Fetch/XHR, saving files using browser APIs (<code>window.showSaveFilePicker</code> or creating object URLs).</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. Understand conceptually that JavaScript can read/write individual pixel RGBA values on the canvas (<code>getImageData</code>/<code>putImageData</code>) and export the entire canvas drawing as an image file (<code>toDataURL</code>/<code>toBlob</code>).</p>
+<p>✨ <strong>Key Takeaway:</strong> The Canvas API allows low-level pixel manipulation via <code>getImageData</code>/<code>putImageData</code> and exporting the canvas content as an image Data URL (<code>toDataURL</code>) or Blob (<code>toBlob</code>), enabling image processing and saving functionalities via JavaScript.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

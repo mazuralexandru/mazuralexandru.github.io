@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Text Areas (&lt;textarea&gt;)</h1>
+  <p>Used for multi-line text input like comments or descriptions.</p>
+
+  <form action="/submit-comment" method="POST"> <!-- Updated action -->
+    <p>
+      <label for="user_comment">Your Comment:</label><br> <!-- Added label -->
+      <textarea id="user_comment" name="comment" rows="5" cols="40">Enter your thoughts here...</textarea> <!-- Added textarea -->
+    </p>
+    <p><button type="submit">Post Comment</button></p>
+  </form>
+
+  <p>Initial value goes BETWEEN the tags. Size hints via rows/cols (CSS preferred).</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>211. Reset: Removing Other Attribute Examples</h1>
+<p>We have now looked at several additional attributes for <code class="language-html">&lt;a&gt;</code> tags (<code>rel</code>, <code>hreflang</code>, <code>type</code>) that provide extra semantic information or hints.</p>
+<p>Before we briefly preview how links are typically styled using CSS and discuss the important distinction between links (<code class="language-html">&lt;a&gt;</code>) and buttons (<code class="language-html">&lt;button&gt;</code>), let&#39;s remove the previous example demonstrating the <code>type</code> attribute.</p>
+<p><strong>Why Remove Code?</strong></p>
+<ul>
+<li><strong>Focus:</strong> Shift attention from informational attributes to the visual presentation (CSS) and semantic purpose (link vs. button) of anchor elements.</li>
+<li><strong>Clean Slate:</strong> Provide a simple structure for discussing CSS pseudo-classes conceptually.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We have removed the <code class="language-html">&lt;a&gt;</code> tag example that included the <code>type</code> attribute and updated the surrounding text.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Styling Links with CSS (Preview)&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;Preparing to briefly discuss CSS pseudo-classes for links.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;p&gt;
+    &lt;!-- Removed type attribute example --&gt;
+    &lt;!-- &lt;a href=&quot;/docs/report.pdf&quot; type=&quot;application/pdf&quot;&gt; ... &lt;/a&gt; --&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;HTML defines the link; CSS defines its appearance.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Verify that the previous link example is gone from <code class="language-text">index.html</code>.</li>
+<li>The browser preview shows only the heading and introductory text for the next topics.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Removing the examples of less common attributes (<code>rel</code>, <code>hreflang</code>, <code>type</code>) helps streamline the page as we prepare to discuss CSS styling and the link vs. button distinction.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

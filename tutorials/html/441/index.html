@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Input Type: Checkbox</h1> <!-- Updated H1 -->
+  <p>For toggling options on/off (multiple selections possible).</p>
+
+  <form action="/submit-prefs" method="POST"> <!-- Changed action -->
+    <!-- Search field removed for focus -->
+    <fieldset> <!-- Added fieldset/legend -->
+      <legend>Email Preferences:</legend>
+      <p>
+         <input type="checkbox" id="newsletter" name="prefs" value="newsletter" checked> <!-- Added checkbox -->
+         <label for="newsletter">Subscribe to newsletter</label> <!-- Added label -->
+      </p>
+      <p>
+         <input type="checkbox" id="offers" name="prefs" value="offers"> <!-- Added checkbox -->
+         <label for="offers">Receive special offers</label> <!-- Added label -->
+      </p>
+       <p>
+         <input type="checkbox" id="updates" name="prefs" value="product_updates"> <!-- Added checkbox -->
+         <label for="updates">Get product updates</label> <!-- Added label -->
+      </p>
+    </fieldset>
+    <p><button type="submit">Save Preferences</button></p>
+  </form>
+
+  <p>Requires 'name' and 'value'. 'checked' sets default.</p>
+
+
+  <!-- <p>This paragraph is temporarily commented out.</p> -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>101. Unordered Lists (<code class="language-html">&lt;ul&gt;</code>): Behavior (Markers &amp; CSS)</h1>
+<p>Let&#39;s revisit the <code class="language-html">&lt;ul&gt;</code> element and discuss its default rendering behavior, specifically the list markers, and how CSS is used for styling.</p>
+<p><strong>Default Rendering Behavior Recap:</strong></p>
+<ul>
+<li><strong>Block Element:</strong> <code class="language-html">&lt;ul&gt;</code> creates a block formatting context.</li>
+<li><strong>Margins/Padding:</strong> Browsers add default vertical margins around the <code class="language-html">&lt;ul&gt;</code> and default horizontal padding (usually <code>padding-left</code>) to indent the list items. The exact values vary between browsers.</li>
+<li><strong>Markers:</strong> The most distinctive feature is that browsers render a <strong>marker</strong> (typically a bullet point) before each <code class="language-html">&lt;li&gt;</code> item within the <code class="language-html">&lt;ul&gt;</code>.</li>
+</ul>
+<p><strong>Default Unordered List Markers:</strong></p>
+<ul>
+<li>The default marker style for the top level of a <code class="language-html">&lt;ul&gt;</code> is usually a solid disc (<code>•</code>).</li>
+<li>For nested <code class="language-html">&lt;ul&gt;</code> elements (which we&#39;ll see later), the default marker often cycles through different styles, commonly:<ul>
+<li>Level 1: <code>disc</code> (•)</li>
+<li>Level 2: <code>circle</code> (○)</li>
+<li>Level 3+: <code>square</code> (▪︎)
+<em>(This cycle can vary by browser).</em></li>
+</ul>
+</li>
+</ul>
+<p><strong>Styling with CSS (Overview):</strong></p>
+<p>While browsers provide defaults, you should use <strong>CSS</strong> for reliable and customized list styling. Key CSS properties include:</p>
+<ul>
+<li><code class="language-css">list-style-type</code>: Controls the marker style. For <code class="language-html">&lt;ul&gt;</code>, common values are:<ul>
+<li><code>disc</code> (default)</li>
+<li><code>circle</code></li>
+<li><code>square</code></li>
+<li><code>none</code> (removes the marker entirely - very common for navigation menus)</li>
+</ul>
+</li>
+<li><code class="language-css">list-style-position</code>: Controls whether the marker sits <code>outside</code> (default, in the padding area) or <code>inside</code> the list item&#39;s text flow.</li>
+<li><code class="language-css">list-style-image</code>: Allows using a custom image as the marker (<code>url(...)</code>).</li>
+<li><code class="language-css">list-style</code>: A shorthand for the above three properties.</li>
+<li><code class="language-css">padding-left</code>: Often adjusted on the <code class="language-html">&lt;ul&gt;</code> element to control the amount of indentation. (Resetting default browser padding is common for consistent results).</li>
+<li><code class="language-css">margin</code>: Controls space around the entire list block.</li>
+<li><code class="language-css">::marker</code>: A pseudo-element for directly styling the marker itself (color, size, etc.).</li>
+</ul>
+<p><strong>Historical Note:</strong> Older HTML versions had a <code>type</code> attribute directly on the <code class="language-html">&lt;ul&gt;</code> tag (<code class="language-html">&lt;ul type=&quot;circle&quot;&gt;</code>). This attribute is <strong>deprecated</strong> in HTML5 and should <strong>not</strong> be used. Always use CSS for styling markers.</p>
+<p>✅ <strong>Observation:</strong> No code changes. Examine the list in the preview. Note the default bullet points (likely solid discs •) and the indentation. Understand that these are default browser styles applied to the <code class="language-html">&lt;ul&gt;</code> and its <code class="language-html">&lt;li&gt;</code> children, and that CSS provides full control over this appearance.</p>
+<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;ul&gt;</code> lists default to bullet point markers. Use CSS properties like <code>list-style-type</code>, <code>padding-left</code>, and potentially <code>::marker</code> to control the appearance (marker style, indentation) of unordered lists, rather than relying on browser defaults or deprecated HTML attributes.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

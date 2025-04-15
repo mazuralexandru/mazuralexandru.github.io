@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>247. Common Web Image Formats: WebP</h1>
+<p>A more modern image format aiming to replace older ones is <strong>WebP</strong>.</p>
+<p><strong>WebP (Web Picture format)</strong></p>
+<ul>
+<li><strong>File Extension:</strong> <code class="language-text">.webp</code></li>
+<li><strong>Development:</strong> Developed by Google.</li>
+<li><strong>Purpose:</strong> Designed as a modern replacement for JPEG, PNG, and GIF, offering superior compression and more features in a single format.</li>
+<li><strong>Compression:</strong> Supports both:<ul>
+<li><strong>Lossy Compression:</strong> Often achieves significantly smaller file sizes (typically 25-35% smaller) than JPEG at comparable visual quality.</li>
+<li><strong>Lossless Compression:</strong> Often achieves smaller file sizes (around 25% smaller) than PNG while retaining perfect quality.</li>
+</ul>
+</li>
+<li><strong>Features:</strong> Supports:<ul>
+<li><strong>Alpha Transparency:</strong> Like PNG, allows for variable opacity.</li>
+<li><strong>Animation:</strong> Like GIF (but often with better quality and smaller file sizes).</li>
+</ul>
+</li>
+<li><strong>Browser Support:</strong> Excellent support across all major modern browsers (Chrome, Firefox, Edge, Safari, Opera). Older browser versions (especially older Safari and IE) lack support.</li>
+<li><strong>Use Cases:</strong> Increasingly becoming the <strong>preferred format</strong> for most web images (both photographic and graphical) due to its efficiency. You can often replace JPEGs, PNGs, and GIFs with WebP equivalents for significant performance gains.</li>
+<li><strong>Fallback:</strong> For compatibility with older browsers, developers often use the <code class="language-html">&lt;picture&gt;</code> element (an advanced topic) to provide WebP images with fallbacks to JPEG or PNG.</li>
+</ul>
+<p><strong>When to Use WebP:</strong></p>
+<ul>
+<li>For almost all raster images (photos, graphics) where modern browser support is sufficient or fallbacks are provided.</li>
+<li>When seeking the best balance of quality and file size for raster images.</li>
+<li>For animated images where GIF quality/size is insufficient.</li>
+</ul>
+<p><strong>When NOT to Use WebP (or consider alternatives):</strong></p>
+<ul>
+<li>If vector graphics are more appropriate (use SVG).</li>
+<li>If universal support across very old browsers is required <em>without</em> using fallbacks via <code class="language-html">&lt;picture&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Observation:</strong> No code changes. This lesson provides conceptual information about the WebP format.</p>
+<p>✨ <strong>Key Takeaway:</strong> WebP (<code class="language-text">.webp</code>) is a modern, highly efficient image format offering both lossy and lossless compression, transparency, and animation. It generally produces smaller file sizes than JPEG, PNG, and GIF at similar quality levels and is well-supported in modern browsers, making it a strong choice for web performance.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

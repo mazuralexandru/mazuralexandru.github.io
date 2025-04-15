@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>170. The <code>target</code> Attribute: Introduction</h1>
+<p>So far, when we clicked our links (like the absolute URL example), the linked page replaced the current page in the same browser tab or window. This default behavior can be changed using the <code class="language-html">target</code> attribute on the <code class="language-html">&lt;a&gt;</code> element.</p>
+<p><strong>The <code>target</code> Attribute:</strong></p>
+<ul>
+<li><strong>Definition:</strong> Specifies the <strong>browsing context</strong> (window, tab, or iframe) in which the linked document should be opened when the hyperlink is followed.</li>
+<li><strong>Purpose:</strong> To control whether a link opens in the current tab/window or a new one, or potentially targets a specific frame.</li>
+<li><strong>Syntax:</strong> <code class="language-html">target=&quot;value&quot;</code><ul>
+<li>Added inside the opening <code class="language-html">&lt;a&gt;</code> tag.</li>
+<li>The <code>value</code> is typically a keyword starting with an underscore (<code>_</code>) or the name of a frame.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve updated the <code class="language-html">&lt;h1&gt;</code> and paragraph text in <code class="language-text">index.html</code> to introduce the <code>target</code> attribute. We haven&#39;t added a link with the attribute yet.</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;The &#39;target&#39; Attribute&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
+  &lt;p&gt;The &#39;target&#39; attribute specifies where to open the linked document.&lt;/p&gt;
+
+  &lt;p&gt;Example Link: &lt;!-- Link added in next step --&gt;&lt;/p&gt;
+
+  &lt;p&gt;Common values include _self (default) and _blank.&lt;/p&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Review the introductory text about the <code>target</code> attribute in <code class="language-text">index.html</code>.</li>
+<li>The browser preview shows this text. No link is present yet.</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">target</code> attribute is added to <code class="language-html">&lt;a&gt;</code> tags to control the browsing context (tab, window, frame) where the linked resource will open.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

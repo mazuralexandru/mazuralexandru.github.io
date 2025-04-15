@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>90. Introduction to Lists: Purpose &amp; Semantic Value</h1>
+<p>Welcome to Module 3! Having learned how to structure basic text blocks and apply inline semantics, we now turn our attention to <strong>HTML lists</strong>. Lists are fundamental for grouping and structuring sets of related items.</p>
+<p><strong>Purpose &amp; Role:</strong></p>
+<p>HTML provides specific elements to create lists, rather than just relying on paragraphs with manual bullets or numbers. The core purpose is to represent a collection of related items in a structured way.</p>
+<p><strong>Why Use HTML List Elements? (Semantic Value):</strong></p>
+<p>Using proper list elements (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, <code class="language-html">&lt;li&gt;</code>, etc.) offers significant advantages over alternatives (like manual formatting within <code class="language-html">&lt;p&gt;</code> tags):</p>
+<ol>
+<li><strong>Semantic Meaning:</strong> They clearly communicate the <em>relationship</em> between the items to browsers, search engines, and assistive technologies. It signifies &quot;this is a group of related things.&quot;</li>
+<li><strong>Accessibility:</strong> This is crucial. Screen readers announce the presence of a list, often state the number of items, and allow users to navigate efficiently between items using shortcuts. Manually created &quot;lists&quot; (e.g., paragraphs starting with hyphens) lack this structure and are much harder for screen reader users to parse.</li>
+<li><strong>Maintainability:</strong> Lists are easier to update, reorder items (especially in ordered lists), and apply consistent styling to compared to manually formatted text.</li>
+<li><strong>Styling Hooks:</strong> List elements provide specific targets for CSS, allowing precise control over markers (bullets/numbers), indentation, spacing, and overall layout (e.g., creating horizontal navigation menus from list items).</li>
+<li><strong>SEO:</strong> While perhaps a minor factor, structured lists can help search engines better understand the content and relationships within your page.</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes yet. We&#39;re setting the stage, emphasizing <em>why</em> using HTML list elements is important before diving into the specific tags. Our <code>index.html</code> still contains the recap text from the end of Module 2.</p>
+<p>✨ <strong>Key Takeaway:</strong> HTML lists provide semantic structure for grouping related items, offering significant benefits for accessibility, maintainability, styling, and potentially SEO. Always use list elements when presenting a list of items.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

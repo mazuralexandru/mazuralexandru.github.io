@@ -1,0 +1,21 @@
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space */
+}
+
+/* --- Added for Lesson 552 --- */
+/* Example styles targeting video via class/id */
+.video-player {
+  display: block; /* Make it block to control margins */
+  margin: 15px auto; /* Center horizontally */
+  border: 2px solid lightgreen; /* Example border */
+}
+
+#promo-video {
+  box-shadow: 0 0 10px rgba(144, 238, 144, 0.5); /* Example shadow */
+}
+/* --- End Added --- */

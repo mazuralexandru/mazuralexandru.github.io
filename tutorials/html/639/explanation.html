@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>639. Representing Symbols: Punctuation &amp; Spacing (<code>&amp;mdash;</code>, <code>&amp;ndash;</code>, etc.)</h1>
+<p>Finally, let&#39;s look at entities commonly used for specific punctuation or spacing needs.</p>
+<p><strong>Common Punctuation/Spacing Entities:</strong></p>
+<ul>
+<li><strong>Dashes:</strong><ul>
+<li><code class="language-text">&amp;mdash;</code> (—): Em dash (longer dash, often used for breaks in thought or parenthetical statements, sometimes without spaces around it).</li>
+<li><code class="language-text">&amp;ndash;</code> (–): En dash (mid-length dash, often used for ranges like dates or numbers, or compound adjectives). Distinct from the hyphen (<code>-</code>).</li>
+</ul>
+</li>
+<li><strong>Ellipsis:</strong><ul>
+<li><code class="language-text">&amp;hellip;</code> (…): Represents omitted text or a trailing off thought (single character, not three periods).</li>
+</ul>
+</li>
+<li><strong>Bullets:</strong><ul>
+<li><code class="language-text">&amp;bull;</code> (•): A bullet point symbol. (Though usually lists are made with <code class="language-html">&lt;ul&gt;</code>/<code class="language-html">&lt;li&gt;</code> which provide bullets automatically).</li>
+</ul>
+</li>
+<li><strong>Smart Quotes / Guillemets:</strong><ul>
+<li><code class="language-text">&amp;lsquo;</code> (‘) / <code class="language-text">&amp;rsquo;</code> (’): Typographically correct single quotes/apostrophe.</li>
+<li><code class="language-text">&amp;ldquo;</code> (“) / <code class="language-text">&amp;rdquo;</code> (”): Typographically correct double quotes.</li>
+<li><code class="language-text">&amp;laquo;</code> («) / <code class="language-text">&amp;raquo;</code> (»): Angle quotation marks (Guillemets), used in some languages like French.</li>
+<li><strong>Note:</strong> While direct input of smart quotes is possible with UTF-8, using entities can ensure consistency if editor settings or copy-pasting might introduce plain straight quotes (<code>&#39;</code>/<code>&quot;</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve added a new section demonstrating these punctuation-related entities.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  ... &lt;!-- Previous symbol sections --&gt;
+
+  &lt;h2&gt;Special Punctuation / Spacing&lt;/h2&gt; &lt;!-- Added section --&gt;
+  &lt;p&gt;Em Dash: Use it for emphasis&amp;mdash;like this.&lt;/p&gt; &lt;!-- Added &amp;mdash; --&gt;
+  &lt;p&gt;En Dash: Use for ranges (e.g., 1998&amp;ndash;2005).&lt;/p&gt; &lt;!-- Added &amp;ndash; --&gt;
+  &lt;p&gt;Ellipsis: And so on&amp;hellip;&lt;/p&gt; &lt;!-- Added &amp;hellip; --&gt;
+  &lt;p&gt;Bullet: List item &amp;bull; Another item&lt;/p&gt; &lt;!-- Added &amp;bull; --&gt;
+  &lt;p&gt;Quotation Marks: &amp;ldquo;Hello,&amp;rdquo; she said, &amp;lsquo;to me.&amp;rsquo;&lt;/p&gt; &lt;!-- Added &amp;ldquo; etc. --&gt;
+
+  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Locate the new section and the various entities (<code class="language-text">&amp;mdash;</code>, <code class="language-text">&amp;ndash;</code>, <code class="language-text">&amp;hellip;</code>, <code class="language-text">&amp;bull;</code>, <code class="language-text">&amp;ldquo;</code>, <code class="language-text">&amp;rdquo;</code>, <code class="language-text">&amp;lsquo;</code>, <code class="language-text">&amp;rsquo;</code>).</li>
+<li>Look at the browser preview. You should see the correctly rendered punctuation marks: — , – , … , • , “ ” , ‘ ’. Compare the em dash (—) and en dash (–) visually to a hyphen (-).</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Entities provide reliable ways to include specific typographical punctuation like em dashes, en dashes, ellipses, and smart quotes, ensuring consistency regardless of keyboard input or editor settings.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

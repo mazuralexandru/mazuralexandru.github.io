@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>694. Accessibility (A11y): Image <code>alt</code> Text Deep Dive</h1>
+<p>Providing appropriate alternative text (<code>alt</code>) for images (<code class="language-html">&lt;img&gt;</code>) is one of the most fundamental and impactful aspects of web accessibility. Let&#39;s consolidate best practices.</p>
+<p><strong>Recap:</strong> <code>alt</code> text provides the meaning/information/function of an image for users who cannot see it (e.g., screen reader users) and acts as fallback text if the image fails to load. <strong>It is mandatory.</strong></p>
+<p><strong>Writing Effective <code>alt</code> Text - Process:</strong></p>
+<ol>
+<li><p><strong>Determine the Image&#39;s Purpose:</strong> Why is this image here?</p>
+<ul>
+<li><strong>Is it Informative?</strong> Does it convey content, data, or information relevant to understanding the context? (e.g., photo, chart, diagram illustrating a point).</li>
+<li><strong>Is it Functional?</strong> Does the image perform an action, primarily as the content of a link or button? (e.g., logo link, icon button).</li>
+<li><strong>Is it Purely Decorative?</strong> Does it add no information and only serves aesthetic purposes or visual formatting? (e.g., background flourish, spacer image).</li>
+</ul>
+</li>
+<li><p><strong>Write Text Based on Purpose:</strong></p>
+<ul>
+<li><strong>Informative Images:</strong><ul>
+<li>Describe the <strong>information or content</strong> conveyed by the image as <strong>concisely</strong> as possible.</li>
+<li>Focus on what&#39;s important in the context of the surrounding text.</li>
+<li><em>Example (Photo of a specific bird):</em> <code>alt=&quot;Blue jay perched on a snowy branch.&quot;</code></li>
+<li><em>Example (Chart):</em> <code>alt=&quot;Bar chart showing sales increased 50% in Q4.&quot;</code> (Consider providing detailed data in text nearby or a linked table if complex).</li>
+<li>Avoid starting with &quot;Image of...&quot;, &quot;Picture of...&quot;.</li>
+</ul>
+</li>
+<li><strong>Functional Images (Links/Buttons):</strong><ul>
+<li>Describe the <strong>action or destination</strong> of the link/button.</li>
+<li><em>Example (Logo link):</em> <code>alt=&quot;Example Corp Homepage&quot;</code></li>
+<li><em>Example (Search icon button):</em> <code>alt=&quot;Search&quot;</code></li>
+<li><em>Example (Print icon link):</em> <code>alt=&quot;Print this page&quot;</code></li>
+</ul>
+</li>
+<li><strong>Decorative Images:</strong><ul>
+<li>Use an <strong>empty alt attribute:</strong> <code>alt=&quot;&quot;</code>.</li>
+<li>This tells screen readers to <strong>ignore</strong> the image completely.</li>
+<li><strong>Crucial:</strong> Do <em>not</em> omit the <code>alt</code> attribute entirely (invalid HTML). Use <code>alt=&quot;&quot;</code>. Do <em>not</em> put spaces inside (<code>alt=&quot; &quot;</code>).</li>
+<li>Use only if the image truly adds no information and its absence wouldn&#39;t change the meaning of the page. If unsure, err on the side of providing a brief description.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Review Context:</strong> Does the surrounding text already describe the image adequately? If so, the image might be decorative (<code>alt=&quot;&quot;</code>) or need only very brief <code>alt</code> text to avoid redundancy.</p>
+</li>
+<li><p><strong>Keep it Concise:</strong> Aim for descriptions that convey the essential information efficiently. Long descriptions are better placed in the main page text or a linked resource, potentially associated using <code>aria-describedby</code>.</p>
+</li>
+</ol>
+<p>✅ <strong>Observation:</strong> No code changes. Think about different images you see online: photos in news articles, icons on buttons, logos, charts, background patterns. Apply the decision process: what is the purpose (informative, functional, decorative)? How would you write the <code>alt</code> text (or use <code>alt=&quot;&quot;</code>) for each?</p>
+<p>✨ <strong>Key Takeaway:</strong> Writing effective <code>alt</code> text depends entirely on the image&#39;s purpose in context. Describe information for informative images, action/destination for functional images, and use <code>alt=&quot;&quot;</code> for purely decorative images. <strong><code>alt</code> is mandatory for all <code class="language-html">&lt;img&gt;</code> tags.</strong></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

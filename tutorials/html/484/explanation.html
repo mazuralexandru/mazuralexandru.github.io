@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
+  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>484. Forms: Validation - <code>minlength</code> &amp; <code>maxlength</code> Attributes</h1>
+<p>For text-based inputs, you can constrain the allowed length of the user&#39;s input using <code class="language-html">minlength</code> and <code class="language-html">maxlength</code>.</p>
+<p><strong>Attributes:</strong></p>
+<ol>
+<li><p><strong><code>minlength</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies the <strong>minimum number of characters</strong> (in Unicode code points) the user must enter for the input to be considered valid.</li>
+<li><strong>Applies To:</strong> <code class="language-html">&lt;input&gt;</code> (text, search, url, tel, email, password types) and <code class="language-html">&lt;textarea&gt;</code>.</li>
+<li><strong>Syntax:</strong> <code class="language-html">minlength=&quot;number&quot;</code></li>
+<li><strong>Behavior:</strong> This constraint is checked <strong>on form submission</strong>. If the entered text length is less than the <code>minlength</code>, native browser validation fails.</li>
+</ul>
+</li>
+<li><p><strong><code>maxlength</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies the <strong>maximum number of characters</strong> the user is allowed to enter into the field.</li>
+<li><strong>Applies To:</strong> Same types as <code>minlength</code>.</li>
+<li><strong>Syntax:</strong> <code class="language-html">maxlength=&quot;number&quot;</code></li>
+<li><strong>Behavior:</strong> This constraint is typically enforced <strong>as the user types</strong>. The browser physically prevents the user from entering more characters than the specified <code>maxlength</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><code>minlength</code>: Ensuring comments or descriptions meet a minimum length requirement.</li>
+<li><code>maxlength</code>: Limiting usernames, passwords, tweet-like messages, or ensuring data fits database field limits.</li>
+<li>Setting both <code>minlength</code> and <code>maxlength</code> to the same value enforces an exact length.</li>
+</ul>
+<p><strong>Code Change:</strong></p>
+<p>We&#39;ve removed the previous examples and added a <code class="language-html">&lt;textarea&gt;</code> with <code>minlength=&quot;10&quot;</code> and <code>maxlength=&quot;100&quot;</code>, and a text <code class="language-html">&lt;input&gt;</code> with both set to <code>6</code> (enforcing exact length).</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;form action=&quot;/submit-data&quot; method=&quot;POST&quot;&gt;
+  &lt;!-- Removed number/date examples --&gt;
+  &lt;p&gt;
+     &lt;label for=&quot;feedback&quot;&gt;Feedback (10-100 chars):&lt;/label&gt;&lt;br&gt;
+     &lt;textarea id=&quot;feedback&quot; name=&quot;feedback&quot; rows=&quot;4&quot; cols=&quot;40&quot;
+               minlength=&quot;10&quot; maxlength=&quot;100&quot; required&gt;&lt;/textarea&gt; &lt;!-- Added min/maxlength --&gt;
+  &lt;/p&gt;
+   &lt;p&gt;
+     &lt;label for=&quot;code&quot;&gt;Code (exactly 6 chars):&lt;/label&gt;
+     &lt;input type=&quot;text&quot; id=&quot;code&quot; name=&quot;code&quot;
+            minlength=&quot;6&quot; maxlength=&quot;6&quot; required&gt; &lt;!-- Added min/maxlength --&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+<p>✅ <strong>Observation:</strong></p>
+<ol>
+<li>Examine the <code>minlength</code> and <code>maxlength</code> attributes on both the <code class="language-html">&lt;textarea&gt;</code> and the <code class="language-html">&lt;input&gt;</code>.</li>
+<li>In the preview:<ul>
+<li><strong>Textarea:</strong> Try typing more than 100 characters; the browser should stop you. Now, type fewer than 10 characters (but more than 0) and click Submit; native validation should trigger an error because the <code>minlength</code> is not met.</li>
+<li><strong>Input:</strong> Try typing more than 6 characters; the browser should stop you. Try typing fewer than 6 characters and click Submit; validation should fail due to <code>minlength</code>. Only exactly 6 characters should pass validation.</li>
+</ul>
+</li>
+</ol>
+<p>✨ <strong>Key Takeaway:</strong> Use <code>minlength</code> and <code>maxlength</code> to constrain the number of characters in textual inputs (<code class="language-html">&lt;input&gt;</code> types text, email, etc., and <code class="language-html">&lt;textarea&gt;</code>). <code>maxlength</code> prevents further typing, while <code>minlength</code> is validated on submission.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
