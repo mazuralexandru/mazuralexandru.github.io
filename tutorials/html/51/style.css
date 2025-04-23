@@ -1,1 +1,39 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned inheritance rules */
+/* Pruned em/rem rules */
+/* .outer-em { ... } ... etc */
+
+
+/* Viewport Width Unit */
+.box-vw {
+  width: 50vw; /* 50% of the viewport width */
+  background-color: steelblue;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Viewport Height Unit */
+.box-vh {
+  height: 25vh; /* 25% of the viewport height */
+  width: 200px; /* Give it a fixed width for demo */
+  background-color: seagreen;
+  padding: 10px;
+  color: white;
+}
+
+
+/* CSS files can also have comments! */

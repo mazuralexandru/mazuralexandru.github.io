@@ -16,39 +16,42 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>32. Text: Paragraphs (<code class="language-html">&lt;p&gt;</code>) - Mechanics</h1>
-<p>Let&#39;s delve a bit deeper into the mechanics of the <code class="language-html">&lt;p&gt;</code> element.</p>
-<p><strong>Core Mechanics:</strong></p>
-<ol>
-<li><strong>Syntax:</strong> As we&#39;ve seen, it uses an opening <code class="language-html">&lt;p&gt;</code> tag and a closing <code class="language-html">&lt;/p&gt;</code> tag, wrapping the paragraph content.</li>
-<li><strong>Block-Level:</strong> Being a block-level element means it inherently creates structure by starting on a new line and occupying available horizontal space, pushing subsequent content downwards.</li>
-<li><strong>Content Model:</strong> What can go inside a <code class="language-html">&lt;p&gt;</code>?<ul>
-<li><strong>Allowed:</strong> Phrasing content. This includes plain text and most <em>inline</em> elements like <code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;a&gt;</code> (links), <code class="language-html">&lt;img&gt;</code> (images), <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;code&gt;</code>, etc. We&#39;ll cover many of these soon.</li>
-<li><strong>Not Allowed:</strong> Generally, you cannot nest other <em>block-level</em> elements directly inside a <code class="language-html">&lt;p&gt;</code>. This includes elements like <code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>, other <code class="language-html">&lt;p&gt;</code> tags, lists (<code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>), etc. Putting a block element inside a <code class="language-html">&lt;p&gt;</code> tag will implicitly close the first paragraph before the block element starts, which can lead to unexpected structure and validation errors.</li>
+  <h1>32. Using Attribute Selectors: Exact Value</h1>
+<p>Often, you want to select elements where an attribute has a <strong>specific value</strong>. The exact value attribute selector allows this. Let&#39;s use it to style only the input field whose <code class="language-html">type</code> attribute is exactly <code class="language-html">text</code>.</p>
+<p><strong>What&#39;s New?</strong></p>
+<ul>
+<li>We added a new CSS rule using the exact value attribute selector <code class="language-css">[type=&quot;text&quot;]</code> to <code class="language-text">style.css</code>.</li>
 </ul>
-</li>
-<li><strong>Whitespace Handling:</strong> Like most HTML elements (except <code class="language-html">&lt;pre&gt;</code>), browsers <strong>collapse whitespace</strong> within a <code class="language-html">&lt;p&gt;</code> element. This means:<ul>
-<li>Multiple consecutive spaces or tabs in your source code are rendered as a single space.</li>
-<li>Line breaks within the source code inside a <code class="language-html">&lt;p&gt;</code> tag are treated as single spaces (they don&#39;t create visual line breaks in the output, unless you use a <code class="language-html">&lt;br&gt;</code> tag).</li>
-</ul>
-</li>
-</ol>
-<p><strong>Example (Illustrative - Not Code Change):</strong></p>
-<p>If your HTML source code looked like this:</p>
-<pre class="language-html"><code class="language-html">&lt;p&gt;
-  This   paragraph   has
-  lots of       extra
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+[required] {
+  border: 2px solid orange;
+  background-color: #444; /* Darker background for input */
+}
 
+/* Added Exact Value Attribute Selector rule */
+[type=&quot;text&quot;] {
+  border-color: lightgreen; /* Override border color only for type=text */
+  font-family: monospace;
+}
 
-  whitespace in the source.
-&lt;/p&gt;
+/* CSS files can also have comments! */
 </code></pre>
-<p>The browser would likely render it like this (whitespace collapsed):</p>
-<blockquote>
-<p>This paragraph has lots of extra whitespace in the source.</p>
-</blockquote>
-<p>✅ <strong>Observation:</strong> No code changes in this step. Review the <code class="language-text">index.html</code> file and the preview. Observe how the text within each paragraph flows naturally, and the paragraphs themselves form distinct blocks. The whitespace rules explain why simple line breaks in your source code editor within a <code class="language-html">&lt;p&gt;</code> don&#39;t show up in the browser preview.</p>
-<p>✨ <strong>Key Takeaway:</strong> <code class="language-html">&lt;p&gt;</code> elements are block-level containers for inline content and text. They enforce structure and have specific rules about what can be nested inside them and how whitespace is handled.</p>
+<p><strong>Exact Value Attribute Selector (<code>[attribute=&quot;value&quot;]</code>)</strong></p>
+<ul>
+<li><strong>Syntax:</strong> The attribute name, an equals sign (<code class="language-css">=</code>), and the desired value enclosed in quotes <code class="language-css">&quot;&quot;</code> (single or double), all within square brackets <code class="language-css">[]</code> (e.g., <code class="language-css">[type=&quot;text&quot;]</code>, <code class="language-css">[href=&quot;https://example.com&quot;]</code>, <code class="language-css">[lang=&quot;en-US&quot;]</code>).</li>
+<li><strong>Scope:</strong> Selects all elements where the specified attribute exists and its value <strong>exactly matches</strong> the value given in the quotes (case-sensitive by default, unless the attribute/document implies otherwise, or the <code class="language-css">i</code> modifier is used - see later).</li>
+<li><strong>Use Cases:</strong> Styling form inputs based on their specific type (<code class="language-html">text</code>, <code class="language-html">password</code>, <code class="language-html">submit</code>), styling links pointing to specific URLs, targeting elements with specific data attributes (<code class="language-html">data-*</code>).</li>
+</ul>
+<p>In our example, <code class="language-css">[type=&quot;text&quot;]</code> targets only elements with <code class="language-html">type=&quot;text&quot;</code>. We&#39;re changing the <code class="language-css">border-color</code> to <code class="language-css">lightgreen</code> and setting the <code class="language-css">font-family</code> to <code class="language-css">monospace</code>.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Look at the <strong>first</strong> input (Username). It should now have a <strong>light green border</strong>. Its text (if you type) should appear in a monospace font. Its background is still the default white, as it doesn&#39;t have the <code class="language-html">required</code> attribute.</li>
+<li>👀 Look at the <strong>second</strong> input (Email). It still has the <strong>orange border</strong> and dark background from the <code class="language-css">[required]</code> rule. It does <em>not</em> get the light green border or monospace font because its <code class="language-html">type</code> attribute is <code class="language-html">email</code>, not <code class="language-html">text</code>.</li>
+<li>✅ Inspect the text input in DevTools. The Styles pane will show the <code class="language-css">[type=&quot;text&quot;]</code> rule applying the <code class="language-css">border-color</code> and <code class="language-css">font-family</code>. You might see default browser border colors crossed out.</li>
+<li>✅ Inspect the email input. It still shows the <code class="language-css">[required]</code> rule applying its border and background.</li>
+</ul>
+<p>This demonstrates how exact value selectors provide more precise targeting than presence selectors.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

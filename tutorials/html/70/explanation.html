@@ -16,37 +16,93 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>70. Final Code Cleanup: Removing Inline Code Reference</h1>
-<p>In the previous step, we removed the main <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> block. However, one of the introductory paragraphs still contained an inline <code class="language-html">&lt;code&gt;</code> tag used when discussing that block.</p>
-<p>To ensure the page is completely free of code-related elements before we start with quotations, we&#39;ll remove that last inline <code class="language-html">&lt;code&gt;</code> reference as well.</p>
-<p><strong>Why Remove It?</strong></p>
+  <h1>70. Presentational HTML Elements: <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;u&gt;</code></h1>
+<p>HTML5 redefined the meaning of some older presentational tags like <code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, and <code class="language-html">&lt;u&gt;</code>. While they still produce italic, bold, and underlined text by default, they now have <em>specific semantic nuances</em>. They should be used <strong>only</strong> when those specific meanings apply, and <strong>not</strong> as general substitutes for <code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, or CSS styling.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Complete Topic Separation:</strong> Ensures no remnants of the previous topic (code display) linger as we move into quotations.</li>
-<li><strong>Consistency:</strong> Makes the cleanup from the previous section fully complete.</li>
+<li><strong>HTML Pruning:</strong> Removed the <code>em</code>/<code>strong</code> paragraph.</li>
+<li><strong>HTML Addition:</strong> Added paragraphs demonstrating <code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, and <code class="language-html">&lt;u&gt;</code> according to their HTML5 meanings.</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">em</code> and <code class="language-css">strong</code> rules.</li>
+<li><strong>CSS Addition:</strong> Added rules styling <code class="language-css">i</code>, <code class="language-css">b</code>, <code class="language-css">u</code> (mostly default styles shown for clarity).</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We have removed the inline <code class="language-html">&lt;code&gt;</code> tags and the text they contained from the first paragraph in <code class="language-text">index.html</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;h1&gt;Quotation Elements&lt;/h1&gt;
-  &lt;p&gt;Now we will look at elements used for quoting text from other sources.&lt;/p&gt;
-  &lt;!-- Removed inline code reference --&gt;
-  &lt;!-- Removed: Use the &lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;...&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt; pattern... --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Presentational Elements Demo (i, b, u)&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+
+  &lt;!-- Pruned previous em/strong example --&gt;
+
+  &lt;p&gt;
+    Use &lt;i&gt;i tags&lt;/i&gt; for text offset from normal prose, like a &lt;i&gt;technical term&lt;/i&gt;,
+    an &lt;i&gt;idiomatic phrase&lt;/i&gt; from another language, a &lt;i&gt;thought&lt;/i&gt;, or a &lt;i&gt;ship name&lt;/i&gt;.
+    Do not use it simply for italics if &lt;em&gt;em&lt;/em&gt; or CSS is more appropriate.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Use &lt;b&gt;b tags&lt;/b&gt; to stylistically offset text without conveying extra importance,
+    like &lt;b&gt;keywords&lt;/b&gt; in a document abstract, &lt;b&gt;product names&lt;/b&gt; in a review,
+    or &lt;b&gt;article lead sentences&lt;/b&gt;. Do not use it if &lt;strong&gt;strong&lt;/strong&gt; or CSS is more appropriate.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Use &lt;u&gt;u tags&lt;/u&gt; generally to represent a non-textual annotation, like labeling a word as a
+    &lt;u&gt;misspelling&lt;/u&gt; or marking proper names in Chinese text. Avoid using &lt;u&gt;u&lt;/u&gt; where it could be
+    confused with a hyperlink. Prefer CSS `text-decoration` for underlines.
+  &lt;/p&gt;
 
 
-  &lt;p&gt;These elements help provide semantic context for quoted material.&lt;/p&gt;
-  &lt;!-- Removed old P referring to escaping --&gt;
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
 
-
-  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-<p><em>(Note: The entire paragraph content was effectively replaced in the previous step, this step just ensures any lingering inline code tags accidentally left are confirmed gone. In this specific flow, step 69 already removed the relevant inline code, so this step mainly serves as a context reset confirmation.)</em></p>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Double-check <code class="language-text">index.html</code> to ensure no <code class="language-html">&lt;pre&gt;</code> or <code class="language-html">&lt;code&gt;</code> tags remain within the main content.</li>
-<li>The browser preview remains unchanged from the previous step – heading and two plain paragraphs focused on the upcoming topic of quotations.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Thorough cleanup between distinct topics includes removing not just the main block examples but also any inline references related to the concluded topic.</p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Pruned em/strong rules */
+/* em { ... } */
+/* strong { ... } */
+
+/* Presentational Elements Demo */
+p { /* Base paragraph styling */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+i {
+  font-style: italic; /* Default browser style */
+  /* Often no extra styling needed if used correctly */
+}
+
+b {
+  font-weight: bold; /* Default browser style */
+  /* Often no extra styling needed if used correctly */
+}
+
+u {
+  text-decoration: underline; /* Default browser style */
+  /* Consider custom styling (e.g., wavy red underline for misspelling) */
+  /* text-decoration-color: red; */
+  /* text-decoration-style: wavy; */
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>HTML5 Meanings:</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;i&gt;</code> (Idiomatic Text):</strong> Represents text in an &quot;alternate voice or mood&quot;, or otherwise offset from the normal prose. Examples: technical terms, foreign phrases, taxonomic designations, thoughts, ship names in Western text. It&#39;s <em>not</em> for emphasis.</li>
+<li><strong><code class="language-html">&lt;b&gt;</code> (Bring Attention To):</strong> Represents text to which attention is drawn for utilitarian purposes <em>without</em> conveying extra importance. Examples: keywords, product names, lead sentences. It&#39;s <em>not</em> for strong importance.</li>
+<li><strong><code class="language-html">&lt;u&gt;</code> (Unarticulated Annotation):</strong> Represents a span of text with an unarticulated, non-textual annotation. Examples: marking text as misspelled, labeling proper names in Chinese. <strong>Avoid using <code>&lt;u&gt;</code> for general underlining</strong>, as it looks like a hyperlink. Use CSS <code class="language-css">text-decoration: underline;</code> instead for purely presentational underlines.</li>
+</ul>
+<p><strong>Key Takeaway:</strong></p>
+<p>If you just want text to <em>look</em> italic or bold, use CSS (<code class="language-css">font-style: italic;</code> or <code class="language-css">font-weight: bold;</code>), perhaps applied via a class (<code class="language-html">&lt;span class=&quot;italic-style&quot;&gt;</code>). Use <code class="language-html">&lt;em&gt;</code> or <code class="language-html">&lt;strong&gt;</code> if there&#39;s genuine semantic emphasis or importance. Only use <code class="language-html">&lt;i&gt;</code> or <code class="language-html">&lt;b&gt;</code> if the specific HTML5 semantic nuance applies. Avoid <code class="language-html">&lt;u&gt;</code> unless for its specific annotation meaning, due to hyperlink confusion.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 The text within <code class="language-html">&lt;i&gt;</code> tags should be italic.</li>
+<li>👀 The text within <code class="language-html">&lt;b&gt;</code> tags should be bold.</li>
+<li>👀 The text within <code class="language-html">&lt;u&gt;</code> tags should be underlined (but looks confusingly like a link).</li>
+<li>✅ Consider the <em>meaning</em> described for each tag and how it applies (or doesn&#39;t) to simply wanting bold or italic text. Use the right tool for the job: CSS for presentation, semantic tags (<code>em</code>/<code>strong</code>) for meaning, and <code>i</code>/<code>b</code>/<code>u</code> only for their specific niche semantic purposes.</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

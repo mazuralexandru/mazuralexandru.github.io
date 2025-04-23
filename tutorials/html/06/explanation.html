@@ -16,30 +16,38 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>06. Elements &amp; Tags: Defining Elements and Tags</h1>
-<p>Now we start diving into the actual syntax of HTML. The core building blocks are <strong>elements</strong> and <strong>tags</strong>.</p>
-<p><strong>What is an HTML Element?</strong></p>
-<p>An <strong>element</strong> is a fundamental conceptual unit of an HTML document. It represents a distinct piece of content and its semantic meaning or purpose. Think of elements as the different types of building blocks you can use:</p>
-<ul>
-<li>A paragraph of text</li>
-<li>A main heading</li>
-<li>An image</li>
-<li>A list of items</li>
-<li>A hyperlink</li>
-</ul>
-<p><strong>What is an HTML Tag?</strong></p>
-<p><strong>Tags</strong> are the specific text codes you write in your HTML file to <em>create</em> an element. They act as markers, telling the browser where an element begins and ends, and what type of element it is.</p>
-<ul>
-<li>Tags are always enclosed in <strong>angle brackets</strong> (<code class="language-html">&lt;</code> and <code class="language-html">&gt;</code>).</li>
-<li>The text inside the angle brackets indicates the <em>type</em> of element (e.g., <code class="language-html">p</code> for paragraph, <code class="language-html">h1</code> for level-1 heading).</li>
-</ul>
-<p><strong>First Code!</strong></p>
-<p>We&#39;ve added a special type of text to our <code class="language-text">index.html</code> file:</p>
-<pre class="language-html"><code class="language-html">&lt;!-- Content will go here soon! --&gt;
+  <h1>06. Adding HTML Comments</h1>
+<p>As code gets more complex, it&#39;s helpful to leave notes for yourself or other developers. HTML comments allow you to do this.</p>
+<p><strong>What&#39;s New?</strong></p>
+<p>We&#39;ve added text enclosed in <code class="language-html">&lt;!--</code> and <code class="language-html">--&gt;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;!-- This is our first paragraph --&gt;
+  &lt;p&gt;Hello, World!&lt;/p&gt;
+
+  &lt;!-- We can add comments anywhere outside of tags --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+&lt;/body&gt;
 </code></pre>
-<p>This is an <strong>HTML comment</strong>. We&#39;ll discuss comments in detail later (Lesson 9), but for now, know that anything between <code class="language-html">&lt;!--</code> and <code class="language-html">--&gt;</code> is ignored by the browser when displaying the page. It&#39;s a note for humans reading the code.</p>
-<p>✅ <strong>Observation:</strong> Check the <code class="language-text">index.html</code> file in your editor. You should see the comment line. The browser preview pane will still be blank because comments are not visible content.</p>
-<p>✨ <strong>Key Takeaway:</strong> Elements are the conceptual building blocks (paragraph, heading). Tags (<code class="language-html">&lt;tagname&gt;</code>) are the code you write to create those elements.</p>
+<p><strong>HTML Comments (<code class="language-html">&lt;!-- ... --&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong><ul>
+<li>Add explanatory notes within the HTML code that are ignored by the browser during rendering.</li>
+<li>Temporarily disable (&quot;comment out&quot;) sections of HTML code without deleting them, useful for testing or debugging.</li>
+</ul>
+</li>
+<li><strong>Syntax:</strong> Comments start with <code class="language-html">&lt;!--</code> and end with <code class="language-html">--&gt;</code>. Everything in between is considered part of the comment.</li>
+<li><strong>Multi-line:</strong> Comments can span multiple lines.</li>
+<li><strong>Placement:</strong> You can place comments almost anywhere in your HTML document, <em>except</em> inside HTML tags themselves.</li>
+<li><strong>Visibility:</strong> Comments are <strong>not displayed</strong> on the web page itself, but they <strong>are visible</strong> to anyone who views the page source code (Right-click -&gt; View Page Source in most browsers). <strong>Therefore, never put sensitive information (like passwords or private data) in HTML comments.</strong></li>
+<li><strong>Nesting:</strong> Technically, you cannot nest comments according to the HTML standard (e.g., <code class="language-html">&lt;!-- A &lt;!-- B --&gt; C --&gt;</code> is problematic).</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. Notice that the text &quot;Hello, World!&quot; is still visible, but the comment text (&quot;This is our first paragraph&quot;, &quot;We can add comments...&quot;, and the commented-out <code>&lt;p&gt;</code> tag) does <strong>not</strong> appear on the rendered page.</li>
+<li>✅ Open your browser&#39;s &quot;View Page Source&quot; feature (often by right-clicking on the page and selecting the option). You will see the comments exactly as you wrote them in the <code class="language-text">index.html</code> file. This confirms they are part of the code but ignored for display.</li>
+<li>🔬 <strong>Experiment:</strong> Uncomment the second paragraph by removing the <code class="language-html">&lt;!--</code> and <code class="language-html">--&gt;</code> surrounding it. Save and refresh the preview. The paragraph should now appear. Comment it out again to return to the current state.</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -16,39 +16,94 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>69. Preparing for Quotations: Removing Code Block Example</h1>
-<p>We&#39;ve thoroughly covered the display of code using <code class="language-html">&lt;pre&gt;</code>, <code class="language-html">&lt;code&gt;</code>, and the combined <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> pattern.</p>
-<p>Now, we transition to a different category of text semantics: <strong>quotations</strong>. To ensure a clear focus on quotation elements (<code class="language-html">&lt;blockquote&gt;</code>, <code class="language-html">&lt;q&gt;</code>, <code class="language-html">&lt;cite&gt;</code>), we will remove the code block example from the previous steps.</p>
-<p><strong>Why Remove Code?</strong></p>
+  <h1>69. Semantic HTML for Emphasis: <code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code></h1>
+<p>Moving back to HTML for a bit, let&#39;s revisit elements specifically designed for adding semantic meaning to text: <code class="language-html">&lt;em&gt;</code> (emphasis) and <code class="language-html">&lt;strong&gt;</code> (strong importance). While browsers style them by default (italic and bold), their primary purpose is meaning, not just appearance.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Focus:</strong> Shift attention entirely to the concepts and elements related to marking up quoted content.</li>
-<li><strong>Relevance:</strong> The code block example is unrelated to quotations.</li>
-<li><strong>Clean Slate:</strong> Provides a simple page structure ready for introducing blockquote examples.</li>
+<li><strong>HTML Pruning:</strong> Removed the text-shadow examples.</li>
+<li><strong>HTML Addition:</strong> Added a paragraph containing <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> tags.</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">p</code>, <code class="language-css">.simple-shadow</code>, <code class="language-css">.multi-shadow</code> rules.</li>
+<li><strong>CSS Addition:</strong> Added basic <code class="language-css">p</code> styling and specific (though redundant for default) styling for <code class="language-css">em</code> and <code class="language-css">strong</code>.</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We have removed the <code class="language-html">&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code> block and updated the heading and paragraph text to introduce the topic of quotations.</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;h1&gt;Quotation Elements&lt;/h1&gt; &lt;!-- Updated H1 --&gt;
-  &lt;p&gt;Now we will look at elements used for quoting text from other sources.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Semantic Emphasis Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
 
-  &lt;!-- Removed &lt;pre&gt;&lt;code&gt; block --&gt;
-  &lt;!--
-  &lt;pre&gt;&lt;code&gt; ... escaped code ... &lt;/code&gt;&lt;/pre&gt;
-  --&gt;
+  &lt;!-- Pruned previous text-shadow examples --&gt;
 
-  &lt;p&gt;These elements help provide semantic context for quoted material.&lt;/p&gt; &lt;!-- Adjusted P --&gt;
-  &lt;!-- Removed old P referring to escaping --&gt;
+  &lt;p&gt;
+    This paragraph contains text that needs &lt;em&gt;emphasis&lt;/em&gt; (like indicating stress when spoken),
+    as well as text that has &lt;strong&gt;strong importance&lt;/strong&gt; (more serious than emphasis).
+    Use these tags for their meaning, &lt;em&gt;&lt;strong&gt;not just&lt;/strong&gt;&lt;/em&gt; for visual styling.
+  &lt;/p&gt;
 
 
-  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Verify that the <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> block is gone from <code class="language-text">index.html</code>.</li>
-<li>The browser preview should show the new heading (&quot;Quotation Elements&quot;) followed by the two introductory paragraphs. The page is reset and ready for quotation examples.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Removing the previous section&#39;s main example (<code class="language-html">&lt;pre&gt;&lt;code&gt;</code>) allows us to introduce the next distinct topic (Quotations) with maximum clarity.</p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Pruned text-shadow rules */
+/* p { ... } */
+/* .simple-shadow { ... } */
+/* .multi-shadow { ... } */
+
+/* Semantic Emphasis Demo */
+p { /* Base paragraph styling */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+em {
+  font-style: italic; /* Default browser style */
+  color: lightcoral; /* Custom color */
+}
+
+strong {
+  font-weight: bold; /* Default browser style */
+  color: lightskyblue; /* Custom color */
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> Explained</strong></p>
+<ul>
+<li><strong><code class="language-html">&lt;em&gt;</code> (Emphasis):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents stress emphasis on its contents. Think about which word you&#39;d stress if reading the sentence aloud. Nested <code class="language-html">&lt;em&gt;</code> tags increase the level of emphasis.</li>
+<li><strong>Default Styling:</strong> Typically rendered as <em>italic</em> text by browsers.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;strong&gt;</code> (Strong Importance):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Indicates that its contents have strong importance, seriousness, or urgency. It&#39;s semantically stronger than <code class="language-html">&lt;em&gt;</code>. Nested <code class="language-html">&lt;strong&gt;</code> tags increase the level of importance.</li>
+<li><strong>Default Styling:</strong> Typically rendered as <strong>bold</strong> text by browsers.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why Semantics Matter:</strong></p>
+<ul>
+<li><strong>Accessibility:</strong> Screen readers can use these tags to change their voice inflection, conveying the intended emphasis or importance to visually impaired users. Using <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> correctly improves the listening experience.</li>
+<li><strong>Search Engines &amp; Browsers:</strong> While maybe less critical than headings, semantic tags can provide additional context to browsers and search engines about the structure and meaning of your content.</li>
+<li><strong>Maintainability:</strong> Using tags for their meaning makes your HTML more understandable. If you later decide <em>all</em> emphasized text should be blue instead of italic, you just change the CSS for <code class="language-css">em</code>, rather than hunting down every place you used italics purely for presentation.</li>
+</ul>
+<p><strong>Styling Semantics:</strong></p>
+<ul>
+<li>You can (and often should) style these elements using CSS just like any other element.</li>
+<li>In our example, we&#39;ve kept the default <code>font-style</code> and <code>font-weight</code> but added custom colors (<code class="language-css">lightcoral</code> for <code>em</code>, <code class="language-css">lightskyblue</code> for <code>strong</code>) to make them stand out visually and show they can be styled.</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Find the text wrapped in <code class="language-html">&lt;em&gt;</code>. It should appear <em>italic</em> (default style) and <em>light coral</em> (our custom color).</li>
+<li>👀 Find the text wrapped in <code class="language-html">&lt;strong&gt;</code>. It should appear <strong>bold</strong> (default style) and <em>light sky blue</em> (our custom color).</li>
+<li>👀 Notice the nested <code class="language-html">&lt;em&gt;&lt;strong&gt;</code> part. It should be both bold and italic, and likely takes the color of the innermost tag&#39;s rule depending on CSS details (though specific color inheritance might need more complex rules).</li>
+<li>✅ Inspect these elements in DevTools to see the tags and the applied CSS rules.</li>
+</ul>
+<p>Use <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> when the text genuinely requires semantic emphasis or importance, not just for achieving italic or bold visuals. For purely presentational styling, use CSS classes and properties like <code>font-style</code> or <code>font-weight</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

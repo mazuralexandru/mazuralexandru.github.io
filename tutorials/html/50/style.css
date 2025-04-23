@@ -1,1 +1,49 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+  /* Default browser font-size is typically 16px, which becomes the base for rem/em */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned inheritance rules */
+/* div { ... } */
+/* div p { ... } */
+
+
+/* EM Demo */
+.outer-em {
+  font-size: 1.2em; /* 1.2 times the PARENT's font-size (body's default) */
+  border: 1px solid pink; padding: 5px; margin-bottom: 5px;
+}
+.outer-em p { font-size: 1em; /* 1 times the PARENT's font-size (outer-em's) */ }
+
+.inner-em {
+  font-size: 1.2em; /* 1.2 times the PARENT's font-size (outer-em's) -> Compounding! */
+  border: 1px dashed pink; padding: 5px; margin-left: 15px;
+}
+.inner-em p { font-size: 1em; /* 1 times the PARENT's font-size (inner-em's) */ }
+
+
+/* REM Demo */
+.outer-rem {
+  font-size: 1.2rem; /* 1.2 times the ROOT's font-size (html default) */
+  border: 1px solid lightgreen; padding: 5px; margin-bottom: 5px;
+}
+.outer-rem p { font-size: 1rem; /* 1 times the ROOT's font-size (html default) */ }
+
+.inner-rem {
+  font-size: 1.2rem; /* 1.2 times the ROOT's font-size (html default) -> No Compounding! */
+  border: 1px dashed lightgreen; padding: 5px; margin-left: 15px;
+}
+.inner-rem p { font-size: 1rem; /* 1 times the ROOT's font-size (html default) */ }
+
+
+/* CSS files can also have comments! */

@@ -16,37 +16,40 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>05. The Web Trio: HTML vs. CSS vs. JavaScript (Part 2: Interaction &amp; Separation)</h1>
-<p>Let&#39;s refine how HTML, CSS, and JavaScript work together and why keeping them separate is important.</p>
-<p><strong>Interaction Model:</strong></p>
-<ol>
-<li><strong>HTML is Foundational:</strong> The browser first parses the HTML to build the basic structure of the page. This internal representation is often called the <strong>Document Object Model (DOM)</strong> - essentially a tree-like map of all the elements on the page.</li>
-<li><strong>CSS Targets HTML:</strong> CSS rules are written to <em>select</em> specific HTML elements (or groups of elements) and apply styles to them. The browser uses the DOM to figure out which styles apply to which elements.</li>
-<li><strong>JavaScript Manipulates HTML (via DOM):</strong> JavaScript code can access and modify the DOM. It can add, remove, or change HTML elements and their attributes, often in response to user actions. This is how dynamic updates and interactivity happen.</li>
-</ol>
-<p><strong>Separation of Concerns:</strong></p>
-<p>This is a core principle in web development: keeping the responsibilities of structure (HTML), presentation (CSS), and behavior (JS) in separate files or sections.</p>
+  <h1>05. Adding Visible Content with Paragraphs</h1>
+<p>Our page structure is set up, but it&#39;s still visually empty. Let&#39;s add our first piece of visible content inside the <code class="language-html">&lt;body&gt;</code> element using a paragraph tag.</p>
+<p><strong>What&#39;s New?</strong></p>
+<p>We added a <code class="language-html">&lt;p&gt;</code> element containing the text &quot;Hello, World!&quot; inside the <code class="language-html">&lt;body&gt;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Hello, World!&lt;/p&gt; &lt;!-- Added paragraph content --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>The <code>&lt;body&gt;</code> and <code>&lt;p&gt;</code> Elements</strong></p>
 <ul>
-<li><strong>HTML File (<code class="language-text">.html</code>):</strong> Contains only the structure and content.</li>
-<li><strong>CSS File (<code class="language-text">.css</code>):</strong> Contains only the styling rules.</li>
-<li><strong>JavaScript File (<code class="language-text">.js</code>):</strong> Contains only the interactive logic.</li>
+<li><strong><code class="language-html">&lt;body&gt;</code> Recap:</strong> As mentioned before, the <code class="language-html">&lt;body&gt;</code> element is the container for <em>all</em> the content that users will actually see on the page.</li>
+<li><strong><code class="language-html">&lt;p&gt;</code> Element (Paragraph):</strong><ul>
+<li><strong>Purpose:</strong> Represents a paragraph of text. Browsers typically render paragraphs with some vertical space separating them from adjacent elements.</li>
+<li><strong>Syntax:</strong> It requires an opening tag (<code class="language-html">&lt;p&gt;</code>) and a closing tag (<code class="language-html">&lt;/p&gt;</code>). The text content goes in between.</li>
+<li><strong>Semantic Meaning:</strong> Using <code class="language-html">&lt;p&gt;</code> tells browsers (and screen readers, search engines) that this block of text is a distinct paragraph, giving it structural meaning beyond just being plain text.</li>
 </ul>
-<p>We link these files together using specific HTML tags (which we&#39;ll learn about later, like <code class="language-html">&lt;link&gt;</code> for CSS and <code class="language-html">&lt;script&gt;</code> for JS).</p>
-<p><strong>Benefits of Separation:</strong></p>
+</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
 <ul>
-<li><strong>Maintainability:</strong> Easier to update the look of a site (modify CSS) without accidentally breaking the structure (HTML) or functionality (JS).</li>
-<li><strong>Collaboration:</strong> Different team members can work on HTML, CSS, and JS simultaneously with less conflict.</li>
-<li><strong>Accessibility:</strong> Clean, semantic HTML is easier for assistive technologies to parse when not cluttered with styling or scripting information.</li>
-<li><strong>Flexibility &amp; Reusability:</strong> Styles (CSS) and scripts (JS) can be easily applied to multiple HTML pages, promoting consistency and reducing code duplication. A complete redesign might only involve changing the CSS files.</li>
-<li><strong>Readability:</strong> Code is cleaner and easier to understand when each language focuses on its specific task.</li>
+<li><p>👀 Refresh your browser preview. You should now see the text &quot;Hello, World!&quot; displayed on the page! It will likely be in a default font (like Times New Roman or Arial) with black text on a white background. This is the browser&#39;s default styling.</p>
+</li>
+<li><p>🔬 <strong>Experiment:</strong> Try adding another <code class="language-html">&lt;p&gt;</code> element below the first one:</p>
+<pre class="language-html"><code class="language-html">&lt;body&gt;
+  &lt;p&gt;Hello, World!&lt;/p&gt;
+  &lt;p&gt;This is a second paragraph.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Save and refresh. Notice how the browser automatically puts the second paragraph on a new line and adds some space between them. This is the default block-level behavior of paragraphs.</p>
+</li>
 </ul>
-<p><strong>Practical Example:</strong> Imagine you want to change the font of every paragraph on a 100-page website.</p>
-<ul>
-<li><strong>Bad (Mixed):</strong> If font information was embedded directly within each HTML paragraph tag, you&#39;d have to edit hundreds or thousands of tags across 100 files.</li>
-<li><strong>Good (Separated):</strong> With separate CSS, you change <em>one line</em> in your single CSS file, and the browser applies that change to all paragraphs across all pages linked to that stylesheet.</li>
-</ul>
-<p>✅ <strong>Observation:</strong> Files are still empty. We&#39;re establishing best practices.</p>
-<p>✨ <strong>Key Takeaway:</strong> Separation of Concerns (HTML for structure, CSS for presentation, JS for behavior) is crucial for building maintainable, flexible, and accessible websites. We will follow this principle throughout the tutorial.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

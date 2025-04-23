@@ -1,1 +1,45 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: "Roboto", sans-serif; /* Use Roboto as base font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned white-space rules */
+/* pre { ... } */
+/* .no-wrap-div { ... } */
+
+
+/* Text Overflow Demo */
+p { /* Base paragraph styling */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.ellipsis-box {
+  /* REQUIRED for text-overflow: ellipsis to work: */
+  white-space: nowrap;   /* Prevent wrapping */
+  overflow: hidden;      /* Hide the overflowing content */
+
+  /* Now apply text-overflow */
+  text-overflow: ellipsis; /* Display ... for overflow */
+
+  /* Styling for visibility */
+  background-color: #4a5030; /* Dark yellow/green background */
+  padding: 10px;
+  max-width: 300px; /* Make it narrow to force overflow */
+  margin-top: 10px;
+  border: 1px solid yellowgreen;
+}
+
+
+/* CSS files can also have comments! */

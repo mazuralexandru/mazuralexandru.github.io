@@ -16,34 +16,42 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>48. Inline Semantics: Annotation (<code class="language-html">&lt;u&gt;</code> - Discouraged)</h1>
-<p>Finally, let&#39;s look at the <code class="language-html">&lt;u&gt;</code> element. Like <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code>, its meaning was also updated in HTML5, but its use is generally discouraged.</p>
-<p><strong>The <code class="language-html">&lt;u&gt;</code> Element (HTML5 Semantics):</strong></p>
+  <h1>48. Inheritance: Non-Inherited Properties</h1>
+<p>Let&#39;s explicitly see how non-inherited properties behave. We already saw that <code class="language-css">border</code> and <code class="language-css">padding</code> applied to the parent <code class="language-html">&lt;div&gt;</code> were not inherited by the child <code class="language-html">&lt;p&gt;</code>. Let&#39;s add a <code class="language-css">background-color</code> to the parent and observe.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Represents text that should have an <strong>unarticulated but explicitly rendered non-textual annotation</strong>, such as labeling the text as being misspelled or labeling a proper name in Chinese text.</li>
-<li><strong>Historical Use:</strong> Originally meant &quot;underline&quot;.</li>
-<li><strong>Type:</strong> Inline element.</li>
-<li><strong>Syntax:</strong> <code class="language-html">&lt;u&gt;...&lt;/u&gt;</code></li>
+<li><strong>HTML Modification:</strong> Added <code class="language-css">background-color: #444;</code> to the inline <code class="language-html">style</code> attribute of the parent <code class="language-html">&lt;div&gt;</code>.</li>
 </ul>
-<p><strong>Default Rendering:</strong></p>
-<p>Browsers render <code class="language-html">&lt;u&gt;</code> text with an <strong>underline</strong> by default.</p>
-<p><strong>Why Discouraged?</strong></p>
-<ul>
-<li><strong>Confusion with Links:</strong> On the web, underlined text is overwhelmingly associated with <strong>hyperlinks</strong> (<code class="language-html">&lt;a&gt;</code> elements). Using <code class="language-html">&lt;u&gt;</code> for other purposes can easily confuse users, making them think the text is clickable when it isn&#39;t. This is a significant usability and accessibility issue.</li>
-<li><strong>Limited Use Cases:</strong> The defined semantic use cases (like marking misspellings or proper names in Chinese) are quite specific.</li>
-<li><strong>CSS Alternative:</strong> If you simply need an underline for purely stylistic reasons, you should always use the CSS <code class="language-css">text-decoration: underline;</code> property instead. This avoids semantic ambiguity and user confusion. For specific annotations like spelling errors, CSS can often provide better visual cues (like a wavy red underline) when applied appropriately (perhaps via a class).</li>
-</ul>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve added an example using <code class="language-html">&lt;u&gt;</code> in the first paragraph, acknowledging its potential use for marking errors, but highlighting its problematic nature.</p>
-<pre class="language-html"><code class="language-html">&lt;p&gt; ... Spelling erors like &lt;u&gt;this&lt;/u&gt; are sometimes marked.&lt;/p&gt; &lt;!-- Added &lt;u&gt; example --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;CSS Inheritance Demo&lt;/h1&gt;
+
+  &lt;!-- Pruned previous cascade examples --&gt;
+
+  &lt;div style=&quot;color: mediumpurple; border: 1px solid grey; padding: 10px; background-color: #444;&quot;&gt; &lt;!-- Added background-color --&gt;
+    This text is directly inside the div (inherits color).
+    &lt;p&gt;This paragraph is inside the div.&lt;/p&gt; &lt;!-- Child P --&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Locate the <code class="language-html">&lt;u&gt;this&lt;/u&gt;</code> example in <code class="language-text">index.html</code>.</li>
-<li>Look at the browser preview. The word &quot;this&quot; should now appear with an <strong>underline</strong>. Notice how visually similar it might look to a hyperlink, illustrating the potential for confusion.</li>
-</ol>
-<p>⚠️ <strong>Strong Recommendation:</strong> <strong>Avoid using the <code class="language-html">&lt;u&gt;</code> element</strong> unless you have a very specific semantic reason matching its narrow definition <em>and</em> you are confident it won&#39;t be confused with a hyperlink (which is difficult to guarantee). For purely visual underlines, always use CSS.</p>
-<p>✨ <strong>Key Takeaway:</strong> The <code class="language-html">&lt;u&gt;</code> tag has specific, limited semantic meanings in HTML5 but is <strong>strongly discouraged</strong> because its default underline rendering conflicts with the established convention for hyperlinks. Prefer CSS for stylistic underlining.</p>
+<p><strong>Non-Inherited Properties</strong></p>
+<ul>
+<li>As mentioned, most properties related to an element&#39;s box model (size, spacing, borders, background) are <strong>not</strong> inherited by default.</li>
+<li>If you want a child element to have the same background or border as its parent, you generally need to apply those styles directly to the child element as well (or use special CSS values like <code class="language-css">transparent</code> or <code class="language-css">currentColor</code> in specific scenarios).</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Observe the parent <code class="language-html">&lt;div&gt;</code>. It now has a dark gray (<code class="language-css">#444</code>) background, in addition to its border, padding, and purple text color.</li>
+<li>👀 Observe the child <code class="language-html">&lt;p&gt;</code>. Its text is still medium purple (inherited <code class="language-css">color</code>). However, the paragraph itself does <strong>not</strong> have the dark gray background. Its background remains transparent, showing the main page background (<code class="language-css">#2e2e2e</code> from the <code class="language-css">body</code> style) <em>through</em> the parent <code>div</code>&#39;s padding area, but the text sits <em>on top</em> of the parent div&#39;s dark gray background.</li>
+<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools. Look for the <code class="language-css">background-color</code> property in the Styles pane. You won&#39;t see the <code>#444</code> value listed as inherited; the browser simply doesn&#39;t pass that property down by default.</li>
+</ul>
+<p>This clearly illustrates the difference between inheritable properties (like <code class="language-css">color</code>) and non-inheritable properties (like <code class="language-css">background-color</code>, <code class="language-css">border</code>, <code class="language-css">padding</code>). Understanding this distinction is crucial for predicting how styles propagate through your document.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

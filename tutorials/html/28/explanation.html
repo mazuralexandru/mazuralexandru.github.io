@@ -16,41 +16,52 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>28. Preparing for Styling: Linking the CSS File</h1>
-<p>We&#39;ve discussed the &quot;Web Trio&quot; (HTML, CSS, JS) and the importance of separating concerns. Our HTML provides the structure, but it looks very plain using only the browser&#39;s default styles.</p>
-<p>To apply our own custom styles using CSS, we first need to <strong>link</strong> our (currently empty) <code class="language-text">style.css</code> file to our <code class="language-text">index.html</code> document.</p>
-<p><strong>The <code class="language-html">&lt;link&gt;</code> Element:</strong></p>
+  <h1>28. CSS Selectors: Introduction to ID Selectors</h1>
+<p>While classes are for styling multiple elements similarly, <strong>ID selectors</strong> target one <strong>specific, unique</strong> element on the page.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Specifies relationships between the current HTML document and external resources. A primary use is to link external CSS stylesheets.</li>
-<li><strong>Placement:</strong> Must be placed within the <code class="language-html">&lt;head&gt;</code> section of the HTML document.</li>
-<li><strong>Syntax:</strong> It&#39;s a <strong>void element</strong> (no closing tag). It uses attributes to define the link.<pre class="language-html"><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-</code></pre>
-</li>
-<li><strong>Key Attributes:</strong><ul>
-<li><code class="language-html">rel=&quot;stylesheet&quot;</code>: This attribute is crucial. <code class="language-html">rel</code> stands for &quot;relationship&quot;. Setting it to <code class="language-html">stylesheet</code> tells the browser that the linked file is a Cascading Style Sheet containing style rules to be applied to the current document.</li>
-<li><code class="language-html">href=&quot;style.css&quot;</code>: This attribute provides the <strong>H</strong>ypertext <strong>Ref</strong>erence, or the path/URL, to the external resource. In this case, <code class="language-text">style.css</code> tells the browser to look for a file named <code>style.css</code> <em>in the same directory</em> as the <code>index.html</code> file.</li>
+<li><strong>HTML Pruning:</strong> Removed the second and third paragraphs (<code class="language-html">&lt;p class=&quot;highlight&quot;&gt;</code> and <code class="language-html">&lt;p class=&quot;highlight important&quot;&gt;</code>) along with the <code class="language-html">&lt;span&gt;</code> inside the first paragraph to reduce clutter and focus on IDs. Look for the <code class="language-html">&lt;!-- Pruned previous paragraph examples --&gt;</code> comment.</li>
+<li><strong>HTML Addition:</strong> Added a <code class="language-html">&lt;div&gt;</code> element with a unique <code class="language-html">id</code> attribute set to <code class="language-html">main-content</code>.</li>
 </ul>
-</li>
-</ul>
-<p><strong>Code Change:</strong></p>
-<p>We have added the <code class="language-html">&lt;link&gt;</code> element inside the <code class="language-html">&lt;head&gt;</code> section of <code class="language-text">index.html</code> to connect it to <code class="language-text">style.css</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; &lt;!-- Added link to CSS --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Styling with External CSS&lt;/h1&gt;
+  &lt;p&gt;This is the main introductory paragraph.&lt;/p&gt; &lt;!-- Modified text --&gt;
+  &lt;h2&gt;This is a Sub-heading&lt;/h2&gt;
 
-  &lt;!-- This is an HTML comment. It&#39;s ignored by the browser --&gt;
-  &lt;!-- Comments can span
-       multiple lines. --&gt;
-&lt;/head&gt;
+  &lt;!-- Pruned previous paragraph examples --&gt;
+
+  &lt;div id=&quot;main-content&quot;&gt; &lt;!-- Added div with ID --&gt;
+    &lt;p&gt;This paragraph is inside the main content area.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Verify the new <code class="language-html">&lt;link&gt;</code> tag is present in the <code class="language-html">&lt;head&gt;</code> of <code class="language-text">index.html</code>.</li>
-<li>Look at the browser preview. It should still look <strong>exactly the same</strong> as before. Why? Because although we&#39;ve <em>linked</em> the <code class="language-text">style.css</code> file, that file is currently empty! We haven&#39;t defined any styles yet.</li>
-<li>The browser has acknowledged the link and would apply styles from <code class="language-text">style.css</code> <em>if</em> there were any.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot;&gt;</code> tag within the <code class="language-html">&lt;head&gt;</code> to connect an external CSS file to your HTML document. This is the standard way to apply styles while maintaining separation of concerns.</p>
+<p><strong>The HTML <code>id</code> Attribute</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Assigns a <strong>unique identifier</strong> to an element within an HTML document.</li>
+<li><strong>Uniqueness Constraint:</strong> Unlike classes, an <code class="language-html">id</code> value <strong>must be unique</strong> on the entire page. No two elements can have the same <code class="language-html">id</code>. This is crucial.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;element id=&quot;unique-name&quot;&gt;</code>.</li>
+<li><strong>Naming Conventions:</strong> Similar to classes (lowercase, hyphens), but must be unique. <code class="language-html">main-content</code>, <code class="language-html">primary-navigation</code>, <code class="language-html">error-summary</code> are common examples.</li>
+<li><strong>Primary Uses:</strong><ul>
+<li><strong>Linking:</strong> Creating internal page links (e.g., <code class="language-html">&lt;a href=&quot;#main-content&quot;&gt;Go to main content&lt;/a&gt;</code>).</li>
+<li><strong>JavaScript Hooks:</strong> Providing a reliable way for JavaScript to find and manipulate a specific element (<code class="language-js">document.getElementById(&#39;main-content&#39;)</code>).</li>
+<li><strong>CSS Targeting (Use Carefully):</strong> Targeting a unique element for specific styling.</li>
+</ul>
+</li>
+</ul>
+<p>We&#39;ve added <code class="language-html">&lt;div id=&quot;main-content&quot;&gt;</code> containing a paragraph. Like with classes, adding the <code class="language-html">id</code> attribute alone doesn&#39;t apply style.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. You&#39;ll see the simplified content structure.</li>
+<li>👀 The new <code class="language-html">&lt;div&gt;</code> and the paragraph inside it appear with default styling (inheriting from <code class="language-css">body</code> and the <code class="language-css">p</code> rule). The <code class="language-html">id</code> attribute has no visual effect yet.</li>
+<li>✅ Inspect the <code class="language-html">&lt;div&gt;</code> element in DevTools. You can see the <code class="language-html">id=&quot;main-content&quot;</code> attribute in the Elements panel.</li>
+</ul>
+<p>Next, we&#39;ll write the CSS rule using an ID selector.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

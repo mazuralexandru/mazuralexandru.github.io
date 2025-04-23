@@ -16,31 +16,92 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>45. Inline Semantics: <code class="language-html">&lt;em&gt;</code> &amp; <code class="language-html">&lt;strong&gt;</code> Accessibility</h1>
-<p>Let&#39;s revisit the accessibility implications of using <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code>.</p>
-<p><strong>How Screen Readers <em>May</em> Handle Them:</strong></p>
-<p>As mentioned before, screen readers and other assistive technologies <em>can</em> potentially use the semantic information provided by <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> to enhance the user experience. This might involve:</p>
+  <h1>45. Cascade Factor: Specificity Calculation</h1>
+<p>Specificity is a weight or score that a browser calculates for each CSS selector to determine which rule prevails in the cascade when rules conflict. Higher specificity scores win.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Voice Changes:</strong> Adjusting the pitch, speed, volume, or synthesized voice characteristics to mimic vocal stress (<code class="language-html">&lt;em&gt;</code>) or convey greater weight (<code class="language-html">&lt;strong&gt;</code>).</li>
-<li><strong>User Settings:</strong> Some screen readers might allow users to customize how emphasis and importance are announced or indicated.</li>
+<li><strong>HTML Modification:</strong> Added an <code class="language-html">id=&quot;unique-para&quot;</code> attribute to our paragraph, alongside its existing <code class="language-html">class=&quot;special&quot;</code>.</li>
+<li><strong>CSS Addition:</strong> Added a third conflicting rule using the ID selector <code class="language-css">#unique-para</code>.</li>
 </ul>
-<p><strong>Important Caveats:</strong></p>
-<ul>
-<li><strong>Variability:</strong> Support and specific behavior vary significantly between different screen readers (e.g., JAWS, NVDA, VoiceOver) and even between different versions of the same software.</li>
-<li><strong>User Configuration:</strong> The actual experience depends heavily on the user&#39;s settings and preferences.</li>
-<li><strong>No Guarantee:</strong> You cannot <em>guarantee</em> that a specific audible change will occur just because you used these tags.</li>
-</ul>
-<p><strong>Why Still Use Them? The Semantic Value:</strong></p>
-<p>Even if audible changes aren&#39;t consistently applied, using <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> correctly remains crucial for accessibility because:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;CSS Cascade Demo&lt;/h1&gt;
+
+  &lt;p id=&quot;unique-para&quot; class=&quot;special&quot;&gt;This paragraph has conflicting styles.&lt;/p&gt; &lt;!-- Added ID --&gt;
+
+  &lt;!-- Pruned previous sibling examples --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc; /* Rule 1: Type Selector */
+}
+
+/* Existing conflicting rule */
+.special {
+  color: lightcoral; /* Rule 2: Class Selector */
+  font-weight: bold;
+}
+
+/* Added ID selector rule */
+#unique-para {
+  color: cyan; /* Rule 3: ID Selector */
+}
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Calculating Specificity (Simplified)</strong></p>
+<p>Browsers calculate specificity using (typically) four components, often represented like <code>(A, B, C, D)</code>:</p>
 <ol>
-<li><strong>Provides Intent:</strong> It clearly communicates the <em>author&#39;s intent</em> to emphasize or stress importance, even if the software doesn&#39;t act on it overtly. This structural information is valuable context.</li>
-<li><strong>Potential Future Support:</strong> As assistive technologies evolve, semantic markup becomes increasingly important for enabling richer interactions and interpretations. Using semantic tags correctly future-proofs your content.</li>
-<li><strong>Consistency:</strong> It establishes a consistent way to mark up these nuances, which is better than relying on ad-hoc methods or purely visual styling (which provides <em>no</em> semantic information to screen readers).</li>
+<li><strong>A (Inline Styles):</strong> Score <code>1</code> here if the style is applied using the <code class="language-html">style=&quot;...&quot;</code> attribute directly on the element. Otherwise, <code>0</code>. (We have no inline styles here).</li>
+<li><strong>B (IDs):</strong> Count the number of ID selectors (<code class="language-css">#idname</code>) in the selector.</li>
+<li><strong>C (Classes, Attributes, Pseudo-classes):</strong> Count the number of class selectors (<code class="language-css">.classname</code>), attribute selectors (<code class="language-css">[attr=val]</code>), and pseudo-classes (like <code class="language-css">:hover</code>, <code class="language-css">:nth-child()</code>, which we haven&#39;t covered yet).</li>
+<li><strong>D (Types, Pseudo-elements):</strong> Count the number of type selectors (<code class="language-css">p</code>, <code class="language-css">div</code>) and pseudo-elements (like <code class="language-css">:before</code>, <code class="language-css">:after</code>, not covered yet).</li>
 </ol>
-<p><strong>Contrast with <code class="language-html">&lt;i&gt;</code>/<code class="language-html">&lt;b&gt;</code>:</strong></p>
-<p>We&#39;ll discuss <code class="language-html">&lt;i&gt;</code> (italic) and <code class="language-html">&lt;b&gt;</code> (bold) next. Generally, screen readers do <em>not</em> announce these tags differently from regular text, as their semantic meaning (in HTML5) is weaker and more nuanced than <code class="language-html">&lt;em&gt;</code>/<code class="language-html">&lt;strong&gt;</code>. This further highlights the importance of choosing <code class="language-html">&lt;em&gt;</code>/<code class="language-html">&lt;strong&gt;</code> when true emphasis or importance is intended.</p>
-<p>✅ <strong>Observation:</strong> No code changes. Reflect on the examples using <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> in <code class="language-text">index.html</code>. Understand that their primary value lies in conveying semantic meaning, which <em>can</em> be leveraged by assistive technologies, making them superior to purely visual styling for accessibility.</p>
-<p>✨ <strong>Key Takeaway:</strong> Using <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> semantically provides valuable information for assistive technologies, potentially improving the experience for users even if default audible changes vary. Prioritize semantic correctness.</p>
+<p><em>Universal selector (<code>*</code>) and combinators (<code> </code>, <code>&gt;</code>, <code>+</code>, <code>~</code>) do <strong>not</strong> add to specificity.</em></p>
+<p><strong>Comparing Our Rules:</strong></p>
+<ul>
+<li><code class="language-css">p</code>: Has one type selector. Specificity = <strong>(0, 0, 0, 1)</strong></li>
+<li><code class="language-css">.special</code>: Has one class selector. Specificity = <strong>(0, 0, 1, 0)</strong></li>
+<li><code class="language-css">#unique-para</code>: Has one ID selector. Specificity = <strong>(0, 1, 0, 0)</strong></li>
+</ul>
+<p><strong>Determining the Winner:</strong></p>
+<p>Specificity values are compared component by component from left to right (A, then B, then C, then D). The first component where one selector has a higher value determines the winner.</p>
+<ul>
+<li><p>Comparing <code class="language-css">#unique-para</code> (0,1,0,0) and <code class="language-css">.special</code> (0,0,1,0):</p>
+<ul>
+<li>A is tied (0 vs 0).</li>
+<li>B: <code class="language-css">#unique-para</code> has 1, <code class="language-css">.special</code> has 0. <strong><code>#unique-para</code> wins!</strong> We don&#39;t need to compare C and D.</li>
+</ul>
+</li>
+<li><p>Comparing <code class="language-css">.special</code> (0,0,1,0) and <code class="language-css">p</code> (0,0,0,1):</p>
+<ul>
+<li>A is tied (0 vs 0).</li>
+<li>B is tied (0 vs 0).</li>
+<li>C: <code class="language-css">.special</code> has 1, <code class="language-css">p</code> has 0. <strong><code>.special</code> wins!</strong></li>
+</ul>
+</li>
+</ul>
+<p>So, for the <code class="language-css">color</code> property, the <code class="language-css">#unique-para</code> rule has the highest specificity and will determine the final color.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Observe the paragraph. Its text color should now be <strong>cyan</strong>, overriding both the <code class="language-css">lightcoral</code> from <code>.special</code> and the <code class="language-css">#ccc</code> from <code>p</code>. It should still be bold (from <code>.special</code>) and italic (from <code>p</code>) as those properties weren&#39;t overridden by the ID rule.</li>
+<li>✅ Inspect the paragraph in DevTools. In the Styles pane:<ul>
+<li>You&#39;ll see the <code class="language-css">#unique-para</code> rule applying <code class="language-css">color: cyan</code>.</li>
+<li>You&#39;ll see <code class="language-css">color: lightcoral</code> (from <code>.special</code>) and <code class="language-css">color: #ccc</code> (from <code>p</code>) <strong>both crossed out</strong>, as they lost the specificity battle to the ID selector for the <code class="language-css">color</code> property.</li>
+<li>The <code class="language-css">font-weight: bold</code> (from <code>.special</code>) and <code class="language-css">font-style: italic</code> (from <code>p</code>) should still be shown as active.</li>
+</ul>
+</li>
+</ul>
+<p>Mastering specificity calculation is key to understanding why styles apply (or don&#39;t apply!) as expected. Aim for the lowest necessary specificity by favouring class selectors over IDs for general styling.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

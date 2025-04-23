@@ -1,1 +1,34 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue; /* H1 specific color */
+  /* Common styles moved to grouped selector below */
+}
+
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Grouped Selector for common heading styles */
+h1,
+h2,
+h3 {
+  font-weight: normal; /* Make all headings normal weight */
+  border-bottom: 1px solid #555; /* Common underline */
+  padding-bottom: 3px; /* Space between text and underline */
+  margin-bottom: 10px; /* Space below headings */
+}
+
+/* Removed Universal Selector rule */
+
+/* CSS files can also have comments! */

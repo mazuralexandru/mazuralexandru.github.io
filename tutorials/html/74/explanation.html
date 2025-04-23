@@ -16,33 +16,116 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>74. Quotations: Inline Quotes (<code class="language-html">&lt;q&gt;</code>)</h1>
-<p>While <code class="language-html">&lt;blockquote&gt;</code> handles block-level quotations, HTML provides the <code class="language-html">&lt;q&gt;</code> element for <strong>short, inline quotations</strong> that occur within the flow of text.</p>
-<p><strong>The Inline Quote Element (<code class="language-html">&lt;q&gt;</code>)</strong></p>
+  <h1>74. Semantic HTML for Quotations: <code>&lt;blockquote&gt;</code>, <code>&lt;q&gt;</code>, <code>&lt;cite&gt;</code></h1>
+<p>HTML offers tags to semantically mark up quotations: <code class="language-html">&lt;blockquote&gt;</code> for long, block-level quotations, <code class="language-html">&lt;q&gt;</code> for short inline quotations, and <code class="language-html">&lt;cite&gt;</code> to identify the title of a cited work.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Represents a short quotation embedded within surrounding prose.</li>
-<li><strong>Type:</strong> Inline element.</li>
-<li><strong>Syntax:</strong> Uses an opening <code class="language-html">&lt;q&gt;</code> and closing <code class="language-html">&lt;/q&gt;</code> tag.</li>
-<li><strong>Content Model:</strong> Contains phrasing content. Cannot contain block-level elements.</li>
+<li><strong>HTML Pruning:</strong> Removed the code/pre examples.</li>
+<li><strong>HTML Addition:</strong> Added examples using <code class="language-html">&lt;blockquote&gt;</code> (with <code>cite</code> attribute), <code class="language-html">&lt;q&gt;</code>, and <code class="language-html">&lt;cite&gt;</code>.</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">code</code>, <code>pre</code>, <code>pre code</code> rules, including the syntax highlighting hints.</li>
+<li><strong>CSS Addition:</strong> Added styling rules for the quotation elements.</li>
 </ul>
-<p><strong>Browser Rendering &amp; Punctuation:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Quotations Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+
+  &lt;!-- Pruned previous code/pre examples --&gt;
+
+  &lt;p&gt;The specification says:&lt;/p&gt;
+  &lt;blockquote cite=&quot;https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element&quot;&gt; &lt;!-- Added blockquote --&gt;
+    &lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element...&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;p&gt;
+    As Shakespeare wrote, &lt;q&gt;All the world&#39;s a stage&lt;/q&gt;. &lt;!-- Added inline quote --&gt;
+    The &lt;q&gt;q&lt;/q&gt; tag automatically adds quotation marks appropriate for the language.
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    My favorite book is &lt;cite&gt;The Lord of the Rings&lt;/cite&gt;. &lt;!-- Added citation --&gt;
+    The &lt;cite&gt;cite&lt;/cite&gt; tag identifies the title of a creative work.
+  &lt;/p&gt;
+
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Pruned code/pre rules */
+/* code { ... } */
+/* pre { ... } */
+/* pre code { ... } */
+/* .language-css ... */
+
+/* Quotations Demo */
+p { /* Base paragraph styling */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+blockquote {
+  border-left: 4px solid cyan;
+  padding-left: 15px;
+  margin-left: 20px; /* Default browser often adds margin */
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-style: italic;
+  color: #bbb; /* Slightly different color */
+}
+
+/* Optional: Style the paragraph inside blockquote if needed */
+/* blockquote p { margin-bottom: 0; } */
+
+q {
+  /* Browsers automatically add quotes based on language context */
+  /* You can customize quotes using the CSS &#39;quotes&#39; property */
+  /* quotes: &#39;&quot;&#39; &#39;&quot;&#39; &quot;&#39;&quot; &quot;&#39;&quot;; */
+  font-style: italic;
+  color: lightcoral;
+}
+
+cite {
+  font-style: italic; /* Default browser style */
+  /* Often no extra styling needed */
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Quotation Tags Explained</strong></p>
 <ul>
-<li><strong>Automatic Quotes:</strong> The key feature of <code class="language-html">&lt;q&gt;</code> is that browsers are supposed to <strong>automatically add appropriate quotation marks</strong> around the content based on the document&#39;s language (defined by the <code class="language-html">lang</code> attribute on the <code class="language-html">&lt;html&gt;</code> tag or a parent element) and nesting level.<ul>
-<li>For English (<code class="language-html">lang=&quot;en&quot;</code>), this usually means adding double quotes (<code>“ ”</code>) for the first level, and single quotes (<code>‘ ’</code>) for quotes nested inside other quotes.</li>
+<li><strong><code class="language-html">&lt;blockquote&gt;</code> (Block Quotation):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents content quoted from another source, rendered as a distinct block.</li>
+<li><strong>Attributes:</strong> Can have a <code class="language-html">cite</code> attribute whose value is a URL pointing to the source of the quotation. This attribute is not displayed visually but can be used by browsers or scripts.</li>
+<li><strong>Default Styling:</strong> Typically indented by browsers (using <code>margin</code>). Often styled further with borders, background colors, or different fonts.</li>
 </ul>
 </li>
-<li><strong>Important:</strong> You should <strong>not</strong> manually type quotation marks (<code>&quot;</code> or <code>&#39;</code>) inside the <code class="language-html">&lt;q&gt;</code> tags. Let the browser handle adding the correct punctuation according to linguistic conventions.</li>
+<li><strong><code class="language-html">&lt;q&gt;</code> (Inline Quotation):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents a short inline quotation.</li>
+<li><strong>Default Styling:</strong> Browsers automatically add appropriate quotation marks around the content (e.g., &quot; &quot; for English). The specific quotes used depend on the language context (defined by the <code>lang</code> attribute on a parent element) and nesting level. You should <em>not</em> manually type quotes inside the <code>&lt;q&gt;</code> tag. Can also have a <code>cite</code> attribute.</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve added an inline quotation using the <code class="language-html">&lt;q&gt;</code> element within the first paragraph of <code class="language-text">index.html</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;p&gt;The blockquote element is used for long quotations. For shorter, inline quotes, use the q element, like this: He said, &lt;q&gt;That&#39;s fascinating!&lt;/q&gt; right in the middle of the sentence.&lt;/p&gt; &lt;!-- Added &lt;q&gt; example --&gt;
-</code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Locate the <code class="language-html">&lt;q&gt;That&#39;s fascinating!&lt;/q&gt;</code> snippet in <code class="language-text">index.html</code>. Notice there are no literal quote characters (<code>&quot;</code>) typed inside the tags.</li>
-<li>Look closely at the browser preview. You should see the phrase &quot;That&#39;s fascinating!&quot; enclosed in <strong>double quotation marks</strong> (<code>“ ”</code>) that were automatically added by the browser.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use the inline <code class="language-html">&lt;q&gt;</code> element for short quotations within a sentence. Do <em>not</em> put quotation marks inside the <code class="language-html">&lt;q&gt;</code> tags; browsers should add them automatically based on language context.</p>
+</li>
+<li><strong><code class="language-html">&lt;cite&gt;</code> (Citation / Work Title):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents the title of a creative work (book, paper, essay, poem, score, song, script, film, TV show, game, sculpture, painting, play, opera, musical, exhibition, legal case report, etc.). It&#39;s <em>not</em> for quoting people.</li>
+<li><strong>Default Styling:</strong> Typically rendered in italics.</li>
+</ul>
+</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 The <code class="language-html">&lt;blockquote&gt;</code> text should be indented, italic, have a cyan left border, and slightly different text color due to our CSS.</li>
+<li>👀 The text within the <code class="language-html">&lt;q&gt;</code> tags (&quot;All the world&#39;s a stage&quot; and &quot;q&quot;) should have quotation marks automatically added around them by the browser and appear italic and light coral.</li>
+<li>👀 The text within the <code class="language-html">&lt;cite&gt;</code> tag (&quot;The Lord of the Rings&quot;) should appear italic.</li>
+<li>✅ Inspect the elements in DevTools. Note the <code>cite</code> attribute on the <code>blockquote</code> (it won&#39;t be visible on the page). Observe how the browser adds quote characters around the <code>&lt;q&gt;</code> element&#39;s content.</li>
+</ul>
+<p>Using these tags correctly adds semantic value for accessibility tools and document processors, distinguishing quotations and work titles from regular text.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Main Page Title (h1)</h1>
-  <p>This is the introductory paragraph. We will add <em>emphasis</em> and <strong>importance</strong> to text. This part is <strong><em>very</em></strong> important! We might discuss <i>technical terms</i> like the <i>Document Object Model</i>. Remember to install the <b>SuperWidget</b> driver first.</p> <!-- Added <b> example -->
+  <h1>CSS Inheritance Demo</h1> <!-- Changed H1 text -->
 
-  <p>This is another paragraph. It serves as a <strong>second</strong> block of text for our examples.</p>
+  <!-- Pruned previous cascade examples -->
 
+  <div style="color: mediumpurple; border: 1px solid grey; padding: 10px;"> <!-- Parent Div -->
+    This text is directly inside the div (inherits color).
+    <p>This paragraph is inside the div.</p> <!-- Child P -->
+  </div>
 
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
+
+  <script src="script.js"></script>
 </body>
 </html>

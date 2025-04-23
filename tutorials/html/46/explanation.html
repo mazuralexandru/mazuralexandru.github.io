@@ -16,40 +16,88 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>46. Inline Semantics: Alternate Voice (<code class="language-html">&lt;i&gt;</code>)</h1>
-<p>Now let&#39;s look at the <code class="language-html">&lt;i&gt;</code> element. Historically, this tag simply meant &quot;italic,&quot; but HTML5 redefined its semantic purpose.</p>
-<p><strong>The <code class="language-html">&lt;i&gt;</code> Element (HTML5 Semantics):</strong></p>
+  <h1>46. Cascade Factor: Source Order</h1>
+<p>The final major factor in the cascade (after Origin/Importance and Specificity) is <strong>Source Order</strong>. If two rules have the same origin and the same specificity, the one that appears <strong>later</strong> in the stylesheet code wins.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Represents text that is set off from the normal prose in some way, often indicating an <strong>alternate voice or mood</strong>. It&#39;s used for things that aren&#39;t necessarily emphasized (<code class="language-html">&lt;em&gt;</code>) or strongly important (<code class="language-html">&lt;strong&gt;</code>).</li>
-<li><strong>Specific Use Cases (Examples):</strong><ul>
-<li>Technical terms (when introduced or defined).</li>
-<li>Taxonomic designations (like genus/species names: <em>Homo sapiens</em>).</li>
-<li>Fictional character thoughts.</li>
-<li>Foreign words or phrases (if not part of the main text language).</li>
-<li>Ship names in historical text.</li>
-<li>Transliterations.</li>
+<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">id=&quot;unique-para&quot;</code> attribute from the paragraph to eliminate the high-specificity ID selector conflict.</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">#unique-para</code> ID selector rule.</li>
+<li><strong>CSS Addition:</strong> Added a <em>second</em> rule using the same class selector <code class="language-css">.special</code>, placed <em>after</em> the first <code class="language-css">.special</code> rule, and setting a different <code class="language-css">color</code>.</li>
+</ul>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;CSS Cascade Demo&lt;/h1&gt;
+
+  &lt;p class=&quot;special&quot;&gt;This paragraph has conflicting styles.&lt;/p&gt; &lt;!-- Removed ID --&gt;
+
+  &lt;!-- Pruned previous sibling examples --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc; /* Specificity: (0,0,0,1) */
+}
+
+/* Rule A: Class Selector */
+.special {
+  color: lightcoral; /* Specificity: (0,0,1,0) */
+  font-weight: bold;
+}
+
+/* Removed ID selector rule */
+/*
+#unique-para { ... }
+*/
+
+/* Rule B: SAME Class Selector, later in source */
+.special {
+  color: yellowgreen; /* Specificity: (0,0,1,0) */
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Source Order Explained</strong></p>
+<ul>
+<li>When the browser evaluates styles, it reads the CSS files from top to bottom.</li>
+<li>If it finds two rules that target the same element (or have rules targeting it via different selectors) and those rules have <strong>exactly the same specificity</strong> (and same origin/importance), the property value declared in the rule that comes <strong>last</strong> in the source code will be applied.</li>
+</ul>
+<p><strong>Applying the Cascade:</strong></p>
+<ul>
+<li><p>Our paragraph <code class="language-html">&lt;p class=&quot;special&quot;&gt;</code> is targeted by three rules for <code class="language-css">color</code>:</p>
+<ol>
+<li><code class="language-css">p { color: #ccc; }</code> -&gt; Specificity (0,0,0,1)</li>
+<li><code class="language-css">.special { color: lightcoral; }</code> -&gt; Specificity (0,0,1,0) - Rule A</li>
+<li><code class="language-css">.special { color: yellowgreen; }</code> -&gt; Specificity (0,0,1,0) - Rule B</li>
+</ol>
+</li>
+<li><p><strong>Specificity Check:</strong> Both <code>.special</code> rules (A and B) have specificity (0,0,1,0), which is higher than the <code>p</code> rule&#39;s (0,0,0,1). So, the <code>p</code> rule&#39;s <code class="language-css">color</code> is eliminated.</p>
+</li>
+<li><p><strong>Source Order Check:</strong> Rules A and B have the <em>same</em> specificity (0,0,1,0). Now, source order applies. Rule B (<code class="language-css">color: yellowgreen;</code>) appears later in the <code class="language-text">style.css</code> file than Rule A (<code class="language-css">color: lightcoral;</code>).</p>
+</li>
+<li><p><strong>Result:</strong> Rule B wins due to source order. The paragraph&#39;s color will be <code class="language-css">yellowgreen</code>.</p>
+</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Observe the paragraph. Its text color should now be <strong>yellowgreen</strong>. It should still be bold (from Rule A, as Rule B didn&#39;t override <code class="language-css">font-weight</code>) and italic (from the <code class="language-css">p</code> rule).</li>
+<li>✅ Inspect the paragraph in DevTools. In the Styles pane:<ul>
+<li>You&#39;ll see the <code class="language-css">.special { color: yellowgreen; }</code> rule (Rule B) applying the color.</li>
+<li>You should see the <code class="language-css">color: lightcoral</code> declaration from the <em>earlier</em> <code class="language-css">.special</code> rule (Rule A) <strong>crossed out</strong>, indicating it lost due to source order.</li>
+<li>The <code class="language-css">color: #ccc</code> from the <code class="language-css">p</code> rule should also still be crossed out (due to lower specificity).</li>
+<li>The <code class="language-css">font-weight: bold</code> (from Rule A) and <code class="language-css">font-style: italic</code> (from <code>p</code>) should be active.</li>
 </ul>
 </li>
-<li><strong>Type:</strong> Inline element.</li>
-<li><strong>Syntax:</strong> <code class="language-html">&lt;i&gt;...&lt;/i&gt;</code></li>
 </ul>
-<p><strong>Default Rendering:</strong></p>
-<p>Browsers continue to render <code class="language-html">&lt;i&gt;</code> text in an <em>italic</em> font style by default, matching its historical usage.</p>
-<p><strong><code class="language-html">&lt;i&gt;</code> vs. <code class="language-html">&lt;em&gt;</code>:</strong></p>
-<ul>
-<li>Use <code class="language-html">&lt;em&gt;</code> when you want to apply <strong>stress emphasis</strong> that changes the meaning of the sentence (like vocal stress).</li>
-<li>Use <code class="language-html">&lt;i&gt;</code> when you want to mark text as being in an &quot;alternate voice&quot; or fitting one of the specific use cases listed above, <em>without</em> implying stress emphasis or strong importance. If none of the specific <code class="language-html">&lt;i&gt;</code> use cases fit, and you just want italics for presentation, use CSS instead.</li>
-</ul>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve added two examples using <code class="language-html">&lt;i&gt;</code> in the first paragraph of <code class="language-text">index.html</code> to represent technical terms.</p>
-<pre class="language-html"><code class="language-html">&lt;p&gt; ... We might discuss &lt;i&gt;technical terms&lt;/i&gt; like the &lt;i&gt;Document Object Model&lt;/i&gt;.&lt;/p&gt; &lt;!-- Added &lt;i&gt; examples --&gt;
-</code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Locate the <code class="language-html">&lt;i&gt;technical terms&lt;/i&gt;</code> and <code class="language-html">&lt;i&gt;Document Object Model&lt;/i&gt;</code> examples in <code class="language-text">index.html</code>.</li>
-<li>Look at the browser preview. These phrases should now appear in <em>italics</em> within the first paragraph, similar to how &quot;emphasis&quot; (using <code class="language-html">&lt;em&gt;</code>) appears. Visually they might look the same by default, but their underlying semantic meaning is different.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;i&gt;</code> (in HTML5) for text in an alternate voice or mood, such as technical terms, foreign words, or character thoughts, where <code class="language-html">&lt;em&gt;</code> (emphasis) is not appropriate. If italics are needed purely for style, prefer CSS.</p>
+<p>Source order is the final tie-breaker in the cascade when specificity is equal. This is why the order of rules in your CSS files can sometimes matter, especially when overriding styles from libraries or other sources.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

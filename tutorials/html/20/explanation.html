@@ -16,60 +16,51 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>20. Essential Metadata: The <code class="language-html">&lt;title&gt;</code> Element</h1>
-<p>Another crucial element within the <code class="language-html">&lt;head&gt;</code> section is the <strong><code class="language-html">&lt;title&gt;</code> element</strong>.</p>
-<p><strong>Purpose:</strong></p>
+  <h1>20. Multiple Rules in Internal Stylesheets</h1>
+<p>You can add as many CSS rules as you need within a single <code class="language-html">&lt;style&gt;</code> block. Let&#39;s add another rule to style the paragraph (<code class="language-html">&lt;p&gt;</code>) element on the page.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li>Defines the <strong>title of the HTML document</strong>. This title is not displayed on the page itself but is used in several important places by the browser and search engines.</li>
-<li>It provides a short, descriptive label for the page content.</li>
+<li>We added a second CSS ruleset, targeting the <code class="language-html">&lt;p&gt;</code> element, inside the <code class="language-html">&lt;style&gt;</code> block in <code class="language-text">index.html</code>.</li>
 </ul>
-<p><strong>Syntax:</strong></p>
-<ul>
-<li><code class="language-html">&lt;title&gt;Your Page Title Here&lt;/title&gt;</code></li>
-<li>It requires both an opening (<code class="language-html">&lt;title&gt;</code>) and a closing (<code class="language-html">&lt;/title&gt;</code>) tag.</li>
-<li>The content between the tags should be <strong>plain text only</strong>. Do not nest other HTML elements inside the <code class="language-html">&lt;title&gt;</code>.</li>
-</ul>
-<p><strong>Placement:</strong></p>
-<ul>
-<li>Must be placed <strong>inside the <code class="language-html">&lt;head&gt;</code> element</strong>.</li>
-<li>Typically placed after the <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> declaration.</li>
-</ul>
-<p><strong>Requirement:</strong></p>
-<ul>
-<li>Technically required for valid HTML. Every page should have one, and only one, meaningful <code class="language-html">&lt;title&gt;</code> element.</li>
-</ul>
-<p><strong>Where Does the Title Appear? (Behavior &amp; Impact):</strong></p>
-<ol>
-<li><strong>Browser Tab/Window Title Bar:</strong> This is the most obvious place. It helps users identify your page when they have multiple tabs open.</li>
-<li><strong>Browser Bookmarks/Favorites:</strong> When a user bookmarks your page, the title is typically used as the default bookmark name.</li>
-<li><strong>Search Engine Results Pages (SERPs):</strong> Search engines like Google heavily rely on the <code class="language-html">&lt;title&gt;</code> content. It&#39;s often used as the main clickable link for your page in search results.</li>
-</ol>
-<p><strong>Importance:</strong></p>
-<ul>
-<li><strong>Usability:</strong> Clear titles improve navigation and identification.</li>
-<li><strong>Accessibility:</strong> Screen readers usually announce the page title when the page first loads, providing crucial context to users about the page they&#39;ve landed on.</li>
-<li><strong>SEO (Search Engine Optimization):</strong> The <code class="language-html">&lt;title&gt;</code> is one of the most important on-page SEO factors. It tells search engines the main topic of your page. Well-crafted titles can significantly improve your search ranking.</li>
-</ul>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve added a <code class="language-html">&lt;title&gt;</code> element inside the <code class="language-html">&lt;head&gt;</code>, after the <code class="language-html">&lt;meta charset&gt;</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
 &lt;head&gt;
   &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt; &lt;!-- Added title element --&gt;
-  &lt;!-- Metadata goes here --&gt;
+  &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;style&gt;
+    /* Internal CSS rules will go here */
+    h1 {
+      color: lightseagreen;
+      text-decoration: underline;
+    }
+    /* Added P rule */
+    p {
+      font-style: italic;
+      color: #bbb; /* Slightly lighter gray than default body text */
+    }
+  &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;!-- Visible content goes here --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Look at the <code class="language-text">index.html</code> file to see the added <code class="language-html">&lt;title&gt;</code> element.</li>
-<li>Check the <strong>browser tab</strong> where your preview is displayed (or the window title bar if it&#39;s not tabbed). You should now see the text &quot;My First Web Page&quot; displayed there! This is the first visible effect of adding metadata. The page content area remains blank.</li>
-</ol>
-<p>✨ <strong>Best Practice:</strong> Write descriptive, concise, and unique titles for each page of your website. Reflect the page&#39;s main content accurately. (e.g., &quot;About Us - Awesome Company&quot;, &quot;Contact - Awesome Company&quot;).</p>
+<p><strong>Applying Multiple Rules</strong></p>
+<ul>
+<li>Just list the rulesets one after another within the <code class="language-html">&lt;style&gt;</code> tags.</li>
+<li>The new rule targets all <code class="language-html">&lt;p&gt;</code> elements on this page.</li>
+<li><code class="language-css">font-style: italic;</code> makes the paragraph text italic.</li>
+<li><code class="language-css">color: #bbb;</code> sets the paragraph text color to a specific light gray (<code class="language-css">#bbbbbb</code>), overriding the slightly darker gray (<code class="language-css">#E0E0E0</code>) inherited from the <code class="language-css">body</code> rule in the external <code class="language-text">style.css</code>.</li>
+</ul>
+<p><strong>Internal Stylesheets: Recap</strong></p>
+<ul>
+<li><strong>Pros:</strong> Keeps styles for a single page together, allows use of selectors, better than inline styles for organization within a page.</li>
+<li><strong>Cons:</strong> Styles are not reusable across different HTML pages, still mixes presentation concerns within the HTML file structure.</li>
+</ul>
+<p>For multi-page websites or complex applications, <strong>external stylesheets</strong> (which we linked earlier but haven&#39;t used much yet beyond the base styles) are the preferred and standard approach. We&#39;ll revisit them next.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. The paragraph text &quot;This paragraph will be styled soon.&quot; should now be italic and a slightly lighter gray color (<code class="language-css">#bbb</code>). The heading remains styled as before.</li>
+<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools.</li>
+<li>👀 In the Styles pane, you&#39;ll see the <code class="language-css">p { ... }</code> rule from the <code class="language-html">&lt;style&gt;</code> block being applied. You should also see the <code class="language-css">color: #E0E0E0</code> from the <code class="language-css">body</code> rule (in <code class="language-text">style.css</code>) crossed out, indicating it has been overridden by the more specific <code class="language-css">color: #bbb</code> rule applied directly to the <code class="language-html">&lt;p&gt;</code> element via the internal stylesheet.</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

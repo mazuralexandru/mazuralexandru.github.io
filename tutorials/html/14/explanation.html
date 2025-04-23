@@ -16,40 +16,49 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>14. Minimal HTML Document: The DOCTYPE Declaration</h1>
-<p>The very first thing in any HTML document <strong>must</strong> be the <strong>Document Type Declaration</strong>, commonly known as the <strong>DOCTYPE</strong>.</p>
-<p><strong>Purpose:</strong></p>
-<ul>
-<li>It tells the web browser which version of HTML the document is written in. For modern web development, we use the HTML5 DOCTYPE.</li>
-<li>Crucially, it signals to the browser to render the page in <strong>&quot;standards mode&quot;</strong>. This ensures the browser follows current web standards as closely as possible, leading to more predictable and consistent rendering across different browsers.</li>
-</ul>
-<p><strong>Syntax (HTML5):</strong></p>
-<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+  <h1>14. Adding CSS Comments</h1>
+<p>Just like in HTML, you can add comments to your CSS code to explain sections, leave notes, or temporarily disable rules.</p>
+<p><strong>What&#39;s New?</strong></p>
+<p>We added more comments within the <code class="language-text">style.css</code> file using the <code class="language-css">/* ... */</code> syntax.</p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+}
+
+/* Added H1 style rule */
+/* Styles for the main page heading */ /* &lt;-- New Comment */
+h1 {
+  color: tomato; /* Change H1 text color */
+  border-bottom: 2px solid #eee; /* Add a light bottom border */
+  padding-bottom: 5px; /* Add space below text before border */
+}
+
+/* CSS files can also have comments! */
+/* We can add more comments here. */ /* &lt;-- New Comment */
 </code></pre>
+<p><strong>CSS Comments (<code class="language-css">/* ... */</code>)</strong></p>
 <ul>
-<li>It starts with <code class="language-html">&lt;!</code> and ends with <code class="language-html">&gt;</code>.</li>
-<li>The keyword <code class="language-text">DOCTYPE</code> is case-insensitive, but typically written in uppercase by convention.</li>
-<li><code class="language-text">html</code> indicates the HTML5 standard.</li>
+<li><strong>Purpose:</strong> Same as HTML comments – add explanations, notes for developers, or temporarily disable CSS code.</li>
+<li><strong>Syntax:</strong> CSS comments start with <code class="language-css">/*</code> and end with <code class="language-css">*/</code>. Everything between these markers is ignored by the browser when parsing the CSS.</li>
+<li><strong>Placement:</strong> Can be placed almost anywhere in a CSS file, including on their own lines or at the end of a line after a declaration (though usually placed on separate lines for clarity).</li>
+<li><strong>Multi-line:</strong> CSS comments can span multiple lines.</li>
+<li><strong>No Nesting:</strong> Similar to HTML, nesting CSS comments (<code class="language-css">/* Comment /* Nested? */ End */</code>) is generally not supported reliably.</li>
 </ul>
-<p><strong>Placement:</strong></p>
+<p><strong>Using Comments Effectively:</strong></p>
 <ul>
-<li><strong>Rule:</strong> The DOCTYPE <strong>must</strong> be the absolute first line of your HTML file. Nothing else can come before it – not even comments or whitespace.</li>
-</ul>
-<p><strong>What Happens Without It?</strong></p>
-<p>If you omit the DOCTYPE, or if it&#39;s incorrect or placed wrongly, browsers may fall back into <strong>&quot;quirks mode&quot;</strong>. In quirks mode, browsers try to emulate the behavior of much older, non-standard browsers to maintain compatibility with outdated websites. This often results in inconsistent layouts and unexpected behavior. <strong>Always include the HTML5 DOCTYPE.</strong></p>
-<p><strong>Historical Context:</strong></p>
-<p>Older HTML versions (like HTML 4.01 or XHTML 1.0) had much longer, more complex DOCTYPE declarations that referenced specific Document Type Definitions (DTDs). HTML5 greatly simplified this.</p>
-<p><strong>Code Change:</strong></p>
-<p>We have added the DOCTYPE declaration as the very first line in <code class="language-text">index.html</code>:</p>
-<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt; &lt;!-- Added this line --&gt;
-&lt;!-- We will build the standard document structure soon --&gt;
+<li>Explain <em>why</em> a complex style rule exists.</li>
+<li>Label different sections of your stylesheet (e.g., <code class="language-css">/* --- Header Styles --- */</code>, <code class="language-css">/* --- Button Styles --- */</code>).</li>
+<li>Temporarily disable a property or an entire ruleset during debugging:<pre class="language-css"><code class="language-css">h1 {
+  color: tomato;
+  /* border-bottom: 2px solid #eee; */ /* Temporarily disabled border */
+  padding-bottom: 5px;
+}
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Verify that <code class="language-text">index.html</code> now starts with <code class="language-html">&lt;!DOCTYPE html&gt;</code>.</li>
-<li>The browser preview pane will still appear blank. The DOCTYPE is an instruction <em>to</em> the browser; it doesn&#39;t produce visible output itself.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Always start your HTML file with <code class="language-html">&lt;!DOCTYPE html&gt;</code> on the very first line to ensure standards-compliant rendering.</p>
+</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. There should be <strong>no visual change</strong> to the page. The comments are purely for the developer reading the code; the browser ignores them.</li>
+<li>🔬 <strong>Experiment:</strong> Try commenting out the <code class="language-css">color: tomato;</code> declaration in the <code class="language-css">h1</code> rule using <code class="language-css">/* ... */</code>. Save <code class="language-text">style.css</code> and refresh the preview. The heading text should revert to the default light gray inherited from the <code class="language-css">body</code>, as the <code class="language-css">color</code> rule is now ignored. Remember to uncomment it afterwards!</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

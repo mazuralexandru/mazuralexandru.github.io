@@ -2,21 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Quotation Elements</h1>
-  <p>The blockquote element is used for long quotations. For shorter, inline quotes, use the q element, like this: He said, <q>That's fascinating!</q> right in the middle of the sentence.</p> <!-- Added <q> example -->
+  <h1>Quotations Demo</h1> <!-- Changed H1 text -->
 
-  <blockquote cite="https://www.w3.org/TR/html52/textlevel-semantics.html#the-blockquote-element">
-    <p>This is a longer quotation, potentially spanning multiple paragraphs, taken from another source. It indicates that this content is not the original author's own words.</p>
-    <p>Blockquotes are typically indented by browsers by default.</p>
+  <!-- Pruned previous code/pre examples -->
+
+  <p>The specification says:</p>
+  <blockquote cite="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"> <!-- Added blockquote -->
+    <p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element...</p>
   </blockquote>
 
-  <p>This paragraph follows the blockquote.</p>
+  <p>
+    As Shakespeare wrote, <q>All the world's a stage</q>. <!-- Added inline quote -->
+    The <q>q</q> tag automatically adds quotation marks appropriate for the language.
+  </p>
+
+  <p>
+    My favorite book is <cite>The Lord of the Rings</cite>. <!-- Added citation -->
+    The <cite>cite</cite> tag identifies the title of a creative work.
+  </p>
 
 
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
+
+  <script src="script.js"></script>
 </body>
 </html>

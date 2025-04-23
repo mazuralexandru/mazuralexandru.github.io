@@ -1,1 +1,46 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: "Roboto", sans-serif; /* Use Roboto as base font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned em/strong rules */
+/* em { ... } */
+/* strong { ... } */
+
+
+/* Presentational Elements Demo */
+p { /* Base paragraph styling */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+i {
+  font-style: italic; /* Default browser style */
+  /* Often no extra styling needed if used correctly */
+}
+
+b {
+  font-weight: bold; /* Default browser style */
+  /* Often no extra styling needed if used correctly */
+}
+
+u {
+  text-decoration: underline; /* Default browser style */
+  /* Consider custom styling (e.g., wavy red underline for misspelling) */
+  /* text-decoration-color: red; */
+  /* text-decoration-style: wavy; */
+}
+
+
+/* CSS files can also have comments! */

@@ -16,32 +16,35 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>37. Text: Headings (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>) - Accessibility &amp; SEO</h1>
-<p>The proper use of headings goes beyond just visual structure; it has significant implications for <strong>accessibility</strong> and <strong>search engine optimization (SEO)</strong>.</p>
-<p><strong>Accessibility:</strong></p>
+  <h1>37. Removing Temporary Universal Selector Rule</h1>
+<p>The universal selector rule (<code class="language-css">*</code>) we added was just for demonstration. It&#39;s generally not something you leave in your stylesheet applying borders to everything. Let&#39;s remove it now.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Screen Reader Navigation:</strong> Headings are perhaps the <strong>most important</strong> structural element for screen reader users. Most screen readers allow users to:<ul>
-<li>List all headings on a page to quickly grasp the overall structure.</li>
-<li>Navigate directly from heading to heading using keyboard shortcuts (e.g., pressing &#39;H&#39; to jump to the next heading, &#39;1&#39; for the next <code class="language-html">&lt;h1&gt;</code>, &#39;2&#39; for the next <code class="language-html">&lt;h2&gt;</code>, etc.).</li>
+<li><strong>CSS Removal:</strong> The entire <code class="language-css">* { ... }</code> ruleset has been removed from <code class="language-text">style.css</code>. This is an <strong>integrated removal</strong> – cleaning up temporary code as we move forward.</li>
 </ul>
-</li>
-<li><strong>Understanding Content:</strong> A logical heading structure allows visually impaired users to understand the organization and relative importance of different sections without needing to see the visual layout. Skipping heading levels or using headings incorrectly makes this process much harder and confusing.</li>
-</ul>
-<p><strong>Search Engine Optimization (SEO):</strong></p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Removed Attribute Selector rules as elements were pruned */
+
+/* --- TEMPORARY DEMO --- */
+/* Removed Universal Selector rule */
+/* * {
+  border: 1px dotted grey;
+} */
+/* --- END TEMPORARY DEMO --- */
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Code Pruning Rationale</strong></p>
 <ul>
-<li><strong>Understanding Content:</strong> Search engines like Google use headings (especially <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;h2&gt;</code>) as strong signals to understand the main topics and subtopics of your page content.</li>
-<li><strong>Keywords:</strong> Including relevant keywords in your headings can help search engines categorize your page accurately and potentially improve its ranking for searches related to those keywords. However, headings should always be written primarily for human readers and accurately reflect the content that follows – don&#39;t stuff them with keywords unnaturally (&quot;keyword stuffing&quot;).</li>
-<li><strong>Content Structure:</strong> A well-structured page with logical headings is generally easier for search engines to crawl and index effectively.</li>
+<li>We removed the universal selector rule because its purpose (demonstrating its global effect) is complete. Leaving it in would clutter the visual preview and potentially interfere with subsequent styling examples. This cleanup prepares a cleaner slate for the next topic: grouping selectors.</li>
 </ul>
-<p><strong>In Summary:</strong></p>
-<p>Using headings semantically and hierarchically correctly is a win-win:</p>
+<p><strong>✅ Guided Observation:</strong></p>
 <ul>
-<li>It improves the experience for users with visual impairments.</li>
-<li>It helps search engines understand and rank your content.</li>
-<li>It creates a clearer, more scannable structure for <em>all</em> users.</li>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Notice that the dotted gray borders around all the elements (<code class="language-html">h1</code>, <code class="language-html">p</code>, <code class="language-html">div</code>, etc.) are now <strong>gone</strong>. The elements revert to their appearance based on the other existing rules (<code class="language-css">h1</code>, <code class="language-css">p</code>) and browser defaults.</li>
+<li>✅ Inspect the elements in DevTools. The <code class="language-css">*</code> rule is no longer listed in the Styles pane.</li>
 </ul>
-<p>✅ <strong>Observation:</strong> No code changes in this step. Reflect on the heading structure we created (<code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;h2&gt;</code>, <code class="language-html">&lt;h3&gt;</code>) in <code class="language-text">index.html</code>. Understand that this structure isn&#39;t just visual; it provides critical information for assistive technologies and search engines.</p>
-<p>✨ <strong>Key Takeaway:</strong> Don&#39;t underestimate the power of headings! Use them correctly and hierarchically for significant accessibility and SEO benefits.</p>
+<p>This step simply cleans up the temporary rule before we introduce the next type of selector mechanism.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

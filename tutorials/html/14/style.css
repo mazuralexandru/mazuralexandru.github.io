@@ -1,1 +1,19 @@
-useFromLesson: 01
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Added H1 style rule */
+/* Styles for the main page heading */
+h1 {
+  color: tomato; /* Change H1 text color */
+  border-bottom: 2px solid #eee; /* Add a light bottom border */
+  padding-bottom: 5px; /* Add space below text before border */
+}
+
+/* CSS files can also have comments! */
+/* We can add more comments here. */

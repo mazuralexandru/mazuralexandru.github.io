@@ -1,1 +1,38 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc; /* Rule 1: Sets color */
+}
+
+/* Removed grouped heading rule */
+/* Removed descendant combinator rule */
+/* Removed child combinator rule */
+/* Removed general sibling combinator rule */
+/*
+h2 ~ p {
+  color: plum;
+  text-decoration: underline;
+}
+*/
+
+/* Added conflicting rule */
+.special {
+  color: lightcoral; /* Rule 2: Also sets color */
+  font-weight: bold;
+}
+
+/* CSS files can also have comments! */

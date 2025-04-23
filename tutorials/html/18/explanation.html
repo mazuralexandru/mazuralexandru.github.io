@@ -16,56 +16,50 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>18. Minimal HTML Document: The <code>lang</code> Attribute</h1>
-<p>While we have the basic structure, there&#39;s a crucial piece of information we should add to the <code class="language-html">&lt;html&gt;</code> tag: the <strong><code>lang</code> attribute</strong>.</p>
-<p><strong>Attributes:</strong></p>
-<p>Before we discuss <code>lang</code>, what&#39;s an attribute?</p>
+  <h1>18. Applying CSS with Internal Stylesheets (<code>&lt;style&gt;</code>)</h1>
+<p>We&#39;ve seen how to apply styles directly to elements using the <code class="language-html">style</code> attribute (inline styles), but this mixes presentation with structure and isn&#39;t easily reusable. A step towards better organization is using an <strong>internal stylesheet</strong>.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li>Attributes provide <strong>additional information</strong> about an HTML element.</li>
-<li>They are always specified <strong>within the opening tag</strong> of an element.</li>
-<li>They usually come in name/value pairs like <code class="language-html">name=&quot;value&quot;</code>.</li>
-<li>We will cover attributes in more detail later, but <code>lang</code> is essential to introduce now.</li>
+<li><strong>Removal:</strong> The <code class="language-html">&lt;p&gt;Preparing for next steps...&lt;/p&gt;</code> from the previous step has been removed from <code class="language-text">index.html</code> to make way for new examples focused on styling. Look for the <code class="language-html">&lt;!-- Removed previous paragraph --&gt;</code> comment.</li>
+<li><strong>HTML Addition:</strong> We&#39;ve added back a basic <code class="language-html">&lt;h1&gt;</code> and a <code class="language-html">&lt;p&gt;</code> element to provide content to style.</li>
+<li><strong>Internal Stylesheet:</strong> We&#39;ve added a <code class="language-html">&lt;style&gt;</code> element <em>inside</em> the <code class="language-html">&lt;head&gt;</code> section of <code class="language-text">index.html</code>. For now, it&#39;s empty.</li>
 </ul>
-<p><strong>The <code>lang</code> Attribute:</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Specifies the primary <strong>language</strong> of the content within the element it&#39;s applied to. When used on the root <code class="language-html">&lt;html&gt;</code> element, it defines the language for the entire document unless overridden by a <code>lang</code> attribute on a nested element.</li>
-<li><strong>Syntax:</strong> <code class="language-html">lang=&quot;language-code&quot;</code><ul>
-<li><code class="language-html">lang</code> is the attribute name.</li>
-<li><code class="language-html">&quot;language-code&quot;</code> is the attribute value, enclosed in quotes. Common codes include:<ul>
-<li><code class="language-html">&quot;en&quot;</code> for English</li>
-<li><code class="language-html">&quot;es&quot;</code> for Spanish</li>
-<li><code class="language-html">&quot;fr&quot;</code> for French</li>
-<li><code class="language-html">&quot;de&quot;</code> for German</li>
-<li>(Many others exist, following standard language code formats like ISO 639-1).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>Importance:</strong></p>
-<ul>
-<li><strong>Accessibility:</strong> Screen readers use the <code>lang</code> attribute to select the correct pronunciation rules and voice profile, making the content understandable for visually impaired users. This is a major reason why it&#39;s essential.</li>
-<li><strong>SEO:</strong> Search engines can use the <code>lang</code> attribute to understand the language of the page and target search results more effectively.</li>
-<li><strong>Browser Features:</strong> Browsers might offer translation services based on the declared language. Spelling and grammar checkers may also use it.</li>
-</ul>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve added the <code class="language-html">lang=&quot;en&quot;</code> attribute to the opening <code class="language-html">&lt;html&gt;</code> tag, indicating that the primary language of this document will be English.</p>
-<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt; &lt;!-- Added lang=&quot;en&quot; attribute --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
 &lt;head&gt;
-  &lt;!-- Metadata goes here --&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;style&gt;
+    /* Internal CSS rules will go here */
+  &lt;/style&gt; &lt;!-- Added &lt;style&gt; element --&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;!-- Visible content goes here --&gt;
+  &lt;!-- Removed previous paragraph --&gt;
+  &lt;h1&gt;Styling with Internal CSS&lt;/h1&gt; &lt;!-- Added H1 --&gt;
+  &lt;p&gt;This paragraph will be styled soon.&lt;/p&gt; &lt;!-- Added P --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Confirm the <code class="language-html">lang=&quot;en&quot;</code> attribute is present within the <code class="language-html">&lt;html&gt;</code> opening tag in <code class="language-text">index.html</code>.</li>
-<li>The preview remains unchanged visually, as this attribute affects browser/assistive technology behavior rather than direct rendering.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Always add the <code>lang</code> attribute to your <code class="language-html">&lt;html&gt;</code> tag to declare the document&#39;s primary language for accessibility, SEO, and browser functionality. Use standard language codes (like <code class="language-html">&quot;en&quot;</code>).</p>
+<p><strong>The <code>&lt;style&gt;</code> Element</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Allows you to embed CSS rules directly within an HTML document, typically inside the <code class="language-html">&lt;head&gt;</code>.</li>
+<li><strong>Syntax:</strong> The CSS rules are placed between the opening <code class="language-html">&lt;style&gt;</code> and closing <code class="language-html">&lt;/style&gt;</code> tags. You write standard CSS syntax inside it, just like you would in a <code>.css</code> file.</li>
+<li><strong>Scope:</strong> Styles defined within the <code class="language-html">&lt;style&gt;</code> tags apply <em>only</em> to the HTML document they are embedded in. They don&#39;t affect other pages.</li>
+<li><strong>Use Cases:</strong> Useful for single-page websites, quick demonstrations, HTML emails (where external CSS might be stripped), or sometimes for embedding critical &quot;above-the-fold&quot; styles for performance reasons (though external files are generally preferred).</li>
+<li><strong>Pros vs. Inline:</strong> Better organization than inline styles because rules are grouped together. Allows the use of CSS selectors (like targeting all <code class="language-html">&lt;p&gt;</code> elements) which inline styles cannot do.</li>
+<li><strong>Cons vs. External:</strong> Styles are still tied to a single HTML page, making them harder to reuse across a multi-page site compared to external stylesheets.</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. You should see the new heading and paragraph displayed with the default styles inherited from our base <code class="language-text">style.css</code> (dark background, light text).</li>
+<li>👀 The addition of the <em>empty</em> <code class="language-html">&lt;style&gt;</code> tag in the <code class="language-html">&lt;head&gt;</code> causes no visual change yet. It&#39;s simply a container waiting for CSS rules.</li>
+<li>✅ Open the DevTools (F12) and inspect the Elements panel. You can see the <code class="language-html">&lt;style&gt;</code> tag within the <code class="language-html">&lt;head&gt;</code>.</li>
+</ul>
+<p>In the next step, we&#39;ll add some CSS rules inside this <code class="language-html">&lt;style&gt;</code> block to see it in action.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

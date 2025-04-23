@@ -1,1 +1,41 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Removed grouped heading rule */
+/*
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  border-bottom: 1px solid #555;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
+*/
+
+/* Descendant Combinator Example */
+article p {
+  color: lightgreen; /* Style paragraphs INSIDE articles */
+  border-left: 3px solid lightgreen;
+  padding-left: 8px;
+  margin-left: 10px;
+}
+
+/* CSS files can also have comments! */

@@ -1,1 +1,39 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Removed grouped heading rule */
+/* Removed descendant combinator rule */
+/* Removed child combinator rule */
+/* Removed adjacent sibling combinator rule */
+/*
+h2 + p {
+  color: yellow;
+  font-weight: bold;
+  margin-top: 0;
+}
+*/
+
+/* General Sibling Combinator Example */
+h2 ~ p {
+  color: plum; /* Style P tags that follow (anywhere after) an H2 */
+  text-decoration: underline;
+}
+
+/* CSS files can also have comments! */

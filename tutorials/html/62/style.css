@@ -1,1 +1,39 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: "Roboto", sans-serif; /* Use Roboto as base font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned text-align rules */
+/* .container { ... } */
+/* .align-* { ... } */
+
+/* Line Height Demo */
+.lh-normal {
+  line-height: normal; /* Browser default, often ~1.2 */
+  margin-bottom: 20px;
+  border: 1px dashed yellowgreen; /* Visualize bounds */
+}
+
+.lh-unitless {
+  line-height: 1.6; /* Recommended: Unitless multiplier of font-size */
+  margin-bottom: 20px;
+  border: 1px dashed lightcoral; /* Visualize bounds */
+}
+
+.lh-pixels {
+  line-height: 30px; /* Fixed pixel value */
+  font-size: 1rem; /* Ensure font size is reasonable for demo */
+  border: 1px dashed lightblue; /* Visualize bounds */
+}
+
+
+/* CSS files can also have comments! */

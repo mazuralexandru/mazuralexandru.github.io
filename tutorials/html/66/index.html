@@ -2,16 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Main Page Title (h1)</h1>
-  <p>To select an element by its ID, use the <code>document.getElementById()</code> method.</p> <!-- Added inline <code> -->
+  <h1>White Space Demo</h1> <!-- Changed H1 text -->
 
-  <p>Another example: set the <code>innerHTML</code> property. Filenames like <code>script.js</code> can also use this tag.</p> <!-- Added more inline <code> examples -->
+  <!-- Pruned previous text-indent example -->
+
+  <p>Default behavior: multiple spaces collapse, newlines collapse, text wraps normally.</p>
+
+  <pre>This is inside a PRE element.
+  Whitespace   is   preserved.
+  Newlines are also preserved.
+  Text will not wrap by default. If this line is very very very very long, it might overflow.</pre> <!-- Added PRE element -->
+
+  <div class="no-wrap-div"> <!-- Added No-Wrap Div -->
+    This text has white-space set to nowrap. Multiple spaces will still collapse, but the text      will absolutely not wrap onto a new line, no matter how long it gets, potentially causing overflow.
+  </div>
 
 
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
+
+  <script src="script.js"></script>
 </body>
 </html>

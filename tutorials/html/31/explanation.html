@@ -16,37 +16,40 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>31. Text: Paragraphs (<code class="language-html">&lt;p&gt;</code>) - Fundamentals</h1>
-<p>Welcome to Module 2! We&#39;ll now explore specific HTML elements used to structure the text content within the <code class="language-html">&lt;body&gt;</code>. We&#39;ll start with the most fundamental text block: the paragraph.</p>
-<p><strong>The Paragraph Element (<code class="language-html">&lt;p&gt;</code>)</strong></p>
+  <h1>31. Using Attribute Selectors: Presence</h1>
+<p>The simplest attribute selector targets elements based merely on the <strong>presence</strong> of an attribute, regardless of its value. Let&#39;s use this to style the input field that has the <code class="language-html">required</code> attribute.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> The <code class="language-html">&lt;p&gt;</code> element is used to define a <strong>paragraph</strong> of text. It groups related sentences into a distinct block.</li>
-<li><strong>Semantics:</strong> It semantically marks the content as being a paragraph within the document&#39;s structure. This is important for readability, accessibility, and styling.</li>
-<li><strong>Type:</strong> It&#39;s a <strong>block-level</strong> element. This means it typically starts on a new line and takes up the full width available to it (though this can be changed with CSS).</li>
+<li><strong>CSS Pruning:</strong> We&#39;ve commented out the rules for <code class="language-css">h2</code> and <code class="language-css">#main-content</code> as those elements were removed.</li>
+<li><strong>CSS Addition:</strong> We added a new CSS rule using the presence attribute selector <code class="language-css">[required]</code> to <code class="language-text">style.css</code>.</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We already had one paragraph in our <code class="language-text">index.html</code>. To better illustrate its block nature and separation, we&#39;ve added a <em>second</em> <code class="language-html">&lt;p&gt;</code> element below the first one inside the <code class="language-html">&lt;body&gt;</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;h1&gt;Hello World!&lt;/h1&gt;
-  &lt;p&gt;This is the body content of my first web page. It represents a single, logical block of text.&lt;/p&gt;
-  &lt;p&gt;This is a second paragraph. Notice how it starts on a new line and has some space separating it from the first paragraph.&lt;/p&gt; &lt;!-- Added second paragraph --&gt;
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Removed H2 rule as element was pruned */
+/* Removed ID Selector rule as element was pruned */
 
-  &lt;!-- TODO: Add more content later --&gt;
-  ...
-&lt;/body&gt;
+/* Added Presence Attribute Selector rule */
+[required] {
+  border: 2px solid orange;
+  background-color: #444; /* Darker background for input */
+}
+
+/* CSS files can also have comments! */
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Examine the <code class="language-text">index.html</code> file and locate the new, second <code class="language-html">&lt;p&gt;</code> element.</li>
-<li>Look at the browser preview pane. You should see:<ul>
-<li>The heading (&quot;Hello World!&quot;).</li>
-<li>The first paragraph.</li>
-<li>The second paragraph, appearing <em>below</em> the first one.</li>
-<li>Notice the vertical whitespace (margin) between the heading and the first paragraph, and between the first and second paragraphs. This visual separation is a default browser behavior for <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> elements.</li>
+<p><strong>Attribute Presence Selector (<code>[attribute]</code>)</strong></p>
+<ul>
+<li><strong>Syntax:</strong> The attribute name enclosed in square brackets <code class="language-css">[]</code> (e.g., <code class="language-css">[required]</code>, <code class="language-css">[disabled]</code>, <code class="language-css">a[target]</code>).</li>
+<li><strong>Scope:</strong> Selects all elements that have the specified attribute present, no matter what its value is (or even if it&#39;s a boolean attribute like <code class="language-html">required</code> that doesn&#39;t technically need a value).</li>
+<li><strong>Use Cases:</strong> Styling elements based on their state (e.g., disabled buttons, required fields), targeting elements that have a specific attribute set (like links with targets).</li>
 </ul>
-</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;p&gt;</code> element to wrap distinct paragraphs of text. Browsers render them as separate blocks with default spacing.</p>
+<p>In our example, <code class="language-css">[required]</code> targets any element with the <code class="language-html">required</code> attribute. We&#39;re applying an orange border and a darker background color to it.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Look at the two input fields. The second input (Email), which has the <code class="language-html">required</code> attribute, should now have a distinct <strong>orange border</strong> and a slightly darker background (<code class="language-css">#444</code>).</li>
+<li>👀 The first input (Username), which does <em>not</em> have the <code class="language-html">required</code> attribute, remains unchanged with its default browser styling.</li>
+<li>✅ Inspect the email input in DevTools. The Styles pane will show the <code class="language-css">[required] { ... }</code> rule being applied because the element possesses the <code class="language-html">required</code> attribute.</li>
+</ul>
+<p>This demonstrates how presence attribute selectors let you target elements based on whether they simply <em>have</em> a certain attribute. Next, we&#39;ll look at selecting based on the attribute&#39;s exact value.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

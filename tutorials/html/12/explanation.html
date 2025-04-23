@@ -16,32 +16,46 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>12. Preparing for Structure: Clearing Examples</h1>
-<p>Before we build the <em>correct</em> minimal structure for an HTML document, let&#39;s clean up the examples we just added.</p>
-<p><strong>Why Remove Code?</strong></p>
+  <h1>12. Introducing Headings &amp; Removing Inline Styles</h1>
+<p>Inline styles served their purpose for demonstration, but they clutter the HTML. Let&#39;s remove the previous paragraph with its inline styles to keep our example focused and introduce a fundamental structural element: a heading.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Focus:</strong> Our next steps involve creating the foundational <code class="language-html">&lt;!DOCTYPE&gt;</code>, <code class="language-html">&lt;html&gt;</code>, <code class="language-html">&lt;head&gt;</code>, and <code class="language-html">&lt;body&gt;</code> elements. The paragraphs and breaks we added were just for demonstrating basic tag syntax. Keeping them now would clutter the view as we focus on the overall document structure.</li>
-<li><strong>Relevance:</strong> Those specific examples (<code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;hr&gt;</code>, <code class="language-html">&lt;br&gt;</code>) are not directly needed for understanding the core document structure itself. We&#39;ll re-introduce content elements <em>inside</em> the <code class="language-html">&lt;body&gt;</code> later.</li>
-<li><strong>Incremental Learning:</strong> We introduce concepts (like <code class="language-html">&lt;p&gt;</code>), demonstrate them, and then sometimes clear the stage to focus on the next core concept without distraction.</li>
+<li><strong>Removal:</strong> The <code class="language-html">&lt;p&gt;</code> element with the <code class="language-html">style</code> attribute has been removed from <code class="language-text">index.html</code>. We&#39;ve added a comment <code class="language-html">&lt;!-- Removed previous styled paragraph for focus --&gt;</code> where it used to be. This is part of our <strong>integrated removal</strong> strategy – cleaning up old code as we introduce new concepts.</li>
+<li><strong>Addition:</strong> We&#39;ve added a new <code class="language-html">&lt;h1&gt;</code> element inside the <code class="language-html">&lt;body&gt;</code>.</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We have removed the paragraph and void elements from <code class="language-text">index.html</code>, leaving only a comment indicating our next steps.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html --&gt;
-&lt;!-- We will build the standard document structure soon --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;!-- Removed previous styled paragraph for focus --&gt;
+  &lt;h1&gt;Document Heading&lt;/h1&gt; &lt;!-- Added H1 element --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+&lt;/body&gt;
 </code></pre>
+<p><strong>Code Pruning (Integrated Removal)</strong></p>
 <ul>
-<li><strong>Removed:</strong><pre class="language-html"><code class="language-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;This is another paragraph.&lt;br&gt;This text appears on a new line.&lt;/p&gt;
-</code></pre>
+<li>We removed the previous <code class="language-html">&lt;p&gt;</code> element because its inline styles are no longer the focus of our learning. Keeping old examples indefinitely can clutter the preview and make it harder to see the effect of <em>new</em> changes.</li>
+<li>This removal happens <em>within</em> the current step, which also introduces the <code class="language-html">&lt;h1&gt;</code> element. We don&#39;t need a separate step just for removal.</li>
+<li>The comment <code class="language-html">&lt;!-- Removed previous styled paragraph for focus --&gt;</code> in <code class="language-text">index.html</code> marks where the code was removed.</li>
+</ul>
+<p><strong>Heading Elements (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>)</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Define headings for sections of content. They create a document outline and are crucial for structure, accessibility, and SEO.</li>
+<li><strong>Levels:</strong> There are six levels:<ul>
+<li><code class="language-html">&lt;h1&gt;</code>: The main heading for the entire page (usually only one per page).</li>
+<li><code class="language-html">&lt;h2&gt;</code>: Subheading for a major section.</li>
+<li><code class="language-html">&lt;h3&gt;</code>: Sub-subheading, and so on down to <code class="language-html">&lt;h6&gt;</code>.</li>
+</ul>
 </li>
+<li><strong>Semantic Meaning:</strong> Use heading levels according to the logical structure of your content, <em>not</em> just to make text look big or small. <code class="language-html">&lt;h1&gt;</code> is the most important, <code class="language-html">&lt;h6&gt;</code> the least. Don&#39;t skip levels (e.g., don&#39;t go from <code class="language-html">&lt;h1&gt;</code> directly to <code class="language-html">&lt;h3&gt;</code>).</li>
+<li><strong>Default Styling:</strong> Browsers apply default styling to headings, typically making them bold and progressively smaller from <code class="language-html">&lt;h1&gt;</code> down to <code class="language-html">&lt;h6&gt;</code>. They also usually have some top and bottom margin.</li>
 </ul>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Confirm that <code class="language-text">index.html</code> now only contains the single comment line.</li>
-<li>The browser preview pane should be completely blank again, as there is no renderable content.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Actively removing code that is no longer relevant to the immediate learning goal is an important part of managing complexity and maintaining focus during development and learning. We cleared the temporary examples to prepare for building the fundamental HTML document structure.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. You&#39;ll see the text &quot;Document Heading&quot;. Notice that it&#39;s significantly larger and bolder than the previous paragraph text. This is the browser&#39;s default styling for an <code class="language-html">&lt;h1&gt;</code> element.</li>
+<li>The inline styles (color, background, specific font size) are gone because we removed the element they were attached to. The heading text uses the light gray color inherited from the <code class="language-css">body</code> style in our <code class="language-text">style.css</code> file.</li>
+<li>🔬 <strong>Experiment:</strong> Try changing <code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h2&gt;</code> or <code class="language-html">&lt;h3&gt;</code> (remembering to change both the opening and closing tags). Save and refresh. Observe how the size changes according to the heading level. Change it back to <code class="language-html">&lt;h1&gt;</code>.</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

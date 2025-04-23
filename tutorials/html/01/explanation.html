@@ -16,23 +16,32 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>01. Introduction: What is HTML? (Part 1: Definition)</h1>
-<p>Welcome to the world of web development! Our journey begins with the absolute foundation: <strong>HTML</strong>.</p>
+  <h1>01. The Minimal HTML Document</h1>
+<p>Welcome to your web development journey! We start with the absolute minimum structure required for a valid HTML document.</p>
 <p><strong>What is HTML?</strong></p>
-<p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage. Let&#39;s break that down:</p>
+<p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage. It&#39;s the standard language used to create the structure and content of web pages. Think of it as the skeleton of a webpage.</p>
 <ul>
-<li><strong>HyperText:</strong> This refers to text that contains links, called <em>hyperlinks</em>, allowing you to jump non-linearly to other text, documents, or resources on the web. Think of how you navigate websites by clicking links – that&#39;s hypertext in action!</li>
-<li><strong>Markup:</strong> This means using special codes, called <strong>tags</strong>, to &quot;mark up&quot; or describe different pieces of content. These tags tell the web browser about the structure and meaning of the content. For example, a tag might indicate &quot;this text is a main heading&quot; or &quot;this text is a paragraph.&quot;</li>
-<li><strong>Language:</strong> HTML is a formal language with specific rules (syntax) that computers, particularly web browsers, understand.</li>
+<li><strong>Markup:</strong> HTML uses special markers called &quot;tags&quot; (like <code class="language-html">&lt;html&gt;</code> or <code class="language-html">&lt;body&gt;</code>) to describe different parts of the content.</li>
+<li><strong>Not Programming:</strong> HTML describes structure, it doesn&#39;t perform complex logic like a programming language.</li>
 </ul>
-<p><strong>Key Distinction:</strong></p>
-<p>It&#39;s crucial to understand that HTML is a <strong>markup language</strong>, <em>not</em> a <em>programming language</em>.</p>
+<p><strong>The Files:</strong></p>
 <ul>
-<li><strong>Markup Languages (like HTML):</strong> Describe the <em>structure</em> and <em>meaning</em> of content. They define <em>what</em> something is (e.g., a heading, a list, an image).</li>
-<li><strong>Programming Languages (like JavaScript):</strong> Define <em>logic</em> and <em>behavior</em>. They tell the computer <em>how</em> to do things (e.g., calculate a sum, react to a button click, fetch data).</li>
+<li><code class="language-text">index.html</code>: This is the core file the browser reads to display the page. The name <code class="language-text">index.html</code> is special; web servers often look for this file by default when someone visits a website directory.</li>
+<li><code class="language-text">style.css</code>: This file will hold our styling rules (CSS - Cascading Style Sheets) to make the page look good. It&#39;s empty for now.</li>
+<li><code class="language-text">script.js</code>: This file will hold our JavaScript code for adding interactivity. It&#39;s also empty.</li>
 </ul>
-<p>✅ <strong>Observation:</strong> Right now, our project files (<code class="language-text">index.html</code>, <code class="language-text">style.css</code>, <code class="language-text">script.js</code>) are completely empty. We haven&#39;t written any HTML yet. This is our starting point. We&#39;ll build everything step-by-step.</p>
-<p>🤔 <strong>Think:</strong> Why is it useful to distinguish between structure (HTML) and other aspects like presentation (looks) or behavior (actions)?</p>
+<p><strong>Code Breakdown (<code class="language-text">index.html</code>):</strong></p>
+<ul>
+<li><code class="language-html">&lt;!DOCTYPE html&gt;</code>: This is the <strong>Document Type Declaration</strong>. It <strong>must</strong> be the very first thing in the file. It tells the browser, &quot;This document is written in HTML5,&quot; ensuring the browser uses modern rendering standards (avoids &quot;quirks mode&quot;).</li>
+<li><code class="language-html">&lt;html&gt;</code>: This is the <strong>root element</strong>. All other HTML elements go inside this tag. It signifies the start and end of the HTML document.</li>
+<li><code class="language-html">&lt;head&gt;</code>: This element contains <strong>metadata</strong> about the HTML document – information <em>about</em> the page, not the visible content itself. Examples include the page title, character set declaration, links to stylesheets, etc. It&#39;s currently empty.</li>
+<li><code class="language-html">&lt;body&gt;</code>: This element contains all the <strong>visible content</strong> of the web page – the text, images, links, etc., that the user sees in the browser window. It&#39;s also empty right now.</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>Right now, if you preview <code class="language-text">index.html</code> in a browser (or using the VS Code Live Preview extension), you&#39;ll see a completely blank white page. This is expected! We haven&#39;t added any visible content yet.</li>
+<li>👀 Look at the browser tab. It likely shows the filename (<code class="language-text">index.html</code>) or a generic title because we haven&#39;t specified one yet (that goes in the <code class="language-html">&lt;head&gt;</code>).</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

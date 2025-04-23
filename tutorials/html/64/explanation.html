@@ -16,39 +16,87 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>64. Preparing for Inline Code: Removing <code class="language-html">&lt;pre&gt;</code> Block (Part 1)</h1>
-<p>We&#39;ve covered the essentials of the <code class="language-html">&lt;pre&gt;</code> element, including whitespace preservation, default font, overflow handling, and the crucial need for HTML escaping when displaying code.</p>
-<p>Now, we&#39;ll shift our focus to the <code class="language-html">&lt;code&gt;</code> element, which is used for marking up <em>inline</em> fragments of code. To provide a clear space for this, we&#39;ll remove the <code class="language-html">&lt;pre&gt;</code> block containing the escaped HTML example.</p>
-<p><strong>Why Remove Code?</strong></p>
+  <h1>64. Text Styling: <code>text-transform</code></h1>
+<p>The <code class="language-css">text-transform</code> property allows you to change the capitalization of text without altering the underlying HTML content.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Focus:</strong> Transitioning from block-level preformatted text (<code class="language-html">&lt;pre&gt;</code>) to inline code semantics (<code class="language-html">&lt;code&gt;</code>). Removing the <code class="language-html">&lt;pre&gt;</code> example prevents distraction.</li>
-<li><strong>Relevance:</strong> The specific escaped HTML example isn&#39;t needed to understand inline <code class="language-html">&lt;code&gt;</code>.</li>
-<li><strong>Incremental Cleanup:</strong> Continuing our practice of clearing the stage after covering a specific element or concept.</li>
+<li><strong>HTML Pruning:</strong> Removed the letter/word spacing examples.</li>
+<li><strong>HTML Addition:</strong> Added paragraphs with classes demonstrating <code>uppercase</code>, <code>lowercase</code>, and <code>capitalize</code>.</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">p</code>, <code class="language-css">.letter-space</code>, <code class="language-css">.word-space</code> rules.</li>
+<li><strong>CSS Addition:</strong> Added rules for the new classes using <code class="language-css">text-transform</code>.</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We have removed the entire <code class="language-html">&lt;pre&gt;...&lt;/pre&gt;</code> block (which contained the escaped HTML) from <code class="language-text">index.html</code>. The surrounding paragraphs have also been updated.</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt;
-  &lt;p&gt;Preparing to discuss inline code.&lt;/p&gt; &lt;!-- Adjusted text --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Text Transform Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
 
-  &lt;!-- Removed &lt;pre&gt; block with escaped code --&gt;
-  &lt;!--
-  &lt;pre&gt;
-  ... escaped HTML content ...
-  &lt;/pre&gt;
-  --&gt;
+  &lt;!-- Pruned previous spacing examples --&gt;
 
-  &lt;p&gt;This paragraph follows the preformatted text location.&lt;/p&gt; &lt;!-- Adjusted text --&gt;
+  &lt;p class=&quot;uppercase-text&quot;&gt;This text will be uppercase.&lt;/p&gt; &lt;!-- Added uppercase P --&gt;
+  &lt;p class=&quot;lowercase-text&quot;&gt;This Text Will Be Lowercase.&lt;/p&gt; &lt;!-- Added lowercase P --&gt;
+  &lt;p class=&quot;capitalize-text&quot;&gt;this text will be capitalized.&lt;/p&gt; &lt;!-- Added capitalize P --&gt;
 
-  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Confirm that the <code class="language-html">&lt;pre&gt;</code> block is gone from <code class="language-text">index.html</code>.</li>
-<li>The browser preview should now only show the heading and the two plain paragraphs again, similar to the state before we introduced <code class="language-html">&lt;pre&gt;</code>.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Removing the block-level <code class="language-html">&lt;pre&gt;</code> example clears the way for introducing the related but distinct concept of inline <code class="language-html">&lt;code&gt;</code>.</p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Pruned spacing rules */
+/* p { ... } */
+/* .letter-space { ... } */
+/* .word-space { ... } */
+
+/* Text Transform Demo */
+p { /* Add back some base styling for paragraphs */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.capitalize-text {
+  text-transform: capitalize;
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong><code>text-transform</code> Explained</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Controls the capitalization of text content.</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">none</code>: (Default) No transformation is applied. Text renders as typed in the HTML source.</li>
+<li><code class="language-css">uppercase</code>: Transforms all characters to uppercase (e.g., &quot;text&quot; becomes &quot;TEXT&quot;).</li>
+<li><code class="language-css">lowercase</code>: Transforms all characters to lowercase (e.g., &quot;TeXt&quot; becomes &quot;text&quot;).</li>
+<li><code class="language-css">capitalize</code>: Transforms the first letter of each word to uppercase and remaining letters to lowercase. (Note: The exact definition of a &quot;word&quot; can be complex and browser-dependent, especially with punctuation).</li>
+<li><code class="language-css">full-width</code>: Transforms characters to be rendered within a full-width square (used mainly for East Asian scripts). Not commonly used for Latin scripts.</li>
+</ul>
+</li>
+<li><strong>Semantic vs. Presentation:</strong> This property only affects the visual rendering. The actual text content in the HTML remains unchanged, which is important for accessibility (screen readers will read the original text) and SEO. Use it for presentational capitalization, not as a substitute for correct capitalization in your source content.</li>
+</ul>
+<p><strong>In Our Example:</strong></p>
+<ul>
+<li><code>.uppercase-text</code> converts its content entirely to uppercase.</li>
+<li><code>.lowercase-text</code> converts its content entirely to lowercase, regardless of the original casing in the HTML.</li>
+<li><code>.capitalize-text</code> capitalizes the first letter of each word.</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 The first paragraph should appear as &quot;THIS TEXT WILL BE UPPERCASE.&quot;.</li>
+<li>👀 The second paragraph should appear as &quot;this text will be lowercase.&quot;.</li>
+<li>👀 The third paragraph should appear as &quot;This Text Will Be Capitalized.&quot;.</li>
+<li>✅ Inspect the elements in DevTools. Note that the text content <em>within the HTML</em> in the Elements panel still reflects the original casing typed in <code>index.html</code>. The transformation is purely visual, applied by CSS.</li>
+</ul>
+<p><code class="language-css">text-transform</code> is useful for stylistic consistency, such as ensuring all button text or headings are uppercase, without needing to manually type them that way in the HTML.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -16,29 +16,61 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>27. Context: Browser Rendering Engines (Conceptual)</h1>
-<p>Ever wonder <em>how</em> the browser turns your HTML code into the visual web page you see? The magic happens inside the browser&#39;s <strong>rendering engine</strong> (also sometimes called the layout engine).</p>
-<p><strong>What is a Rendering Engine?</strong></p>
-<p>It&#39;s the core software component within a web browser responsible for taking the resources of a web page (HTML, CSS, images, etc.) and drawing the visual representation onto your screen.</p>
-<p><strong>Major Rendering Engines:</strong></p>
+  <h1>27. Class Selector Reusability and Multiple Classes</h1>
+<p>A key advantage of class selectors is their <strong>reusability</strong>. You can apply the same class to different elements. You can also apply <strong>multiple classes</strong> to a single element to combine styles.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Blink:</strong> Developed by Google. Used in Chrome, Edge (newer versions), Opera, Brave, and others. (Forked from WebKit).</li>
-<li><strong>Gecko:</strong> Developed by Mozilla. Used in Firefox.</li>
-<li><strong>WebKit:</strong> Primarily developed by Apple. Used in Safari. (The original basis for Blink).</li>
-<li><em>(Historically, Trident was used in Internet Explorer)</em>.</li>
+<li>We added a <code class="language-html">&lt;span&gt;</code> element inside the first paragraph and gave it the <code class="language-html">highlight</code> class.</li>
+<li>We added a third paragraph with <em>two</em> classes: <code class="language-html">highlight</code> and <code class="language-html">important</code>.</li>
+<li>We added a new CSS rule in <code class="language-text">style.css</code> targeting the <code class="language-css">.important</code> class.</li>
 </ul>
-<p><strong>Simplified Rendering Process:</strong></p>
-<p>While extremely complex internally, a simplified view of the process looks like this:</p>
-<ol>
-<li><strong>Parsing HTML:</strong> The engine reads the HTML code and builds the <strong>DOM (Document Object Model) Tree</strong> – that hierarchical structure representing all the elements and their relationships (nesting). It handles errors and inconsistencies as best it can.</li>
-<li><strong>Parsing CSS:</strong> It reads the CSS code (from <code class="language-html">&lt;style&gt;</code> tags or linked <code>.css</code> files - which we&#39;ll add soon) and builds the <strong>CSSOM (CSS Object Model) Tree</strong>, representing the styles and their relationships.</li>
-<li><strong>Constructing the Render Tree:</strong> The engine combines the DOM and CSSOM to create the <strong>Render Tree</strong>. This tree only includes elements that will actually be displayed visually (e.g., elements hidden by CSS like <code>display: none;</code> are omitted). It contains the elements <em>and</em> their computed styles.</li>
-<li><strong>Layout (Reflow):</strong> The engine calculates the exact position and size of each element in the Render Tree based on the CSS rules (e.g., box model, positioning, floats). It determines where everything should go on the screen.</li>
-<li><strong>Painting (Rasterizing):</strong> Finally, the engine &quot;paints&quot; the actual pixels onto the screen based on the layout information and styles (colors, backgrounds, text, borders, images).</li>
-</ol>
-<p><em>(JavaScript execution can happen at various points, potentially modifying the DOM or CSSOM, which might trigger parts of this process to re-run (e.g., recalculating layout or repainting)).</em></p>
-<p>✅ <strong>Observation:</strong> No code changes. This is a conceptual overview of the browser&#39;s internal workings. Understanding that the browser parses HTML into a DOM tree and then uses CSS to layout and paint helps explain why valid HTML and well-structured CSS are important for efficient and predictable rendering.</p>
-<p>✨ <strong>Key Takeaway:</strong> Browsers use rendering engines (like Blink, Gecko, WebKit) to parse HTML/CSS, calculate layout, and paint pixels on the screen.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Styling with External CSS&lt;/h1&gt;
+  &lt;p&gt;This paragraph will be styled externally, but &lt;span class=&quot;highlight&quot;&gt;this part&lt;/span&gt; is highlighted.&lt;/p&gt; &lt;!-- Added span.highlight --&gt;
+  &lt;h2&gt;This is a Sub-heading&lt;/h2&gt;
+  &lt;p class=&quot;highlight&quot;&gt;This paragraph has a highlight class.&lt;/p&gt;
+  &lt;p class=&quot;highlight important&quot;&gt;This paragraph is highlighted AND important.&lt;/p&gt; &lt;!-- Added P with multiple classes --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+.highlight {
+  background-color: rgba(255, 255, 0, 0.2); /* Semi-transparent yellow background */
+  border: 1px solid yellow;
+  padding: 5px;
+}
+
+/* Added rule for second class */
+.important {
+  font-weight: bold;
+  color: tomato; /* Overrides the &#39;p&#39; color */
+}
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Class Reusability</strong></p>
+<ul>
+<li>Notice we applied <code class="language-html">class=&quot;highlight&quot;</code> to both a <code class="language-html">&lt;p&gt;</code> element and a <code class="language-html">&lt;span&gt;</code> element. The <code class="language-css">.highlight</code> styles (background, border, padding) will apply to both, demonstrating how classes can be reused across different element types.</li>
+</ul>
+<p><strong>Multiple Classes</strong></p>
+<ul>
+<li><strong>HTML:</strong> You assign multiple classes by listing them in the <code class="language-html">class</code> attribute, separated by spaces: <code class="language-html">class=&quot;highlight important&quot;</code>. The order doesn&#39;t matter.</li>
+<li><strong>CSS:</strong> The element will receive styles from <strong>both</strong> the <code class="language-css">.highlight</code> rule <strong>and</strong> the <code class="language-css">.important</code> rule.</li>
+<li><strong>Combining Selectors (Chaining):</strong> If you needed to style <em>only</em> elements that have <em>both</em> classes, you could chain the selectors together <strong>without</strong> a space: <code class="language-css">.highlight.important { ... }</code>. This is more specific than targeting either class alone. We haven&#39;t used this chained selector here, but it&#39;s a useful technique.</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Look at the first paragraph. The text &quot;this part&quot; (the <code class="language-html">&lt;span&gt;</code>) should now have the yellow highlight background/border/padding, applied because it has <code class="language-html">class=&quot;highlight&quot;</code>.</li>
+<li>👀 Look at the third paragraph (&quot;...highlighted AND important.&quot;). It has the yellow highlight background/border/padding from <code class="language-css">.highlight</code>. It should <em>also</em> be <strong>bold</strong> and have <strong>tomato-colored text</strong> from the <code class="language-css">.important</code> rule. Notice the <code class="language-css">color: tomato</code> from <code class="language-css">.important</code> overrides the <code class="language-css">color: #ccc</code> from the <code class="language-css">p</code> type selector because class selectors are more specific than type selectors.</li>
+<li>✅ Inspect the third paragraph in DevTools. The Styles pane will show rules from <code class="language-css">p</code>, <code class="language-css">.highlight</code>, and <code class="language-css">.important</code> all potentially applying, with specificity rules determining the final outcome for conflicting properties like <code class="language-css">color</code>.</li>
+</ul>
+<p>Classes are fundamental for building modular and maintainable CSS. Next, we&#39;ll look at ID selectors, which are used for unique elements.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

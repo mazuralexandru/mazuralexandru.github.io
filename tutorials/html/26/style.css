@@ -1,1 +1,34 @@
-useFromLesson: 01
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule (uncommented and modified) */
+h1 {
+  color: lightblue; /* Change H1 text color */
+}
+
+/* Added P rule */
+p {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Added H2 rule using Type Selector */
+h2 {
+  color: lightcoral;
+  font-weight: normal; /* Make H2 not bold */
+}
+
+/* Added Class Selector rule */
+.highlight {
+  background-color: rgba(255, 255, 0, 0.2); /* Semi-transparent yellow background */
+  border: 1px solid yellow;
+  padding: 5px;
+}
+
+/* CSS files can also have comments! */

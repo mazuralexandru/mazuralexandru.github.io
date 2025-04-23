@@ -2,23 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Main Page Title (h1)</h1>
-  <p>This paragraph introduces preformatted text:</p>
+  <h1>Text Align Demo</h1> <!-- Changed H1 text -->
 
-  <pre>
-Text inside a pre element
-  preserves       whitespace
-like     spaces and
-line breaks.
-  </pre> <!-- Added <pre> block -->
+  <!-- Pruned previous text-decoration examples -->
 
-  <p>This paragraph follows the preformatted text.</p> <!-- Adjusted text -->
+  <div class="container"> <!-- Added container -->
+    <p class="align-left">Left Aligned: This is the default alignment for left-to-right languages like English. The text aligns to the left edge.</p>
+    <p class="align-center">Center Aligned: Each line of text is centered horizontally within the container.</p>
+    <p class="align-right">Right Aligned: This text aligns to the right edge of the container.</p>
+    <p class="align-justify">Justified: Text is stretched out so that each line (except potentially the last) fills the full width of the container by adjusting spacing between words. Use with caution, can create uneven gaps.</p>
+  </div>
 
 
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
+
+  <script src="script.js"></script>
 </body>
 </html>

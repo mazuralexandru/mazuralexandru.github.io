@@ -16,41 +16,47 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>08. Elements &amp; Tags: Case Sensitivity and Nesting</h1>
-<p>Let&#39;s cover two important rules regarding HTML tags: case sensitivity and nesting.</p>
-<p><strong>Case Sensitivity:</strong></p>
-<ul>
-<li><strong>The Rule:</strong> HTML <strong>tag names</strong> and <strong>attribute names</strong> (we&#39;ll cover attributes later) are technically <strong>case-insensitive</strong>. This means <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;P&gt;</code>, and <code class="language-html">&lt;P&gt;</code> are all treated by the browser as the start of a paragraph element.</li>
-<li><strong>The Best Practice &amp; Convention:</strong> <strong>ALWAYS use lowercase</strong> for tag names and attribute names.<ul>
-<li><strong>Why?</strong><ul>
-<li><strong>Readability:</strong> Lowercase is generally easier to read.</li>
-<li><strong>Consistency:</strong> It establishes a consistent coding style.</li>
-<li><strong>XHTML Compatibility:</strong> Stricter languages like XHTML <em>required</em> lowercase. While HTML5 is more lenient, sticking to lowercase avoids potential issues if your code needs to be processed as XML and aligns with overwhelming community practice.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>Nesting Elements:</strong></p>
-<ul>
-<li><strong>Concept:</strong> You can place HTML elements <em>inside</em> other HTML elements. This is called <strong>nesting</strong> and is fundamental to creating structure.</li>
-<li><strong>Example:</strong> You might have a paragraph (<code class="language-html">&lt;p&gt;</code>) inside a division (<code class="language-html">&lt;div&gt;</code>) used for layout:<pre class="language-html"><code class="language-html">&lt;div&gt;
-  &lt;p&gt;This paragraph is nested inside a div.&lt;/p&gt;
-&lt;/div&gt;
+  <h1>08. Adding Base CSS Styles</h1>
+<p>Now that <code class="language-text">style.css</code> is linked, let&#39;s add some fundamental styles to it. These &quot;base styles&quot; will provide a consistent, pleasant visual foundation for our examples.</p>
+<p><strong>What&#39;s New?</strong></p>
+<p>We&#39;ve added CSS rules to the previously empty <code class="language-text">style.css</code> file.</p>
+<pre class="language-css"><code class="language-css">/* style.css */
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* CSS files can also have comments! */
 </code></pre>
-</li>
-<li><strong>The Golden Rule of Nesting: Proper Closure Order:</strong> Elements must be closed in the <em>reverse order</em> they were opened. Think of them like parentheses or containers – you close the inner ones before the outer ones.<ul>
-<li><strong>Correct:</strong> <code class="language-html">&lt;strong&gt;&lt;em&gt;Important and emphasized&lt;/em&gt;&lt;/strong&gt;</code> ( <code class="language-html">&lt;em&gt;</code> opened last, so it&#39;s closed first).</li>
-<li><strong>Incorrect:</strong> <code class="language-html">&lt;strong&gt;&lt;em&gt;Incorrect nesting&lt;/strong&gt;&lt;/em&gt;</code> (Tags overlap incorrectly).</li>
+<p><strong>CSS Syntax Breakdown (First Look):</strong></p>
+<ul>
+<li><strong><code>/* ... */</code> (CSS Comments):</strong> Similar to HTML comments, these are notes ignored by the browser. They start with <code class="language-css">/*</code> and end with <code class="language-css">*/</code>.</li>
+<li><strong>Ruleset:</strong> The core unit of CSS. It consists of a selector and a declaration block.<ul>
+<li><strong><code class="language-css">body</code> (Selector):</strong> This targets the HTML element(s) the styles should apply to. Here, it targets the <code class="language-html">&lt;body&gt;</code> element.</li>
+<li><strong><code class="language-css">{ ... }</code> (Declaration Block):</strong> Contains one or more declarations, enclosed in curly braces.</li>
+<li><strong><code class="language-css">property: value;</code> (Declaration):</strong> Defines a specific style.<ul>
+<li><code class="language-css">background-color</code>: The CSS property to change the background color.</li>
+<li><code class="language-css">#2e2e2e</code>: The value for the background color (a dark gray hex code).</li>
+<li><code class="language-css">color</code>: The property for the foreground (text) color.</li>
+<li><code class="language-css">#E0E0E0</code>: The value for the text color (a light gray hex code).</li>
+<li><code class="language-css">font-family</code>: Specifies the font. <code class="language-css">sans-serif</code> asks the browser to use its default sans-serif font (like Arial, Helvetica, etc.).</li>
+<li><code class="language-css">padding</code>: Adds space inside the element&#39;s border. <code class="language-css">15px</code> adds 15 pixels of padding on all sides of the body content.</li>
+<li><code class="language-css">min-height</code>: Ensures the body takes up at least this much vertical space, helpful for small examples. <code class="language-css">150px</code> sets a minimum height of 150 pixels.</li>
+<li><code class="language-css">;</code> (Semicolon): Separates multiple declarations within a block. Crucial!</li>
 </ul>
 </li>
-<li><strong>Analogy:</strong> Imagine stacking boxes. You have to take the top box off before you can get to the one underneath.</li>
-<li><strong>Consequences of Improper Nesting:</strong> Leads to <em>invalid</em> HTML. Browsers will try their best to guess what you meant, but the rendering can become unpredictable and inconsistent. HTML validation tools (which we&#39;ll mention later) will report errors for improper nesting.</li>
 </ul>
-<p><strong>Deep Dive: The DOM Tree</strong>
-Proper nesting is essential because the browser builds an internal &quot;tree&quot; structure (the DOM) based on how elements are nested. Incorrect nesting confuses the browser and breaks this tree structure, leading to rendering problems and issues with CSS styling and JavaScript manipulation.</p>
-<p>✅ <strong>Observation:</strong> No file changes yet. Internalize these rules before writing more complex structures.</p>
-<p>✨ <strong>Key Takeaway:</strong> Always use lowercase for tags. Always close nested tags in the reverse order you opened them.</p>
+</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. Big difference! The page background should now be dark gray (<code class="language-css">#2e2e2e</code>), and the &quot;Hello, World!&quot; text should be light gray (<code class="language-css">#E0E0E0</code>) and possibly in a different font (<code class="language-css">sans-serif</code>). You&#39;ll also notice some space around the text due to the <code class="language-css">padding</code>.</li>
+<li>This dark theme provides better contrast for code examples and reduces eye strain compared to the default bright white background. We will generally keep these base styles active throughout the tutorial for visual consistency.</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -1,1 +1,33 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned viewport unit rules */
+/* .box-vw { ... } */
+/* .box-vh { ... } */
+
+
+/* HSL/HSLA Demo */
+.hsl-box {
+  /* hsla(Hue, Saturation, Lightness, Alpha) */
+  background-color: hsla(120, 70%, 60%, 0.7); /* Semi-transparent Green */
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid hsla(120, 70%, 80%, 0.9); /* Lighter, less transparent border */
+  color: hsl(120, 100%, 15%); /* Dark Green Text (using HSL) */
+}
+
+
+/* CSS files can also have comments! */

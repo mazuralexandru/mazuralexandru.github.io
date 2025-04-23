@@ -16,36 +16,119 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>57. Structural Formatting: Horizontal Rules (<code class="language-html">&lt;hr&gt;</code>)</h1>
-<p>Let&#39;s introduce the <code class="language-html">&lt;hr&gt;</code> element, which represents a <strong>thematic break</strong> in the content.</p>
-<p><strong>The Horizontal Rule / Thematic Break Element (<code class="language-html">&lt;hr&gt;</code>)</strong></p>
+  <h1>57. Text Styling: <code>font-weight</code></h1>
+<p>The <code class="language-css">font-weight</code> property controls the boldness or thickness of the text characters.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Represents a paragraph-level thematic break. It signifies a shift in topic, a scene change in a story, or a separation between different subjects within a section, where a new heading might not be appropriate or necessary.</li>
-<li><strong>Semantics:</strong> Its meaning is about <strong>separation</strong> and <strong>transition</strong> in the flow of content.</li>
-<li><strong>Type:</strong> It&#39;s a <strong>void (empty)</strong> element (no content, no closing tag). It&#39;s also considered <strong>block-level</strong>, meaning it typically occupies its own line and separates other block-level elements.</li>
-<li><strong>Syntax (HTML5):</strong> <code class="language-html">&lt;hr&gt;</code> (XHTML-style <code class="language-html">&lt;hr /&gt;</code> is also valid).</li>
+<li><strong>HTML Pruning:</strong> Removed the font-size demo paragraphs.</li>
+<li><strong>HTML Addition:</strong> Added paragraphs demonstrating different font weights using classes <code class="language-html">weight-normal</code>, <code class="language-html">weight-bold</code>, <code class="language-html">weight-700</code>. We&#39;re using the &quot;Roboto&quot; font linked earlier, which supports multiple weights (400 for regular, 700 for bold).</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.size-*</code> rules.</li>
+<li><strong>CSS Addition:</strong> Added rules applying different <code class="language-css">font-weight</code> values.</li>
 </ul>
-<p><strong>Default Rendering:</strong></p>
-<p>Browsers typically render the <code class="language-html">&lt;hr&gt;</code> element as a <strong>horizontal line</strong> spanning the width of its container, often with some vertical margin space around it. This visual line reinforces the idea of a separation.</p>
-<p><strong>Code Change:</strong></p>
-<p>We have added an <code class="language-html">&lt;hr&gt;</code> element between the two paragraphs in <code class="language-text">index.html</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt;
-  &lt;p&gt;This is the introductory paragraph. We will explore thematic breaks next.&lt;/p&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;!-- Roboto font including weights 400 (regular) and 700 (bold) --&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
 
-  &lt;hr&gt; &lt;!-- Added horizontal rule --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Font Weight Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
 
-  &lt;p&gt;This is another paragraph, following the thematic break.&lt;/p&gt; &lt;!-- Adjusted text --&gt;
+  &lt;!-- Pruned previous font-size examples --&gt;
 
-  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+  &lt;p class=&quot;weight-normal&quot;&gt;Normal weight text (Roboto 400).&lt;/p&gt; &lt;!-- Added normal weight --&gt;
+  &lt;p class=&quot;weight-bold&quot;&gt;Bold weight text (keyword &#39;bold&#39;).&lt;/p&gt; &lt;!-- Added bold keyword --&gt;
+  &lt;p class=&quot;weight-700&quot;&gt;Bold weight text (numeric 700).&lt;/p&gt; &lt;!-- Added bold numeric --&gt;
+
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Locate the new <code class="language-html">&lt;hr&gt;</code> tag placed between the two <code class="language-html">&lt;p&gt;</code> tags in <code class="language-text">index.html</code>.</li>
-<li>Look at the browser preview. You should now see a horizontal line visually separating the first paragraph from the second paragraph. This is the default rendering of the semantic <code class="language-html">&lt;hr&gt;</code> element.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use the <code class="language-html">&lt;hr&gt;</code> element to signify a thematic break or topic shift between paragraph-level content blocks. It&#39;s a void, block-level element, typically rendered as a horizontal line by default.</p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+body {
+  /* ... base styles ... */
+  /* Use Roboto as base font for body to test weights */
+  font-family: &quot;Roboto&quot;, sans-serif;
+}
+
+h1 {
+  color: lightblue;
+  /* H1 default weight might be bold, check computed styles */
+}
+
+/* Pruned font-size rules */
+/* .size-px { ... } etc */
+
+
+/* Font Weight Demo */
+.weight-normal {
+  font-weight: normal; /* Typically maps to 400 */
+  margin-bottom: 10px;
+}
+
+.weight-bold {
+  font-weight: bold; /* Typically maps to 700 */
+  margin-bottom: 10px;
+}
+
+.weight-700 {
+  font-weight: 700; /* Explicit numeric weight */
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong><code>font-weight</code> Explained</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Sets the thickness or boldness of the font glyphs.</li>
+<li><strong>Values:</strong><ul>
+<li><strong>Keywords:</strong><ul>
+<li><code class="language-css">normal</code>: Typically equivalent to the numeric value <code>400</code>. The standard weight.</li>
+<li><code class="language-css">bold</code>: Typically equivalent to the numeric value <code>700</code>. Standard bold weight.</li>
+</ul>
+</li>
+<li><strong>Numeric Values:</strong> Ranges from <code>100</code> (Thin) to <code>900</code> (Black/Heavy) in increments of 100.<ul>
+<li><code>100</code>: Thin</li>
+<li><code>200</code>: Extra Light (Ultra Light)</li>
+<li><code>300</code>: Light</li>
+<li><code>400</code>: Normal (Regular)</li>
+<li><code>500</code>: Medium</li>
+<li><code>600</code>: Semi Bold (Demi Bold)</li>
+<li><code>700</code>: Bold</li>
+<li><code>800</code>: Extra Bold (Ultra Bold)</li>
+<li><code>900</code>: Black (Heavy)</li>
+</ul>
+</li>
+<li><strong>Relative Keywords:</strong> <code class="language-css">lighter</code> and <code class="language-css">bolder</code> make the text lighter or bolder relative to the parent element&#39;s weight (less commonly used).</li>
+</ul>
+</li>
+<li><strong>Font Availability:</strong> The crucial point is that for a specific numeric weight (e.g., <code>300</code> or <code>900</code>) to actually render, the chosen <code class="language-css">font-family</code> <strong>must have that specific weight available</strong>. If you request <code class="language-css">font-weight: 900;</code> but the font only has regular (400) and bold (700) weights loaded, the browser will usually try to synthesize a weight or pick the closest available one (often just rendering the 700 weight). This is why when using web fonts (like Google Fonts), you need to ensure you request and load the specific weights you intend to use (e.g., <code>wght@400;700</code> in the Google Fonts URL).</li>
+<li><strong>Variable Fonts:</strong> A newer technology allows a single font file to contain a continuous range of weights (and other variations like width or slant), offering more fine-grained control and potentially better performance. This is an advanced topic.</li>
+</ul>
+<p><strong>In Our Example:</strong></p>
+<ul>
+<li>We set the <code>body</code>&#39;s <code>font-family</code> to &quot;Roboto&quot; to ensure the font is used.</li>
+<li><code>.weight-normal</code> uses the <code class="language-css">normal</code> keyword (maps to 400).</li>
+<li><code>.weight-bold</code> uses the <code class="language-css">bold</code> keyword (maps to 700).</li>
+<li><code>.weight-700</code> uses the explicit numeric value <code>700</code>.</li>
+</ul>
+<p>Since we loaded Roboto weights 400 and 700, all these should render correctly.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 The first paragraph (<code>.weight-normal</code>) should appear in the standard Roboto regular weight.</li>
+<li>👀 The second (<code>.weight-bold</code>) and third (<code>.weight-700</code>) paragraphs should both appear noticeably <strong>bolder</strong> than the first, and likely identical to each other, as both <code class="language-css">bold</code> and <code class="language-css">700</code> map to the loaded bold weight of Roboto.</li>
+<li>✅ Inspect the paragraphs in DevTools. Check the &quot;Computed&quot; tab for <code>font-weight</code>. It should show the calculated numeric value (e.g., 400 or 700).</li>
+</ul>
+<p>Use <code class="language-css">font-weight</code> with appropriate keywords or numeric values, ensuring the chosen font family actually supports the weights you specify.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

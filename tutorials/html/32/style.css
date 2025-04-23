@@ -1,1 +1,36 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Updated P rule */
+p {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Removed H2 rule as element was pruned */
+/* Removed ID Selector rule as element was pruned */
+
+/* Added Presence Attribute Selector rule */
+[required] {
+  border: 2px solid orange;
+  background-color: #444; /* Darker background for input */
+}
+
+/* Added Exact Value Attribute Selector rule */
+[type="text"] {
+  border-color: lightgreen; /* Override border color only for type=text */
+  font-family: monospace;
+}
+
+/* CSS files can also have comments! */

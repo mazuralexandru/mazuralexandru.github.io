@@ -16,38 +16,82 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>47. Inline Semantics: Stylistic Offset (<code class="language-html">&lt;b&gt;</code>)</h1>
-<p>Similar to <code class="language-html">&lt;i&gt;</code>, the <code class="language-html">&lt;b&gt;</code> tag also had its meaning redefined in HTML5 away from purely presentation.</p>
-<p><strong>The <code class="language-html">&lt;b&gt;</code> Element (HTML5 Semantics):</strong></p>
+  <h1>47. Introduction to CSS Inheritance</h1>
+<p>Besides the Cascade deciding between conflicting rules applied <em>directly</em> to an element, CSS also features <strong>Inheritance</strong>. This means that some CSS properties, when applied to a parent element, are automatically passed down to its child elements <em>unless</em> a more specific rule targets the child directly.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Represents text that should be <strong>stylistically offset</strong> from the normal prose, <em>without</em> conveying any extra importance or emphasis. It draws attention to the text for utilitarian purposes where standard conventions use bold text.</li>
-<li><strong>Specific Use Cases (Examples):</strong><ul>
-<li>Keywords in an abstract or summary.</li>
-<li>Product names in a review.</li>
-<li>Lead sentences or opening phrases in an article.</li>
-<li>Action verbs in a software manual.</li>
+<li><strong>HTML Pruning:</strong> Removed the paragraph used for cascade examples.</li>
+<li><strong>HTML Addition:</strong> Added a <code class="language-html">&lt;div&gt;</code> with some direct text styling (using an inline <code class="language-html">style</code> attribute for demonstration brevity) and a <code class="language-html">&lt;p&gt;</code> element nested inside it.</li>
+<li><strong>CSS Pruning:</strong> Removed the conflicting <code>.special</code> rules and the basic <code>p</code> rule to create a clean slate for demonstrating inheritance.</li>
+</ul>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;CSS Inheritance Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+
+  &lt;!-- Pruned previous cascade examples --&gt;
+
+  &lt;div style=&quot;color: mediumpurple; border: 1px solid grey; padding: 10px;&quot;&gt; &lt;!-- Parent Div --&gt;
+    This text is directly inside the div (inherits color).
+    &lt;p&gt;This paragraph is inside the div.&lt;/p&gt; &lt;!-- Child P --&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned previous rules */
+/*
+p { ... }
+.special { ... }
+.special { ... }
+*/
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Inheritance Explained</strong></p>
+<ul>
+<li><strong>Concept:</strong> Child elements &quot;inherit&quot; the computed value of certain properties from their parent element in the HTML structure.</li>
+<li><strong>Which Properties Inherit?</strong> Primarily properties related to text:<ul>
+<li><code class="language-css">color</code></li>
+<li><code class="language-css">font-family</code>, <code class="language-css">font-size</code>, <code class="language-css">font-weight</code>, <code class="language-css">font-style</code></li>
+<li><code class="language-css">line-height</code></li>
+<li><code class="language-css">text-align</code></li>
+<li><code class="language-css">list-style</code> properties</li>
+<li>Also <code class="language-css">visibility</code>, <code class="language-css">cursor</code></li>
 </ul>
 </li>
-<li><strong>Type:</strong> Inline element.</li>
-<li><strong>Syntax:</strong> <code class="language-html">&lt;b&gt;...&lt;/b&gt;</code></li>
+<li><strong>Which Properties Don&#39;t (Usually) Inherit?</strong> Most properties related to element boxes and positioning:<ul>
+<li><code class="language-css">background-color</code></li>
+<li><code class="language-css">width</code>, <code class="language-css">height</code></li>
+<li><code class="language-css">padding</code>, <code class="language-css">border</code>, <code class="language-css">margin</code></li>
+<li><code class="language-css">position</code>, <code class="language-css">top</code>, <code class="language-css">left</code>, etc.
+<em>(Think: It usually wouldn&#39;t make sense for a child element to automatically get the same border or width as its parent).</em></li>
 </ul>
-<p><strong>Default Rendering:</strong></p>
-<p>Browsers render <code class="language-html">&lt;b&gt;</code> text in a <strong>bold</strong> font weight by default, reflecting its historical use.</p>
-<p><strong><code class="language-html">&lt;b&gt;</code> vs. <code class="language-html">&lt;strong&gt;</code>:</strong></p>
+</li>
+</ul>
+<p><strong>In Our Example:</strong></p>
 <ul>
-<li>Use <code class="language-html">&lt;strong&gt;</code> when you want to mark text as having <strong>strong importance, seriousness, or urgency</strong>.</li>
-<li>Use <code class="language-html">&lt;b&gt;</code> when you need to draw attention stylistically (like highlighting a keyword or product name) <em>without</em> implying that the text is more important than the surrounding content. If none of the specific <code class="language-html">&lt;b&gt;</code> use cases fit, and you just want bold text for presentation, use CSS (<code class="language-css">font-weight: bold;</code>) instead.</li>
+<li>We applied <code class="language-css">color: mediumpurple;</code> directly to the parent <code class="language-html">&lt;div&gt;</code> using an inline style. We also gave it a border and padding (which won&#39;t be inherited).</li>
+<li>We haven&#39;t applied <em>any</em> specific CSS rules to the child <code class="language-html">&lt;p&gt;</code> element in our <code class="language-text">style.css</code> file.</li>
 </ul>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve added an example using <code class="language-html">&lt;b&gt;</code> in the first paragraph of <code class="language-text">index.html</code> to represent a product name.</p>
-<pre class="language-html"><code class="language-html">&lt;p&gt; ... Remember to install the &lt;b&gt;SuperWidget&lt;/b&gt; driver first.&lt;/p&gt; &lt;!-- Added &lt;b&gt; example --&gt;
-</code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Locate the <code class="language-html">&lt;b&gt;SuperWidget&lt;/b&gt;</code> example in <code class="language-text">index.html</code>.</li>
-<li>Look at the browser preview. The product name &quot;SuperWidget&quot; should now appear in <strong>bold</strong> within the first paragraph. Visually, it might look the same as the text wrapped in <code class="language-html">&lt;strong&gt;</code>, but semantically, it only implies a stylistic offset, not strong importance.</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use <code class="language-html">&lt;b&gt;</code> (in HTML5) to stylistically offset text like keywords or product names without adding semantic importance. Prefer <code class="language-html">&lt;strong&gt;</code> for actual importance, and use CSS for purely visual bolding.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Observe the parent <code class="language-html">&lt;div&gt;</code>. It has a gray border and padding. The text directly inside it (&quot;This text is directly inside the div...&quot;) is <strong>medium purple</strong>.</li>
+<li>👀 Now, observe the child <code class="language-html">&lt;p&gt;</code> (&quot;This paragraph is inside the div.&quot;). Its text color should <strong>also be medium purple</strong>. Why? Because the <code class="language-css">color</code> property is <em>inheritable</em>. Since no specific <code class="language-css">color</code> rule targets the <code class="language-html">&lt;p&gt;</code> element itself, it inherits the <code class="language-css">mediumpurple</code> value from its parent <code class="language-html">&lt;div&gt;</code>.</li>
+<li>👀 Notice the <code class="language-html">&lt;p&gt;</code> does <em>not</em> get the gray border or the padding from the parent <code class="language-html">&lt;div&gt;</code>, because <code class="language-css">border</code> and <code class="language-css">padding</code> are <em>not</em> typically inherited properties.</li>
+<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools. In the Styles pane, find the <code class="language-css">color</code> property. It should indicate that the value <code class="language-css">mediumpurple</code> is &quot;Inherited from div&quot;. This explicitly shows inheritance in action.</li>
+</ul>
+<p>Inheritance simplifies CSS by allowing you to set common text styles on parent containers and have them flow down to children automatically. The cascade (specificity, source order) still applies if you <em>do</em> target the child element directly.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

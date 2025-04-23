@@ -16,40 +16,92 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>63. Specialized Text: <code class="language-html">&lt;pre&gt;</code> and HTML Escaping</h1>
-<p>A critical consideration when using <code class="language-html">&lt;pre&gt;</code>, especially for displaying code examples, is <strong>HTML escaping</strong>.</p>
-<p><strong>The Problem:</strong></p>
-<p>The browser parses <em>all</em> the content in your HTML file, including the text inside <code class="language-html">&lt;pre&gt;</code> tags. If you put raw HTML code (like <code class="language-html">&lt;p&gt;</code> or <code class="language-html">&lt;div&gt;</code>) directly inside a <code class="language-html">&lt;pre&gt;</code> block, the browser will interpret those tags as actual HTML elements, potentially breaking the structure of your page or rendering the code incorrectly, instead of displaying the tag characters literally.</p>
-<p><strong>The Solution: HTML Entities (Escaping)</strong></p>
-<p>To display characters that have special meaning in HTML (like <code>&lt;</code>, <code>&gt;</code>, and <code>&amp;</code>) as literal text, you need to replace them with their corresponding <strong>HTML character entities</strong>:</p>
+  <h1>63. Text Styling: <code>letter-spacing</code> and <code>word-spacing</code></h1>
+<p>You can adjust the spacing <em>between</em> characters using <code class="language-css">letter-spacing</code> and <em>between</em> words using <code class="language-css">word-spacing</code>.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><code>&lt;</code> becomes <code>&amp;lt;</code> (less-than)</li>
-<li><code>&gt;</code> becomes <code>&amp;gt;</code> (greater-than)</li>
-<li><code>&amp;</code> becomes <code>&amp;amp;</code> (ampersand)</li>
+<li><strong>HTML Pruning:</strong> Removed the line-height demo paragraphs.</li>
+<li><strong>HTML Addition:</strong> Added paragraphs with classes <code class="language-html">letter-space</code> and <code class="language-html">word-space</code>.</li>
+<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.lh-*</code> rules.</li>
+<li><strong>CSS Addition:</strong> Added rules applying <code class="language-css">letter-spacing</code> and <code class="language-css">word-spacing</code>.</li>
 </ul>
-<p>(Other entities exist, like <code>&amp;quot;</code> for <code>&quot;</code> and <code>&amp;apos;</code> for <code>&#39;</code>, but <code>&lt; &gt; &amp;</code> are the most critical ones to escape when displaying code).</p>
-<p><strong>Why it Works:</strong></p>
-<p>When the browser encounters an entity like <code>&amp;lt;</code> during parsing, it <em>renders</em> it as the literal <code>&lt;</code> character on the page but does <em>not</em> interpret it as the start of an HTML tag.</p>
-<p><strong>Code Change:</strong></p>
-<p>We&#39;ve replaced the previous content of the <code class="language-html">&lt;pre&gt;</code> block in <code class="language-text">index.html</code> with an example showing how to display HTML code literally by using escaped entities.</p>
-<pre class="language-html"><code class="language-html">&lt;p&gt;Displaying HTML code within a pre block requires escaping:&lt;/p&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Letter &amp; Word Spacing Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
 
-&lt;pre&gt;
-&lt;!-- How to represent &lt;p&gt; tags literally: --&gt;
+  &lt;!-- Pruned previous line-height examples --&gt;
 
-&amp;lt;p&amp;gt;This is a paragraph.&amp;lt;/p&amp;gt;
-&amp;lt;div class=&quot;example&quot;&amp;gt;
-  Some content &amp;amp; more text.
-&amp;lt;/div&amp;gt;
-&lt;/pre&gt; &lt;!-- Added escaped HTML example --&gt;
+  &lt;p&gt;Default spacing for comparison.&lt;/p&gt;
+  &lt;p class=&quot;letter-space&quot;&gt;This text has increased letter spacing (tracking).&lt;/p&gt; &lt;!-- Added letter-spacing P --&gt;
+  &lt;p class=&quot;word-space&quot;&gt;This text has increased word spacing.&lt;/p&gt; &lt;!-- Added word-spacing P --&gt;
 
-&lt;p&gt;This paragraph follows the preformatted text.&lt;/p&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
 </code></pre>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>Carefully examine the source code inside the <code class="language-html">&lt;pre&gt;</code> block in <code class="language-text">index.html</code>. Notice the use of <code>&amp;lt;</code>, <code>&amp;gt;</code>, and <code>&amp;amp;</code>.</li>
-<li>Look at the browser preview. Inside the preformatted block, you should see the <em>literal text</em> rendered:</li>
-</ol>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Pruned line-height rules */
+/* .lh-* { ... } */
+
+/* Letter &amp; Word Spacing Demo */
+p {
+  margin-bottom: 15px; /* Add default spacing below paragraphs */
+  font-size: 1.1rem; /* Make text slightly larger */
+}
+
+.letter-space {
+  letter-spacing: 3px; /* Increase space between letters */
+  /* Negative values are also possible, e.g., -1px */
+}
+
+.word-space {
+  word-spacing: 10px; /* Increase space between words */
+  /* Negative values are also possible */
+}
+
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Spacing Properties Explained</strong></p>
+<ul>
+<li><strong><code>letter-spacing</code>:</strong><ul>
+<li><strong>Purpose:</strong> Adjusts the space between individual characters of text (also known as &quot;tracking&quot; in typography).</li>
+<li><strong>Values:</strong> Accepts <code>&lt;length&gt;</code> units (<code>px</code>, <code>em</code>, <code>rem</code>).<ul>
+<li>Positive values increase space, making text wider.</li>
+<li>Negative values decrease space (kerning), making text tighter.</li>
+</ul>
+</li>
+<li><strong>Use Cases:</strong> Can be used subtly for headings or logos, but excessive positive or negative spacing drastically reduces readability for body text. <code>normal</code> is the default.</li>
+</ul>
+</li>
+<li><strong><code>word-spacing</code>:</strong><ul>
+<li><strong>Purpose:</strong> Adjusts the space <em>in addition to the default space</em> between words.</li>
+<li><strong>Values:</strong> Accepts <code>&lt;length&gt;</code> units (<code>px</code>, <code>em</code>, <code>rem</code>).<ul>
+<li>Positive values add extra space between words.</li>
+<li>Negative values reduce space between words.</li>
+</ul>
+</li>
+<li><strong>Use Cases:</strong> Generally used sparingly. Can sometimes be adjusted subtly for justified text or specific design effects. <code>normal</code> is the default (represents the standard space character width).</li>
+</ul>
+</li>
+</ul>
+<p><strong>In Our Example:</strong></p>
+<ul>
+<li>We have a default paragraph for comparison.</li>
+<li><code>.letter-space</code> adds <code>3px</code> of extra space between each character.</li>
+<li><code>.word-space</code> adds <code>10px</code> of extra space between each word.</li>
+</ul>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Compare the second paragraph (<code>.letter-space</code>) to the first. The letters within words should appear noticeably spread out.</li>
+<li>👀 Compare the third paragraph (<code>.word-space</code>) to the first. The gaps between the words should be significantly wider.</li>
+<li>🔬 <strong>Experiment:</strong> Try using negative values for <code>letter-spacing</code> (e.g., <code>-1px</code>) or <code>word-spacing</code> (e.g., <code>-3px</code>). Observe how the text becomes tighter. Be cautious, as negative values can quickly make text unreadable.</li>
+</ul>
+<p>Use <code>letter-spacing</code> and <code>word-spacing</code> with moderation, primarily for stylistic effects on headings or short text runs, rather than applying large values to body copy.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

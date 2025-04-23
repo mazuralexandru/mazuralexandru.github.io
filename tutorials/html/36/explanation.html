@@ -16,48 +16,65 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>36. Text: Headings (<code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>) - Hierarchy and Best Practices</h1>
-<p>Using headings correctly involves understanding their hierarchical nature and some important best practices.</p>
-<p><strong>1. Heading Hierarchy Rule:</strong></p>
+  <h1>36. CSS Selectors: The Universal Selector</h1>
+<p>The <strong>Universal Selector</strong> (<code>*</code>) is unique because it matches <em>every single element</em> on the page. While powerful, it should be used cautiously.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li><strong>Concept:</strong> Headings should form a logical, ordered hierarchy. You should start with the highest-level heading appropriate for the section (usually <code class="language-html">&lt;h1&gt;</code> for the page) and step down sequentially without skipping levels.</li>
-<li><strong>Example:</strong><ul>
-<li><strong>Correct:</strong> <code class="language-html">&lt;h1&gt;</code> -&gt; <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code> -&gt; <code class="language-html">&lt;h2&gt;</code></li>
-<li><strong>Incorrect:</strong> <code class="language-html">&lt;h1&gt;</code> -&gt; <code class="language-html">&lt;h3&gt;</code> (Skipped <code class="language-html">&lt;h2&gt;</code>)</li>
-<li><strong>Incorrect:</strong> <code class="language-html">&lt;h2&gt;</code> -&gt; <code class="language-html">&lt;h4&gt;</code> (Skipped <code class="language-html">&lt;h3&gt;</code>)</li>
+<li><strong>HTML Pruning:</strong> Removed the links from the previous step to simplify the view. Look for <code class="language-html">&lt;!-- Pruned previous link examples --&gt;</code>.</li>
+<li><strong>CSS Addition:</strong> Added a temporary rule using the universal selector <code class="language-css">*</code> to <code class="language-text">style.css</code> to visualize its effect.</li>
 </ul>
-</li>
-<li><strong>Why it Matters:</strong> Skipping levels can confuse users, especially those using screen readers who rely on the heading structure to navigate and understand the document&#39;s organization. It breaks the logical outline.</li>
-</ul>
-<p><strong>2. The <code class="language-html">&lt;h1&gt;</code> Element:</strong></p>
-<ul>
-<li><strong>Best Practice:</strong> Generally, use <strong>only one</strong> <code class="language-html">&lt;h1&gt;</code> element per page. This <code class="language-html">&lt;h1&gt;</code> should represent the main topic or title of that specific page. Think of it like the title of a book or a chapter.</li>
-<li><strong>HTML5 Nuance:</strong> While the HTML5 specification technically allows multiple <code class="language-html">&lt;h1&gt;</code> elements if each is the primary heading of its own &quot;sectioning content&quot; element (like <code class="language-html">&lt;article&gt;</code> or <code class="language-html">&lt;section&gt;</code>), having a single, clear <code class="language-html">&lt;h1&gt;</code> for the overall page is still widely considered the best practice for clarity and SEO. We will stick to the one-<code class="language-html">&lt;h1&gt;</code>-per-page rule for this tutorial.</li>
-</ul>
-<p><strong>Code Change:</strong></p>
-<p>To illustrate the hierarchy, we&#39;ve added an <code class="language-html">&lt;h3&gt;</code> element logically nested under the <code class="language-html">&lt;h2&gt;</code> within <code class="language-text">index.html</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;h1&gt;Main Page Title (h1)&lt;/h1&gt;
-  &lt;p&gt;This is the introductory paragraph following the main title.&lt;/p&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Universal Selector Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+  &lt;p&gt;Every element gets styled!&lt;/p&gt; &lt;!-- Changed P text --&gt;
+  &lt;div&gt;A div element&lt;/div&gt;
 
-  &lt;h2&gt;A Major Section Title (h2)&lt;/h2&gt;
-  &lt;p&gt;This paragraph belongs to the first major section, introduced by the h2 heading above.&lt;/p&gt;
+  &lt;!-- Pruned previous link examples --&gt;
 
-  &lt;h3&gt;A Subsection Title (h3)&lt;/h3&gt; &lt;!-- Added h3 --&gt;
-  &lt;p&gt;This paragraph discusses a specific point within the major section, under the h3 subheading.&lt;/p&gt;
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
 
-  &lt;p&gt;Another paragraph within the same section (under the h2, but after the h3 subsection).&lt;/p&gt;
-
-  &lt;!-- &lt;p&gt;This paragraph is temporarily commented out.&lt;/p&gt; --&gt;
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-<p>Note how the last paragraph still logically falls under the <code class="language-html">&lt;h2&gt;</code> because no new <code class="language-html">&lt;h2&gt;</code> or <code class="language-html">&lt;h1&gt;</code> has started.</p>
-<p>✅ <strong>Observation:</strong></p>
-<ol>
-<li>See the new <code class="language-html">&lt;h3&gt;</code> in <code class="language-text">index.html</code>.</li>
-<li>In the preview, observe the <code class="language-html">&lt;h3&gt;</code> text. It should be bold (by default) but smaller than the <code class="language-html">&lt;h2&gt;</code> and significantly smaller than the <code class="language-html">&lt;h1&gt;</code>, visually reinforcing the hierarchy (H1 &gt; H2 &gt; H3).</li>
-</ol>
-<p>✨ <strong>Key Takeaway:</strong> Use headings in a strict hierarchical order (<code>h1</code> -&gt; <code>h2</code> -&gt; <code>h3</code>...) without skipping levels. Aim for one main <code class="language-html">&lt;h1&gt;</code> per page. This creates a logical and accessible document structure.</p>
+<pre class="language-css"><code class="language-css">/* style.css snippet */
+/* Removed Attribute Selector rules as elements were pruned */
+/*
+a { ... }
+[target=&quot;_blank&quot;] { ... }
+[href$=&quot;.pdf&quot;] { ... }
+*/
+
+/* --- TEMPORARY DEMO --- */
+/* Universal Selector */
+* {
+  border: 1px dotted grey; /* Apply a border to EVERYTHING */
+  /* Use with caution! */
+}
+/* --- END TEMPORARY DEMO --- */
+
+/* CSS files can also have comments! */
+</code></pre>
+<p><strong>Universal Selector (<code>*</code>)</strong></p>
+<ul>
+<li><strong>Syntax:</strong> An asterisk (<code class="language-css">*</code>).</li>
+<li><strong>Scope:</strong> Selects <strong>every single element</strong> in the HTML document, including <code class="language-html">&lt;html&gt;</code>, <code class="language-html">&lt;head&gt;</code>, <code class="language-html">&lt;body&gt;</code>, <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;div&gt;</code>, etc.</li>
+<li><strong>Specificity:</strong> The universal selector itself has <strong>zero specificity</strong> (0,0,0,0). It won&#39;t override rules with any specificity (like type, class, or ID selectors) unless combined with <code class="language-css">!important</code>.</li>
+<li><strong>Use Cases:</strong><ul>
+<li><strong>CSS Resets:</strong> Often used in reset stylesheets to apply baseline styles globally, like setting <code class="language-css">box-sizing: border-box;</code> or removing default margins/paddings. Example: <code class="language-css">* { margin: 0; padding: 0; box-sizing: border-box; }</code> (Note: More targeted resets are often preferred over <code class="language-css">*</code> for performance).</li>
+<li><strong>Debugging:</strong> Can be useful <em>temporarily</em> during development to visualize element boundaries (like adding a border to everything, as we&#39;ve done here). <strong>Remove it afterward!</strong></li>
+<li>Targeting all descendants: <code class="language-css">#some-id * { ... }</code> targets all elements inside <code>#some-id</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Caution:</strong> Because it targets <em>everything</em>, applying styles with the universal selector can have unintended consequences and potentially impact performance if used carelessly or with complex properties.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview.</li>
+<li>👀 Notice that <strong>every visible element</strong> on the page (<code class="language-html">&lt;body&gt;</code>, <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;div&gt;</code>) now has a thin, dotted gray border around it. This is the effect of the <code class="language-css">* { border: 1px dotted grey; }</code> rule. Even the main <code class="language-html">&lt;body&gt;</code> element gets this border.</li>
+<li>✅ Inspect various elements (like the <code class="language-html">&lt;h1&gt;</code> or the <code class="language-html">&lt;p&gt;</code>) in DevTools. The Styles pane will show the <code class="language-css">*</code> rule being applied to each of them. Note how other styles (like the <code class="language-css">color</code> on the <code class="language-html">&lt;h1&gt;</code>) are still applied, as the <code class="language-css">*</code> selector has no specificity to override them.</li>
+</ul>
+<p>This demonstrates the global reach of the universal selector. Remember to use it judiciously. We will remove this rule in the next step.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

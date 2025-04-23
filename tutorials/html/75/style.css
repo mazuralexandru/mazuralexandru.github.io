@@ -1,1 +1,41 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: "Roboto", sans-serif; /* Use Roboto as base font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned quotation rules */
+/* blockquote { ... } */
+/* q { ... } */
+/* cite { ... } */
+
+
+/* BR and HR Demo */
+p { /* Base paragraph styling */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* br tag requires no specific styling usually */
+
+hr {
+  border: none; /* Remove default browser border */
+  height: 2px; /* Set a height */
+  background-color: #666; /* Use background for the line color */
+  /* Create a gradient effect */
+  background-image: linear-gradient(to right, #2e2e2e, #aaa, #2e2e2e);
+  margin: 30px 0; /* Add vertical space around the break */
+}
+
+
+/* CSS files can also have comments! */

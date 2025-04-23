@@ -2,16 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Main Page Title (h1)</h1>
-  <p>This is the introductory paragraph. We will add <em>emphasis</em> and importance to text within paragraphs like this one.</p> <!-- Added <em> -->
+  <h1>Child Combinator Demo</h1> <!-- Changed H1 text -->
 
-  <p>This is another paragraph. It serves as a second block of text for our examples.</p>
+  <p>Styling direct children list items.</p>
+
+  <ul> <!-- Added outer UL -->
+    <li>Direct Child Item 1</li>
+    <li>Direct Child Item 2
+      <ul> <!-- Added nested UL -->
+        <li>Nested Item A</li>
+        <li>Nested Item B</li>
+      </ul>
+    </li>
+    <li>Direct Child Item 3</li>
+  </ul>
+
+  <!-- Pruned previous article example -->
 
 
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
+
+  <script src="script.js"></script>
 </body>
 </html>

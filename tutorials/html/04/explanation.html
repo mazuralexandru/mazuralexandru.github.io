@@ -16,42 +16,46 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>04. The Web Trio: HTML vs. CSS vs. JavaScript (Part 1)</h1>
-<p>We&#39;ve mentioned HTML&#39;s role in structure, but websites usually involve two other core technologies: <strong>CSS</strong> and <strong>JavaScript</strong>. Understanding their distinct roles is fundamental.</p>
-<p><strong>Defining the Roles (The &quot;Web Trio&quot;):</strong></p>
-<ol>
-<li><p><strong>HTML (Structure &amp; Content):</strong></p>
+  <h1>04. Adding the Page Title</h1>
+<p>Let&#39;s give our page a proper title that appears in the browser tab or window. This is done using the <code class="language-html">&lt;title&gt;</code> element.</p>
+<p><strong>What&#39;s New?</strong></p>
+<p>We added a <code class="language-html">&lt;title&gt;</code> element inside the <code class="language-html">&lt;head&gt;</code> section.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;My First Web Page&lt;/title&gt; &lt;!-- Added title tag --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+</code></pre>
+<p><strong>The <code>&lt;title&gt;</code> Element</strong></p>
 <ul>
-<li>The foundation.</li>
-<li>Defines <em>what</em> the content is (a heading, paragraph, image, link).</li>
-<li>Provides meaning and organization.</li>
-<li>Think: <strong>The Nouns</strong> of the web page.</li>
+<li><strong>Purpose:</strong> Defines the title of the HTML document. This is crucial metadata.</li>
+<li><strong>Placement:</strong> It <strong>must</strong> be placed inside the <code class="language-html">&lt;head&gt;</code> element. A document should have exactly one <code class="language-html">&lt;title&gt;</code> element.</li>
+<li><strong>Content:</strong> The text between the opening <code class="language-html">&lt;title&gt;</code> and closing <code class="language-html">&lt;/title&gt;</code> tags is the title itself. Only plain text is allowed here (no other HTML tags).</li>
+<li><strong>Where it Appears:</strong><ul>
+<li>Browser tab or window title bar.</li>
+<li>Browser bookmarks/favorites.</li>
+<li>Search engine results pages (SERPs) - often used as the main clickable link.</li>
 </ul>
 </li>
-<li><p><strong>CSS (Presentation &amp; Styling):</strong></p>
-<ul>
-<li>Controls the <em>appearance</em>.</li>
-<li>Defines how HTML elements <em>look</em> (colors, fonts, layout, spacing, size).</li>
-<li>Think: <strong>The Adjectives</strong> describing the nouns.</li>
+<li><strong>Importance:</strong><ul>
+<li><strong>Usability:</strong> Helps users identify the page among multiple tabs.</li>
+<li><strong>Accessibility:</strong> Screen readers announce the title when the page loads, providing context.</li>
+<li><strong>SEO:</strong> Search engines weigh the title heavily for understanding the page&#39;s topic.</li>
 </ul>
 </li>
-<li><p><strong>JavaScript (Behavior &amp; Interactivity):</strong></p>
-<ul>
-<li>Adds <em>dynamic behavior</em>.</li>
-<li>Makes websites interactive (responding to clicks, validating forms, animations, fetching data).</li>
-<li>Think: <strong>The Verbs</strong> that make the page do things.</li>
 </ul>
-</li>
-</ol>
-<p><strong>Analogy: Building a House</strong></p>
-<p>This is a popular and helpful analogy:</p>
+<p><strong>Best Practices for Titles:</strong></p>
 <ul>
-<li><strong>HTML:</strong> The <strong>Foundation, Walls, and Rooms</strong>. It defines the basic structure of the house – where the kitchen is, how many bedrooms there are, etc.</li>
-<li><strong>CSS:</strong> The <strong>Paint, Wallpaper, Furniture, and Decorations</strong>. It determines how the house looks – the color of the walls, the style of the furniture, the placement of pictures.</li>
-<li><strong>JavaScript:</strong> The <strong>Electricity, Plumbing, Doorbell, and Appliances</strong>. It adds functionality – lights turn on, water flows, the doorbell rings, the garage door opens.</li>
+<li>Be descriptive and concise.</li>
+<li>Make it unique for each page on your website.</li>
+<li>Consider including relevant keywords, but prioritize clarity for users.</li>
 </ul>
-<p>✅ <strong>Observation:</strong> Still no code changes. We&#39;re clarifying the separation of concerns before we start building the structure (HTML).</p>
-<p>🤔 <strong>Think:</strong> Can you have a functional website with only HTML? Yes, but it would likely look very plain (like an unpainted house with no furniture). Can you have a website with only CSS or JavaScript? No, because they need an HTML structure to style or manipulate. HTML is the essential starting point.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Look at the browser tab where your page is previewed. You should now see &quot;My First Web Page&quot; displayed there, instead of the filename. This makes the page instantly identifiable.</li>
+<li>🔬 <strong>Experiment:</strong> Change the text inside the <code class="language-html">&lt;title&gt;</code> tags (e.g., to <code class="language-html">&lt;title&gt;Web Dev Basics&lt;/title&gt;</code>). Save the <code class="language-text">index.html</code> file and refresh the preview. Observe the browser tab update immediately.</li>
+</ul>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

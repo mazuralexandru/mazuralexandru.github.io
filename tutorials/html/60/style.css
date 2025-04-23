@@ -1,1 +1,45 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: "Roboto", sans-serif; /* Use Roboto as base font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned font shorthand rule */
+/* .shorthand-text { ... } */
+
+
+/* Text Decoration Demo */
+.underline-text {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.strike-text {
+  text-decoration: line-through;
+  margin-bottom: 10px;
+}
+
+.custom-deco-text {
+  /* Using sub-properties for more control */
+  text-decoration-line: overline; /* Could be underline, line-through, overline, or multiple */
+  text-decoration-color: red;
+  text-decoration-style: wavy; /* solid, double, dotted, dashed, wavy */
+  text-decoration-thickness: 2px; /* or 'auto', 'from-font', percentage, length */
+  margin-bottom: 10px;
+}
+
+.no-deco-link {
+  text-decoration: none; /* Common use case: removing default link underlines */
+  color: cyan; /* Make link visible */
+}
+
+
+/* CSS files can also have comments! */

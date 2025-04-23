@@ -16,29 +16,49 @@
   <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>30. Looking Ahead: Next Steps</h1>
-<p>We have successfully completed the foundational module, covering:</p>
+  <h1>30. CSS Selectors: Introduction to Attribute Selectors</h1>
+<p>Beyond <code class="language-html">class</code> and <code class="language-html">id</code>, HTML elements can have many other attributes (like <code class="language-html">type</code>, <code class="language-html">href</code>, <code class="language-html">target</code>, <code class="language-html">required</code>, etc.). <strong>Attribute Selectors</strong> allow you to target elements based on the presence or value of these attributes.</p>
+<p><strong>What&#39;s New?</strong></p>
 <ul>
-<li>The definition, purpose, and history of HTML.</li>
-<li>Its relationship with CSS and JavaScript (Separation of Concerns).</li>
-<li>The core syntax of elements, tags (opening, closing, void), nesting, and case sensitivity.</li>
-<li>The essential structure of an HTML5 document (<code>DOCTYPE</code>, <code>html</code>, <code>head</code>, <code>body</code>).</li>
-<li>Key metadata elements (<code>lang</code>, <code>charset</code>, <code>title</code>).</li>
-<li>Adding basic visible content (<code>h1</code>, <code>p</code>).</li>
-<li>Saving/viewing files, using comments, and the concept of validation.</li>
-<li>Linking a CSS file (<code class="language-html">&lt;link&gt;</code>) and adding base styles for visual consistency.</li>
+<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">&lt;h2&gt;</code> and the <code class="language-html">&lt;div id=&quot;main-content&quot;&gt;</code> to simplify the example for focusing on attribute selectors. Look for <code class="language-html">&lt;!-- Pruned previous H2 and div#main-content --&gt;</code>.</li>
+<li><strong>HTML Addition:</strong> Added two <code class="language-html">&lt;input&gt;</code> elements. One is a standard text input, the other is an email input with the <code class="language-html">required</code> attribute.</li>
 </ul>
-<p><strong>What&#39;s Next?</strong></p>
-<p>This foundation is crucial. In the upcoming lessons (Module 2, based on the original plan), we will build directly upon this by exploring specific HTML elements used for <strong>text formatting</strong>. We&#39;ll learn how to:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
+&lt;body&gt;
+  &lt;h1&gt;Attribute Selectors Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+  &lt;p&gt;Styling inputs based on attributes.&lt;/p&gt; &lt;!-- Changed P text --&gt;
+
+  &lt;!-- Pruned previous H2 and div#main-content --&gt;
+
+  &lt;input type=&quot;text&quot; placeholder=&quot;Username&quot;&gt; &lt;!-- Added text input --&gt;
+  &lt;br&gt; &lt;!-- Added line break for spacing --&gt;
+  &lt;input type=&quot;email&quot; placeholder=&quot;Email (required)&quot; required&gt; &lt;!-- Added required email input --&gt;
+
+  &lt;!-- Commented out paragraph remains --&gt;
+  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p><strong>HTML Attributes Review</strong></p>
 <ul>
-<li>Emphasize text (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;i&gt;</code>).</li>
-<li>Mark text as important (<code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;b&gt;</code>).</li>
-<li>Add citations, definitions, abbreviations, and more.</li>
-<li>Understand the difference between semantic elements (like <code class="language-html">&lt;em&gt;</code>) and purely presentational ones (and why semantics matter).</li>
+<li>Attributes provide additional information about an element.</li>
+<li>They appear in the opening tag, usually as <code class="language-html">name=&quot;value&quot;</code> pairs (e.g., <code class="language-html">type=&quot;text&quot;</code>).</li>
+<li>Some attributes are &quot;boolean&quot; attributes – their presence implies <code class="language-text">true</code>, and they don&#39;t need a value (e.g., <code class="language-html">required</code>, <code class="language-html">disabled</code>).</li>
 </ul>
-<p>We will continue to add elements <em>inside</em> the <code class="language-html">&lt;body&gt;</code> of our <code class="language-text">index.html</code> file, observe their default appearance (enhanced by our base CSS), and discuss their purpose and correct usage according to HTML standards.</p>
-<p>✅ <strong>Observation:</strong> No code changes in this final step of Module 1. We are maintaining the state from the previous step, which includes the basic HTML structure, linked CSS with base styles, and simple <code>h1</code>/<code>p</code> content.</p>
-<p>✨ <strong>Get Ready:</strong> Prepare to dive deeper into the specific tags that give meaning and structure to the text content of your web pages!</p>
+<p>We now have two input fields:</p>
+<ol>
+<li><code class="language-html">&lt;input type=&quot;text&quot;&gt;</code></li>
+<li><code class="language-html">&lt;input type=&quot;email&quot; required&gt;</code></li>
+</ol>
+<p>Attribute selectors give us ways to style these differently based on their <code class="language-html">type</code> or the presence of the <code class="language-html">required</code> attribute.</p>
+<p><strong>✅ Guided Observation:</strong></p>
+<ul>
+<li>👀 Refresh the browser preview. You&#39;ll see the heading, paragraph, and two input fields.</li>
+<li>👀 By default, the input fields likely have the browser&#39;s standard appearance (often white background, dark text, simple border). Adding attributes like <code class="language-html">type</code> or <code class="language-html">required</code> primarily affects browser behavior (like form validation) rather than default styling.</li>
+<li>✅ Inspect the input elements in DevTools to see their attributes.</li>
+</ul>
+<p>In the next steps, we&#39;ll add CSS rules using different attribute selectors to style these inputs.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -1,1 +1,48 @@
-useFromLesson: 29
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: "Roboto", sans-serif; /* Use Roboto as base font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space for preview */
+}
+
+/* Updated H1 rule */
+h1 {
+  color: lightblue;
+}
+
+/* Pruned font shorthand rule */
+/* Pruned text-decoration rules */
+/* .underline-text { ... } etc */
+
+/* Text Align Demo */
+.container {
+  border: 1px solid grey;
+  padding: 10px;
+  margin-top: 10px;
+  max-width: 500px; /* Constrain width for justify to work well */
+}
+
+.container p {
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.align-left {
+  text-align: left; /* Default */
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+
+/* CSS files can also have comments! */

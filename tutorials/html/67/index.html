@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Displaying Code Blocks</h1>
-  <p>Use the <code>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code> pattern for multi-line code:</p>
+  <h1>Text Overflow Demo</h1> <!-- Changed H1 text -->
 
-  <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;title&gt;Example&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p&gt;Hello &amp;amp; Welcome!&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre> <!-- Added <pre><code> block -->
+  <!-- Pruned previous white-space examples -->
+
+  <p>Sometimes, content is too wide for its container.</p>
+
+  <div class="ellipsis-box"> <!-- Renamed Div -->
+    This text is very long and will likely overflow its container, triggering the ellipsis if styled correctly.
+  </div>
 
 
-  <p>Remember that <code>&lt;</code> must be escaped as <code>&amp;lt;</code> inside the code block.</p> <!-- Updated paragraph text -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
 
-
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <script src="script.js"></script>
 </body>
 </html>

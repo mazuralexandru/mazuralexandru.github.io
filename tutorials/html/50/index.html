@@ -2,16 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Structuring Text</title>
+  <title>My First Web Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Main Page Title (h1)</h1>
-  <p>This is the introductory paragraph. We will add <em>emphasis</em> and <strong>importance</strong> to text. This part is <strong><em>very</em></strong> important! We might discuss <i>technical terms</i> like the <i>Document Object Model</i>. Remember to install the <b>SuperWidget</b> driver first. <!-- Removed <u> example --> </p>
+  <h1>EM vs REM Units Demo</h1> <!-- Changed H1 text -->
 
-  <p>This is another paragraph. It serves as a <strong>second</strong> block of text for our examples.</p>
+  <!-- Pruned previous inheritance examples -->
+
+  <div class="outer-em"> <!-- EM Example Parent -->
+    Outer EM Div (font-size: 1.2em)
+    <p>Paragraph inside Outer EM.</p>
+    <div class="inner-em"> <!-- EM Example Child -->
+      Inner EM Div (font-size: 1.2em)
+      <p>Paragraph inside Inner EM.</p>
+    </div>
+  </div>
+
+  <hr style="margin: 20px 0;"> <!-- Separator -->
+
+  <div class="outer-rem"> <!-- REM Example Parent -->
+    Outer REM Div (font-size: 1.2rem)
+    <p>Paragraph inside Outer REM.</p>
+    <div class="inner-rem"> <!-- REM Example Child -->
+      Inner REM Div (font-size: 1.2rem)
+      <p>Paragraph inside Inner REM.</p>
+    </div>
+  </div>
 
 
-  <!-- <p>This paragraph is temporarily commented out.</p> -->
+  <!-- Commented out paragraph remains -->
+  <!-- <p>This paragraph is commented out and won't appear.</p> -->
+
+  <script src="script.js"></script>
 </body>
 </html>
