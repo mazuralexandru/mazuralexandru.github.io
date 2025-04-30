@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>235. Edits &amp; Annotations (<code class="language-html">&lt;s&gt;</code>, <code class="language-html">&lt;del&gt;</code>, <code class="language-html">&lt;ins&gt;</code>, <code class="language-html">&lt;mark&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>HTML provides specific elements to semantically mark up edits, deleted/inserted content, and text that should be marked or highlighted for reference.</p>
+<ul>
+<li><strong><code class="language-html">&lt;s&gt;</code> (Strikethrough):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents content that is no longer accurate or relevant. Distinct from <code class="language-html">&lt;del&gt;</code> which implies actual removal from the document.</li>
+<li><strong>Default Styling:</strong> Renders with a line-through.</li>
+<li><strong>Example:</strong> <code class="language-html">&lt;s&gt;Was $99.99&lt;/s&gt; Now $49.99!</code></li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;del&gt;</code> (Deleted Text):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents content that has been deleted from the document. Often used in &quot;diff&quot; views or to show revisions.</li>
+<li><strong>Default Styling:</strong> Renders with a line-through.</li>
+<li><strong>Example:</strong> <code class="language-html">The event is on &lt;del&gt;Tuesday&lt;/del&gt; Wednesday.</code></li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;ins&gt;</code> (Inserted Text):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents content that has been added (inserted) into the document. Often used alongside <code class="language-html">&lt;del&gt;</code> to show changes.</li>
+<li><strong>Default Styling:</strong> Renders with an underline.</li>
+<li><strong>Example:</strong> <code class="language-html">The event is on &lt;del&gt;Tuesday&lt;/del&gt; &lt;ins&gt;Wednesday&lt;/ins&gt;.</code></li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;mark&gt;</code> (Marked/Highlighted Text):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents text marked or highlighted for reference purposes, due to its relevance in a particular context (like highlighting search terms in results). It&#39;s <em>not</em> for general emphasis or importance.</li>
+<li><strong>Default Styling:</strong> Renders with a yellow background (similar to using a physical highlighter pen).</li>
+<li><strong>Example:</strong> <code class="language-html">The results showed several instances of the term &lt;mark&gt;semantic HTML&lt;/mark&gt;.</code></li>
+</ul>
+</li>
+</ul>
+<p>These tags provide specific meaning beyond simple presentation, which can be useful for assistive technologies or content processing.</p>
+<p>👀 We&#39;ll add examples of these to <code class="language-text">index.html</code> next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>140. Optional <code class="language-html">type=&quot;text/css&quot;</code> Attribute</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>You might occasionally see the <code class="language-html">type</code> attribute used on a <code class="language-html">&lt;link&gt;</code> tag for stylesheets:</p>
+<pre class="language-html"><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; type=&quot;text/css&quot;&gt; &lt;!-- type attribute --&gt;
+</code></pre>
+<ul>
+<li><strong>Purpose (Historical):</strong> The <code class="language-html">type</code> attribute was used to specify the MIME type (media type) of the linked resource. For CSS files, the correct MIME type is <code class="language-text">text/css</code>.</li>
+<li><strong>HTML5 Status:</strong> In HTML5, if the <code class="language-html">rel</code> attribute is set to <code class="language-html">stylesheet</code>, the <code class="language-html">type</code> attribute is <strong>no longer required</strong>. Browsers assume the type is <code class="language-text">text/css</code> by default when <code class="language-html">rel=&quot;stylesheet&quot;</code> is present.</li>
+<li><strong>Recommendation:</strong> You can safely <strong>omit</strong> the <code class="language-html">type=&quot;text/css&quot;</code> attribute for CSS links in modern HTML5 documents. Including it doesn&#39;t hurt, but it adds unnecessary verbosity.</li>
+</ul>
+<pre class="language-html"><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; &lt;!-- Preferred HTML5 syntax --&gt;
+</code></pre>
+<p>👀 Our <code class="language-html">&lt;link&gt;</code> tags in <code class="language-text">index.html</code> correctly omit the optional <code class="language-html">type</code> attribute.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

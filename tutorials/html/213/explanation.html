@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>213. <code class="language-css">text-decoration</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">text-decoration</code> property is primarily used to add lines to text (underline, overline, line-through).</p>
+<ul>
+<li><strong>Purpose:</strong> To decorate text, most commonly for underlining links or striking out deleted text.</li>
+<li><strong>Common Values:</strong><ul>
+<li><code class="language-css">none</code>: Removes any text decoration (default for most elements). Often used to remove the default underline from links (<code class="language-css">a { text-decoration: none; }</code>).</li>
+<li><code class="language-css">underline</code>: Adds a line below the text. (Default for <code class="language-html">&lt;a&gt;</code>, <code class="language-html">&lt;ins&gt;</code>, <code class="language-html">&lt;u&gt;</code>).</li>
+<li><code class="language-css">overline</code>: Adds a line above the text.</li>
+<li><code class="language-css">line-through</code>: Adds a line through the middle of the text. (Default for <code class="language-html">&lt;s&gt;</code>, <code class="language-html">&lt;del&gt;</code>).</li>
+</ul>
+</li>
+<li><strong>Multiple Lines:</strong> You can specify multiple values space-separated (e.g., <code class="language-css">underline line-through</code>).</li>
+<li><strong>Shorthand:</strong> <code class="language-css">text-decoration</code> is actually a shorthand for several sub-properties:<ul>
+<li><code class="language-css">text-decoration-line</code>: Specifies the type of line (<code class="language-css">underline</code>, <code class="language-css">overline</code>, <code class="language-css">line-through</code>).</li>
+<li><code class="language-css">text-decoration-color</code>: Sets the color of the line.</li>
+<li><code class="language-css">text-decoration-style</code>: Sets the style of the line (<code class="language-css">solid</code>, <code class="language-css">double</code>, <code class="language-css">dotted</code>, <code class="language-css">dashed</code>, <code class="language-css">wavy</code>).</li>
+<li><code class="language-css">text-decoration-thickness</code>: Sets the thickness of the line.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<pre class="language-css"><code class="language-css">a { 
+  text-decoration: none; /* Remove default link underline */
+  color: blue;
+}
+a:hover {
+  text-decoration: underline; /* Add underline only on hover */
+}
+.deleted {
+  text-decoration: line-through red wavy 2px; /* Fancy red wavy strikethrough */
+}
+</code></pre>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We previously had <code class="language-css">text-decoration: underline;</code> commented out for the <code class="language-css">#main-heading</code>. We have uncommented it.</li>
+<li>We also had <code class="language-css">text-decoration: line-through;</code> applied to the second paragraph via <code class="language-css">h1 ~ p</code>. We have removed that entire <code class="language-css">h1 ~ p</code> rule for simplicity, as the adjacent sibling rule (<code class="language-css">h1 + p</code>) already targets that paragraph.</li>
+</ul>
+<pre class="language-css"><code class="language-css">#main-heading {
+    color: cornflowerblue; 
+    text-decoration: underline; /* Uncommented underline */
+    font-family: &quot;Georgia&quot;, Times, serif; 
+    font-style: italic; 
+}
+
+/* Removed h1 ~ p rule */
+/* h1 ~ p {
+  text-decoration: line-through; 
+} */
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The main heading (&quot;Main Heading&quot;) should now have an <strong>underline</strong> again, in addition to being italic and cornflower blue.</li>
+<li>The second paragraph (&quot;This paragraph follows the heading.&quot;) should <strong>no longer</strong> have a line-through, as the <code class="language-css">h1 ~ p</code> rule that applied it has been removed. It retains its light green color and lighter font weight from the <code class="language-css">h1 + p</code> rule.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

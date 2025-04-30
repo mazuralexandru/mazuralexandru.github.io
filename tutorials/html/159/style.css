@@ -1,0 +1,20 @@
+/* CSS comments explain or temporarily disable styles */
+
+/* 
+   This is a multi-line CSS comment.
+   It can span several lines. 
+*/
+
+/* Replaced h1 type selector with ID selector */
+#main-heading {
+    color: cornflowerblue; /* Set heading color */
+    text-decoration: underline; /* Added underline via ID */
+}
+
+
+/* Added class selector rule */
+.highlight-text {
+  background-color: #4d4d00; /* Dark yellow */
+  color: #1a1a1a; /* Near black */
+  padding: 5px; /* Add some padding */
+}

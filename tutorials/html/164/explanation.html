@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>164. Attribute Selectors: Use Cases</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s summarize the common use cases for attribute selectors:</p>
+<ol>
+<li><strong>Styling Form Elements:</strong><ul>
+<li>Targeting inputs by type: <code class="language-css">input[type=&quot;text&quot;]</code>, <code class="language-css">input[type=&quot;checkbox&quot;]</code>, <code class="language-css">input[type=&quot;email&quot;]</code></li>
+<li>Styling required fields: <code class="language-css">[required]</code></li>
+<li>Styling disabled elements: <code class="language-css">[disabled]</code>, <code class="language-css">button[disabled]</code></li>
+<li>Styling read-only fields: <code class="language-css">[readonly]</code></li>
+</ul>
+</li>
+<li><strong>Styling Links:</strong><ul>
+<li>External links: <code class="language-css">a[target=&quot;_blank&quot;]</code></li>
+<li>Links to specific file types: <code class="language-css">a[href$=&quot;.pdf&quot;]</code>, <code class="language-css">a[href$=&quot;.zip&quot;]</code></li>
+<li>Secure/insecure links: <code class="language-css">a[href^=&quot;https://&quot;]</code>, <code class="language-css">a[href^=&quot;http://&quot;]</code></li>
+<li>Links to specific domains: <code class="language-css">a[href*=&quot;example.com&quot;]</code></li>
+<li>Telephone links: <code class="language-css">a[href^=&quot;tel:&quot;]</code></li>
+</ul>
+</li>
+<li><strong>Accessibility Styling:</strong><ul>
+<li>Styling elements based on ARIA roles: <code class="language-css">[role=&quot;alert&quot;]</code></li>
+<li>Styling elements based on ARIA states: <code class="language-css">[aria-expanded=&quot;true&quot;]</code></li>
+</ul>
+</li>
+<li><strong>Custom Data Attributes:</strong><ul>
+<li>Adding tooltips or styling based on <code class="language-html">data-*</code>: <code class="language-css">[data-tooltip]</code>, <code class="language-css">[data-item-id=&quot;123&quot;]</code></li>
+</ul>
+</li>
+<li><strong>Presence Styling:</strong><ul>
+<li>Applying styles only if an attribute exists: <code class="language-css">img[alt]</code> (style images that <em>have</em> alt text), <code class="language-css">abbr[title]</code> (style abbreviations that have an expansion).</li>
+</ul>
+</li>
+</ol>
+<p>Attribute selectors provide powerful hooks into the semantic information already present in your HTML attributes.</p>
+<p>👀 Review the examples in <code class="language-text">style.css</code> (<code class="language-css">p[title]</code> and <code class="language-css">a[target=&quot;_blank&quot;]</code>) and the corresponding attributes in <code class="language-text">index.html</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>119. Viewing Page Source</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Sometimes, you want to see the <strong>raw HTML code</strong> exactly as it was written in the <code>.html</code> file, including comments and the original formatting.</p>
+<ul>
+<li><strong>How:</strong> Right-click on the background of the web page in your browser and select &quot;View Page Source&quot;, &quot;View Source&quot;, or a similar option. Alternatively, use a keyboard shortcut (often <code>Ctrl+U</code> or <code>Cmd+Option+U</code>).</li>
+<li><strong>What it shows:</strong> This opens a new tab or window displaying the plain text content of the HTML file that the browser received. It shows the <code class="language-html">&lt;!DOCTYPE&gt;</code>, <code class="language-html">&lt;html&gt;</code>, <code class="language-html">&lt;head&gt;</code>, <code class="language-html">&lt;body&gt;</code>, all tags, attributes, text content, and importantly, <strong>HTML comments</strong>.</li>
+<li><strong>Difference from DevTools:</strong> This is different from the &quot;Elements&quot; panel in the browser&#39;s Developer Tools. &quot;View Source&quot; shows the <em>original</em> source code, while the DevTools &quot;Elements&quot; panel shows the <em>live, parsed DOM tree</em>, which might have been modified by JavaScript or corrected by the browser&#39;s error handling.</li>
+</ul>
+<p>Viewing the source is useful for seeing the exact HTML structure before any browser interpretation or dynamic changes occur, and for easily seeing HTML comments.</p>
+<p>✅ If you used &quot;View Page Source&quot; on our current page, you would see the exact content of <code class="language-text">index.html</code>, including the commented-out paragraph.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

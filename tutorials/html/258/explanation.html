@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>258. The Four Components of the Box: Content Area</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s break down the components of the CSS Box Model, starting from the inside out.</p>
+<p>The <strong>Content Area</strong> is the innermost part of the box.</p>
+<ul>
+<li><strong>Purpose:</strong> This is where the actual content of the element is displayed – the text inside a paragraph, the image in an <code class="language-html">&lt;img&gt;</code> tag, or the child elements nested within a <code class="language-html">&lt;div&gt;</code>.</li>
+<li><strong>Dimensions:</strong> By default (when <code class="language-css">box-sizing</code> is <code class="language-css">content-box</code>), the <code class="language-css">width</code> and <code class="language-css">height</code> CSS properties directly control the size of this content area.</li>
+<li><strong>Background:</strong> The element&#39;s <code class="language-css">background-color</code> or <code class="language-css">background-image</code> starts here and extends outwards through the padding.</li>
+</ul>
+<p>Think of the content area as the picture inside a picture frame.</p>
+<p>🔬 Inspect the <code class="language-html">&lt;h1 id=&quot;main-heading&quot;&gt;</code> element in <code class="language-text">index.html</code> using DevTools. In the Computed/Layout tab&#39;s box model diagram, the innermost rectangle represents the content area. Hover over it to see its dimensions highlighted in the preview.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

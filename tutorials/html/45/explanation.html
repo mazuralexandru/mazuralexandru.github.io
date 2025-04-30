@@ -9,99 +9,36 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>45. Cascade Factor: Specificity Calculation</h1>
-<p>Specificity is a weight or score that a browser calculates for each CSS selector to determine which rule prevails in the cascade when rules conflict. Higher specificity scores win.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Modification:</strong> Added an <code class="language-html">id=&quot;unique-para&quot;</code> attribute to our paragraph, alongside its existing <code class="language-html">class=&quot;special&quot;</code>.</li>
-<li><strong>CSS Addition:</strong> Added a third conflicting rule using the ID selector <code class="language-css">#unique-para</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;CSS Cascade Demo&lt;/h1&gt;
-
-  &lt;p id=&quot;unique-para&quot; class=&quot;special&quot;&gt;This paragraph has conflicting styles.&lt;/p&gt; &lt;!-- Added ID --&gt;
-
-  &lt;!-- Pruned previous sibling examples --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+  <h1>45. DOCTYPE: Placement</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The placement rule for <code class="language-html">&lt;!DOCTYPE html&gt;</code> is strict and simple: <strong>It must be the very first thing in the HTML file.</strong></p>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;  &lt;!-- CORRECT: First line --&gt;
+&lt;html&gt;
+  ...
+&lt;/html&gt;
 </code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Updated P rule */
-p {
-  font-style: italic;
-  color: #ccc; /* Rule 1: Type Selector */
-}
-
-/* Existing conflicting rule */
-.special {
-  color: lightcoral; /* Rule 2: Class Selector */
-  font-weight: bold;
-}
-
-/* Added ID selector rule */
-#unique-para {
-  color: cyan; /* Rule 3: ID Selector */
-}
-
-/* CSS files can also have comments! */
+<pre class="language-html"><code class="language-html">&lt;!-- INCORRECT: Comment before DOCTYPE --&gt;
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+  ...
+&lt;/html&gt;
 </code></pre>
-<p><strong>Calculating Specificity (Simplified)</strong></p>
-<p>Browsers calculate specificity using (typically) four components, often represented like <code>(A, B, C, D)</code>:</p>
-<ol>
-<li><strong>A (Inline Styles):</strong> Score <code>1</code> here if the style is applied using the <code class="language-html">style=&quot;...&quot;</code> attribute directly on the element. Otherwise, <code>0</code>. (We have no inline styles here).</li>
-<li><strong>B (IDs):</strong> Count the number of ID selectors (<code class="language-css">#idname</code>) in the selector.</li>
-<li><strong>C (Classes, Attributes, Pseudo-classes):</strong> Count the number of class selectors (<code class="language-css">.classname</code>), attribute selectors (<code class="language-css">[attr=val]</code>), and pseudo-classes (like <code class="language-css">:hover</code>, <code class="language-css">:nth-child()</code>, which we haven&#39;t covered yet).</li>
-<li><strong>D (Types, Pseudo-elements):</strong> Count the number of type selectors (<code class="language-css">p</code>, <code class="language-css">div</code>) and pseudo-elements (like <code class="language-css">:before</code>, <code class="language-css">:after</code>, not covered yet).</li>
-</ol>
-<p><em>Universal selector (<code>*</code>) and combinators (<code> </code>, <code>&gt;</code>, <code>+</code>, <code>~</code>) do <strong>not</strong> add to specificity.</em></p>
-<p><strong>Comparing Our Rules:</strong></p>
-<ul>
-<li><code class="language-css">p</code>: Has one type selector. Specificity = <strong>(0, 0, 0, 1)</strong></li>
-<li><code class="language-css">.special</code>: Has one class selector. Specificity = <strong>(0, 0, 1, 0)</strong></li>
-<li><code class="language-css">#unique-para</code>: Has one ID selector. Specificity = <strong>(0, 1, 0, 0)</strong></li>
-</ul>
-<p><strong>Determining the Winner:</strong></p>
-<p>Specificity values are compared component by component from left to right (A, then B, then C, then D). The first component where one selector has a higher value determines the winner.</p>
-<ul>
-<li><p>Comparing <code class="language-css">#unique-para</code> (0,1,0,0) and <code class="language-css">.special</code> (0,0,1,0):</p>
-<ul>
-<li>A is tied (0 vs 0).</li>
-<li>B: <code class="language-css">#unique-para</code> has 1, <code class="language-css">.special</code> has 0. <strong><code>#unique-para</code> wins!</strong> We don&#39;t need to compare C and D.</li>
-</ul>
-</li>
-<li><p>Comparing <code class="language-css">.special</code> (0,0,1,0) and <code class="language-css">p</code> (0,0,0,1):</p>
-<ul>
-<li>A is tied (0 vs 0).</li>
-<li>B is tied (0 vs 0).</li>
-<li>C: <code class="language-css">.special</code> has 1, <code class="language-css">p</code> has 0. <strong><code>.special</code> wins!</strong></li>
-</ul>
-</li>
-</ul>
-<p>So, for the <code class="language-css">color</code> property, the <code class="language-css">#unique-para</code> rule has the highest specificity and will determine the final color.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the paragraph. Its text color should now be <strong>cyan</strong>, overriding both the <code class="language-css">lightcoral</code> from <code>.special</code> and the <code class="language-css">#ccc</code> from <code>p</code>. It should still be bold (from <code>.special</code>) and italic (from <code>p</code>) as those properties weren&#39;t overridden by the ID rule.</li>
-<li>✅ Inspect the paragraph in DevTools. In the Styles pane:<ul>
-<li>You&#39;ll see the <code class="language-css">#unique-para</code> rule applying <code class="language-css">color: cyan</code>.</li>
-<li>You&#39;ll see <code class="language-css">color: lightcoral</code> (from <code>.special</code>) and <code class="language-css">color: #ccc</code> (from <code>p</code>) <strong>both crossed out</strong>, as they lost the specificity battle to the ID selector for the <code class="language-css">color</code> property.</li>
-<li>The <code class="language-css">font-weight: bold</code> (from <code>.special</code>) and <code class="language-css">font-style: italic</code> (from <code>p</code>) should still be shown as active.</li>
-</ul>
-</li>
-</ul>
-<p>Mastering specificity calculation is key to understanding why styles apply (or don&#39;t apply!) as expected. Aim for the lowest necessary specificity by favouring class selectors over IDs for general styling.</p>
+<pre class="language-html"><code class="language-html"> 
+&lt;!DOCTYPE html&gt;  &lt;!-- INCORRECT: Whitespace before DOCTYPE --&gt;
+&lt;html&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+<p>Any characters or whitespace before the DOCTYPE will invalidate it, potentially causing the browser to fall back into Quirks Mode. Always ensure it&#39;s right at the top, starting at column 1 of line 1.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

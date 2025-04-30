@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>156. ID Selectors: Scope</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The scope of an ID selector is inherently limited by the uniqueness requirement of the HTML <code class="language-html">id</code> attribute.</p>
+<ul>
+<li><strong>Unique Target:</strong> An ID selector like <code class="language-css">#main-header</code> is intended to match <strong>at most one element</strong> on any given page – the single element that has <code class="language-html">id=&quot;main-header&quot;</code>.</li>
+<li><strong>High Specificity:</strong> ID selectors have a higher specificity than class selectors or type selectors. This means styles applied via an ID selector are &quot;stronger&quot; and will override conflicting styles from class or type selectors targeting the same element. (More on specificity later).</li>
+</ul>
+<p>Because an ID must be unique, ID selectors provide a way to precisely target a single, specific element for styling or JavaScript interaction.</p>
+<p>👀 In <code class="language-text">index.html</code>, if we added <code class="language-html">id=&quot;main-heading&quot;</code> to the <code class="language-html">&lt;h1&gt;</code> tag, a CSS rule like <code class="language-css">#main-heading { border-bottom: 1px solid white; }</code> would apply <em>only</em> to that specific heading element. No other <code class="language-html">&lt;h1&gt;</code> elements (if they existed) would be affected.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

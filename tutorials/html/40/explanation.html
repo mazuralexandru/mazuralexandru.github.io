@@ -9,86 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>40. CSS Combinators: Descendant Combinator (Space)</h1>
-<p>Selectors can be combined to define relationships between elements in the HTML structure. These combinations are called <strong>Combinators</strong>. The most common is the <strong>Descendant Combinator</strong>, represented by a space.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>40. Why No Closing Tag for Void Elements?</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The fundamental reason void elements don&#39;t have (and don&#39;t need) a closing tag is that they <strong>cannot contain any content</strong>.</p>
+<p>Elements like <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;div&gt;</code>, or <code class="language-html">&lt;h1&gt;</code> are <em>container</em> elements. Their opening and closing tags define the boundaries of the content they hold.</p>
+<p>Void elements like <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;br&gt;</code>, or <code class="language-html">&lt;input&gt;</code> are not containers. They represent a single, self-contained entity or instruction.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the <code>h2</code> and <code>h3</code> headings. Changed the <code>h1</code> and <code>p</code> content for the new topic.</li>
-<li><strong>HTML Addition:</strong> Added an <code class="language-html">&lt;article&gt;</code> element containing a <code class="language-html">&lt;p&gt;</code> and a nested <code class="language-html">&lt;div&gt;</code> which also contains a <code class="language-html">&lt;p&gt;</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the grouped selector <code>h1, h2, h3</code> rule.</li>
-<li><strong>CSS Addition:</strong> Added a new rule using the descendant combinator: <code class="language-css">article p</code>.</li>
+<li>An image (<code class="language-html">&lt;img&gt;</code>) is just an image; it doesn&#39;t make sense to put text or other elements <em>inside</em> the image tag itself.</li>
+<li>A line break (<code class="language-html">&lt;br&gt;</code>) is just an instruction to break the line; there&#39;s no content <em>within</em> the break.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Descendant Combinator Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;p&gt;This paragraph is outside the article.&lt;/p&gt;
-
-  &lt;article&gt; &lt;!-- Added article element --&gt;
-    &lt;p&gt;This paragraph is a direct child of the article.&lt;/p&gt;
-    &lt;div&gt;
-      &lt;p&gt;This paragraph is nested deep inside the article.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/article&gt;
-
-  &lt;!-- Pruned previous heading examples --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Updated P rule */
-p {
-  font-style: italic;
-  color: #ccc;
-}
-
-/* Removed grouped heading rule */
-/*
-h1,
-h2,
-h3 { ... }
-*/
-
-/* Descendant Combinator Example */
-article p {
-  color: lightgreen; /* Style paragraphs INSIDE articles */
-  border-left: 3px solid lightgreen;
-  padding-left: 8px;
-  margin-left: 10px;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Descendant Combinator (<code> </code> - Space)</strong></p>
-<ul>
-<li><strong>Syntax:</strong> Two or more selectors separated by a space (<code class="language-css"> </code>). Example: <code class="language-css">ancestor descendant</code>.</li>
-<li><strong>Meaning:</strong> Selects all elements matching the <code class="language-css">descendant</code> selector that are located <strong>anywhere inside</strong> an element matching the <code class="language-css">ancestor</code> selector in the HTML structure. The descendant doesn&#39;t have to be a direct child; it can be nested many levels deep.</li>
-<li><strong>Example:</strong> <code class="language-css">article p</code> selects any <code class="language-html">&lt;p&gt;</code> element that exists somewhere within an <code class="language-html">&lt;article&gt;</code> element.</li>
-</ul>
-<p>In our code:</p>
-<ul>
-<li>The rule <code class="language-css">article p { ... }</code> targets paragraph elements <em>within</em> the <code class="language-html">&lt;article&gt;</code>.</li>
-<li>It applies a <code class="language-css">lightgreen</code> color, a left border, padding, and margin to these paragraphs.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the <strong>first</strong> paragraph (&quot;This paragraph is outside the article.&quot;). It should still have the default italic style and <code>#ccc</code> color defined by the simple <code class="language-css">p</code> rule. It is <em>not</em> affected by the <code class="language-css">article p</code> rule because it&#39;s not inside an <code class="language-html">&lt;article&gt;</code>.</li>
-<li>👀 Observe the <strong>second</strong> paragraph (&quot;This paragraph is a direct child...&quot;) and the <strong>third</strong> paragraph (&quot;This paragraph is nested deep...&quot;). Both should now be <strong>light green</strong> and have a <strong>green left border</strong> with some spacing. They are both selected because they are descendants of the <code class="language-html">&lt;article&gt;</code> element, even though one is a direct child and the other is nested deeper within a <code class="language-html">&lt;div&gt;</code>.</li>
-<li>✅ Inspect the second and third paragraphs in DevTools. The Styles pane will show the <code class="language-css">article p</code> rule being applied. Inspect the first paragraph, and you&#39;ll see it&#39;s not applied there.</li>
-</ul>
-<p>The descendant combinator is very common for scoping styles within specific sections of a page (e.g., styling links only within the main navigation). Next, we&#39;ll look at the more specific Child Combinator.</p>
+<p>Since they can&#39;t hold content, a closing tag would be redundant and serve no purpose. The single tag is sufficient to represent the element and its function.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>. Next, we&#39;ll assemble the minimal structure of an HTML document.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

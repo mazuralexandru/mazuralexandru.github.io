@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>182. Specificity Calculation Method</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Specificity is typically calculated and compared using a four-component system, often represented as <code>(A, B, C, D)</code>:</p>
+<ol>
+<li><strong>A (Inline Styles):</strong> Counts 1 if the declaration comes from an inline <code class="language-html">style=&quot;...&quot;</code> attribute. Otherwise 0. (This is the highest level).</li>
+<li><strong>B (IDs):</strong> Counts the number of ID selectors (<code class="language-css">#idname</code>) in the overall selector.</li>
+<li><strong>C (Classes, Attributes, Pseudo-classes):</strong> Counts the number of class selectors (<code class="language-css">.classname</code>), attribute selectors (<code class="language-css">[attribute]</code>), and pseudo-classes (<code class="language-css">:hover</code>, <code class="language-css">:focus</code>, <code class="language-css">:nth-child()</code>, etc.) in the selector.</li>
+<li><strong>D (Types, Pseudo-elements):</strong> Counts the number of type selectors (<code class="language-css">p</code>, <code class="language-css">div</code>) and pseudo-elements (<code class="language-css">::before</code>, <code class="language-css">::after</code>, <code class="language-css">::first-line</code>, etc.) in the selector.</li>
+</ol>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li>The universal selector (<code class="language-css">*</code>) and combinators (<code class="language-css">&gt;</code>,<code class="language-css">+</code>,<code class="language-css">~</code>, space) <strong>do not</strong> contribute to specificity.</li>
+<li>The negation pseudo-class <code class="language-css">:not()</code> itself doesn&#39;t count, but the selectors <em>inside</em> it do.</li>
+<li>The <code>:where()</code> pseudo-class intentionally has zero specificity (0,0,0,0), allowing you to group selectors without increasing specificity.</li>
+<li>The <code>:is()</code> and <code>:has()</code> pseudo-classes take on the specificity of their <em>most specific</em> argument selector.</li>
+</ul>
+<p><strong>Comparison:</strong> Specificity values are compared from left to right (A then B then C then D). The first component where one selector has a higher value determines the winner. A selector with a score of <code>(0,1,0,0)</code> (one ID) beats a selector with <code>(0,0,10,5)</code> (ten classes and five type selectors) because the ID component (B) is higher.</p>
+<p>Understanding this calculation helps predict which styles will apply.</p>
+<p>👀 Let&#39;s analyze a selector from <code class="language-text">style.css</code>: <code class="language-css">.container &gt; p</code>.</p>
+<ul>
+<li>A (Inline): 0</li>
+<li>B (IDs): 0</li>
+<li>C (Classes/Attrs/Pseudo-classes): 1 (<code class="language-css">.container</code>)</li>
+<li>D (Types/Pseudo-elements): 1 (<code class="language-css">p</code>)</li>
+<li>Specificity: <code>(0, 0, 1, 1)</code></li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

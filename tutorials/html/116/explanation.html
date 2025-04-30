@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>116. Filename Conventions</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While operating systems allow flexibility, following standard conventions for naming your web files makes your project cleaner, easier to manage, and less prone to issues, especially when deploying to web servers.</p>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li><strong>Lowercase:</strong> Use all lowercase letters (e.g., <code class="language-text">about-us.html</code>, not <code class="language-text">About-Us.HTML</code>). Some web servers are case-sensitive, so consistency prevents broken links.</li>
+<li><strong>No Spaces:</strong> Avoid spaces in filenames. Browsers and command lines handle spaces poorly (often requiring encoding like <code class="language-text">%20</code>).</li>
+<li><strong>Use Hyphens:</strong> Use hyphens (<code class="language-text">-</code>) to separate words (e.g., <code class="language-text">contact-form.css</code>). Underscores (<code class="language-text">_</code>) are sometimes used, but hyphens are generally preferred and more common in URLs.</li>
+<li><strong>Be Descriptive:</strong> Choose names that clearly indicate the file&#39;s purpose (e.g., <code class="language-text">product-gallery.js</code>, <code class="language-text">main-styles.css</code>). Avoid generic names like <code class="language-text">file1.html</code>.</li>
+<li><strong><code>index.html</code> Significance:</strong> The filename <code class="language-text">index.html</code> has special meaning. Most web servers are configured to automatically serve <code class="language-text">index.html</code> if a user requests a directory URL (e.g., visiting <code class="language-text">www.example.com/</code> or <code class="language-text">www.example.com/products/</code> might serve <code class="language-text">index.html</code> from the root or <code class="language-text">products</code> directory, respectively). It&#39;s the conventional name for the default or home page of a directory.</li>
+</ul>
+<p>✅ Our filenames (<code class="language-text">index.html</code>, <code class="language-text">base_styles.css</code>, <code class="language-text">style.css</code>) follow these conventions.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

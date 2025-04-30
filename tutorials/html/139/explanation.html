@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>139. <code class="language-html">&lt;link href=&quot;...&quot;&gt;</code> Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-html">href</code> attribute specifies the <strong>location (URL or path)</strong> of the external resource being linked. For stylesheets, this is the path to your <code class="language-text">.css</code> file.</p>
+<ul>
+<li><strong>Importance:</strong> If the <code class="language-html">href</code> path is incorrect, the browser will not be able to find or load the CSS file, and none of the styles defined within it will be applied. This is a very common source of errors when starting out.</li>
+<li><strong>Relative Paths:</strong> As discussed, these are relative to the location of the HTML file.<ul>
+<li><code class="language-html">styles.css</code>: Same directory.</li>
+<li><code class="language-html">css/styles.css</code>: In a <code class="language-text">css</code> subdirectory.</li>
+<li><code class="language-html">../styles.css</code>: In the parent directory.</li>
+</ul>
+</li>
+<li><strong>Absolute Paths:</strong> Full URLs (<code class="language-html">https://...</code>) or root-relative paths (<code class="language-html">/css/styles.css</code>). Root-relative paths start from the domain root and are often useful in larger sites to avoid complex <code class="language-html">../</code> sequences.</li>
+<li><strong>Debugging:</strong> If styles aren&#39;t applying, the first thing to check is often the <code class="language-html">href</code> path in your <code class="language-html">&lt;link&gt;</code> tag and the actual location of your <code class="language-text">.css</code> file. Browser developer tools (Network panel) can also show if the CSS file failed to load (404 Not Found error).</li>
+</ul>
+<p>👀 In <code class="language-text">index.html</code>, the paths <code class="language-html">base_styles.css</code> and <code class="language-html">style.css</code> assume these files are directly alongside <code class="language-text">index.html</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

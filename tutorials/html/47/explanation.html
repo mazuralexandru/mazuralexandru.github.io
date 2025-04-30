@@ -9,89 +9,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>47. Introduction to CSS Inheritance</h1>
-<p>Besides the Cascade deciding between conflicting rules applied <em>directly</em> to an element, CSS also features <strong>Inheritance</strong>. This means that some CSS properties, when applied to a parent element, are automatically passed down to its child elements <em>unless</em> a more specific rule targets the child directly.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>47. DOCTYPE: Historical Context</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The simplicity of <code class="language-html">&lt;!DOCTYPE html&gt;</code> is a welcome feature of HTML5. It&#39;s worth knowing that previous versions of HTML and XHTML had much more complex DOCTYPE declarations.</p>
+<p>For example:</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the paragraph used for cascade examples.</li>
-<li><strong>HTML Addition:</strong> Added a <code class="language-html">&lt;div&gt;</code> with some direct text styling (using an inline <code class="language-html">style</code> attribute for demonstration brevity) and a <code class="language-html">&lt;p&gt;</code> element nested inside it.</li>
-<li><strong>CSS Pruning:</strong> Removed the conflicting <code>.special</code> rules and the basic <code>p</code> rule to create a clean slate for demonstrating inheritance.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;CSS Inheritance Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous cascade examples --&gt;
-
-  &lt;div style=&quot;color: mediumpurple; border: 1px solid grey; padding: 10px;&quot;&gt; &lt;!-- Parent Div --&gt;
-    This text is directly inside the div (inherits color).
-    &lt;p&gt;This paragraph is inside the div.&lt;/p&gt; &lt;!-- Child P --&gt;
-  &lt;/div&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+<li><strong>HTML 4.01 Strict:</strong><pre class="language-html"><code class="language-html">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
 </code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Updated H1 rule */
-h1 {
-  color: lightblue;
-}
-
-/* Pruned previous rules */
-/*
-p { ... }
-.special { ... }
-.special { ... }
-*/
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Inheritance Explained</strong></p>
-<ul>
-<li><strong>Concept:</strong> Child elements &quot;inherit&quot; the computed value of certain properties from their parent element in the HTML structure.</li>
-<li><strong>Which Properties Inherit?</strong> Primarily properties related to text:<ul>
-<li><code class="language-css">color</code></li>
-<li><code class="language-css">font-family</code>, <code class="language-css">font-size</code>, <code class="language-css">font-weight</code>, <code class="language-css">font-style</code></li>
-<li><code class="language-css">line-height</code></li>
-<li><code class="language-css">text-align</code></li>
-<li><code class="language-css">list-style</code> properties</li>
-<li>Also <code class="language-css">visibility</code>, <code class="language-css">cursor</code></li>
-</ul>
 </li>
-<li><strong>Which Properties Don&#39;t (Usually) Inherit?</strong> Most properties related to element boxes and positioning:<ul>
-<li><code class="language-css">background-color</code></li>
-<li><code class="language-css">width</code>, <code class="language-css">height</code></li>
-<li><code class="language-css">padding</code>, <code class="language-css">border</code>, <code class="language-css">margin</code></li>
-<li><code class="language-css">position</code>, <code class="language-css">top</code>, <code class="language-css">left</code>, etc.
-<em>(Think: It usually wouldn&#39;t make sense for a child element to automatically get the same border or width as its parent).</em></li>
-</ul>
+<li><strong>XHTML 1.0 Transitional:</strong><pre class="language-html"><code class="language-html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+</code></pre>
 </li>
 </ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li>We applied <code class="language-css">color: mediumpurple;</code> directly to the parent <code class="language-html">&lt;div&gt;</code> using an inline style. We also gave it a border and padding (which won&#39;t be inherited).</li>
-<li>We haven&#39;t applied <em>any</em> specific CSS rules to the child <code class="language-html">&lt;p&gt;</code> element in our <code class="language-text">style.css</code> file.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the parent <code class="language-html">&lt;div&gt;</code>. It has a gray border and padding. The text directly inside it (&quot;This text is directly inside the div...&quot;) is <strong>medium purple</strong>.</li>
-<li>👀 Now, observe the child <code class="language-html">&lt;p&gt;</code> (&quot;This paragraph is inside the div.&quot;). Its text color should <strong>also be medium purple</strong>. Why? Because the <code class="language-css">color</code> property is <em>inheritable</em>. Since no specific <code class="language-css">color</code> rule targets the <code class="language-html">&lt;p&gt;</code> element itself, it inherits the <code class="language-css">mediumpurple</code> value from its parent <code class="language-html">&lt;div&gt;</code>.</li>
-<li>👀 Notice the <code class="language-html">&lt;p&gt;</code> does <em>not</em> get the gray border or the padding from the parent <code class="language-html">&lt;div&gt;</code>, because <code class="language-css">border</code> and <code class="language-css">padding</code> are <em>not</em> typically inherited properties.</li>
-<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools. In the Styles pane, find the <code class="language-css">color</code> property. It should indicate that the value <code class="language-css">mediumpurple</code> is &quot;Inherited from div&quot;. This explicitly shows inheritance in action.</li>
-</ul>
-<p>Inheritance simplifies CSS by allowing you to set common text styles on parent containers and have them flow down to children automatically. The cascade (specificity, source order) still applies if you <em>do</em> target the child element directly.</p>
+<p>These older DOCTYPEs included references to Document Type Definitions (DTDs), which were formal specifications defining the allowed elements and structure for that specific HTML/XHTML version. They were long, hard to remember, and easy to get wrong.</p>
+<p>HTML5 simplified this dramatically. <code class="language-html">&lt;!DOCTYPE html&gt;</code> is sufficient to identify the document as HTML and trigger Standards Mode in all modern browsers. You generally don&#39;t need to worry about the older, complex DOCTYPEs unless you&#39;re working on very old legacy projects.</p>
+<p>👀 <code class="language-text">index.html</code> remains empty. Next: the <code class="language-html">&lt;html&gt;</code> element.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

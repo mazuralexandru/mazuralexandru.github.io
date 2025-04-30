@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>280. Longhand Padding Properties: <code class="language-css">padding-left</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Finally, <code class="language-css">padding-left</code>.</p>
+<ul>
+<li><strong>Purpose:</strong> Sets the amount of padding space specifically on the <strong>left</strong> edge of the element, between the left edge of the content and the left border.</li>
+<li><strong>Syntax:</strong> <code class="language-css">padding-left: value;</code></li>
+<li><strong>Values:</strong> Same as <code class="language-css">padding-top</code> (non-negative lengths or percentages relative to container width).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">padding-left: 30px;</code> to the <code class="language-css">.box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; 
+  max-height: 200px; 
+  overflow: auto; 
+  background-color: cornflowerblue; 
+  padding-top: 20px; 
+  padding-right: 5px; 
+  padding-bottom: 15px; 
+  padding-left: 30px; /* Added specific left padding */
+  margin: 1em auto; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The blue box should now have 30px of space between the left edge of the text content and the left edge of the blue background. We now have different padding values applied to all four sides using the longhand properties.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

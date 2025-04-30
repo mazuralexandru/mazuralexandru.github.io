@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>242. Code &amp; Preformatted Text (<code class="language-html">&lt;code&gt;</code>, <code class="language-html">&lt;pre&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>HTML provides elements specifically for marking up computer code and preformatted text.</p>
+<ul>
+<li><strong><code class="language-html">&lt;code&gt;</code> (Code Fragment):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents a fragment of computer code (inline). Can be a variable name, keyword, filename, code snippet, etc.</li>
+<li><strong>Default Styling:</strong> Typically rendered in the browser&#39;s default <strong>monospace</strong> font.</li>
+<li><strong>Usage:</strong> Used inline within paragraphs or other text blocks.</li>
+<li>Example: <code class="language-html">The JavaScript keyword &lt;code&gt;const&lt;/code&gt; declares a constant.</code></li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;pre&gt;</code> (Preformatted Text):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents a block of text where whitespace (spaces, tabs, newlines) is significant and should be preserved exactly as written in the HTML source.</li>
+<li><strong>Default Styling:</strong> Typically rendered in a <strong>monospace</strong> font. Crucially, it respects whitespace and newlines from the source (<code class="language-css">white-space: pre;</code> by default).</li>
+<li><strong>Usage:</strong> Used for displaying blocks of code, poetry, ASCII art, or any text where formatting and line breaks are important.</li>
+</ul>
+</li>
+<li><strong>Combining <code class="language-html">&lt;pre&gt;</code> and <code class="language-html">&lt;code&gt;</code>:</strong> It&#39;s common and semantically correct practice to wrap code blocks within a <code class="language-html">&lt;pre&gt;</code> element with a <code class="language-html">&lt;code&gt;</code> element inside it. The <code class="language-html">&lt;pre&gt;</code> handles the preservation of whitespace and block formatting, while the <code class="language-html">&lt;code&gt;</code> provides the semantic meaning that the content <em>is</em> code.<pre class="language-html"><code class="language-html">&lt;pre&gt;&lt;code&gt;function greet(name) {
+  console.log(`Hello, ${name}!`);
+}&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+</li>
+<li><strong>Escaping HTML:</strong> If your code snippet itself contains HTML characters like <code>&lt;</code> or <code>&gt;</code>, you <strong>must</strong> escape them using HTML entities (<code class="language-html">&amp;lt;</code> for <code>&lt;</code>, <code class="language-html">&amp;gt;</code> for <code>&gt;</code>) within the <code class="language-html">&lt;code&gt;</code> block to prevent the browser from interpreting them as actual HTML tags.<pre class="language-html"><code class="language-html">&lt;code&gt;&amp;lt;div class=&quot;example&quot;&amp;gt;This is HTML code.&amp;lt;/div&amp;gt;&lt;/code&gt;
+</code></pre>
+</li>
+</ul>
+<p>👀 We&#39;ll add examples to <code class="language-text">index.html</code> next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

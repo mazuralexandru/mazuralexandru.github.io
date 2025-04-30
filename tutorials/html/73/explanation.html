@@ -9,142 +9,27 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>73. Semantic HTML for Code &amp; Preformatted Text: <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code></h1>
-<p>HTML provides tags specifically for marking up computer code and preformatted text: <code class="language-html">&lt;code&gt;</code> for inline code snippets and <code class="language-html">&lt;pre&gt;</code> for blocks of text where whitespace (spaces, tabs, line breaks) is significant and should be preserved.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>73. <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code>: Syntax</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>The character encoding is declared using a <code class="language-html">&lt;meta&gt;</code> element with the <code class="language-html">charset</code> attribute, placed inside the <code class="language-html">&lt;head&gt;</code>.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the small/sup/sub examples.</li>
-<li><strong>HTML Addition:</strong> Added a paragraph with inline <code class="language-html">&lt;code&gt;</code> tags and a <code class="language-html">&lt;pre&gt;</code> block containing a <code class="language-html">&lt;code&gt;</code> block (common practice for code blocks). Added escaping for HTML within the code block.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">small</code>, <code>sup</code>, <code>sub</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added styling rules for <code class="language-css">code</code> and <code class="language-css">pre</code>.</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></li>
+<li><strong>Element:</strong> <code class="language-html">&lt;meta&gt;</code> is a void element used for various types of metadata.</li>
+<li><strong>Attribute:</strong> <code class="language-html">charset</code> specifically declares the character encoding.</li>
+<li><strong>Value:</strong> <code class="language-text">&quot;UTF-8&quot;</code> is the value specifying the encoding to use. (Case-insensitive, but <code class="language-text">UTF-8</code> is standard).</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Code &amp; Preformatted Text Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous small/sup/sub examples --&gt;
-
-  &lt;p&gt;
-    Use the &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag for inline code snippets like
-    &lt;code&gt;document.getElementById(&#39;id&#39;)&lt;/code&gt; or CSS properties like
-    &lt;code&gt;font-family&lt;/code&gt;.
-  &lt;/p&gt;
-
-  &lt;p&gt;Use the &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; tag for blocks of preformatted text, often code:&lt;/p&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;/* style.css snippet */
-body {
-  color: #333; /* Example Color */
-  font-size: 16px;
-}
-
-.highlight {
-  background-color: yellow;
-}&lt;/code&gt;&lt;/pre&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+<p>✅ <strong>Observe <code class="language-text">index.html</code>!</strong> We&#39;ve now added the character set declaration.</p>
+<pre class="language-html"><code class="language-html">    &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- Added Character Set --&gt;
 </code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Pruned small/sup/sub rules */
-/* small { ... } */
-/* sup { ... } */
-/* sub { ... } */
-
-/* Code &amp; Preformatted Text Demo */
-p { /* Base paragraph styling */
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-/* Style for inline code */
-code {
-  font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Ubuntu Mono&#39;, monospace; /* Monospace font stack */
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
-  padding: 0.1em 0.3em; /* Small padding */
-  border-radius: 3px;
-  font-size: 0.9em; /* Slightly smaller than surrounding text */
-}
-
-/* Style for preformatted blocks */
-pre {
-  font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Ubuntu Mono&#39;, monospace;
-  background-color: #1e1e1e; /* Darker background for blocks */
-  border: 1px solid #555;
-  padding: 1em;
-  border-radius: 5px;
-  white-space: pre; /* Preserve whitespace (browser default for pre) */
-  overflow-x: auto; /* Add horizontal scroll for long lines */
-  max-width: 500px; /* Match paragraph width */
-  margin-bottom: 15px;
-}
-
-/* Style for code specifically inside pre (often same as inline code) */
-pre code {
-  /* Reset styles that might interfere from inline code */
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  font-size: 1em; /* Inherit pre&#39;s font size */
-  color: #d4d4d4; /* Lighter text color for dark background */
-}
-
-/* Add basic syntax highlighting hint (requires JS library like PrismJS/HighlightJS) */
-.language-css .token.selector { color: #d7ba7d; }
-.language-css .token.property { color: #569cd6; }
-.language-css .token.string { color: #ce9178; }
-.language-css .token.function { color: #dcdcaa; }
-.language-css .token.comment { color: #6a9955; font-style: italic; }
-/* ... etc (more rules needed for full highlighting) ... */
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code> Explained</strong></p>
-<ul>
-<li><strong><code class="language-html">&lt;code&gt;</code> (Code Fragment):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Represents a short fragment of computer code (variable names, keywords, filenames, code snippets).</li>
-<li><strong>Default Styling:</strong> Typically rendered in the browser&#39;s default monospace font. Often styled further with CSS (background, padding) for better visual distinction.</li>
-</ul>
-</li>
-<li><strong><code class="language-html">&lt;pre&gt;</code> (Preformatted Text):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Represents a block of text in which structure is defined by typographic conventions (like fixed-width characters and significant whitespace) rather than HTML elements. Primarily used for code blocks, ASCII art, or any text where preserving exact spaces and line breaks is crucial.</li>
-<li><strong>Default Styling:</strong> Uses a monospace font and preserves whitespace and line breaks (<code class="language-css">white-space: pre;</code> behavior). Often styled with CSS for background, borders, padding, and overflow handling.</li>
-</ul>
-</li>
-<li><strong><code>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code> Combination:</strong> It&#39;s very common and recommended to wrap code blocks inside a <code class="language-html">&lt;pre&gt;</code> element with a <code class="language-html">&lt;code&gt;</code> element nested directly inside it. The <code class="language-html">&lt;pre&gt;</code> handles the whitespace preservation and block formatting, while the <code class="language-html">&lt;code&gt;</code> provides the semantic meaning that the content <em>is</em> code. This also provides a good hook for styling and syntax highlighting libraries.</li>
-<li><strong>Escaping HTML:</strong> If you need to display literal <code>&lt;</code>, <code>&gt;</code>, or <code>&amp;</code> characters <em>within</em> your code examples inside <code>&lt;code&gt;</code> or <code>&lt;pre&gt;</code>, you <strong>must</strong> escape them using HTML entities:<ul>
-<li><code>&lt;</code> becomes <code>&amp;lt;</code></li>
-<li><code>&gt;</code> becomes <code>&amp;gt;</code></li>
-<li><code>&amp;</code> becomes <code>&amp;amp;</code>
-(Notice this in the <code>&lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;</code> examples in the first paragraph and the <code>&lt;code&gt;</code> block inside the <code>&lt;pre&gt;</code> block).</li>
-</ul>
-</li>
-</ul>
-<p><strong>Syntax Highlighting:</strong></p>
-<ul>
-<li>While CSS can apply basic styles, achieving proper syntax highlighting (coloring different parts of the code like keywords, strings, comments) usually requires a JavaScript library (like Prism.js or highlight.js). These libraries typically look for the <code>&lt;pre&gt;&lt;code&gt;</code> structure and add CSS classes to different parts of the code (tokens), which you then style with CSS (like the basic <code>.language-css .token.*</code> rules added as an example). We won&#39;t implement the JS part here, but the CSS provides a hint.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Inline <code>&lt;code&gt;</code> elements within the first paragraph should appear in a monospace font with a subtle background.</li>
-<li>👀 The <code>&lt;pre&gt;&lt;code&gt;</code> block should display the CSS code exactly as formatted (with indentation and line breaks), using a monospace font, on a dark background with a border. If lines are too long, horizontal scrolling should be enabled. The basic token colors might apply.</li>
-<li>✅ Inspect the elements. Note the <code>&lt;pre&gt;</code> and nested <code>&lt;code&gt;</code> structure for the code block. Examine the computed styles, especially <code>white-space</code> on the <code>&lt;pre&gt;</code> element.</li>
-</ul>
-<p>Use <code>&lt;code&gt;</code> for inline code and the <code>&lt;pre&gt;&lt;code&gt;</code> pattern for code blocks to represent code semantically and enable effective styling. Remember to escape HTML characters within your code examples.</p>
+<p>This line tells the browser to interpret the file using the UTF-8 standard.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

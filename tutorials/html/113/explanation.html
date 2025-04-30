@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>113. CSS Comments: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The syntax for CSS comments is consistent:</p>
+<ul>
+<li><strong>Start:</strong> <code class="language-css">/*</code> (Forward slash, asterisk)</li>
+<li><strong>End:</strong> <code class="language-css">*/</code> (Asterisk, forward slash)</li>
+<li><strong>Content:</strong> Anything between the start and end delimiters is the comment.</li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><strong>Multi-line:</strong> CSS comments can span multiple lines naturally.<pre class="language-css"><code class="language-css">/* This comment
+   spans multiple
+   lines easily. */
+</code></pre>
+</li>
+<li><strong>No Nesting:</strong> Like HTML comments, standard CSS comments cannot be nested reliably. The first <code class="language-css">*/</code> encountered will close the comment.<pre class="language-css"><code class="language-css">/* Outer /* Inner */ Still Outer? */ /* Behavior is undefined/error */
+</code></pre>
+</li>
+<li><strong>Placement:</strong> Comments can generally appear anywhere in a CSS file where whitespace is allowed – before, after, or between rulesets, and even within a declaration block (though commenting out parts of a value is usually invalid). Commenting out <em>entire</em> declarations or rulesets is the common use case.</li>
+</ul>
+<p>✅ Review the comments in <code class="language-text">style.css</code> to see the <code class="language-css">/* ... */</code> syntax used for both single and multi-line comments, and for disabling code.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

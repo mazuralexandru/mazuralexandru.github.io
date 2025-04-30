@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>89. Linking Lesson Stylesheet (<code class="language-text">style.css</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Similar to how we linked <code class="language-text">base_styles.css</code>, we now need to link our lesson-specific stylesheet, <code class="language-text">style.css</code>, so that the rules we write in it will affect our HTML page.</p>
+<p>We use another <code class="language-html">&lt;link&gt;</code> tag inside the <code class="language-html">&lt;head&gt;</code>. It&#39;s common practice to link your specific/overriding styles <em>after</em> your base/reset styles.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>!</strong> A second <code class="language-html">&lt;link&gt;</code> tag has been added, pointing to <code class="language-text">style.css</code>.</p>
+<pre class="language-html"><code class="language-html">    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; &lt;!-- Link lesson styles --&gt;
+</code></pre>
+<p>Now, any CSS rules we add to <code class="language-text">style.css</code> will be loaded and applied by the browser (in addition to the rules from <code class="language-text">base_styles.css</code>). Since <code class="language-text">style.css</code> is still empty, there&#39;s no visual change yet.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

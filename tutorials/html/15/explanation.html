@@ -9,44 +9,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>15. Linking the JavaScript File</h1>
-<p>We&#39;ve covered basic HTML structure and CSS styling. The third core web technology is JavaScript, used for adding interactivity and behavior to web pages. To use JavaScript code stored in an external file, we need to link it to our HTML document, similar to how we linked the CSS file.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a <code class="language-html">&lt;script&gt;</code> tag near the end of the <code class="language-html">&lt;body&gt;</code> section in <code class="language-text">index.html</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; &lt;!-- Added script tag --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p><strong>The <code>&lt;script&gt;</code> Element</strong></p>
+  <h1>15. Essential Editor Features for HTML/CSS</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Modern code editors like VS Code offer features that significantly improve the web development experience. Let&#39;s look at some key ones relevant to HTML and CSS.</p>
+<p>We&#39;ll cover these features in the next few steps:</p>
 <ul>
-<li><strong>Purpose:</strong> Used to embed or reference executable code, almost always JavaScript.</li>
-<li><strong>Linking External Files:</strong><ul>
-<li>The <code class="language-html">src</code> attribute (short for &quot;source&quot;) specifies the path/URL to an external JavaScript file. In this case, <code class="language-html">src=&quot;script.js&quot;</code> tells the browser to load and execute the code found in <code class="language-text">script.js</code> (located in the same directory).</li>
-<li>When <code class="language-html">src</code> is used, the content between <code class="language-html">&lt;script&gt;</code> and <code class="language-html">&lt;/script&gt;</code> tags is ignored (though the closing tag <code class="language-html">&lt;/script&gt;</code> is still required!).</li>
+<li>Syntax Highlighting</li>
+<li>Autocompletion/IntelliSense</li>
+<li>Tag/Bracket Matching &amp; Auto-Closing</li>
+<li>Code Formatting</li>
+<li>Linting Integration</li>
+<li>File &amp; Project Management</li>
+<li>Integrated Terminal</li>
 </ul>
-</li>
-<li><strong>Placement (Best Practice):</strong> Placing <code class="language-html">&lt;script&gt;</code> tags just before the closing <code class="language-html">&lt;/body&gt;</code> tag is a common best practice. Why?<ul>
-<li><strong>HTML Parsing:</strong> The browser parses HTML from top to bottom. If a script is placed in the <code class="language-html">&lt;head&gt;</code> without special attributes (<code>defer</code> or <code>async</code>, which we&#39;ll cover much later), the browser will stop parsing the HTML, download the script, execute it, and <em>then</em> continue parsing the rest of the HTML. If the script tries to interact with HTML elements that haven&#39;t been parsed yet (because they are lower down in the file), it will fail.</li>
-<li><strong>Perceived Performance:</strong> Placing scripts at the end allows the browser to render the visible HTML content first, making the page appear to load faster for the user, even if the script takes a moment to download and run.</li>
-</ul>
-</li>
-<li><strong>Internal Scripts:</strong> You can also write JavaScript directly between <code class="language-html">&lt;script&gt;</code> and <code class="language-html">&lt;/script&gt;</code> tags if you omit the <code class="language-html">src</code> attribute, but keeping JS in separate <code>.js</code> files is much better for organization and maintainability, similar to using external CSS files.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. Once again, there should be <strong>no visual change</strong>. We have linked the <code class="language-text">script.js</code> file, but it&#39;s still empty, so no JavaScript code has run yet.</li>
-<li>We now have all three core components (HTML structure, CSS styling, and the potential for JavaScript behavior) linked together.</li>
-</ul>
+<p>Understanding these features will help you write code faster and with fewer errors.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

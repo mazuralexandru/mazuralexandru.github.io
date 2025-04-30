@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>218. <code class="language-css">letter-spacing</code> &amp; <code class="language-css">word-spacing</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>These two properties allow you to adjust the horizontal spacing <em>between</em> characters or words.</p>
+<ol>
+<li><p><strong><code class="language-css">letter-spacing</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Adjusts the space between individual characters (tracking).</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">normal</code>: (Default) Normal spacing for the font.</li>
+<li><code>&lt;length&gt;</code>: Specifies extra space in addition to the default spacing. Can use <code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>. Negative values are allowed to make spacing tighter.</li>
+</ul>
+</li>
+<li><strong>Use Case:</strong> Often used subtly for headings or specific typographic effects. Excessive positive or negative spacing harms readability.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-css">word-spacing</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Adjusts the space between words (specifically, added to the default space after a word).</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">normal</code>: (Default) Normal spacing defined by the font/browser.</li>
+<li><code>&lt;length&gt;</code>: Specifies extra space in addition to the default inter-word space. Can use <code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>. Negative values are allowed.</li>
+</ul>
+</li>
+<li><strong>Use Case:</strong> Less common than <code class="language-css">letter-spacing</code>. Can be used for justification adjustments or specific design effects.</li>
+</ul>
+</li>
+</ol>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">letter-spacing: 2px;</code> to the <code class="language-css">#main-heading</code>.</li>
+<li>We&#39;ve added <code class="language-css">word-spacing: 0.5em;</code> to the <code class="language-css">.highlight-text</code> paragraph.</li>
+</ul>
+<pre class="language-css"><code class="language-css">#main-heading {
+    /* ... other styles ... */
+    text-align: center; 
+    letter-spacing: 2px; /* Add space between letters */
+}
+
+.highlight-text {
+  /* ... other styles ... */
+  line-height: 1.8; 
+  word-spacing: 0.5em; /* Add extra space between words */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The letters in &quot;Main Heading&quot; should now be spaced further apart.</li>
+<li>The words in the first paragraph (&quot;This is a standard paragraph...&quot;) should have noticeably more space between them. The amount of extra space (<code class="language-css">0.5em</code>) is relative to the paragraph&#39;s font size.</li>
+</ul>
+<p>Use these properties sparingly and test thoroughly to ensure readability isn&#39;t compromised.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

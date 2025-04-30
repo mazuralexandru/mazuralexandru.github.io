@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>306. Margin Collapsing: Scenarios - Empty Blocks</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>A less common but possible scenario involves the margins of an <strong>empty block element</strong>.</p>
+<ul>
+<li><p><strong>Scenario:</strong> An element has no border, no padding, no height (or <code class="language-css">height: auto</code>), no min-height, and no inline content (like text or images) inside it. Essentially, it&#39;s an &quot;empty&quot; box.</p>
+</li>
+<li><p><strong>Result:</strong> In this specific case, the element&#39;s own top margin and bottom margin will collapse with each other. The resulting space taken up by the element vertically will be equal to the larger of its top or bottom margin.</p>
+</li>
+<li><p><strong>Example HTML:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;div class=&quot;empty-block&quot;&gt;&lt;/div&gt;
+</code></pre>
+</li>
+<li><p><strong>Example CSS:</strong></p>
+<pre class="language-css"><code class="language-css">.empty-block {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  /* No height, padding, border, or content */
+}
+/* The actual vertical space created by this div will be 30px */
+</code></pre>
+</li>
+</ul>
+<p>This scenario is less frequently encountered in typical layouts but demonstrates another facet of the collapsing rules.</p>
+<p>👀 Our current example in <code class="language-text">index.html</code> and <code class="language-text">style.css</code> doesn&#39;t include an empty block, focusing on the more common adjacent sibling and parent/child collapsing behaviors.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

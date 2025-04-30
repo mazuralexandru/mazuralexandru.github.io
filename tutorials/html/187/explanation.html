@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>187. Commonly Inherited Properties</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Not all CSS properties are inherited. Inheritance primarily applies to properties related to text and visibility.</p>
+<p><strong>Commonly Inherited Properties:</strong></p>
+<ul>
+<li><strong>Font Properties:</strong><ul>
+<li><code class="language-css">font-family</code></li>
+<li><code class="language-css">font-size</code></li>
+<li><code class="language-css">font-weight</code></li>
+<li><code class="language-css">font-style</code></li>
+<li><code class="language-css">font-variant</code></li>
+<li><code class="language-css">font</code> (shorthand)</li>
+</ul>
+</li>
+<li><strong>Text Properties:</strong><ul>
+<li><code class="language-css">color</code></li>
+<li><code class="language-css">line-height</code></li>
+<li><code class="language-css">letter-spacing</code></li>
+<li><code class="language-css">word-spacing</code></li>
+<li><code class="language-css">text-align</code></li>
+<li><code class="language-css">text-indent</code></li>
+<li><code class="language-css">text-transform</code></li>
+<li><code class="language-css">white-space</code></li>
+</ul>
+</li>
+<li><strong>List Properties:</strong><ul>
+<li><code class="language-css">list-style</code> (and its longhand properties like <code class="language-css">list-style-type</code>, <code class="language-css">list-style-image</code>, <code class="language-css">list-style-position</code>)</li>
+</ul>
+</li>
+<li><strong>Table Borders:</strong><ul>
+<li><code class="language-css">border-collapse</code></li>
+<li><code class="language-css">border-spacing</code></li>
+</ul>
+</li>
+<li><strong>Other:</strong><ul>
+<li><code class="language-css">visibility</code></li>
+<li><code class="language-css">cursor</code></li>
+<li><code class="language-css">quotes</code></li>
+</ul>
+</li>
+</ul>
+<p>This makes sense – you typically want text within a section to share the same font, size, and color unless specified otherwise.</p>
+<p>👀 The <code class="language-html">&lt;span&gt;</code> in <code class="language-text">index.html</code> inherits <code class="language-css">color</code>, <code class="language-css">font-style</code>, and <code class="language-css">font-family</code> (from <code class="language-css">body</code> via <code class="language-css">p</code>) from its parent <code class="language-html">&lt;p&gt;</code>. Its <code class="language-css">font-weight</code> is explicitly set to <code class="language-css">bold</code> by the <code class="language-css">.container span</code> rule, overriding any inherited weight.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>212. <code class="language-css">font</code> Shorthand Property</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>CSS provides a shorthand <code class="language-css">font</code> property to set multiple font-related properties in a single declaration.</p>
+<ul>
+<li><strong>Purpose:</strong> To set <code class="language-css">font-style</code>, <code class="language-css">font-variant</code>, <code class="language-css">font-weight</code>, <code class="language-css">font-size</code>, <code class="language-css">line-height</code>, and <code class="language-css">font-family</code> all at once.</li>
+<li><strong>Syntax:</strong> The order of values matters!
+<code class="language-css">font: [font-style || font-variant || font-weight]? font-size [/line-height]? font-family</code><ul>
+<li><code class="language-css">font-style</code>, <code class="language-css">font-variant</code>, <code class="language-css">font-weight</code> are optional and can appear in any order <em>before</em> <code class="language-css">font-size</code>.</li>
+<li><code class="language-css">font-size</code> is <strong>mandatory</strong>.</li>
+<li><code class="language-css">line-height</code> is optional and <strong>must</strong> come immediately after <code class="language-css">font-size</code>, separated by a forward slash (<code class="language-css">/</code>).</li>
+<li><code class="language-css">font-family</code> is <strong>mandatory</strong> and must be the last value(s).</li>
+</ul>
+</li>
+<li><strong>Resetting:</strong> Any omitted optional values are reset to their initial values (e.g., if you don&#39;t specify <code class="language-css">font-weight</code>, it resets to <code class="language-css">normal</code>). This is important! Using the shorthand will override any previously set individual font properties.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre class="language-css"><code class="language-css">/* Set size and family (style, variant, weight reset to normal) */
+p { font: 1rem sans-serif; } 
+
+/* Set style, weight, size, line-height, family (variant reset to normal) */
+h1 { font: italic bold 2.5rem/1.2 &quot;Times New Roman&quot;, serif; } 
+
+/* Set weight, size, family */
+.label { font: 600 0.9rem monospace; } 
+
+/* Using system font keywords */
+button { font: caption; } /* Use OS default for captioned controls */
+</code></pre>
+<p><strong>Recommendation:</strong> While shorthand can be concise, be mindful that it resets omitted properties. It&#39;s often clearer, especially for beginners, to set individual properties unless you intentionally want to set most of them together.</p>
+<p>👀 We are currently setting font properties individually in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

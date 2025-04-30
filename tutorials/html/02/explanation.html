@@ -9,40 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>02. Declaring the Document Language</h1>
-<p>Let&#39;s add an important attribute to our <code class="language-html">&lt;html&gt;</code> tag: the <code class="language-html">lang</code> attribute.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added <code class="language-html">lang=&quot;en&quot;</code> to the opening <code class="language-html">&lt;html&gt;</code> tag.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt; &lt;!-- Added lang attribute --&gt;
-&lt;head&gt;
-</code></pre>
-<p><strong>Why Declare the Language?</strong></p>
-<p>The <code class="language-html">lang</code> attribute specifies the primary language of the content within the <code class="language-html">&lt;html&gt;</code> element (and usually, the whole document).</p>
-<ul>
-<li><strong>Accessibility:</strong> Screen readers use this attribute to pronounce the content correctly. Imagine a screen reader trying to read English text with French pronunciation rules – it wouldn&#39;t work well!</li>
-<li><strong>Search Engines (SEO):</strong> Search engines can use this information to filter search results by language.</li>
-<li><strong>Translation Tools:</strong> Browsers might offer translation services based on this attribute.</li>
-<li><strong>Browser Behavior:</strong> Some browser features, like hyphenation or quotation marks, might be language-dependent.</li>
-</ul>
-<p><strong>Syntax:</strong></p>
-<ul>
-<li><code class="language-html">lang</code> is the attribute name.</li>
-<li><code class="language-text">en</code> is the value, a standard language code (ISO 639-1 code). <code class="language-text">en</code> stands for English. Other examples include <code class="language-text">es</code> (Spanish), <code class="language-text">fr</code> (French), <code class="language-text">ja</code> (Japanese). You can find lists of these codes online (search for &quot;BCP 47 language codes&quot;).</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Visually, adding the <code class="language-html">lang</code> attribute makes <strong>no difference</strong> to the appearance of the page in the browser preview. Its effect is primarily informational for assistive technologies and browser internals.</li>
-<li>Think about websites you visit in different languages. This attribute helps ensure they are presented correctly.</li>
-</ul>
+  <h1>02. URLs (Uniform Resource Locators) Breakdown</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>How does your browser know <em>which</em> server to ask and <em>what</em> specific page to request? It uses a <strong>URL (Uniform Resource Locator)</strong>, often called a web address.</p>
+<p>Let&#39;s break down a typical URL like <code class="language-text">https://www.example.com/path/to/page.html</code>:</p>
+<ol>
+<li><strong>Scheme (<code class="language-text">https://</code>)</strong>: Tells the browser <em>how</em> to connect. <code class="language-text">https</code> means a secure connection, while <code class="language-text">http</code> is standard (less common now). Other schemes exist (<code class="language-text">ftp://</code>, <code class="language-text">mailto:</code>).</li>
+<li><strong>Domain Name (<code class="language-text">www.example.com</code>)</strong>: Identifies the specific server (or group of servers) hosting the website. It&#39;s like the server&#39;s street address.</li>
+<li><strong>Path (<code class="language-text">/path/to/page.html</code>)</strong>: Specifies the exact file or resource being requested on that server. It&#39;s like the apartment number within the building. If omitted, the server usually sends a default file (often <code class="language-text">index.html</code>).</li>
+</ol>
+<p>Understanding URLs helps you navigate the web and structure your own sites later.</p>
+<p>🔬 We&#39;re still in the conceptual phase. The <code class="language-text">index.html</code> file remains empty for now.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>211. <code class="language-css">font-variant</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">font-variant</code> property is a shorthand for various font variant properties, most commonly used to enable <strong>small caps</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> Allows access to alternative glyphs within a font, such as small capitals, ligatures, or different numeral styles.</li>
+<li><strong>Common Value:</strong> <code class="language-css">small-caps</code><ul>
+<li>Displays lowercase letters as smaller versions of uppercase letters.</li>
+<li>Requires the font to actually contain small-caps glyphs for true typographic quality; otherwise, the browser might simulate them (often poorly).</li>
+</ul>
+</li>
+<li><strong>Other <code class="language-css">font-variant-*</code> Properties (More Advanced):</strong><ul>
+<li><code class="language-css">font-variant-caps</code>: Controls alternative capitalizations (<code class="language-css">small-caps</code>, <code class="language-css">all-small-caps</code>, <code class="language-css">petite-caps</code>, <code class="language-css">titling-caps</code>, etc.).</li>
+<li><code class="language-css">font-variant-numeric</code>: Controls numeral styles (<code class="language-css">lining-nums</code>, <code class="language-css">oldstyle-nums</code>, <code class="language-css">proportional-nums</code>, <code class="language-css">tabular-nums</code>, <code class="language-css">slashed-zero</code>, etc.).</li>
+<li><code class="language-css">font-variant-ligatures</code>: Controls common and discretionary ligatures (<code class="language-css">common-ligatures</code>, <code class="language-css">no-common-ligatures</code>, <code class="language-css">discretionary-ligatures</code>, etc.).</li>
+<li><code class="language-css">font-variant-east-asian</code>: Controls variants for East Asian scripts.</li>
+</ul>
+</li>
+<li><strong>Font Support:</strong> The effectiveness of these properties is highly dependent on the features supported by the chosen <code class="language-css">font-family</code>. Many standard web fonts have limited variant support beyond basic ligatures. OpenType fonts often have richer feature sets.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre class="language-css"><code class="language-css">h1 {
+  font-variant: small-caps; /* Display H1 in small caps */
+}
+
+.price {
+  font-variant-numeric: oldstyle-nums; /* Use old-style figures if available */
+}
+</code></pre>
+<p><code class="language-css">font-variant</code> is used less frequently than basic style/weight properties but offers fine-grained typographic control when needed and supported by the font.</p>
+<p>👀 Our current styles don&#39;t use <code class="language-css">font-variant</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

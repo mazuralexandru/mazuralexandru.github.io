@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>233. <code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, <code class="language-html">&lt;u&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Browsers render these elements with distinct default styles:</p>
+<ul>
+<li><code class="language-html">&lt;i&gt;</code>: Italic text.</li>
+<li><code class="language-html">&lt;b&gt;</code>: Bold text.</li>
+<li><code class="language-html">&lt;u&gt;</code>: Underlined text.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new paragraph containing examples of <code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, and <code class="language-html">&lt;u&gt;</code>.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt; 
+    &lt;p&gt;
+      This uses the &lt;i&gt;i element&lt;/i&gt; for alternate voice. 
+      This uses the &lt;b&gt;b element&lt;/b&gt; to draw attention. 
+      This uses the &lt;u&gt;u element&lt;/u&gt; (generally avoid).
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>A new paragraph appears below the horizontal rule.</li>
+<li>&quot;i element&quot; should be rendered in <em>italics</em>.</li>
+<li>&quot;b element&quot; should be rendered in <strong>bold</strong>.</li>
+<li>&quot;u element&quot; should be rendered with an underline.</li>
+</ul>
+<p>These defaults often lead developers to use them purely for styling, but remember the semantic distinctions and the recommendation to prefer CSS classes for purely presentational effects.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>184. Specificity: Examples</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Let&#39;s illustrate specificity conflicts. We&#39;ll add a new rule targeting the second paragraph using just a type selector and give it a conflicting <code class="language-css">color</code>.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We added a new rule <code class="language-css">p { color: hotpink; }</code> at the end of the file.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Specificity Example */
+p {
+  color: hotpink; /* Low specificity (0,0,0,1) */
+}
+</code></pre>
+<p><strong>Analysis:</strong></p>
+<ul>
+<li><p>The second paragraph (<code class="language-html">&lt;p&gt;This paragraph follows the heading.&lt;/p&gt;</code>) is matched by:</p>
+<ul>
+<li><code class="language-css">h1 + p</code> (Specificity 0,0,0,2) - Sets <code class="language-css">color: lightgreen;</code></li>
+<li><code class="language-css">h1 ~ p</code> (Specificity 0,0,0,2) - Doesn&#39;t set color.</li>
+<li><code class="language-css">.container &gt; p</code> (Specificity 0,0,1,1) - Doesn&#39;t set color.</li>
+<li><code class="language-css">p</code> (Specificity 0,0,0,1) - Sets <code class="language-css">color: hotpink;</code></li>
+</ul>
+</li>
+<li><p>Comparing the selectors that set <code class="language-css">color</code>:</p>
+<ul>
+<li><code class="language-css">h1 + p</code> has specificity (0,0,0,2).</li>
+<li><code class="language-css">p</code> has specificity (0,0,0,1).</li>
+</ul>
+</li>
+<li><p>Since (0,0,0,2) is more specific than (0,0,0,1), the rule from <code class="language-css">h1 + p</code> wins.</p>
+</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong> The second paragraph should <strong>remain light green</strong>, not hot pink. Even though the <code class="language-css">p { color: hotpink; }</code> rule appears later in the source code, the <code class="language-css">h1 + p { color: lightgreen; }</code> rule wins because its selector (<code class="language-css">h1 + p</code>) is more specific.</p>
+<p>Now, let&#39;s try overriding with the class selector.</p>
+<p>✅ <strong>Modify <code class="language-text">style.css</code> again:</strong></p>
+<ul>
+<li>Add <code class="language-css">color: yellow;</code> to the <code class="language-css">.container &gt; p</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Child Combinator Example */
+.container &gt; p {
+  border-left: 3px solid orange; 
+  padding-left: 10px;
+  color: yellow; /* Added color (Specificity 0,0,1,1) */
+}
+</code></pre>
+<p><strong>Analysis:</strong></p>
+<ul>
+<li><p>Now we compare:</p>
+<ul>
+<li><code class="language-css">h1 + p</code> (Specificity 0,0,0,2) - Sets <code class="language-css">color: lightgreen;</code></li>
+<li><code class="language-css">.container &gt; p</code> (Specificity 0,0,1,1) - Sets <code class="language-css">color: yellow;</code></li>
+<li><code class="language-css">p</code> (Specificity 0,0,0,1) - Sets <code class="language-css">color: hotpink;</code></li>
+</ul>
+</li>
+<li><p><code>(0,0,1,1)</code> is more specific than <code>(0,0,0,2)</code> and <code>(0,0,0,1)</code>.</p>
+</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong> The second paragraph (and the first one, since it&#39;s also matched by <code class="language-css">.container &gt; p</code>) should now be <strong>yellow</strong>. The rule with the class selector (<code class="language-css">.container &gt; p</code>) wins because it has the highest specificity score among the rules setting the <code class="language-css">color</code> property for that element.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

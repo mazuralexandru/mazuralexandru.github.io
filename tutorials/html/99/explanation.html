@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>99. CSS Color Values: Hexadecimal</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>Hexadecimal color values</strong> are a very common way to specify colors on the web. They represent colors using the RGB (Red, Green, Blue) color model.</p>
+<ul>
+<li><p><strong>Syntax:</strong> Starts with a hash symbol (<code class="language-css">#</code>) followed by either three or six hexadecimal digits (0-9 and A-F).</p>
+<ul>
+<li><strong>Six-digit (<code class="language-css">#RRGGBB</code>):</strong> Two digits for Red, two for Green, two for Blue. Each pair ranges from <code class="language-css">00</code> (none) to <code class="language-css">FF</code> (maximum intensity).</li>
+<li><strong>Three-digit shorthand (<code class="language-css">#RGB</code>):</strong> Can be used when each RR, GG, BB pair has identical digits. <code class="language-css">#RGB</code> is equivalent to <code class="language-css">#RRGGBB</code>.</li>
+</ul>
+</li>
+<li><p><strong>Examples:</strong></p>
+<ul>
+<li><code class="language-css">#FF0000</code> (Pure Red: Max Red, no Green, no Blue)</li>
+<li><code class="language-css">#00FF00</code> (Pure Green)</li>
+<li><code class="language-css">#0000FF</code> (Pure Blue)</li>
+<li><code class="language-css">#FFFFFF</code> (White: Max Red, Max Green, Max Blue)</li>
+<li><code class="language-css">#000000</code> (Black: No Red, No Green, No Blue)</li>
+<li><code class="language-css">#CCCCCC</code> or <code class="language-css">#CCC</code> (A light gray)</li>
+<li><code class="language-css">#FA8072</code> (Salmon color - same as keyword <code class="language-css">salmon</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Pros:</strong> Allows specifying any color within the RGB gamut (millions of colors). Widely supported and understood. Compact.
+<strong>Cons:</strong> Less intuitive to read than keywords without a color picker tool. Doesn&#39;t directly support transparency (though an 8-digit <code>#RRGGBBAA</code> format exists, it has less browser support than <code>rgba()</code>).</p>
+<p>✅ We used <code class="language-css">#2e2e2e</code> and <code class="language-css">#E0E0E0</code> in <code class="language-text">base_styles.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

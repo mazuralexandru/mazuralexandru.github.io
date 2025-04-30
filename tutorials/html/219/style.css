@@ -1,0 +1,77 @@
+/* CSS comments explain or temporarily disable styles */
+
+/* 
+   This is a multi-line CSS comment.
+   It can span several lines. 
+*/
+
+#main-heading {
+    color: cornflowerblue; 
+    text-decoration: underline; 
+    font-family: "Georgia", Times, serif; /* Added font stack */
+    font-style: italic; /* Apply italic only to heading now */
+    text-align: center; /* Center the heading */
+    letter-spacing: 2px; /* Add space between letters */
+    text-transform: uppercase; /* Make heading uppercase */
+}
+
+.highlight-text {
+  background-color: #4d4d00; 
+  color: #1a1a1a; /* Overridden by .container > p */
+  padding: 5px; 
+  line-height: 1.8; /* Increase line spacing */
+  word-spacing: 0.5em; /* Add extra space between words */
+  /* font-style: italic; <- No longer applied via group */
+}
+
+/* --- Attribute Selector Examples --- */
+/* Use currentColor for the border */
+p[title] {
+  border: 1px dotted currentColor; /* Border color now matches text color */
+}
+a[target="_blank"] {
+  color: cyan;
+}
+a[target="_blank"]::after {
+  content: ' \2197'; 
+  font-size: 0.8em; /* Kept em here as it relates to link size */
+  display: inline-block; 
+  margin-left: 3px;
+}
+
+/* --- Grouping Example --- */
+/* Grouping rule removed/modified as it only applied to #main-heading now, 
+   style moved directly to #main-heading rule above */
+
+
+/* --- Combinator Examples --- */
+
+/* Descendant Combinator Example */
+.container span {
+  font-weight: bold; 
+  border: inherit; /* Inherit border style from parent <p> */
+  font-size: 1.5rem; /* Changed to rem unit */
+}
+
+/* Child Combinator Example */
+.container > p {
+  border-left: 3px solid orange; /* Add orange left border to direct child paragraphs */
+  padding-left: 10px;
+  color: yellow; /* Added color (Specificity 0,0,1,1) - Wins */
+}
+
+/* Adjacent Sibling Combinator Example */
+h1 + p {
+  margin-top: 5px; /* Reduce top margin only for paragraphs directly after an h1 */
+  color: lightgreen; /* Change color (Specificity 0,0,0,2) - Overridden by .container > p */
+  font-size: 0.9rem; /* Added font-size using rem */
+  font-weight: lighter; /* Make this paragraph lighter */
+}
+
+/* General Sibling Combinator Example - REMOVED */
+
+
+/* Specificity Example */
+p {
+  color: hotpink; /* Low specificity (0,0,0,1) - Overridden by others */
+}

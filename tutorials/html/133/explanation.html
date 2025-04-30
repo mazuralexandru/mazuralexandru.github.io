@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>133. Applying CSS - Method 3: External Stylesheets (Preferred)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>We now arrive at the <strong>most common and recommended</strong> method for applying CSS to web pages: <strong>External Stylesheets</strong>.</p>
+<p>This involves:</p>
+<ol>
+<li>Writing your CSS rules in one or more separate files with the <code class="language-text">.css</code> extension.</li>
+<li>Linking these <code class="language-text">.css</code> files to your HTML document(s) using the <code class="language-html">&lt;link&gt;</code> element within the <code class="language-html">&lt;head&gt;</code>.</li>
+</ol>
+<p>This approach fully embraces the principle of Separation of Concerns, leading to the cleanest, most maintainable, reusable, and performant way to style websites, especially those with multiple pages.</p>
+<p>👀 Look at <code class="language-text">index.html</code>. We already have the structure for this with the <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code> tag (even though <code class="language-text">style.css</code> is currently empty after our previous step). We also have the link to <code class="language-text">base_styles.css</code>. This demonstrates linking external files.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

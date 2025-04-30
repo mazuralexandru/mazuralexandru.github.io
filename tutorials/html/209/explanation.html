@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>209. <code class="language-css">font-weight</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">font-weight</code> property specifies the weight (or boldness) of the font.</p>
+<ul>
+<li><strong>Purpose:</strong> To control how thick or thin the characters appear.</li>
+<li><strong>Values:</strong><ul>
+<li><strong>Keywords:</strong><ul>
+<li><code class="language-css">normal</code>: Normal font weight. Equivalent to <code class="language-css">400</code>. (Default for most elements).</li>
+<li><code class="language-css">bold</code>: Bold font weight. Equivalent to <code class="language-css">700</code>. (Default for <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;b&gt;</code>, <code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>).</li>
+<li><code class="language-css">lighter</code>: One step lighter than the parent element&#39;s weight.</li>
+<li><code class="language-css">bolder</code>: One step bolder than the parent element&#39;s weight.</li>
+</ul>
+</li>
+<li><strong>Numeric Values:</strong> <code class="language-css">100</code> to <code class="language-css">900</code> (in increments of 100).<ul>
+<li><code class="language-css">100</code>: Thin</li>
+<li><code class="language-css">400</code>: Normal/Regular</li>
+<li><code class="language-css">700</code>: Bold</li>
+<li><code class="language-css">900</code>: Black/Heavy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Font Availability:</strong> The numeric values and keywords only work if the selected <code class="language-css">font-family</code> actually <em>has</em> glyphs available for that specific weight. If you request <code class="language-css">font-weight: 300;</code> (light) but the font only has normal and bold variants, the browser will usually try to synthesize a weight or fall back to the nearest available one (often <code class="language-css">normal</code>). This is why loading specific weight files with <code class="language-css">@font-face</code> or from font services is important when using numeric weights other than 400/700.</li>
+<li><strong>Variable Fonts:</strong> Newer &quot;variable fonts&quot; can support weights fluidly between the standard increments (e.g., 451), but this is a more advanced topic.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We previously set <code class="language-css">font-weight: bold;</code> on <code class="language-css">.container span</code>.</li>
+<li>Let&#39;s explicitly set the weight for the second paragraph (<code class="language-css">h1 + p</code>) to <code class="language-css">lighter</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Adjacent Sibling Combinator Example */
+h1 + p {
+  margin-top: 5px; 
+  color: lightgreen; 
+  font-size: 0.9rem; 
+  font-weight: lighter; /* Make this paragraph lighter */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The second paragraph (&quot;This paragraph follows the heading.&quot;) should now appear noticeably thinner or lighter than the first paragraph, assuming the default <code class="language-css">sans-serif</code> font on your system has a lighter variant available relative to the normal weight inherited from the body.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

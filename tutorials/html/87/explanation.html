@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>87. Multiple CSS Declarations</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>You almost always want to apply more than one style to an element. You can include multiple declarations within a single declaration block.</p>
+<ul>
+<li><strong>Rule:</strong> Simply list each declaration one after another, making sure each one ends with a semicolon (<code class="language-css">;</code>).</li>
+</ul>
+<pre class="language-css"><code class="language-css">p { /* Selector */
+  /* Declaration Block */
+  color: navy;              /* Declaration 1; */
+  font-size: 14px;          /* Declaration 2; */
+  line-height: 1.5;         /* Declaration 3; */
+  margin-bottom: 10px;      /* Declaration 4; */
+} 
+</code></pre>
+<p>The semicolon after the <em>last</em> declaration in a block is technically optional according to the CSS specification, but it is <strong>strongly recommended</strong> to always include it. Forgetting it means if you later add another declaration below it, the previous one might become invalid.</p>
+<p><strong>Best Practice:</strong> Always terminate every declaration with a semicolon.</p>
+<p>🔬 Still viewing the empty <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

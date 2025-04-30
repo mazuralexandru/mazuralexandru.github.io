@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>190. The <code class="language-css">initial</code> Keyword</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">initial</code> keyword is used to explicitly reset a CSS property on an element to its <strong>initial value</strong>, as defined by the CSS specification for that property.</p>
+<ul>
+<li><strong>Purpose:</strong> To undo any inherited styles or styles applied by the cascade and force a property back to its standard default state.</li>
+<li><strong>Syntax:</strong> <code class="language-css">property: initial;</code></li>
+<li><strong>What is the &quot;Initial Value&quot;?</strong> Every CSS property has a defined initial value in the CSS standards (e.g., the initial value for <code class="language-css">color</code> is browser/element dependent but often black, for <code class="language-css">background-color</code> it&#39;s <code class="language-css">transparent</code>, for <code class="language-css">margin</code> it&#39;s <code class="language-css">0</code>, for <code class="language-css">display</code> it&#39;s <code class="language-css">inline</code>). It&#39;s <em>not</em> necessarily the browser&#39;s default stylesheet value, but the value defined in the spec.</li>
+</ul>
+<p>Example:</p>
+<pre class="language-css"><code class="language-css">p {
+  color: blue; /* All paragraphs blue by default */
+}
+
+.reset-color {
+  color: initial; /* Reset color to its CSS initial value (likely black) */
+}
+</code></pre>
+<pre class="language-html"><code class="language-html">&lt;p&gt;This paragraph is blue.&lt;/p&gt;
+&lt;p class=&quot;reset-color&quot;&gt;This paragraph&#39;s color is reset.&lt;/p&gt;
+</code></pre>
+<p>Using <code class="language-css">initial</code> ensures you get the standard default, regardless of inherited values or browser defaults.</p>
+<p>👀 In our example, if we applied <code class="language-css">font-style: initial;</code> to the <code class="language-css">#main-heading</code>, it would likely remove the italics applied by the grouped selector, as the initial value for <code class="language-css">font-style</code> is <code class="language-css">normal</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

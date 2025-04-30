@@ -9,110 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>72. Other Inline Semantics: <code>&lt;small&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code></h1>
-<p>Let&#39;s look at a few more inline semantic elements: <code class="language-html">&lt;small&gt;</code> for side comments, <code class="language-html">&lt;sup&gt;</code> for superscript, and <code class="language-html">&lt;sub&gt;</code> for subscript.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>72. Why UTF-8?</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>For modern web development, the standard and strongly recommended character encoding is <strong>UTF-8</strong>.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the edit/annotation examples.</li>
-<li><strong>HTML Addition:</strong> Added paragraphs demonstrating <code class="language-html">&lt;small&gt;</code>, <code class="language-html">&lt;sup&gt;</code>, and <code class="language-html">&lt;sub&gt;</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">s</code>, <code>del</code>, <code>ins</code>, <code>mark</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules styling the new tags (mostly showing default behaviors).</li>
+<li><strong>Universal Support:</strong> UTF-8 can represent virtually any character from any writing system in the world (including English, European languages with accents, Cyrillic, Greek, Asian languages, emojis, symbols, etc.). Older encodings like ASCII or ISO-8859-1 had much more limited character sets.</li>
+<li><strong>Web Standard:</strong> It&#39;s the dominant encoding on the web and the default recommended by HTML5 standards. Browsers, servers, and text editors widely support it.</li>
+<li><strong>Efficiency:</strong> For documents primarily using basic Latin characters (like English), UTF-8 is as space-efficient as ASCII. It uses variable-length encoding, using more bytes only when needed for less common characters.</li>
+<li><strong>Prevents Mojibake:</strong> Explicitly declaring and using UTF-8 consistently (in your HTML declaration and when saving your files) is the best way to prevent garbled text issues.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Other Inline Semantics Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous edits/annotations examples --&gt;
-
-  &lt;p&gt;
-    The &lt;small&gt;small tag&lt;/small&gt; is used for side comments, copyright information,
-    or other text typically rendered in a smaller print size. &lt;small&gt;&amp;copy; 2023 Example Inc.&lt;/small&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-    Use &lt;sup&gt;sup tags&lt;/sup&gt; for superscripts, like in footnotes&lt;sup&gt;1&lt;/sup&gt;,
-    mathematical exponents (E = mc&lt;sup&gt;2&lt;/sup&gt;), or ordinal numbers (1&lt;sup&gt;st&lt;/sup&gt;).
-  &lt;/p&gt;
-  &lt;p&gt;
-    Use &lt;sub&gt;sub tags&lt;/sub&gt; for subscripts, often used in chemical formulas (H&lt;sub&gt;2&lt;/sub&gt;O)
-    or mathematical indices (x&lt;sub&gt;i&lt;/sub&gt;).
-  &lt;/p&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Pruned edits/annotations rules */
-/* s { ... } */
-/* del { ... } */
-/* ins { ... } */
-/* mark { ... } */
-
-/* Other Inline Semantics Demo */
-p { /* Base paragraph styling */
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-small {
-  font-size: smaller; /* Default style: Makes text one size smaller than parent */
-  opacity: 0.8; /* Custom: Make it slightly faded */
-}
-
-sup {
-  vertical-align: super; /* Default style: Raises baseline */
-  font-size: smaller; /* Default style: Reduces size slightly */
-  line-height: 0; /* Prevents affecting line-height of surrounding text */
-}
-
-sub {
-  vertical-align: sub; /* Default style: Lowers baseline */
-  font-size: smaller; /* Default style: Reduces size slightly */
-  line-height: 0; /* Prevents affecting line-height of surrounding text */
-}
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Other Inline Semantic Tags</strong></p>
-<ul>
-<li><strong><code class="language-html">&lt;small&gt;</code> (Side Comments):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Represents side comments such as fine print, legal notices (copyright, disclaimers), or attributions, often rendered smaller. It&#39;s not for making arbitrary text smaller (use CSS <code>font-size</code> for that).</li>
-<li><strong>Default Styling:</strong> Renders text one size smaller than its parent (e.g., like applying <code class="language-css">font-size: smaller;</code>). We added <code>opacity</code> for extra effect.</li>
-</ul>
-</li>
-<li><strong><code class="language-html">&lt;sup&gt;</code> (Superscript):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Represents superscript text, typically rendered raised above the baseline and often smaller. Used for exponents, ordinal indicators, footnote markers.</li>
-<li><strong>Default Styling:</strong> Uses <code class="language-css">vertical-align: super;</code> to raise the text and <code class="language-css">font-size: smaller;</code>. Setting <code class="language-css">line-height: 0;</code> on <code>sup</code> and <code>sub</code> is a common technique to prevent them from increasing the overall line height of the line they appear on.</li>
-</ul>
-</li>
-<li><strong><code class="language-html">&lt;sub&gt;</code> (Subscript):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Represents subscript text, typically rendered lowered below the baseline and often smaller. Used for chemical formulas, mathematical indices.</li>
-<li><strong>Default Styling:</strong> Uses <code class="language-css">vertical-align: sub;</code> to lower the text and <code class="language-css">font-size: smaller;</code>. <code class="language-css">line-height: 0;</code> is also often applied.</li>
-</ul>
-</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Text within <code class="language-html">&lt;small&gt;</code> tags should appear slightly smaller and faded.</li>
-<li>👀 Text within <code class="language-html">&lt;sup&gt;</code> tags should be raised above the normal text baseline and slightly smaller.</li>
-<li>👀 Text within <code class="language-html">&lt;sub&gt;</code> tags should be lowered below the normal text baseline and slightly smaller.</li>
-<li>✅ Inspect these elements in DevTools to see the tags and the applied CSS, particularly the <code>vertical-align</code> and <code>font-size</code> defaults.</li>
-</ul>
-<p>These tags provide semantic meaning for specific typographic conventions, distinguishing them from purely presentational size or position adjustments made with CSS.</p>
+<p>There&#39;s generally no reason to use any other encoding for new web projects. Always use UTF-8.</p>
+<p>🔬 <code class="language-text">index.html</code> still needs the UTF-8 declaration.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

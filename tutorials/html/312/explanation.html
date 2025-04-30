@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>312. <code class="language-css">box-sizing</code> Values: <code class="language-css">content-box</code> vs <code class="language-css">border-box</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s compare the two main values for <code class="language-css">box-sizing</code>:</p>
+<ol>
+<li><p><strong><code class="language-css">content-box</code> (Default):</strong></p>
+<ul>
+<li><code class="language-css">width</code> and <code class="language-css">height</code> define the size of the <strong>content area only</strong>.</li>
+<li>Total Width = <code class="language-css">width</code> + <code class="language-css">padding-left</code> + <code class="language-css">padding-right</code> + <code class="language-css">border-left-width</code> + <code class="language-css">border-right-width</code></li>
+<li>Total Height = <code class="language-css">height</code> + <code class="language-css">padding-top</code> + <code class="language-css">padding-bottom</code> + <code class="language-css">border-top-width</code> + <code class="language-css">border-bottom-width</code></li>
+<li>Adding padding or border increases the element&#39;s rendered size.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-css">border-box</code>:</strong></p>
+<ul>
+<li><code class="language-css">width</code> and <code class="language-css">height</code> define the size of the area <strong>including content, padding, and border</strong>.</li>
+<li>Total Width = <code class="language-css">width</code> (The content area shrinks to fit padding/border within this width).</li>
+<li>Total Height = <code class="language-css">height</code> (The content area shrinks to fit padding/border within this height).</li>
+<li>Adding padding or border does <em>not</em> increase the element&#39;s rendered size; it takes space away from the content area.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why <code class="language-css">border-box</code> is Preferred:</strong></p>
+<ul>
+<li><strong>Intuitive Sizing:</strong> You set the final desired width/height directly. Adding padding or borders doesn&#39;t unexpectedly change that overall dimension.</li>
+<li><strong>Easier Layouts:</strong> Makes grid systems and percentage-based layouts much simpler, as elements sized with percentages plus padding/borders still add up correctly (e.g., two <code class="language-css">width: 50%;</code> elements with padding will fit side-by-side).</li>
+</ul>
+<p>It&#39;s almost universally recommended to apply <code class="language-css">box-sizing: border-box;</code> globally in modern web development.</p>
+<p>👀 Our <code class="language-css">.centered-box</code> is currently using <code class="language-css">content-box</code>. Its total width is <code class="language-css">60% + 20px</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

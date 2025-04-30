@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>248. Quotations (<code class="language-html">&lt;blockquote&gt;</code>, <code class="language-html">&lt;q&gt;</code>, <code class="language-html">&lt;cite&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>HTML provides elements for marking up quotations, distinguishing between block-level quotes and inline quotes, and citing sources.</p>
+<ul>
+<li><strong><code class="language-html">&lt;blockquote&gt;</code> (Block Quotation):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents content quoted from another source, typically displayed as a distinct block, often indented.</li>
+<li><strong>Usage:</strong> For longer quotations that form their own paragraph(s).</li>
+<li><strong><code class="language-html">cite</code> Attribute:</strong> Can optionally include a <code class="language-html">cite</code> attribute whose value is a URL pointing to the source of the quotation. This attribute is not displayed visually but provides metadata.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;q&gt;</code> (Inline Quotation):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents a short quotation inline within surrounding text.</li>
+<li><strong>Default Styling:</strong> Browsers typically add appropriate quotation marks (e.g., “ ” in English) around the content automatically, based on the document&#39;s language (<code class="language-html">lang</code> attribute) and nesting level.</li>
+<li><strong><code class="language-html">cite</code> Attribute:</strong> Can also have a <code class="language-html">cite</code> attribute pointing to the source URL.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;cite&gt;</code> (Citation / Work Title):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents the title of a creative work (book, article, movie, song, etc.). It does <em>not</em> represent the name of a person.</li>
+<li><strong>Default Styling:</strong> Typically rendered in <em>italics</em>.</li>
+<li><strong>Usage:</strong> Often used within or alongside <code class="language-html">&lt;blockquote&gt;</code> or <code class="language-html">&lt;q&gt;</code> to cite the source work, or on its own when mentioning a title.</li>
+</ul>
+</li>
+</ul>
+<p>Using these elements correctly adds semantic value, indicating to browsers and assistive technologies that the content is a quotation or a work title.</p>
+<p>👀 We&#39;ll add examples to <code class="language-text">index.html</code> next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

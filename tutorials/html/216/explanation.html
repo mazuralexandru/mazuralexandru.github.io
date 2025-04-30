@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>216. <code class="language-css">line-height</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">line-height</code> property controls the amount of space between lines of text within an element. It essentially sets the height of a line box.</p>
+<ul>
+<li><strong>Purpose:</strong> To adjust the vertical spacing between lines for better readability. Sometimes called &quot;leading&quot; in typography.</li>
+<li><strong>Applies To:</strong> Elements containing text (inline and block).</li>
+<li><strong>Inherited:</strong> Yes.</li>
+<li><strong>Common Values:</strong><ul>
+<li><strong><code class="language-css">normal</code>:</strong> (Default) Lets the browser determine a reasonable line height based on the font (usually around 1.2).</li>
+<li><strong>Unitless Number:</strong> (Recommended) A number without a unit (e.g., <code class="language-css">1.5</code>). This number is multiplied by the element&#39;s <em>own</em> <code class="language-css">font-size</code> to calculate the line height. This method is preferred because it scales proportionally if the font size changes or is inherited differently by child elements.</li>
+<li><strong>Length:</strong> A fixed length like <code class="language-css">20px</code> or <code class="language-css">1.5em</code>. Using <code class="language-css">em</code> or <code class="language-css">%</code> can lead to unexpected results on child elements with different font sizes, as the <em>calculated pixel value</em> is inherited, not the relative multiplier.</li>
+<li><strong>Percentage:</strong> <code class="language-css">150%</code> is calculated based on the element&#39;s own font size, similar to the unitless number but potentially less flexible with inheritance nuances.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Recommendation:</strong> Use <strong>unitless numbers</strong> (e.g., <code class="language-css">line-height: 1.6;</code>) for <code class="language-css">line-height</code> in most cases. This provides the best scalability and avoids inheritance issues. A value between 1.4 and 1.8 is often considered good for readability for body text.</p>
+<p><strong>Example:</strong></p>
+<pre class="language-css"><code class="language-css">body {
+  line-height: 1.6; /* Set base line height for the page */
+}
+h1 {
+  line-height: 1.2; /* Tighter line height for headings */
+}
+</code></pre>
+<p>👀 Our current elements are using the browser&#39;s default <code class="language-css">line-height: normal;</code> or inheriting from <code class="language-css">body</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

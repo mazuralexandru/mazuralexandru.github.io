@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>107. HTML Comments: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The syntax for HTML comments is specific:</p>
+<ul>
+<li><strong>Start:</strong> <code class="language-html">&lt;!--</code> (Left angle bracket, exclamation mark, two hyphens)</li>
+<li><strong>End:</strong> <code class="language-html">--&gt;</code> (Two hyphens, right angle bracket)</li>
+<li><strong>Content:</strong> Anything between the start and end delimiters is the comment text.</li>
+</ul>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li><strong>No Dashes Inside:</strong> You cannot have two consecutive hyphens (<code class="language-text">--</code>) <em>inside</em> the comment text itself, as this can be misinterpreted as the end of the comment by older browsers or validators. Use single hyphens or alternative phrasing if needed.<ul>
+<li>Bad: <code class="language-html">&lt;!-- This is -- problematic --&gt;</code></li>
+<li>Good: <code class="language-html">&lt;!-- This is - not problematic --&gt;</code></li>
+</ul>
+</li>
+<li><strong>Can Span Multiple Lines:</strong> Comments can start on one line and end several lines later, as shown in the multi-line example in <code class="language-text">index.html</code>.</li>
+</ul>
+<p>✅ Review the comments in <code class="language-text">index.html</code> to see the syntax in action.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

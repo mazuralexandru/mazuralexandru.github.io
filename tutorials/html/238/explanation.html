@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>238. <code class="language-html">&lt;s&gt;</code>, <code class="language-html">&lt;del&gt;</code>, <code class="language-html">&lt;ins&gt;</code>, <code class="language-html">&lt;mark&gt;</code>: CSS Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>As with other semantic elements, you can customize the default appearance of <code class="language-html">&lt;s&gt;</code>, <code class="language-html">&lt;del&gt;</code>, <code class="language-html">&lt;ins&gt;</code>, and <code class="language-html">&lt;mark&gt;</code> using CSS.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added rules to style these elements:<ul>
+<li>Making <code class="language-css">del</code> red.</li>
+<li>Making <code class="language-css">ins</code> green and removing its default underline in favor of a background color.</li>
+<li>Changing the <code class="language-css">mark</code> background color from the default yellow to light blue.</li>
+</ul>
+</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Styling Edit/Annotation Elements */
+del {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.1); /* Subtle red background */
+}
+
+ins {
+  color: green;
+  background-color: rgba(0, 255, 0, 0.1); /* Subtle green background */
+  text-decoration: none; /* Remove default underline */
+  padding: 0.1em 0.2em;
+}
+
+mark {
+  background-color: lightblue;
+  color: #333; /* Darker text on light blue */
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The deleted text (<code class="language-html">&lt;del&gt;$50&lt;/del&gt;</code>) should now appear red with a faint red background, in addition to the strikethrough.</li>
+<li>The inserted text (<code class="language-html">&lt;ins&gt;$40&lt;/ins&gt;</code>) should now appear green with a faint green background and padding, and it should <em>not</em> be underlined anymore.</li>
+<li>The marked text (<code class="language-html">&lt;mark&gt;CSS&lt;/mark&gt;</code>) should now have a light blue background instead of yellow.</li>
+</ul>
+<p>This shows how CSS allows you to tailor the presentation of semantic edits and annotations to fit your design system.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

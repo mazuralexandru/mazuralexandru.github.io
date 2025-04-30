@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>104. CSS Font Size: Keywords</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>CSS provides several <strong>keywords</strong> that can be used as values for <code class="language-css">font-size</code>.</p>
+<ol>
+<li><strong>Absolute Size Keywords:</strong> These map to predefined font sizes determined by the browser. The exact pixel size can vary slightly between browsers, but <code class="language-css">medium</code> is typically the user&#39;s default font size (often 16px).<ul>
+<li><code class="language-css">xx-small</code></li>
+<li><code class="language-css">x-small</code></li>
+<li><code class="language-css">small</code></li>
+<li><code class="language-css">medium</code></li>
+<li><code class="language-css">large</code></li>
+<li><code class="language-css">x-large</code></li>
+<li><code class="language-css">xx-large</code></li>
+</ul>
+</li>
+<li><strong>Relative Size Keywords:</strong> These make the font size larger or smaller relative to the parent element&#39;s font size.<ul>
+<li><code class="language-css">larger</code></li>
+<li><code class="language-css">smaller</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Pros:</strong> Simple to use. Respect user&#39;s default font size settings to some extent.
+<strong>Cons:</strong> Less precise control than length units. The exact rendering can vary between browsers. Not commonly used in modern development compared to <code>rem</code> or <code>em</code> units for scalability.</p>
+<p>Example:</p>
+<pre class="language-css"><code class="language-css">h1 { font-size: x-large; }
+small { font-size: smaller; } /* Makes text smaller than its parent */
+</code></pre>
+<p>While available, you&#39;ll more often see <code>px</code>, <code>em</code>, or <code>rem</code> used for font sizes in practice.</p>
+<p>🔬 Our current example uses <code>px</code>, not keywords.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

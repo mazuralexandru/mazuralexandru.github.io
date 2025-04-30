@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>251. Quotations: CSS Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>You can customize the appearance of quotations using CSS.</p>
+<p><strong>Common Styling for <code class="language-html">&lt;blockquote&gt;</code>:</strong></p>
+<ul>
+<li>Adjusting margins/padding for different indentation levels.</li>
+<li>Adding borders (especially a left border is common).</li>
+<li>Changing background color.</li>
+<li>Styling the attribution (<code class="language-html">&lt;footer&gt;</code> or <code class="language-html">&lt;cite&gt;</code>) within it.</li>
+</ul>
+<p><strong>Styling <code class="language-html">&lt;q&gt;</code>:</strong></p>
+<ul>
+<li>While browsers add quotes, you can customize them using the CSS <code class="language-css">quotes</code> property and <code class="language-css">::before</code>/<code class="language-css">::after</code> pseudo-elements. This gives you control over using single vs. double quotes, or even custom characters.<pre class="language-css"><code class="language-css">/* Example: Use French guillemets for &lt;q&gt; */
+q {
+  quotes: &quot;«&quot; &quot;»&quot; &quot;‹&quot; &quot;›&quot;; /* Outer pair, inner pair */
+}
+q::before { content: open-quote; }
+q::after { content: close-quote; }
+</code></pre>
+</li>
+<li>You can also style the text within <code class="language-html">&lt;q&gt;</code> (e.g., <code class="language-css">font-style: italic;</code>).</li>
+</ul>
+<p><strong>Styling <code class="language-html">&lt;cite&gt;</code>:</strong></p>
+<ul>
+<li>You can override the default italic style or change its color, etc.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added styles for <code class="language-css">blockquote</code> and <code class="language-css">cite</code>.</li>
+<li>The blockquote gets a left border, different padding/margins, and a background color.</li>
+<li>The cite element within the blockquote&#39;s footer gets a specific color.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Styling Quotations */
+blockquote {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid cornflowerblue;
+  margin: 1.5em 10px; /* Adjust default margins */
+  padding: 0.5em 10px;
+}
+
+blockquote p {
+  margin-bottom: 0.5em; /* Adjust paragraph margin inside quote */
+}
+
+blockquote footer {
+  text-align: right;
+  font-size: 0.9em;
+  color: #aaa; /* Lighter color for attribution */
+}
+
+blockquote cite {
+  font-style: normal; /* Override default italic if desired */
+  color: #ccc; /* Slightly brighter color for title */
+}
+
+/* We won&#39;t override &lt;q&gt; quotes for now */
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The blockquote should now have a distinct appearance with a cornflower blue left border, slightly different spacing, and a faint background.</li>
+<li>The citation (&quot;Some Work Title&quot;) within the blockquote footer should now be a brighter gray color and no longer italicized.</li>
+<li>The inline quote (<code class="language-html">&lt;q&gt;</code>) remains unchanged, still showing the browser&#39;s default quotation marks.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

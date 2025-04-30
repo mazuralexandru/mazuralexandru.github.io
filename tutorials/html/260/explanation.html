@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>260. The Four Components of the Box: Border Area</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Outside the padding area lies the <strong>Border Area</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> The border is the visual line drawn around the element&#39;s padding area. It acts like the frame itself around the picture and matting.</li>
+<li><strong>Control:</strong> Set using the <code class="language-css">border</code> shorthand property or the longhand properties (<code class="language-css">border-width</code>, <code class="language-css">border-style</code>, <code class="language-css">border-color</code>). You need to define at least the style (e.g., <code class="language-css">solid</code>) for a border to be visible.</li>
+<li><strong>Dimensions:</strong> The border&#39;s thickness (defined by <code class="language-css">border-width</code>) adds to the overall size of the element when using the default <code class="language-css">box-sizing: content-box;</code>.</li>
+<li><strong>Appearance:</strong> You can control its color, thickness, and style (solid, dotted, dashed, etc.).</li>
+</ul>
+<p>Borders are used to visually outline elements or create dividing lines.</p>
+<p>🔬 Inspect the <code class="language-html">&lt;p class=&quot;highlight-text&quot;&gt;</code> element again in <code class="language-text">index.html</code>. We previously added <code class="language-css">border: 1px dotted currentColor;</code> via the <code class="language-css">p[title]</code> rule in <code class="language-text">style.css</code>. In the Computed/Layout tab&#39;s box model diagram, find the area representing the border (surrounding the padding). Hover over it to see the 1px dotted line highlighted in the preview. Notice its color matches the text color (yellow) because we used <code class="language-css">currentColor</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

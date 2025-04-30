@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>146. Type Selectors: Use Cases</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Given their broad scope, type selectors are best suited for:</p>
+<ol>
+<li><strong>Global Resets/Base Styles:</strong> Applying foundational styles to common HTML elements to create a consistent starting point across the site. For example, setting default margins, padding, font sizes, or line heights for headings, paragraphs, lists, etc. Many CSS reset/normalize libraries rely heavily on type selectors.<pre class="language-css"><code class="language-css">/* Example Base Styles */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+</code></pre>
+</li>
+<li><strong>Styling Very Common Elements Consistently:</strong> If <em>all</em> instances of a specific element should always look the same (e.g., perhaps all <code class="language-html">&lt;hr&gt;</code> elements should be a thin gray line), a type selector is appropriate.</li>
+</ol>
+<p>However, avoid using type selectors for styling specific UI components or sections where variations are needed. For instance, styling all <code class="language-html">&lt;div&gt;</code> elements with a specific border is usually a bad idea, as <code class="language-html">&lt;div&gt;</code> is used for many different structural purposes. Use classes for that.</p>
+<p>👀 In <code class="language-text">base_styles.css</code> (though we won&#39;t switch to it now), the <code class="language-css">body</code> selector is a type selector used to apply base styles to the entire page body. In <code class="language-text">style.css</code>, the <code class="language-css">h1</code> selector applies a style to all <code class="language-html">&lt;h1&gt;</code> elements (currently just one in <code class="language-text">index.html</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

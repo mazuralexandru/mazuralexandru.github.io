@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>247. Syntax Highlighting (JS Libraries)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While our CSS makes the code block <em>look</em> like a code block, the code itself is still plain text. For enhanced readability, especially with complex code, <strong>syntax highlighting</strong> (coloring different parts of the code like keywords, strings, comments, etc.) is highly desirable.</p>
+<p>Syntax highlighting is <strong>not</strong> typically done with pure CSS. It requires analyzing the code structure and applying different styles (usually via CSS classes) to different tokens within the code. This analysis is almost always performed by <strong>JavaScript libraries</strong>.</p>
+<p><strong>Common JavaScript Syntax Highlighting Libraries:</strong></p>
+<ul>
+<li><strong>Prism.js:</strong> Popular, lightweight, extensible, supports many languages. Uses semantic HTML5 (<code class="language-html">&lt;pre&gt;&lt;code class=&quot;language-xyz&quot;&gt;...&lt;/code&gt;&lt;/pre&gt;</code>) and applies classes like <code class="language-css">.keyword</code>, <code class="language-css">.string</code>, etc.</li>
+<li><strong>highlight.js:</strong> Another very popular library, automatically detects language, supports many themes.</li>
+<li><strong>Shiki:</strong> Generates highly accurate highlighted HTML on the server or at build time, often used in static site generators and documentation tools.</li>
+</ul>
+<p><strong>How they generally work:</strong></p>
+<ol>
+<li>Include the library&#39;s JavaScript and CSS theme file(s) in your HTML page.</li>
+<li>Wrap your code blocks in the expected HTML structure (often <code class="language-html">&lt;pre&gt;&lt;code class=&quot;language-yourlanguage&quot;&gt;...&lt;/code&gt;&lt;/pre&gt;</code>). Remember to escape HTML within the code!</li>
+<li>Initialize the library with JavaScript (e.g., <code class="language-js">Prism.highlightAll();</code>).</li>
+<li>The JavaScript library finds the code blocks, parses the code, wraps different parts (tokens) in <code class="language-html">&lt;span&gt;</code> tags with specific CSS classes, and the library&#39;s CSS theme file provides the colors and styles for those classes.</li>
+</ol>
+<p>Implementing full syntax highlighting is beyond the scope of this basic HTML/CSS section, but it&#39;s important to know that it&#39;s usually achieved with JavaScript libraries working in conjunction with CSS themes.</p>
+<p>👀 Our current code block in <code class="language-text">index.html</code> is styled with basic CSS but lacks syntax highlighting.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

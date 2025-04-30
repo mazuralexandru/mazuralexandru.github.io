@@ -9,63 +9,34 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>24. CSS Selectors: Type Selectors</h1>
-<p>We&#39;ve already been using the most basic type of CSS selector without formally naming it: the <strong>Type Selector</strong> (also known as an Element Selector or Tag Selector).</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>24. Introduction to Browser Developer Tools</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Every modern web browser includes a powerful suite of <strong>Developer Tools</strong> (often called &quot;DevTools&quot;). These are indispensable for web development.</p>
+<p><strong>Accessing DevTools:</strong></p>
 <ul>
-<li>We added a new element type, <code class="language-html">&lt;h2&gt;</code>, to <code class="language-text">index.html</code>.</li>
-<li>We added a new CSS rule in <code class="language-text">style.css</code> using a type selector to target this <code class="language-html">&lt;h2&gt;</code>.</li>
+<li><strong>Keyboard Shortcut:</strong> Press <code>F12</code> (on most Windows/Linux machines) or <code>Option+Command+I</code> (on macOS).</li>
+<li><strong>Right-Click Menu:</strong> Right-click anywhere on a webpage and select &quot;Inspect&quot; or &quot;Inspect Element&quot;.</li>
+<li><strong>Browser Menu:</strong> Usually found under &quot;More Tools&quot; -&gt; &quot;Developer Tools&quot; or similar.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Styling with External CSS&lt;/h1&gt;
-  &lt;p&gt;This paragraph will be styled externally.&lt;/p&gt;
-  &lt;h2&gt;This is a Sub-heading&lt;/h2&gt; &lt;!-- Added H2 --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-  color: #ccc;
-}
-
-/* Added H2 rule using Type Selector */
-h2 {
-  color: lightcoral;
-  font-weight: normal; /* Make H2 not bold */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Type Selectors Explained</strong></p>
+<p><strong>Key Panels (Overview):</strong></p>
 <ul>
-<li><strong>Syntax:</strong> Simply the name of the HTML element you want to target, without the angle brackets (e.g., <code class="language-css">h1</code>, <code class="language-css">p</code>, <code class="language-css">body</code>, <code class="language-css">img</code>, <code class="language-css">a</code>, <code class="language-css">h2</code>).</li>
-<li><strong>Scope:</strong> Selects <strong>all</strong> instances of that specific HTML element type within the document (or within the scope defined by more complex selectors, which we&#39;ll see later).</li>
-<li><strong>Use Cases:</strong><ul>
-<li>Applying very general, base styles to fundamental elements (like we did with <code class="language-css">body</code>).</li>
-<li>Applying global resets (e.g., setting default margins/paddings to 0 for all elements, although dedicated reset stylesheets are often used for this).</li>
-<li>Styling all instances of a particular element consistently when specific variations aren&#39;t needed.</li>
+<li><strong>Elements (or Inspector):</strong> View the live HTML structure (DOM), inspect and modify CSS styles applied to elements.</li>
+<li><strong>Console:</strong> View messages logged by JavaScript, run JavaScript commands, see errors and warnings.</li>
+<li><strong>Sources (or Debugger):</strong> View loaded files (HTML, CSS, JS), set breakpoints to debug JavaScript.</li>
+<li><strong>Network:</strong> Analyze network requests (loading of files, API calls).</li>
+<li><strong>Application (or Storage):</strong> Inspect cookies, local storage, session storage.</li>
+<li><strong>Performance (or Profiler):</strong> Analyze runtime performance and identify bottlenecks.</li>
 </ul>
-</li>
-</ul>
-<p>In our example, the selector <code class="language-css">h2</code> targets <em>every</em> <code class="language-html">&lt;h2&gt;</code> element on the page. We&#39;ve set its <code class="language-css">color</code> to <code class="language-css">lightcoral</code> and its <code class="language-css">font-weight</code> to <code class="language-css">normal</code> (overriding the browser&#39;s default bold styling for headings).</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You should see the new &quot;This is a Sub-heading&quot; text.</li>
-<li>👀 Notice that the <code class="language-html">&lt;h2&gt;</code> text is light coral and is <em>not</em> bold, unlike the default browser rendering for headings. This is because our <code class="language-css">h2</code> type selector rule in <code class="language-text">style.css</code> is being applied.</li>
-<li>✅ Inspect the <code class="language-html">&lt;h2&gt;</code> element in DevTools. The Styles pane will show the <code class="language-css">h2 { ... }</code> rule from <code class="language-text">style.css</code> being applied. You might also see the browser&#39;s default <code class="language-css">font-weight: bold</code> rule (from the user-agent stylesheet) crossed out.</li>
-</ul>
-<p>Type selectors are fundamental, but often you need more precise ways to target elements. We&#39;ll explore class selectors next.</p>
+<p>We&#39;ll explore these tools, especially the Elements panel, as we start building.</p>
+<p>✅ <code class="language-text">index.html</code> is still empty. We&#39;re finally ready to start with HTML itself!</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

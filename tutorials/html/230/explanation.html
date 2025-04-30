@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>230. <code class="language-html">&lt;em&gt;</code> &amp; <code class="language-html">&lt;strong&gt;</code>: CSS Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>While browsers provide default italic/bold styling, you can customize the appearance of <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> elements using CSS, just like any other element. You might do this to better integrate them with your site&#39;s design or to provide alternative visual cues.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added rules specifically targeting <code class="language-css">em</code> and <code class="language-css">strong</code>.</li>
+<li>For <code class="language-css">em</code>, we&#39;re removing the default italic style but adding a background color and padding.</li>
+<li>For <code class="language-css">strong</code>, we&#39;re keeping the bold weight but changing the color.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Styling Semantic Elements */
+em {
+  font-style: normal; /* Remove default italic */
+  background-color: rgba(200, 200, 0, 0.3); /* Add subtle yellow background */
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+strong {
+  /* font-weight: bold; &lt;- Already default, no need to redeclare unless changing */
+  color: orange; /* Change color from inherited */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The word &quot;standard&quot; (<code class="language-html">&lt;em&gt;</code>) in the first paragraph is no longer italic but now has a subtle yellow background highlight.</li>
+<li>The word &quot;follows&quot; (<code class="language-html">&lt;strong&gt;</code>) in the second paragraph is still bold, but its color should now be orange instead of the inherited light green.</li>
+</ul>
+<p>This demonstrates that while <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> have semantic meaning and default styles, you have full control over their final presentation using CSS.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

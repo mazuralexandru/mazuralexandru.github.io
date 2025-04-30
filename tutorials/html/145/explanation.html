@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>145. Type Selectors: Scope</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The defining characteristic of a type selector is its <strong>broad scope</strong>.</p>
+<p>A type selector like <code class="language-css">p</code> will match and apply its styles to <strong>every single</strong> <code class="language-html">&lt;p&gt;</code> element present in the HTML document, regardless of where it is nested or what other attributes it might have.</p>
+<p>Similarly, <code class="language-css">h1</code> affects all <code class="language-html">&lt;h1&gt;</code> elements, <code class="language-css">li</code> affects all <code class="language-html">&lt;li&gt;</code> elements, and so on.</p>
+<p>This makes type selectors powerful for setting baseline styles for fundamental HTML elements, but often too broad for styling specific components or variations. If you only want <em>some</em> paragraphs to be styled differently, a type selector alone is not sufficient – you&#39;ll need more specific selectors like class or ID selectors, which we&#39;ll cover next.</p>
+<p>👀 Look at <code class="language-text">index.html</code>. If we added another <code class="language-html">&lt;h1&gt;</code> element, the <code class="language-css">h1</code> rule in <code class="language-text">style.css</code> would automatically apply to it as well, making it cornflower blue.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

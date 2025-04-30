@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>207. Using Font Services (e.g., Google Fonts)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Manually hosting and setting up <code>@font-face</code> rules can be complex (licensing, multiple file formats, optimization). A very popular alternative is using <strong>web font services</strong> like Google Fonts, Adobe Fonts, etc.</p>
+<p><strong>How they typically work (e.g., Google Fonts):</strong></p>
+<ol>
+<li><strong>Select Fonts:</strong> You browse the service&#39;s library and choose the font(s) and specific weights/styles you want to use.</li>
+<li><strong>Get Embed Code:</strong> The service provides you with a <code class="language-html">&lt;link&gt;</code> tag (or sometimes an <code class="language-css">@import</code> rule) to add to your HTML <code class="language-html">&lt;head&gt;</code>.<pre class="language-html"><code class="language-html">&lt;!-- Example Google Fonts Link Tag --&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt; 
+</code></pre>
+</li>
+<li><strong>Use in CSS:</strong> The service also tells you the exact <code class="language-css">font-family</code> name to use in your CSS rules.<pre class="language-css"><code class="language-css">body {
+  font-family: &#39;Roboto&#39;, sans-serif; /* Use the font linked from Google */
+}
+</code></pre>
+</li>
+</ol>
+<p><strong>Behind the Scenes:</strong> The <code class="language-html">&lt;link&gt;</code> tag provided by the service points to a CSS file hosted on their servers. That CSS file contains the necessary <code>@font-face</code> rules, pointing to the actual font files (often in efficient <code class="language-text">woff2</code> format) also hosted on their optimized servers (CDN).</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Easy to implement.</li>
+<li>Access to a huge library of fonts (often free, check licenses).</li>
+<li>Optimized font delivery via CDNs.</li>
+<li>Handles browser compatibility and multiple file formats for you.</li>
+</ul>
+<p><strong>Drawbacks:</strong></p>
+<ul>
+<li>Relies on an external service (privacy implications, potential point of failure, extra HTTP request).</li>
+<li>Less control over font loading specifics compared to self-hosting.</li>
+</ul>
+<p>For many projects, using a service like Google Fonts is a convenient and efficient way to use custom fonts.</p>
+<p>👀 Our project currently uses only system fonts, not a font service. The <code>&lt;link&gt;</code> tags in <code class="language-text">index.html</code> are for our local CSS files.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

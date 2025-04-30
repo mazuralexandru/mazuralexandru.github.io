@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>100. CSS Color Values: RGB/RGBA</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>RGB (Red, Green, Blue)</strong> and <strong>RGBA (Red, Green, Blue, Alpha)</strong> provide another way to specify colors, often considered more readable than hex for understanding the components.</p>
+<ul>
+<li><strong>RGB Syntax:</strong> <code class="language-css">rgb(red, green, blue)</code><ul>
+<li><code class="language-css">red</code>, <code class="language-css">green</code>, <code class="language-css">blue</code> are typically integer values from 0 to 255 (inclusive).</li>
+<li>Example: <code class="language-css">rgb(255, 0, 0)</code> (Pure Red), <code class="language-css">rgb(0, 0, 0)</code> (Black), <code class="language-css">rgb(255, 255, 255)</code> (White).</li>
+</ul>
+</li>
+<li><strong>RGBA Syntax:</strong> <code class="language-css">rgba(red, green, blue, alpha)</code><ul>
+<li>Adds an <strong>alpha</strong> channel value for transparency.</li>
+<li><code class="language-css">alpha</code> ranges from <code class="language-css">0</code> (fully transparent) to <code class="language-css">1</code> (fully opaque). Decimal values like <code class="language-css">0.5</code> create semi-transparency.</li>
+<li>Example: <code class="language-css">rgba(0, 0, 255, 0.7)</code> (Semi-transparent Blue), <code class="language-css">rgba(0, 0, 0, 0.2)</code> (Very transparent Black/dark overlay).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Pros:</strong> Explicitly shows RGB components. RGBA provides a standard, well-supported way to handle transparency.
+<strong>Cons:</strong> Slightly more verbose than hex.</p>
+<p>✅ We used <code class="language-css">rgba(...)</code> in <code class="language-text">base_styles.css</code> for the faint grid lines, utilizing the alpha channel for transparency.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

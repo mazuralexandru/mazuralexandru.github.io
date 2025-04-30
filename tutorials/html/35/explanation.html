@@ -9,56 +9,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>35. Using Attribute Selectors: Substring Matching</h1>
-<p>Besides exact matches, attribute selectors can match based on substrings within the attribute&#39;s value. This is useful for targeting links based on the protocol (like <code class="language-html">https://</code>) or file extension.</p>
-<p>Let&#39;s style the PDF link using a selector that matches <code class="language-html">href</code> attributes <em>ending with</em> <code>.pdf</code>.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>35. Analogy: Properly closing containers</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Think about nesting HTML elements like stacking containers or using parentheses in mathematics:</p>
 <ul>
-<li>We added a new CSS rule using the &quot;ends with&quot; attribute selector <code class="language-css">[href$=&quot;.pdf&quot;]</code> to <code class="language-text">style.css</code>.</li>
+<li><strong>Containers:</strong> If you put a small box (<code class="language-html">&lt;p&gt;</code>) inside a larger box (<code class="language-html">&lt;div&gt;</code>), you must close the lid of the small box (<code class="language-html">&lt;/p&gt;</code>) before you can close the lid of the large box (<code class="language-html">&lt;/div&gt;</code>).</li>
+<li><strong>Parentheses:</strong> In an expression like <code class="language-text">( 5 * (3 + 2) )</code>, you evaluate the inner parentheses <code class="language-text">(3 + 2)</code> first before dealing with the outer ones.</li>
 </ul>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-[target=&quot;_blank&quot;] {
-  /* ... existing styles ... */
-  background-size: 12px 12px; /* Control icon size */
-}
-
-/* Style links ending with .pdf */
-[href$=&quot;.pdf&quot;] {
-  /* Add a different icon */
-  padding-left: 20px; /* Space on the left */
-  background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;14&#39; height=&#39;14&#39; viewBox=&#39;0 0 24 24&#39; fill=&#39;none&#39; stroke=&#39;%23ff8c8c&#39; stroke-width=&#39;2&#39; stroke-linecap=&#39;round&#39; stroke-linejoin=&#39;round&#39;%3E%3Cpath d=&#39;M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z&#39;%3E%3C/path%3E%3Cpolyline points=&#39;14 2 14 8 20 8&#39;%3E%3C/polyline%3E%3Cline x1=&#39;12&#39; y1=&#39;18&#39; x2=&#39;12&#39; y2=&#39;12&#39;%3E%3C/line%3E%3Cline x1=&#39;9&#39; y1=&#39;15&#39; x2=&#39;15&#39; y2=&#39;15&#39;%3E%3C/line%3E%3C/svg%3E&quot;);
-  background-repeat: no-repeat;
-  background-position: left center; /* Icon on the left */
-  background-size: 14px 14px;
-  color: #ff8c8c; /* Light red color for PDF links */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Substring Matching Attribute Selectors</strong></p>
-<p>There are several types:</p>
-<ul>
-<li><code class="language-css">[attribute^=&quot;value&quot;]</code>: Selects elements whose attribute value <strong>starts with</strong> the specified value (e.g., <code class="language-css">[href^=&quot;https://&quot;]</code> for secure links).</li>
-<li><code class="language-css">[attribute$=&quot;value&quot;]</code>: Selects elements whose attribute value <strong>ends with</strong> the specified value (e.g., <code class="language-css">[href$=&quot;.pdf&quot;]</code> for PDF links, <code class="language-css">[src$=&quot;.jpg&quot;]</code> for JPEG images).</li>
-<li><code class="language-css">[attribute*=&quot;value&quot;]</code>: Selects elements whose attribute value <strong>contains</strong> the specified substring anywhere within it (e.g., <code class="language-css">[href*=&quot;example.com&quot;]</code> for links containing &quot;example.com&quot;).</li>
-<li>Others like <code class="language-css">[attribute~=&quot;value&quot;]</code> (contains value as a whole word in a space-separated list) and <code class="language-css">[attribute|=&quot;value&quot;]</code> (starts with &quot;value-&quot;) exist but are less common for general styling.</li>
-</ul>
-<p>In our example, <code class="language-css">[href$=&quot;.pdf&quot;]</code> targets any element whose <code class="language-html">href</code> attribute value ends exactly with <code>.pdf</code>. We&#39;re adding a different icon (a document symbol) to the <em>left</em> of the text and changing the link color to light red.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Look at the <strong>second</strong> link (&quot;Link to PDF&quot;). It should now have a <strong>document icon (📄)</strong> appearing just <em>before</em> the text, and the text color should be <strong>light red</strong>. This styling is applied by the <code class="language-css">[href$=&quot;.pdf&quot;]</code> rule.</li>
-<li>👀 The <strong>first</strong> link (&quot;External Link (New Tab)&quot;) remains unchanged from the previous step (cyan text, external link icon on the right) because its <code class="language-html">href</code> doesn&#39;t end with <code>.pdf</code>.</li>
-<li>✅ Inspect the PDF link in DevTools. The Styles pane will show the <code class="language-css">a</code> rule and the <code class="language-css">[href$=&quot;.pdf&quot;]</code> rule being applied.</li>
-</ul>
-<p>Attribute selectors offer powerful ways to style elements based on their properties and state, enhancing semantic styling.</p>
+<p>HTML nesting follows the same logic: close the most recently opened element first. This ensures a clear and unambiguous structure for the browser to interpret.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

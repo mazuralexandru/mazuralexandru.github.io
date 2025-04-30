@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>80. Purpose of CSS</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Why do we use CSS? What problems does it solve?</p>
+<ol>
+<li><strong>Separation of Concerns:</strong> As mentioned, it cleanly separates document structure (HTML) from visual presentation. Imagine trying to set the color and font for every single paragraph using only HTML attributes – it would be incredibly repetitive and hard to update.</li>
+<li><strong>Consistency:</strong> Define a style once in a CSS file (like our <code class="language-text">base_styles.css</code>) and link that file to multiple HTML pages. All pages will share the same base look. Changing the style in the CSS file updates it everywhere instantly.</li>
+<li><strong>Maintainability:</strong> Need to change the brand color across your entire website? Modify one line in your CSS file instead of editing hundreds of HTML files.</li>
+<li><strong>Sophisticated Styling:</strong> CSS offers a vast range of properties to control layout (positioning, flexbox, grid), typography, colors, backgrounds, borders, animations, responsiveness (adapting to different screen sizes), and much more – far beyond what HTML attributes alone could ever achieve.</li>
+<li><strong>Accessibility:</strong> Users can apply their own custom stylesheets to override website styles, which can be crucial for readability (e.g., high contrast modes, larger fonts). Keeping styles separate facilitates this.</li>
+<li><strong>Bandwidth:</strong> Browsers can cache external CSS files. After the first download, the styles load instantly for subsequent pages, saving bandwidth and speeding up page loads compared to repeating styles directly in HTML.</li>
+</ol>
+<p>CSS is fundamental to creating visually appealing, maintainable, and modern websites.</p>
+<p>👀 The styles you see are still from <code class="language-text">base_styles.css</code>. We haven&#39;t added any lesson-specific styles yet.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

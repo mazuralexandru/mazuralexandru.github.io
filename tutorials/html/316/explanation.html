@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>316. <code class="language-css">display</code> Value: <code class="language-css">block</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Elements with <code class="language-css">display: block;</code> are fundamental building blocks for page structure.</p>
+<ul>
+<li><strong>Behavior:</strong><ol>
+<li><strong>Starts on a New Line:</strong> Block elements force a line break before and after themselves, stacking vertically in the normal document flow.</li>
+<li><strong>Full Available Width:</strong> By default (<code class="language-css">width: auto;</code>), they expand horizontally to fill the entire width of their containing block.</li>
+<li><strong>Respects Dimensions/Spacing:</strong> <code class="language-css">width</code>, <code class="language-css">height</code>, <code class="language-css">margin</code> (including vertical margins and <code class="language-css">auto</code> horizontal centering), and <code class="language-css">padding</code> are all fully respected.</li>
+</ol>
+</li>
+<li><strong>Default Block Elements:</strong> Many common structural and content elements are block-level by default, including: <code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;h1&gt;</code>-<code class="language-html">&lt;h6&gt;</code>, <code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, <code class="language-html">&lt;li&gt;</code>, <code class="language-html">&lt;form&gt;</code>, <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;footer&gt;</code>, <code class="language-html">&lt;section&gt;</code>, <code class="language-html">&lt;article&gt;</code>, <code class="language-html">&lt;nav&gt;</code>, <code class="language-html">&lt;blockquote&gt;</code>, <code class="language-html">&lt;hr&gt;</code>, <code class="language-html">&lt;pre&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Code Pruning:</strong> We&#39;ve cleared the previous examples.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added two simple <code class="language-html">&lt;div&gt;</code> elements, which are block-level by default.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added basic styles to give the divs background colors and some margin/padding to make their block behavior visible. No explicit <code class="language-css">display: block;</code> is needed as it&#39;s the default for <code class="language-html">&lt;div&gt;</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Display Block Example */
+.block-1, .block-2 {
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.block-1 {
+  background-color: rgba(0, 128, 0, 0.3); /* Faint green */
+}
+
+.block-2 {
+  background-color: rgba(255, 0, 255, 0.2); /* Faint magenta */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see two distinct boxes stacked vertically, one above the other.</li>
+<li>Each box takes up the full available width of the preview area.</li>
+<li>This vertical stacking and full-width behavior is characteristic of block-level elements.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

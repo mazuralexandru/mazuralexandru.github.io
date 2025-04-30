@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>227. Emphasis &amp; Importance (<code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Now let&#39;s shift focus back to HTML and look at specific elements used for text semantics, starting with emphasis and importance.</p>
+<ul>
+<li><strong><code class="language-html">&lt;em&gt;</code> (Emphasis):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents stress emphasis on its content. Think of how you&#39;d change your tone of voice to emphasize a word. It changes the meaning of the sentence.</li>
+<li><strong>Default Styling:</strong> Typically rendered in <em>italics</em> by browsers.</li>
+<li><strong>Example:</strong> <code class="language-html">You &lt;em&gt;must&lt;/em&gt; complete the form.</code> (Emphasizing &quot;must&quot;).</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;strong&gt;</code> (Strong Importance):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents strong importance, seriousness, or urgency for its content. Doesn&#39;t change the meaning like <code class="language-html">&lt;em&gt;</code>, but highlights key information.</li>
+<li><strong>Default Styling:</strong> Typically rendered in <strong>bold</strong> by browsers.</li>
+<li><strong>Example:</strong> <code class="language-html">&lt;strong&gt;Warning:&lt;/strong&gt; Do not exceed the maximum dosage.</code> (Highlighting the warning).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Key Distinction:</strong> Use <code class="language-html">&lt;em&gt;</code> for emphasis that changes meaning, and <code class="language-html">&lt;strong&gt;</code> for highlighting important text. Don&#39;t choose them based purely on their default italic/bold appearance.** If you just want italics or bold for presentation without semantic meaning, use CSS (<code class="language-css">font-style: italic;</code> or <code class="language-css">font-weight: bold;</code>) potentially applied via a class, or consider the presentational <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code> tags if appropriate (covered next).</p>
+<p>👀 Our current <code class="language-text">index.html</code> doesn&#39;t use <code class="language-html">&lt;em&gt;</code> or <code class="language-html">&lt;strong&gt;</code>. We could add them within the paragraphs to emphasize specific words.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

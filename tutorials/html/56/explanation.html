@@ -9,101 +9,37 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>56. Text Styling: <code>font-size</code></h1>
-<p>The <code class="language-css">font-size</code> property controls the size of the text. We&#39;ve used it before, but let&#39;s revisit the common units, especially relative units like <code class="language-css">rem</code> which are generally preferred for accessibility.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the two paragraphs used for font-family demos.</li>
-<li><strong>HTML Addition:</strong> Added three paragraphs with classes demonstrating different <code class="language-css">font-size</code> units: <code class="language-html">size-px</code>, <code class="language-html">size-rem</code>, <code class="language-html">size-percent</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.serif-text</code> and <code class="language-css">.sans-serif-text</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules for the new classes using <code class="language-css">px</code>, <code class="language-css">rem</code>, and <code class="language-css">%</code> for <code class="language-css">font-size</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;!-- Link to Google Fonts (keeping for potential use) --&gt;
-  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
-  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
-  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+  <h1>56. <code class="language-html">&lt;head&gt;</code>: Placement</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The placement of the <code class="language-html">&lt;head&gt;</code> element within the overall HTML structure is fixed:</p>
+<ol>
+<li>It must be a direct child of the <code class="language-html">&lt;html&gt;</code> element.</li>
+<li>It must appear <em>before</em> the <code class="language-html">&lt;body&gt;</code> element.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Font Size Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+  &lt;head&gt;  &lt;!-- CORRECT: Inside &lt;html&gt;, before &lt;body&gt; --&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+  &lt;/head&gt;
 
-  &lt;!-- Pruned previous font-family examples --&gt;
+  &lt;body&gt; &lt;!-- &lt;body&gt; follows &lt;head&gt; --&gt;
+    &lt;!-- Visible content --&gt;
+  &lt;/body&gt;
 
-  &lt;p class=&quot;size-px&quot;&gt;Font size using Pixels (18px).&lt;/p&gt; &lt;!-- Added px example --&gt;
-  &lt;p class=&quot;size-rem&quot;&gt;Font size using REM (1.5rem).&lt;/p&gt; &lt;!-- Added rem example --&gt;
-  &lt;p class=&quot;size-percent&quot;&gt;Font size using Percent (80%).&lt;/p&gt; &lt;!-- Added % example --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+&lt;/html&gt; 
 </code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-h1 {
-  color: lightblue;
-}
-
-/* Pruned font-family rules */
-/* .serif-text { ... } */
-/* .sans-serif-text { ... } */
-
-
-/* Font Size Demo */
-.size-px {
-  font-size: 18px; /* Absolute unit */
-  margin-bottom: 10px;
-}
-
-.size-rem {
-  font-size: 1.5rem; /* Relative to ROOT font size (e.g., 1.5 * 16px = 24px) */
-  margin-bottom: 10px;
-}
-
-.size-percent {
-  font-size: 80%; /* Relative to PARENT font size (body&#39;s default) */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Common <code>font-size</code> Units</strong></p>
-<ul>
-<li><strong>Absolute Units:</strong><ul>
-<li><code class="language-css">px</code> (Pixels): Defines the size in fixed screen pixels. It&#39;s precise but <strong>not recommended</strong> as the primary unit for text size. Why? Because it doesn&#39;t scale if the user changes their browser&#39;s default font size setting for accessibility reasons. Users with visual impairments might set a larger default size, but <code>px</code>-defined text won&#39;t respect that setting.</li>
-</ul>
-</li>
-<li><strong>Relative Units (Preferred for Text):</strong><ul>
-<li><code class="language-css">rem</code> (Root EM): Relative to the <code class="language-css">font-size</code> of the root (<code class="language-html">&lt;html&gt;</code>) element. <strong>This is generally the best choice for <code>font-size</code></strong>. It scales predictably across the entire page and respects the user&#39;s base font size preference. If the browser default is <code>16px</code>, then <code class="language-css">1.5rem</code> computes to <code>1.5 * 16 = 24px</code>.</li>
-<li><code class="language-css">%</code> (Percentage): Relative to the parent element&#39;s <code class="language-css">font-size</code>. Can suffer from the same compounding issues as <code class="language-css">em</code> if nested. <code class="language-css">80%</code> here means 80% of the <code>body</code>&#39;s default font size (e.g., <code>0.8 * 16px = 12.8px</code>).</li>
-<li><code class="language-css">em</code>: Relative to the parent&#39;s <code>font-size</code> (or the element&#39;s own size if inherited). Prone to compounding issues for <code>font-size</code>. Better suited for properties like <code>padding</code> or <code>margin</code> that should scale with the text <em>inside</em> the element.</li>
-</ul>
-</li>
-<li><strong>Keywords:</strong> Predefined values like <code class="language-css">small</code>, <code class="language-css">medium</code>, <code class="language-css">large</code>, <code class="language-css">x-large</code>, etc. Less precise control than numeric units.</li>
-</ul>
-<p><strong>Accessibility:</strong> Using relative units like <code class="language-css">rem</code> for font sizes is crucial for accessibility, as it allows users to adjust text size globally via browser settings.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You should see three paragraphs with distinctly different font sizes.</li>
-<li>👀 The first (<code>.size-px</code>) has a fixed size of <code>18px</code>.</li>
-<li>👀 The second (<code>.size-rem</code>) should be significantly larger (<code>1.5rem</code>, likely computed to <code>24px</code>).</li>
-<li>👀 The third (<code>.size-percent</code>) should be smaller than the browser default (<code>80%</code>, likely computed to around <code>12.8px</code>).</li>
-<li>🔬 <strong>Experiment (Conceptual / DevTools):</strong> Try changing your browser&#39;s default font size setting (look in browser settings under &quot;Appearance&quot; or similar). If you increase the default size, the text sized with <code class="language-css">rem</code> and <code class="language-css">%</code> should scale up accordingly, while the text sized with <code class="language-css">px</code> will remain fixed at <code>18px</code>. This demonstrates the accessibility benefit of relative units. (You can also simulate this in DevTools by changing the font-size on the <code>&lt;html&gt;</code> element for <code>rem</code> or the parent for <code>%</code>).</li>
-<li>✅ Inspect the elements in DevTools and check the &quot;Computed&quot; font size for each paragraph to see the pixel values the browser calculated.</li>
-</ul>
-<p>Always prefer relative units like <code class="language-css">rem</code> for setting <code>font-size</code> to ensure your text scales properly and respects user preferences.</p>
+<p>Placing the <code class="language-html">&lt;head&gt;</code> after the <code class="language-html">&lt;body&gt;</code>, or outside the <code class="language-html">&lt;html&gt;</code> tags, is invalid HTML and will lead to errors or unpredictable behavior. There should only be one <code class="language-html">&lt;head&gt;</code> element per document.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

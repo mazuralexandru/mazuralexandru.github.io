@@ -9,56 +9,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>30. CSS Selectors: Introduction to Attribute Selectors</h1>
-<p>Beyond <code class="language-html">class</code> and <code class="language-html">id</code>, HTML elements can have many other attributes (like <code class="language-html">type</code>, <code class="language-html">href</code>, <code class="language-html">target</code>, <code class="language-html">required</code>, etc.). <strong>Attribute Selectors</strong> allow you to target elements based on the presence or value of these attributes.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">&lt;h2&gt;</code> and the <code class="language-html">&lt;div id=&quot;main-content&quot;&gt;</code> to simplify the example for focusing on attribute selectors. Look for <code class="language-html">&lt;!-- Pruned previous H2 and div#main-content --&gt;</code>.</li>
-<li><strong>HTML Addition:</strong> Added two <code class="language-html">&lt;input&gt;</code> elements. One is a standard text input, the other is an email input with the <code class="language-html">required</code> attribute.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Attribute Selectors Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-  &lt;p&gt;Styling inputs based on attributes.&lt;/p&gt; &lt;!-- Changed P text --&gt;
-
-  &lt;!-- Pruned previous H2 and div#main-content --&gt;
-
-  &lt;input type=&quot;text&quot; placeholder=&quot;Username&quot;&gt; &lt;!-- Added text input --&gt;
-  &lt;br&gt; &lt;!-- Added line break for spacing --&gt;
-  &lt;input type=&quot;email&quot; placeholder=&quot;Email (required)&quot; required&gt; &lt;!-- Added required email input --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+  <h1>30. Anatomy Recap: Element = Tag + Content + Tag</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s quickly recap the relationship between tags and elements for standard, non-void elements:</p>
+<p><code>Opening Tag</code> + <code>Content</code> + <code>Closing Tag</code> = <code>Element</code></p>
+<p>Example:</p>
+<pre class="language-html"><code class="language-html">&lt;p&gt;This is the content of the paragraph element.&lt;/p&gt;
 </code></pre>
-<p><strong>HTML Attributes Review</strong></p>
 <ul>
-<li>Attributes provide additional information about an element.</li>
-<li>They appear in the opening tag, usually as <code class="language-html">name=&quot;value&quot;</code> pairs (e.g., <code class="language-html">type=&quot;text&quot;</code>).</li>
-<li>Some attributes are &quot;boolean&quot; attributes – their presence implies <code class="language-text">true</code>, and they don&#39;t need a value (e.g., <code class="language-html">required</code>, <code class="language-html">disabled</code>).</li>
+<li><code class="language-html">&lt;p&gt;</code> is the <strong>opening tag</strong>.</li>
+<li><code class="language-text">This is the content of the paragraph element.</code> is the <strong>content</strong>.</li>
+<li><code class="language-html">&lt;/p&gt;</code> is the <strong>closing tag</strong>.</li>
+<li>The entire line constitutes the <strong>paragraph element</strong>.</li>
 </ul>
-<p>We now have two input fields:</p>
-<ol>
-<li><code class="language-html">&lt;input type=&quot;text&quot;&gt;</code></li>
-<li><code class="language-html">&lt;input type=&quot;email&quot; required&gt;</code></li>
-</ol>
-<p>Attribute selectors give us ways to style these differently based on their <code class="language-html">type</code> or the presence of the <code class="language-html">required</code> attribute.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You&#39;ll see the heading, paragraph, and two input fields.</li>
-<li>👀 By default, the input fields likely have the browser&#39;s standard appearance (often white background, dark text, simple border). Adding attributes like <code class="language-html">type</code> or <code class="language-html">required</code> primarily affects browser behavior (like form validation) rather than default styling.</li>
-<li>✅ Inspect the input elements in DevTools to see their attributes.</li>
-</ul>
-<p>In the next steps, we&#39;ll add CSS rules using different attribute selectors to style these inputs.</p>
+<p>Understanding this distinction (tag vs. element) is key to discussing HTML accurately.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

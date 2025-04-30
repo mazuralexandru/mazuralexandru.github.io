@@ -9,59 +9,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>09. Applying Inline Styles</h1>
-<p>While external stylesheets (<code class="language-text">style.css</code>) are preferred for overall styling, HTML allows you to apply styles directly to a single element using the <code class="language-html">style</code> attribute. This is called an &quot;inline style&quot;.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a <code class="language-html">style</code> attribute directly to the <code class="language-html">&lt;p&gt;</code> tag.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;!-- This is our first paragraph --&gt;
-  &lt;p style=&quot;color: lightcoral;&quot;&gt;Hello, World!&lt;/p&gt; &lt;!-- Added inline style --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>The <code>style</code> Attribute (Inline CSS)</strong></p>
+  <h1>09. Analogy: The House</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>A common analogy helps visualize the roles of HTML, CSS, and JavaScript: Building a house.</p>
 <ul>
-<li><strong>Purpose:</strong> Allows you to embed CSS declarations directly within an HTML element&#39;s opening tag.</li>
-<li><strong>Syntax:</strong> <code class="language-html">&lt;element style=&quot;property: value; property2: value2;&quot;&gt;</code><ul>
-<li>The value of the <code class="language-html">style</code> attribute is a string containing one or more standard CSS declarations (<code class="language-css">property: value</code>), separated by semicolons, just like inside a CSS file&#39;s declaration block.</li>
+<li><strong>HTML is the structure:</strong> The foundation, walls, roof, rooms. It defines the essential structure and components of the house. Without it, there&#39;s nothing to decorate or live in.</li>
+<li><strong>CSS is the presentation:</strong> The paint color, wallpaper, furniture arrangement, landscaping. It makes the house visually appealing and defines its style. You can change the CSS (redecorate) without altering the fundamental structure (HTML).</li>
+<li><strong>JavaScript is the functionality:</strong> The electrical wiring, plumbing, heating/cooling systems, doorbells, light switches. It adds interactivity and makes the house functional – allowing you to turn on lights, run water, open doors automatically.</li>
 </ul>
-</li>
-<li><strong>Specificity:</strong> Inline styles have very high <strong>specificity</strong>, meaning they often override styles defined in external stylesheets or within <code>&lt;style&gt;</code> tags in the <code>&lt;head&gt;</code>. We&#39;ll cover specificity in more detail later.</li>
-<li><strong>Use Cases:</strong><ul>
-<li>Applying a unique style to <em>one specific element</em> that won&#39;t be reused.</li>
-<li>Quick testing or debugging.</li>
-<li>Sometimes used by JavaScript to dynamically change an element&#39;s style.</li>
-</ul>
-</li>
-<li><strong>Drawbacks (Why Avoid Generally):</strong><ul>
-<li><strong>Mixes Presentation and Structure:</strong> Violates the principle of separating concerns.</li>
-<li><strong>Poor Maintainability:</strong> Styles are scattered throughout the HTML, making updates difficult.</li>
-<li><strong>No Reusability:</strong> The style only applies to that single element.</li>
-<li><strong>Overrides:</strong> Can make stylesheets harder to manage due to high specificity.</li>
-</ul>
-</li>
-</ul>
-<p><strong>CSS <code>color</code> Property</strong></p>
-<ul>
-<li>We used <code class="language-css">color: lightcoral;</code> inside the <code class="language-html">style</code> attribute.</li>
-<li>The <code class="language-css">color</code> property sets the foreground color of an element&#39;s text content.</li>
-<li><code class="language-css">lightcoral</code> is a predefined <strong>color keyword</strong>. CSS supports many such keywords, as well as other color formats like hexadecimal (<code class="language-css">#F08080</code>) or RGB (<code class="language-css">rgb(240, 128, 128)</code>).</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The &quot;Hello, World!&quot; text should now appear in a light coral color, overriding the default light gray color (<code class="language-css">#E0E0E0</code>) set by the <code class="language-css">body</code> rule in <code class="language-text">style.css</code>. This demonstrates the effect of the inline style. The background remains dark gray.</li>
-<li>🔬 <strong>Experiment:</strong> Try changing <code class="language-css">lightcoral</code> to another color keyword like <code class="language-css">lightblue</code> or <code class="language-css">yellowgreen</code> within the <code class="language-html">style</code> attribute. Save and refresh to see the text color change.</li>
-</ul>
+<p>This analogy highlights how the three technologies work together, each with a distinct but complementary purpose.</p>
+<p>✅ <code class="language-text">index.html</code> is still empty. Next, we&#39;ll discuss why keeping these technologies separate is important.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

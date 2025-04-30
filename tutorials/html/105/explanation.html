@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>105. HTML Comments</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Comments are parts of your code that are ignored by the browser but are visible to developers reading the source code. They are essential for explaining code, leaving notes, or temporarily disabling parts of the code.</p>
+<ul>
+<li><strong>Purpose:</strong><ul>
+<li>Add explanations or notes for yourself or other developers.</li>
+<li>Clarify complex sections of code.</li>
+<li>Temporarily remove code from being processed without deleting it (called &quot;commenting out&quot;).</li>
+</ul>
+</li>
+<li><strong>Syntax:</strong> HTML comments start with <code class="language-html">&lt;!--</code> and end with <code class="language-html">--&gt;</code>. Everything in between is considered part of the comment.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>!</strong></p>
+<ul>
+<li>We&#39;ve added a single-line comment: <code class="language-html">&lt;!-- Example HTML Comment --&gt;</code>.</li>
+<li>We&#39;ve &quot;commented out&quot; the previous paragraph with inline styles by wrapping it in comment tags. Notice it disappears from the preview!</li>
+<li>We&#39;ve added a new, standard <code class="language-html">&lt;p&gt;</code> element.</li>
+<li>We&#39;ve added a multi-line comment before the new <code class="language-html">&lt;h1&gt;</code>.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong> The paragraph with inline styles is gone because it&#39;s commented out. You now see the new standard paragraph and the main heading. Comments themselves are never displayed on the rendered page.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

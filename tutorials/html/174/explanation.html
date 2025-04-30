@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>174. Combinators: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Combinators are essential because HTML structure is hierarchical. Elements are nested within other elements, and elements appear before or after their siblings. Combinators let our CSS selectors reflect this structure.</p>
+<p>Why use them?</p>
+<ol>
+<li><strong>Contextual Styling:</strong> Apply styles only when an element appears within a specific context. For example, style <code class="language-html">&lt;li&gt;</code> elements differently when they are inside a <code class="language-html">&lt;nav&gt;</code> compared to when they are inside the main content area. (<code class="language-css">nav li</code> vs <code class="language-css">main li</code>).</li>
+<li><strong>Avoiding Excessive Classes:</strong> Instead of adding classes like <code class="language-html">class=&quot;nav-list-item&quot;</code> to every list item in the navigation, you can often use a combinator like <code class="language-css">.main-nav &gt; ul &gt; li</code> to target them based on their position within the navigation structure.</li>
+<li><strong>Styling Based on Proximity:</strong> Apply styles to an element based on what immediately precedes it (adjacent sibling <code class="language-css">+</code>) or what generally precedes it (general sibling <code class="language-css">~</code>). For example, adding top margin to a paragraph only if it directly follows a heading (<code class="language-css">h2 + p</code>).</li>
+<li><strong>Increased Specificity (Carefully):</strong> Combinators contribute to the overall specificity of a selector, allowing you to create more targeted rules, although overly long chains of combinators should generally be avoided for maintainability.</li>
+</ol>
+<p>Combinators allow your CSS to mirror the relationships defined in your HTML markup.</p>
+<p>👀 Look at the nested structure in <code class="language-text">index.html</code> (<code class="language-html">span</code> inside <code class="language-html">p</code>, <code class="language-html">p</code> and <code class="language-html">h1</code> inside <code class="language-html">div</code>). Combinators will let us target these elements based on these relationships.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

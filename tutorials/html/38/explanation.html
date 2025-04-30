@@ -9,61 +9,27 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>38. CSS Selectors: Introduction to Grouping Selectors</h1>
-<p>Often, you want to apply the exact same style rules to several different elements. Instead of writing separate rulesets for each selector, you can <strong>group</strong> them together using commas. This follows the DRY (Don&#39;t Repeat Yourself) principle.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>38. Purpose of Void Elements</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Why do void elements exist?</p>
+<p>They typically represent a specific instruction, insertion point, or self-contained object that doesn&#39;t naturally &quot;contain&quot; other content in the same way a paragraph contains text or a <code class="language-html">&lt;div&gt;</code> contains other elements.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">&lt;div&gt;</code> element from the previous step.</li>
-<li><strong>HTML Addition:</strong> Added <code class="language-html">&lt;h2&gt;</code> and <code class="language-html">&lt;h3&gt;</code> elements to provide more heading types to style.</li>
+<li><code class="language-html">&lt;br&gt;</code>: Inserts a line break. It doesn&#39;t <em>contain</em> the break; it <em>is</em> the break.</li>
+<li><code class="language-html">&lt;hr&gt;</code>: Represents a thematic break between paragraph-level elements. It <em>is</em> the divider.</li>
+<li><code class="language-html">&lt;img&gt;</code>: Embeds an image. The image source is specified via an attribute (<code class="language-html">src</code>), but the <code class="language-html">&lt;img&gt;</code> tag itself doesn&#39;t enclose image data or other elements.</li>
+<li><code class="language-html">&lt;input&gt;</code>: Creates a form control. Its type and value are set by attributes. It doesn&#39;t contain other elements.</li>
+<li><code class="language-html">&lt;link&gt;</code> / <code class="language-html">&lt;meta&gt;</code>: Provide information <em>about</em> the document (metadata or links) rather than representing content <em>within</em> the document flow.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Grouping Selectors Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-  &lt;p&gt;Applying same styles to multiple heading levels.&lt;/p&gt; &lt;!-- Changed P text --&gt;
-  &lt;h2&gt;A Level 2 Heading&lt;/h2&gt; &lt;!-- Added H2 --&gt;
-  &lt;h3&gt;A Level 3 Heading&lt;/h3&gt; &lt;!-- Added H3 --&gt;
-
-  &lt;!-- Pruned previous div example --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>The Need for Grouping</strong></p>
-<p>Imagine you want all your headings (<code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;h2&gt;</code>, <code class="language-html">&lt;h3&gt;</code>) to share the same font family and maybe a base color, but retain their different default sizes. Without grouping, you might write:</p>
-<pre class="language-css"><code class="language-css">/* Without Grouping (Repetitive) */
-h1 {
-  font-family: &#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;
-  color: #ddd; /* Base heading color */
-  /* ... other h1 specific styles ... */
-}
-h2 {
-  font-family: &#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;
-  color: #ddd; /* Base heading color */
-  /* ... other h2 specific styles ... */
-}
-h3 {
-  font-family: &#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;
-  color: #ddd; /* Base heading color */
-  /* ... other h3 specific styles ... */
-}
-</code></pre>
-<p>This is very repetitive! Grouping selectors allows us to apply the common styles much more efficiently.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You&#39;ll see the <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;h2&gt;</code>, and <code class="language-html">&lt;h3&gt;</code> elements.</li>
-<li>👀 Currently, the <code class="language-html">&lt;h1&gt;</code> is light blue (from our existing <code class="language-css">h1</code> rule). The <code class="language-html">&lt;h2&gt;</code> and <code class="language-html">&lt;h3&gt;</code> have the default body text color (<code class="language-css">#E0E0E0</code>) because we previously removed the specific <code class="language-css">h2</code> rule and haven&#39;t added one for <code class="language-css">h3</code>. They likely appear bold due to browser defaults.</li>
-</ul>
-<p>Next, we&#39;ll use a grouped selector to apply common styles to all three heading levels.</p>
+<p>They are concise ways to represent these specific concepts without needing unnecessary closing tags.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

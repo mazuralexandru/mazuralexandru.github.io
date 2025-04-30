@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>195. Relative Units Recap</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>Relative length units</strong> define a size based on some other value, such as the parent element&#39;s font size, the root element&#39;s font size, or the size of the viewport (the browser window&#39;s visible area). They are key to creating flexible, scalable, and responsive designs.</p>
+<p>We&#39;ll recap the main types:</p>
+<ul>
+<li><strong>Percentage (<code class="language-css">%</code>):</strong> Relative to a value from the parent element.</li>
+<li><strong>Em (<code class="language-css">em</code>):</strong> Relative to the <code class="language-css">font-size</code> of the element itself (or its parent for <code class="language-css">font-size</code>).</li>
+<li><strong>Rem (<code class="language-css">rem</code>):</strong> Relative to the <code class="language-css">font-size</code> of the root (<code class="language-html">&lt;html&gt;</code>) element.</li>
+<li><strong>Viewport Units (<code class="language-css">vw</code>, <code class="language-css">vh</code>, <code class="language-css">vmin</code>, <code class="language-css">vmax</code>):</strong> Relative to the dimensions of the viewport.</li>
+</ul>
+<p>Using relative units allows layouts and text to scale more naturally, adapting better to different screen sizes and user preferences (like adjusted default font sizes).</p>
+<p>👀 Our current styles primarily use <code class="language-css">px</code>, except for the <code class="language-css">font-size: 0.8em;</code> used in the <code class="language-css">::after</code> pseudo-element for the external link icon in <code class="language-text">style.css</code>. This makes the icon size relative to the link&#39;s text size.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

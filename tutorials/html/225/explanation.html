@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>225. <code class="language-css">text-shadow</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">text-shadow</code> property adds one or more shadows to text.</p>
+<ul>
+<li><strong>Purpose:</strong> To create visual effects like drop shadows, glows, or outlines for text.</li>
+<li><strong>Syntax:</strong> <code class="language-css">text-shadow: h-offset v-offset blur-radius color [, h-offset v-offset blur-radius color]*;</code><ul>
+<li><code class="language-css">h-offset</code>: Horizontal offset of the shadow. Positive values move it right, negative values move it left. (Required)</li>
+<li><code class="language-css">v-offset</code>: Vertical offset of the shadow. Positive values move it down, negative values move it up. (Required)</li>
+<li><code class="language-css">blur-radius</code>: (Optional) The blur distance. Larger values create bigger, fuzzier shadows. 0 means a sharp, unblurred shadow. Defaults to 0 if omitted.</li>
+<li><code class="language-css">color</code>: (Optional) The color of the shadow. Defaults to the element&#39;s <code class="language-css">color</code> if omitted.</li>
+<li><strong>Multiple Shadows:</strong> You can specify multiple shadows by separating them with commas. They are applied front-to-back (the first shadow listed is topmost).</li>
+</ul>
+</li>
+<li><strong>Value:</strong> <code class="language-css">none</code> (Default) - No shadow.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a <code class="language-css">text-shadow</code> to the <code class="language-css">#main-heading</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">#main-heading {
+    /* ... other styles ... */
+    text-transform: uppercase; 
+    /* Add a simple black drop shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+</code></pre>
+<ul>
+<li>This adds a shadow offset 2px right, 2px down, with a 4px blur radius, and a semi-transparent black color.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong> The &quot;MAIN HEADING&quot; text should now have a noticeable drop shadow effect behind it, making it appear slightly raised or offset from the background.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

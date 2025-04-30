@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>221. <code class="language-css">white-space</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">white-space</code> property controls how whitespace (spaces, tabs, newlines) inside an element is handled and how lines are wrapped.</p>
+<ul>
+<li><strong>Purpose:</strong> To manage text wrapping and the collapsing of whitespace characters.</li>
+<li><strong>Inherited:</strong> Yes.</li>
+<li><strong>Common Values:</strong><ul>
+<li><code class="language-css">normal</code>: (Default) Collapses multiple whitespace characters into a single space. Text wraps when necessary. Newlines in the source code are treated like spaces.</li>
+<li><code class="language-css">nowrap</code>: Collapses whitespace like <code class="language-css">normal</code>, but <strong>prevents</strong> text from wrapping to the next line. Text will overflow its container if it&#39;s too long.</li>
+<li><code class="language-css">pre</code>: <strong>Preserves</strong> whitespace and newlines exactly as they appear in the HTML source code. Text only wraps on explicit newline characters in the source. Acts like the HTML <code class="language-html">&lt;pre&gt;</code> tag. Often used with monospace fonts for code blocks.</li>
+<li><code class="language-css">pre-wrap</code>: Preserves whitespace and newlines like <code class="language-css">pre</code>, but <strong>allows</strong> text to wrap normally if it exceeds the container width.</li>
+<li><code class="language-css">pre-line</code>: Collapses sequences of whitespace into a single space, but <strong>preserves</strong> newline characters from the source code (text wraps on newlines and also when necessary).</li>
+<li><code class="language-css">break-spaces</code>: Similar to <code class="language-css">pre-wrap</code> but with slightly different handling of spaces at the end of lines for wrapping.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>Let&#39;s apply <code class="language-css">white-space: nowrap;</code> to the <code class="language-html">&lt;span&gt;</code> inside the first paragraph to prevent it from wrapping.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Descendant Combinator Example */
+.container span {
+  font-weight: bold; 
+  border: inherit; 
+  font-size: 1.5rem; 
+  white-space: nowrap; /* Prevent this span from line-breaking */
+  background-color: rgba(0, 0, 255, 0.2); /* Add background to see effect */
+}
+</code></pre>
+<ul>
+<li>We added a semi-transparent background to make the span&#39;s boundaries clearer.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>If the text &quot;This is inside the paragraph.&quot; was previously wrapping onto a new line within the first paragraph (depending on window width), it should now stay on a single line, potentially overflowing the paragraph&#39;s width if the window is narrow. The <code class="language-css">nowrap</code> value prevents line breaks within the span.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

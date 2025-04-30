@@ -1,0 +1,21 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Display Block Example */
+.block-1, .block-2 {
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.block-1 {
+  background-color: rgba(0, 128, 0, 0.3); /* Faint green */
+}
+
+.block-2 {
+  background-color: rgba(255, 0, 255, 0.2); /* Faint magenta */
+}

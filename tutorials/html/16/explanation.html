@@ -9,57 +9,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>16. Pruning Code for Focus</h1>
-<p>Before moving on to new topics like Developer Tools, let&#39;s clean up our current example again. The <code class="language-html">&lt;h1&gt;</code> element and its associated CSS rule served their purpose in demonstrating headings and external CSS. To keep the preview clean and focused for upcoming lessons, we&#39;ll remove them.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>16. Syntax Highlighting</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>Syntax Highlighting</strong> is one of the most fundamental features. The editor automatically displays different parts of your code (tags, attributes, strings, comments, properties, values) in different colors and styles.</p>
+<p><strong>How it helps:</strong></p>
 <ul>
-<li><strong>HTML Removal:</strong> The <code class="language-html">&lt;h1&gt;Document Heading&lt;/h1&gt;</code> element has been removed from <code class="language-text">index.html</code>. A comment <code class="language-html">&lt;!-- Removed H1 element for focus --&gt;</code> marks the location.</li>
-<li><strong>HTML Addition:</strong> A simple <code class="language-html">&lt;p&gt;Preparing for next steps...&lt;/p&gt;</code> has been added to ensure the page isn&#39;t completely blank visually.</li>
-<li><strong>CSS Removal (Commented Out):</strong> The CSS rule targeting <code class="language-css">h1</code> in <code class="language-text">style.css</code> has been commented out (<code class="language-css">/* ... */</code>). We could have deleted it entirely, but commenting it out serves the same purpose for now (making it inactive) and shows another use of comments. A comment <code class="language-css">/* Removed H1 style rule for focus */</code> clarifies the intent.</li>
+<li><strong>Readability:</strong> Makes code much easier to scan and understand at a glance. You can quickly distinguish HTML tags from attributes or CSS properties from values.</li>
+<li><strong>Error Detection:</strong> Syntax errors often stand out because they won&#39;t be colored correctly. A mistyped tag or property might appear in the default text color instead of its designated highlight color.</li>
 </ul>
-<p><strong>Code Changes:</strong></p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;!-- Removed H1 element for focus --&gt;
-  &lt;p&gt;Preparing for next steps...&lt;/p&gt; &lt;!-- Basic paragraph for context --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-  min-height: 150px; /* Ensure space for preview */
-}
-
-/* Removed H1 style rule for focus */
-/* h1 {
-  color: tomato;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 5px;
-} */
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Code Pruning Rationale (Integrated Removal)</strong></p>
-<ul>
-<li>As before, we are removing code that is no longer directly relevant to the <em>immediate</em> learning objective. This keeps the <code class="language-text">index.html</code> and <code class="language-text">style.css</code> files concise and ensures the visual preview in the browser only shows elements pertinent to the current or upcoming concept.</li>
-<li>Removing or commenting out the corresponding CSS rule (<code class="language-css">h1</code>) prevents orphaned styles that don&#39;t apply to anything currently in the HTML.</li>
-<li>This cleanup is integrated into the current step, preparing a clean slate before we discuss developer tools.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The large, tomato-colored heading with the underline is gone. You should now see the simple text &quot;Preparing for next steps...&quot; displayed in the default light gray text color set by our <code class="language-css">body</code> style.</li>
-<li>This demonstrates the effect of removing the HTML element and disabling its associated CSS rule. The page is now visually simpler, ready for us to explore browser developer tools without the previous example cluttering the view.</li>
-</ul>
+<p>VS Code provides excellent built-in syntax highlighting for HTML, CSS, JavaScript, and many other languages. You&#39;ll see this in action as soon as we start writing code.</p>
+<p>👀 <code class="language-text">index.html</code> is still empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

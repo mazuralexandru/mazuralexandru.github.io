@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>317. <code class="language-css">display</code> Value: <code class="language-css">inline</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Elements with <code class="language-css">display: inline;</code> behave very differently from block elements.</p>
+<ul>
+<li><strong>Behavior:</strong><ol>
+<li><strong>Flows with Text:</strong> Inline elements sit <em>within</em> lines of text or alongside other inline elements. They do <strong>not</strong> force line breaks before or after themselves.</li>
+<li><strong>Width/Height Ignored:</strong> Explicit <code class="language-css">width</code> and <code class="language-css">height</code> properties are ignored. The element&#39;s size is determined by its content.</li>
+<li><strong>Limited Vertical Spacing:</strong> Vertical <code class="language-css">padding</code>, <code class="language-css">border</code>, and <code class="language-css">margin</code> are applied visually but generally do <em>not</em> affect the height of the line box or push surrounding lines away vertically (they might overlap). Horizontal <code class="language-css">padding</code>, <code class="language-css">border</code>, and <code class="language-css">margin</code> <em>are</em> respected and affect horizontal spacing.</li>
+</ol>
+</li>
+<li><strong>Default Inline Elements:</strong> <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;a&gt;</code>, <code class="language-html">&lt;em&gt;</code>, <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, <code class="language-html">&lt;img&gt;</code> (replaced inline), <code class="language-html">&lt;input&gt;</code> (replaced inline), <code class="language-html">&lt;br&gt;</code>, <code class="language-html">&lt;code&gt;</code>, <code class="language-html">&lt;mark&gt;</code>, etc.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a paragraph containing several <code class="language-html">&lt;span&gt;</code> elements, which are inline by default.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the previous block styles.</li>
+<li>We&#39;ve added styles for the <code class="language-css">.inline-span</code> class. Note that we try to set <code class="language-css">width</code>, <code class="language-css">height</code>, and vertical <code class="language-css">margin</code>/<code class="language-css">padding</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Display Inline Example */
+.inline-span {
+  background-color: rgba(255, 192, 203, 0.4); /* Faint pink */
+  border: 1px solid pink;
+  padding: 10px; /* Vertical padding might overlap */
+  margin: 10px; /* Vertical margin ignored for line height */
+  width: 200px; /* Ignored */
+  height: 50px; /* Ignored */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The spans appear <strong>inline</strong> within the paragraph text, flowing one after another on the same line until wrapping naturally.</li>
+<li>The pink background and border are applied.</li>
+<li>The horizontal padding and margin (10px each side) create space between the spans horizontally.</li>
+<li>The vertical padding (10px top/bottom) is visible on the background/border but likely overlaps with the lines above/below it without increasing the line height.</li>
+<li>The vertical margin (10px top/bottom) has no effect on the spacing between lines.</li>
+<li>The explicit <code class="language-css">width</code> and <code class="language-css">height</code> are completely ignored; the spans size themselves based on their text content (&quot;Span 1&quot;, &quot;Span 2&quot;, etc.).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

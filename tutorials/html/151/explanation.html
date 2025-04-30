@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>151. Class Selectors: Use Cases</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Class selectors are the <strong>primary tool</strong> for applying styles in modern CSS development. Their flexibility and reusability make them suitable for a wide range of scenarios:</p>
+<ol>
+<li><strong>Styling UI Components:</strong> Defining the look of buttons, cards, menus, forms, modals, etc. You create classes like <code class="language-css">.button</code>, <code class="language-css">.card</code>, <code class="language-css">.modal-dialog</code> and apply them to the corresponding HTML structures.</li>
+<li><strong>Creating Style Variations:</strong> Defining modifier classes to alter the appearance of a base component. For example, <code class="language-css">.button</code> for base button styles, and <code class="language-css">.button-primary</code>, <code class="language-css">.button-secondary</code>, <code class="language-css">.button-large</code> for variations. You&#39;d use them in HTML like <code class="language-html">&lt;button class=&quot;button button-primary button-large&quot;&gt;</code>.</li>
+<li><strong>Utility Classes:</strong> Creating small, single-purpose classes for common styling needs like text alignment (<code class="language-css">.text-center</code>), margins (<code class="language-css">.mb-small</code> for margin-bottom small), or display properties (<code class="language-css">.d-flex</code> for display flex). Frameworks like Tailwind CSS are built entirely around utility classes.</li>
+<li><strong>Grouping Elements for Styling:</strong> Applying a consistent style to various elements that share a common purpose or state, even if they are different tag types (e.g., adding <code class="language-html">class=&quot;highlight&quot;</code> to both a <code class="language-html">&lt;span&gt;</code> and a <code class="language-html">&lt;td&gt;</code>).</li>
+<li><strong>JavaScript Hooks:</strong> Providing reliable hooks for JavaScript to select and manipulate specific elements without relying on fragile tag names or IDs (e.g., <code class="language-html">class=&quot;js-toggle-button&quot;</code>).</li>
+</ol>
+<p>Mastering class selectors is fundamental to writing effective and maintainable CSS.</p>
+<p>👀 Our <code class="language-text">index.html</code> is ready to have classes added to its elements for styling via class selectors in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

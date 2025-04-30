@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>222. <code class="language-css">word-break</code> &amp; <code class="language-css">overflow-wrap</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>These properties control how lines break when text might otherwise overflow its container, especially concerning long words or strings without spaces.</p>
+<ol>
+<li><p><strong><code class="language-css">overflow-wrap</code></strong> (formerly <code class="language-css">word-wrap</code>):</p>
+<ul>
+<li><strong>Purpose:</strong> Specifies whether the browser may break lines <em>within</em> words to prevent overflow if an otherwise unbreakable string (like a long URL or word) is too long to fit on the line.</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">normal</code>: (Default) Only break lines at allowed break points (like spaces).</li>
+<li><code class="language-css">break-word</code>: Allows unbreakable words to be broken at arbitrary points if they would otherwise overflow the container.</li>
+<li><code class="language-css">anywhere</code>: Similar to <code class="language-css">break-word</code> but with potentially softer breaking opportunities considered.</li>
+</ul>
+</li>
+<li><strong>Use Case:</strong> Useful for preventing long URLs or user-generated content from breaking layouts.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-css">word-break</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Specifies more generally how line breaks should occur.</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">normal</code>: (Default) Use default breaking rules.</li>
+<li><code class="language-css">break-all</code>: Allows breaks <em>between any two characters</em> (primarily for CJK - Chinese, Japanese, Korean text, where word boundaries are less distinct). Can look very awkward for English text.</li>
+<li><code class="language-css">keep-all</code>: Prevents breaks between characters for CJK text.</li>
+<li><code class="language-css">break-word</code>: Deprecated alias for <code class="language-css">overflow-wrap: break-word</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Recommendation:</strong> For handling long words/URLs in non-CJK text, prefer using <code class="language-css">overflow-wrap: break-word;</code>.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>Let&#39;s apply <code class="language-css">overflow-wrap: break-word;</code> to the first paragraph (<code class="language-css">.highlight-text</code>) to see how it handles long strings. We&#39;ll need to add a long string to the HTML in the next step to see the effect.</li>
+<li>We also removed the <code class="language-css">white-space: nowrap;</code> from the span as it conflicts with wrapping.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.highlight-text {
+  /* ... other styles ... */
+  word-spacing: 0.5em; 
+  overflow-wrap: break-word; /* Allow breaking long words */
+}
+
+.container span {
+  font-weight: bold; 
+  border: inherit; 
+  font-size: 1.5rem; 
+  /* white-space: nowrap; &lt;- Removed */
+  background-color: rgba(0, 0, 255, 0.2); 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> No visual change <em>yet</em>, as we don&#39;t have a long unbreakable string in the paragraph. We&#39;ll add one next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

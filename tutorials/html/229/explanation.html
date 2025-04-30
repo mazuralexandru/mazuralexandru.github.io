@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>229. <code class="language-html">&lt;em&gt;</code> &amp; <code class="language-html">&lt;strong&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>As mentioned, browsers apply default styling to these elements as visual hints:</p>
+<ul>
+<li><code class="language-html">&lt;em&gt;</code> is typically rendered using <code class="language-css">font-style: italic;</code>.</li>
+<li><code class="language-html">&lt;strong&gt;</code> is typically rendered using <code class="language-css">font-weight: bold;</code>.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-html">&lt;em&gt;</code> around the word &quot;standard&quot; in the first paragraph.</li>
+<li>We&#39;ve added <code class="language-html">&lt;strong&gt;</code> around the word &quot;follows&quot; in the second paragraph.</li>
+</ul>
+<pre class="language-html"><code class="language-html">        &lt;p class=&quot;highlight-text&quot; title=&quot;Standard Paragraph&quot;&gt;
+            This is a &lt;em&gt;standard&lt;/em&gt; paragraph with a verylongandunbreakablewordlikethisoneaddedtoit. 
+            &lt;span&gt;This is inside the paragraph.&lt;/span&gt; 
+        &lt;/p&gt; 
+
+        &lt;p&gt;This paragraph &lt;strong&gt;follows&lt;/strong&gt; the heading.&lt;/p&gt; 
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The word &quot;standard&quot; in the first paragraph should now appear in <em>italics</em> (inheriting the yellow text color).</li>
+<li>The word &quot;follows&quot; in the second paragraph should now appear in <strong>bold</strong> (inheriting the light green text color).</li>
+</ul>
+<p>This default styling reflects the semantic meaning, but remember you can override it with CSS if needed.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>118. Viewing Local Files (<code class="language-text">file:///</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>How do you view your <code class="language-text">.html</code> file in a browser when it&#39;s just saved on your computer (not on a web server)?</p>
+<ol>
+<li><strong>Double-Click:</strong> In your operating system&#39;s file explorer, simply double-clicking the <code class="language-text">.html</code> file will usually open it in your default web browser.</li>
+<li><strong>Drag and Drop:</strong> You can often drag the <code class="language-text">.html</code> file icon from your file explorer directly onto an open browser window or tab.</li>
+<li><strong>Browser&#39;s &quot;Open File&quot; Menu:</strong> Most browsers have an option in their <code>File</code> menu (e.g., <code>File &gt; Open File...</code> or <code>Ctrl+O</code>/<code>Cmd+O</code>) that lets you navigate to and select your <code class="language-text">.html</code> file.</li>
+</ol>
+<p>When you open a local file this way, you&#39;ll notice the URL in the browser&#39;s address bar starts with <code class="language-text">file:///</code> followed by the path to the file on your computer&#39;s hard drive.</p>
+<p>Example URL: <code class="language-text">file:///C:/Users/YourName/Documents/MyWebsite/index.html</code></p>
+<p>This indicates you are viewing a local resource directly, not one fetched from a web server via HTTP. This is perfectly fine for simple HTML/CSS/JS testing during development.</p>
+<p>🔬 Imagine double-clicking the <code class="language-text">index.html</code> file we&#39;ve created on your computer. It would open in your browser, showing the blue heading and standard paragraph, styled by the linked CSS files.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

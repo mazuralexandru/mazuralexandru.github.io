@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>237. <code class="language-html">&lt;s&gt;</code>, <code class="language-html">&lt;del&gt;</code>, <code class="language-html">&lt;ins&gt;</code>, <code class="language-html">&lt;mark&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Browsers apply distinct default styles to these elements:</p>
+<ul>
+<li><code class="language-html">&lt;s&gt;</code> and <code class="language-html">&lt;del&gt;</code>: Strikethrough text (<code class="language-css">text-decoration: line-through;</code>).</li>
+<li><code class="language-html">&lt;ins&gt;</code>: Underlined text (<code class="language-css">text-decoration: underline;</code>).</li>
+<li><code class="language-html">&lt;mark&gt;</code>: Yellow background (<code class="language-css">background-color: yellow;</code> or similar, plus often <code class="language-css">color: black;</code>).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added another paragraph demonstrating these tags.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt;
+    &lt;p&gt;
+      &lt;s&gt;This item is out of stock.&lt;/s&gt; 
+      The price was &lt;del&gt;$50&lt;/del&gt; &lt;ins&gt;$40&lt;/ins&gt;. 
+      Search results for &lt;mark&gt;CSS&lt;/mark&gt; are shown.
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>&quot;This item is out of stock.&quot; should have a line through it (<code class="language-html">&lt;s&gt;</code>).</li>
+<li>&quot;$50&quot; should have a line through it (<code class="language-html">&lt;del&gt;</code>).</li>
+<li>&quot;$40&quot; should be underlined (<code class="language-html">&lt;ins&gt;</code>).</li>
+<li>&quot;CSS&quot; should have a yellow background highlight (<code class="language-html">&lt;mark&gt;</code>).</li>
+</ul>
+<p>These defaults provide visual cues for the semantic meaning of the tags.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

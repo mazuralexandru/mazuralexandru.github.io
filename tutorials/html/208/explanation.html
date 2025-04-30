@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>208. <code class="language-css">font-size</code> Recap &amp; Accessibility</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>We&#39;ve already discussed <code class="language-css">font-size</code> and its units (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, <code class="language-css">%</code>, keywords). Let&#39;s re-emphasize the accessibility aspect.</p>
+<ul>
+<li><strong>User Control:</strong> Users, especially those with visual impairments, often configure their browser&#39;s default font size to be larger than the standard 16px.</li>
+<li><strong><code class="language-css">px</code> Issue:</strong> If you define all your font sizes using absolute <code class="language-css">px</code> units, they will <em>not</em> scale when the user changes their browser&#39;s base font size setting. This can make your site difficult or impossible to read for these users.</li>
+<li><strong><code class="language-css">rem</code> &amp; <code class="language-css">em</code> Advantage:</strong> Relative units like <code class="language-css">rem</code> (relative to root <code class="language-html">&lt;html&gt;</code> size) and <code class="language-css">em</code> (relative to parent size) <em>do</em> scale relative to the base font size. If the user increases their default size, text sized with <code class="language-css">rem</code> or <code class="language-css">em</code> will increase proportionally, maintaining readability.</li>
+</ul>
+<p><strong>Best Practice for Accessibility:</strong></p>
+<ul>
+<li>Set your base <code class="language-css">font-size</code> on the <code class="language-html">&lt;html&gt;</code> or <code class="language-html">&lt;body&gt;</code> element using a relative unit or allowing the browser default (often 16px).</li>
+<li>Define most other <code class="language-css">font-size</code> values throughout your site using <strong><code class="language-css">rem</code> units</strong>. This provides consistent scaling based on the root font size, respecting user preferences.</li>
+<li>Use <code class="language-css">em</code> units when you specifically need an element&#39;s size (like padding or margin) to scale relative to its <em>own</em> text size, not the root size.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve changed the <code class="language-css">font-size</code> for the <code class="language-css">.container span</code> from <code class="language-css">0.8em</code> (relative to parent <code class="language-html">&lt;a&gt;</code>) to <code class="language-css">1.5rem</code>. Assuming a default root size of 16px, this would make the span&#39;s font size 1.5 * 16px = 24px.</li>
+<li>We also added a font size to the second paragraph using <code class="language-css">rem</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Descendant Combinator Example */
+.container span {
+  font-weight: bold; 
+  border: inherit; 
+  font-size: 1.5rem; /* Changed to rem unit */
+}
+
+/* Adjacent Sibling Combinator Example */
+h1 + p {
+  margin-top: 5px; 
+  color: lightgreen; 
+  font-size: 0.9rem; /* Added font-size using rem */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The text &quot;This is inside the paragraph.&quot; within the first paragraph should now be significantly larger (likely 24px).</li>
+<li>The second paragraph (&quot;This paragraph follows the heading.&quot;) should now be slightly smaller than the default text size (0.9 * 16px = 14.4px).</li>
+</ul>
+<p>Using <code class="language-css">rem</code> ensures these sizes would scale if the user changed their browser&#39;s base font setting.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

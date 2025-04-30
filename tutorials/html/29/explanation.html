@@ -9,63 +9,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>29. Using ID Selectors in CSS</h1>
-<p>With the <code class="language-html">&lt;div id=&quot;main-content&quot;&gt;</code> element in place, we can now target it using an <strong>ID Selector</strong> in our <code class="language-text">style.css</code>.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>29. Content</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <strong>content</strong> is everything that sits <em>between</em> the opening tag and the closing tag of an HTML element.</p>
 <ul>
-<li><strong>CSS Pruning:</strong> We&#39;ve commented out the previous <code class="language-css">.highlight</code> and <code class="language-css">.important</code> class rules in <code class="language-text">style.css</code> as those elements were removed from the HTML for focus.</li>
-<li><strong>CSS Addition:</strong> We added a new CSS ruleset using the ID selector <code class="language-css">#main-content</code>.</li>
-</ul>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Removed Class Selector rules for focus */
-/*
-.highlight {
-  background-color: rgba(255, 255, 0, 0.2);
-  border: 1px solid yellow;
-  padding: 5px;
-}
-.important {
-  font-weight: bold;
-  color: tomato;
-}
-*/
-
-/* Added ID Selector rule */
-#main-content {
-  border: 2px dashed cyan;
-  padding: 10px;
-  margin-top: 20px; /* Add some space above this div */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>ID Selectors Explained</strong></p>
-<ul>
-<li><strong>Syntax:</strong> A hash symbol (<code class="language-css">#</code>) followed immediately by the ID name (e.g., <code class="language-css">#main-content</code>, <code class="language-css">#primary-navigation</code>). <strong>No space</strong> between the hash and the ID name.</li>
-<li><strong>Scope:</strong> Selects the <strong>single</strong> element in the document that has the matching <code class="language-html">id</code> attribute. Because IDs <em>must</em> be unique, this selector will target at most one element.</li>
-<li><strong>Specificity:</strong> ID selectors have <strong>high specificity</strong>. They are more specific than class selectors, attribute selectors, and type selectors. This means a rule using an ID selector will generally override conflicting rules using those other selector types.</li>
-<li><strong>Use Cases &amp; Caution:</strong><ul>
-<li>Good for targeting unique page landmarks (header, footer, main content area, navigation) for layout or specific styling.</li>
-<li>Often used as reliable hooks for JavaScript (<code class="language-js">document.getElementById()</code>).</li>
-<li><strong>Avoid using IDs for general styling.</strong> Because they are unique and highly specific, they create styles that are not reusable and can make overriding styles later more difficult (leading to &quot;specificity wars&quot;). Prefer using classes for reusable styling components. Use IDs sparingly for CSS styling, primarily for unique structural elements or JS interaction points.</li>
+<li><strong>Nature:</strong> Content can be various things:<ul>
+<li>Plain text (e.g., <code class="language-html">&lt;p&gt;This is paragraph text.&lt;/p&gt;</code>)</li>
+<li>Other HTML elements (this is called nesting, e.g., <code class="language-html">&lt;div&gt;&lt;p&gt;Nested paragraph.&lt;/p&gt;&lt;/div&gt;</code>)</li>
+<li>A combination of text and other elements.</li>
+<li>Sometimes, elements are designed to be empty and have no content (void elements).</li>
 </ul>
 </li>
+<li><strong>Purpose:</strong> The content is the actual information or structure that the element represents (the text of the paragraph, the items in a list, the sections within a division).</li>
 </ul>
-<p>In our example, the rule <code class="language-css">#main-content { ... }</code> applies a dashed cyan border, some padding, and top margin specifically to the <code class="language-html">&lt;div&gt;</code> with <code class="language-html">id=&quot;main-content&quot;</code>.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the <code class="language-html">&lt;div&gt;</code> containing the text &quot;This paragraph is inside the main content area.&quot; It should now have a dashed cyan border around it, with padding inside the border, and some space separating it from the <code class="language-html">&lt;h2&gt;</code> above it due to the <code class="language-css">margin-top</code>.</li>
-<li>✅ Inspect the <code class="language-html">&lt;div&gt;</code> in DevTools. The Styles pane clearly shows the <code class="language-css">#main-content { ... }</code> rule from <code class="language-text">style.css</code> being applied.</li>
-</ul>
-<p>Next, we&#39;ll explore attribute selectors, which allow targeting based on element attributes other than just <code class="language-html">class</code> or <code class="language-html">id</code>.</p>
+<p>The tags define the <em>type</em> and <em>boundaries</em> of the element, while the content is the substance <em>within</em> those boundaries.</p>
+<p>👀 <code class="language-text">index.html</code> is still empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

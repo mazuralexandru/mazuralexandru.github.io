@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>191. The <code class="language-css">unset</code> Keyword</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">unset</code> keyword provides a slightly more nuanced way to reset a property. Its behavior depends on whether the property is naturally inherited or not.</p>
+<ul>
+<li><strong>Purpose:</strong> To reset a property to its &quot;natural&quot; state in the cascade.</li>
+<li><strong>Syntax:</strong> <code class="language-css">property: unset;</code></li>
+<li><strong>Behavior:</strong><ul>
+<li>If the property is <strong>naturally inherited</strong> (like <code class="language-css">color</code>, <code class="language-css">font-family</code>), <code class="language-css">unset</code> acts like <code class="language-css">inherit</code>. The element will inherit the value from its parent.</li>
+<li>If the property is <strong>not</strong> naturally inherited (like <code class="language-css">background-color</code>, <code class="language-css">border</code>), <code class="language-css">unset</code> acts like <code class="language-css">initial</code>. The property is reset to its CSS-defined initial value.</li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<pre class="language-css"><code class="language-css">div {
+  color: blue;
+  border: 1px solid red;
+}
+p {
+  color: unset; /* Behaves like &#39;inherit&#39;, p gets color: blue from div */
+  border: unset; /* Behaves like &#39;initial&#39;, p gets border: none (initial value) */
+}
+</code></pre>
+<pre class="language-html"><code class="language-html">&lt;div&gt;
+  &lt;p&gt;This text will be blue (inherited via unset), with no border (reset via unset).&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p><code class="language-css">unset</code> is useful when you want to reset multiple properties (perhaps using the <code class="language-css">all: unset;</code> shorthand) back to their default inherited or initial state without needing to know which ones inherit and which don&#39;t.</p>
+<p>👀 Applying <code class="language-css">font-style: unset;</code> to our <code class="language-css">#main-heading</code> would likely act like <code class="language-css">inherit</code> (since <code class="language-css">font-style</code> inherits), potentially inheriting <code class="language-css">normal</code> from the body if no other parent set it. Applying <code class="language-css">border: unset;</code> to the <code class="language-html">&lt;span&gt;</code> would act like <code class="language-css">initial</code>, removing the border it previously inherited.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

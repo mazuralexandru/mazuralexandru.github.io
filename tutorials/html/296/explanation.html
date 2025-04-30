@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>296. Margin Fundamentals: Purpose</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>We&#39;ve reached the outermost layer of the box model: <strong>Margin</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> Margin creates space <em>outside</em> an element&#39;s border. Its primary function is to control the space <strong>between</strong> adjacent elements, pushing them away from each other.</li>
+<li><strong>Transparency:</strong> Margins are always transparent; an element&#39;s background color or image never extends into its margin area.</li>
+<li><strong>Collapsing:</strong> Vertical margins (top and bottom) have a unique behavior called &quot;margin collapsing,&quot; where adjacent vertical margins combine under certain conditions. Horizontal margins do not collapse.</li>
+</ul>
+<p>Margins are essential for creating gutters, spacing out sections, and generally controlling the overall layout flow and separation of elements.</p>
+<p>👀 Look at the <code class="language-css">.box</code> rule in <code class="language-text">style.css</code>. We have <code class="language-css">margin: 1em auto;</code>. This uses the shorthand to set 1em margin on the top and bottom, and <code class="language-css">auto</code> margin on the left and right (which centers the block, as we&#39;ll discuss later). This <code class="language-css">1em</code> top/bottom margin creates space between the box and any elements that might come before or after it in the normal document flow.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

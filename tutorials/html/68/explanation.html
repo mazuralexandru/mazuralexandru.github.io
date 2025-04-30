@@ -9,96 +9,26 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>68. Text Styling: <code>text-shadow</code></h1>
-<p>The <code class="language-css">text-shadow</code> property allows you to add one or more shadow effects to text content.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the text-overflow example div.</li>
-<li><strong>HTML Addition:</strong> Added paragraphs with classes <code class="language-html">simple-shadow</code> and <code class="language-html">multi-shadow</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.ellipsis-box</code> rule.</li>
-<li><strong>CSS Addition:</strong> Added rules using <code class="language-css">text-shadow</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Text Shadow Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous text-overflow example --&gt;
-
-  &lt;p&gt;Adding shadow effects to text.&lt;/p&gt;
-
-  &lt;p class=&quot;simple-shadow&quot;&gt;Simple Shadow Effect&lt;/p&gt; &lt;!-- Added simple shadow P --&gt;
-  &lt;p class=&quot;multi-shadow&quot;&gt;Multiple / Complex Shadow Effect&lt;/p&gt; &lt;!-- Added multi shadow P --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Pruned text-overflow rule */
-/* .ellipsis-box { ... } */
-
-/* Text Shadow Demo */
-p { /* Base paragraph styling */
-  font-size: 1.5rem; /* Make text larger for shadows */
-  margin-bottom: 25px; /* More space */
-  line-height: 1.6;
-  font-weight: bold; /* Bolder text shows shadows better */
-}
-
-.simple-shadow {
-  /* text-shadow: horizontal-offset vertical-offset blur-radius color; */
-  text-shadow: 2px 3px 4px #111; /* Soft dark shadow */
-  color: orange; /* Make text color visible against dark shadow */
-}
-
-.multi-shadow {
-  /* Multiple shadows are comma-separated */
-  text-shadow:
-    1px 1px 2px black, /* Base shadow */
-    0 0 1em blue,     /* Blue outer glow */
-    0 0 0.2em blue;   /* Sharper blue inner glow */
-  color: white; /* White text for contrast */
-}
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>text-shadow</code> Explained</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Applies shadow effects directly to the text characters themselves.</li>
-<li><strong>Syntax:</strong> <code class="language-css">text-shadow: &lt;offset-x&gt; &lt;offset-y&gt; [blur-radius] [color];</code><ul>
-<li><code>&lt;offset-x&gt;</code>: (Required) The horizontal distance of the shadow from the text. Positive values move it right, negative values move it left.</li>
-<li><code>&lt;offset-y&gt;</code>: (Required) The vertical distance of the shadow. Positive values move it down, negative values move it up.</li>
-<li><code>[blur-radius]</code>: (Optional) The blur distance. Larger values create softer, more spread-out shadows. <code>0</code> means a sharp, unblurred shadow. Defaults to <code>0</code> if omitted.</li>
-<li><code>[color]</code>: (Optional) The color of the shadow. Defaults to the element&#39;s <code>color</code> if omitted.</li>
-</ul>
-</li>
-<li><strong>Multiple Shadows:</strong> You can apply multiple shadows to the same text by providing a comma-separated list of shadow definitions. Shadows are layered, with the first shadow specified appearing on top.</li>
-<li><strong>Use Cases:</strong> Creating depth, embossed/engraved effects, glows, outlines (by using multiple sharp shadows with small offsets). Often used on headings or decorative text. Overuse can harm readability.</li>
-</ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li><code>.simple-shadow</code> has one shadow: offset 2px right, 3px down, with a 4px blur, and a dark gray color (<code>#111</code>).</li>
-<li><code>.multi-shadow</code> applies three comma-separated shadows to create a more complex effect resembling a neon glow: a basic black shadow for depth, and two blue shadows with different blur radii for the glow effect.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the first paragraph (<code>.simple-shadow</code>). The orange text should have a soft, dark shadow appearing slightly below and to the right of the letters.</li>
-<li>👀 Observe the second paragraph (<code>.multi-shadow</code>). The white text should have a more complex shadow, appearing almost like a blue glow around the letters due to the multiple layered shadows.</li>
-<li>✅ Inspect the paragraphs in DevTools. The <code>text-shadow</code> property will show the defined values in the Styles pane.</li>
-</ul>
-<p><code class="language-css">text-shadow</code> can add interesting visual flair to text, but use it judiciously to maintain readability.</p>
+  <h1>68. <code class="language-html">&lt;title&gt;</code>: Where it Appears</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The text inside the <code class="language-html">&lt;title&gt;</code> tag appears in several important places:</p>
+<ol>
+<li><strong>Browser Tab/Window Title Bar:</strong> This is the most immediate place users see it. It helps identify the page when multiple tabs are open.</li>
+<li><strong>Bookmarks/Favorites:</strong> When a user bookmarks your page, the title text is typically used as the default bookmark name.</li>
+<li><strong>Search Engine Results Pages (SERPs):</strong> The title is usually used as the main clickable link for your page in Google, Bing, etc. A compelling title can significantly impact click-through rates.</li>
+<li><strong>Browser History:</strong> Page titles are listed in the browser&#39;s history.</li>
+<li><strong>Assistive Technologies:</strong> Screen readers announce the title when a user navigates to the page, providing crucial context.</li>
+</ol>
+<p>A good title provides context and identity for the page across various interfaces.</p>
+<p>🔬 Look at <code class="language-text">index.html</code>. Imagine the text <code class="language-text">My First Web Page</code> appearing in your browser tab.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

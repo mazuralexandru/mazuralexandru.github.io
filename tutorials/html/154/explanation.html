@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>154. HTML <code class="language-html">id</code> Attribute Revisited</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s refresh our memory on the HTML <code class="language-html">id</code> attribute:</p>
+<ul>
+<li><strong>Purpose:</strong> The <code class="language-html">id</code> attribute assigns a <strong>unique identifier</strong> to an HTML element. This ID can be used by CSS to apply specific styles or by JavaScript to select and manipulate that particular element. It&#39;s also used to create fragment identifiers (page anchors/bookmarks) in URLs (e.g., <code class="language-text">page.html#section-id</code>).</li>
+<li><strong>Syntax:</strong> <code class="language-html">id=&quot;unique-name&quot;</code><pre class="language-html"><code class="language-html">&lt;div id=&quot;main-content&quot;&gt;...&lt;/div&gt;
+&lt;h2 id=&quot;error-summary&quot;&gt;Error Summary&lt;/h2&gt;
+&lt;form id=&quot;contact-form&quot;&gt;...&lt;/form&gt;
+</code></pre>
+</li>
+<li><strong>Uniqueness Constraint:</strong> This is the most critical rule. The value assigned to an <code class="language-html">id</code> attribute <strong>MUST be unique</strong> across the entire HTML document. You cannot have two elements with <code class="language-html">id=&quot;main-content&quot;</code>. Browsers might render the page even with duplicate IDs, but CSS and JavaScript behavior becomes unpredictable and invalid.</li>
+<li><strong>Naming Conventions:</strong><ul>
+<li>Similar to classes: Use meaningful names.</li>
+<li>Can contain letters, numbers, hyphens, underscores.</li>
+<li>Must contain at least one character.</li>
+<li>Cannot contain spaces.</li>
+<li>Should generally start with a letter for broadest compatibility, although HTML5 is more lenient than older versions.</li>
+<li>Lowercase with hyphens (<code class="language-text">kebab-case</code>) is a common convention.</li>
+</ul>
+</li>
+</ul>
+<p>Because IDs must be unique, they are used for targeting elements that appear only once per page, like a main navigation bar, a specific section header, or a form.</p>
+<p>👀 Our elements in <code class="language-text">index.html</code> still lack IDs.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

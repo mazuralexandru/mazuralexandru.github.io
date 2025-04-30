@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>78. Adding Base Styles</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">base_styles.css</code></p>
+<p>Now that we&#39;ve linked <code class="language-text">base_styles.css</code> in the previous step, let&#39;s add some foundational CSS rules to it.</p>
+<p>✅ First, look at <code class="language-text">index.html</code> (it&#39;s unchanged from the last step, but it contains the crucial <code class="language-html">&lt;link&gt;</code> tag).</p>
+<p>✨ <strong>Next, switch to <code class="language-text">base_styles.css</code>.</strong> You&#39;ll see we&#39;ve added CSS rules that target the <code class="language-html">&lt;body&gt;</code> element. These rules establish:</p>
+<ul>
+<li>A dark background (<code class="language-css">background-color: #2e2e2e;</code>).</li>
+<li>Light default text color (<code class="language-css">color: #E0E0E0;</code>).</li>
+<li>A standard sans-serif font (<code class="language-css">font-family: sans-serif;</code>).</li>
+<li>Some padding around the body content (<code class="language-css">padding: 15px;</code>).</li>
+<li>A minimum height (<code class="language-css">min-height: 150px;</code>) to ensure the background grid is visible even if the body is empty.</li>
+<li>A subtle background grid pattern using CSS gradients and variables (<code class="language-css">--grid-size</code>, etc.) for visual reference during development.</li>
+</ul>
+<p>These styles provide a consistent starting point for our lessons. Because <code class="language-text">base_styles.css</code> is linked in our HTML, these styles are now applied to the page preview, giving us the dark theme and grid background. We won&#39;t usually need to modify this file again; lesson-specific styles will go in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

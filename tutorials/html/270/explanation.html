@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>270. Minimum and Maximum Dimensions: <code class="language-css">min-width</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Sometimes you want an element to be flexible in size (e.g., using percentages or <code class="language-css">auto</code>), but you need to prevent it from becoming too small. The <code class="language-css">min-width</code> property addresses this.</p>
+<ul>
+<li><strong>Purpose:</strong> Sets the minimum width an element can shrink to. If the content or the calculated width (like a percentage) would normally make the element narrower than the <code class="language-css">min-width</code> value, the element&#39;s width will be forced to be at least the <code class="language-css">min-width</code>.</li>
+<li><strong>Syntax:</strong> <code class="language-css">min-width: value;</code></li>
+<li><strong>Values:</strong> Length units (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>), percentages (<code class="language-css">%</code>), or keywords like <code class="language-css">auto</code> (default, no minimum), <code class="language-css">min-content</code>, <code class="language-css">max-content</code>, <code class="language-css">fit-content</code>.</li>
+<li><strong>Interaction:</strong> <code class="language-css">min-width</code> overrides <code class="language-css">width</code> and <code class="language-css">max-width</code> if they conflict (i.e., if <code class="language-css">width</code> or <code class="language-css">max-width</code> calculates to a value less than <code class="language-css">min-width</code>).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">min-width: 200px;</code> to the <code class="language-css">.box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: 75%; 
+  height: auto; 
+  min-width: 200px; /* Ensure box is at least 200px wide */
+  background-color: cornflowerblue; 
+  padding: 10px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The box still tries to be 75% of the container width. However, if you make the preview window very narrow (if possible in your environment), you should see that the box stops shrinking once its total width (content + padding + border, depending on <code class="language-css">box-sizing</code>) reaches approximately 200px (plus padding/border). It won&#39;t get narrower than that, even if 75% of the container width becomes smaller than 200px.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

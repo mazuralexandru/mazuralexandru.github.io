@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>310. Centering with Auto Margins: Behavior</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s recap the behavior and requirements for <code class="language-css">margin: auto</code> centering:</p>
+<ul>
+<li><strong>Horizontal Only:</strong> This technique only works for <strong>horizontal</strong> centering. Setting <code class="language-css">margin-top: auto;</code> and <code class="language-css">margin-bottom: auto;</code> does <em>not</em> typically vertically center an element in the same way (vertical <code class="language-css">auto</code> margins usually resolve to 0). Vertical centering requires different techniques (Flexbox, Grid, absolute positioning with transforms, etc.).</li>
+<li><strong>Requires Explicit Width:</strong> The element <em>must</em> have a <code class="language-css">width</code> defined that is less than its container&#39;s width. If <code class="language-css">width</code> is <code class="language-css">auto</code> (the default for block elements), the element will take up the full available width, leaving no space for the <code class="language-css">auto</code> margins to distribute, and the element will remain left-aligned.</li>
+<li><strong>Block-Level:</strong> The element must be block-level or behave like one (e.g., <code class="language-css">display: block;</code>). It doesn&#39;t work directly on inline elements.</li>
+</ul>
+<p>This <code class="language-css">margin: 0 auto;</code> pattern (or similar with vertical margins) is a classic and reliable way to center fixed-width or percentage-width block containers horizontally.</p>
+<p>👀 Look at the <code class="language-css">.centered-box</code> rule in <code class="language-text">style.css</code>. It meets the criteria: it&#39;s a block element (<code class="language-html">&lt;div&gt;</code>), it has an explicit width (<code class="language-css">60%</code>), and its left/right margins are <code class="language-css">auto</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

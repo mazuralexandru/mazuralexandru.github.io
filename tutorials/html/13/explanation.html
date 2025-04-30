@@ -9,54 +9,31 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>13. Styling Elements with External CSS</h1>
-<p>We removed the inline styles because they mix presentation with structure. The preferred way to style elements is using CSS rules in our external stylesheet (<code class="language-text">style.css</code>). Let&#39;s style the <code class="language-html">&lt;h1&gt;</code> we just added.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a new CSS ruleset to <code class="language-text">style.css</code> targeting the <code class="language-html">&lt;h1&gt;</code> element.</p>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-  min-height: 150px; /* Ensure space for preview */
-}
-
-/* Added H1 style rule */
-h1 {
-  color: tomato; /* Change H1 text color */
-  border-bottom: 2px solid #eee; /* Add a light bottom border */
-  padding-bottom: 5px; /* Add space below text before border */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>CSS Rulesets Recap</strong></p>
-<p>Remember the basic structure from Step 8:</p>
-<ol>
-<li><strong>Selector:</strong> <code class="language-css">h1</code> - This targets all <code class="language-html">&lt;h1&gt;</code> elements in the linked HTML document. This is an <strong>Element Type Selector</strong>.</li>
-<li><strong>Declaration Block:</strong> <code class="language-css">{ ... }</code> - Contains the style definitions.</li>
-<li><strong>Declarations:</strong> <code class="language-css">property: value;</code> - The actual style rules.</li>
-</ol>
-<p><strong>New CSS Properties Introduced:</strong></p>
+  <h1>13. Text Editors vs. IDEs</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Where do you write your code?</p>
 <ul>
-<li><code class="language-css">color: tomato;</code>: We&#39;re using the <code class="language-css">color</code> property again, this time setting the <code class="language-html">&lt;h1&gt;</code> text color to the keyword <code class="language-css">tomato</code>. This overrides the default light gray inherited from the <code class="language-css">body</code> style.</li>
-<li><code class="language-css">border-bottom: 2px solid #eee;</code>: This is a shorthand property to define the border on the bottom edge of the element.<ul>
-<li><code class="language-css">2px</code>: Sets the border <em>width</em> to 2 pixels.</li>
-<li><code class="language-css">solid</code>: Sets the border <em>style</em> to a solid line (other options include <code class="language-css">dotted</code>, <code class="language-css">dashed</code>, <code class="language-css">double</code>).</li>
-<li><code class="language-css">#eee</code>: Sets the border <em>color</em> to a very light gray (<code class="language-css">#eeeeee</code>).</li>
+<li><strong>Text Editor:</strong> A program designed for editing plain text files. Basic ones (like Notepad or TextEdit) offer minimal features. More advanced <em>code editors</em> (like VS Code, Sublime Text, Atom) are specifically designed for programming, offering features like syntax highlighting and autocompletion.<ul>
+<li><strong>Pros:</strong> Generally lightweight, fast, flexible, often free.</li>
+<li><strong>Cons:</strong> May require installing extensions for advanced features.</li>
 </ul>
 </li>
-<li><code class="language-css">padding-bottom: 5px;</code>: Adds 5 pixels of padding (internal space) specifically to the <em>bottom</em> edge of the <code class="language-html">&lt;h1&gt;</code> element, between the text content and the bottom border. This prevents the border from touching the text.</li>
+<li><strong>IDE (Integrated Development Environment):</strong> A more comprehensive suite of tools bundled together. Often includes a code editor, debugger, build tools, version control integration, and more, specific to certain languages or platforms (like WebStorm for web development, PyCharm for Python).<ul>
+<li><strong>Pros:</strong> All-in-one solution, powerful features out-of-the-box.</li>
+<li><strong>Cons:</strong> Can be heavier, more complex, sometimes costly.</li>
 </ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The &quot;Document Heading&quot; text should now be <code class="language-css">tomato</code> colored. Below the text, you should see a solid, light gray line (<code class="language-css">#eee</code>). There&#39;s a small gap between the text and the line because of the <code class="language-css">padding-bottom</code>.</li>
-<li>This demonstrates how CSS rules in an external file can target specific HTML elements and apply styles, keeping the HTML clean.</li>
-<li>🔬 <strong>Experiment:</strong> In <code class="language-text">style.css</code>, try changing the <code class="language-css">color</code> value for the <code class="language-css">h1</code> rule. Change the <code class="language-css">border-bottom</code> style (e.g., to <code class="language-css">3px dashed orange</code>). Modify the <code class="language-css">padding-bottom</code> value. Observe the effects on the heading&#39;s appearance.</li>
+</li>
 </ul>
+<p>For modern web development, a powerful code editor like <strong>Visual Studio Code (VS Code)</strong> strikes a great balance between features, performance, and extensibility. It&#39;s highly recommended and what we&#39;ll assume you&#39;re using.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

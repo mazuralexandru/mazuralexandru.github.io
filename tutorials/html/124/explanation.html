@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>124. DevTools: Styles Pane (Brief Look)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>When you select an element in the Elements panel (using the methods from the previous step), another pane within DevTools becomes very important: the <strong>Styles</strong> pane (it might be called &quot;Rules&quot; in Firefox).</p>
+<ul>
+<li><strong>Location:</strong> Usually appears to the side or below the Elements panel DOM tree.</li>
+<li><strong>Purpose:</strong> Shows all the CSS rules that are currently being applied to the <strong>selected element</strong>.</li>
+<li><strong>Features:</strong><ul>
+<li>Lists rules from different sources (e.g., <code class="language-text">base_styles.css</code>, <code class="language-text">style.css</code>, browser default styles).</li>
+<li>Shows which properties are being applied and which might be overridden by other rules (often shown with a strikethrough).</li>
+<li>Allows you to temporarily <strong>edit</strong> existing styles (e.g., change color values, sizes) or <strong>add new</strong> declarations directly in the pane to see the effect live on the page (again, these changes are temporary).</li>
+<li>Shows the filename and line number where each rule is defined.</li>
+</ul>
+</li>
+</ul>
+<p>✅ First, ensure you have the <code class="language-html">&lt;h1&gt;</code> element selected in the Elements panel (viewing <code class="language-text">index.html</code>).
+✅ Now, look for the Styles pane in DevTools. You should see the rule <code class="language-css">h1 { color: cornflowerblue; }</code> from <code class="language-text">style.css</code> listed. You might also see other styles inherited from the <code class="language-html">body</code> (like <code class="language-css">font-family</code>) or default browser styles. Switch to view <code class="language-text">style.css</code> to confirm the source of the <code class="language-css">cornflowerblue</code> rule.</p>
+<p>The Styles pane is essential for debugging CSS issues – understanding why an element looks the way it does and experimenting with changes.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

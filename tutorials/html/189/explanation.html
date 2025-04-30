@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>189. The <code class="language-css">inherit</code> Keyword</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>What if you <em>want</em> an element to inherit a property value that it doesn&#39;t normally inherit, or you want to explicitly state that it should inherit? You can use the <code class="language-css">inherit</code> keyword.</p>
+<ul>
+<li><strong>Purpose:</strong> Forces an element to take on the computed value of a specific property from its <strong>parent element</strong>.</li>
+<li><strong>Syntax:</strong> <code class="language-css">property: inherit;</code></li>
+<li><strong>Use Case:</strong> Can be useful for properties that don&#39;t inherit by default (like <code class="language-css">border</code> or <code class="language-css">background-color</code>) if you want a child to explicitly match its parent. It can also be used to override a specific style on an element and force it back to inheriting from its parent.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule targeting the <code class="language-html">&lt;span&gt;</code> inside <code class="language-css">.container</code>.</li>
+<li>We&#39;re setting its <code class="language-css">border</code> property to <code class="language-css">inherit</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* inherit keyword example */
+.container span {
+  font-weight: bold; 
+  border: inherit; /* Inherit border style from parent &lt;p&gt; */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;span&gt;</code> (&quot;This is inside the paragraph.&quot;) should now also have the <strong>1px dotted gray border</strong> that its parent <code class="language-html">&lt;p&gt;</code> has (due to the <code class="language-css">p[title]</code> rule).</li>
+<li>Normally, <code class="language-css">border</code> is not inherited. By setting <code class="language-css">border: inherit;</code> on the <code class="language-html">&lt;span&gt;</code>, we explicitly tell it to copy the computed border value from its parent <code class="language-html">&lt;p&gt;</code>.</li>
+</ul>
+<p>The <code class="language-css">inherit</code> keyword provides explicit control over the inheritance mechanism.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

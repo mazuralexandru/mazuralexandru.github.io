@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>183. Comparing Specificity Values</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s compare the specificity of different selectors targeting the same hypothetical element, like <code class="language-html">&lt;a id=&quot;cta-link&quot; class=&quot;button primary&quot; href=&quot;#&quot;&gt;Click Me&lt;/a&gt;</code>:</p>
+<ul>
+<li><code class="language-css">a</code><ul>
+<li>A=0, B=0, C=0, D=1 -&gt; <strong>(0,0,0,1)</strong></li>
+</ul>
+</li>
+<li><code class="language-css">.button</code><ul>
+<li>A=0, B=0, C=1, D=0 -&gt; <strong>(0,0,1,0)</strong></li>
+</ul>
+</li>
+<li><code class="language-css">a.button</code> (Type <code class="language-css">a</code> and Class <code class="language-css">.button</code>)<ul>
+<li>A=0, B=0, C=1, D=1 -&gt; <strong>(0,0,1,1)</strong></li>
+</ul>
+</li>
+<li><code class="language-css">.button.primary</code> (Two classes)<ul>
+<li>A=0, B=0, C=2, D=0 -&gt; <strong>(0,0,2,0)</strong></li>
+</ul>
+</li>
+<li><code class="language-css">a[href]</code> (Type <code class="language-css">a</code> and Attribute <code class="language-css">[href]</code>)<ul>
+<li>A=0, B=0, C=1, D=1 -&gt; <strong>(0,0,1,1)</strong></li>
+</ul>
+</li>
+<li><code class="language-css">#cta-link</code><ul>
+<li>A=0, B=1, C=0, D=0 -&gt; <strong>(0,1,0,0)</strong></li>
+</ul>
+</li>
+<li><code class="language-css">a#cta-link.button</code> (Type <code class="language-css">a</code>, ID <code class="language-css">#cta-link</code>, Class <code class="language-css">.button</code>)<ul>
+<li>A=0, B=1, C=1, D=1 -&gt; <strong>(0,1,1,1)</strong></li>
+</ul>
+</li>
+<li><code class="language-html">style=&quot;...&quot;</code> (Inline style)<ul>
+<li>A=1, B=0, C=0, D=0 -&gt; <strong>(1,0,0,0)</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>How Comparison Works:</strong></p>
+<ul>
+<li><code>(1,0,0,0)</code> beats <code>(0,1,1,1)</code> because A=1 is greater than A=0. (Inline beats ID/Class/Type combo).</li>
+<li><code>(0,1,0,0)</code> beats <code>(0,0,2,0)</code> because B=1 is greater than B=0. (ID beats two classes).</li>
+<li><code>(0,0,2,0)</code> beats <code>(0,0,1,1)</code> because C=2 is greater than C=1. (Two classes beat one class + one type).</li>
+<li><code>(0,0,1,1)</code> beats <code>(0,0,1,0)</code> because D=1 is greater than D=0. (Class + Type beats Class alone).</li>
+<li><code>(0,0,1,0)</code> beats <code>(0,0,0,1)</code> because C=1 is greater than C=0. (Class beats Type).</li>
+</ul>
+<p>If two selectors have the <em>exact same</em> specificity score, the <strong>Source Order</strong> rule applies (the one defined later in the CSS wins).</p>
+<p>👀 Consider the selectors targeting our second paragraph:</p>
+<ul>
+<li><code class="language-css">.container &gt; p</code>: (0,0,1,1)</li>
+<li><code class="language-css">h1 + p</code>: (0,0,0,2)</li>
+<li><code class="language-css">h1 ~ p</code>: (0,0,0,2)
+The class selector <code class="language-css">.container &gt; p</code> (0,0,1,1) is more specific than the sibling selectors (0,0,0,2). If they set conflicting properties, the rule from <code class="language-css">.container &gt; p</code> would win based on specificity alone.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

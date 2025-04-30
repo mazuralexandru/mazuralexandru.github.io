@@ -9,49 +9,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>26. Using Class Selectors in CSS</h1>
-<p>Now that we have an element with the <code class="language-html">highlight</code> class in our HTML, let&#39;s write a CSS rule in <code class="language-text">style.css</code> to target it using a <strong>Class Selector</strong>.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>26. HTML Elements and Tags</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The core components of HTML are <strong>elements</strong> and <strong>tags</strong>.</p>
 <ul>
-<li>We added a new CSS ruleset to <code class="language-text">style.css</code> using the class selector <code class="language-css">.highlight</code>.</li>
+<li><strong>Element:</strong> The conceptual unit representing a piece of content and its structure. For example, a paragraph element, a heading element, a list element.</li>
+<li><strong>Tag:</strong> The syntactic marker used in the HTML code to define the start and end of an element. Tags are enclosed in angle brackets (<code class="language-html">&lt; &gt;</code>).</li>
 </ul>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-h2 {
-  color: lightcoral;
-  font-weight: normal; /* Make H2 not bold */
-}
-
-/* Added Class Selector rule */
-.highlight {
-  background-color: rgba(255, 255, 0, 0.2); /* Semi-transparent yellow background */
-  border: 1px solid yellow;
-  padding: 5px;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Class Selectors Explained</strong></p>
-<ul>
-<li><strong>Syntax:</strong> A dot (<code class="language-css">.</code>) followed immediately by the class name (e.g., <code class="language-css">.highlight</code>, <code class="language-css">.button-primary</code>, <code class="language-css">.card</code>). <strong>No space</strong> between the dot and the class name.</li>
-<li><strong>Scope:</strong> Selects <strong>all</strong> elements in the document that have the specified class name assigned to their <code class="language-html">class</code> attribute.</li>
-<li><strong>The Workhorse:</strong> Class selectors are the most common and versatile way to apply styles in CSS. They allow you to create reusable &quot;components&quot; or &quot;utilities&quot; that can be applied to any element needing that specific styling.</li>
-</ul>
-<p>In our example, the rule <code class="language-css">.highlight { ... }</code> will apply a semi-transparent yellow background, a solid yellow border, and some internal padding to <em>any</em> element with <code class="language-html">class=&quot;highlight&quot;</code>.</p>
-<p><strong>Specificity Note:</strong> Class selectors (<code class="language-css">.highlight</code>) are more specific than type selectors (<code class="language-css">p</code>). If we had conflicting rules (e.g., <code class="language-css">p { color: blue; }</code> and <code class="language-css">.highlight { color: red; }</code>), the <code class="language-css">.highlight</code> rule would win for elements that are <em>both</em> a paragraph <em>and</em> have the highlight class.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. Observe the <em>second</em> paragraph (&quot;This paragraph has a highlight class.&quot;). It should now have a noticeable semi-transparent yellow background and a thin yellow border around it. The text inside is slightly spaced from the border due to the <code class="language-css">padding</code>.</li>
-<li>👀 The <em>first</em> paragraph remains unchanged, as it does not have the <code class="language-html">highlight</code> class. This demonstrates the targeted nature of class selectors.</li>
-<li>✅ Inspect the second paragraph in DevTools. The Styles pane will show both the <code class="language-css">p { ... }</code> rule (applying <code class="language-css">font-style</code> and <code class="language-css">color</code>) <em>and</em> the <code class="language-css">.highlight { ... }</code> rule (applying <code class="language-css">background-color</code>, <code class="language-css">border</code>, <code class="language-css">padding</code>) being applied to this element.</li>
-</ul>
-<p>Next, we&#39;ll see how to apply the same class to different element types and use multiple classes.</p>
+<p>Most HTML elements are defined using two tags:</p>
+<ol>
+<li><strong>Opening Tag:</strong> Marks the beginning of the element (e.g., <code class="language-html">&lt;p&gt;</code>).</li>
+<li><strong>Closing Tag:</strong> Marks the end of the element. It&#39;s the same as the opening tag but with a forward slash before the tag name (e.g., <code class="language-html">&lt;/p&gt;</code>).</li>
+<li><strong>Content:</strong> Everything between the opening and closing tag is the content of the element (e.g., the text inside the paragraph).</li>
+</ol>
+<p>So, the basic structure is: <code class="language-html">&lt;tagname&gt;Content&lt;/tagname&gt;</code>.</p>
+<p>The combination of the opening tag, the content, and the closing tag forms the complete <strong>element</strong>.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

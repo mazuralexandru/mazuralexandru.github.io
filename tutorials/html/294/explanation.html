@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>294. Rounded Corners (<code class="language-css">border-radius</code>): Elliptical Corners</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">border-radius</code> shorthand (and the longhand properties) can also accept two values separated by a forward slash (<code class="language-css">/</code>) to create elliptical corners instead of circular ones.</p>
+<ul>
+<li><p><strong>Syntax:</strong> <code class="language-css">border-radius: horizontal-radius / vertical-radius;</code></p>
+<ul>
+<li>The value(s) before the slash define the horizontal radius (or radii) of the ellipse.</li>
+<li>The value(s) after the slash define the vertical radius (or radii) of the ellipse.</li>
+<li>You can use the 1-to-4 value syntax independently for both horizontal and vertical radii.</li>
+</ul>
+</li>
+<li><p><strong>Examples:</strong></p>
+<ul>
+<li><code class="language-css">border-radius: 10px / 20px;</code> (All corners have 10px horizontal radius, 20px vertical radius)</li>
+<li><code class="language-css">border-top-left-radius: 50px 20px;</code> (Alternative longhand syntax for a single corner: 50px horizontal, 20px vertical)</li>
+<li><code class="language-css">border-radius: 10px 30px / 20px 40px;</code> (Top-left/Bottom-right: 10px horiz / 20px vert. Top-right/Bottom-left: 30px horiz / 40px vert.)</li>
+</ul>
+</li>
+</ul>
+<p>This allows for more complex corner shapes beyond simple circles.</p>
+<p>👀 Our current rule <code class="language-css">border-radius: 15px;</code> creates circular corners as only one value (used for both horizontal and vertical radii) is provided.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

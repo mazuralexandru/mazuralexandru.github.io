@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>138. <code class="language-html">&lt;link rel=&quot;stylesheet&quot;&gt;</code> Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-html">rel=&quot;stylesheet&quot;</code> attribute is the key that tells the browser <em>how</em> to treat the file linked by the <code class="language-html">href</code> attribute.</p>
+<ul>
+<li><code class="language-html">rel</code>: Stands for &quot;relationship&quot;. It describes the relationship between the linking document (the HTML file) and the linked resource (the file specified in <code class="language-html">href</code>).</li>
+<li><code class="language-html">stylesheet</code>: This specific value indicates that the linked resource is a Cascading Style Sheet file containing rules that should be applied to the current document.</li>
+</ul>
+<p>Without <code class="language-html">rel=&quot;stylesheet&quot;</code>, the browser might fetch the file specified in <code class="language-html">href</code>, but it wouldn&#39;t know to interpret it as CSS and apply its rules to style the page. Other <code class="language-html">rel</code> values exist for different purposes (e.g., <code class="language-html">icon</code> for favicons, <code class="language-html">preload</code> for performance optimization), but <code class="language-html">stylesheet</code> is essential for CSS.</p>
+<p>👀 Check the <code class="language-html">&lt;link&gt;</code> tags in <code class="language-text">index.html</code>. Both correctly use <code class="language-html">rel=&quot;stylesheet&quot;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>170. Grouping Selectors: Syntax</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The syntax for grouping selectors involves listing each selector you want to target, separated by a comma. The declaration block that follows applies to all selectors in the group.</p>
+<pre class="language-css"><code class="language-css">selector1,
+selector2,
+.some-class,
+#some-id,
+[data-attribute=&quot;value&quot;] {
+  /* Declarations apply to elements matching ANY of the selectors above */
+  property: value;
+}
+</code></pre>
+<ul>
+<li><strong>Whitespace:</strong> Whitespace (including line breaks) around the commas is optional but commonly used for readability, especially with longer lists of selectors.</li>
+<li><strong>Validity:</strong> If <em>any</em> selector in a grouped list is invalid, the browser is supposed to ignore the <em>entire</em> ruleset. This means a typo in one selector can prevent the styles from applying to any of the other (valid) selectors in the group.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new ruleset that groups the <code class="language-css">#main-heading</code> ID selector and the <code class="language-css">.highlight-text</code> class selector.</li>
+<li>This grouped rule applies a <code class="language-css">font-style: italic;</code> declaration to both elements.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Grouping Example */
+#main-heading,
+.highlight-text {
+  font-style: italic; /* Apply italic to both */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> Both the main heading (&quot;Main Heading&quot;) and the highlighted paragraph (&quot;This is a standard paragraph.&quot;) should now appear in italics, in addition to their previous styles. This is because the grouped selector applies the <code class="language-css">font-style: italic;</code> rule to both the element with <code class="language-html">id=&quot;main-heading&quot;</code> and the element with <code class="language-html">class=&quot;highlight-text&quot;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

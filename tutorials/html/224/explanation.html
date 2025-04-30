@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>224. <code class="language-css">text-overflow</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">text-overflow</code> property specifies how overflowing inline content (text) that doesn&#39;t wrap should be signaled to the user. It&#39;s commonly used to display an ellipsis (...) to indicate hidden text.</p>
+<ul>
+<li><strong>Purpose:</strong> To provide a visual cue when text is clipped because it doesn&#39;t fit horizontally within its container.</li>
+<li><strong>Important:</strong> For <code class="language-css">text-overflow</code> to have any effect, <strong>three other conditions</strong> must typically be met on the element:<ol>
+<li><code class="language-css">overflow: hidden;</code> (Content must be clipped).</li>
+<li><code class="language-css">white-space: nowrap;</code> (Text must be prevented from wrapping to the next line).</li>
+<li>The element must be a block-level or inline-block element with a constrained width.</li>
+</ol>
+</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">clip</code>: (Default) Simply clips the text at the container&#39;s edge. No visual indicator is shown.</li>
+<li><code class="language-css">ellipsis</code>: Displays an ellipsis (&#39;…&#39;) to represent the clipped text.</li>
+<li><code class="language-css">string</code>: (Less common, experimental) Allows specifying a custom string to show for overflow.</li>
+<li><code class="language-css">fade</code>: (Non-standard, Firefox only) Fades out the text near the edge.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new paragraph with the class <code class="language-html">ellipsis-example</code> and some longer text content.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;p class=&quot;ellipsis-example&quot;&gt;This is a long line of text that will likely overflow its container and demonstrate the ellipsis effect.&lt;/p&gt;
+</code></pre>
+<p>✅ <strong>Now, switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new ruleset for <code class="language-css">.ellipsis-example</code>.</li>
+<li>Crucially, it includes <code class="language-css">white-space: nowrap;</code>, <code class="language-css">overflow: hidden;</code>, and <code class="language-css">text-overflow: ellipsis;</code>. We also give it a fixed width and a border to make the effect obvious.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Text Overflow Example */
+.ellipsis-example {
+  border: 1px dashed skyblue;
+  width: 250px; /* Constrain width */
+  padding: 5px;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide the overflowing text */
+  text-overflow: ellipsis; /* Show ... for overflow */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see the new paragraph with the dashed sky blue border.</li>
+<li>Because its width is limited to 250px and <code class="language-css">white-space</code> is <code class="language-css">nowrap</code>, the text &quot;This is a long line of text...&quot; doesn&#39;t fit.</li>
+<li>Instead of just being cut off (<code class="language-css">clip</code>), you should see an <strong>ellipsis (...)</strong> at the end of the visible text, indicating that more text is hidden due to overflow.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

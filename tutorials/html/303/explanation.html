@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>303. Margin Collapsing (Vertical Margins): Concept</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>One of the trickiest aspects of CSS margins is <strong>margin collapsing</strong>. This behavior applies <em>only</em> to the <strong>vertical margins</strong> (top and bottom) of block-level boxes in the normal document flow.</p>
+<ul>
+<li><strong>Core Concept:</strong> When two or more vertical margins touch or overlap, they combine (collapse) into a single margin. The size of this collapsed margin is equal to the <strong>largest</strong> of the individual margins involved, not their sum.</li>
+<li><strong>Purpose (Intended):</strong> This behavior is designed to create consistent vertical spacing between paragraphs and headings without requiring manual adjustments. If two paragraphs each have <code class="language-css">margin-bottom: 1em;</code> and <code class="language-css">margin-top: 1em;</code>, the space between them will be <code class="language-css">1em</code>, not <code class="language-css">2em</code>, which is usually the desired spacing.</li>
+<li><strong>Horizontal Margins:</strong> Horizontal margins (<code class="language-css">margin-left</code>, <code class="language-css">margin-right</code>) <strong>never</strong> collapse.</li>
+</ul>
+<p>Understanding where and why margins collapse is key to debugging unexpected vertical spacing issues.</p>
+<p>👀 Look at <code class="language-text">style.css</code>. The <code class="language-css">.box</code> has <code class="language-css">margin-top: 2em;</code> and <code class="language-css">margin-bottom: 3em;</code>. If another block element were placed directly below it with <code class="language-css">margin-top: 1em;</code>, the space between them would be determined by the larger of the two touching margins (<code class="language-css">3em</code> from the box&#39;s bottom margin and <code class="language-css">1em</code> from the next element&#39;s top margin), resulting in a <code class="language-css">3em</code> gap, not <code class="language-css">4em</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

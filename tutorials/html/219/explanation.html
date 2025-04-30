@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>219. <code class="language-css">text-transform</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">text-transform</code> property controls the capitalization of text within an element, regardless of how it&#39;s written in the HTML source.</p>
+<ul>
+<li><strong>Purpose:</strong> To enforce consistent capitalization for headings, labels, buttons, etc., without needing to type them that way in the HTML.</li>
+<li><strong>Inherited:</strong> Yes.</li>
+<li><strong>Values:</strong><ul>
+<li><code class="language-css">none</code>: (Default) No transformation is applied; text renders as written in the HTML.</li>
+<li><code class="language-css">uppercase</code>: Transforms all characters to uppercase (e.g., &quot;Main Heading&quot; becomes &quot;MAIN HEADING&quot;).</li>
+<li><code class="language-css">lowercase</code>: Transforms all characters to lowercase (e.g., &quot;Main Heading&quot; becomes &quot;main heading&quot;).</li>
+<li><code class="language-css">capitalize</code>: Capitalizes the first letter of each word (e.g., &quot;main heading&quot; becomes &quot;Main Heading&quot;). Be aware that its definition of a &quot;word&quot; boundary can sometimes be simplistic.</li>
+<li><code class="language-css">full-width</code>: Transforms characters to be rendered within a square, primarily for aligning East Asian and Latin scripts (less common).</li>
+<li><code class="language-css">full-size-kana</code>: Transforms Kana characters for ruby annotations (specific East Asian typography use case).</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">text-transform: uppercase;</code> to the <code class="language-css">#main-heading</code> ruleset.</li>
+</ul>
+<pre class="language-css"><code class="language-css">#main-heading {
+    /* ... other styles ... */
+    letter-spacing: 2px; 
+    text-transform: uppercase; /* Make heading uppercase */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The &quot;Main Heading&quot; text should now be displayed entirely in <strong>uppercase letters</strong> (&quot;MAIN HEADING&quot;), even though it&#39;s written with initial caps in the <code class="language-text">index.html</code> file.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>309. Centering with Auto Margins: Technique</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>A very common layout task is horizontally centering a block-level element within its container. The standard technique for this uses <code class="language-css">auto</code> margins.</p>
+<ul>
+<li><p><strong>Technique:</strong></p>
+<ol>
+<li>The element to be centered <strong>must</strong> be a block-level element (or have <code class="language-css">display: block;</code>).</li>
+<li>The element <strong>must</strong> have an explicitly defined <code class="language-css">width</code> that is less than the width of its container (e.g., <code class="language-css">width: 80%;</code> or <code class="language-css">width: 600px;</code>). It cannot be <code class="language-css">width: auto;</code>.</li>
+<li>Set both <code class="language-css">margin-left</code> and <code class="language-css">margin-right</code> to <code class="language-css">auto</code>. This can be done using the shorthand: <code class="language-css">margin: 0 auto;</code> (sets top/bottom margin to 0, left/right to auto) or <code class="language-css">margin: 1em auto;</code> (sets top/bottom to 1em, left/right to auto).</li>
+</ol>
+</li>
+<li><p><strong>How it Works:</strong> When left and right margins are set to <code class="language-css">auto</code> on an element with a defined width, the browser calculates the available horizontal space in the container (container width - element width) and divides it equally between the left and right margins, effectively centering the element.</p>
+</li>
+</ul>
+<p>✅ <strong>Code Pruning:</strong> We&#39;ve cleared <code class="language-text">index.html</code> and <code class="language-text">style.css</code> again to focus on this technique.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We have a simple <code class="language-html">&lt;div&gt;</code> with class <code class="language-html">centered-box</code>.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We define a <code class="language-css">width</code> for <code class="language-css">.centered-box</code>.</li>
+<li>We apply <code class="language-css">margin-left: auto;</code> and <code class="language-css">margin-right: auto;</code>.</li>
+<li>We add background and padding for visibility.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Centering with Auto Margins */
+.centered-box {
+  width: 60%; /* MUST have an explicit width less than container */
+  margin-left: auto;
+  margin-right: auto;
+  /* Or use shorthand: margin: 1em auto; */
+
+  background-color: teal;
+  padding: 20px;
+  height: 100px; /* Added height for visibility */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> You should see the teal box horizontally centered within the page body. The space to its left and right should be equal. If you resize the window, it will remain centered while maintaining its 60% width.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

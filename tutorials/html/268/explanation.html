@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>268. <code class="language-css">height</code> Values: <code class="language-css">auto</code>, Lengths, Percentages</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The common values for <code class="language-css">height</code> are similar to <code class="language-css">width</code>, but with a key difference for percentages:</p>
+<ol>
+<li><p><strong><code class="language-css">auto</code> (Default):</strong></p>
+<ul>
+<li>The element&#39;s height adjusts automatically to fit its content. This is the most common behavior for elements like paragraphs or divs containing text.</li>
+</ul>
+</li>
+<li><p><strong>Length Units (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, <code class="language-css">vh</code>, etc.):</strong></p>
+<ul>
+<li>Sets a fixed or relative height based on the unit.</li>
+<li><code class="language-css">height: 200px;</code> sets a fixed height.</li>
+<li><code class="language-css">height: 10em;</code> sets height relative to the element&#39;s font size.</li>
+<li><code class="language-css">height: 50vh;</code> sets the height to 50% of the viewport height.</li>
+</ul>
+</li>
+<li><p><strong>Percentage (<code class="language-css">%</code>):</strong></p>
+<ul>
+<li>Sets the height as a percentage of the <strong>height of the containing block</strong>.</li>
+<li><strong>CRITICAL CAVEAT:</strong> For a percentage height to work, the <strong>containing block (parent element) must have an explicitly defined height</strong> (e.g., set in pixels, rems, vh, etc.). If the parent&#39;s height is <code class="language-css">auto</code> (the default), then a percentage height on the child will typically be treated as <code class="language-css">auto</code> as well. This often confuses beginners. Exceptions exist in specific layout contexts like Flexbox or Grid where percentage heights can sometimes work without an explicit parent height.</li>
+</ul>
+</li>
+</ol>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve changed the <code class="language-css">height</code> of <code class="language-css">.box</code> from <code class="language-css">100px</code> back to <code class="language-css">auto</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: 75%; 
+  /* height: 100px; */ /* Changed from px */
+  height: auto; /* Let height adjust to content (default) */
+  background-color: cornflowerblue; 
+  padding: 10px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The blue box should now shrink or grow vertically to tightly contain its text content plus the 10px top/bottom padding. This demonstrates the default <code class="language-css">auto</code> behavior. If we tried setting <code class="language-css">height: 50%;</code>, it likely wouldn&#39;t work as expected because the parent (<code class="language-html">&lt;body&gt;</code>) doesn&#39;t have an explicit height set.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

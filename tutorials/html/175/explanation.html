@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>175. Descendant Combinator (<code class="language-css"> </code> Space)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <strong>Descendant Combinator</strong> is represented by one or more spaces between two selectors.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">ancestor descendant</code></li>
+<li><strong>Meaning:</strong> Selects any element matching <code class="language-css">descendant</code> that is located <em>anywhere inside</em> an element matching <code class="language-css">ancestor</code> in the HTML structure. The descendant doesn&#39;t have to be a direct child; it can be nested multiple levels deep.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule: <code class="language-css">.container span</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Descendant Combinator Example */
+.container span {
+  font-weight: bold; /* Make spans inside .container bold */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the first paragraph (&quot;This is a standard paragraph...&quot;). The text &quot;This is inside the paragraph.&quot; should now be <strong>bold</strong>.</li>
+<li>This happens because:<ul>
+<li>The <code class="language-html">&lt;span&gt;</code> element is a descendant of the <code class="language-html">&lt;div&gt;</code> which has <code class="language-html">class=&quot;container&quot;</code>.</li>
+<li>The selector <code class="language-css">.container span</code> matches this <code class="language-html">&lt;span&gt;</code>.</li>
+<li>The <code class="language-css">font-weight: bold;</code> style is applied.</li>
+</ul>
+</li>
+</ul>
+<p>If we had a <code class="language-html">&lt;span&gt;</code> <em>outside</em> the <code class="language-html">&lt;div class=&quot;container&quot;&gt;</code>, this rule would not affect it.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>181. Specificity (Deep Dive)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>When two conflicting declarations come from the same origin (e.g., both are normal author styles) and have the same importance, the browser uses <strong>Specificity</strong> to decide which one wins.</p>
+<ul>
+<li><strong>Purpose:</strong> Specificity is a weight or score calculated for each CSS selector. The selector with the <strong>higher specificity score</strong> wins, and its declaration is applied.</li>
+<li><strong>Concept:</strong> More specific selectors (like IDs or complex combinations) target elements more precisely than general selectors (like types). The cascade prioritizes these more specific rules.</li>
+</ul>
+<p>Think of it like addressing mail: a full street address with a name (high specificity) is more precise than just sending mail to everyone on a street (lower specificity).</p>
+<p>We&#39;ll look at how this score is calculated next.</p>
+<p>👀 Consider the second paragraph in <code class="language-text">index.html</code>. It&#39;s matched by <code class="language-css">.container &gt; p</code>, <code class="language-css">h1 + p</code>, and <code class="language-css">h1 ~ p</code>. If these rules set conflicting properties (like <code class="language-css">color</code>), their specificity scores would be compared to see which color is applied.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>199. Relative Units: Viewport Units (<code class="language-css">vw</code>, <code class="language-css">vh</code>, <code class="language-css">vmin</code>, <code class="language-css">vmax</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>Viewport units</strong> define sizes relative to the dimensions of the browser&#39;s <strong>viewport</strong> (the visible area of the web page).</p>
+<ul>
+<li><strong><code class="language-css">vw</code> (Viewport Width):</strong> <code class="language-css">1vw</code> is equal to 1% of the viewport&#39;s width.</li>
+<li><strong><code class="language-css">vh</code> (Viewport Height):</strong> <code class="language-css">1vh</code> is equal to 1% of the viewport&#39;s height.</li>
+<li><strong><code class="language-css">vmin</code> (Viewport Minimum):</strong> <code class="language-css">1vmin</code> is equal to 1% of the <em>smaller</em> of the viewport&#39;s width or height.</li>
+<li><strong><code class="language-css">vmax</code> (Viewport Maximum):</strong> <code class="language-css">1vmax</code> is equal to 1% of the <em>larger</em> of the viewport&#39;s width or height.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Creating elements that fill the full height or width of the screen (e.g., <code class="language-css">height: 100vh;</code> for a full-height hero section).</li>
+<li>Making font sizes scale directly with the viewport size (e.g., <code class="language-css">font-size: 4vw;</code>). Use with caution, as text can become too large or too small on extreme screen sizes; often combined with <code class="language-css">calc()</code> and <code class="language-css">min()</code>/<code class="language-css">max()</code> or CSS locks for better control.</li>
+<li>Creating responsive layouts where spacing or element sizes adapt fluidly to the viewport dimensions.</li>
+</ul>
+<p><strong>Pros:</strong> Allows direct scaling based on the viewport, useful for full-screen elements and fluid typography/spacing.
+<strong>Cons:</strong> Can lead to extremely large or small sizes on very wide or narrow/short screens if used without constraints. <code class="language-css">vh</code> units can sometimes behave unexpectedly on mobile browsers due to dynamic browser UI elements (address bar).</p>
+<p>Example:</p>
+<pre class="language-css"><code class="language-css">.full-screen-section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.responsive-heading {
+  /* Font size is 5% of viewport width, but minimum 20px, maximum 50px */
+  font-size: clamp(20px, 5vw, 50px); 
+}
+</code></pre>
+<p>Viewport units are powerful tools for responsive design but require careful consideration of potential scaling issues at extreme viewport sizes.</p>
+<p>👀 We are not currently using viewport units in our project.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

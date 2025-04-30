@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>249. <code class="language-html">&lt;blockquote&gt;</code>, <code class="language-html">&lt;q&gt;</code>, <code class="language-html">&lt;cite&gt;</code>: HTML Recap</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s recap the roles of the quotation elements:</p>
+<ul>
+<li><code class="language-html">&lt;blockquote&gt;</code>: For long, block-level quotations. Often indented by default. Can have a <code class="language-html">cite</code> attribute (URL).</li>
+<li><code class="language-html">&lt;q&gt;</code>: For short, inline quotations. Browsers usually add quotation marks automatically. Can have a <code class="language-html">cite</code> attribute (URL).</li>
+<li><code class="language-html">&lt;cite&gt;</code>: For the title of a creative work (book, film, etc.). Typically italicized by default.</li>
+</ul>
+<p><strong>Common Pattern:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;blockquote cite=&quot;http://example.com/source&quot;&gt;
+  &lt;p&gt;This is a longer quotation taken from another source.&lt;/p&gt;
+  &lt;footer&gt;— Author Name, &lt;cite&gt;Title of Work&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As the author said, &lt;q cite=&quot;http://example.com/source&quot;&gt;This is a short inline quote&lt;/q&gt;, which is interesting.&lt;/p&gt;
+</code></pre>
+<p><em>(Note: Using <code class="language-html">&lt;footer&gt;</code> inside <code class="language-html">&lt;blockquote&gt;</code> for attribution is a common pattern).</em></p>
+<p>👀 We will add examples to <code class="language-text">index.html</code> in the next step.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

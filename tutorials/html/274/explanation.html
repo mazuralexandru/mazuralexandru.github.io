@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>274. Minimum and Maximum Dimensions: Values</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s quickly recap the values usable with <code class="language-css">min-width</code>, <code class="language-css">max-width</code>, <code class="language-css">min-height</code>, and <code class="language-css">max-height</code>:</p>
+<ul>
+<li><strong>Length Units:</strong> <code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, <code class="language-css">vw</code>, <code class="language-css">vh</code>, etc. Define fixed or relative minimum/maximum sizes.</li>
+<li><strong>Percentages (<code class="language-css">%</code>):</strong> Relative to the corresponding dimension (width for width properties, height for height properties) of the <strong>containing block</strong>. Remember the caveat about needing an explicit parent height for percentage heights to work reliably.</li>
+<li><strong>Keywords:</strong><ul>
+<li><code class="language-css">none</code>: (Default for <code class="language-css">max-width</code>/<code class="language-css">max-height</code>) No limit.</li>
+<li><code class="language-css">auto</code>: (Default for <code class="language-css">min-width</code>/<code class="language-css">min-height</code>) No minimum constraint beyond the content&#39;s intrinsic size.</li>
+<li><code class="language-css">max-content</code>: Intrinsic preferred width/height. The element tries to be as wide/tall as needed for its content without wrapping if possible.</li>
+<li><code class="language-css">min-content</code>: Intrinsic minimum width/height. The element tries to be as narrow/short as possible, wrapping aggressively.</li>
+<li><code class="language-css">fit-content(length-percentage)</code>: A more complex value that tries to fit the content but not exceed the specified argument, while also not being smaller than the intrinsic minimum size.</li>
+</ul>
+</li>
+</ul>
+<p>For most common use cases, you&#39;ll use length units or percentages. The content-based keywords are useful in specific layout scenarios, particularly with Grid and Flexbox.</p>
+<p>👀 Review the <code class="language-css">.box</code> rule in <code class="language-text">style.css</code>. We&#39;re using pixel values (<code class="language-css">px</code>) for the min/max properties.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

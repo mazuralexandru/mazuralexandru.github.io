@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>161. Attribute Selectors: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Why use attribute selectors when we have classes and IDs? They offer distinct advantages for specific scenarios:</p>
+<ol>
+<li><strong>Styling Based on State or Type (without extra classes):</strong> You can style elements based on inherent attributes, like form input types (<code class="language-html">[type=&quot;text&quot;]</code>, <code class="language-html">[type=&quot;email&quot;]</code>), required fields (<code class="language-html">[required]</code>), or disabled elements (<code class="language-html">[disabled]</code>), without needing to add extra classes like <code class="language-html">class=&quot;input-text&quot;</code> or <code class="language-html">class=&quot;is-disabled&quot;</code>.</li>
+<li><strong>Targeting Links Based on Destination:</strong> Style links differently depending on where they point, such as external links (<code class="language-html">a[target=&quot;_blank&quot;]</code>), links to PDF files (<code class="language-html">a[href$=&quot;.pdf&quot;]</code>), or secure links (<code class="language-html">a[href^=&quot;https://&quot;]</code>).</li>
+<li><strong>Styling Based on Accessibility Attributes:</strong> Target elements with specific ARIA roles or states (<code class="language-html">[role=&quot;button&quot;]</code>, <code class="language-html">[aria-expanded=&quot;true&quot;]</code>).</li>
+<li><strong>Working with Custom Data Attributes:</strong> Style elements based on <code class="language-html">data-*</code> attributes, which are often used to store custom data for JavaScript (<code class="language-html">[data-tooltip]</code>).</li>
+<li><strong>Avoiding Class/ID Proliferation:</strong> In some cases, using an attribute selector can be cleaner than adding numerous specific classes or IDs, especially when the attribute itself already provides the necessary semantic hook.</li>
+</ol>
+<p>They provide a way to hook into the existing attributes of your HTML elements for styling purposes.</p>
+<p>👀 In <code class="language-text">index.html</code>, we could potentially add a <code class="language-html">title</code> attribute to the paragraph and then style it using <code class="language-css">p[title] { ... }</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

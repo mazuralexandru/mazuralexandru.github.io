@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>171. Grouping Selectors: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The main purpose of grouping selectors is <strong>code efficiency and maintainability</strong>.</p>
+<ol>
+<li><strong>DRY (Don&#39;t Repeat Yourself):</strong> It avoids writing the same CSS declarations multiple times for different selectors. This keeps your stylesheet smaller and cleaner.</li>
+<li><strong>Easier Updates:</strong> If you need to change a style that applies to multiple elements (e.g., change the font family for all headings), you only need to modify the declaration in <em>one</em> place (the grouped ruleset) instead of finding and updating multiple separate rulesets.</li>
+<li><strong>Logical Grouping:</strong> It visually groups elements that share common base styles, making the stylesheet&#39;s intent clearer.</li>
+</ol>
+<p>Grouping is a fundamental technique for writing efficient CSS. Any time you find yourself applying the exact same style block to different selectors, consider grouping them.</p>
+<p>👀 Look at the grouped rule in <code class="language-text">style.css</code>. We applied <code class="language-css">font-style: italic;</code> to both <code class="language-css">#main-heading</code> and <code class="language-css">.highlight-text</code> with a single declaration block, avoiding repetition.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

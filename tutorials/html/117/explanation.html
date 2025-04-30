@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>117. File Organization (Folders)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>For anything beyond a single-page site, organizing your files into folders (directories) is essential for maintainability.</p>
+<p><strong>Common Structures:</strong></p>
+<ul>
+<li><strong>Simple:</strong></li>
+</ul>
+<pre class="language-text"><code class="language-text">project-root/
+├── index.html
+├── about.html
+├── styles.css
+└── script.js 
+</code></pre>
+<ul>
+<li><strong>Using Folders:</strong></li>
+</ul>
+<pre class="language-text"><code class="language-text">project-root/
+├── index.html
+├── about.html
+├── contact.html
+├── css/ 
+│   ├── base.css
+│   └── main.css
+├── js/
+│   ├── vendor/ 
+│   │   └── jquery.js 
+│   └── main.js
+└── images/
+    ├── logo.png
+    └── banner.jpg
+</code></pre>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Clarity:</strong> Separates different types of files (HTML, CSS, JS, images).</li>
+<li><strong>Scalability:</strong> Easier to manage as the project grows.</li>
+<li><strong>Maintainability:</strong> Finding specific files is much easier.</li>
+</ul>
+<p><strong>Impact on Paths:</strong> When using folders, remember that the <code class="language-html">href</code> attribute in <code class="language-html">&lt;link&gt;</code> tags and the <code class="language-html">src</code> attribute in <code class="language-html">&lt;img&gt;</code> or <code class="language-html">&lt;script&gt;</code> tags need to reflect the correct relative path.</p>
+<ul>
+<li>Example: If <code class="language-text">main.css</code> is inside a <code class="language-text">css</code> folder, the link in <code class="language-text">index.html</code> (which is in the root) would be <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;</code>.</li>
+</ul>
+<p>In our current setup, all files (<code class="language-text">index.html</code>, <code class="language-text">base_styles.css</code>, <code class="language-text">style.css</code>) are assumed to be in the same directory, so the paths are just the filenames.</p>
+<p>✅ Our current lesson structure keeps things simple for now, with all files at the same level.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

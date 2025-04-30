@@ -9,78 +9,37 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>55. Text Styling: Using Web Fonts (Google Fonts Example)</h1>
-<p>Relying only on fonts installed on a user&#39;s computer (&quot;web safe fonts&quot;) is limiting. We can use <strong>Web Fonts</strong> to load custom fonts alongside our web page. The easiest way is often using a service like <strong>Google Fonts</strong>.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Addition:</strong> Added a <code class="language-html">&lt;link&gt;</code> tag in the <code class="language-html">&lt;head&gt;</code> to load the &quot;Roboto&quot; font family from Google Fonts. Note there are <em>two</em> <code>link</code> tags now - one for our <code>style.css</code> and one for the Google Font.</li>
-<li><strong>CSS Modification:</strong> Changed the <code class="language-css">font-family</code> for the <code class="language-css">.sans-serif-text</code> class to use the newly imported &quot;Roboto&quot; font first in its stack.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;!-- Link to Google Fonts --&gt;
-  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
-  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
-  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- Added Google Font Link --&gt;
+  <h1>55. <code class="language-html">&lt;head&gt;</code>: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The syntax involves the <code class="language-html">&lt;head&gt;</code> and <code class="language-html">&lt;/head&gt;</code> tags wrapping the metadata elements:</p>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt; 
+    &lt;!-- Metadata elements go here --&gt;
+    &lt;!-- e.g., &lt;meta charset=&quot;UTF-8&quot;&gt; --&gt;
+    &lt;!-- e.g., &lt;title&gt;Page Title&lt;/title&gt; --&gt;
+    &lt;!-- e.g., &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; --&gt;
+  &lt;/head&gt; 
+  
+  &lt;!-- &lt;body&gt; element follows here --&gt;
 
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; &lt;!-- Our Stylesheet --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Font Family Demo&lt;/h1&gt;
-  &lt;p class=&quot;serif-text&quot;&gt;This text uses a serif font stack (Times New Roman, Georgia, serif).&lt;/p&gt;
-  &lt;p class=&quot;sans-serif-text&quot;&gt;This text uses the Roboto web font (via Google Fonts), then Arial, Helvetica, sans-serif.&lt;/p&gt; &lt;!-- Updated text --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Font Family Demo */
-.serif-text {
-  font-family: &quot;Times New Roman&quot;, Georgia, serif;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-
-.sans-serif-text {
-  /* Use the imported Google Font first */
-  font-family: &quot;Roboto&quot;, Arial, Helvetica, sans-serif; /* Added &quot;Roboto&quot; */
-  font-size: 1.1rem;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Using Google Fonts (or similar services)</strong></p>
-<ol>
-<li><strong>Find a Font:</strong> Go to the Google Fonts website (fonts.google.com), choose a font (e.g., Roboto), and select the styles/weights you need (e.g., Regular 400, Bold 700).</li>
-<li><strong>Get the Code:</strong> Google Fonts provides code to embed in your HTML. It usually involves one or more <code class="language-html">&lt;link&gt;</code> tags that you place in the <code class="language-html">&lt;head&gt;</code> of your HTML document.<ul>
-<li>The <code class="language-html">&lt;link rel=&quot;preconnect&quot;&gt;</code> tags help the browser establish an early connection to the font servers, potentially improving loading speed.</li>
-<li>The main <code class="language-html">&lt;link href=&quot;...&quot;&gt;</code> tag points to a special CSS file generated by Google. This file contains the necessary <code>@font-face</code> rules (which we&#39;ll discuss briefly later) to define and load the font files (like WOFF2 format) from Google&#39;s servers. The URL often includes the font family name (<code class="language-text">Roboto</code>) and requested weights (<code class="language-text">wght@400;700</code>). The <code class="language-html">&amp;display=swap</code> parameter tells the browser to show fallback text immediately while the font loads, then swap it out (good for perceived performance).</li>
-</ul>
-</li>
-<li><strong>Use in CSS:</strong> Once the font is linked in the HTML, you can use its specified <code class="language-css">font-family</code> name (e.g., <code>&quot;Roboto&quot;</code>) in your CSS font stacks, just like any other font.</li>
-</ol>
-<p><strong><code>@font-face</code> (Briefly)</strong></p>
-<p>The CSS file linked from Google Fonts contains <code>@font-face</code> rules. This is the standard CSS mechanism for defining custom fonts. It allows you to specify a name for the font, point to the font file(s) (e.g., <code>myfont.woff2</code>), and define its weight/style. This allows self-hosting fonts, but using a service like Google Fonts often simplifies the process and leverages optimized font delivery.</p>
-<p><strong>✅ Guided Observation:</strong></p>
 <ul>
-<li>👀 Refresh the browser preview. You might need an internet connection for the Google Font to load.</li>
-<li>👀 Compare the second paragraph (<code>.sans-serif-text</code>) to how it looked before. It should now be rendered using the &quot;Roboto&quot; font, which likely looks different from your system&#39;s default Arial or Helvetica. Roboto is a very common, clean sans-serif font used widely on the web.</li>
-<li>👀 The first paragraph (<code>.serif-text</code>) remains unchanged.</li>
-<li>✅ Inspect the second paragraph in DevTools. In the &quot;Computed&quot; tab, check the <code>font-family</code>. It should now list &quot;Roboto&quot; as the rendered font. You might also see network activity in the &quot;Network&quot; tab of DevTools related to loading the font files from <code>fonts.gstatic.com</code>.</li>
+<li>It uses standard opening (<code class="language-html">&lt;head&gt;</code>) and closing (<code class="language-html">&lt;/head&gt;</code>) tags.</li>
+<li>It must be nested directly inside the <code class="language-html">&lt;html&gt;</code> element.</li>
+<li>It must come <em>before</em> the <code class="language-html">&lt;body&gt;</code> element.</li>
 </ul>
-<p>Using web fonts greatly expands your typographic options, allowing for richer and more branded designs. Services like Google Fonts make it relatively easy to implement.</p>
+<p>Only specific metadata elements are allowed inside the <code class="language-html">&lt;head&gt;</code>. You cannot place visible content elements like <code class="language-html">&lt;p&gt;</code> or <code class="language-html">&lt;h1&gt;</code> directly inside the <code class="language-html">&lt;head&gt;</code>.</p>
+<p>👀 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

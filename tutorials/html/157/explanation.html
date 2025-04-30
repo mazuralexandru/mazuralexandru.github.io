@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>157. ID Selectors: Use Cases</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Given their uniqueness and high specificity, ID selectors have specific use cases, but should generally be used more sparingly than class selectors for styling:</p>
+<ol>
+<li><strong>Targeting Unique Page Landmarks:</strong> Identifying major sections of a page that occur only once, such as the main site header (<code class="language-html">id=&quot;site-header&quot;</code>), main content area (<code class="language-html">id=&quot;main-content&quot;</code>), or site footer (<code class="language-html">id=&quot;site-footer&quot;</code>). This can be useful for both styling and creating page anchors/links (<code class="language-html">&lt;a href=&quot;#main-content&quot;&gt;Skip to content&lt;/a&gt;</code>).</li>
+<li><strong>JavaScript Hooks:</strong> Providing a reliable way for JavaScript to find and manipulate a specific element on the page (e.g., <code class="language-js">document.getElementById(&#39;user-form&#39;)</code>). Using IDs for JS hooks is very common.</li>
+<li><strong>High-Specificity Overrides (Use with Caution):</strong> Occasionally used to override styles from less specific selectors (like those from third-party libraries or frameworks) when other methods are difficult. However, relying heavily on IDs for styling can lead to specificity wars and make CSS harder to manage. It&#39;s often better to use more specific class combinations or adjust the source order if possible.</li>
+</ol>
+<p><strong>General Recommendation:</strong> <strong>Prefer classes for reusable styling.</strong> Use IDs primarily for unique page landmarks and JavaScript hooks. Avoid using IDs solely for styling if a class would suffice, as classes offer more flexibility and lower specificity, making your CSS easier to override and maintain.</p>
+<p>👀 Our <code class="language-text">index.html</code> elements don&#39;t represent unique page landmarks yet, so classes are more appropriate for their current styling needs.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

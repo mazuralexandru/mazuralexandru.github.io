@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>322. The <code class="language-css">overflow</code> Property: Purpose</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>What happens when the content inside an element is larger than the element&#39;s box (defined by its <code class="language-css">width</code> and <code class="language-css">height</code>)? The <code class="language-css">overflow</code> property controls this behavior.</p>
+<ul>
+<li><strong>Purpose:</strong> Specifies how to handle content that overflows the boundaries of its container element (its padding edge).</li>
+<li><strong>Applicability:</strong> Applies to block-level containers that have a defined size (or constraints like <code class="language-css">max-height</code>) which their content might exceed. It generally doesn&#39;t apply to inline elements whose size is determined by their content.</li>
+</ul>
+<p>Let&#39;s set up an example where content overflows.</p>
+<p>✅ <strong>Code Pruning:</strong> Cleared previous examples.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>Added a <code class="language-html">&lt;div&gt;</code> with class <code class="language-html">overflow-box</code> containing a paragraph with more text than will fit in the dimensions we&#39;ll set.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>Added styles for <code class="language-css">.overflow-box</code>. We give it a fixed <code class="language-css">width</code> and <code class="language-css">height</code>, plus padding and a border. We haven&#39;t set <code class="language-css">overflow</code> yet, so it will use the default.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Overflow Example */
+.overflow-box {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid orange;
+  background-color: rgba(0, 0, 100, 0.2);
+  margin-bottom: 1em; /* Space below */
+
+  /* overflow: visible; &lt;- Default */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> You should see an orange-bordered box. The text content inside is longer than can fit within the 100px height (considering padding). Because the default <code class="language-css">overflow</code> is <code class="language-css">visible</code>, the text should spill out of the bottom of the box, potentially overlapping subsequent content (if any existed).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

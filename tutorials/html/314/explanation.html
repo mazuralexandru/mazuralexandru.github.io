@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>314. Universal <code class="language-css">border-box</code> Reset (Common Practice)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Because <code class="language-css">border-box</code> is so much more intuitive for layout, it&#39;s standard practice in modern CSS to apply it to <em>all</em> elements on the page using a universal reset.</p>
+<p>The most common and recommended way to do this involves inheritance:</p>
+<pre class="language-css"><code class="language-css">html {
+  box-sizing: border-box; /* 1. Set the base */
+}
+
+*, *::before, *::after { /* 2. Select all elements and pseudo-elements */
+  box-sizing: inherit; /* 3. Make them inherit from their parent */
+}
+
+/* Rest of your CSS... */
+.some-element {
+  /* Now uses border-box sizing by default */
+}
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<ol>
+<li>We set <code class="language-css">box-sizing: border-box;</code> directly on the root <code class="language-html">&lt;html&gt;</code> element.</li>
+<li>We use the universal selector (<code class="language-css">*</code>), plus selectors for common pseudo-elements (<code class="language-css">*::before</code>, <code class="language-css">*::after</code>), to target everything.</li>
+<li>We set <code class="language-css">box-sizing: inherit;</code> on these elements. This tells them to inherit the <code class="language-css">box-sizing</code> value from their parent. Since all elements ultimately descend from <code class="language-html">&lt;html&gt;</code>, they will inherit the <code class="language-css">border-box</code> value set in step 1.</li>
+</ol>
+<p><strong>Why this approach?</strong></p>
+<ul>
+<li>It applies <code class="language-css">border-box</code> globally and consistently.</li>
+<li>Using <code class="language-css">inherit</code> makes it slightly easier to override <code class="language-css">box-sizing</code> back to <code class="language-css">content-box</code> for specific components if ever needed (though this is rare), compared to directly setting <code class="language-css">border-box</code> on <code class="language-css">*</code>.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added this universal <code class="language-css">border-box</code> reset at the <strong>top</strong> of the file.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong> You might notice a slight change in the size or text wrapping of the <code class="language-css">.centered-box</code>. Its total rendered width (including padding) is now constrained by the <code class="language-css">max-width: 400px;</code> and <code class="language-css">min-width: 200px;</code> rules, whereas before, the padding was added <em>on top</em> of those widths. The content area inside has shrunk to accommodate the <code class="language-css">padding: 20px 5px 15px 30px;</code>. This reset ensures more predictable sizing for all elements going forward.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -9,98 +9,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>58. Text Styling: <code>font-style</code></h1>
-<p>The <code class="language-css">font-style</code> property is primarily used to select between the normal, italic, and oblique faces within a font family.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>58. Component 4: <code class="language-html">&lt;body&gt;</code> Element</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The final component of the minimal HTML structure is the <code class="language-html">&lt;body&gt;</code> element.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the font-weight demo paragraphs.</li>
-<li><strong>HTML Addition:</strong> Added paragraphs with classes <code class="language-html">style-normal</code>, <code class="language-html">style-italic</code>, <code class="language-html">style-oblique</code>. We&#39;re still using Roboto, which typically has an italic variant.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.weight-*</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules applying different <code class="language-css">font-style</code> values.</li>
+<li><strong>Purpose:</strong> This element contains all the <strong>visible content</strong> of the web page – the text, images, headings, lists, links, videos, forms, etc., that the user actually sees and interacts with in the browser window.</li>
+<li><strong>Syntax:</strong> Requires an opening <code class="language-html">&lt;body&gt;</code> and closing <code class="language-html">&lt;/body&gt;</code> tag.</li>
+<li><strong>Placement:</strong> It must be the second direct child of the <code class="language-html">&lt;html&gt;</code> element, immediately following the <code class="language-html">&lt;/head&gt;</code> closing tag. There must be exactly one <code class="language-html">&lt;body&gt;</code> element in a document.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;!-- Roboto font including italic style (usually requested via &#39;ital&#39; axis or specific italic weight) --&gt;
-  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
-  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
-  &lt;!-- Requesting italic: 0 for roman, 1 for italic; weights 400, 700 --&gt;
-  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Font Style Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous font-weight examples --&gt;
-
-  &lt;p class=&quot;style-normal&quot;&gt;Normal font style.&lt;/p&gt; &lt;!-- Added normal style --&gt;
-  &lt;p class=&quot;style-italic&quot;&gt;Italic font style.&lt;/p&gt; &lt;!-- Added italic style --&gt;
-  &lt;p class=&quot;style-oblique&quot;&gt;Oblique font style (fallback).&lt;/p&gt; &lt;!-- Added oblique style --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Font Style Demo */
-.style-normal {
-  font-style: normal; /* Default style */
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.style-italic {
-  font-style: italic; /* Selects the true italic face if available */
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.style-oblique {
-  font-style: oblique; /* Selects oblique face, often faked by slanting normal */
-  font-size: 1.1rem;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>font-style</code> Explained</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Selects a font face classified as normal, italic, or oblique.</li>
-<li><strong>Values:</strong><ul>
-<li><code class="language-css">normal</code>: Selects the standard, upright face of the font. This is the default.</li>
-<li><code class="language-css">italic</code>: Selects the font face specifically designed as <em>italic</em>. True italics often have different letterforms compared to just slanting the normal characters. Requires the font family to <em>have</em> a dedicated italic face loaded.</li>
-<li><code class="language-css">oblique</code>: Selects a font face classified as <em>oblique</em>. Oblique faces are typically just slanted (skewed) versions of the normal font face. If no specific oblique face is available, browsers can often simulate one by electronically slanting the normal face. You can optionally specify an angle, e.g., <code class="language-css">oblique 14deg</code>, but browser support varies.</li>
-</ul>
-</li>
-<li><strong>Italic vs. Oblique:</strong> Use <code class="language-css">italic</code> when you want the specifically designed italic version (preferred if available). Use <code class="language-css">oblique</code> if you specifically want a slanted version or if the font only provides an oblique variant. If a font has an italic face, <code class="language-css">oblique</code> might still select the italic face as a fallback, or the browser might simulate the slant.</li>
-</ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li>We updated the Google Fonts link to explicitly request the italic variants (<code>ital,wght@1,400;1,700</code>) alongside the normal ones (<code>ital,wght@0,400;0,700</code>).</li>
-<li><code>.style-normal</code> uses the default <code class="language-css">normal</code>.</li>
-<li><code>.style-italic</code> uses <code class="language-css">italic</code>. Since Roboto has a true italic variant and we requested it, this should display the proper italic letterforms.</li>
-<li><code>.style-oblique</code> uses <code class="language-css">oblique</code>. Since Roboto doesn&#39;t typically have a separate &quot;oblique&quot; face distinct from its &quot;italic&quot; face, the browser will likely either render the <em>italic</em> face or synthetically slant the normal face. The result might look very similar or identical to <code class="language-css">italic</code>.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 The first paragraph (<code>.style-normal</code>) should appear upright.</li>
-<li>👀 The second paragraph (<code>.style-italic</code>) should appear in true italics (notice potentially different shapes for letters like &#39;a&#39;).</li>
-<li>👀 The third paragraph (<code>.style-oblique</code>) will likely appear slanted, possibly looking identical to the italic version in this case, as the browser falls back or simulates the style.</li>
-<li>✅ Inspect the italic and oblique paragraphs in DevTools. Check the &quot;Computed&quot; tab for <code>font-style</code>. It will show <code>italic</code> or <code>oblique</code> as specified.</li>
-</ul>
-<p>Use <code class="language-css">font-style</code> to apply italic or oblique styling, preferably using <code class="language-css">italic</code> if the font provides a dedicated italic face.</p>
+<p>If the <code class="language-html">&lt;head&gt;</code> is the information desk, the <code class="language-html">&lt;body&gt;</code> is the main stage where the actual show happens.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

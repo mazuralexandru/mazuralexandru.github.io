@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>239. Other Inline Semantics (<code class="language-html">&lt;small&gt;</code>, <code class="language-html">&lt;sup&gt;</code>, <code class="language-html">&lt;sub&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>HTML offers a few more inline elements for specific semantic nuances:</p>
+<ul>
+<li><strong><code class="language-html">&lt;small&gt;</code> (Side Comments):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents side comments, small print, copyright information, legal disclaimers, or attribution. Text that is typically rendered smaller.</li>
+<li><strong>Default Styling:</strong> Renders text one size smaller than the parent element&#39;s font size.</li>
+<li><strong>Example:</strong> <code class="language-html">&lt;p&gt;Total price: $100. &lt;small&gt;Taxes not included.&lt;/small&gt;&lt;/p&gt;</code></li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;sup&gt;</code> (Superscript):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents superscript text, typically used for exponents, ordinal numbers (like 1<sup>st</sup>), or footnote markers.</li>
+<li><strong>Default Styling:</strong> Renders text smaller and raised above the baseline.</li>
+<li><strong>Example:</strong> <code class="language-html">E = mc&lt;sup&gt;2&lt;/sup&gt;</code> or <code class="language-html">The 4&lt;sup&gt;th&lt;/sup&gt; of July.</code></li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;sub&gt;</code> (Subscript):</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents subscript text, typically used for chemical formulas (like H<sub>2</sub>O) or mathematical variables/indices.</li>
+<li><strong>Default Styling:</strong> Renders text smaller and lowered below the baseline.</li>
+<li><strong>Example:</strong> <code class="language-html">The chemical formula for water is H&lt;sub&gt;2&lt;/sub&gt;O.</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Styling Note:</strong> While these have default styles, if you only need text to be smaller, superscripted, or subscripted for purely <em>presentational</em> reasons without the specific semantic meaning, it&#39;s often better to use a <code class="language-html">&lt;span&gt;</code> with CSS classes applying <code class="language-css">font-size</code> and/or <code class="language-css">vertical-align</code>. However, for their intended semantic purposes (like chemical formulas or exponents), using the correct HTML tags is appropriate.</p>
+<p>👀 We&#39;ll add examples to <code class="language-text">index.html</code> next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -9,44 +9,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>23. Adding More Rules to External Stylesheets</h1>
-<p>Just like with internal stylesheets, you can add multiple rules to your external <code class="language-text">style.css</code> file. Let&#39;s add the styling rule for the paragraph (<code class="language-html">&lt;p&gt;</code>) element into <code class="language-text">style.css</code> as well.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>23. Web Browsers for Development</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>You need web browsers not only to view websites but also to test and debug your own creations. While users might use various browsers, developers typically focus on a couple for primary development and testing.</p>
+<p><strong>Recommended Browsers for Development:</strong></p>
 <ul>
-<li>We added a new <code class="language-css">p</code> ruleset to the <code class="language-text">style.css</code> file.</li>
+<li><strong>Google Chrome:</strong> Widely used, excellent developer tools (Chrome DevTools), frequent updates, based on the Blink rendering engine.</li>
+<li><strong>Mozilla Firefox:</strong> Strong alternative, excellent developer tools (Firefox Developer Tools), privacy-focused, based on the Gecko rendering engine.</li>
 </ul>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-h1 {
-  color: lightblue; /* Change H1 text color */
-}
-
-/* Added P rule */
-p {
-  font-style: italic;
-  color: #ccc; /* Slightly different gray than before */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>External CSS: The Standard</strong></p>
+<p><strong>Why use these?</strong></p>
 <ul>
-<li>Adding rules to <code class="language-text">style.css</code> follows the same CSS syntax.</li>
-<li>This reinforces the benefits: all your presentation logic is centralized in one or more <code class="language-text">.css</code> files, separate from your HTML structure. This is the standard, professional way to manage styles for websites of any significant size.</li>
+<li><strong>Robust Developer Tools:</strong> Essential for inspecting HTML, debugging CSS and JavaScript, analyzing network requests, and checking performance.</li>
+<li><strong>Standards Compliance:</strong> Generally good at adhering to web standards.</li>
+<li><strong>Different Rendering Engines:</strong> Testing in both Chrome (Blink) and Firefox (Gecko) helps catch potential cross-browser compatibility issues early, as they render things slightly differently sometimes.</li>
 </ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The paragraph text &quot;This paragraph will be styled externally.&quot; should now be italic and the specified gray color (<code class="language-css">#ccc</code>). The heading remains light blue.</li>
-<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools.</li>
-<li>👀 The Styles pane should show the <code class="language-css">p { ... }</code> rule being applied, with the source listed as <code class="language-text">style.css</code>. The inherited <code class="language-css">color</code> from <code class="language-css">body</code> should again be shown as overridden (crossed out).</li>
-</ul>
-<p>Now that we&#39;ve established the three ways to apply CSS (inline, internal, external) and reinforced why external is preferred, we can dive deeper into how CSS selectors work to target elements more precisely.</p>
+<p>It&#39;s good practice to install both and test your work in them regularly.</p>
+<p>👀 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

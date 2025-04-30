@@ -9,94 +9,32 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>51. CSS Units: Viewport Units (<code>vw</code>, <code>vh</code>)</h1>
-<p>Besides units relative to font sizes (<code class="language-css">em</code>, <code class="language-css">rem</code>) or parent elements (<code class="language-css">%</code>), CSS offers <strong>Viewport Units</strong>. These are relative to the size of the browser&#39;s viewport (the visible area of the web page).</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>51. <code class="language-html">&lt;html&gt;</code> Essential Attribute: <code class="language-html">lang</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While optional according to the strict syntax, adding the <code class="language-html">lang</code> attribute to the <code class="language-html">&lt;html&gt;</code> tag is a critical best practice.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">em</code>/<code class="language-html">rem</code> demo divs.</li>
-<li><strong>HTML Addition:</strong> Added two simple <code class="language-html">&lt;div&gt;</code> elements with classes <code class="language-html">box-vw</code> and <code class="language-html">box-vh</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.outer-em</code>, <code class="language-css">.inner-em</code>, <code class="language-css">.outer-rem</code>, <code class="language-css">.inner-rem</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules for <code class="language-css">.box-vw</code> and <code class="language-css">.box-vh</code> using <code class="language-css">vw</code> and <code class="language-css">vh</code> units.</li>
+<li><strong>Purpose:</strong> Specifies the primary language of the text content within the element (and, by inheritance, the whole page unless overridden).</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;html lang=&quot;language-code&quot;&gt;</code></li>
+<li><strong>Example:</strong> <code class="language-html">&lt;html lang=&quot;en&quot;&gt;</code> (for English), <code class="language-html">&lt;html lang=&quot;es&quot;&gt;</code> (for Spanish), <code class="language-html">&lt;html lang=&quot;fr&quot;&gt;</code> (for French).</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Viewport Units Demo (vw, vh)&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous em/rem examples --&gt;
-
-  &lt;div class=&quot;box-vw&quot;&gt;Width: 50vw&lt;/div&gt; &lt;!-- Added vw box --&gt;
-  &lt;div class=&quot;box-vh&quot;&gt;Height: 25vh&lt;/div&gt; &lt;!-- Added vh box --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-h1 {
-  color: lightblue;
-}
-
-/* Pruned em/rem rules */
-/* .outer-em { ... } ... etc */
-
-
-/* Viewport Width Unit */
-.box-vw {
-  width: 50vw; /* 50% of the viewport width */
-  background-color: steelblue;
-  padding: 10px;
-  margin-bottom: 10px;
-  color: white;
-}
-
-/* Viewport Height Unit */
-.box-vh {
-  height: 25vh; /* 25% of the viewport height */
-  width: 200px; /* Give it a fixed width for demo */
-  background-color: seagreen;
-  padding: 10px;
-  color: white;
-}
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Viewport Units Explained</strong></p>
-<ul>
-<li><strong><code>vw</code> (Viewport Width):</strong> Represents a percentage of the <strong>viewport&#39;s width</strong>. <code class="language-css">1vw</code> is equal to 1% of the viewport width.</li>
-<li><strong><code>vh</code> (Viewport Height):</strong> Represents a percentage of the <strong>viewport&#39;s height</strong>. <code class="language-css">1vh</code> is equal to 1% of the viewport height.</li>
-<li><strong><code>vmin</code>:</strong> Equal to the smaller of <code class="language-css">1vw</code> or <code class="language-css">1vh</code>. Useful if you want sizing relative to the smaller viewport dimension.</li>
-<li><strong><code>vmax</code>:</strong> Equal to the larger of <code class="language-css">1vw</code> or <code class="language-css">1vh</code>. Useful if you want sizing relative to the larger viewport dimension.</li>
-</ul>
-<p><strong>Key Characteristics:</strong></p>
-<ul>
-<li><strong>Directly Tied to Viewport:</strong> Unlike percentages (<code class="language-css">%</code>) which are often relative to the parent container&#39;s size, <code class="language-css">vw</code>/<code class="language-css">vh</code> are always relative to the overall viewport dimensions.</li>
-<li><strong>Responsive Design:</strong> Extremely useful for creating elements that scale fluidly with the browser window size, like full-width hero banners (<code class="language-css">width: 100vw;</code>) or elements that should always take up the full screen height (<code class="language-css">min-height: 100vh;</code>).</li>
-<li><strong>Potential Issues:</strong> Can sometimes lead to unexpected results with scrollbars (e.g., <code class="language-css">100vw</code> might be slightly wider than the usable area if a vertical scrollbar is present) or very small/large text if used directly for <code class="language-css">font-size</code> without care.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You&#39;ll see two colored boxes.</li>
-<li>👀 <strong><code>box-vw</code> (Steel Blue):</strong> Its width should take up exactly half (50%) of the width of your browser&#39;s preview pane.<ul>
-<li>🔬 <strong>Experiment:</strong> Resize the width of your browser window or the preview pane. Notice how the width of the blue box changes dynamically, always staying at 50% of the viewport width.</li>
-</ul>
-</li>
-<li>👀 <strong><code>box-vh</code> (Sea Green):</strong> Its height should take up one quarter (25%) of the <em>height</em> of your browser&#39;s preview pane. Its width is fixed at 200px.<ul>
-<li>🔬 <strong>Experiment:</strong> Resize the <em>height</em> of your browser window or preview pane. Notice how the height of the green box changes, always staying at 25% of the viewport height. Resizing the width won&#39;t affect its height.</li>
-</ul>
-</li>
-</ul>
-<p>Viewport units provide a powerful tool for sizing elements relative to the overall browser window, enabling many modern responsive layout techniques.</p>
+<p><strong>Why is it important?</strong></p>
+<ol>
+<li><strong>Accessibility:</strong> Screen readers use the <code class="language-html">lang</code> attribute to pronounce the content correctly using the appropriate language profile (accent, pronunciation rules). Missing or incorrect <code class="language-html">lang</code> can make content unintelligible for screen reader users.</li>
+<li><strong>Search Engines (SEO):</strong> Helps search engines understand the language of your page, which can aid in targeting the right audience and ranking for language-specific searches.</li>
+<li><strong>Translation Tools:</strong> Browser translation features may use this attribute to determine the original language.</li>
+<li><strong>Styling:</strong> CSS selectors can target elements based on their language (e.g., <code class="language-css">:lang(fr)</code>).</li>
+</ol>
+<p><strong>Finding Language Codes:</strong> Use standard codes defined by BCP 47. Common codes include <code class="language-text">en</code> (English), <code class="language-text">es</code> (Spanish), <code class="language-text">fr</code> (French), <code class="language-text">de</code> (German), <code class="language-text">ja</code> (Japanese), <code class="language-text">zh</code> (Chinese). You can also specify regional variations like <code class="language-text">en-US</code> (US English) or <code class="language-text">en-GB</code> (British English).</p>
+<p><strong>Rule:</strong> Always include a <code class="language-html">lang</code> attribute on your <code class="language-html">&lt;html&gt;</code> tag.</p>
+<p>👀 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -9,80 +9,26 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>41. CSS Combinators: Child Combinator (&gt;)</h1>
-<p>While the Descendant Combinator (space) selects elements nested anywhere inside, the <strong>Child Combinator</strong> (<code>&gt;</code>) is more specific: it only selects elements that are <strong>direct children</strong> of the parent element.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">&lt;article&gt;</code> structure from the previous step.</li>
-<li><strong>HTML Addition:</strong> Added an unordered list (<code class="language-html">&lt;ul&gt;</code>) containing list items (<code class="language-html">&lt;li&gt;</code>). One <code class="language-html">&lt;li&gt;</code> contains a nested <code class="language-html">&lt;ul&gt;</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">article p</code> descendant selector rule.</li>
-<li><strong>CSS Addition:</strong> Added a new rule using the child combinator: <code class="language-css">ul &gt; li</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Child Combinator Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;p&gt;Styling direct children list items.&lt;/p&gt;
-
-  &lt;ul&gt; &lt;!-- Added outer UL --&gt;
-    &lt;li&gt;Direct Child Item 1&lt;/li&gt;
-    &lt;li&gt;Direct Child Item 2
-      &lt;ul&gt; &lt;!-- Added nested UL --&gt;
-        &lt;li&gt;Nested Item A&lt;/li&gt;
-        &lt;li&gt;Nested Item B&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;Direct Child Item 3&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;!-- Pruned previous article example --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Removed descendant combinator rule */
-/*
-article p { ... }
-*/
-
-/* Child Combinator Example */
-ul &gt; li {
-  color: orange; /* Style direct child LIs of ULs */
-  list-style-type: square; /* Change bullet style */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Child Combinator (<code>&gt;</code>)</strong></p>
-<ul>
-<li><strong>Syntax:</strong> Two selectors separated by the &quot;greater than&quot; symbol (<code class="language-css">&gt;</code>): <code class="language-css">parent &gt; child</code>.</li>
-<li><strong>Meaning:</strong> Selects all elements matching the <code class="language-css">child</code> selector that are <strong>direct children</strong> of an element matching the <code class="language-css">parent</code> selector. It does <em>not</em> select grandchildren or other deeper descendants.</li>
-<li><strong>Specificity:</strong> More specific than the descendant combinator. Useful when you want to avoid styles &quot;leaking&quot; down into nested structures unintentionally.</li>
-</ul>
-<p>In our example:</p>
-<ul>
-<li>The rule <code class="language-css">ul &gt; li { ... }</code> targets <code class="language-html">&lt;li&gt;</code> elements that are immediate children of a <code class="language-html">&lt;ul&gt;</code> element.</li>
-<li>It applies an <code class="language-css">orange</code> color and changes the <code class="language-css">list-style-type</code> to <code class="language-css">square</code>.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You&#39;ll see the nested list structure.</li>
-<li>👀 Observe &quot;Direct Child Item 1&quot;, &quot;Direct Child Item 2&quot;, and &quot;Direct Child Item 3&quot;. These list items should now be <strong>orange</strong> and have <strong>square bullets</strong>. They are selected because they are direct children (<code class="language-html">&lt;li&gt;</code>) of the outer <code class="language-html">&lt;ul&gt;</code>.</li>
-<li>👀 Observe the nested list items &quot;Nested Item A&quot; and &quot;Nested Item B&quot;. These should <strong>not</strong> be orange and should have the default circular bullets. Why? Because while they are <code class="language-html">&lt;li&gt;</code> elements, their <em>direct</em> parent is the <em>inner</em> <code class="language-html">&lt;ul&gt;</code>, not the outer one targeted by the <code class="language-css">ul &gt; li</code> selector in this specific context (though they <em>are</em> direct children of <em>an</em> <code>ul</code>). The selector <code>ul &gt; li</code> specifically looks for <code>li</code> that are direct children of <code>ul</code>. If we wanted to style <em>all</em> <code>li</code> regardless of nesting, we would use the descendant selector <code>ul li</code>.</li>
-<li>✅ Inspect the &quot;Direct Child Item 1&quot; and &quot;Nested Item A&quot; in DevTools. Compare the styles applied in the Styles pane. You&#39;ll see the <code class="language-css">ul &gt; li</code> rule applied only to the direct children of the outer list.</li>
-</ul>
-<p>The child combinator provides more precise control over styling direct descendants compared to the general descendant combinator.</p>
+  <h1>41. The Minimal HTML5 Document Structure</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Every valid HTML5 web page needs a fundamental structure. This ensures browsers interpret the document correctly and provides necessary containers for metadata and visible content.</p>
+<p>This minimal structure consists of four key components, which we&#39;ll examine one by one:</p>
+<ol>
+<li><strong>DOCTYPE Declaration:</strong> <code class="language-html">&lt;!DOCTYPE html&gt;</code></li>
+<li><strong>Root Element:</strong> <code class="language-html">&lt;html&gt;</code></li>
+<li><strong>Metadata Container:</strong> <code class="language-html">&lt;head&gt;</code></li>
+<li><strong>Visible Content Container:</strong> <code class="language-html">&lt;body&gt;</code></li>
+</ol>
+<p>Understanding these components is essential before writing any actual content.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty. We&#39;ll build this structure soon.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

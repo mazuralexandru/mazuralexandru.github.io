@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>111. CSS Comments</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Just like HTML, CSS also has its own syntax for comments. These are used within <code>&lt;style&gt;</code> blocks in HTML or, more commonly, in external <code>.css</code> files like our <code class="language-text">style.css</code>.</p>
+<ul>
+<li><strong>Purpose:</strong> Explain CSS rules, document sections of the stylesheet, or temporarily disable specific declarations or entire rulesets.</li>
+<li><strong>Syntax:</strong> CSS comments start with <code class="language-css">/*</code> and end with <code class="language-css">*/</code>. They can span multiple lines. There is no single-line comment syntax like <code class="language-css">//</code> in CSS (that&#39;s used in JavaScript).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>!</strong></p>
+<ul>
+<li>We&#39;ve added single-line comments explaining the file&#39;s purpose and a specific declaration.</li>
+<li>We&#39;ve added a multi-line comment.</li>
+<li>We&#39;ve added some actual CSS rules for <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code>.</li>
+<li>Crucially, we&#39;ve used comments to &quot;comment out&quot; the <code class="language-css">text-decoration</code> for the <code class="language-html">&lt;h1&gt;</code> and the entire <code class="language-css">color</code> rule for the <code class="language-html">&lt;p&gt;</code>.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;h1&gt;</code> (&quot;Main Heading&quot;) should now be <code class="language-css">cornflowerblue</code>. The underline rule is commented out, so it&#39;s not applied.</li>
+<li>The <code class="language-html">&lt;p&gt;</code> (&quot;This is a standard paragraph.&quot;) remains the default light color set by <code>base_styles.css</code>, because its specific <code class="language-css">color: limegreen;</code> rule is commented out.</li>
+</ul>
+<p>CSS comments are ignored by the browser when applying styles but are essential for developers.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

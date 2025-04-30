@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>155. CSS ID Selector Syntax (<code class="language-css">#idname</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>To target a specific element based on its unique ID in CSS, you use an <strong>ID selector</strong>.</p>
+<ul>
+<li><p><strong>Syntax:</strong> A hash symbol (<code class="language-css">#</code>) followed immediately by the ID name (the exact, case-sensitive value used in the HTML <code class="language-html">id</code> attribute, without the quotes).</p>
+</li>
+<li><p><strong>Examples:</strong></p>
+<ul>
+<li>To select the element with <code class="language-html">id=&quot;main-navigation&quot;</code>:<pre class="language-css"><code class="language-css">#main-navigation {
+  /* styles for the main navigation */
+}
+</code></pre>
+</li>
+<li>To select the element with <code class="language-html">id=&quot;error-summary&quot;</code>:<pre class="language-css"><code class="language-css">#error-summary {
+  /* styles for the error summary box */
+}
+</code></pre>
+</li>
+<li>To select the element with <code class="language-html">id=&quot;page-footer&quot;</code>:<pre class="language-css"><code class="language-css">#page-footer {
+  /* styles for the page footer */
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Case Sensitivity:</strong> ID selectors are case-sensitive, matching the case used in the HTML <code class="language-html">id</code> attribute value. <code class="language-css">#mainNav</code> will <em>not</em> match <code class="language-html">id=&quot;mainnav&quot;</code>. Stick to consistent casing (usually lowercase).</p>
+</li>
+</ul>
+<p>👀 Look at <code class="language-text">index.html</code>. We don&#39;t have IDs yet.
+👀 Look at <code class="language-text">style.css</code>. We don&#39;t have any ID selectors defined yet. We&#39;ll add both in an upcoming step.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -9,59 +9,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>33. Attribute Selectors: Adding Links for More Examples</h1>
-<p>Attribute selectors are particularly useful for styling links (<code class="language-html">&lt;a&gt;</code>) based on their destinations (<code class="language-html">href</code>) or how they open (<code class="language-html">target</code>). Let&#39;s add a couple of links to our HTML to demonstrate this.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>33. Rule: Proper Nesting</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>When nesting HTML elements, there&#39;s one crucial rule: <strong>Elements must be closed in the reverse order they were opened.</strong></p>
+<p>Think of it like parentheses in math or brackets in programming – you must close the innermost one first.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the input fields and the <code>&lt;br&gt;</code> tag to focus on links. Look for <code class="language-html">&lt;!-- Pruned previous input examples --&gt;</code>.</li>
-<li><strong>HTML Addition:</strong> Added two anchor (<code class="language-html">&lt;a&gt;</code>) elements:<ul>
-<li>One linking to an external site that opens in a new tab (<code class="language-html">target=&quot;_blank&quot;</code>).</li>
-<li>One linking to a non-existent PDF file (for demonstration purposes).</li>
+<li><p><strong>Correct:</strong> <code class="language-html">&lt;div&gt;&lt;p&gt;Some text&lt;/p&gt;&lt;/div&gt;</code></p>
+<ul>
+<li><code class="language-html">&lt;p&gt;</code> was opened last, so it&#39;s closed first (<code class="language-html">&lt;/p&gt;</code>).</li>
+<li><code class="language-html">&lt;div&gt;</code> was opened first, so it&#39;s closed last (<code class="language-html">&lt;/div&gt;</code>).</li>
 </ul>
 </li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Attribute Selectors Demo&lt;/h1&gt;
-  &lt;p&gt;Styling links based on attributes.&lt;/p&gt; &lt;!-- Changed P text --&gt;
-
-  &lt;!-- Pruned previous input examples --&gt;
-
-  &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;External Link (New Tab)&lt;/a&gt; &lt;!-- Added link with target --&gt;
-  &lt;br&gt;&lt;br&gt; &lt;!-- Added spacing --&gt;
-  &lt;a href=&quot;document.pdf&quot;&gt;Link to PDF&lt;/a&gt; &lt;!-- Added link to PDF --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>Link Attributes</strong></p>
-<ul>
-<li><code class="language-html">href</code>: Specifies the URL the link points to.</li>
-<li><code class="language-html">target</code>: Specifies where to open the linked document.<ul>
-<li><code class="language-html">_blank</code>: Opens in a new window or tab.</li>
-<li><code class="language-html">_self</code> (default): Opens in the same frame.</li>
-<li>Other values like <code class="language-html">_parent</code>, <code class="language-html">_top</code>, or a specific frame name exist but are less common.</li>
-</ul>
+<li><p><strong>Incorrect:</strong> <code class="language-html">&lt;div&gt;&lt;p&gt;Some text&lt;/div&gt;&lt;/p&gt;</code> (Tags overlap / improperly nested)</p>
 </li>
 </ul>
-<p>We now have links with different <code class="language-html">target</code> and <code class="language-html">href</code> attributes, ready to be styled using attribute selectors.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You should see the two new links.</li>
-<li>👀 By default, they likely appear in the browser&#39;s standard link color (often blue) and may be underlined. The presence of <code class="language-html">target=&quot;_blank&quot;</code> or the <code>.pdf</code> extension in <code class="language-html">href</code> doesn&#39;t usually change their default appearance.</li>
-<li>✅ Inspect the links in DevTools to see their <code class="language-html">href</code> and <code class="language-html">target</code> attributes.</li>
-</ul>
-<p>Next, we&#39;ll use attribute selectors to style these links based on those attributes.</p>
+<p>Browsers often try to correct improperly nested tags, but the results can be unpredictable and lead to invalid HTML structure, potentially breaking your layout or styles. Always ensure your tags are nested correctly. Code editors often help with indentation, which visually reinforces the nesting structure.</p>
+<p>👀 <code class="language-text">index.html</code> is still empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

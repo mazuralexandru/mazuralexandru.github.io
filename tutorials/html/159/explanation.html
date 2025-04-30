@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>159. ID Selectors: Example</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Let&#39;s add an ID to our heading and style it using an ID selector.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;h1&gt;</code> element now has an <code class="language-html">id</code> attribute with the value <code class="language-html">&quot;main-heading&quot;</code>.</li>
+</ul>
+<pre class="language-html"><code class="language-html">&lt;h1 id=&quot;main-heading&quot;&gt;Main Heading&lt;/h1&gt; &lt;!-- Added ID --&gt;
+</code></pre>
+<p>✅ <strong>Now, switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve replaced the <code class="language-css">h1</code> type selector with the ID selector <code class="language-css">#main-heading</code>.</li>
+<li>The <code class="language-css">color</code> property remains the same (<code class="language-css">cornflowerblue</code>).</li>
+<li>We&#39;ve uncommented the <code class="language-css">text-decoration: underline;</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Replaced h1 type selector with ID selector */
+#main-heading {
+    color: cornflowerblue; /* Set heading color */
+    text-decoration: underline; /* Added underline via ID */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;h1&gt;</code> (&quot;Main Heading&quot;) is still cornflowerblue, but now it also has an underline.</li>
+<li>This style is applied because the ID selector <code class="language-css">#main-heading</code> in <code class="language-text">style.css</code> specifically targets the element with <code class="language-html">id=&quot;main-heading&quot;</code> in the HTML.</li>
+<li>If we had other <code class="language-html">&lt;h1&gt;</code> elements without this ID, they would <em>not</em> receive this styling (unlike when we used the <code class="language-css">h1</code> type selector).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

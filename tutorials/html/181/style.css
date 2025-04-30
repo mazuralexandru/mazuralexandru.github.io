@@ -1,0 +1,62 @@
+/* CSS comments explain or temporarily disable styles */
+
+/* 
+   This is a multi-line CSS comment.
+   It can span several lines. 
+*/
+
+#main-heading {
+    color: cornflowerblue; 
+    text-decoration: underline; 
+}
+
+.highlight-text {
+  background-color: #4d4d00; 
+  color: #1a1a1a; 
+  padding: 5px; 
+}
+
+/* --- Attribute Selector Examples --- */
+p[title] {
+  border: 1px dotted gray;
+}
+a[target="_blank"] {
+  color: cyan;
+}
+a[target="_blank"]::after {
+  content: ' \2197'; 
+  font-size: 0.8em;
+  display: inline-block; 
+  margin-left: 3px;
+}
+
+/* --- Grouping Example --- */
+#main-heading,
+.highlight-text {
+  font-style: italic; /* Apply italic to both */
+}
+
+/* --- Combinator Examples --- */
+
+/* Descendant Combinator Example */
+.container span {
+  font-weight: bold; /* Make spans inside .container bold */
+}
+
+/* Child Combinator Example */
+.container > p {
+  border-left: 3px solid orange; /* Add orange left border to direct child paragraphs */
+  padding-left: 10px;
+}
+
+/* Adjacent Sibling Combinator Example */
+h1 + p {
+  margin-top: 5px; /* Reduce top margin only for paragraphs directly after an h1 */
+  color: lightgreen; /* Change color for emphasis */
+}
+
+/* General Sibling Combinator Example */
+/* Selects any <p> that follows an <h1> within the same parent */
+h1 ~ p {
+  text-decoration: line-through; /* Add line-through for demonstration */
+}

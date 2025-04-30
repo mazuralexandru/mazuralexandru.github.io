@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>144. Type Selectors: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The syntax for a type selector is just the element&#39;s tag name.</p>
+<ul>
+<li>To select all paragraphs (<code class="language-html">&lt;p&gt;</code>):<pre class="language-css"><code class="language-css">p {
+  /* styles for paragraphs */
+}
+</code></pre>
+</li>
+<li>To select all level 2 headings (<code class="language-html">&lt;h2&gt;</code>):<pre class="language-css"><code class="language-css">h2 {
+  /* styles for H2s */
+}
+</code></pre>
+</li>
+<li>To select all images (<code class="language-html">&lt;img&gt;</code>):<pre class="language-css"><code class="language-css">img {
+  /* styles for images */
+}
+</code></pre>
+</li>
+<li>To select all links (<code class="language-html">&lt;a&gt;</code>):<pre class="language-css"><code class="language-css">a {
+  /* styles for links */
+}
+</code></pre>
+</li>
+<li>To select the main body (<code class="language-html">&lt;body&gt;</code>):<pre class="language-css"><code class="language-css">body {
+  /* styles for the body */
+}
+</code></pre>
+</li>
+</ul>
+<p>It&#39;s case-insensitive according to the specification, but convention dictates using lowercase tag names, matching the HTML convention.</p>
+<p>👀 In <code class="language-text">style.css</code>, we see <code class="language-css">h1</code> and <code class="language-css">p</code> used as selectors. <code class="language-text">index.html</code> contains the corresponding <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> tags that these selectors target.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

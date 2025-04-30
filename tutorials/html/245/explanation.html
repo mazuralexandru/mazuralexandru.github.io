@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>245. Escaping HTML within Code</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>It&#39;s critical to reiterate the need for <strong>escaping HTML characters</strong> (<code class="language-html">&lt;</code>, <code class="language-html">&gt;</code>) when displaying HTML code itself within a <code class="language-html">&lt;code&gt;</code> or <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> block.</p>
+<ul>
+<li><strong>Why?</strong> If you write literal <code>&lt;</code> and <code>&gt;</code> characters inside your code example, the browser will try to interpret them as <em>actual HTML tags</em>, potentially breaking your page layout or rendering the code incorrectly.</li>
+<li><strong>How?</strong> Replace literal <code>&lt;</code> and <code>&gt;</code> characters within your code examples with their corresponding HTML entities:<ul>
+<li><code>&lt;</code> becomes <code class="language-html">&amp;lt;</code> (less-than)</li>
+<li><code>&gt;</code> becomes <code class="language-html">&amp;gt;</code> (greater-than)</li>
+</ul>
+</li>
+<li><strong>Ampersands:</strong> If your code example <em>itself</em> contains an ampersand (<code class="language-html">&amp;</code>), you should also escape it as <code class="language-html">&amp;amp;</code> to avoid confusion with the start of an entity.</li>
+</ul>
+<pre class="language-html"><code class="language-html">&lt;!-- Correctly escaped HTML code example --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;alert alert-danger&quot;&amp;gt;
+  &amp;lt;strong&amp;gt;Error:&amp;lt;/strong&amp;gt; Please check your input &amp;amp;amp; try again.
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>Many code editors have functions to automatically escape selected text for HTML. Server-side languages and JavaScript frameworks also provide tools for safe HTML escaping when displaying dynamic code snippets.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added some basic styling for inline <code class="language-css">code</code> elements to make them stand out more.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Styling for inline code */
+code { /* Targets inline code */
+  background-color: rgba(128, 128, 128, 0.2); /* Light gray background */
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em; /* Slightly smaller than surrounding text */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The inline code <code class="language-html">&lt;code&gt;document.getElementById()&lt;/code&gt;</code> should now have a subtle gray background, making it more distinct. The escaped HTML block in the <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> section remains unchanged visually but is correctly displayed as code because of the escaping.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

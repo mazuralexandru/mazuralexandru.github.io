@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>129. Internal Stylesheets: Scope</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>A key characteristic of internal stylesheets defined within <code class="language-html">&lt;style&gt;</code> tags is their <strong>scope</strong>.</p>
+<p>The CSS rules written inside a <code class="language-html">&lt;style&gt;</code> element apply <strong>only to the HTML document in which they are embedded</strong>. They do not affect any other HTML pages, even if those pages are part of the same website or project.</p>
+<p>This makes them suitable for styles that are unique to a single page, but less ideal for styles that need to be consistent across multiple pages (like site-wide branding or component styles). For cross-page consistency, external stylesheets are the better choice.</p>
+<p>👀 Consider <code class="language-text">index.html</code>. If we added a <code class="language-html">&lt;style&gt;</code> block here, the rules inside would only affect the rendering of <code class="language-text">index.html</code> itself. If we had an <code class="language-text">about.html</code> page, it would not be affected by the styles inside <code class="language-text">index.html</code>&#39;s <code class="language-html">&lt;style&gt;</code> tag (unless it also had its own identical <code class="language-html">&lt;style&gt;</code> block, which would be inefficient).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

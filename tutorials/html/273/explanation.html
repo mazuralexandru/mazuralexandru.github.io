@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>273. Minimum and Maximum Dimensions: <code class="language-css">max-height</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Finally, <code class="language-css">max-height</code> prevents an element from growing too tall.</p>
+<ul>
+<li><strong>Purpose:</strong> Sets the maximum height an element can expand to. If the content or a calculated <code class="language-css">height</code> would normally make the element taller, its height will be capped at the <code class="language-css">max-height</code>. Content that exceeds this height will overflow (controlled by the <code class="language-css">overflow</code> property).</li>
+<li><strong>Syntax:</strong> <code class="language-css">max-height: value;</code></li>
+<li><strong>Values:</strong> Length units (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, <code class="language-css">vh</code>), percentages (<code class="language-css">%</code> - relative to container height, subject to parent-height constraints), or keywords like <code class="language-css">none</code> (default, no maximum), <code class="language-css">min-content</code>, <code class="language-css">max-content</code>, <code class="language-css">fit-content</code>.</li>
+<li><strong>Interaction:</strong> Overrides <code class="language-css">height</code> if <code class="language-css">height</code> calculates to a value greater than <code class="language-css">max-height</code>. <code class="language-css">min-height</code> still takes precedence over <code class="language-css">max-height</code>.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">max-height: 200px;</code> to the <code class="language-css">.box</code> rule.</li>
+<li>We&#39;ve also added <code class="language-css">overflow: auto;</code> so we can see the effect if content exceeds the max-height.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; 
+  max-height: 200px; /* Prevent box from growing taller than 200px */
+  overflow: auto; /* Add scrollbars if content overflows */
+  background-color: cornflowerblue; 
+  padding: 10px; 
+  margin: 1em auto; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The box still respects the <code class="language-css">min-height</code> of 150px.</li>
+<li>However, if the content (including padding) naturally requires more than 200px vertically, the box&#39;s height will be capped at 200px (plus padding/border).</li>
+<li>Because we added <code class="language-css">overflow: auto;</code>, a vertical scrollbar should appear inside the box if the content overflows the 200px maximum height. Without <code class="language-css">overflow: auto;</code>, the content would simply be clipped or spill out (depending on the default <code class="language-css">overflow: visible;</code>).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

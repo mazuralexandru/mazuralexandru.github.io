@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>77. Linking Base Stylesheet</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Before we dive into CSS theory, let&#39;s link our base stylesheet (<code class="language-text">base_styles.css</code>) to our HTML document. This file will eventually contain foundational styles for a consistent look and feel (like the dark theme and grid background).</p>
+<p>We use the <code class="language-html">&lt;link&gt;</code> element within the <code class="language-html">&lt;head&gt;</code> section.</p>
+<ul>
+<li><strong>Element:</strong> <code class="language-html">&lt;link&gt;</code> (a void element).</li>
+<li><strong><code class="language-html">rel</code> attribute:</strong> Specifies the relationship. <code class="language-html">stylesheet</code> indicates it&#39;s a CSS file.</li>
+<li><strong><code class="language-html">href</code> attribute:</strong> Specifies the URL (path) to the CSS file. Here, it&#39;s <code class="language-text">base_styles.css</code> (assuming it&#39;s in the same directory).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>!</strong> A <code class="language-html">&lt;link&gt;</code> tag has been added inside the <code class="language-html">&lt;head&gt;</code>.</p>
+<pre class="language-html"><code class="language-html">    &lt;link rel=&quot;stylesheet&quot; href=&quot;base_styles.css&quot;&gt; &lt;!-- Link base styles --&gt;
+</code></pre>
+<p>Right now, <code class="language-text">base_styles.css</code> is still empty, so linking it has no visual effect yet. We&#39;ll add content to it in the next step. This separation allows us to manage base styles independently.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

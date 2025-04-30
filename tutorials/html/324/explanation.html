@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>324. <code class="language-css">overflow</code> Value: <code class="language-css">hidden</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Setting <code class="language-css">overflow: hidden;</code> changes how overflowing content is handled.</p>
+<ul>
+<li><strong>Behavior:</strong> Any content that extends beyond the element&#39;s padding edge is <strong>clipped</strong> and becomes invisible. No scrollbars are provided to access the hidden content.</li>
+<li><strong>Effect:</strong> Prevents content from spilling out and overlapping other elements, but makes the overflowing content inaccessible to the user.</li>
+<li><strong>Use Case:</strong> Useful when you intentionally want to hide overflow without providing scrolling, perhaps for decorative elements with fixed sizes or in certain layout techniques. Also required (along with <code class="language-css">white-space: nowrap;</code>) for <code class="language-css">text-overflow: ellipsis;</code> to work.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">overflow: hidden;</code> to the <code class="language-css">.overflow-box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.overflow-box {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid orange;
+  background-color: rgba(0, 0, 100, 0.2);
+  margin-bottom: 1em; 
+  overflow: hidden; /* Clip overflowing content */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The text that was previously spilling out of the bottom of the orange-bordered box should now be <strong>cut off</strong> (clipped) at the bottom edge of the box&#39;s padding area. The hidden text is no longer visible.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

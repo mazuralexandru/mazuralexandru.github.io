@@ -1,0 +1,11 @@
+/* Centering with Auto Margins */
+.centered-box {
+  width: 60%; /* MUST have an explicit width less than container */
+  margin-left: auto;
+  margin-right: auto;
+  /* Or use shorthand: margin: 1em auto; */
+
+  background-color: teal;
+  padding: 20px;
+  height: 100px; /* Added height for visibility */
+}

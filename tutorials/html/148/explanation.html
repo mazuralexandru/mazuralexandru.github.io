@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>148. HTML <code class="language-html">class</code> Attribute Revisited</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Before using class selectors in CSS, let&#39;s quickly revisit the <code class="language-html">class</code> attribute in HTML:</p>
+<ul>
+<li><strong>Purpose:</strong> The <code class="language-html">class</code> attribute is a global attribute used to assign one or more <strong>class names</strong> to an HTML element. These names act as labels or categories for the element, primarily used as hooks for CSS styling and JavaScript manipulation.</li>
+<li><strong>Syntax:</strong> The attribute value is a space-separated list of class names.<pre class="language-html"><code class="language-html">&lt;p class=&quot;intro important featured&quot;&gt;...&lt;/p&gt;
+&lt;button class=&quot;button button-primary&quot;&gt;Submit&lt;/button&gt;
+&lt;div class=&quot;card user-profile&quot;&gt;...&lt;/div&gt;
+</code></pre>
+</li>
+<li><strong>Multiple Classes:</strong> An element can have multiple classes, allowing you to combine different styles (e.g., a base <code class="language-css">.button</code> style and a modifier <code class="language-css">.button-primary</code> style).</li>
+<li><strong>Reusability:</strong> The same class name can be applied to multiple elements on the page, even elements of different types (e.g., both a <code class="language-html">&lt;div&gt;</code> and a <code class="language-html">&lt;span&gt;</code> could have <code class="language-html">class=&quot;highlight&quot;</code>).</li>
+<li><strong>Naming Conventions:</strong><ul>
+<li>Use meaningful, semantic names that describe the <em>purpose</em> or <em>role</em> of the element/style (e.g., <code class="language-html">class=&quot;error-message&quot;</code>, <code class="language-html">class=&quot;product-image&quot;</code>) rather than describing the visual appearance (e.g., avoid <code class="language-html">class=&quot;red-text&quot;</code>).</li>
+<li>Use lowercase letters.</li>
+<li>Separate words with hyphens (<code class="language-text">-</code>) (this is the most common convention, known as kebab-case). Avoid spaces within a single class name.</li>
+<li>Class names can contain letters, numbers, hyphens, and underscores, but cannot start with a digit, two hyphens, or a hyphen followed by a digit.</li>
+</ul>
+</li>
+</ul>
+<p>Assigning appropriate classes in your HTML is the foundation for effective CSS styling using class selectors.</p>
+<p>👀 Our elements in <code class="language-text">index.html</code> still lack classes.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

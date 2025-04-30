@@ -9,72 +9,28 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>43. CSS Combinators: General Sibling Combinator (~)</h1>
-<p>The <strong>General Sibling Combinator</strong> (<code>~</code>) is similar to the Adjacent Sibling Combinator (<code>+</code>), but less strict. It selects sibling elements that follow a specific element, even if they don&#39;t <em>immediately</em> follow it.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Addition:</strong> Added a <code class="language-html">&lt;div&gt;</code> element between the <code class="language-html">&lt;h2&gt;</code> and the first <code class="language-html">&lt;p&gt;</code>. Added a third <code class="language-html">&lt;p&gt;</code> after the second one.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">h2 + p</code> adjacent sibling rule.</li>
-<li><strong>CSS Addition:</strong> Added a new rule using the general sibling combinator: <code class="language-css">h2 ~ p</code>.</li>
+  <h1>43. DOCTYPE: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s elaborate on the <code class="language-html">&lt;!DOCTYPE html&gt;</code> purpose:</p>
+<ol>
+<li><strong>Version Declaration:</strong> It explicitly tells the browser, &quot;This document is intended to be interpreted as HTML5.&quot; This helps the browser apply the correct parsing rules and support the expected features.</li>
+<li><strong>Triggering Standards Mode:</strong> This is crucial. In the early days of the web, browsers had different ways of interpreting HTML and CSS, leading to inconsistencies. To maintain compatibility with older sites that relied on these quirks, browsers developed different rendering modes:<ul>
+<li><strong>Quirks Mode:</strong> Emulates older, buggy browser behavior. Layouts can be unpredictable.</li>
+<li><strong>Standards Mode:</strong> Adheres to modern W3C web standards for HTML and CSS rendering. This provides more consistent and predictable results across different browsers.
+The presence of a valid DOCTYPE (especially the simple HTML5 one) instructs modern browsers to use Standards Mode. Omitting the DOCTYPE or using an invalid one risks triggering Quirks Mode, which should always be avoided for new development.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;General Sibling Combinator Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;h2&gt;Another Heading&lt;/h2&gt;
-  &lt;div&gt;This div is between H2 and P.&lt;/div&gt; &lt;!-- Added Div --&gt;
-  &lt;p&gt;This paragraph follows the H2 (after the div).&lt;/p&gt; &lt;!-- Target for ~ --&gt;
-  &lt;p&gt;This paragraph also follows the H2.&lt;/p&gt; &lt;!-- Target for ~ --&gt;
-  &lt;p&gt;This paragraph follows too.&lt;/p&gt; &lt;!-- Target for ~ --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Removed adjacent sibling combinator rule */
-/*
-h2 + p { ... }
-*/
-
-/* General Sibling Combinator Example */
-h2 ~ p {
-  color: plum; /* Style P tags that follow (anywhere after) an H2 */
-  text-decoration: underline;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>General Sibling Combinator (<code>~</code>)</strong></p>
-<ul>
-<li><strong>Syntax:</strong> Two selectors separated by a tilde (<code class="language-css">~</code>): <code class="language-css">element1 ~ element2</code>.</li>
-<li><strong>Meaning:</strong> Selects any element matching <code class="language-css">element2</code> that comes <strong>after</strong> an element matching <code class="language-css">element1</code> in the HTML source code, <strong>and</strong> both elements must share the same parent element. Unlike the <code class="language-css">+</code> combinator, <code class="language-css">element2</code> does not need to be immediately after <code class="language-css">element1</code>. It selects <em>all</em> subsequent siblings that match.</li>
-<li><strong>Use Cases:</strong> Styling all paragraphs that follow a heading within the same section, applying styles to elements based on a preceding sibling&#39;s state (often used with pseudo-classes like <code>:checked</code>).</li>
-</ul>
-<p>In our example:</p>
-<ul>
-<li>The rule <code class="language-css">h2 ~ p { ... }</code> targets any <code class="language-html">&lt;p&gt;</code> element that is a later sibling of an <code class="language-html">&lt;h2&gt;</code> (sharing the same parent, <code class="language-html">&lt;body&gt;</code>).</li>
-<li>It applies a <code class="language-css">plum</code> color and an underline.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the <strong>first</strong> paragraph (&quot;This paragraph follows the H2 (after the div).&quot;). Even though the <code class="language-html">&lt;div&gt;</code> is between it and the <code class="language-html">&lt;h2&gt;</code>, this paragraph should now be <strong>plum</strong> colored and <strong>underlined</strong>. It is selected because it comes <em>after</em> the <code class="language-html">&lt;h2&gt;</code> and shares the same parent.</li>
-<li>👀 Observe the <strong>second</strong> and <strong>third</strong> paragraphs. They should <em>also</em> be <strong>plum</strong> colored and <strong>underlined</strong>, as they also follow the <code class="language-html">&lt;h2&gt;</code> as siblings.</li>
-<li>👀 The paragraph inside the <em>comment</em> is not affected, nor is the <code class="language-html">&lt;div&gt;</code>.</li>
-<li>✅ Inspect the three visible paragraphs in DevTools. The Styles pane will show the <code class="language-css">h2 ~ p</code> rule being applied to all of them.</li>
-</ul>
-<p>Combinators (<code> </code>, <code>&gt;</code>, <code>+</code>, <code>~</code>) provide powerful ways to target elements based on their structural relationships within the HTML document, allowing for more sophisticated and context-aware styling.</p>
+</li>
+</ol>
+<p>Think of the DOCTYPE as setting the ground rules for the browser before it even starts reading the rest of your HTML.</p>
+<p>👀 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

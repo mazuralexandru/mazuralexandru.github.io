@@ -9,110 +9,37 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>61. Text Styling: <code>text-align</code></h1>
-<p>The <code class="language-css">text-align</code> property controls the horizontal alignment of text (and other inline content) within its parent block-level element.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the text decoration examples.</li>
-<li><strong>HTML Addition:</strong> Added paragraphs with classes demonstrating different alignment values (<code class="language-html">align-left</code>, <code class="language-html">align-center</code>, <code class="language-html">align-right</code>, <code class="language-html">align-justify</code>). Added a parent <code class="language-html">&lt;div&gt;</code> to provide a clear block container.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.underline-text</code>, <code>.strike-text</code>, <code>.custom-deco-text</code>, <code>.no-deco-link</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules for the new alignment classes and the parent <code class="language-html">div</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Text Align Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
+  <h1>61. <code class="language-html">&lt;body&gt;</code>: Placement</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The placement rules for the <code class="language-html">&lt;body&gt;</code> element are strict:</p>
+<ol>
+<li>It must be a direct child of the <code class="language-html">&lt;html&gt;</code> element.</li>
+<li>It must appear <em>after</em> the closing <code class="language-html">&lt;/head&gt;</code> tag.</li>
+<li>There must be <strong>only one</strong> <code class="language-html">&lt;body&gt;</code> element in the entire document.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-  &lt;!-- Pruned previous text-decoration examples --&gt;
+  &lt;head&gt;
+    &lt;!-- Metadata --&gt;
+  &lt;/head&gt; 
 
-  &lt;div class=&quot;container&quot;&gt; &lt;!-- Added container --&gt;
-    &lt;p class=&quot;align-left&quot;&gt;Left Aligned: This is the default alignment for left-to-right languages like English. The text aligns to the left edge.&lt;/p&gt;
-    &lt;p class=&quot;align-center&quot;&gt;Center Aligned: Each line of text is centered horizontally within the container.&lt;/p&gt;
-    &lt;p class=&quot;align-right&quot;&gt;Right Aligned: This text aligns to the right edge of the container.&lt;/p&gt;
-    &lt;p class=&quot;align-justify&quot;&gt;Justified: Text is stretched out so that each line (except potentially the last) fills the full width of the container by adjusting spacing between words. Use with caution, can create uneven gaps.&lt;/p&gt;
-  &lt;/div&gt;
+  &lt;body&gt;  &lt;!-- CORRECT: Inside &lt;html&gt;, after &lt;/head&gt; --&gt;
+    &lt;!-- Visible Content --&gt;
+  &lt;/body&gt;
 
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
+&lt;/html&gt; 
 </code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Pruned text-decoration rules */
-/* .underline-text { ... } etc */
-
-/* Text Align Demo */
-.container {
-  border: 1px solid grey;
-  padding: 10px;
-  margin-top: 10px;
-  max-width: 500px; /* Constrain width for justify to work well */
-}
-
-.container p {
-  margin-bottom: 15px; /* Space between paragraphs */
-}
-
-.align-left {
-  text-align: left; /* Default */
-}
-
-.align-center {
-  text-align: center;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-justify {
-  text-align: justify;
-}
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>text-align</code> Explained</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Specifies the horizontal alignment of inline-level content (like text, images, inline-blocks) <em>within</em> the block container it&#39;s applied to.</li>
-<li><strong>Applies To:</strong> Block-level elements (like <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;div&gt;</code>, <code class="language-html">&lt;h1&gt;</code>). It affects the inline content <em>inside</em> them.</li>
-<li><strong>Values:</strong><ul>
-<li><code class="language-css">left</code>: Aligns content to the left edge (default for LTR languages).</li>
-<li><code class="language-css">right</code>: Aligns content to the right edge (default for RTL languages).</li>
-<li><code class="language-css">center</code>: Centers content horizontally.</li>
-<li><code class="language-css">justify</code>: Stretches lines of text to fill the container width by adjusting word spacing. The last line of a paragraph is typically left-aligned. Justification can sometimes create large, awkward gaps between words (&quot;rivers&quot;) if columns are narrow or text isn&#39;t hyphenated, so use it carefully and test thoroughly.</li>
-<li><code class="language-css">start</code>: Aligns to the start edge based on writing direction (left for LTR, right for RTL). Logical equivalent of <code>left</code>/<code>right</code>.</li>
-<li><code class="language-css">end</code>: Aligns to the end edge based on writing direction (right for LTR, left for RTL). Logical equivalent of <code>left</code>/<code>right</code>.</li>
-</ul>
-</li>
-<li><strong>Inheritance:</strong> Yes, <code class="language-css">text-align</code> is inherited by child elements.</li>
-</ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li>We apply different <code class="language-css">text-align</code> values to separate paragraph elements within a container <code class="language-html">div</code>.</li>
-<li>We added <code class="language-css">max-width</code> to the container to make the effect of <code class="language-css">justify</code> more apparent.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the four paragraphs within the gray-bordered container:<ul>
-<li>The first (<code>.align-left</code>) should be aligned to the left.</li>
-<li>The second (<code>.align-center</code>) should have each line centered.</li>
-<li>The third (<code>.align-right</code>) should be aligned to the right.</li>
-<li>The fourth (<code>.align-justify</code>) should have its lines stretched to touch both the left and right edges (except possibly the last line), potentially showing variable spacing between words.</li>
-</ul>
-</li>
-<li>✅ Inspect the paragraphs in DevTools to confirm the <code>text-align</code> property being applied.</li>
-</ul>
-<p><code class="language-css">text-align</code> is fundamental for controlling the horizontal flow and alignment of text content.</p>
+<p>Placing <code class="language-html">&lt;body&gt;</code> tags inside the <code class="language-html">&lt;head&gt;</code>, having multiple <code class="language-html">&lt;body&gt;</code> sections, or placing content outside both <code class="language-html">&lt;head&gt;</code> and <code class="language-html">&lt;body&gt;</code> (but within <code class="language-html">&lt;html&gt;</code>) is invalid HTML.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty. Next, we&#39;ll finally put all these structural elements together in an example.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -9,57 +9,28 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>18. Applying CSS with Internal Stylesheets (<code>&lt;style&gt;</code>)</h1>
-<p>We&#39;ve seen how to apply styles directly to elements using the <code class="language-html">style</code> attribute (inline styles), but this mixes presentation with structure and isn&#39;t easily reusable. A step towards better organization is using an <strong>internal stylesheet</strong>.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>18. Tag/Bracket Matching &amp; Auto-Closing</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>These features help prevent common syntax errors in HTML and CSS:</p>
 <ul>
-<li><strong>Removal:</strong> The <code class="language-html">&lt;p&gt;Preparing for next steps...&lt;/p&gt;</code> from the previous step has been removed from <code class="language-text">index.html</code> to make way for new examples focused on styling. Look for the <code class="language-html">&lt;!-- Removed previous paragraph --&gt;</code> comment.</li>
-<li><strong>HTML Addition:</strong> We&#39;ve added back a basic <code class="language-html">&lt;h1&gt;</code> and a <code class="language-html">&lt;p&gt;</code> element to provide content to style.</li>
-<li><strong>Internal Stylesheet:</strong> We&#39;ve added a <code class="language-html">&lt;style&gt;</code> element <em>inside</em> the <code class="language-html">&lt;head&gt;</code> section of <code class="language-text">index.html</code>. For now, it&#39;s empty.</li>
+<li><strong>Tag/Bracket Matching:</strong> When you place your cursor on an opening tag (e.g., <code class="language-html">&lt;div&gt;</code>) or bracket (<code class="language-css">{</code>), the editor highlights its corresponding closing tag (<code class="language-html">&lt;/div&gt;</code>) or bracket (<code class="language-css">}</code>). This makes it easy to see the scope of elements or CSS rules, especially with nested structures.</li>
+<li><strong>Auto-Closing:</strong> When you type an opening tag (e.g., <code class="language-html">&lt;p&gt;</code>), the editor automatically inserts the closing tag (<code class="language-html">&lt;/p&gt;</code>) after your cursor. Similarly, typing an opening bracket (<code class="language-css">{</code>) or quote (<code class="language-css">&quot;</code>) often automatically inserts the closing counterpart.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-  &lt;style&gt;
-    /* Internal CSS rules will go here */
-  &lt;/style&gt; &lt;!-- Added &lt;style&gt; element --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;!-- Removed previous paragraph --&gt;
-  &lt;h1&gt;Styling with Internal CSS&lt;/h1&gt; &lt;!-- Added H1 --&gt;
-  &lt;p&gt;This paragraph will be styled soon.&lt;/p&gt; &lt;!-- Added P --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>The <code>&lt;style&gt;</code> Element</strong></p>
+<p><strong>How it helps:</strong></p>
 <ul>
-<li><strong>Purpose:</strong> Allows you to embed CSS rules directly within an HTML document, typically inside the <code class="language-html">&lt;head&gt;</code>.</li>
-<li><strong>Syntax:</strong> The CSS rules are placed between the opening <code class="language-html">&lt;style&gt;</code> and closing <code class="language-html">&lt;/style&gt;</code> tags. You write standard CSS syntax inside it, just like you would in a <code>.css</code> file.</li>
-<li><strong>Scope:</strong> Styles defined within the <code class="language-html">&lt;style&gt;</code> tags apply <em>only</em> to the HTML document they are embedded in. They don&#39;t affect other pages.</li>
-<li><strong>Use Cases:</strong> Useful for single-page websites, quick demonstrations, HTML emails (where external CSS might be stripped), or sometimes for embedding critical &quot;above-the-fold&quot; styles for performance reasons (though external files are generally preferred).</li>
-<li><strong>Pros vs. Inline:</strong> Better organization than inline styles because rules are grouped together. Allows the use of CSS selectors (like targeting all <code class="language-html">&lt;p&gt;</code> elements) which inline styles cannot do.</li>
-<li><strong>Cons vs. External:</strong> Styles are still tied to a single HTML page, making them harder to reuse across a multi-page site compared to external stylesheets.</li>
+<li><strong>Prevents Errors:</strong> Ensures you don&#39;t forget closing tags or brackets, which are common sources of invalid HTML or CSS.</li>
+<li><strong>Improves Structure:</strong> Encourages properly nested and closed elements/blocks from the start.</li>
 </ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You should see the new heading and paragraph displayed with the default styles inherited from our base <code class="language-text">style.css</code> (dark background, light text).</li>
-<li>👀 The addition of the <em>empty</em> <code class="language-html">&lt;style&gt;</code> tag in the <code class="language-html">&lt;head&gt;</code> causes no visual change yet. It&#39;s simply a container waiting for CSS rules.</li>
-<li>✅ Open the DevTools (F12) and inspect the Elements panel. You can see the <code class="language-html">&lt;style&gt;</code> tag within the <code class="language-html">&lt;head&gt;</code>.</li>
-</ul>
-<p>In the next step, we&#39;ll add some CSS rules inside this <code class="language-html">&lt;style&gt;</code> block to see it in action.</p>
+<p>These seemingly small features significantly reduce frustration and debugging time.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

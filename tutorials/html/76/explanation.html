@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>76. Character Encoding: Interaction with HTTP Headers</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>It&#39;s worth briefly mentioning that the character encoding can <em>also</em> be specified by the web server via an HTTP header called <code class="language-http">Content-Type</code>.</p>
+<p>Example HTTP Header:
+<code class="language-http">Content-Type: text/html; charset=utf-8</code></p>
+<ul>
+<li><strong>Priority:</strong> If a <code class="language-http">Content-Type</code> header with a <code class="language-http">charset</code> is sent by the server, it generally <strong>takes precedence</strong> over the <code class="language-html">&lt;meta charset=&quot;...&quot;&gt;</code> tag within the HTML document.</li>
+<li><strong>Best Practice:</strong> Even if the server sends the header (which is good practice for server configuration), you should <strong>still include the <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> tag</strong> in your HTML.<ul>
+<li>It ensures correct interpretation when the page is viewed locally (via <code class="language-text">file:///</code>) where there&#39;s no server sending headers.</li>
+<li>It serves as clear documentation within the file itself.</li>
+<li>It acts as a fallback if the server header is missing or incorrect.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Takeaway:</strong> Configure your server to send the <code class="language-http">Content-Type</code> header with <code class="language-http">charset=utf-8</code>, AND always include <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> early in your HTML <code class="language-html">&lt;head&gt;</code>.</p>
+<p>✅ Our <code class="language-text">index.html</code> now includes the essential structure and the two most critical metadata elements (<code class="language-html">&lt;title&gt;</code> and <code class="language-html">&lt;meta charset&gt;</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

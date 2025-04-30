@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>304. Margin Collapsing: Scenarios - Adjacent Siblings</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>The most common scenario where margin collapsing occurs is between <strong>adjacent sibling elements</strong>.</p>
+<ul>
+<li><strong>Scenario:</strong> The bottom margin of an earlier block element touches the top margin of the immediately following block element (assuming no clearance, padding, or borders separate them).</li>
+<li><strong>Result:</strong> The two margins collapse into a single margin whose size is the maximum of the two original margins.</li>
+</ul>
+<p>Let&#39;s illustrate this.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve simplified the content to have two adjacent paragraphs, <code class="language-html">p1</code> and <code class="language-html">p2</code>.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the previous <code>.box</code> styles.</li>
+<li>We&#39;ve added rules for <code class="language-css">.p1</code> and <code class="language-css">.p2</code>.<ul>
+<li><code class="language-css">.p1</code> has <code class="language-css">margin-bottom: 30px;</code>.</li>
+<li><code class="language-css">.p2</code> has <code class="language-css">margin-top: 20px;</code>.</li>
+</ul>
+</li>
+<li>We added background colors to make them distinct.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Margin Collapse Example: Adjacent Siblings */
+.p1 {
+  background-color: rgba(0, 255, 0, 0.2); /* Faint green */
+  margin-bottom: 30px; 
+  padding: 10px;
+}
+
+.p2 {
+  background-color: rgba(255, 165, 0, 0.2); /* Faint orange */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Expected space between p1 and p2 will be max(30px, 20px) = 30px, NOT 30px + 20px = 50px */
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You see two paragraphs.</li>
+<li>Measure or estimate the vertical space <em>between</em> the green box (<code class="language-css">.p1</code>) and the orange box (<code class="language-css">.p2</code>).</li>
+<li>This space should correspond to <strong>30px</strong> (the larger of the 30px bottom margin of <code class="language-css">.p1</code> and the 20px top margin of <code class="language-css">.p2</code>), not 50px. This is margin collapsing in action.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

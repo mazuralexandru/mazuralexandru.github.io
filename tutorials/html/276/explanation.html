@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>276. Padding Fundamentals: Effect</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s reiterate the key effects of padding:</p>
+<ol>
+<li><strong>Increases Space Inside Border:</strong> Padding adds space around the content <em>within</em> the element&#39;s boundaries defined by the border.</li>
+<li><strong>Background Extends:</strong> The element&#39;s <code class="language-css">background-color</code> or <code class="language-css">background-image</code> fills both the content area AND the padding area.</li>
+<li><strong>Affects Overall Size (with <code class="language-css">content-box</code>):</strong> When using the default <code class="language-css">box-sizing: content-box;</code>, adding padding increases the total rendered width and height of the element. For example, an element with <code class="language-css">width: 100px;</code> and <code class="language-css">padding: 10px;</code> will actually render as 120px wide (100px content + 10px left padding + 10px right padding).</li>
+<li><strong>Does Not Affect Size (with <code class="language-css">border-box</code>):</strong> If you set <code class="language-css">box-sizing: border-box;</code>, the <code class="language-css">width</code> and <code class="language-css">height</code> properties define the size including padding and border. Adding padding will <em>shrink</em> the available content area instead of expanding the overall box size. This is often more intuitive for layout.</li>
+</ol>
+<p>Understanding how padding interacts with the box sizing model is essential for predictable layouts.</p>
+<p>👀 Inspect the <code class="language-css">.box</code> element in the preview using DevTools. Observe the box model diagram. You can see the <code class="language-css">padding: 10px;</code> visually represented as space around the content area. Since we haven&#39;t set <code class="language-css">box-sizing</code>, it defaults to <code class="language-css">content-box</code>, meaning the total rendered width is greater than the specified <code class="language-css">max-width</code> or calculated <code class="language-css">width</code> due to the added padding.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

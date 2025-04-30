@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>142. Linking Multiple Stylesheets</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>You can link multiple external stylesheets to a single HTML document by including multiple <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot;&gt;</code> tags in the <code class="language-html">&lt;head&gt;</code>.</p>
+<pre class="language-html"><code class="language-html">&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Multi-Style Page&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;base.css&quot;&gt;      &lt;!-- Base/Reset Styles --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;layout.css&quot;&gt;    &lt;!-- Layout Rules --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;theme.css&quot;&gt;     &lt;!-- Visual Theme --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;components.css&quot;&gt; &lt;!-- Component Styles --&gt;
+&lt;/head&gt;
+</code></pre>
+<p><strong>Order Matters:</strong> The order in which you link stylesheets is important because of the <strong>CSS Cascade</strong>. If multiple stylesheets define conflicting rules for the same element with the same specificity, the rule from the stylesheet linked <strong>later</strong> (further down in the HTML) will generally take precedence.</p>
+<p>Common practice is to link stylesheets in this order:</p>
+<ol>
+<li><strong>Resets/Normalizers:</strong> (e.g., <code class="language-text">reset.css</code>, <code class="language-text">normalize.css</code>) - Establish a consistent baseline across browsers.</li>
+<li><strong>Base Styles/Frameworks:</strong> (e.g., <code class="language-text">base.css</code>, <code class="language-text">bootstrap.css</code>) - Define site-wide defaults, typography, basic layout.</li>
+<li><strong>Layout Styles:</strong> (e.g., <code class="language-text">layout.css</code>) - Define major page structure (header, footer, sidebar, grid).</li>
+<li><strong>Component Styles:</strong> (e.g., <code class="language-text">buttons.css</code>, <code class="language-text">cards.css</code>) - Styles for reusable UI elements.</li>
+<li><strong>Page-Specific Styles:</strong> (e.g., <code class="language-text">about-page.css</code>) - Styles unique to a particular page.</li>
+<li><strong>Theme/Overrides:</strong> (e.g., <code class="language-text">dark-theme.css</code>) - Styles that modify or override previous rules.</li>
+</ol>
+<p>👀 In <code class="language-text">index.html</code>, we link <code class="language-text">base_styles.css</code> first, followed by <code class="language-text">style.css</code>. This allows rules in <code class="language-text">style.css</code> to potentially override rules in <code class="language-text">base_styles.css</code> if needed (due to source order in the cascade).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

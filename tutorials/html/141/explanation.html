@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>141. External Stylesheets: Benefits &amp; Example</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Using external stylesheets (<code class="language-text">.css</code> files linked via <code class="language-html">&lt;link&gt;</code>) is the standard for professional web development due to its significant benefits:</p>
+<ol>
+<li><strong>Maximum Maintainability:</strong> Styles are centralized in <code class="language-text">.css</code> files. Changes made there propagate to all HTML pages linking that file.</li>
+<li><strong>Reusability:</strong> The same stylesheet can be linked from multiple HTML pages, ensuring consistent branding and styling across an entire website.</li>
+<li><strong>Separation of Concerns:</strong> Keeps HTML clean (focused on structure/content) and CSS separate (focused on presentation).</li>
+<li><strong>Browser Caching:</strong> Browsers download external CSS files once and then store (cache) them. When the user visits other pages on the same site that link the same CSS file, the browser uses the cached version instead of re-downloading it, leading to faster page loads and reduced bandwidth usage.</li>
+<li><strong>Easier Collaboration:</strong> Designers can work on CSS files while developers work on HTML or JavaScript with fewer conflicts.</li>
+</ol>
+<p><strong>Example:</strong> Let&#39;s revert our previous example back to using the external <code class="language-text">style.css</code>.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>The <code class="language-html">&lt;style&gt;...&lt;/style&gt;</code> block has been removed from the <code class="language-html">&lt;head&gt;</code>.</li>
+<li>The <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code> tag remains (or would be added back if previously removed).</li>
+</ul>
+<p>✅ <strong>Now, switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>The CSS rules for <code class="language-css">h1</code> and <code class="language-css">p</code> have been added back into this file.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong> The appearance is identical to the previous step (cornflowerblue heading, default paragraph color). However, the <em>source</em> of the styling has changed – it&#39;s now coming from the linked <code class="language-text">style.css</code> file again, demonstrating the preferred external method.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

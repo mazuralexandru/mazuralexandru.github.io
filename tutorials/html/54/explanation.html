@@ -9,91 +9,28 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>54. Text Styling: <code>font-family</code> and Font Stacks</h1>
-<p>Let&#39;s dive deeper into styling text. The <code class="language-css">font-family</code> property is fundamental, allowing you to specify which font(s) the browser should attempt to use for an element.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>54. <code class="language-html">&lt;head&gt;</code>: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-html">&lt;head&gt;</code> element&#39;s primary role is to hold machine-readable information (metadata) about the HTML document. This information is crucial for various aspects of how the page functions and how it&#39;s perceived by browsers and services:</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the button from the <code>currentColor</code> demo.</li>
-<li><strong>HTML Addition:</strong> Added two paragraphs with different classes (<code class="language-html">serif-text</code>, <code class="language-html">sans-serif-text</code>).</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.color-button</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules for the new classes, demonstrating <code class="language-css">font-family</code> with font stacks.</li>
+<li><strong>Document Title (<code class="language-html">&lt;title&gt;</code>):</strong> Sets the title shown in browser tabs, bookmarks, and search results. Essential for usability and SEO.</li>
+<li><strong>Character Encoding (<code class="language-html">&lt;meta charset=&quot;...&quot;&gt;</code>):</strong> Declares how characters are encoded (usually UTF-8), preventing text display issues.</li>
+<li><strong>Linking External Resources (<code class="language-html">&lt;link&gt;</code>):</strong> Used primarily to link external CSS stylesheets, but also for favicons, fonts, etc.</li>
+<li><strong>Embedding Styles (<code class="language-html">&lt;style&gt;</code>):</strong> Allows embedding CSS rules directly within the HTML document (less common than external files).</li>
+<li><strong>Embedding Scripts (<code class="language-html">&lt;script&gt;</code>):</strong> Can be used to include JavaScript code directly or link to external JS files (though placing scripts at the end of <code class="language-html">&lt;body&gt;</code> is often preferred for performance).</li>
+<li><strong>Other Metadata (<code class="language-html">&lt;meta&gt;</code>):</strong> Provides various other meta-information like descriptions, keywords (less important now for SEO), viewport settings for responsive design, author information, etc.</li>
+<li><strong>Base URL (<code class="language-html">&lt;base&gt;</code>):</strong> Specifies a base URL for all relative URLs within the document.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Font Family Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous currentColor example --&gt;
-
-  &lt;p class=&quot;serif-text&quot;&gt;This text uses a serif font stack (Times New Roman, Georgia, serif).&lt;/p&gt; &lt;!-- Added serif P --&gt;
-  &lt;p class=&quot;sans-serif-text&quot;&gt;This text uses a sans-serif font stack (Arial, Helvetica, sans-serif).&lt;/p&gt; &lt;!-- Added sans-serif P --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-h1 {
-  color: lightblue;
-  /* H1 will likely inherit body&#39;s sans-serif unless overridden */
-}
-
-/* Pruned currentColor rules */
-/* .color-button { ... } */
-/* .color-button:hover { ... } */
-
-
-/* Font Family Demo */
-.serif-text {
-  font-family: &quot;Times New Roman&quot;, Georgia, serif; /* Font Stack */
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-
-.sans-serif-text {
-  font-family: Arial, Helvetica, sans-serif; /* Font Stack */
-  font-size: 1.1rem;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>font-family</code> Explained</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Specifies a prioritized list (a &quot;font stack&quot;) of font family names and/or generic family names for an element.</li>
-<li><strong>Font Stack:</strong> You list multiple font names separated by commas (<code class="language-css">,</code>). The browser starts with the first font in the list. If that font is available on the user&#39;s system (or loaded via <code>@font-face</code>), it uses it. If not, it tries the second font, then the third, and so on.</li>
-<li><strong>Quoting Names:</strong> If a font name contains spaces (like &quot;Times New Roman&quot;) or special characters, you <strong>must</strong> enclose it in quotes (single <code>&#39;&#39;</code> or double <code>&quot;&quot;</code>). Single-word names (like <code>Arial</code>, <code>Georgia</code>) don&#39;t strictly require quotes, but it&#39;s often good practice to quote them anyway for consistency.</li>
-<li><strong>Generic Families (Fallback):</strong> It is <strong>essential</strong> to end your font stack with a generic font family keyword. This is the final fallback if none of your specified fonts are available. The browser will use its default font for that category. Common generic families include:<ul>
-<li><code class="language-css">serif</code>: Fonts with decorative strokes (serifs) on the ends of characters (e.g., Times New Roman, Georgia).</li>
-<li><code class="language-css">sans-serif</code>: Fonts without serifs (e.g., Arial, Helvetica, Verdana). Often used for body text on the web.</li>
-<li><code class="language-css">monospace</code>: Fonts where all characters have the same fixed width (e.g., Courier New, Consolas). Used for code.</li>
-<li><code class="language-css">cursive</code>: Fonts resembling handwriting (e.g., Comic Sans MS - use with caution!, Brush Script MT).</li>
-<li><code class="language-css">fantasy</code>: Decorative or display fonts (e.g., Impact).</li>
-</ul>
-</li>
-<li><strong>Web Safe Fonts:</strong> Historically, developers relied on a small set of &quot;web safe fonts&quot; likely to be installed on most computers (Arial, Helvetica, Times New Roman, Georgia, Verdana, Courier New, etc.). While still useful as fallbacks, modern techniques like <code>@font-face</code> (or using font services) allow for much wider font choices.</li>
-</ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li><code class="language-css">.serif-text</code>: Tries &quot;Times New Roman&quot;, then Georgia, then falls back to the browser&#39;s default serif font.</li>
-<li><code class="language-css">.sans-serif-text</code>: Tries Arial, then Helvetica, then falls back to the browser&#39;s default sans-serif font (which is likely what our <code>body</code> is already using).</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Compare the two paragraphs. The first paragraph should appear in a serif font (likely Times New Roman or Georgia if you have them installed). The second paragraph should appear in a sans-serif font (likely Arial or Helvetica). The difference should be clear in the character shapes (presence/absence of serifs).</li>
-<li>👀 The <code class="language-html">&lt;h1&gt;</code> will likely use the sans-serif font inherited from the <code>body</code> (since we set <code>font-family: sans-serif</code> in the base styles).</li>
-<li>✅ Inspect the paragraphs in DevTools. Look at the &quot;Computed&quot; tab for the <code>font-family</code> property. It will show you which specific font from the stack the browser actually rendered.</li>
-</ul>
-<p>Choosing appropriate fonts and providing good fallbacks using font stacks is crucial for both design and readability.</p>
+<p>Essentially, it sets up the context and resources needed before the browser starts rendering the visible content found in the <code class="language-html">&lt;body&gt;</code>.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

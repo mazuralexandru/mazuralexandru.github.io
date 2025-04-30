@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>321. Other <code class="language-css">display</code> Values (Preview)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Beyond the basic <code class="language-css">block</code>, <code class="language-css">inline</code>, <code class="language-css">inline-block</code>, and <code class="language-css">none</code>, the <code class="language-css">display</code> property has many other powerful values, primarily related to modern layout systems:</p>
+<ul>
+<li><strong><code class="language-css">flex</code> / <code class="language-css">inline-flex</code>:</strong> Enables <strong>Flexbox</strong> layout for the element&#39;s children. Flexbox is a one-dimensional layout model excellent for distributing space along a single axis (row or column). We&#39;ll cover Flexbox in detail later.</li>
+<li><strong><code class="language-css">grid</code> / <code class="language-css">inline-grid</code>:</strong> Enables <strong>CSS Grid</strong> layout for the element&#39;s children. Grid is a two-dimensional layout model perfect for creating complex grid structures with rows and columns. We&#39;ll cover Grid later.</li>
+<li><strong><code class="language-css">table</code>, <code class="language-css">table-row</code>, <code class="language-css">table-cell</code>, etc.:</strong> These values make non-table elements behave like HTML table components. While useful for certain data display scenarios, they should <strong>not</strong> be used for general page layout (use Flexbox or Grid instead).</li>
+<li><strong><code class="language-css">contents</code>:</strong> A special value that removes the element&#39;s own box from the layout tree, causing its children to act as direct children of the element&#39;s parent. This can be useful in specific Grid/Flexbox scenarios but can negatively impact accessibility if not used carefully, as the element itself effectively disappears semantically for layout purposes.</li>
+</ul>
+<p>These advanced values unlock sophisticated layout capabilities that form the backbone of modern web design.</p>
+<p>👀 Our current example in <code class="language-text">style.css</code> only uses <code class="language-css">inline-block</code> and <code class="language-css">none</code> (implicitly, the <code class="language-html">&lt;div&gt;</code> and <code class="language-html">&lt;p&gt;</code> elements use their default <code class="language-css">block</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

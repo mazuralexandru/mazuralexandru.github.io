@@ -9,58 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>22. Adding Rules to External Stylesheets</h1>
-<p>Let&#39;s add the styling for our <code class="language-html">&lt;h1&gt;</code> back, this time within the external <code class="language-text">style.css</code> file. We&#39;ll uncomment and slightly modify the <code class="language-css">h1</code> rule that was previously commented out.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>22. Integrated Terminal</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Many web development tasks involve using command-line tools (e.g., for version control with Git, running build scripts, installing packages with npm).</p>
+<p>VS Code includes an <strong>Integrated Terminal</strong> (accessible via the <code>Terminal</code> menu or a keyboard shortcut like `Ctrl+``).</p>
+<p><strong>How it helps:</strong></p>
 <ul>
-<li>We have modified the <code class="language-text">style.css</code> file.</li>
-<li>The previously commented-out <code class="language-css">h1</code> ruleset has been uncommented.</li>
-<li>We changed the <code class="language-css">color</code> from <code class="language-css">tomato</code> to <code class="language-css">lightblue</code> and removed the border/padding properties for simplicity in this example.</li>
+<li><strong>Convenience:</strong> Allows you to run command-line commands directly within the editor, without switching to a separate terminal application.</li>
+<li><strong>Context:</strong> The terminal often opens directly in your project&#39;s root folder, making it easy to run project-specific commands.</li>
 </ul>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-  min-height: 150px; /* Ensure space for preview */
-}
-
-/* Removed H1 style rule for focus */ /* &lt;-- This comment is now inaccurate, should be updated or removed */
-/* Updated H1 rule (uncommented and modified) */
-h1 {
-  color: lightblue; /* Change H1 text color */
-  /* border-bottom: 2px solid #eee; */ /* Kept commented out */
-  /* padding-bottom: 5px; */ /* Kept commented out */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Working with External CSS Files</strong></p>
-<ul>
-<li>You simply write your CSS rules directly into the <code class="language-text">.css</code> file.</li>
-<li>The browser reads this file because it&#39;s linked in the <code class="language-text">index.html</code> via the <code class="language-html">&lt;link&gt;</code> tag.</li>
-<li>Any changes saved in <code class="language-text">style.css</code> will be reflected in <code class="language-text">index.html</code> (and any other HTML page linking to the same CSS file) upon refreshing the browser preview.</li>
-</ul>
-<p><strong>Linking Multiple Stylesheets</strong></p>
-<ul>
-<li>You <em>can</em> link multiple external CSS files to a single HTML page by adding multiple <code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot;&gt;</code> tags in the <code class="language-html">&lt;head&gt;</code>.<pre class="language-html"><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;reset.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;layout.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;components.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;theme.css&quot;&gt;
-</code></pre>
-</li>
-<li><strong>Order Matters:</strong> If rules in different files target the same elements with the same specificity, the rule from the stylesheet linked <strong>later</strong> in the HTML will override the earlier ones. This is part of the CSS Cascade (which we&#39;ll cover soon).</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The heading &quot;Styling with External CSS&quot; should now be light blue (<code class="language-css">lightblue</code>). The paragraph remains styled only by the base <code class="language-css">body</code> styles.</li>
-<li>✅ Inspect the <code class="language-html">&lt;h1&gt;</code> element in DevTools.</li>
-<li>👀 In the Styles pane, you will now see the <code class="language-css">h1 { color: lightblue; }</code> rule being applied. Critically, notice that the source is now listed as <code class="language-text">style.css</code>, indicating the style is coming from our external file.</li>
-</ul>
-<p>This demonstrates the fundamental workflow of using external stylesheets – keeping styles separate for better organization and maintainability.</p>
+<p>While we won&#39;t use the terminal extensively in these early lessons, it&#39;s a crucial tool for more advanced web development workflows.</p>
+<p>✅ <code class="language-text">index.html</code> is still empty. Next up: choosing browsers.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

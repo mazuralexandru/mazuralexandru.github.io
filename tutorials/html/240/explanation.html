@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>240. <code class="language-html">&lt;small&gt;</code>, <code class="language-html">&lt;sup&gt;</code>, <code class="language-html">&lt;sub&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Browsers apply default styling to render these elements according to their meaning:</p>
+<ul>
+<li><code class="language-html">&lt;small&gt;</code>: Smaller font size.</li>
+<li><code class="language-html">&lt;sup&gt;</code>: Smaller font size, raised baseline (<code class="language-css">vertical-align: super;</code>).</li>
+<li><code class="language-html">&lt;sub&gt;</code>: Smaller font size, lowered baseline (<code class="language-css">vertical-align: sub;</code>).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a paragraph demonstrating these tags.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt;
+    &lt;p&gt;
+      This is normal text. &lt;small&gt;This is small print.&lt;/small&gt; 
+      This is the 1&lt;sup&gt;st&lt;/sup&gt; example. 
+      Water is H&lt;sub&gt;2&lt;/sub&gt;O.
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>&quot;This is small print.&quot; should appear smaller than the surrounding text.</li>
+<li>The &quot;st&quot; in &quot;1st&quot; should be smaller and raised (superscript).</li>
+<li>The &quot;2&quot; in &quot;H2O&quot; should be smaller and lowered (subscript).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

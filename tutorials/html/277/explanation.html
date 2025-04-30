@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>277. Longhand Padding Properties: <code class="language-css">padding-top</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>You can control padding on each side individually using the longhand properties. Let&#39;s start with <code class="language-css">padding-top</code>.</p>
+<ul>
+<li><strong>Purpose:</strong> Sets the amount of padding space specifically on the <strong>top</strong> edge of the element, between the top of the content and the top border.</li>
+<li><strong>Syntax:</strong> <code class="language-css">padding-top: value;</code></li>
+<li><strong>Values:</strong> Accepts non-negative lengths (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, etc.) or percentages (<code class="language-css">%</code>). Percentages are calculated relative to the <strong>width</strong> of the containing block.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the <code class="language-css">padding: 10px;</code> shorthand.</li>
+<li>We&#39;ve added <code class="language-css">padding-top: 20px;</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; 
+  max-height: 200px; 
+  overflow: auto; 
+  background-color: cornflowerblue; 
+  /* padding: 10px; &lt;- Removed shorthand */
+  padding-top: 20px; /* Added specific top padding */
+  margin: 1em auto; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The blue box should now have more space (20px) between the top edge of its background and the start of the text content compared to the other sides (which currently have no explicit padding). Inspecting with DevTools will confirm the 20px top padding in the box model diagram.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

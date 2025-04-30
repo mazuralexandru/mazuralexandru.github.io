@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>112. CSS Comments: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>CSS comments (<code class="language-css">/* ... */</code>) serve similar purposes to HTML comments, but within the context of stylesheets:</p>
+<ol>
+<li><strong>Explanation &amp; Documentation:</strong> Add notes to explain complex selectors, the purpose of specific rules, color palette choices, or layout strategies. Organize your CSS file into logical sections using comments as headings.<pre class="language-css"><code class="language-css">/* --- Header Styles --- */
+.site-header { ... }
+
+/* --- Footer Styles --- */
+.site-footer { ... } 
+</code></pre>
+</li>
+<li><strong>Debugging / Temporarily Disabling Styles:</strong> Quickly disable a single declaration or an entire ruleset to test its effect or isolate styling conflicts. This is extremely common during development.<pre class="language-css"><code class="language-css">.widget {
+  border: 1px solid red;
+  /* padding: 15px; */ /* Temporarily remove padding */
+  margin-bottom: 20px; 
+}
+
+/*
+.old-style {
+  color: gray;
+  font-style: italic;
+} 
+*/ /* Temporarily disable the whole rule */
+</code></pre>
+</li>
+</ol>
+<p>Effective commenting makes your CSS much easier to understand, maintain, and debug.</p>
+<p>👀 Look at <code class="language-text">style.css</code>. You can see comments used for explanation and for disabling styles.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

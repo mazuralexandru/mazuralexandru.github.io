@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>220. <code class="language-css">text-indent</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">text-indent</code> property specifies the indentation applied to the <strong>first line</strong> of text within a block-level element.</p>
+<ul>
+<li><strong>Purpose:</strong> To create traditional paragraph indentation.</li>
+<li><strong>Applies To:</strong> Block container elements (like <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;div&gt;</code>).</li>
+<li><strong>Inherited:</strong> Yes.</li>
+<li><strong>Values:</strong><ul>
+<li><code>&lt;length&gt;</code>: Specifies a fixed indentation using units like <code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>. <code class="language-css">em</code> is common as it scales with the font size. Negative values are allowed to create a &quot;hanging indent&quot; (where the first line sticks out).</li>
+<li><code>&lt;percentage&gt;</code>: Specifies indentation as a percentage of the containing block&#39;s <strong>width</strong>.</li>
+</ul>
+</li>
+<li><strong>Keywords:</strong><ul>
+<li><code class="language-css">each-line</code>: Indents every line (not just the first) - part of CSS Text Level 4, support may vary.</li>
+<li><code class="language-css">hanging</code>: Inverts the indentation (like a negative value) - part of CSS Text Level 4, support may vary.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">text-indent: 2em;</code> to the <code class="language-css">.container &gt; p</code> ruleset. This will apply to both paragraphs inside the container.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Child Combinator Example */
+.container &gt; p {
+  border-left: 3px solid orange; 
+  padding-left: 10px;
+  color: yellow; 
+  text-indent: 2em; /* Indent first line of these paragraphs */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The first line of <em>both</em> paragraphs inside the container (&quot;This is a standard...&quot; and &quot;This paragraph follows...&quot;) should now be indented from the left edge (by an amount equal to twice their respective font sizes). Subsequent lines within each paragraph will wrap normally without the extra indent.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

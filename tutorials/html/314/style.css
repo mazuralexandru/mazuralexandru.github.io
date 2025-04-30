@@ -1,0 +1,24 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; /* 1. Set the base */
+}
+*, *::before, *::after { /* 2. Select all elements and pseudo-elements */
+  box-sizing: inherit; /* 3. Make them inherit from their parent */
+}
+
+
+/* Centering with Auto Margins */
+.centered-box {
+  width: auto; /* Let width be determined by content/container */
+  height: auto; /* Let height adjust to content (default) */
+  min-width: 200px; /* Ensure box is at least 200px wide */
+  max-width: 400px; /* Prevent box from getting wider than 400px */
+  min-height: 150px; /* Ensure box is at least 150px tall */
+  max-height: 200px; /* Prevent box from growing taller than 200px */
+  overflow: auto; /* Add scrollbars if content overflows */
+  background-color: cornflowerblue; /* Make it visible */
+  padding: 20px 5px 15px 30px; /* Top, Right, Bottom, Left */
+  margin: 1em auto; /* Center the box for better visibility */
+  border-bottom: 4px solid red; /* Add only a bottom border */
+  border-radius: 15px; /* Round all corners */
+}

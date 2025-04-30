@@ -1,0 +1,15 @@
+/* CSS comments explain or temporarily disable styles */
+
+/* 
+   This is a multi-line CSS comment.
+   It can span several lines. 
+*/
+
+h1 {
+    color: cornflowerblue; /* Set heading color */
+    /* text-decoration: underline; */ /* Temporarily disable underlining */
+}
+
+p {
+    /* color: limegreen; */ /* Style currently commented out */
+}

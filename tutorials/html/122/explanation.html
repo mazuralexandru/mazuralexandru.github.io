@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>122. DevTools: Elements Panel (Live DOM Tree)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Once DevTools is open, select the <strong>Elements</strong> (Chrome/Edge) or <strong>Inspector</strong> (Firefox) tab.</p>
+<p>What you see here is the <strong>live Document Object Model (DOM) tree</strong>.</p>
+<ul>
+<li><strong>DOM:</strong> The browser&#39;s internal representation of the HTML document&#39;s structure. It&#39;s a tree-like structure where each HTML tag becomes a node.</li>
+<li><strong>Live:</strong> This view reflects the <em>current</em> state of the page. If JavaScript has added, removed, or modified elements after the initial load, those changes will be visible here. This is a key difference from &quot;View Page Source&quot;, which shows the original, static HTML file.</li>
+<li><strong>Interactive:</strong> You can expand and collapse nodes (elements) by clicking the triangles next to them to explore the hierarchy (parent/child relationships). You can even double-click text content or attributes within the Elements panel to temporarily edit them and see the changes reflected live on the page (these edits are temporary and reset on page reload).</li>
+</ul>
+<p>✅ Explore the Elements panel. Expand the <code class="language-html">&lt;html&gt;</code>, <code class="language-html">&lt;head&gt;</code>, and <code class="language-html">&lt;body&gt;</code> elements. Notice how it mirrors the structure in <code class="language-text">index.html</code>, but doesn&#39;t show the HTML comments (as they are not part of the rendered DOM structure). You should see the <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> inside the <code class="language-html">&lt;body&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

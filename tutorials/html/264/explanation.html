@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>264. <code class="language-css">width</code> Values: <code class="language-css">auto</code>, Lengths, Percentages</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Let&#39;s explore the common values for the <code class="language-css">width</code> property:</p>
+<ol>
+<li><p><strong><code class="language-css">auto</code> (Default for block elements):</strong></p>
+<ul>
+<li>The browser calculates the width.</li>
+<li>For block-level elements, this typically means expanding to fill the <strong>full available horizontal space</strong> within its containing block, minus any horizontal margins, padding, or borders of the container.</li>
+<li>For inline-block or replaced elements, <code class="language-css">auto</code> usually means the width shrinks to fit the content.</li>
+</ul>
+</li>
+<li><p><strong>Length Units (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, <code class="language-css">vw</code>, etc.):</strong></p>
+<ul>
+<li>Sets a fixed or relative width based on the unit used.</li>
+<li><code class="language-css">width: 500px;</code> sets a fixed width.</li>
+<li><code class="language-css">width: 20em;</code> sets a width relative to the element&#39;s font size.</li>
+<li><code class="language-css">width: 50vw;</code> sets the width to 50% of the viewport width.</li>
+</ul>
+</li>
+<li><p><strong>Percentage (<code class="language-css">%</code>):</strong></p>
+<ul>
+<li>Sets the width as a percentage of the <strong>width of the containing block</strong>.</li>
+<li><code class="language-css">width: 50%;</code> makes the element half the width of its parent container&#39;s content area. This is fundamental for creating fluid and responsive layouts.</li>
+</ul>
+</li>
+</ol>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve changed the <code class="language-css">width</code> of <code class="language-css">.box</code> from <code class="language-css">300px</code> to <code class="language-css">75%</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  /* width: 300px; */ /* Changed from px */
+  width: 75%; /* Set width relative to container */
+  background-color: cornflowerblue; 
+  padding: 10px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The blue box should now take up 75% of the available width of the page body (its container). If you resize the preview window (if possible in your environment), the box&#39;s width should adjust fluidly, always maintaining that 75% proportion. This demonstrates percentage-based width.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

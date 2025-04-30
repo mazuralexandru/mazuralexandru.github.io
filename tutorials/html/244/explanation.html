@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>244. <code class="language-html">&lt;code&gt;</code> &amp; <code class="language-html">&lt;pre&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Browsers apply specific default styles to these elements:</p>
+<ul>
+<li><code class="language-html">&lt;code&gt;</code>: Renders text in the browser&#39;s default monospace font (e.g., Courier, Consolas).</li>
+<li><code class="language-html">&lt;pre&gt;</code>: Renders text in the default monospace font AND preserves whitespace and line breaks (<code class="language-css">white-space: pre</code>).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a paragraph containing an inline <code class="language-html">&lt;code&gt;</code> element.</li>
+<li>We&#39;ve added a <code class="language-html">&lt;pre&gt;</code> element containing a <code class="language-html">&lt;code&gt;</code> element for a block of code, including escaped HTML.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt;
+    &lt;p&gt;Use the &lt;code&gt;document.getElementById()&lt;/code&gt; method.&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;Example&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    Content here.
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>In the first new paragraph, the text <code>document.getElementById()</code> should appear in a monospace font, distinct from the surrounding paragraph text.</li>
+<li>Below that, the HTML code block should appear:<ul>
+<li>In a monospace font.</li>
+<li>With all the indentation and line breaks preserved exactly as typed in the source code within the <code class="language-html">&lt;pre&gt;</code> tag.</li>
+<li>The <code>&lt;</code> and <code>&gt;</code> characters should be displayed literally, not interpreted as tags, because we used <code class="language-html">&amp;lt;</code> and <code class="language-html">&amp;gt;</code> in the source.</li>
+</ul>
+</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

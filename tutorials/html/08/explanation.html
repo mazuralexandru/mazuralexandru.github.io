@@ -9,54 +9,27 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>08. Adding Base CSS Styles</h1>
-<p>Now that <code class="language-text">style.css</code> is linked, let&#39;s add some fundamental styles to it. These &quot;base styles&quot; will provide a consistent, pleasant visual foundation for our examples.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We&#39;ve added CSS rules to the previously empty <code class="language-text">style.css</code> file.</p>
-<pre class="language-css"><code class="language-css">/* style.css */
-/* Base styles for visual consistency */
-body {
-  background-color: #2e2e2e; /* Dark background */
-  color: #E0E0E0; /* Light default text */
-  font-family: sans-serif; /* Basic readable font */
-  padding: 15px; /* Breathing room */
-  min-height: 150px; /* Ensure space for preview */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>CSS Syntax Breakdown (First Look):</strong></p>
+  <h1>08. JavaScript: Behavior &amp; Interactivity (The Verbs)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Finally, <strong>JavaScript (JS)</strong> brings the web page to life. If HTML is the structure and CSS is the appearance, JavaScript is the <em>behavior</em> – the &quot;verbs&quot;.</p>
+<p>JavaScript is a <strong>programming language</strong> that runs in the user&#39;s browser. It allows you to:</p>
 <ul>
-<li><strong><code>/* ... */</code> (CSS Comments):</strong> Similar to HTML comments, these are notes ignored by the browser. They start with <code class="language-css">/*</code> and end with <code class="language-css">*/</code>.</li>
-<li><strong>Ruleset:</strong> The core unit of CSS. It consists of a selector and a declaration block.<ul>
-<li><strong><code class="language-css">body</code> (Selector):</strong> This targets the HTML element(s) the styles should apply to. Here, it targets the <code class="language-html">&lt;body&gt;</code> element.</li>
-<li><strong><code class="language-css">{ ... }</code> (Declaration Block):</strong> Contains one or more declarations, enclosed in curly braces.</li>
-<li><strong><code class="language-css">property: value;</code> (Declaration):</strong> Defines a specific style.<ul>
-<li><code class="language-css">background-color</code>: The CSS property to change the background color.</li>
-<li><code class="language-css">#2e2e2e</code>: The value for the background color (a dark gray hex code).</li>
-<li><code class="language-css">color</code>: The property for the foreground (text) color.</li>
-<li><code class="language-css">#E0E0E0</code>: The value for the text color (a light gray hex code).</li>
-<li><code class="language-css">font-family</code>: Specifies the font. <code class="language-css">sans-serif</code> asks the browser to use its default sans-serif font (like Arial, Helvetica, etc.).</li>
-<li><code class="language-css">padding</code>: Adds space inside the element&#39;s border. <code class="language-css">15px</code> adds 15 pixels of padding on all sides of the body content.</li>
-<li><code class="language-css">min-height</code>: Ensures the body takes up at least this much vertical space, helpful for small examples. <code class="language-css">150px</code> sets a minimum height of 150 pixels.</li>
-<li><code class="language-css">;</code> (Semicolon): Separates multiple declarations within a block. Crucial!</li>
+<li>Respond to user actions (clicks, mouse movements, keyboard input).</li>
+<li>Modify HTML content and CSS styles dynamically <em>after</em> the page has loaded.</li>
+<li>Perform calculations, validate forms.</li>
+<li>Fetch data from servers without reloading the page (AJAX).</li>
+<li>Create animations and complex user interface features.</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. Big difference! The page background should now be dark gray (<code class="language-css">#2e2e2e</code>), and the &quot;Hello, World!&quot; text should be light gray (<code class="language-css">#E0E0E0</code>) and possibly in a different font (<code class="language-css">sans-serif</code>). You&#39;ll also notice some space around the text due to the <code class="language-css">padding</code>.</li>
-<li>This dark theme provides better contrast for code examples and reduces eye strain compared to the default bright white background. We will generally keep these base styles active throughout the tutorial for visual consistency.</li>
-</ul>
+<p>While HTML and CSS can create static pages, JavaScript enables dynamic and interactive web experiences.</p>
+<p>🔬 Still looking at an empty <code class="language-text">index.html</code>. We&#39;ll use these three technologies together soon.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

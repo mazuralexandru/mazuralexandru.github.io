@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>282. Padding Shorthand Property (<code class="language-css">padding</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Writing out all four longhand padding properties can be verbose. CSS provides the <code class="language-css">padding</code> shorthand property to set padding on all four sides with a single declaration.</p>
+<ul>
+<li><strong>Purpose:</strong> A more concise way to define padding.</li>
+<li><strong>Syntax:</strong> The number of values provided determines how they are applied:<ul>
+<li><strong>One Value:</strong> <code class="language-css">padding: value;</code><ul>
+<li>Applies the <code class="language-css">value</code> to <strong>all four</strong> sides (top, right, bottom, left).</li>
+<li>Example: <code class="language-css">padding: 15px;</code> (15px on all sides)</li>
+</ul>
+</li>
+<li><strong>Two Values:</strong> <code class="language-css">padding: value1 value2;</code><ul>
+<li><code class="language-css">value1</code> applies to <strong>top and bottom</strong>.</li>
+<li><code class="language-css">value2</code> applies to <strong>left and right</strong>.</li>
+<li>Example: <code class="language-css">padding: 10px 20px;</code> (10px top/bottom, 20px left/right)</li>
+</ul>
+</li>
+<li><strong>Three Values:</strong> <code class="language-css">padding: value1 value2 value3;</code><ul>
+<li><code class="language-css">value1</code> applies to <strong>top</strong>.</li>
+<li><code class="language-css">value2</code> applies to <strong>left and right</strong>.</li>
+<li><code class="language-css">value3</code> applies to <strong>bottom</strong>.</li>
+<li>Example: <code class="language-css">padding: 10px 20px 5px;</code> (10px top, 20px left/right, 5px bottom)</li>
+</ul>
+</li>
+<li><strong>Four Values:</strong> <code class="language-css">padding: value1 value2 value3 value4;</code><ul>
+<li>Applies values in <strong>clockwise order</strong>: <code class="language-css">value1</code> (Top), <code class="language-css">value2</code> (Right), <code class="language-css">value3</code> (Bottom), <code class="language-css">value4</code> (Left). (TRBL - &quot;Trouble&quot;)</li>
+<li>Example: <code class="language-css">padding: 10px 20px 5px 15px;</code> (10px top, 20px right, 5px bottom, 15px left)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve replaced the four longhand <code class="language-css">padding-*</code> properties with a single <code class="language-css">padding</code> shorthand using four values to achieve the same result as before.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; 
+  max-height: 200px; 
+  overflow: auto; 
+  background-color: cornflowerblue; 
+  /* Replaced longhand with shorthand */
+  padding: 20px 5px 15px 30px; /* Top, Right, Bottom, Left */
+  margin: 1em auto; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The appearance of the box and its internal spacing should be identical to the previous step, but the CSS code used to achieve it is now more concise using the <code class="language-css">padding</code> shorthand.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* Base styles for visual consistency */
+body {
+  background-color: #2e2e2e; /* Dark background */
+  color: #E0E0E0; /* Light default text */
+  font-family: sans-serif; /* Basic readable font */
+  padding: 15px; /* Breathing room */
+  min-height: 150px; /* Ensure space */
+
+  /* --- Define Grid Sizes --- */
+  --grid-size: 20px;          /* Size of the smallest grid squares */
+  --grid-major-interval: 3;   /* How many small squares before a major line */
+  --grid-major-size: calc(var(--grid-size) * var(--grid-major-interval)); /* Calculated size for major lines */
+
+  /* --- Define Line Styles --- */
+  --grid-line-thin-color: rgba(255, 255, 255, 0.05); /* Fainter lines */
+  --grid-line-thin-width: 1px;
+  --grid-line-major-color: rgba(255, 255, 255, 0.06);/* Slightly stronger lines */
+  --grid-line-major-width: 1px;
+
+  /* --- Layer the Gradients --- */
+  background-image:
+    /* Major Vertical Lines */
+    linear-gradient(to right, var(--grid-line-major-color) var(--grid-line-major-width), transparent var(--grid-line-major-width)),
+    /* Major Horizontal Lines */
+    linear-gradient(to bottom, var(--grid-line-major-color) var(--grid-line-major-width), transparent var(--grid-line-major-width)),
+    /* Thin Vertical Lines */
+    linear-gradient(to right, var(--grid-line-thin-color) var(--grid-line-thin-width), transparent var(--grid-line-thin-width)),
+    /* Thin Horizontal Lines */
+    linear-gradient(to bottom, var(--grid-line-thin-color) var(--grid-line-thin-width), transparent var(--grid-line-thin-width));
+
+  /* --- Define Repeating Sizes for Each Gradient Layer --- */
+  background-size:
+    var(--grid-major-size) var(--grid-major-size),  /* Size for Major Vertical */
+    var(--grid-major-size) var(--grid-major-size),  /* Size for Major Horizontal */
+    var(--grid-size) var(--grid-size),            /* Size for Thin Vertical */
+    var(--grid-size) var(--grid-size);            /* Size for Thin Horizontal */
+}

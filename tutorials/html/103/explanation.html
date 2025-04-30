@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>103. CSS Font Size: Pixel Values (<code class="language-css">px</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>Pixel (<code class="language-css">px</code>)</strong> values define an absolute font size. <code class="language-css">1px</code> is generally defined as 1/96th of an inch, but its actual appearance depends on the screen&#39;s resolution (PPI).</p>
+<ul>
+<li><strong>Nature:</strong> Fixed size. <code class="language-css">16px</code> text should appear roughly the same size regardless of the parent element&#39;s font size.</li>
+<li><strong>Use Cases:</strong><ul>
+<li>Setting a base font size on the <code class="language-html">body</code> or <code class="language-html">&lt;html&gt;</code> element.</li>
+<li>Situations where precise pixel control is needed and scalability is less of a concern.</li>
+<li>Sometimes used for borders, padding, margins where fixed dimensions are desired.</li>
+</ul>
+</li>
+<li><strong>Pros:</strong> Predictable size (mostly). Easy to understand initially.</li>
+<li><strong>Cons:</strong> Less flexible for users who want to adjust their default browser font size (text might not scale). Can make creating fully responsive/scalable layouts more challenging compared to relative units.</li>
+</ul>
+<p>Example:</p>
+<pre class="language-css"><code class="language-css">p { font-size: 14px; } 
+h1 { font-size: 32px; }
+</code></pre>
+<p>✅ The inline style <code class="language-css">font-size: 22px;</code> uses pixels.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

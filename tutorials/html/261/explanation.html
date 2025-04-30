@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>261. The Four Components of the Box: Margin Area</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The outermost component of the box model is the <strong>Margin Area</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> Margin creates transparent space <em>outside</em> the element&#39;s border. It&#39;s used to push other elements away, creating space <em>between</em> adjacent boxes.</li>
+<li><strong>Control:</strong> Set using the <code class="language-css">margin</code> shorthand property or the longhand properties (<code class="language-css">margin-top</code>, <code class="language-css">margin-right</code>, <code class="language-css">margin-bottom</code>, <code class="language-css">margin-left</code>).</li>
+<li><strong>Appearance:</strong> Margin is always transparent; an element&#39;s background color/image does <em>not</em> extend into the margin.</li>
+<li><strong>Interaction:</strong> Margins of adjacent elements can sometimes collapse (vertically), which we&#39;ll discuss later.</li>
+</ul>
+<p>Margins are fundamental for controlling the spacing and layout between different elements on the page.</p>
+<p>🔬 Inspect the <code class="language-html">&lt;h1 id=&quot;main-heading&quot;&gt;</code> element in <code class="language-text">index.html</code>. Browsers usually apply default top and bottom margins to headings. In the Computed/Layout tab&#39;s box model diagram, find the outermost area representing the margin. Hover over it to see the space outside the heading&#39;s border highlighted in the preview. Notice how this margin creates space between the heading and the paragraphs above and below it. We also explicitly set <code class="language-css">margin-top: 5px;</code> on the paragraph following the heading (<code class="language-css">h1 + p</code>) in <code class="language-text">style.css</code>. Inspect that paragraph to see its margin values.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

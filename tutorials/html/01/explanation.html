@@ -9,39 +9,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>01. The Minimal HTML Document</h1>
-<p>Welcome to your web development journey! We start with the absolute minimum structure required for a valid HTML document.</p>
-<p><strong>What is HTML?</strong></p>
-<p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage. It&#39;s the standard language used to create the structure and content of web pages. Think of it as the skeleton of a webpage.</p>
+  <h1>01. Client-Server Model Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The web operates on a <strong>Client-Server Model</strong>.</p>
 <ul>
-<li><strong>Markup:</strong> HTML uses special markers called &quot;tags&quot; (like <code class="language-html">&lt;html&gt;</code> or <code class="language-html">&lt;body&gt;</code>) to describe different parts of the content.</li>
-<li><strong>Not Programming:</strong> HTML describes structure, it doesn&#39;t perform complex logic like a programming language.</li>
+<li><strong>Client:</strong> Your device (computer, phone) running a web browser. It <em>requests</em> information.</li>
+<li><strong>Server:</strong> A powerful computer, always connected to the internet, that <em>stores</em> web pages, sites, or applications. It <em>serves</em> information upon request.</li>
 </ul>
-<p><strong>The Files:</strong></p>
-<ul>
-<li><code class="language-text">index.html</code>: This is the core file the browser reads to display the page. The name <code class="language-text">index.html</code> is special; web servers often look for this file by default when someone visits a website directory.</li>
-<li><code class="language-text">style.css</code>: This file will hold our styling rules (CSS - Cascading Style Sheets) to make the page look good. It&#39;s empty for now.</li>
-<li><code class="language-text">script.js</code>: This file will hold our JavaScript code for adding interactivity. It&#39;s also empty.</li>
-</ul>
-<p><strong>Code Breakdown (<code class="language-text">index.html</code>):</strong></p>
-<ul>
-<li><code class="language-html">&lt;!DOCTYPE html&gt;</code>: This is the <strong>Document Type Declaration</strong>. It <strong>must</strong> be the very first thing in the file. It tells the browser, &quot;This document is written in HTML5,&quot; ensuring the browser uses modern rendering standards (avoids &quot;quirks mode&quot;).</li>
-<li><code class="language-html">&lt;html&gt;</code>: This is the <strong>root element</strong>. All other HTML elements go inside this tag. It signifies the start and end of the HTML document.</li>
-<li><code class="language-html">&lt;head&gt;</code>: This element contains <strong>metadata</strong> about the HTML document – information <em>about</em> the page, not the visible content itself. Examples include the page title, character set declaration, links to stylesheets, etc. It&#39;s currently empty.</li>
-<li><code class="language-html">&lt;body&gt;</code>: This element contains all the <strong>visible content</strong> of the web page – the text, images, links, etc., that the user sees in the browser window. It&#39;s also empty right now.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>Right now, if you preview <code class="language-text">index.html</code> in a browser (or using the VS Code Live Preview extension), you&#39;ll see a completely blank white page. This is expected! We haven&#39;t added any visible content yet.</li>
-<li>👀 Look at the browser tab. It likely shows the filename (<code class="language-text">index.html</code>) or a generic title because we haven&#39;t specified one yet (that goes in the <code class="language-html">&lt;head&gt;</code>).</li>
-</ul>
+<p>Imagine ordering food: You (the client) ask the restaurant (the server) for a specific dish (a web page). The restaurant prepares it and sends it back to you.</p>
+<p>This request-response cycle is the core of how you access websites.</p>
+<p>👀 Keep an eye on the preview area. It&#39;s still empty (<code class="language-text">index.html</code>), as we&#39;re focusing on concepts first.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

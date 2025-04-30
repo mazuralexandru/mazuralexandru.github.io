@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>325. <code class="language-css">overflow</code> Value: <code class="language-css">scroll</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">scroll</code> value provides a way to access overflowing content.</p>
+<ul>
+<li><strong>Behavior:</strong> Content that extends beyond the element&#39;s padding edge is clipped, but the browser <strong>always displays scrollbars</strong> (both horizontal and vertical) allowing the user to scroll and view the hidden content.</li>
+<li><strong>Effect:</strong> Scrollbars are shown regardless of whether the content actually overflows or not. This can sometimes reserve space for the scrollbars, preventing the layout from jumping when content dynamically changes and causes overflow.</li>
+<li><strong>Use Case:</strong> When you want scrollbars to be permanently visible, or in situations where reserving space for potential scrollbars is important for layout stability.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve changed <code class="language-css">overflow: hidden;</code> to <code class="language-css">overflow: scroll;</code> in the <code class="language-css">.overflow-box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.overflow-box {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid orange;
+  background-color: rgba(0, 0, 100, 0.2);
+  margin-bottom: 1em; 
+  /* overflow: hidden; */
+  overflow: scroll; /* Always show scrollbars */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The text content is still clipped within the orange-bordered box.</li>
+<li>However, you should now see <strong>both a vertical and a horizontal scrollbar</strong> appear within the box.</li>
+<li>The vertical scrollbar allows you to scroll down and see the rest of the paragraph text.</li>
+<li>The horizontal scrollbar is likely present but might not do anything unless there was also horizontally overflowing content (like a very long word without <code class="language-css">overflow-wrap</code> or an image wider than the box). <code class="language-css">scroll</code> shows both unconditionally.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

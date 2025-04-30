@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>95. Inline Styles: Example Recap</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s quickly recap the inline style example we added:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- Inside index.html --&gt;
+&lt;p style=&quot;color: tomato; font-size: 22px;&quot;&gt;This paragraph uses inline styles.&lt;/p&gt; 
+</code></pre>
+<ul>
+<li>We applied styles directly to the <code class="language-html">&lt;p&gt;</code> tag using the <code class="language-html">style</code> attribute.</li>
+<li>The value of the attribute contains standard CSS declarations (<code class="language-css">color: tomato;</code> and <code class="language-css">font-size: 22px;</code>).</li>
+<li>These styles affect <em>only this specific paragraph</em>.</li>
+</ul>
+<p>While functional, remember the drawbacks discussed previously. We&#39;ll soon move this styling logic into our <code class="language-text">style.css</code> file.</p>
+<p>🔬 Observe the red, larger text in the preview, styled directly via the HTML attribute.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>173. Combinators: Defining Relationships</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>So far, our selectors have targeted elements based on their type, class, ID, or attributes individually. <strong>Combinators</strong> allow us to create more complex selectors that target elements based on their <strong>relationship</strong> to other elements in the HTML document structure (their position in the DOM tree).</p>
+<ul>
+<li><strong>Purpose:</strong> To select elements based on whether they are descendants, children, or siblings of other elements.</li>
+<li><strong>Types:</strong> There are four main combinators:<ol>
+<li>Descendant Combinator (<code class="language-css"> </code> space)</li>
+<li>Child Combinator (<code class="language-css">&gt;</code>)</li>
+<li>Adjacent Sibling Combinator (<code class="language-css">+</code>)</li>
+<li>General Sibling Combinator (<code class="language-css">~</code>)</li>
+</ol>
+</li>
+</ul>
+<p>These allow for much more contextual and precise styling.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>To demonstrate combinators effectively, we&#39;ve added more structure:<ul>
+<li>A <code class="language-html">&lt;div&gt;</code> with <code class="language-html">class=&quot;container&quot;</code> now wraps the existing <code class="language-html">&lt;p&gt;</code> and <code class="language-html">&lt;h1&gt;</code>.</li>
+<li>An additional <code class="language-html">&lt;p&gt;</code> has been added <em>after</em> the <code class="language-html">&lt;h1&gt;</code>.</li>
+<li>A <code class="language-html">&lt;span&gt;</code> has been added <em>inside</em> the first paragraph.</li>
+</ul>
+</li>
+</ul>
+<p>This richer structure will allow us to illustrate how different combinators work.</p>
+<pre class="language-html"><code class="language-html">&lt;div class=&quot;container&quot;&gt; &lt;!-- Added container --&gt;
+    &lt;p class=&quot;highlight-text&quot; title=&quot;Standard Paragraph&quot;&gt;
+        This is a standard paragraph. 
+        &lt;span&gt;This is inside the paragraph.&lt;/span&gt; &lt;!-- Added span --&gt;
+    &lt;/p&gt; 
+    &lt;h1 id=&quot;main-heading&quot;&gt;Main Heading&lt;/h1&gt; 
+    &lt;p&gt;This paragraph follows the heading.&lt;/p&gt; &lt;!-- Added second paragraph --&gt;
+&lt;/div&gt;
+
+&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;External Link&lt;/a&gt; 
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The content looks mostly the same, but the underlying HTML structure is now nested within a <code class="language-html">&lt;div&gt;</code>. The italic style still applies to the heading and the first paragraph due to the grouped selector we added previously.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

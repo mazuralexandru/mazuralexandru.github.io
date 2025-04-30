@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>250. <code class="language-html">&lt;blockquote&gt;</code>, <code class="language-html">&lt;q&gt;</code>, <code class="language-html">&lt;cite&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>Browsers apply default styles to visually distinguish these elements:</p>
+<ul>
+<li><code class="language-html">&lt;blockquote&gt;</code>: Typically indented from both left and right margins.</li>
+<li><code class="language-html">&lt;q&gt;</code>: Automatically adds language-appropriate quotation marks around the content (e.g., double quotes “” for English). Nested <code class="language-html">&lt;q&gt;</code> elements often get different quote styles (e.g., single quotes ‘’).</li>
+<li><code class="language-html">&lt;cite&gt;</code>: Typically rendered in italics.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a <code class="language-html">&lt;blockquote&gt;</code> containing a paragraph and a <code class="language-html">&lt;footer&gt;</code> with a <code class="language-html">&lt;cite&gt;</code> element.</li>
+<li>We&#39;ve added a paragraph containing a <code class="language-html">&lt;q&gt;</code> element.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt;
+    &lt;blockquote cite=&quot;http://example.com/source&quot;&gt;
+      &lt;p&gt;This is a block quotation. It is typically indented by the browser to set it apart from the surrounding text.&lt;/p&gt;
+      &lt;footer&gt;— Some Author, &lt;cite&gt;Some Work Title&lt;/cite&gt;&lt;/footer&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;She said, &lt;q&gt;This is an inline quotation, and the browser should add quotes.&lt;/q&gt;&lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The blockquote content should appear indented.</li>
+<li>The text &quot;Some Work Title&quot; within the blockquote footer should be italicized (<code class="language-html">&lt;cite&gt;</code>).</li>
+<li>The inline quotation (&quot;This is an inline quotation...&quot;) should have quotation marks automatically added around it by the browser (<code class="language-html">&lt;q&gt;</code>).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

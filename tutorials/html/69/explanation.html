@@ -9,101 +9,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>69. Semantic HTML for Emphasis: <code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code></h1>
-<p>Moving back to HTML for a bit, let&#39;s revisit elements specifically designed for adding semantic meaning to text: <code class="language-html">&lt;em&gt;</code> (emphasis) and <code class="language-html">&lt;strong&gt;</code> (strong importance). While browsers style them by default (italic and bold), their primary purpose is meaning, not just appearance.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the text-shadow examples.</li>
-<li><strong>HTML Addition:</strong> Added a paragraph containing <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> tags.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">p</code>, <code class="language-css">.simple-shadow</code>, <code class="language-css">.multi-shadow</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added basic <code class="language-css">p</code> styling and specific (though redundant for default) styling for <code class="language-css">em</code> and <code class="language-css">strong</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Semantic Emphasis Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous text-shadow examples --&gt;
-
-  &lt;p&gt;
-    This paragraph contains text that needs &lt;em&gt;emphasis&lt;/em&gt; (like indicating stress when spoken),
-    as well as text that has &lt;strong&gt;strong importance&lt;/strong&gt; (more serious than emphasis).
-    Use these tags for their meaning, &lt;em&gt;&lt;strong&gt;not just&lt;/strong&gt;&lt;/em&gt; for visual styling.
-  &lt;/p&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Pruned text-shadow rules */
-/* p { ... } */
-/* .simple-shadow { ... } */
-/* .multi-shadow { ... } */
-
-/* Semantic Emphasis Demo */
-p { /* Base paragraph styling */
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-em {
-  font-style: italic; /* Default browser style */
-  color: lightcoral; /* Custom color */
-}
-
-strong {
-  font-weight: bold; /* Default browser style */
-  color: lightskyblue; /* Custom color */
-}
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> Explained</strong></p>
-<ul>
-<li><strong><code class="language-html">&lt;em&gt;</code> (Emphasis):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Represents stress emphasis on its contents. Think about which word you&#39;d stress if reading the sentence aloud. Nested <code class="language-html">&lt;em&gt;</code> tags increase the level of emphasis.</li>
-<li><strong>Default Styling:</strong> Typically rendered as <em>italic</em> text by browsers.</li>
-</ul>
-</li>
-<li><strong><code class="language-html">&lt;strong&gt;</code> (Strong Importance):</strong><ul>
-<li><strong>Semantic Meaning:</strong> Indicates that its contents have strong importance, seriousness, or urgency. It&#39;s semantically stronger than <code class="language-html">&lt;em&gt;</code>. Nested <code class="language-html">&lt;strong&gt;</code> tags increase the level of importance.</li>
-<li><strong>Default Styling:</strong> Typically rendered as <strong>bold</strong> text by browsers.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Why Semantics Matter:</strong></p>
-<ul>
-<li><strong>Accessibility:</strong> Screen readers can use these tags to change their voice inflection, conveying the intended emphasis or importance to visually impaired users. Using <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> correctly improves the listening experience.</li>
-<li><strong>Search Engines &amp; Browsers:</strong> While maybe less critical than headings, semantic tags can provide additional context to browsers and search engines about the structure and meaning of your content.</li>
-<li><strong>Maintainability:</strong> Using tags for their meaning makes your HTML more understandable. If you later decide <em>all</em> emphasized text should be blue instead of italic, you just change the CSS for <code class="language-css">em</code>, rather than hunting down every place you used italics purely for presentation.</li>
-</ul>
-<p><strong>Styling Semantics:</strong></p>
-<ul>
-<li>You can (and often should) style these elements using CSS just like any other element.</li>
-<li>In our example, we&#39;ve kept the default <code>font-style</code> and <code>font-weight</code> but added custom colors (<code class="language-css">lightcoral</code> for <code>em</code>, <code class="language-css">lightskyblue</code> for <code>strong</code>) to make them stand out visually and show they can be styled.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Find the text wrapped in <code class="language-html">&lt;em&gt;</code>. It should appear <em>italic</em> (default style) and <em>light coral</em> (our custom color).</li>
-<li>👀 Find the text wrapped in <code class="language-html">&lt;strong&gt;</code>. It should appear <strong>bold</strong> (default style) and <em>light sky blue</em> (our custom color).</li>
-<li>👀 Notice the nested <code class="language-html">&lt;em&gt;&lt;strong&gt;</code> part. It should be both bold and italic, and likely takes the color of the innermost tag&#39;s rule depending on CSS details (though specific color inheritance might need more complex rules).</li>
-<li>✅ Inspect these elements in DevTools to see the tags and the applied CSS rules.</li>
-</ul>
-<p>Use <code class="language-html">&lt;em&gt;</code> and <code class="language-html">&lt;strong&gt;</code> when the text genuinely requires semantic emphasis or importance, not just for achieving italic or bold visuals. For purely presentational styling, use CSS classes and properties like <code>font-style</code> or <code>font-weight</code>.</p>
+  <h1>69. <code class="language-html">&lt;title&gt;</code>: Importance</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Don&#39;t underestimate the importance of a well-crafted <code class="language-html">&lt;title&gt;</code> element. It plays a key role in:</p>
+<ol>
+<li><strong>Usability:</strong> Helps users understand what page they are on and quickly find it among multiple tabs or in their history/bookmarks. A generic title like &quot;Home Page&quot; is much less helpful than &quot;CompanyName - Innovative Solutions for X&quot;.</li>
+<li><strong>Accessibility:</strong> It&#39;s often the first piece of information announced by screen readers, providing essential orientation for visually impaired users. A clear, descriptive title is crucial for navigation.</li>
+<li><strong>Search Engine Optimization (SEO):</strong> Search engines place significant weight on the <code class="language-html">&lt;title&gt;</code> tag. Including relevant keywords helps search engines understand the page&#39;s topic and rank it appropriately. It&#39;s also the text users see in search results, influencing their decision to click.</li>
+</ol>
+<p>Always take the time to write a meaningful, unique title for every page of your website.</p>
+<p>✅ The current title in <code class="language-text">index.html</code> (<code class="language-text">My First Web Page</code>) is okay for a start, but real pages need more descriptive titles.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>206. <code>@font-face</code> Rule: Embedding Custom Fonts</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>What if you want to use a specific font that users likely don&#39;t have installed on their systems? You can embed custom web fonts using the CSS <strong><code class="language-css">@font-face</code></strong> at-rule.</p>
+<ul>
+<li><strong>Purpose:</strong> Allows you to define a custom font family name and specify the location (URL) of the font file(s) to be downloaded by the browser. Once defined, you can use this custom font family name in your <code class="language-css">font-family</code> declarations just like any other font name.</li>
+<li><strong>Placement:</strong> <code>@font-face</code> rules are typically placed at the <strong>top</strong> of your CSS file, before any rulesets that use the custom font.</li>
+</ul>
+<p>We won&#39;t implement a full <code>@font-face</code> example here as it requires actual font files, but understanding the concept and syntax is important.</p>
+<pre class="language-css"><code class="language-css">/* Example @font-face rule */
+@font-face {
+  font-family: &#39;My Custom Sans&#39;; /* Name you&#39;ll use in CSS */
+  src: url(&#39;fonts/my-custom-sans-regular.woff2&#39;) format(&#39;woff2&#39;), /* Preferred format */
+       url(&#39;fonts/my-custom-sans-regular.woff&#39;) format(&#39;woff&#39;);   /* Fallback format */
+  font-weight: normal; /* Or 400 */
+  font-style: normal;
+  font-display: swap; /* Tells browser how to handle font loading */
+}
+
+@font-face {
+  font-family: &#39;My Custom Sans&#39;; /* Same family name */
+  src: url(&#39;fonts/my-custom-sans-bold.woff2&#39;) format(&#39;woff2&#39;),
+       url(&#39;fonts/my-custom-sans-bold.woff&#39;) format(&#39;woff&#39;);
+  font-weight: bold; /* Or 700 - Defines the bold variant */
+  font-style: normal;
+  font-display: swap; 
+}
+
+/* --- Usage --- */
+body {
+  font-family: &#39;My Custom Sans&#39;, Arial, sans-serif; /* Use the custom font */
+}
+
+strong {
+  font-weight: bold; /* Browser will try to use the bold @font-face variant */
+}
+</code></pre>
+<p>Key parts include <code class="language-css">font-family</code> (defining your custom name), <code class="language-css">src</code> (pointing to font files - <code class="language-text">woff2</code> is the modern standard), <code class="language-css">format</code> (hinting), <code class="language-css">font-weight</code>/<code class="language-css">font-style</code> (defining which variant this file represents), and <code class="language-css">font-display</code> (controlling rendering during load - <code class="language-css">swap</code> shows fallback text then swaps, which is common).</p>
+<p>👀 Our current project relies on system fonts specified in the <code class="language-css">font-family</code> stacks (like Georgia, Times, serif, sans-serif).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

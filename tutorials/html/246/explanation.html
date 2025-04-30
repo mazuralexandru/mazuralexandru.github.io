@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>246. Styling Code Blocks (<code class="language-html">&lt;pre&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>While the default monospace font and preserved whitespace of <code class="language-html">&lt;pre&gt;</code> are useful, code blocks often benefit from additional styling for readability.</p>
+<p>Common styles applied to <code class="language-html">&lt;pre&gt;</code> elements (or often the <code class="language-html">&lt;code&gt;</code> element <em>inside</em> the <code class="language-html">&lt;pre&gt;</code>) include:</p>
+<ul>
+<li><strong><code class="language-css">background-color</code>:</strong> A distinct background (often dark or light gray) to visually separate the code block.</li>
+<li><strong><code class="language-css">padding</code>:</strong> Adds space between the code text and the edge of the background/border.</li>
+<li><strong><code class="language-css">border</code> / <code class="language-css">border-radius</code>:</strong> Adds a border and potentially rounded corners.</li>
+<li><strong><code class="language-css">font-family</code>:</strong> Explicitly setting a preferred monospace font stack (e.g., <code class="language-css">Consolas, Monaco, &#39;Courier New&#39;, monospace</code>).</li>
+<li><strong><code class="language-css">overflow-x: auto;</code>:</strong> Adds a horizontal scrollbar <em>only if</em> a line of code is too long to fit within the container&#39;s width (often combined with <code class="language-css">white-space: pre;</code> which is the default for <code>&lt;pre&gt;</code>).</li>
+<li><strong><code class="language-css">white-space: pre-wrap;</code>:</strong> An alternative to scrolling. Preserves whitespace but allows long lines to wrap onto the next line within the block.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule targeting <code class="language-css">pre</code> elements.</li>
+<li>It sets a background color, padding, border-radius, and enables horizontal scrolling if needed.</li>
+<li>We also added a rule for <code class="language-css">pre code</code> to reset some styles that might be inherited from the general <code class="language-css">code</code> rule we added previously, ensuring the code inside <code class="language-css">pre</code> doesn&#39;t get double backgrounds or incorrect font sizes.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Styling for code blocks */
+pre {
+  background-color: #1e1e1e; /* Darker background for block */
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto; /* Add scrollbar if code is too wide */
+  font-size: 0.9rem; /* Slightly smaller base size for code blocks */
+}
+
+/* Reset specific styles for code inside pre if needed */
+pre code {
+  background-color: transparent; 
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em; /* Use the font-size set on the pre tag */
+  /* The font-family will be inherited from pre (monospace default) */
+}
+
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The HTML code block displayed within the <code class="language-html">&lt;pre&gt;&lt;code&gt;</code> tags should now have a dark background, padding around it, and rounded corners, making it look much more like a typical styled code block. If a line were extremely long, a horizontal scrollbar would appear.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

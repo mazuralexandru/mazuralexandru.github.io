@@ -9,55 +9,31 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>19. Adding Rules to Internal Stylesheets</h1>
-<p>Now that we have the <code class="language-html">&lt;style&gt;</code> element set up in the <code class="language-html">&lt;head&gt;</code>, let&#39;s add our first CSS rule within it to style the <code class="language-html">&lt;h1&gt;</code> element.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>19. Code Formatting</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Consistent code formatting (indentation, spacing, line breaks) makes code much easier to read and maintain, especially when working in teams. Manually formatting code is tedious and error-prone.</p>
+<p><strong>Code Formatters</strong> are tools that automatically reformat your code according to predefined style rules.</p>
 <ul>
-<li>We&#39;ve added a CSS ruleset inside the <code class="language-html">&lt;style&gt;</code> tags in <code class="language-text">index.html</code>.</li>
+<li><strong>Prettier:</strong> A very popular, opinionated code formatter that supports HTML, CSS, JavaScript, and more. It enforces a consistent style with minimal configuration.</li>
+<li><strong>VS Code Integration:</strong> VS Code has built-in formatting capabilities and integrates seamlessly with formatters like Prettier (often via an extension). You can usually format a file on save or by using a keyboard shortcut (e.g., <code>Shift+Alt+F</code> or <code>Shift+Option+F</code>).</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-  &lt;style&gt;
-    /* Internal CSS rules will go here */
-    h1 { /* Added H1 rule */
-      color: lightseagreen;
-      text-decoration: underline;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-</code></pre>
-<p><strong>Internal CSS Syntax</strong></p>
+<p><strong>Why use it?</strong></p>
 <ul>
-<li>Inside the <code class="language-html">&lt;style&gt;</code> tags, you write CSS exactly as you would in an external <code class="language-text">.css</code> file.</li>
-<li><strong>Ruleset:</strong> Consists of a selector and a declaration block.<ul>
-<li><strong>Selector (<code class="language-css">h1</code>):</strong> Targets the element(s) to style. Here, it targets all <code class="language-html">&lt;h1&gt;</code> elements on <em>this specific page</em>.</li>
-<li><strong>Declaration Block (<code class="language-css">{ ... }</code>):</strong> Contains the style definitions.</li>
-<li><strong>Declarations (<code class="language-css">property: value;</code>):</strong><ul>
-<li><code class="language-css">color: lightseagreen;</code> sets the text color.</li>
-<li><code class="language-css">text-decoration: underline;</code> adds an underline. Remember the semicolon <code class="language-css">;</code> separates declarations.</li>
+<li><strong>Consistency:</strong> Ensures all code follows the same style guide.</li>
+<li><strong>Readability:</strong> Properly indented and spaced code is easier to follow.</li>
+<li><strong>Reduces Arguments:</strong> Eliminates debates about subjective style preferences within teams.</li>
+<li><strong>Focus:</strong> Lets you focus on the logic, not the layout of the code.</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The heading &quot;Styling with Internal CSS&quot; should now be a light sea green color (<code class="language-css">lightseagreen</code>) and have an underline. The paragraph below it remains unchanged, still inheriting styles from the base <code class="language-text">style.css</code>.</li>
-<li>✅ Open DevTools (F12) and inspect the <code class="language-html">&lt;h1&gt;</code> element.</li>
-<li>👀 In the Styles pane, you should now see the rule <code class="language-css">h1 { ... }</code> listed. Notice how the source is indicated as coming from the <code class="language-html">&lt;style&gt;</code> block within <code class="language-text">index.html</code> (it might show as <code>&lt;style&gt; element</code> or similar), distinguishing it from styles coming from <code class="language-text">style.css</code>.</li>
-<li>🔬 <strong>Experiment:</strong> Try changing <code class="language-css">lightseagreen</code> to another color keyword like <code class="language-css">orange</code> directly within the <code class="language-html">&lt;style&gt;</code> tags in your editor. Save and refresh. See the heading color change. Try adding another property like <code class="language-css">font-style: italic;</code> inside the <code class="language-css">h1</code> rule&#39;s curly braces.</li>
-</ul>
+<p>Setting up a formatter like Prettier is highly recommended.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

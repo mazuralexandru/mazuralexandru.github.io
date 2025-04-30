@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>231. Presentation Elements (<code class="language-html">&lt;i&gt;</code>, <code class="language-html">&lt;b&gt;</code>, <code class="language-html">&lt;u&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>HTML also includes elements that traditionally indicated presentation (italic, bold, underline) but have been given slightly more nuanced semantic meaning in HTML5. However, their primary association remains presentational.</p>
+<ul>
+<li><strong><code class="language-html">&lt;i&gt;</code> (Idiomatic Text):</strong><ul>
+<li><strong>Semantic Meaning (HTML5):</strong> Represents text in an &quot;alternate voice or mood&quot;, or otherwise offset from the normal prose without conveying extra importance. Examples include technical terms, foreign words, thoughts, or ship names.</li>
+<li><strong>Default Styling:</strong> Typically rendered in <em>italics</em>.</li>
+<li><strong>When to Use:</strong> Use when there&#39;s a semantic reason for offsetting text (like a foreign phrase or technical term) that conventionally uses italics, but where <code class="language-html">&lt;em&gt;</code> (stress emphasis) isn&#39;t appropriate.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;b&gt;</code> (Bring Attention To):</strong><ul>
+<li><strong>Semantic Meaning (HTML5):</strong> Represents text to which attention should be drawn for utilitarian purposes without conveying extra importance or alternate voice. Examples include keywords in a summary, product names in a review, or actionable words in software.</li>
+<li><strong>Default Styling:</strong> Typically rendered in <strong>bold</strong>.</li>
+<li><strong>When to Use:</strong> Use when you want to draw attention stylistically (bold) without implying the strong importance of <code class="language-html">&lt;strong&gt;</code>.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;u&gt;</code> (Unarticulated Annotation):</strong><ul>
+<li><strong>Semantic Meaning (HTML5):</strong> Represents text with an unarticulated, non-textual annotation, such as labeling a proper name in Chinese text or indicating a misspelling. Its use is <strong>highly discouraged</strong> in most contexts.</li>
+<li><strong>Default Styling:</strong> Typically rendered with an <strong>underline</strong>.</li>
+<li><strong>Why Avoid:</strong> Underlines are strongly associated with hyperlinks on the web. Using <code class="language-html">&lt;u&gt;</code> for other purposes can cause significant user confusion. Use CSS <code class="language-css">text-decoration: underline;</code> (perhaps via a class) if you need an underline for purely stylistic reasons, but even then, consider alternatives to avoid confusion with links.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Key Takeaway:</strong> While <code class="language-html">&lt;i&gt;</code> and <code class="language-html">&lt;b&gt;</code> have specific HTML5 semantics, they are often used (sometimes incorrectly) simply for their default italic/bold appearance. If you only need the visual style without any specific semantic meaning, using a <code class="language-html">&lt;span&gt;</code> with a CSS class (<code class="language-css">.italic</code>, <code class="language-css">.bold</code>) is often a clearer and more maintainable approach. Avoid <code class="language-html">&lt;u&gt;</code>.</p>
+<p>👀 Our <code class="language-text">index.html</code> doesn&#39;t currently use these tags.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

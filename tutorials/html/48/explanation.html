@@ -9,49 +9,28 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>48. Inheritance: Non-Inherited Properties</h1>
-<p>Let&#39;s explicitly see how non-inherited properties behave. We already saw that <code class="language-css">border</code> and <code class="language-css">padding</code> applied to the parent <code class="language-html">&lt;div&gt;</code> were not inherited by the child <code class="language-html">&lt;p&gt;</code>. Let&#39;s add a <code class="language-css">background-color</code> to the parent and observe.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>48. Component 2: <code class="language-html">&lt;html&gt;</code> Element</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Immediately following the <code class="language-html">&lt;!DOCTYPE html&gt;</code> declaration comes the <code class="language-html">&lt;html&gt;</code> element.</p>
 <ul>
-<li><strong>HTML Modification:</strong> Added <code class="language-css">background-color: #444;</code> to the inline <code class="language-html">style</code> attribute of the parent <code class="language-html">&lt;div&gt;</code>.</li>
+<li><strong>Purpose:</strong> This is the <strong>root element</strong> of the entire HTML document. All other elements (except the DOCTYPE) must be descendants of the <code class="language-html">&lt;html&gt;</code> element. It acts as the main container for the entire page structure.</li>
+<li><strong>Syntax:</strong> It requires both an opening tag <code class="language-html">&lt;html&gt;</code> and a closing tag <code class="language-html">&lt;/html&gt;</code>.</li>
+<li><strong>Content:</strong> It typically contains exactly two direct children:<ol>
+<li>A <code class="language-html">&lt;head&gt;</code> element.</li>
+<li>A <code class="language-html">&lt;body&gt;</code> element.</li>
+</ol>
+</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;CSS Inheritance Demo&lt;/h1&gt;
-
-  &lt;!-- Pruned previous cascade examples --&gt;
-
-  &lt;div style=&quot;color: mediumpurple; border: 1px solid grey; padding: 10px; background-color: #444;&quot;&gt; &lt;!-- Added background-color --&gt;
-    This text is directly inside the div (inherits color).
-    &lt;p&gt;This paragraph is inside the div.&lt;/p&gt; &lt;!-- Child P --&gt;
-  &lt;/div&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>Non-Inherited Properties</strong></p>
-<ul>
-<li>As mentioned, most properties related to an element&#39;s box model (size, spacing, borders, background) are <strong>not</strong> inherited by default.</li>
-<li>If you want a child element to have the same background or border as its parent, you generally need to apply those styles directly to the child element as well (or use special CSS values like <code class="language-css">transparent</code> or <code class="language-css">currentColor</code> in specific scenarios).</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the parent <code class="language-html">&lt;div&gt;</code>. It now has a dark gray (<code class="language-css">#444</code>) background, in addition to its border, padding, and purple text color.</li>
-<li>👀 Observe the child <code class="language-html">&lt;p&gt;</code>. Its text is still medium purple (inherited <code class="language-css">color</code>). However, the paragraph itself does <strong>not</strong> have the dark gray background. Its background remains transparent, showing the main page background (<code class="language-css">#2e2e2e</code> from the <code class="language-css">body</code> style) <em>through</em> the parent <code>div</code>&#39;s padding area, but the text sits <em>on top</em> of the parent div&#39;s dark gray background.</li>
-<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools. Look for the <code class="language-css">background-color</code> property in the Styles pane. You won&#39;t see the <code>#444</code> value listed as inherited; the browser simply doesn&#39;t pass that property down by default.</li>
-</ul>
-<p>This clearly illustrates the difference between inheritable properties (like <code class="language-css">color</code>) and non-inheritable properties (like <code class="language-css">background-color</code>, <code class="language-css">border</code>, <code class="language-css">padding</code>). Understanding this distinction is crucial for predicting how styles propagate through your document.</p>
+<p>Think of <code class="language-html">&lt;html&gt;...&lt;/html&gt;</code> as wrapping everything that constitutes your actual web page content and metadata.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

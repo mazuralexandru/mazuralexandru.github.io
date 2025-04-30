@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>284. Border Fundamentals: Purpose</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Moving further out in the box model, we encounter the <strong>Border</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> The border provides a visible line or outline around an element&#39;s padding edge. It visually separates the element&#39;s internal space (content + padding) from the external space (margin).</li>
+<li><strong>Core Components:</strong> To make a border visible, you generally need to define three things:<ol>
+<li><strong>Width:</strong> How thick the line is.</li>
+<li><strong>Style:</strong> What kind of line it is (solid, dotted, dashed, etc.).</li>
+<li><strong>Color:</strong> The color of the line.</li>
+</ol>
+</li>
+<li><strong>Default:</strong> By default, elements have <code class="language-css">border-style: none;</code> and <code class="language-css">border-width: 0;</code>, meaning no border is visible.</li>
+</ul>
+<p>Borders are commonly used for outlining containers, creating visual separation, styling buttons, or as decorative elements.</p>
+<p>👀 Look at the <code class="language-css">.box</code> rule in <code class="language-text">style.css</code>. It currently has a <code class="language-css">background-color</code> and <code class="language-css">padding</code>, but no <code class="language-css">border</code> defined, so no border line is visible around the blue background.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

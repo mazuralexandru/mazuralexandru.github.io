@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>198. Relative Unit: <code class="language-css">rem</code> (Root Em)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <strong>rem (<code class="language-css">rem</code>)</strong> unit stands for &quot;root em&quot;. It is relative to the <strong><code class="language-css">font-size</code> of the root element (<code class="language-html">&lt;html&gt;</code>) only</strong>.</p>
+<ul>
+<li><strong>Meaning:</strong> <code class="language-css">1rem</code> equals the font size set on the <code class="language-html">&lt;html&gt;</code> element. <code class="language-css">2rem</code> is twice the root font size, <code class="language-css">0.5rem</code> is half. The browser&#39;s default root font size is typically 16px, so <code class="language-css">1rem</code> often defaults to 16px unless overridden on the <code class="language-html">&lt;html&gt;</code> tag.</li>
+<li><strong>Key Advantage:</strong> Unlike <code class="language-css">em</code>, <code class="language-css">rem</code> values <strong>do not compound</strong> based on parent element font sizes. <code class="language-css">1.5rem</code> will always mean 1.5 times the root font size, regardless of how deeply the element is nested or what font sizes its parents have.</li>
+<li><strong>Use Cases:</strong><ul>
+<li><strong>Highly recommended for setting <code class="language-css">font-size</code></strong> on elements throughout the page. This allows the entire page&#39;s text to scale proportionally if the user changes their browser&#39;s base font size (which typically affects the root <code class="language-html">&lt;html&gt;</code> font size).</li>
+<li>Often used for setting global spacing values (<code class="language-css">padding</code>, <code class="language-css">margin</code>) to maintain a consistent scale relative to the base font size.</li>
+</ul>
+</li>
+<li><strong>Pros:</strong> Predictable scaling, avoids compounding issues of <code class="language-css">em</code>, respects user font size preferences (good for accessibility).</li>
+<li><strong>Cons:</strong> Requires understanding the root font size (often 16px by default, but can be changed).</li>
+</ul>
+<p>Example:</p>
+<pre class="language-css"><code class="language-css">html { 
+  font-size: 16px; /* Explicitly set root font size (or rely on browser default) */
+} 
+body {
+  font-size: 1rem; /* Equivalent to 16px */
+}
+h1 {
+  font-size: 2rem; /* Equivalent to 32px */
+  margin-bottom: 1rem; /* Equivalent to 16px margin */
+}
+div {
+  font-size: 1.2rem; /* Equivalent to 19.2px */
+}
+div p {
+  font-size: 1rem; /* Still 16px, NOT 1.2 * 16px */
+  padding: 1rem; /* 16px padding */
+}
+</code></pre>
+<p><strong>Recommendation:</strong> Use <code class="language-css">rem</code> for most font sizes and often for margins/padding to create accessible, scalable interfaces. Use <code class="language-css">em</code> when you specifically need sizing relative to the element&#39;s <em>own</em> font size (e.g., padding around text). Use <code class="language-css">px</code> for fixed small values like borders.</p>
+<p>👀 We are not currently using <code class="language-css">rem</code> units in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

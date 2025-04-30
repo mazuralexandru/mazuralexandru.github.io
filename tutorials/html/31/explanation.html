@@ -9,47 +9,28 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>31. Using Attribute Selectors: Presence</h1>
-<p>The simplest attribute selector targets elements based merely on the <strong>presence</strong> of an attribute, regardless of its value. Let&#39;s use this to style the input field that has the <code class="language-html">required</code> attribute.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>31. Case Sensitivity</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Are HTML tags and attributes case-sensitive?</p>
+<p>According to the HTML specification, tag names and attribute names are <strong>case-insensitive</strong>. This means <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;P&gt;</code>, and <code class="language-html">&lt;p&gt;</code> are technically treated the same by the browser. Likewise, <code class="language-html">class=&quot;info&quot;</code> and <code class="language-html">CLASS=&quot;info&quot;</code> are equivalent.</p>
+<p><strong>However:</strong></p>
 <ul>
-<li><strong>CSS Pruning:</strong> We&#39;ve commented out the rules for <code class="language-css">h2</code> and <code class="language-css">#main-content</code> as those elements were removed.</li>
-<li><strong>CSS Addition:</strong> We added a new CSS rule using the presence attribute selector <code class="language-css">[required]</code> to <code class="language-text">style.css</code>.</li>
+<li><strong>Best Practice:</strong> The universally accepted convention and strong recommendation is to write all HTML tag and attribute names in <strong>lowercase</strong>.</li>
+<li><strong>Readability:</strong> Lowercase is generally easier to read.</li>
+<li><strong>Consistency:</strong> Sticking to lowercase ensures consistency within your code and when working with others.</li>
+<li><strong>XHTML:</strong> Older standards like XHTML <em>required</em> lowercase. While HTML5 is more lenient, maintaining lowercase is good practice.</li>
+<li><strong>Attribute Values:</strong> Note that the <em>values</em> of some attributes (like <code class="language-html">id</code> and <code class="language-html">class</code>) <em>can</em> be case-sensitive, especially when referenced by CSS or JavaScript.</li>
 </ul>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Removed H2 rule as element was pruned */
-/* Removed ID Selector rule as element was pruned */
-
-/* Added Presence Attribute Selector rule */
-[required] {
-  border: 2px solid orange;
-  background-color: #444; /* Darker background for input */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Attribute Presence Selector (<code>[attribute]</code>)</strong></p>
-<ul>
-<li><strong>Syntax:</strong> The attribute name enclosed in square brackets <code class="language-css">[]</code> (e.g., <code class="language-css">[required]</code>, <code class="language-css">[disabled]</code>, <code class="language-css">a[target]</code>).</li>
-<li><strong>Scope:</strong> Selects all elements that have the specified attribute present, no matter what its value is (or even if it&#39;s a boolean attribute like <code class="language-html">required</code> that doesn&#39;t technically need a value).</li>
-<li><strong>Use Cases:</strong> Styling elements based on their state (e.g., disabled buttons, required fields), targeting elements that have a specific attribute set (like links with targets).</li>
-</ul>
-<p>In our example, <code class="language-css">[required]</code> targets any element with the <code class="language-html">required</code> attribute. We&#39;re applying an orange border and a darker background color to it.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Look at the two input fields. The second input (Email), which has the <code class="language-html">required</code> attribute, should now have a distinct <strong>orange border</strong> and a slightly darker background (<code class="language-css">#444</code>).</li>
-<li>👀 The first input (Username), which does <em>not</em> have the <code class="language-html">required</code> attribute, remains unchanged with its default browser styling.</li>
-<li>✅ Inspect the email input in DevTools. The Styles pane will show the <code class="language-css">[required] { ... }</code> rule being applied because the element possesses the <code class="language-html">required</code> attribute.</li>
-</ul>
-<p>This demonstrates how presence attribute selectors let you target elements based on whether they simply <em>have</em> a certain attribute. Next, we&#39;ll look at selecting based on the attribute&#39;s exact value.</p>
+<p><strong>Rule:</strong> Always use lowercase for HTML tags and attributes.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

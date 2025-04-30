@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>326. <code class="language-css">overflow</code> Value: <code class="language-css">auto</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">auto</code> value is often the most practical choice for handling overflow.</p>
+<ul>
+<li><strong>Behavior:</strong> Content that extends beyond the element&#39;s padding edge is clipped. The browser displays scrollbars <strong>only if the content actually overflows</strong> in that direction (vertically or horizontally).</li>
+<li><strong>Effect:</strong> Provides access to overflowing content via scrolling when needed, but avoids displaying unnecessary scrollbars if the content fits within the box. This generally leads to a cleaner appearance than <code class="language-css">scroll</code>.</li>
+<li><strong>Use Case:</strong> The most common value used when you want to contain content within a fixed-size box but allow users to access it if it&#39;s too large. Ideal for scrollable content areas, code blocks, etc.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve changed <code class="language-css">overflow: scroll;</code> to <code class="language-css">overflow: auto;</code> in the <code class="language-css">.overflow-box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.overflow-box {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid orange;
+  background-color: rgba(0, 0, 100, 0.2);
+  margin-bottom: 1em; 
+  /* overflow: scroll; */
+  overflow: auto; /* Show scrollbars only if needed */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The text content is still clipped.</li>
+<li>You should see a <strong>vertical scrollbar</strong> because the text content overflows the 100px height.</li>
+<li>You should <strong>not</strong> see a horizontal scrollbar (unless a word is exceptionally long and <code class="language-css">overflow-wrap</code> isn&#39;t set), because the text wraps naturally within the 200px width and doesn&#39;t overflow horizontally. <code class="language-css">auto</code> intelligently shows scrollbars only where necessary.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

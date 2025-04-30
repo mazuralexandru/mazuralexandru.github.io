@@ -9,99 +9,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>63. Text Styling: <code>letter-spacing</code> and <code>word-spacing</code></h1>
-<p>You can adjust the spacing <em>between</em> characters using <code class="language-css">letter-spacing</code> and <em>between</em> words using <code class="language-css">word-spacing</code>.</p>
-<p><strong>What&#39;s New?</strong></p>
-<ul>
-<li><strong>HTML Pruning:</strong> Removed the line-height demo paragraphs.</li>
-<li><strong>HTML Addition:</strong> Added paragraphs with classes <code class="language-html">letter-space</code> and <code class="language-html">word-space</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.lh-*</code> rules.</li>
-<li><strong>CSS Addition:</strong> Added rules applying <code class="language-css">letter-spacing</code> and <code class="language-css">word-spacing</code>.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Letter &amp; Word Spacing Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous line-height examples --&gt;
-
-  &lt;p&gt;Default spacing for comparison.&lt;/p&gt;
-  &lt;p class=&quot;letter-space&quot;&gt;This text has increased letter spacing (tracking).&lt;/p&gt; &lt;!-- Added letter-spacing P --&gt;
-  &lt;p class=&quot;word-space&quot;&gt;This text has increased word spacing.&lt;/p&gt; &lt;!-- Added word-spacing P --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Pruned line-height rules */
-/* .lh-* { ... } */
-
-/* Letter &amp; Word Spacing Demo */
-p {
-  margin-bottom: 15px; /* Add default spacing below paragraphs */
-  font-size: 1.1rem; /* Make text slightly larger */
-}
-
-.letter-space {
-  letter-spacing: 3px; /* Increase space between letters */
-  /* Negative values are also possible, e.g., -1px */
-}
-
-.word-space {
-  word-spacing: 10px; /* Increase space between words */
-  /* Negative values are also possible */
-}
-
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>Spacing Properties Explained</strong></p>
-<ul>
-<li><strong><code>letter-spacing</code>:</strong><ul>
-<li><strong>Purpose:</strong> Adjusts the space between individual characters of text (also known as &quot;tracking&quot; in typography).</li>
-<li><strong>Values:</strong> Accepts <code>&lt;length&gt;</code> units (<code>px</code>, <code>em</code>, <code>rem</code>).<ul>
-<li>Positive values increase space, making text wider.</li>
-<li>Negative values decrease space (kerning), making text tighter.</li>
-</ul>
-</li>
-<li><strong>Use Cases:</strong> Can be used subtly for headings or logos, but excessive positive or negative spacing drastically reduces readability for body text. <code>normal</code> is the default.</li>
-</ul>
-</li>
-<li><strong><code>word-spacing</code>:</strong><ul>
-<li><strong>Purpose:</strong> Adjusts the space <em>in addition to the default space</em> between words.</li>
-<li><strong>Values:</strong> Accepts <code>&lt;length&gt;</code> units (<code>px</code>, <code>em</code>, <code>rem</code>).<ul>
-<li>Positive values add extra space between words.</li>
-<li>Negative values reduce space between words.</li>
-</ul>
-</li>
-<li><strong>Use Cases:</strong> Generally used sparingly. Can sometimes be adjusted subtly for justified text or specific design effects. <code>normal</code> is the default (represents the standard space character width).</li>
-</ul>
-</li>
-</ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li>We have a default paragraph for comparison.</li>
-<li><code>.letter-space</code> adds <code>3px</code> of extra space between each character.</li>
-<li><code>.word-space</code> adds <code>10px</code> of extra space between each word.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Compare the second paragraph (<code>.letter-space</code>) to the first. The letters within words should appear noticeably spread out.</li>
-<li>👀 Compare the third paragraph (<code>.word-space</code>) to the first. The gaps between the words should be significantly wider.</li>
-<li>🔬 <strong>Experiment:</strong> Try using negative values for <code>letter-spacing</code> (e.g., <code>-1px</code>) or <code>word-spacing</code> (e.g., <code>-3px</code>). Observe how the text becomes tighter. Be cautious, as negative values can quickly make text unreadable.</li>
-</ul>
-<p>Use <code>letter-spacing</code> and <code>word-spacing</code> with moderation, primarily for stylistic effects on headings or short text runs, rather than applying large values to body copy.</p>
+  <h1>63. Essential Metadata: Title &amp; Character Set</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While our current <code class="language-text">index.html</code> is structurally valid, it&#39;s missing two crucial pieces of metadata that should be present in virtually every web page:</p>
+<ol>
+<li><strong>The Document Title (<code class="language-html">&lt;title&gt;</code>):</strong> Defines the text that appears in the browser tab or window title bar.</li>
+<li><strong>Character Encoding Declaration (<code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code>):</strong> Ensures the browser correctly interprets the characters used in the document.</li>
+</ol>
+<p>These elements belong inside the <code class="language-html">&lt;head&gt;</code> section. Let&#39;s explore the <code class="language-html">&lt;title&gt;</code> element first.</p>
+<p>👀 Look at the current <code class="language-text">index.html</code>. Notice the <code class="language-html">&lt;head&gt;</code> section is where we&#39;ll add these elements.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

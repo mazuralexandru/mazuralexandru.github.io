@@ -1,0 +1,16 @@
+/* Removed previous lesson styles */
+
+.box {
+  width: auto; /* Let width be determined by content/container */
+  height: auto; /* Let height adjust to content (default) */
+  min-width: 200px; /* Ensure box is at least 200px wide */
+  max-width: 400px; /* Prevent box from getting wider than 400px */
+  min-height: 150px; /* Ensure box is at least 150px tall */
+  max-height: 200px; /* Prevent box from growing taller than 200px */
+  overflow: auto; /* Add scrollbars if content overflows */
+  background-color: cornflowerblue; /* Make it visible */
+  padding-top: 20px; /* Added specific top padding */
+  padding-right: 5px; /* Added specific right padding */
+  padding-bottom: 15px; /* Added specific bottom padding */
+  margin: 1em auto; /* Center the box for better visibility */
+}

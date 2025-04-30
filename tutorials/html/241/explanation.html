@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>241. <code class="language-html">&lt;small&gt;</code>, <code class="language-html">&lt;sup&gt;</code>, <code class="language-html">&lt;sub&gt;</code>: CSS Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>You can, of course, override the default styling of these elements using CSS.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added rules to customize <code class="language-css">small</code>, <code class="language-css">sup</code>, and <code class="language-css">sub</code>.</li>
+<li>We make <code class="language-css">small</code> slightly opaque.</li>
+<li>We change the color and slightly adjust the default vertical alignment for <code class="language-css">sup</code> and <code class="language-css">sub</code> using <code class="language-css">position: relative</code> and <code class="language-css">top</code>/<code class="language-css">bottom</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Styling Other Inline Semantics */
+small {
+  opacity: 0.8; /* Make small text slightly faded */
+}
+
+sup {
+  color: skyblue;
+  font-size: 0.75em; /* Ensure it&#39;s smaller */
+  vertical-align: baseline; /* Reset default */
+  position: relative; /* Allow offset */
+  top: -0.5em; /* Adjust vertical position */
+}
+
+sub {
+  color: lightcoral;
+  font-size: 0.75em; /* Ensure it&#39;s smaller */
+  vertical-align: baseline; /* Reset default */
+  position: relative; /* Allow offset */
+  bottom: -0.3em; /* Adjust vertical position */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The &quot;small print&quot; text should now be slightly faded (<code class="language-css">opacity</code>).</li>
+<li>The superscript &quot;st&quot; should now be sky blue and potentially positioned slightly differently due to the explicit offset.</li>
+<li>The subscript &quot;2&quot; should now be light coral and potentially positioned slightly differently.</li>
+</ul>
+<p>This demonstrates customizing the appearance beyond the browser defaults while still using the semantically appropriate HTML tags.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

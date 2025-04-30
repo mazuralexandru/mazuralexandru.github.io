@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>307. Margin Collapsing: Rules &amp; Exceptions</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Margin collapsing can seem complex, but here&#39;s a summary of the key rules and when collapsing <em>doesn&#39;t</em> happen:</p>
+<p><strong>Collapsing Occurs Between:</strong></p>
+<ol>
+<li><strong>Adjacent Siblings:</strong> Top margin of one block collapses with the bottom margin of the preceding block.</li>
+<li><strong>Parent and First/Last Child:</strong> Parent&#39;s top margin collapses with first child&#39;s top margin (if no top border/padding/inline content/clearance on parent). Parent&#39;s bottom margin collapses with last child&#39;s bottom margin (if no bottom border/padding/inline content and parent height is <code class="language-css">auto</code>).</li>
+<li><strong>Empty Blocks:</strong> An empty block&#39;s own top and bottom margins collapse (if no border/padding/height/content).</li>
+</ol>
+<p><strong>Collapsing Does NOT Occur:</strong></p>
+<ul>
+<li><strong>Horizontally:</strong> Left and right margins never collapse.</li>
+<li><strong>With Padding/Borders:</strong> If there is any padding or border separating the margins, they won&#39;t collapse (e.g., adding <code class="language-css">padding-top: 1px;</code> or <code class="language-css">border-top: 1px solid transparent;</code> to the parent prevents parent/child top margin collapse).</li>
+<li><strong>With Inline Content:</strong> If there is any inline content (even a non-breaking space <code class="language-html">&amp;nbsp;</code>) between the margins (e.g., text directly inside the parent before the first child).</li>
+<li><strong>For Floated Elements:</strong> Margins of floated elements do not collapse with other margins.</li>
+<li><strong>For Absolutely Positioned Elements:</strong> Margins of absolutely positioned elements do not collapse.</li>
+<li><strong>For Inline-Block Elements:</strong> Margins of inline-block elements do not collapse with other margins (though their own top/bottom margins don&#39;t collapse with adjacent block margins either).</li>
+<li><strong>For Elements with <code class="language-css">overflow</code> other than <code class="language-css">visible</code>:</strong> Setting <code class="language-css">overflow: hidden;</code>, <code class="language-css">scroll;</code>, or <code class="language-css">auto;</code> on a parent prevents its margins from collapsing with its children&#39;s margins (as seen in our parent/child example).</li>
+<li><strong>For Flexbox/Grid Items:</strong> Margins of flex items or grid items do not collapse with each other or with their container margins.</li>
+</ul>
+<p><strong>Dealing with Collapse:</strong></p>
+<ul>
+<li>Often, collapsing is the desired behavior for paragraph spacing.</li>
+<li>If it causes issues (e.g., child margin &quot;escaping&quot; parent), use techniques to prevent it: add minimal padding/border to the parent, set <code class="language-css">overflow</code> on the parent, or use layout methods like Flexbox/Grid where collapsing doesn&#39;t occur.</li>
+</ul>
+<p>👀 Review the parent/child example in <code class="language-text">style.css</code>. The <code class="language-css">overflow: hidden;</code> on <code class="language-css">.parent</code> is currently preventing the collapse between the parent&#39;s top margin and the child&#39;s top margin.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

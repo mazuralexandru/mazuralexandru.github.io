@@ -9,103 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>53. CSS Colors: <code>currentColor</code> Keyword</h1>
-<p>CSS provides a special keyword, <code class="language-css">currentColor</code>, which acts as a variable representing the <strong>computed value of the element&#39;s own <code>color</code> property</strong>. This is incredibly useful for making other properties (like borders or SVG fills) automatically match the text color.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>53. Component 3: <code class="language-html">&lt;head&gt;</code> Element</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Inside the <code class="language-html">&lt;html&gt;</code> element, the first child is typically the <code class="language-html">&lt;head&gt;</code> element.</p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the HSL demo box.</li>
-<li><strong>HTML Addition:</strong> Added a <code class="language-html">&lt;button&gt;</code> element with a class <code class="language-html">color-button</code>.</li>
-<li><strong>CSS Pruning:</strong> Removed the <code class="language-css">.hsl-box</code> rule.</li>
-<li><strong>CSS Addition:</strong> Added rules for <code class="language-css">.color-button</code>, using <code class="language-css">currentColor</code> for its border.</li>
+<li><strong>Purpose:</strong> The <code class="language-html">&lt;head&gt;</code> section acts as a container for <strong>metadata</strong> – information <em>about</em> the HTML document, rather than the visible content itself.</li>
+<li><strong>Content:</strong> Contains elements that define the document&#39;s title, character set, links to stylesheets (CSS), scripts (JavaScript), and other meta-information used by browsers, search engines, and other web services.</li>
+<li><strong>Visibility:</strong> Content within the <code class="language-html">&lt;head&gt;</code> is <strong>not displayed</strong> directly on the web page (except for the <code class="language-html">&lt;title&gt;</code>, which appears in the browser tab/window title bar).</li>
+<li><strong>Syntax:</strong> Requires an opening <code class="language-html">&lt;head&gt;</code> and closing <code class="language-html">&lt;/head&gt;</code> tag.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;currentColor Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;!-- Pruned previous HSL example --&gt;
-
-  &lt;button class=&quot;color-button&quot;&gt;Click Me&lt;/button&gt; &lt;!-- Added button --&gt;
-
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-h1 {
-  color: lightblue;
-}
-
-/* Pruned HSL rule */
-/* .hsl-box { ... } */
-
-
-/* currentColor Demo */
-.color-button {
-  color: mediumturquoise; /* Set the text color */
-  background-color: transparent; /* Make background transparent */
-  border: 2px solid currentColor; /* Border color MATCHES text color */
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  margin-top: 15px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Example: Style on hover */
-.color-button:hover {
-  color: darkslategray; /* Change text color on hover */
-  background-color: mediumturquoise; /* Use original text color as background */
-  /* border-color automatically updates because it uses currentColor! */
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong><code>currentColor</code> Explained</strong></p>
-<ul>
-<li><strong>Value:</strong> It&#39;s a dynamic value that resolves to whatever the element&#39;s computed <code class="language-css">color</code> property is.</li>
-<li><strong>Inheritance:</strong> If an element doesn&#39;t have a <code class="language-css">color</code> set directly, <code class="language-css">currentColor</code> will represent the inherited color value.</li>
-<li><strong>Use Cases:</strong><ul>
-<li><strong>Borders:</strong> Making borders automatically match the text color (<code class="language-css">border: 1px solid currentColor;</code>).</li>
-<li><strong>Backgrounds:</strong> Less common, but possible.</li>
-<li><strong>Shadows:</strong> <code class="language-css">box-shadow: 2px 2px 5px currentColor;</code></li>
-<li><strong>SVG Styling:</strong> Setting the <code class="language-css">fill</code> or <code class="language-css">stroke</code> of SVG icons to <code class="language-css">currentColor</code> allows them to adopt the text color of their surrounding context, making them easy to theme.</li>
-<li><strong>Gradients:</strong> Using it within <code class="language-css">linear-gradient()</code>.</li>
-</ul>
-</li>
-</ul>
-<p><strong>In Our Example:</strong></p>
-<ul>
-<li>We set the button&#39;s text <code class="language-css">color</code> to <code class="language-css">mediumturquoise</code>.</li>
-<li>We set <code class="language-css">border: 2px solid currentColor;</code>. This means the border color will automatically become <code>mediumturquoise</code>.</li>
-<li>In the <code>:hover</code> state (a pseudo-class we&#39;ll cover later, it styles the element when the mouse is over it):<ul>
-<li>We change the text <code class="language-css">color</code> to <code class="language-css">darkslategray</code>.</li>
-<li>Because the border uses <code class="language-css">currentColor</code>, the border color will <strong>automatically update</strong> to <code>darkslategray</code> as well, without us needing to explicitly redeclare <code class="language-css">border-color: darkslategray;</code>!</li>
-<li>We also set the hover <code class="language-css">background-color</code> to the original text color (<code class="language-css">mediumturquoise</code>) for effect.</li>
-</ul>
-</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You should see a button with turquoise text and a turquoise border.</li>
-<li>🔬 <strong>Hover Experiment:</strong> Move your mouse pointer over the button.<ul>
-<li>👀 The text color should change to dark gray.</li>
-<li>👀 The <strong>border color</strong> should <em>also</em> change to dark gray, automatically matching the new text color because it uses <code class="language-css">currentColor</code>.</li>
-<li>👀 The background should become turquoise.</li>
-</ul>
-</li>
-<li>✅ Inspect the button in DevTools. Look at the computed styles for <code>border-color</code>. In the normal state, it will resolve to the turquoise color. In the <code>:hover</code> state (you might need to use the DevTools interface to force the hover state), it will resolve to the dark gray color.</li>
-</ul>
-<p><code class="language-css">currentColor</code> is a powerful tool for creating dynamic relationships between colors in your CSS, reducing redundancy and making theming easier.</p>
+<p>Think of the <code class="language-html">&lt;head&gt;</code> as the &quot;control panel&quot; or &quot;information desk&quot; for your web page.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

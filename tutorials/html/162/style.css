@@ -1,0 +1,37 @@
+/* CSS comments explain or temporarily disable styles */
+
+/* 
+   This is a multi-line CSS comment.
+   It can span several lines. 
+*/
+
+#main-heading {
+    color: cornflowerblue; 
+    text-decoration: underline; 
+}
+
+.highlight-text {
+  background-color: #4d4d00; 
+  color: #1a1a1a; 
+  padding: 5px; 
+}
+
+/* --- Attribute Selector Examples --- */
+
+/* Style paragraphs that have a title attribute */
+p[title] {
+  border: 1px dotted gray;
+}
+
+/* Style links that open in a new tab */
+a[target="_blank"] {
+  color: cyan;
+}
+
+/* Add a small icon after external links (using pseudo-elements) */
+a[target="_blank"]::after {
+  content: ' \2197'; /* Unicode for North East Arrow */
+  font-size: 0.8em;
+  display: inline-block; /* Allows positioning */
+  margin-left: 3px;
+}

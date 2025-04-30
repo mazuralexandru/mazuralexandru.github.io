@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>81. Benefits of Separation (CSS)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s re-emphasize the benefits of separating CSS from HTML:</p>
+<ul>
+<li><strong>HTML focuses on Meaning:</strong> Your <code class="language-text">index.html</code> file describes <em>what</em> the content is (a heading, a paragraph, a list) using semantic tags. It doesn&#39;t worry about <em>how</em> it looks.</li>
+<li><strong>CSS focuses on Appearance:</strong> Your <code>.css</code> files (<code class="language-text">base_styles.css</code>, <code class="language-text">style.css</code>) define the visual rules – colors, fonts, layout, etc.</li>
+<li><strong>Easier Updates:</strong><ul>
+<li>Change content structure? Edit the HTML.</li>
+<li>Change visual style? Edit the CSS.</li>
+<li>The two don&#39;t interfere with each other directly.</li>
+</ul>
+</li>
+<li><strong>Code Reusability:</strong> A single CSS file can style many HTML pages.</li>
+<li><strong>Teamwork:</strong> Designers can work on CSS while content creators work on HTML.</li>
+<li><strong>Accessibility &amp; Flexibility:</strong> Allows users or different devices (like printers) to use alternative stylesheets if needed.</li>
+</ul>
+<p>This separation is a cornerstone of modern, professional web development.</p>
+<p>✅ View <code class="language-text">base_styles.css</code> again. Notice how it targets the <code class="language-html">body</code> element defined in <code class="language-text">index.html</code> but lives in its own file, demonstrating this separation.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

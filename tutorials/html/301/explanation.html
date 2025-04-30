@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>301. Longhand Margin Properties: Values</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s recap the values accepted by the individual margin properties (<code class="language-css">margin-top</code>, <code class="language-css">margin-right</code>, <code class="language-css">margin-bottom</code>, <code class="language-css">margin-left</code>):</p>
+<ol>
+<li><p><strong>Length Units:</strong></p>
+<ul>
+<li><code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, etc. Define fixed or relative spacing. Negative values are allowed (e.g., <code class="language-css">margin-top: -10px;</code> pulls the element up).</li>
+</ul>
+</li>
+<li><p><strong>Percentages (<code class="language-css">%</code>):</strong></p>
+<ul>
+<li>Calculated relative to the <strong>width</strong> of the element&#39;s <strong>containing block</strong>, even for <code class="language-css">margin-top</code> and <code class="language-css">margin-bottom</code>.</li>
+<li>Example: <code class="language-css">margin-left: 5%;</code></li>
+</ul>
+</li>
+<li><p><strong><code class="language-css">auto</code>:</strong></p>
+<ul>
+<li>The browser calculates the margin.</li>
+<li>Most significantly, when applied to horizontal margins (<code class="language-css">margin-left: auto; margin-right: auto;</code>) on a block element with an explicit <code class="language-css">width</code>, it centers the element horizontally within its container.</li>
+<li>On its own (e.g., just <code class="language-css">margin-left: auto;</code>), it typically pushes the element as far as possible in the opposite direction (e.g., <code class="language-css">margin-left: auto;</code> pushes the element to the right).</li>
+<li>For vertical margins, <code class="language-css">auto</code> usually resolves to <code class="language-css">0</code>.</li>
+</ul>
+</li>
+</ol>
+<p>The default value for all margin properties is <code class="language-css">0</code>.</p>
+<p>👀 Review the <code class="language-css">.box</code> rule in <code class="language-text">style.css</code>. We are currently using <code class="language-css">em</code> and <code class="language-css">px</code> values for the longhand margin properties.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

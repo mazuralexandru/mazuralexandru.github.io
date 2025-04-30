@@ -1,0 +1,183 @@
+/* CSS comments explain or temporarily disable styles */
+
+/* 
+   This is a multi-line CSS comment.
+   It can span several lines. 
+*/
+
+#main-heading {
+    color: cornflowerblue; 
+    text-decoration: underline; 
+    font-family: "Georgia", Times, serif; /* Added font stack */
+    font-style: italic; /* Apply italic only to heading now */
+    text-align: center; /* Center the heading */
+    letter-spacing: 2px; /* Add space between letters */
+    text-transform: uppercase; /* Make heading uppercase */
+    /* Add a simple black drop shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.highlight-text {
+  background-color: #4d4d00; 
+  color: #1a1a1a; /* Overridden by .container > p */
+  padding: 5px; 
+  line-height: 1.8; /* Increase line spacing */
+  word-spacing: 0.5em; /* Add extra space between words */
+  overflow-wrap: break-word; /* Allow breaking long words */
+  /* font-style: italic; <- No longer applied via group */
+}
+
+/* --- Attribute Selector Examples --- */
+/* Use currentColor for the border */
+p[title] {
+  border: 1px dotted currentColor; /* Border color now matches text color */
+}
+a[target="_blank"] {
+  color: cyan;
+}
+a[target="_blank"]::after {
+  content: ' \2197'; 
+  font-size: 0.8em; /* Kept em here as it relates to link size */
+  display: inline-block; 
+  margin-left: 3px;
+}
+
+/* --- Grouping Example --- */
+/* Grouping rule removed/modified as it only applied to #main-heading now, 
+   style moved directly to #main-heading rule above */
+
+
+/* --- Combinator Examples --- */
+
+/* Descendant Combinator Example */
+.container span {
+  font-weight: bold; 
+  border: inherit; /* Inherit border style from parent <p> */
+  font-size: 1.5rem; /* Changed to rem unit */
+  /* white-space: nowrap; <- Removed */
+  background-color: rgba(0, 0, 255, 0.2); /* Add background to see effect */
+}
+
+/* Child Combinator Example */
+.container > p {
+  border-left: 3px solid orange; /* Add orange left border to direct child paragraphs */
+  padding-left: 10px;
+  color: yellow; /* Added color (Specificity 0,0,1,1) - Wins */
+  text-indent: 2em; /* Indent first line of these paragraphs */
+}
+
+/* Adjacent Sibling Combinator Example */
+h1 + p {
+  margin-top: 5px; /* Reduce top margin only for paragraphs directly after an h1 */
+  color: lightgreen; /* Change color (Specificity 0,0,0,2) - Overridden by .container > p */
+  font-size: 0.9rem; /* Added font-size using rem */
+  font-weight: lighter; /* Make this paragraph lighter */
+}
+
+/* General Sibling Combinator Example - REMOVED */
+
+
+/* Specificity Example - REMOVED */
+
+
+/* Text Overflow Example */
+.ellipsis-example {
+  border: 1px dashed skyblue;
+  width: 250px; /* Constrain width */
+  padding: 5px;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide the overflowing text */
+  text-overflow: ellipsis; /* Show ... for overflow */
+}
+
+/* Vertical Align Example */
+.link-icon {
+  height: 1em; /* Size relative to font size */
+  vertical-align: middle; /* Align icon vertically with text */
+}
+
+/* Styling Semantic Elements */
+em {
+  font-style: normal; /* Remove default italic */
+  background-color: rgba(200, 200, 0, 0.3); /* Add subtle yellow background */
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+strong {
+  /* font-weight: bold; <- Already default, no need to redeclare unless changing */
+  color: orange; /* Change color from inherited */
+}
+
+/* Styling Recommendation: Use Classes for Presentation */
+.italic-text {
+  font-style: italic;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+/* Discourage use of <u> by making it obvious */
+u {
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* Styling Edit/Annotation Elements */
+del {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.1); /* Subtle red background */
+}
+
+ins {
+  color: green;
+  background-color: rgba(0, 255, 0, 0.1); /* Subtle green background */
+  text-decoration: none; /* Remove default underline */
+  padding: 0.1em 0.2em;
+}
+
+mark {
+  background-color: lightblue;
+  color: #333; /* Darker text on light blue */
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+
+/* Styling Other Inline Semantics */
+small {
+  opacity: 0.8; /* Make small text slightly faded */
+}
+
+sup {
+  color: skyblue;
+  font-size: 0.75em; /* Ensure it's smaller */
+  vertical-align: baseline; /* Reset default */
+  position: relative; /* Allow offset */
+  top: -0.5em; /* Adjust vertical position */
+}
+
+sub {
+  color: lightcoral;
+  font-size: 0.75em; /* Ensure it's smaller */
+  vertical-align: baseline; /* Reset default */
+  position: relative; /* Allow offset */
+  bottom: -0.3em; /* Adjust vertical position */
+}
+
+/* Styling for inline code */
+code { /* Targets inline code */
+  background-color: rgba(128, 128, 128, 0.2); /* Light gray background */
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em; /* Slightly smaller than surrounding text */
+}
+
+/* Styling for code blocks (inside pre) */
+pre code {
+  /* Reset styles applied by the general 'code' selector if needed */
+  background-color: transparent; 
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em; /* Inherit pre's font size */
+}

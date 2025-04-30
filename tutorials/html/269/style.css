@@ -1,0 +1,9 @@
+/* Removed previous lesson styles */
+
+.box {
+  width: 75%; /* Set width relative to container */
+  /* height: 100px; */ /* Changed from px */
+  height: auto; /* Let height adjust to content (default) */
+  background-color: cornflowerblue; /* Make it visible */
+  padding: 10px; /* Add some padding for later */
+}

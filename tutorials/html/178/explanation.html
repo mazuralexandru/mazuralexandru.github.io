@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>178. General Sibling Combinator (<code class="language-css">~</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <strong>General Sibling Combinator</strong> is represented by the tilde symbol (<code class="language-css">~</code>) between two selectors.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">element1 ~ element2</code></li>
+<li><strong>Meaning:</strong> Selects any element matching <code class="language-css">element2</code> only if it <strong>follows</strong> (not necessarily immediately) an element matching <code class="language-css">element1</code>, and both elements share the same parent.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule: <code class="language-css">p ~ a</code>. This selects any <code class="language-html">&lt;a&gt;</code> element that follows <em>any</em> <code class="language-html">&lt;p&gt;</code> element, provided they share the same parent. In our case, the <code class="language-html">&lt;a&gt;</code> (&quot;External Link&quot;) follows the <code class="language-html">&lt;div&gt;</code> container, they don&#39;t share the same parent (<code class="language-html">&lt;body&gt;</code> is the parent of both). Let&#39;s modify the selector to be more illustrative for our current structure. We&#39;ll change it to <code class="language-css">h1 ~ p</code> which selects any <code class="language-html">&lt;p&gt;</code> following an <code class="language-html">&lt;h1&gt;</code> if they share the same parent (<code class="language-html">.container</code> in this case).</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* General Sibling Combinator Example */
+/* Selects any &lt;p&gt; that follows an &lt;h1&gt; within the same parent */
+h1 ~ p {
+  text-decoration: line-through; /* Add line-through for demonstration */
+}
+
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the second paragraph (&quot;This paragraph follows the heading.&quot;). It should now have a <strong>line-through</strong> decoration applied, in addition to the light green color and reduced margin from the adjacent sibling (<code class="language-css">+</code>) selector.</li>
+<li>The first paragraph is <em>not</em> affected because it <em>precedes</em> the <code class="language-html">&lt;h1&gt;</code>.</li>
+<li>The <code class="language-css">~</code> combinator selects all siblings that come <em>after</em> the first element, whereas <code class="language-css">+</code> only selects the <em>immediately</em> following sibling.</li>
+</ul>
+<p>👀 Check the HTML structure in <code class="language-text">index.html</code>. The second <code class="language-html">&lt;p&gt;</code> follows the <code class="language-html">&lt;h1&gt;</code>, and both are children of <code class="language-html">.container</code>, so the <code class="language-css">h1 ~ p</code> selector matches it.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

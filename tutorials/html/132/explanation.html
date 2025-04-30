@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>132. Internal Stylesheets: Example</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Let&#39;s demonstrate an internal stylesheet. We&#39;ll move the rules currently in <code class="language-text">style.css</code> into a <code class="language-html">&lt;style&gt;</code> block within <code class="language-text">index.html</code>.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>!</strong></p>
+<ul>
+<li>A <code class="language-html">&lt;style&gt;</code> block has been added inside the <code class="language-html">&lt;head&gt;</code>.</li>
+<li>The CSS rules for <code class="language-css">h1</code> and <code class="language-css">p</code> (including the commented-out ones) are now inside this <code class="language-html">&lt;style&gt;</code> block.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;style&gt;
+      /* CSS rules moved here from style.css */
+      h1 {
+          color: cornflowerblue; /* Set heading color */
+          /* text-decoration: underline; */ /* Temporarily disable underlining */
+      }
+
+      p {
+          /* color: limegreen; */ /* Style currently commented out */
+      }
+    &lt;/style&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The appearance should be <strong>identical</strong> to the previous step. The <code class="language-html">&lt;h1&gt;</code> is still cornflowerblue, and the <code class="language-html">&lt;p&gt;</code> still uses the default text color. This shows that the browser applies styles from the internal <code class="language-html">&lt;style&gt;</code> block just as it did from the external file.</p>
+<p>🗑️ <strong>Code Pruning:</strong> Since we moved the styles, the <code class="language-text">style.css</code> file is now empty. We&#39;ve updated it to reflect this, although the <code class="language-html">&lt;link&gt;</code> tag for it remains in <code class="language-text">index.html</code> for now. In a real project, you&#39;d likely remove the link if the file became permanently empty.</p>
+<p>Next, we&#39;ll discuss the preferred method: external stylesheets.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

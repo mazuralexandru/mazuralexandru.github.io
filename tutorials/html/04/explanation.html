@@ -9,53 +9,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>04. Adding the Page Title</h1>
-<p>Let&#39;s give our page a proper title that appears in the browser tab or window. This is done using the <code class="language-html">&lt;title&gt;</code> element.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a <code class="language-html">&lt;title&gt;</code> element inside the <code class="language-html">&lt;head&gt;</code> section.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt; &lt;!-- Added title tag --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-</code></pre>
-<p><strong>The <code>&lt;title&gt;</code> Element</strong></p>
+  <h1>04. Role of Web Browsers (Rendering Engines)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Web browsers (Chrome, Firefox, Safari, Edge) are essential software that act as your window to the web. Their primary job is to:</p>
+<ol>
+<li>Fetch resources (HTML, CSS, JavaScript, images) from servers using HTTP/HTTPS.</li>
+<li>Interpret and <strong>render</strong> these resources into a visual web page you can interact with.</li>
+</ol>
+<p>The core component responsible for this interpretation and rendering is the <strong>Rendering Engine</strong> (also called the layout engine or browser engine). Different browsers use different engines:</p>
 <ul>
-<li><strong>Purpose:</strong> Defines the title of the HTML document. This is crucial metadata.</li>
-<li><strong>Placement:</strong> It <strong>must</strong> be placed inside the <code class="language-html">&lt;head&gt;</code> element. A document should have exactly one <code class="language-html">&lt;title&gt;</code> element.</li>
-<li><strong>Content:</strong> The text between the opening <code class="language-html">&lt;title&gt;</code> and closing <code class="language-html">&lt;/title&gt;</code> tags is the title itself. Only plain text is allowed here (no other HTML tags).</li>
-<li><strong>Where it Appears:</strong><ul>
-<li>Browser tab or window title bar.</li>
-<li>Browser bookmarks/favorites.</li>
-<li>Search engine results pages (SERPs) - often used as the main clickable link.</li>
+<li><strong>Blink:</strong> Used by Chrome, Edge, Opera, Brave. (Originally a fork of WebKit).</li>
+<li><strong>Gecko:</strong> Used by Firefox.</li>
+<li><strong>WebKit:</strong> Used by Safari. (Also the basis for Blink).</li>
 </ul>
-</li>
-<li><strong>Importance:</strong><ul>
-<li><strong>Usability:</strong> Helps users identify the page among multiple tabs.</li>
-<li><strong>Accessibility:</strong> Screen readers announce the title when the page loads, providing context.</li>
-<li><strong>SEO:</strong> Search engines weigh the title heavily for understanding the page&#39;s topic.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Best Practices for Titles:</strong></p>
-<ul>
-<li>Be descriptive and concise.</li>
-<li>Make it unique for each page on your website.</li>
-<li>Consider including relevant keywords, but prioritize clarity for users.</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Look at the browser tab where your page is previewed. You should now see &quot;My First Web Page&quot; displayed there, instead of the filename. This makes the page instantly identifiable.</li>
-<li>🔬 <strong>Experiment:</strong> Change the text inside the <code class="language-html">&lt;title&gt;</code> tags (e.g., to <code class="language-html">&lt;title&gt;Web Dev Basics&lt;/title&gt;</code>). Save the <code class="language-text">index.html</code> file and refresh the preview. Observe the browser tab update immediately.</li>
-</ul>
+<p>These engines parse the HTML to build a structure (the DOM tree), parse the CSS to determine styles, and execute JavaScript for interactivity. They then combine this information to paint the final pixels on your screen.</p>
+<p>Minor differences between engines can sometimes lead to websites appearing slightly differently across browsers, which is a challenge web developers manage.</p>
+<p>👀 Still looking at an empty <code class="language-text">index.html</code>. The browser&#39;s rendering engine is waiting for some code to process!</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

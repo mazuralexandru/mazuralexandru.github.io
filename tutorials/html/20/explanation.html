@@ -9,58 +9,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>20. Multiple Rules in Internal Stylesheets</h1>
-<p>You can add as many CSS rules as you need within a single <code class="language-html">&lt;style&gt;</code> block. Let&#39;s add another rule to style the paragraph (<code class="language-html">&lt;p&gt;</code>) element on the page.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>20. Linting Integration</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While formatters handle code <em>style</em>, <strong>Linters</strong> analyze your code for potential <em>errors</em>, bad practices, and stylistic issues <em>beyond</em> simple formatting.</p>
 <ul>
-<li>We added a second CSS ruleset, targeting the <code class="language-html">&lt;p&gt;</code> element, inside the <code class="language-html">&lt;style&gt;</code> block in <code class="language-text">index.html</code>.</li>
+<li><strong>HTMLHint / HTML Inspector:</strong> Linters for HTML, checking for things like invalid nesting, missing required attributes, accessibility issues.</li>
+<li><strong>Stylelint:</strong> A popular linter for CSS, checking for errors, enforcing conventions (e.g., property order, valid values), and preventing problematic patterns.</li>
+<li><strong>ESLint:</strong> The standard linter for JavaScript.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-  &lt;style&gt;
-    /* Internal CSS rules will go here */
-    h1 {
-      color: lightseagreen;
-      text-decoration: underline;
-    }
-    /* Added P rule */
-    p {
-      font-style: italic;
-      color: #bbb; /* Slightly lighter gray than default body text */
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-</code></pre>
-<p><strong>Applying Multiple Rules</strong></p>
+<p><strong>How it helps:</strong></p>
 <ul>
-<li>Just list the rulesets one after another within the <code class="language-html">&lt;style&gt;</code> tags.</li>
-<li>The new rule targets all <code class="language-html">&lt;p&gt;</code> elements on this page.</li>
-<li><code class="language-css">font-style: italic;</code> makes the paragraph text italic.</li>
-<li><code class="language-css">color: #bbb;</code> sets the paragraph text color to a specific light gray (<code class="language-css">#bbbbbb</code>), overriding the slightly darker gray (<code class="language-css">#E0E0E0</code>) inherited from the <code class="language-css">body</code> rule in the external <code class="language-text">style.css</code>.</li>
+<li><strong>Early Error Detection:</strong> Catches potential problems <em>before</em> you even run the code in a browser.</li>
+<li><strong>Enforces Best Practices:</strong> Helps you write higher-quality, more maintainable code.</li>
+<li><strong>Improves Consistency:</strong> Can enforce specific coding conventions across a project.</li>
 </ul>
-<p><strong>Internal Stylesheets: Recap</strong></p>
-<ul>
-<li><strong>Pros:</strong> Keeps styles for a single page together, allows use of selectors, better than inline styles for organization within a page.</li>
-<li><strong>Cons:</strong> Styles are not reusable across different HTML pages, still mixes presentation concerns within the HTML file structure.</li>
-</ul>
-<p>For multi-page websites or complex applications, <strong>external stylesheets</strong> (which we linked earlier but haven&#39;t used much yet beyond the base styles) are the preferred and standard approach. We&#39;ll revisit them next.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The paragraph text &quot;This paragraph will be styled soon.&quot; should now be italic and a slightly lighter gray color (<code class="language-css">#bbb</code>). The heading remains styled as before.</li>
-<li>✅ Inspect the <code class="language-html">&lt;p&gt;</code> element in DevTools.</li>
-<li>👀 In the Styles pane, you&#39;ll see the <code class="language-css">p { ... }</code> rule from the <code class="language-html">&lt;style&gt;</code> block being applied. You should also see the <code class="language-css">color: #E0E0E0</code> from the <code class="language-css">body</code> rule (in <code class="language-text">style.css</code>) crossed out, indicating it has been overridden by the more specific <code class="language-css">color: #bbb</code> rule applied directly to the <code class="language-html">&lt;p&gt;</code> element via the internal stylesheet.</li>
-</ul>
+<p>VS Code typically highlights linting errors directly in the editor (e.g., with squiggly underlines) and lists them in the &quot;Problems&quot; panel. Integrating linters (usually via extensions) is another key step towards professional development.</p>
+<p>👀 <code class="language-text">index.html</code> remains empty.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

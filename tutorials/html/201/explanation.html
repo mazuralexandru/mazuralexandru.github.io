@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>201. CSS Color Values: HSL/HSLA</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>HSL (Hue, Saturation, Lightness)</strong> and <strong>HSLA (adding Alpha)</strong> offer a more intuitive way to think about and manipulate colors compared to RGB or Hex, especially when creating variations.</p>
+<ul>
+<li><strong><code class="language-css">hsl(hue, saturation, lightness)</code></strong></li>
+<li><strong><code class="language-css">hsla(hue, saturation, lightness, alpha)</code></strong></li>
+</ul>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Hue:</strong> Represents the color itself as an angle on the color wheel (0 to 360 degrees).<ul>
+<li>0 or 360 = Red</li>
+<li>60 = Yellow</li>
+<li>120 = Green</li>
+<li>180 = Cyan</li>
+<li>240 = Blue</li>
+<li>300 = Magenta</li>
+</ul>
+</li>
+<li><strong>Saturation:</strong> Represents the intensity or purity of the color (percentage, 0% to 100%).<ul>
+<li>0% = Grayscale (no color, just a shade of gray)</li>
+<li>100% = Full, vivid color</li>
+</ul>
+</li>
+<li><strong>Lightness:</strong> Represents the brightness or luminance of the color (percentage, 0% to 100%).<ul>
+<li>0% = Black</li>
+<li>50% = The &quot;normal&quot; pure color</li>
+<li>100% = White</li>
+</ul>
+</li>
+<li><strong>Alpha (in HSLA):</strong> Represents the transparency (0 to 1).<ul>
+<li>0 = Fully transparent</li>
+<li>1 = Fully opaque</li>
+<li>0.5 = 50% transparent</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why Use HSL/HSLA?</strong></p>
+<ul>
+<li><strong>Intuitive Adjustments:</strong> It&#39;s easy to make predictable changes. Want a lighter version? Increase the lightness (<code class="language-css">L</code>). Want a less intense version? Decrease the saturation (<code class="language-css">S</code>). Want a different shade? Change the hue (<code class="language-css">H</code>). This is harder with RGB/Hex where all three components often need changing.</li>
+<li><strong>Creating Palettes:</strong> Useful for generating themes or color palettes programmatically or systematically.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre class="language-css"><code class="language-css">:root { /* Define base color using CSS Variables */
+  --brand-hue: 220; /* Blueish */
+  --brand-saturation: 70%;
+  --brand-lightness: 55%;
+}
+
+.button-primary {
+  background-color: hsl(var(--brand-hue), var(--brand-saturation), var(--brand-lightness)); 
+}
+.button-primary:hover {
+  /* Make it slightly lighter on hover */
+  background-color: hsl(var(--brand-hue), var(--brand-saturation), calc(var(--brand-lightness) + 10%)); 
+}
+.button-secondary {
+   /* Make it less saturated and lighter */
+  background-color: hsl(var(--brand-hue), calc(var(--brand-saturation) - 30%), calc(var(--brand-lightness) + 20%)); 
+}
+.overlay {
+  /* Semi-transparent version */
+  background-color: hsla(var(--brand-hue), var(--brand-saturation), var(--brand-lightness), 0.8); 
+}
+</code></pre>
+<p>HSL/HSLA provides a powerful alternative for defining and manipulating colors in CSS.</p>
+<p>👀 We are not currently using HSL/HSLA in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

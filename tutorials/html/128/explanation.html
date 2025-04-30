@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>128. Internal Stylesheets: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The syntax for using an internal stylesheet is straightforward:</p>
+<ol>
+<li>Open the <code class="language-html">&lt;head&gt;</code> section of your HTML document.</li>
+<li>Add an opening <code class="language-html">&lt;style&gt;</code> tag.</li>
+<li>Write standard CSS rulesets (selectors and declaration blocks) between the <code class="language-html">&lt;style&gt;</code> tags.</li>
+<li>Add a closing <code class="language-html">&lt;/style&gt;</code> tag.</li>
+</ol>
+<pre class="language-html"><code class="language-html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;base_styles.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;title&gt;My Page Title&lt;/title&gt;
+
+    &lt;style&gt;
+      /* CSS Rules Go Here */
+      h1 {
+        color: green;
+      }
+      p {
+        font-style: italic;
+      }
+    &lt;/style&gt;
+
+&lt;/head&gt;
+</code></pre>
+<p>The browser will parse the content within the <code class="language-html">&lt;style&gt;</code> tags as CSS and apply it to the elements in the <code class="language-html">&lt;body&gt;</code> of the same document.</p>
+<p>👀 Examine the structure of <code class="language-text">index.html</code>. The example above shows where the <code class="language-html">&lt;style&gt;</code> block would fit within the existing <code class="language-html">&lt;head&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

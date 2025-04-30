@@ -9,47 +9,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>05. Adding Visible Content with Paragraphs</h1>
-<p>Our page structure is set up, but it&#39;s still visually empty. Let&#39;s add our first piece of visible content inside the <code class="language-html">&lt;body&gt;</code> element using a paragraph tag.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a <code class="language-html">&lt;p&gt;</code> element containing the text &quot;Hello, World!&quot; inside the <code class="language-html">&lt;body&gt;</code>.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;Hello, World!&lt;/p&gt; &lt;!-- Added paragraph content --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p><strong>The <code>&lt;body&gt;</code> and <code>&lt;p&gt;</code> Elements</strong></p>
-<ul>
-<li><strong><code class="language-html">&lt;body&gt;</code> Recap:</strong> As mentioned before, the <code class="language-html">&lt;body&gt;</code> element is the container for <em>all</em> the content that users will actually see on the page.</li>
-<li><strong><code class="language-html">&lt;p&gt;</code> Element (Paragraph):</strong><ul>
-<li><strong>Purpose:</strong> Represents a paragraph of text. Browsers typically render paragraphs with some vertical space separating them from adjacent elements.</li>
-<li><strong>Syntax:</strong> It requires an opening tag (<code class="language-html">&lt;p&gt;</code>) and a closing tag (<code class="language-html">&lt;/p&gt;</code>). The text content goes in between.</li>
-<li><strong>Semantic Meaning:</strong> Using <code class="language-html">&lt;p&gt;</code> tells browsers (and screen readers, search engines) that this block of text is a distinct paragraph, giving it structural meaning beyond just being plain text.</li>
-</ul>
-</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li><p>👀 Refresh your browser preview. You should now see the text &quot;Hello, World!&quot; displayed on the page! It will likely be in a default font (like Times New Roman or Arial) with black text on a white background. This is the browser&#39;s default styling.</p>
-</li>
-<li><p>🔬 <strong>Experiment:</strong> Try adding another <code class="language-html">&lt;p&gt;</code> element below the first one:</p>
-<pre class="language-html"><code class="language-html">&lt;body&gt;
-  &lt;p&gt;Hello, World!&lt;/p&gt;
-  &lt;p&gt;This is a second paragraph.&lt;/p&gt;
-&lt;/body&gt;
-</code></pre>
-<p>Save and refresh. Notice how the browser automatically puts the second paragraph on a new line and adds some space between them. This is the default block-level behavior of paragraphs.</p>
-</li>
-</ul>
+  <h1>05. The Core Technologies: HTML, CSS, JavaScript</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Modern web development relies on three fundamental technologies working together:</p>
+<ol>
+<li><strong>HTML (HyperText Markup Language):</strong> Defines the <em>structure</em> and <em>content</em> of a web page. Think of it as the skeleton or the nouns of the page – headings, paragraphs, images, lists.</li>
+<li><strong>CSS (Cascading Style Sheets):</strong> Controls the <em>presentation</em> and <em>styling</em> of the HTML content. It&#39;s the paint, furniture, and decoration – colors, fonts, layout, spacing.</li>
+<li><strong>JavaScript (JS):</strong> Adds <em>behavior</em> and <em>interactivity</em> to the page. It&#39;s the electricity, plumbing, and appliances – handling user actions, updating content dynamically, animations.</li>
+</ol>
+<p>We&#39;ll explore each of these in detail. Understanding their distinct roles is crucial.</p>
+<p>🔬 <code class="language-text">index.html</code> remains empty. We&#39;ll start using HTML very soon.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

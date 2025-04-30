@@ -9,40 +9,34 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>03. Setting the Character Encoding</h1>
-<p>Now, let&#39;s add a crucial piece of metadata inside the <code class="language-html">&lt;head&gt;</code> section: the character encoding declaration.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a <code class="language-html">&lt;meta&gt;</code> tag inside the <code class="language-html">&lt;head&gt;</code> element.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- Added charset meta tag --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-</code></pre>
-<p><strong>Understanding Character Encoding (<code class="language-html">&lt;meta charset=&quot;...&quot;&gt;</code>)</strong></p>
-<ul>
-<li><strong>Purpose:</strong> This tag tells the browser how the text characters in your HTML file are encoded into bytes. Computers store text as numbers (bytes), and the character encoding defines the mapping between those numbers and the actual characters (letters, symbols, emojis, etc.).</li>
-<li><strong>Why <code class="language-text">UTF-8</code>?</strong> <code class="language-text">UTF-8</code> is the universal standard for the web. It can represent virtually any character from any language, including emojis. Using it prevents garbled text (often called &quot;mojibake,&quot; where characters display incorrectly like � or strange symbols).</li>
-<li><strong>Syntax:</strong><ul>
-<li><code class="language-html">&lt;meta&gt;</code>: The tag used for specifying various kinds of metadata. This is a <strong>void element</strong> (or empty element), meaning it doesn&#39;t have content between opening and closing tags, and therefore doesn&#39;t need a closing tag (<code class="language-html">&lt;/meta&gt;</code>).</li>
-<li><code class="language-html">charset</code>: The attribute specifying the type of metadata – in this case, the character set.</li>
-<li><code class="language-text">UTF-8</code>: The value, indicating the specific encoding standard.</li>
+  <h1>03. HTTP/HTTPS Basics (Request/Response Cycle)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <strong>HyperText Transfer Protocol (HTTP)</strong> is the set of rules governing communication between web clients and servers. <strong>HTTPS</strong> is the secure version, encrypting the data exchanged.</p>
+<p>Here&#39;s the basic <strong>Request/Response Cycle</strong>:</p>
+<ol>
+<li><strong>Request:</strong> Your browser (client) sends an HTTP request to the server specified in the URL. This request includes:<ul>
+<li>The method (e.g., <code class="language-http">GET</code> to retrieve data, <code class="language-http">POST</code> to send data).</li>
+<li>The path to the requested resource (e.g., <code class="language-text">/path/to/page.html</code>).</li>
+<li>Headers (additional info like browser type, accepted formats).</li>
 </ul>
 </li>
-<li><strong>Placement:</strong> It&#39;s <strong>critical</strong> to place the <code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;</code> tag as early as possible within the <code class="language-html">&lt;head&gt;</code> section (ideally, the very first element). The browser needs to know the encoding <em>before</em> it starts parsing content that might contain special characters.</li>
+<li><strong>Response:</strong> The server processes the request and sends back an HTTP response. This response includes:<ul>
+<li>A status code (e.g., <code class="language-http">200 OK</code> for success, <code class="language-http">404 Not Found</code> if the resource doesn&#39;t exist).</li>
+<li>Headers (additional info like content type, server details).</li>
+<li>The requested resource itself (e.g., the HTML content of the page).</li>
 </ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Again, this change won&#39;t visibly alter the blank page in the preview. Its importance lies in ensuring that <em>future</em> text content, especially content with accents, symbols, or non-English characters, is interpreted and displayed correctly by the browser.</li>
-<li>🔬 <strong>Experiment (Conceptual):</strong> Imagine saving your file with a different encoding (like ISO-8859-1) in your text editor but keeping <code class="language-html">charset=&quot;UTF-8&quot;</code> in the HTML. If you then added characters not supported by ISO-8859-1 (like emojis), they would likely display incorrectly in the browser because of the mismatch. Using UTF-8 consistently (both in the file saving and the <code class="language-html">&lt;meta&gt;</code> tag) prevents this. <strong>Always save your HTML files as UTF-8!</strong> Most modern editors like VS Code do this by default.</li>
-</ul>
+</li>
+</ol>
+<p>The browser then receives this response and renders the content (like an HTML page) for you to see.</p>
+<p>✅ The preview (<code class="language-text">index.html</code>) is still blank. We&#39;re building up the necessary background knowledge.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

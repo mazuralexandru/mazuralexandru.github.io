@@ -9,57 +9,34 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>21. Applying CSS with External Stylesheets (Preferred)</h1>
-<p>While internal stylesheets (<code class="language-html">&lt;style&gt;</code>) are better than inline styles, the most maintainable, reusable, and standard way to apply CSS is using <strong>external stylesheets</strong>. We already linked <code class="language-text">style.css</code> back in Lesson 7 using the <code class="language-html">&lt;link&gt;</code> tag in the <code class="language-html">&lt;head&gt;</code>. Now, let&#39;s move the styles we just created from the internal <code class="language-html">&lt;style&gt;</code> block into our external <code class="language-text">style.css</code> file.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>21. File &amp; Project Management</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Websites consist of multiple files (HTML, CSS, JS, images). A good code editor provides tools to manage these files effectively within a project structure.</p>
 <ul>
-<li><strong>Removal:</strong> The entire <code class="language-html">&lt;style&gt;...&lt;/style&gt;</code> block and its contents have been removed from the <code class="language-html">&lt;head&gt;</code> in <code class="language-text">index.html</code>. We are pruning the internal styles now that we are focusing on external ones. Look for the comment <code class="language-html">&lt;!-- Removed internal &lt;style&gt; block --&gt;</code>.</li>
-<li><strong>Focus Shift:</strong> We are now preparing to add these rules (or similar ones) to the external <code class="language-text">style.css</code> file.</li>
-</ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;My First Web Page&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; &lt;!-- External CSS link (remains) --&gt;
-  &lt;!-- Removed internal &lt;style&gt; block --&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Styling with External CSS&lt;/h1&gt; &lt;!-- Text Changed slightly --&gt;
-  &lt;p&gt;This paragraph will be styled externally.&lt;/p&gt; &lt;!-- Text Changed slightly --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>External Stylesheets (<code>.css</code> files)</strong></p>
-<ul>
-<li><strong>Recap:</strong> We link external CSS files using the <code class="language-html">&lt;link&gt;</code> tag in the <code class="language-html">&lt;head&gt;</code>:<pre class="language-html"><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-</code></pre>
-</li>
-<li><strong>Benefits (Why Preferred):</strong><ul>
-<li><strong>Separation of Concerns:</strong> Keeps HTML (structure) and CSS (presentation) completely separate. Files are cleaner and easier to understand.</li>
-<li><strong>Maintainability:</strong> Need to change a style across your entire website? Edit just one <code>.css</code> file! Changes automatically apply to all HTML pages linking to it.</li>
-<li><strong>Reusability:</strong> The same <code class="language-text">.css</code> file can be linked from hundreds or thousands of HTML pages.</li>
-<li><strong>Performance (Caching):</strong> When a user visits your site, their browser downloads <code class="language-text">style.css</code> once. When they navigate to other pages that use the same file, the browser uses the cached (stored) version instead of downloading it again, making subsequent page loads faster.</li>
+<li><strong>Explorer/Sidebar:</strong> VS Code&#39;s Explorer view (usually in the left sidebar) shows the folder structure of your project.</li>
+<li><strong>Actions:</strong> You can easily:<ul>
+<li>Create new files and folders.</li>
+<li>Rename, move, or delete files/folders.</li>
+<li>Open files for editing.</li>
+<li>Search within files and across the entire project.</li>
 </ul>
 </li>
 </ul>
-<p><strong>✅ Guided Observation:</strong></p>
+<p><strong>How it helps:</strong></p>
 <ul>
-<li>👀 Refresh the browser preview. Notice that the <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> elements have <strong>reverted</strong> to their appearance <em>before</em> we added the internal styles. The heading is no longer light sea green or underlined, and the paragraph is no longer italic or the specific light gray (<code class="language-css">#bbb</code>). They are now styled only by the base <code class="language-css">body</code> rules in <code class="language-text">style.css</code>.</li>
-<li>👀 This happens because we removed the <code class="language-html">&lt;style&gt;</code> block from <code class="language-text">index.html</code>. The browser now only reads CSS rules from the linked <code class="language-text">style.css</code> file (which currently only contains the <code class="language-css">body</code> rule and the commented-out <code class="language-css">h1</code> rule).</li>
-<li>✅ Inspect the <code class="language-html">&lt;h1&gt;</code> and <code class="language-html">&lt;p&gt;</code> elements in DevTools. The Styles pane will confirm that the only styles being applied (besides user-agent defaults) are those inherited from the <code class="language-css">body</code> rule in <code class="language-text">style.css</code>.</li>
+<li><strong>Organization:</strong> Keeps your project files structured and easy to navigate.</li>
+<li><strong>Efficiency:</strong> Provides quick access to all project resources without leaving the editor.</li>
 </ul>
-<p>In the next step, we will add the styling rules back, but this time into the <code class="language-text">style.css</code> file.</p>
+<p>You&#39;ll typically open the main folder containing your website files in VS Code to work on it as a project.</p>
+<p>🔬 Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

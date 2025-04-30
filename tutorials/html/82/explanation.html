@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>82. Basic CSS Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Now, let&#39;s look at the fundamental syntax of a CSS rule. CSS code is made up of <strong>rulesets</strong>.</p>
+<p>A basic ruleset has two main parts:</p>
+<ol>
+<li><strong>Selector:</strong> A pattern that identifies which HTML element(s) the rule should apply to. (e.g., <code class="language-css">body</code>, <code class="language-css">h1</code>, <code class="language-css">p</code>).</li>
+<li><strong>Declaration Block:</strong> One or more declarations enclosed in curly braces (<code class="language-css">{ }</code>).<ul>
+<li><strong>Declaration:</strong> A property-value pair that specifies the style to apply.<ul>
+<li><strong>Property:</strong> The stylistic aspect you want to change (e.g., <code class="language-css">color</code>, <code class="language-css">font-size</code>, <code class="language-css">background-color</code>).</li>
+<li><strong>Value:</strong> The setting for that property (e.g., <code class="language-css">red</code>, <code class="language-css">16px</code>, <code class="language-css">#ffffff</code>).</li>
+</ul>
+</li>
+<li>Declarations are separated by a colon (<code class="language-css">:</code>) and must end with a semicolon (<code class="language-css">;</code>).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Structure:</strong></p>
+<pre class="language-css"><code class="language-css">selector {
+  property: value;
+  property2: value2; 
+}
+</code></pre>
+<p>Example from <code class="language-text">base_styles.css</code>:</p>
+<pre class="language-css"><code class="language-css">body { /* Selector: targets the &lt;body&gt; element */
+  background-color: #2e2e2e; /* Declaration 1 */
+  color: #E0E0E0;            /* Declaration 2 */
+  /* ... more declarations ... */
+} 
+</code></pre>
+<p>✅ We&#39;re currently viewing the empty <code class="language-text">style.css</code> file. This is where we&#39;ll write our lesson-specific CSS rules using this syntax.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

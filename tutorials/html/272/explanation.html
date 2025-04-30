@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>272. Minimum and Maximum Dimensions: <code class="language-css">min-height</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">min-height</code> property works analogously to <code class="language-css">min-width</code>, but for the vertical dimension.</p>
+<ul>
+<li><strong>Purpose:</strong> Sets the minimum height an element can shrink to. If the content or a calculated <code class="language-css">height</code> would normally make the element shorter, its height will be forced to be at least the <code class="language-css">min-height</code>.</li>
+<li><strong>Syntax:</strong> <code class="language-css">min-height: value;</code></li>
+<li><strong>Values:</strong> Length units (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, <code class="language-css">vh</code>), percentages (<code class="language-css">%</code> - relative to container height, subject to the same parent-height constraints as <code class="language-css">height</code>), or keywords like <code class="language-css">auto</code> (default, no minimum), <code class="language-css">min-content</code>, <code class="language-css">max-content</code>, <code class="language-css">fit-content</code>.</li>
+<li><strong>Interaction:</strong> Overrides <code class="language-css">height</code> and <code class="language-css">max-height</code> if they conflict.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">min-height: 150px;</code> to the <code class="language-css">.box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; /* Ensure box is at least 150px tall */
+  background-color: cornflowerblue; 
+  padding: 10px; 
+  margin: 1em auto; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> Even though the text content might not require 150px vertically (especially with the width constraint), the blue box should now have a minimum height of 150px (plus top/bottom padding). If the content <em>did</em> require more than 150px, the box would grow taller because <code class="language-css">height</code> is <code class="language-css">auto</code>. <code class="language-css">min-height</code> just sets a floor.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

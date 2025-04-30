@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>192. The <code class="language-css">revert</code> Keyword</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">revert</code> keyword is another reset value, but it specifically targets the styles defined by the <strong>user-agent (browser) stylesheet</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> To undo any styles applied by Author or User stylesheets and explicitly revert the property&#39;s value back to whatever the browser&#39;s default style for that element would be.</li>
+<li><strong>Syntax:</strong> <code class="language-css">property: revert;</code></li>
+<li><strong>Behavior:</strong> Rolls back the cascade for the specific property to the user-agent level. If the user-agent stylesheet has a specific style for that element/property combination, that value is used. Otherwise, it behaves like <code class="language-css">unset</code>.</li>
+</ul>
+<p>Example:
+Browsers typically style <code class="language-html">&lt;h1&gt;</code> elements with <code class="language-css">display: block;</code>, <code class="language-css">font-size: 2em;</code>, <code class="language-css">margin-top: 0.67em;</code>, <code class="language-css">margin-bottom: 0.67em;</code>, <code class="language-css">font-weight: bold;</code>.</p>
+<pre class="language-css"><code class="language-css">h1 {
+  /* Author styles overriding browser defaults */
+  font-size: 1.5rem; 
+  margin: 0;
+  font-weight: normal;
+  color: blue;
+}
+
+.special-h1 {
+  /* Revert some properties back to browser defaults */
+  font-size: revert; /* Reverts to browser&#39;s default h1 size (e.g., 2em) */
+  margin: revert; /* Reverts to browser&#39;s default h1 margins (e.g., 0.67em top/bottom) */
+  font-weight: revert; /* Reverts to browser&#39;s default h1 weight (e.g., bold) */
+  color: revert; /* Reverts to browser&#39;s default text color (likely black) */
+}
+</code></pre>
+<pre class="language-html"><code class="language-html">&lt;h1&gt;This H1 uses author styles (1.5rem, no margin, normal weight, blue).&lt;/h1&gt;
+&lt;h1 class=&quot;special-h1&quot;&gt;This H1 reverts to browser defaults (2em, margins, bold, black).&lt;/h1&gt;
+</code></pre>
+<p><code class="language-css">revert</code> is useful when you want to selectively undo your own &quot;reset&quot; or base styles and rely on the browser&#39;s native styling for a particular element instance. It&#39;s newer than <code class="language-css">initial</code> and <code class="language-css">unset</code> but has good modern browser support.</p>
+<p>👀 If we applied <code class="language-css">color: revert;</code> to our <code class="language-css">#main-heading</code>, it would likely change from <code class="language-css">cornflowerblue</code> back to the browser&#39;s default heading color (probably black or inheriting the body color if the browser default does).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

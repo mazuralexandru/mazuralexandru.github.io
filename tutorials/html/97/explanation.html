@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>97. CSS Property: <code class="language-css">color</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">color</code> property sets the color of an element&#39;s <strong>foreground content</strong>, which is primarily its text.</p>
+<p><strong>Applies to:</strong> Text, list markers, generated content, etc.
+<strong>Inherited:</strong> Yes (child elements will typically inherit the text color of their parent unless overridden).</p>
+<p><strong>Common Value Types:</strong></p>
+<ol>
+<li><strong>Color Keywords:</strong> Predefined names like <code class="language-css">red</code>, <code class="language-css">blue</code>, <code class="language-css">black</code>, <code class="language-css">white</code>, <code class="language-css">green</code>, <code class="language-css">tomato</code>, <code class="language-css">cornflowerblue</code>, <code class="language-css">transparent</code> (fully see-through). There are many standard keywords.</li>
+<li><strong>Hexadecimal (<code class="language-css">#RRGGBB</code> or <code class="language-css">#RGB</code>):</strong> Represents colors using Red, Green, and Blue components.</li>
+<li><strong>RGB / RGBA (<code class="language-css">rgb(r,g,b)</code> / <code class="language-css">rgba(r,g,b,a)</code>):</strong> Also uses Red, Green, Blue values (0-255), with an optional Alpha channel (0-1) for transparency in RGBA.</li>
+</ol>
+<p>We&#39;ll explore color values in more detail shortly.</p>
+<p>Example Usage:</p>
+<pre class="language-css"><code class="language-css">p { 
+  color: navy; /* Using a keyword */
+} 
+h1 {
+  color: #333333; /* Using hexadecimal */
+}
+span {
+  color: rgba(255, 0, 0, 0.8); /* Using RGBA for semi-transparent red */
+}
+</code></pre>
+<p>🔬 The inline style <code class="language-css">color: tomato;</code> in <code class="language-text">index.html</code> uses a color keyword.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+/* Removed previous lesson styles */
+
+.box {
+  /* width: 300px; */ /* Changed from px */
+  width: 75%; /* Set width relative to container */
+  background-color: cornflowerblue; /* Make it visible */
+  padding: 10px; /* Add some padding for later */
+}

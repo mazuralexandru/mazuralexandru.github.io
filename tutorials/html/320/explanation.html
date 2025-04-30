@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>320. Contrast <code class="language-css">display: none;</code> with <code class="language-css">visibility: hidden;</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>It&#39;s important to distinguish <code class="language-css">display: none;</code> from another way to hide elements: <code class="language-css">visibility: hidden;</code>.</p>
+<ul>
+<li><p><strong><code class="language-css">display: none;</code></strong></p>
+<ul>
+<li>Removes the element entirely from the document flow and rendering.</li>
+<li>Takes up <strong>no space</strong> in the layout.</li>
+<li>Affects layout (surrounding elements reflow to fill the space).</li>
+<li>Removes the element from the accessibility tree.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-css">visibility: hidden;</code></strong></p>
+<ul>
+<li>Makes the element invisible (fully transparent).</li>
+<li>The element still <strong>takes up its original space</strong> in the layout. It&#39;s like an invisible placeholder.</li>
+<li>Does <em>not</em> affect layout (surrounding elements do not reflow).</li>
+<li>The element <em>may</em> still be part of the accessibility tree (behavior can vary). Descendants can be made visible again by setting <code class="language-css">visibility: visible;</code> on them.</li>
+</ul>
+</li>
+</ul>
+<p><strong>When to Use Which:</strong></p>
+<ul>
+<li>Use <code class="language-css">display: none;</code> when you want to completely remove an element as if it wasn&#39;t there, often for conditional showing/hiding with JavaScript.</li>
+<li>Use <code class="language-css">visibility: hidden;</code> when you want to hide an element but preserve the space it occupies in the layout, perhaps for certain animation effects or to maintain layout stability when toggling visibility.</li>
+</ul>
+<p>👀 In our current example (<code class="language-text">style.css</code>), we used <code class="language-css">display: none;</code> on the third span, completely removing it and its space. If we had used <code class="language-css">visibility: hidden;</code> instead, there would be an empty gap where &quot;Span 3&quot; used to be.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

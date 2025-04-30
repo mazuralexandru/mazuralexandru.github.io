@@ -1,0 +1,17 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Display Inline Example */
+.inline-span {
+  background-color: rgba(255, 192, 203, 0.4); /* Faint pink */
+  border: 1px solid pink;
+  padding: 10px; /* Vertical padding might overlap */
+  margin: 10px; /* Vertical margin ignored for line height */
+  width: 200px; /* Ignored */
+  height: 50px; /* Ignored */
+}

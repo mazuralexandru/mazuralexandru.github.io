@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>130. Internal Stylesheets: Use Cases</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While external stylesheets are generally preferred, internal stylesheets (<code class="language-html">&lt;style&gt;</code>) have valid use cases:</p>
+<ol>
+<li><strong>Single-Page Websites/Applications:</strong> If your entire site consists of only one HTML file, embedding the styles directly can be simpler than managing a separate CSS file.</li>
+<li><strong>Quick Demos or Prototypes:</strong> For very small examples or quick tests where creating a separate CSS file feels like overkill.</li>
+<li><strong>HTML Emails:</strong> Email clients have notoriously poor and inconsistent support for external stylesheets (and even some CSS properties). Embedding styles using <code class="language-html">&lt;style&gt;</code> (and often even inline styles) is frequently necessary for reliable rendering across different email platforms.</li>
+<li><strong>Embedding Critical Above-the-Fold Styles:</strong> This is a performance optimization technique. You embed the <em>essential</em> CSS needed to render the initially visible part of the page directly in the <code class="language-html">&lt;head&gt;</code> using <code class="language-html">&lt;style&gt;</code>. This allows the browser to start rendering the top part of the page faster, without waiting for an external CSS file to download. The rest of the styles are then loaded via an external file linked later (often lower down or asynchronously).</li>
+<li><strong>Components in Templating Systems:</strong> Sometimes, when using web components or server-side templating, styles specific to a component might be bundled within its template using a <code class="language-html">&lt;style&gt;</code> tag (often scoped to prevent affecting other parts of the page).</li>
+</ol>
+<p>For general website development involving multiple pages, stick to external stylesheets.</p>
+<p>👀 Our current <code class="language-text">index.html</code> doesn&#39;t fit these specific use cases well, reinforcing why we linked external files.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

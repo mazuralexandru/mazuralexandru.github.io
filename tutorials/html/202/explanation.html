@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>202. CSS Color Values: <code class="language-css">transparent</code> Keyword</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">transparent</code> keyword is a special color value that represents a fully transparent color.</p>
+<ul>
+<li><strong>Meaning:</strong> It makes the element&#39;s color or background completely see-through, allowing whatever is behind it (like the parent element&#39;s background or other elements) to show.</li>
+<li><strong>Usage:</strong> Can be used as the value for any property that accepts a color, such as <code class="language-css">color</code>, <code class="language-css">background-color</code>, <code class="language-css">border-color</code>.</li>
+<li><strong>Initial Value:</strong> <code class="language-css">transparent</code> is the initial (default) value for the <code class="language-css">background-color</code> property. This is why elements without an explicit background color normally show their parent&#39;s background.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre class="language-css"><code class="language-css">/* Make the background transparent (same as default) */
+div {
+  background-color: transparent; 
+}
+
+/* Create a border that is initially invisible but takes up space */
+.invisible-border {
+  border: 5px solid transparent; 
+}
+.invisible-border:hover {
+  border-color: red; /* Border becomes visible on hover */
+}
+
+/* Make text invisible (though usually better ways like visibility: hidden) */
+.hidden-text {
+  color: transparent;
+}
+</code></pre>
+<p>It&#39;s a useful keyword when you explicitly need to ensure an area is see-through or when defining transitions/animations involving color or backgrounds.</p>
+<p>👀 We used <code class="language-css">transparent</code> within the <code class="language-css">linear-gradient</code> functions in <code class="language-text">base_styles.css</code> to define the transparent parts between the grid lines.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

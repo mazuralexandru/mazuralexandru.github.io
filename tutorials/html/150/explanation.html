@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>150. Class Selectors: Scope</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Unlike type selectors that target <em>all</em> elements of a certain type, class selectors target only those elements that have been explicitly assigned the matching class name in their <code class="language-html">class</code> attribute.</p>
+<ul>
+<li><strong>Specificity:</strong> A class selector (<code class="language-css">.my-class</code>) is more specific than a type selector (<code class="language-css">p</code>). This means if both a type selector and a class selector apply conflicting styles to the same element, the style from the class selector will generally win (we&#39;ll cover specificity in detail later).</li>
+<li><strong>Targeting:</strong> A single class selector (e.g., <code class="language-css">.important</code>) will apply its styles to <em>any</em> element that has <code class="language-html">class=&quot;important&quot;</code>, whether it&#39;s a <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;li&gt;</code>, or <code class="language-html">&lt;div&gt;</code>.</li>
+<li><strong>Multiple Elements:</strong> The same class can be used on many different elements throughout the page, allowing you to apply a consistent style to all of them.</li>
+</ul>
+<p>This targeted scope makes class selectors ideal for creating reusable styles.</p>
+<p>👀 In <code class="language-text">index.html</code>, if we added <code class="language-html">class=&quot;special&quot;</code> to the <code class="language-html">&lt;p&gt;</code> tag, a CSS rule like <code class="language-css">.special { color: orange; }</code> would only affect that specific paragraph, not the <code class="language-html">&lt;h1&gt;</code> or any other paragraphs without that class.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

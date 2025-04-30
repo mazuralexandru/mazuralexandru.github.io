@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>205. <code class="language-css">font-family</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">font-family</code> property specifies a prioritized list (a &quot;font stack&quot;) of one or more font family names for the selected element(s).</p>
+<ul>
+<li><strong>Purpose:</strong> To define the typeface used to render the text.</li>
+<li><strong>Font Stack:</strong> You provide a comma-separated list of font names. The browser starts with the first font in the list. If that font is available on the user&#39;s system (or loaded via <code class="language-css">@font-face</code>), it&#39;s used. If not, the browser tries the next font in the list, and so on.</li>
+<li><strong>Generic Families (Fallbacks):</strong> It&#39;s crucial to end your font stack with a <strong>generic font family</strong> keyword. These keywords represent general categories of fonts, and the browser will pick a locally available font from that category if none of the specific fonts listed earlier are found. The main generic families are:<ul>
+<li><code class="language-css">serif</code>: Fonts with serifs (small strokes finishing off the main strokes, like Times New Roman).</li>
+<li><code class="language-css">sans-serif</code>: Fonts without serifs (like Arial, Helvetica, Verdana). <strong>(Used in our <code class="language-text">base_styles.css</code>)</strong></li>
+<li><code class="language-css">monospace</code>: Fonts where all characters have the same fixed width (like Courier New, Consolas). Used for code.</li>
+<li><code class="language-css">cursive</code>: Fonts that emulate handwriting (like Comic Sans MS - use with caution!, Brush Script MT).</li>
+<li><code class="language-css">fantasy</code>: Decorative or playful fonts (like Impact).</li>
+</ul>
+</li>
+<li><strong>Quoting Names:</strong> Font names containing spaces <strong>must</strong> be enclosed in quotes (single or double). Single-word names don&#39;t strictly require quotes, but it&#39;s good practice. Generic family keywords should <em>not</em> be quoted.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a <code class="language-css">font-family</code> rule to the <code class="language-css">#main-heading</code> selector.</li>
+</ul>
+<pre class="language-css"><code class="language-css">#main-heading {
+    color: cornflowerblue; 
+    text-decoration: underline; 
+    font-family: &quot;Georgia&quot;, Times, serif; /* Added font stack */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The &quot;Main Heading&quot; text should now be rendered in the Georgia font (if available on your system). If Georgia isn&#39;t available, it will try Times New Roman (or just &quot;Times&quot;). If neither is found, it will fall back to the browser&#39;s default <code class="language-css">serif</code> font. Notice how it likely looks different from the paragraph text, which is still using the default <code class="language-css">sans-serif</code> font inherited from the <code class="language-css">body</code> style in <code class="language-text">base_styles.css</code>.</li>
+</ul>
+<p>Providing a good font stack ensures your text remains readable even if the user doesn&#39;t have your preferred font installed.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

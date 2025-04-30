@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>196. Relative Unit: Percentage (<code class="language-css">%</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <strong>percentage (<code class="language-css">%</code>)</strong> unit defines a size relative to a corresponding value on the <strong>parent element</strong>. What it&#39;s relative <em>to</em> depends on the property being set:</p>
+<ul>
+<li><strong><code class="language-css">width</code>, <code class="language-css">height</code> (and related like <code class="language-css">padding</code>, <code class="language-css">margin</code> in block direction):</strong> Percentage is relative to the <strong>width</strong> of the containing block (usually the parent element&#39;s content area). This is very common for creating fluid layouts where elements take up a proportion of their container.<pre class="language-css"><code class="language-css">.container { width: 800px; }
+.column { width: 50%; } /* 50% of 800px = 400px */
+</code></pre>
+</li>
+<li><strong><code class="language-css">font-size</code>:</strong> Percentage is relative to the <strong>font size</strong> of the parent element. <code class="language-css">font-size: 120%;</code> is equivalent to <code class="language-css">font-size: 1.2em;</code>.</li>
+<li><strong><code class="language-css">line-height</code>:</strong> Percentage is relative to the <strong>font size</strong> of the element <em>itself</em>. <code class="language-css">line-height: 150%;</code> is equivalent to <code class="language-css">line-height: 1.5;</code>.</li>
+<li><strong><code class="language-css">top</code>, <code class="language-css">bottom</code> (for positioned elements):</strong> Percentage is relative to the <strong>height</strong> of the containing block.</li>
+<li><strong><code class="language-css">left</code>, <code class="language-css">right</code> (for positioned elements):</strong> Percentage is relative to the <strong>width</strong> of the containing block.</li>
+</ul>
+<p><strong>Pros:</strong> Useful for fluid layouts, scaling relative to parent dimensions or font sizes.
+<strong>Cons:</strong> Can be confusing what the percentage is relative <em>to</em> for different properties. Can lead to compounding effects with <code class="language-css">font-size</code> similar to <code class="language-css">em</code>.</p>
+<p>👀 We are not currently using percentages in our <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

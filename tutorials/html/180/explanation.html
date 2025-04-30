@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>180. Cascade Factors (Order of Importance)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The cascade resolves conflicts by considering three main factors, in order of importance:</p>
+<ol>
+<li><strong>Origin and Importance:</strong> Where the style comes from and whether it&#39;s marked as important.</li>
+<li><strong>Specificity:</strong> How specific the selector targeting the element is.</li>
+<li><strong>Source Order:</strong> The order in which the conflicting rules appear in the CSS code.</li>
+</ol>
+<p>Let&#39;s break down <strong>Origin and Importance</strong> first. Stylesheets originate from different sources:</p>
+<ul>
+<li><strong>Browser (User-Agent) Stylesheets:</strong> Every browser has built-in default styles (e.g., headings are bold and large, links are blue and underlined). These have the <em>lowest</em> precedence.</li>
+<li><strong>User Stylesheets:</strong> Users can define their own custom stylesheets in their browser settings (e.g., for accessibility reasons, like always using a specific font or high contrast).</li>
+<li><strong>Author Stylesheets:</strong> These are the stylesheets <em>you</em> write as the website developer (inline styles, internal <code class="language-html">&lt;style&gt;</code> blocks, external <code class="language-text">.css</code> files). This is what we primarily work with.</li>
+</ul>
+<p>Within these origins, declarations can be marked with <code class="language-css">!important</code> to increase their weight:</p>
+<ul>
+<li><strong>Normal Declarations:</strong> Standard rules without <code class="language-css">!important</code>.</li>
+<li><strong>Important Declarations:</strong> Rules ending with <code class="language-css">!important</code> (e.g., <code class="language-css">color: red !important;</code>).</li>
+</ul>
+<p>The general order of precedence (from lowest to highest) is:</p>
+<ol>
+<li>Browser default styles (normal)</li>
+<li>User styles (normal)</li>
+<li><strong>Author styles (normal) - Our primary focus</strong></li>
+<li>Author styles (<code class="language-css">!important</code>)</li>
+<li>User styles (<code class="language-css">!important</code>)</li>
+<li>Browser default styles (<code class="language-css">!important</code>)</li>
+</ol>
+<p><strong>Key Takeaway for Developers:</strong> Your normal author styles will override browser defaults. Using <code class="language-css">!important</code> in your author styles makes them override almost everything else, including other author styles, but it should be used <strong>very sparingly</strong> as it makes debugging harder and breaks the natural cascade. Avoid it unless absolutely necessary to override external library styles or for very specific utility classes.</p>
+<p>👀 Our current styles in <code class="language-text">style.css</code> are all &quot;Author styles (normal)&quot;.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

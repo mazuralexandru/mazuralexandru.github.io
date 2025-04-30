@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>176. Child Combinator (<code class="language-css">&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <strong>Child Combinator</strong> is represented by the &quot;greater than&quot; symbol (<code class="language-css">&gt;</code>) between two selectors.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">parent &gt; child</code></li>
+<li><strong>Meaning:</strong> Selects any element matching <code class="language-css">child</code> that is a <strong>direct child</strong> of an element matching <code class="language-css">parent</code>. It does <em>not</em> select deeper descendants.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule: <code class="language-css">.container &gt; p</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Child Combinator Example */
+.container &gt; p {
+  border-left: 3px solid orange; /* Add orange left border to direct child paragraphs */
+  padding-left: 10px;
+}
+
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Both paragraphs (&quot;This is a standard paragraph.&quot; and &quot;This paragraph follows the heading.&quot;) should now have an <strong>orange left border</strong> and some left padding.</li>
+<li>This happens because both <code class="language-html">&lt;p&gt;</code> elements are <em>direct children</em> of the <code class="language-html">&lt;div class=&quot;container&quot;&gt;</code>.</li>
+<li>Crucially, if we had a paragraph nested deeper, like <code class="language-html">&lt;div class=&quot;container&quot;&gt;&lt;div&gt;&lt;p&gt;Deep&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code>, the <code class="language-css">.container &gt; p</code> rule would <em>not</em> apply to the &quot;Deep&quot; paragraph because it&#39;s not a direct child of <code class="language-css">.container</code>.</li>
+</ul>
+<p>The child combinator is more specific than the descendant combinator.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

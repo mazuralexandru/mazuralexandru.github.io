@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>254. <code class="language-html">&lt;br&gt;</code> &amp; <code class="language-html">&lt;hr&gt;</code>: Default Styling</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<ul>
+<li><strong><code class="language-html">&lt;br&gt;</code>:</strong> Doesn&#39;t have direct visual styling itself, but it forces subsequent content onto a new line.</li>
+<li><strong><code class="language-html">&lt;hr&gt;</code>:</strong> Renders as a horizontal line with default margins, visually separating content blocks.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a paragraph demonstrating the use of <code class="language-html">&lt;br&gt;</code> for an address.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt;
+    &lt;p&gt;
+      Contact Us:&lt;br&gt;
+      1 Infinite Loop&lt;br&gt;
+      Cupertino, CA 95014
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The address lines (&quot;1 Infinite Loop&quot; and &quot;Cupertino, CA 95014&quot;) should appear on separate lines below &quot;Contact Us:&quot;, directly following the <code class="language-html">&lt;br&gt;</code> tags.</li>
+<li>The <code class="language-html">&lt;hr&gt;</code> elements continue to provide visual separation between the different example sections.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

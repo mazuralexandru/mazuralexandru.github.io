@@ -1,0 +1,14 @@
+/* Margin Collapse Example: Adjacent Siblings */
+.p1 {
+  background-color: rgba(0, 255, 0, 0.2); /* Faint green */
+  margin-bottom: 30px; 
+  padding: 10px;
+}
+
+.p2 {
+  background-color: rgba(255, 165, 0, 0.2); /* Faint orange */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Expected space between p1 and p2 will be max(30px, 20px) = 30px, NOT 30px + 20px = 50px */

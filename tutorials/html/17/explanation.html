@@ -9,67 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>17. Introduction to Browser Developer Tools</h1>
-<p>Now that we have a basic HTML page linked to CSS (and potentially JS), let&#39;s introduce an essential tool for every web developer: the <strong>Browser Developer Tools</strong> (often called &quot;DevTools&quot;).</p>
-<p><strong>What are Developer Tools?</strong></p>
-<p>Every modern web browser (Chrome, Firefox, Edge, Safari) includes a powerful suite of tools built-in, designed to help developers inspect, debug, and understand web pages.</p>
-<p><strong>Accessing DevTools:</strong></p>
+  <h1>17. Autocompletion/IntelliSense</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p><strong>Autocompletion</strong> (often called <strong>IntelliSense</strong> in VS Code) suggests possible completions as you type.</p>
+<p><strong>How it helps:</strong></p>
 <ul>
-<li><strong>Keyboard Shortcut:</strong> Pressing <code>F12</code> is the most common way to open DevTools on Windows/Linux. On macOS, it might be <code>Fn + F12</code> or <code>Option + Command + I</code>.</li>
-<li><strong>Right-Click Menu:</strong> Right-click anywhere on the web page and select &quot;Inspect&quot; or &quot;Inspect Element&quot;. This often opens DevTools with the specific element you clicked on highlighted.</li>
-<li><strong>Browser Menu:</strong> Look in the browser&#39;s main menu (e.g., &quot;More Tools&quot; -&gt; &quot;Developer Tools&quot; in Chrome).</li>
+<li><strong>Speed:</strong> Saves you from typing out long tag names, attributes, or CSS properties completely.</li>
+<li><strong>Accuracy:</strong> Reduces typos by suggesting valid options based on the context (HTML tags, CSS properties, known values).</li>
+<li><strong>Discovery:</strong> Helps you discover available HTML attributes or CSS properties and values you might not know or remember.</li>
 </ul>
-<p><strong>Key Panels (Initial Focus):</strong></p>
-<p>DevTools have many panels, but we&#39;ll focus on two initially:</p>
-<ol>
-<li><p><strong>Elements Panel (or Inspector):</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Shows the <strong>live Document Object Model (DOM)</strong> tree of the page. The DOM is the browser&#39;s internal representation of the parsed HTML.</li>
-<li><strong>Live View:</strong> This is <em>not</em> the same as &quot;View Page Source&quot;. The Elements panel shows the HTML structure <em>as the browser understands it right now</em>, including any modifications made by JavaScript (which we haven&#39;t done yet).</li>
-<li><strong>Interactivity:</strong> You can expand/collapse elements, see their nesting, and even temporarily edit the HTML directly within this panel (changes here are temporary and disappear on page refresh).</li>
-</ul>
-</li>
-<li><p><strong>Styles Pane (Often part of the Elements Panel):</strong></p>
-<ul>
-<li><strong>Purpose:</strong> Shows the CSS rules currently being applied to the <strong>selected element</strong> in the Elements panel.</li>
-<li><strong>Rule Sources:</strong> It shows styles from linked stylesheets (<code class="language-text">style.css</code>), internal stylesheets (<code class="language-html">&lt;style&gt;</code> tags - which we haven&#39;t used), inline styles (<code class="language-html">style</code> attribute), and the browser&#39;s own default styles (user-agent stylesheet).</li>
-<li><strong>Specificity &amp; Overrides:</strong> It clearly indicates which styles are being overridden by others (often shown with a strikethrough). This is incredibly useful for debugging CSS issues.</li>
-<li><strong>Interactivity:</strong> You can temporarily disable/enable CSS properties (checkboxes) or edit values directly in this pane to see the effects live on the page. Changes are temporary.</li>
-</ul>
-</li>
-</ol>
-<p><strong>✅ Guided Observation &amp; Exploration:</strong></p>
-<ul>
-<li>➡️ Open the DevTools for your preview page using one of the methods above (F12 or Right-click -&gt; Inspect).</li>
-<li><strong>Elements Panel:</strong><ul>
-<li>👀 Locate the <code class="language-html">&lt;html&gt;</code>, <code class="language-html">&lt;head&gt;</code>, and <code class="language-html">&lt;body&gt;</code> elements. Expand them using the small triangles/arrows next to them.</li>
-<li>👀 Find the <code class="language-html">&lt;p&gt;Preparing for next steps...&lt;/p&gt;</code> element inside the <code class="language-html">&lt;body&gt;</code>. Click on it to select it.</li>
-</ul>
-</li>
-<li><strong>Styles Pane:</strong><ul>
-<li>👀 With the <code class="language-html">&lt;p&gt;</code> element selected, look at the Styles pane (it might be below or beside the Elements panel).</li>
-<li>👀 You should see the styles inherited from the <code class="language-css">body</code> rule in <code class="language-text">style.css</code> (like <code class="language-css">color: #E0E0E0</code> and <code class="language-css">font-family: sans-serif</code>).</li>
-<li>👀 You might also see rules from the &quot;user-agent stylesheet&quot; – these are the browser&#39;s built-in default styles (e.g., default margins for paragraphs).</li>
-<li>🔬 <strong>Experiment:</strong> Find the <code class="language-css">color: #E0E0E0</code> property applied from the <code class="language-css">body</code> rule. Try unchecking the checkbox next to it. The paragraph text should turn black (the browser&#39;s default). Check it again. Try clicking on the color value (<code class="language-css">#E0E0E0</code>) and changing it (e.g., type <code class="language-css">cyan</code>). See the text color change live! (Remember, these changes are temporary).</li>
-</ul>
-</li>
-</ul>
-<p><strong>Why DevTools are Crucial:</strong></p>
-<p>DevTools are indispensable for:</p>
-<ul>
-<li>Visualizing the structure (HTML/DOM).</li>
-<li>Understanding applied styles (CSS) and debugging layout/color issues.</li>
-<li>Debugging JavaScript code (Console, Sources, etc. - later).</li>
-<li>Analyzing network requests and performance (later).</li>
-</ul>
-<p>Get comfortable opening and exploring the Elements and Styles panes – you&#39;ll use them constantly!</p>
+<p>For example, when you type <code>&lt;</code> in an HTML file, the editor might suggest common tags. When you start typing <code class="language-css">backg</code> in a CSS file, it will likely suggest <code class="language-css">background-color</code>, <code class="language-css">background-image</code>, etc. This is a huge time-saver and error-reducer.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

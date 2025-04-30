@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>299. Longhand Margin Properties: <code class="language-css">margin-bottom</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Now for <code class="language-css">margin-bottom</code>.</p>
+<ul>
+<li><strong>Purpose:</strong> Sets the amount of margin space specifically on the <strong>bottom</strong> edge of the element, below its bottom border.</li>
+<li><strong>Syntax:</strong> <code class="language-css">margin-bottom: value;</code></li>
+<li><strong>Values:</strong> Same as <code class="language-css">margin-top</code> (lengths, percentages relative to container width, <code class="language-css">auto</code>, negative values allowed).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">margin-bottom: 3em;</code> to the <code class="language-css">.box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; 
+  max-height: 200px; 
+  overflow: auto; 
+  background-color: cornflowerblue; 
+  padding: 20px 5px 15px 30px; 
+  margin-top: 2em; 
+  margin-right: 50px; 
+  margin-bottom: 3em; /* Added specific bottom margin */
+  border-bottom: 4px solid red; 
+  border-radius: 15px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The blue box should now have a larger amount of space (3em, relative to its font size) below it, pushing any subsequent content further down the page.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

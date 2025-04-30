@@ -9,53 +9,36 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>11. Controlling Font Size</h1>
-<p>Let&#39;s add another common style property to our inline style: <code class="language-css">font-size</code>.</p>
-<p><strong>What&#39;s New?</strong></p>
-<p>We added a third declaration, <code class="language-css">font-size: 1.2em;</code>, to the <code class="language-html">style</code> attribute on the <code class="language-html">&lt;p&gt;</code> tag.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;!-- This is our first paragraph --&gt;
-  &lt;p style=&quot;color: lightcoral; background-color: #444; font-size: 1.2em;&quot;&gt;Hello, World!&lt;/p&gt; &lt;!-- Added font-size --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>CSS <code>font-size</code> Property</strong></p>
+  <h1>11. Progressive Enhancement vs. Graceful Degradation</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>These are two related strategies for handling the diversity of browsers and user capabilities (e.g., JavaScript disabled, slow connections):</p>
+<ol>
+<li><p><strong>Progressive Enhancement (PE):</strong></p>
 <ul>
-<li><p>The <code class="language-css">font-size</code> property controls the size of the text within an element.</p>
+<li><strong>Start with core content and functionality (HTML):</strong> Ensure the page is usable and accessible with basic HTML.</li>
+<li><strong>Layer on presentation (CSS):</strong> Add styling for capable browsers.</li>
+<li><strong>Layer on behavior (JavaScript):</strong> Add advanced interactivity for browsers that support it.</li>
+<li><strong>Philosophy:</strong> Build from a simple, working base upwards. Preferred modern approach.</li>
+</ul>
 </li>
-<li><p>It accepts various types of values:</p>
+<li><p><strong>Graceful Degradation (GD):</strong></p>
 <ul>
-<li><strong>Keywords:</strong> <code class="language-css">small</code>, <code class="language-css">medium</code>, <code class="language-css">large</code>, <code class="language-css">x-large</code>, etc. (Relative to the browser&#39;s default settings, less precise).</li>
-<li><strong>Absolute Units:</strong><ul>
-<li><code class="language-css">px</code> (pixels): Fixed size, common but can cause accessibility issues if users need to resize text. <code class="language-css">16px</code> is often the browser default.</li>
+<li><strong>Build the full-featured experience first (HTML, CSS, JS):</strong> Design for modern browsers with all technologies enabled.</li>
+<li><strong>Add fallbacks:</strong> Provide alternative solutions or simpler versions for less capable browsers or when features fail.</li>
+<li><strong>Philosophy:</strong> Start complex and ensure it fails gracefully. Can be harder to manage.</li>
 </ul>
 </li>
-<li><strong>Relative Units (Generally Preferred):</strong><ul>
-<li><code class="language-css">%</code> (percentage): Relative to the parent element&#39;s font size. <code class="language-css">120%</code> is similar to <code class="language-css">1.2em</code>.</li>
-<li><code class="language-css">em</code>: Relative to the parent element&#39;s font size (or the element&#39;s own font size for some properties). <code class="language-css">1em</code> is the default size, <code class="language-css">2em</code> is double, <code class="language-css">0.8em</code> is smaller. Can compound if nested.</li>
-<li><code class="language-css">rem</code> (root em): Relative to the font size of the <em>root element</em> (<code class="language-html">&lt;html&gt;</code>). Often preferred over <code class="language-css">em</code> for consistency, as it avoids compounding issues.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>In this example, <code class="language-css">1.2em</code> makes the font size 1.2 times the size it would otherwise inherit (likely from the <code class="language-html">&lt;body&gt;</code>, which inherits the browser default).</p>
-</li>
-</ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. The &quot;Hello, World!&quot; text should now be slightly larger than before. The exact amount depends on the browser&#39;s default font size, but it will be 20% larger (<code>1.2</code> times).</li>
-<li>🔬 <strong>Experiment:</strong> Change the <code class="language-css">font-size</code> value. Try <code class="language-css">0.8em</code> (smaller), <code class="language-css">2em</code> (much larger), or an absolute value like <code class="language-css">24px</code>. Observe how the text size changes while the color and background remain the same. Remember to keep the semicolon separating the declarations!</li>
-</ul>
+</ol>
+<p><strong>Why PE is often preferred:</strong> It prioritizes access to content for everyone, leads to cleaner code (separation of concerns), and is generally more robust and future-proof. It forces you to think about the essential core first.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>. We&#39;re about to move into setting up our tools.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>313. Why <code class="language-css">border-box</code> is Preferred</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The preference for <code class="language-css">box-sizing: border-box;</code> stems directly from the difficulties caused by the default <code class="language-css">content-box</code> model, especially in responsive design and grid layouts.</p>
+<p>Imagine creating a two-column layout where each column should be 50% wide.</p>
+<ul>
+<li><p><strong>With <code class="language-css">content-box</code> (Default):</strong></p>
+<ul>
+<li>You set <code class="language-css">width: 50%;</code> on both columns.</li>
+<li>You then add <code class="language-css">padding: 15px;</code> for internal spacing.</li>
+<li>Now, each column&#39;s <em>actual</em> rendered width is <code class="language-css">50% + 30px</code> (15px left + 15px right padding).</li>
+<li>The total width is <code class="language-css">100% + 60px</code>, which is wider than the container! The layout breaks, and the second column wraps below the first. You&#39;d need complex calculations (<code class="language-css">calc(50% - 30px)</code>) for the width to compensate.</li>
+</ul>
+</li>
+<li><p><strong>With <code class="language-css">border-box</code>:</strong></p>
+<ul>
+<li>You set <code class="language-css">box-sizing: border-box;</code> (usually globally).</li>
+<li>You set <code class="language-css">width: 50%;</code> on both columns.</li>
+<li>You add <code class="language-css">padding: 15px;</code>.</li>
+<li>The <em>actual</em> rendered width of each column remains exactly <code class="language-css">50%</code>. The browser automatically reduces the <em>content area</em> width to make space for the 30px of horizontal padding within that 50%.</li>
+<li>The total width is <code class="language-css">50% + 50% = 100%</code>. The columns fit perfectly side-by-side.</li>
+</ul>
+</li>
+</ul>
+<p><code class="language-css">border-box</code> makes defining element dimensions and adding padding/borders independent, leading to much simpler and more predictable layout code.</p>
+<p>👀 Our <code class="language-css">.centered-box</code> example doesn&#39;t perfectly illustrate this layout problem, but applying <code class="language-css">border-box</code> would mean its final rendered width would be exactly 60% of the container, regardless of the <code class="language-css">padding: 10px;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

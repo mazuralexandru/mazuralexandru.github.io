@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>302. Margin Shorthand Property (<code class="language-css">margin</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Just like <code class="language-css">padding</code>, the <code class="language-css">margin</code> shorthand property allows setting margins on all four sides concisely.</p>
+<ul>
+<li><strong>Purpose:</strong> A more concise way to define margins.</li>
+<li><strong>Syntax:</strong> The number of values provided determines how they are applied (exactly the same logic as <code class="language-css">padding</code>):<ul>
+<li><strong>One Value:</strong> <code class="language-css">margin: value;</code> (All four sides)</li>
+<li><strong>Two Values:</strong> <code class="language-css">margin: value1 value2;</code> (Top/Bottom, Left/Right)</li>
+<li><strong>Three Values:</strong> <code class="language-css">margin: value1 value2 value3;</code> (Top, Left/Right, Bottom)</li>
+<li><strong>Four Values:</strong> <code class="language-css">margin: value1 value2 value3 value4;</code> (Top, Right, Bottom, Left - clockwise)</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve replaced the four longhand <code class="language-css">margin-*</code> properties with a single <code class="language-css">margin</code> shorthand using four values to achieve the same result as before.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: auto; 
+  height: auto; 
+  min-width: 200px; 
+  max-width: 400px; 
+  min-height: 150px; 
+  max-height: 200px; 
+  overflow: auto; 
+  background-color: cornflowerblue; 
+  padding: 20px 5px 15px 30px; 
+  /* Replaced longhand with shorthand */
+  margin: 2em 50px 3em 10px; /* Top, Right, Bottom, Left */
+  border-bottom: 4px solid red; 
+  border-radius: 15px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The spacing around the box should be identical to the previous step. The <code class="language-css">margin</code> shorthand simply provides a more compact way to write the same rules.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

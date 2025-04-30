@@ -9,53 +9,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>25. CSS Selectors: Introduction to Class Selectors</h1>
-<p>Type selectors apply to <em>all</em> elements of a certain type. What if you want to style <em>some</em> paragraphs differently from others, or apply a specific style to different types of elements? This is where <strong>Class Selectors</strong> become essential.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>25. What is HTML? Revisited</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s formally define HTML again before we dive into writing it.</p>
+<p><strong>HTML = HyperText Markup Language</strong></p>
 <ul>
-<li>We added a second <code class="language-html">&lt;p&gt;</code> element to <code class="language-text">index.html</code>.</li>
-<li>Crucially, we added the <code class="language-html">class</code> attribute with a value of <code class="language-html">highlight</code> to this second paragraph.</li>
+<li><strong>HyperText:</strong> Text which contains links (<code class="language-html">&lt;a&gt;</code> tags) to other texts (or resources). This linking capability is fundamental to how the web works, allowing navigation between pages.</li>
+<li><strong>Markup:</strong> A way of annotating text to define its structure or presentation. In HTML, we use <strong>tags</strong> (<code class="language-html">&lt;tagname&gt;</code>) to &quot;mark up&quot; content, telling the browser what kind of content it is (e.g., a paragraph, a heading, an image).</li>
+<li><strong>Language:</strong> It has a defined vocabulary (the set of valid tags and attributes) and syntax (the rules for how to write them correctly).</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;Styling with External CSS&lt;/h1&gt;
-  &lt;p&gt;This paragraph will be styled externally.&lt;/p&gt;
-  &lt;h2&gt;This is a Sub-heading&lt;/h2&gt;
-  &lt;p class=&quot;highlight&quot;&gt;This paragraph has a highlight class.&lt;/p&gt; &lt;!-- Added P with class --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<p><strong>The HTML <code>class</code> Attribute</strong></p>
-<ul>
-<li><strong>Purpose:</strong> The <code class="language-html">class</code> attribute allows you to assign one or more &quot;class names&quot; to an HTML element. These names act as labels or categories that you can then target with CSS (and JavaScript).</li>
-<li><strong>Syntax:</strong> <code class="language-html">&lt;element class=&quot;classname&quot;&gt;</code> or <code class="language-html">&lt;element class=&quot;name1 name2 name3&quot;&gt;</code> (multiple class names are separated by spaces).</li>
-<li><strong>Reusability:</strong> The same class name can be applied to many different elements, even elements of different types (e.g., you could have <code class="language-html">&lt;p class=&quot;highlight&quot;&gt;</code> and <code class="language-html">&lt;span class=&quot;highlight&quot;&gt;</code>). This is key for creating reusable styles.</li>
-<li><strong>Naming Conventions:</strong><ul>
-<li>Use meaningful, semantic names that describe the <em>purpose</em> or <em>role</em> of the element (e.g., <code class="language-html">error-message</code>, <code class="language-html">main-navigation</code>, <code class="language-html">product-card</code>) rather than describing its appearance (e.g., avoid <code class="language-html">red-text</code>, <code class="language-html">big-bold-title</code>).</li>
-<li>Use lowercase letters.</li>
-<li>Separate words with hyphens (<code class="language-html">-</code>), often called &quot;kebab-case&quot;. (e.g., <code class="language-html">button-primary</code>). Underscores (<code class="language-html">_</code>) or camelCase (<code class="language-html">buttonPrimary</code>) are less common in CSS class naming but technically valid.</li>
-</ul>
-</li>
-</ul>
-<p>In this step, we&#39;ve added <code class="language-html">class=&quot;highlight&quot;</code> to the second paragraph. This <em>doesn&#39;t</em> change its appearance yet, because we haven&#39;t defined any CSS rules targeting the <code class="language-css">.highlight</code> class.</p>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview. You&#39;ll see the second paragraph &quot;This paragraph has a highlight class.&quot;</li>
-<li>👀 Visually, this new paragraph looks <em>exactly</em> like the first paragraph (italic, <code class="language-css">#ccc</code> color). Adding the <code class="language-html">class</code> attribute itself doesn&#39;t apply any style; it just provides a &quot;hook&quot; for CSS.</li>
-<li>✅ Inspect the second <code class="language-html">&lt;p&gt;</code> element in DevTools. In the Elements panel, you can clearly see the <code class="language-html">class=&quot;highlight&quot;</code> attribute attached to it.</li>
-</ul>
-<p>Next, we&#39;ll write the CSS rule to target this class.</p>
+<p>It&#39;s crucial to remember that HTML is a <strong>markup language</strong>, not a programming language. It describes the <em>structure</em> of content, rather than providing instructions for the computer to execute complex logic (that&#39;s JavaScript&#39;s job).</p>
+<p>🔬 <code class="language-text">index.html</code> is still empty. Next, we&#39;ll look at the building blocks: elements and tags.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

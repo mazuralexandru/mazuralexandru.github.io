@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>266. The <code class="language-css">height</code> Property: Purpose</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Similar to <code class="language-css">width</code>, the <code class="language-css">height</code> property controls the vertical dimension of an element&#39;s content area (by default).</p>
+<ul>
+<li><strong>Purpose:</strong> Defines the height of the content area.</li>
+<li><strong>Applicability:</strong> Like <code class="language-css">width</code>, it primarily affects block-level elements, replaced elements, and elements whose <code class="language-css">display</code> allows height control (e.g., <code class="language-css">block</code>, <code class="language-css">inline-block</code>, <code class="language-css">flex</code>, <code class="language-css">grid</code>). It is ignored by default on non-replaced inline elements.</li>
+<li><strong>Default Behavior:</strong> Most elements have a default <code class="language-css">height</code> of <code class="language-css">auto</code>, meaning their height expands or shrinks vertically to fit their content.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">height: 100px;</code> to the <code class="language-css">.box</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.box {
+  width: 75%; 
+  height: 100px; /* Set explicit height */
+  background-color: cornflowerblue; 
+  padding: 10px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> The blue box should now have a fixed height of 100 pixels (plus the top/bottom padding). If the text content requires more vertical space than this, it might overflow the box (depending on the <code class="language-css">overflow</code> property, which defaults to <code class="language-css">visible</code>). If the content requires less space, the box will still maintain its 100px height.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

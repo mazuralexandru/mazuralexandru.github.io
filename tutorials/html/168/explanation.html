@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>168. Universal Selector: Use Cases</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Despite its broad scope and potential performance impact, the universal selector (<code class="language-css">*</code>) has a few specific, common use cases:</p>
+<ol>
+<li><strong>CSS Resets (Box-sizing):</strong> The most famous and widely recommended use is setting the <code class="language-css">box-sizing</code> property globally. This changes how the browser calculates element widths and heights to include padding and borders, making layout math much more intuitive.<pre class="language-css"><code class="language-css">*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+</code></pre>
+<em>(Note: Including <code class="language-css">::before</code> and <code class="language-css">::after</code> ensures pseudo-elements are also included in this reset).</em></li>
+<li><strong>Basic Resets (Margin/Padding):</strong> Sometimes used in simple resets to remove default browser margins and padding from all elements, although targeting specific elements (like <code class="language-css">body, h1, p, ul</code> etc.) is often preferred for more control.<pre class="language-css"><code class="language-css">* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; Often included here */
+}
+</code></pre>
+</li>
+<li><strong>Debugging:</strong> Temporarily applying a highly visible style like <code class="language-css">* { outline: 1px solid red; }</code> can help visualize the boundaries of <em>all</em> elements on the page to debug layout issues. <strong>Remember to remove this after debugging!</strong></li>
+</ol>
+<p>Avoid using <code class="language-css">*</code> for general styling (like setting default font colors or families) as it&#39;s inefficient and usually better handled by styling the <code class="language-html">&lt;body&gt;</code> or using more specific selectors.</p>
+<p>👀 We are not adding a universal selector rule to <code class="language-text">style.css</code> in this lesson, but the <code class="language-css">box-sizing</code> reset is a very common pattern you&#39;ll see in many projects.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

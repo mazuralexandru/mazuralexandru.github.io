@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>226. Vertical Alignment (<code class="language-css">vertical-align</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">vertical-align</code> property affects the vertical positioning of an <strong>inline-level element</strong> (like <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;img&gt;</code>, <code class="language-html">&lt;a&gt;</code>) or a <strong>table-cell element</strong> (<code class="language-html">&lt;td&gt;</code>, <code class="language-html">&lt;th&gt;</code>) relative to its line box or table row.</p>
+<ul>
+<li><strong>Purpose:</strong> To control the vertical alignment of elements within a line of text or within a table cell. <strong>It does NOT vertically align block-level elements within their container</strong> (that requires other techniques like Flexbox, Grid, or positioning).</li>
+<li><strong>Applies To:</strong> Inline-level and table-cell elements.</li>
+<li><strong>Inherited:</strong> No.</li>
+<li><strong>Common Values (for inline elements):</strong><ul>
+<li><code class="language-css">baseline</code>: (Default) Aligns the baseline of the element with the baseline of its parent.</li>
+<li><code class="language-css">sub</code>: Aligns the element as a subscript.</li>
+<li><code class="language-css">super</code>: Aligns the element as a superscript.</li>
+<li><code class="language-css">top</code>: Aligns the top of the element with the top of the line box.</li>
+<li><code class="language-css">middle</code>: Aligns the vertical midpoint of the element with the baseline plus half the x-height of the parent. Often used to vertically center images or icons alongside text.</li>
+<li><code class="language-css">bottom</code>: Aligns the bottom of the element with the bottom of the line box.</li>
+<li><code class="language-css">text-top</code>: Aligns the top of the element with the top of the parent&#39;s font.</li>
+<li><code class="language-css">text-bottom</code>: Aligns the bottom of the element with the bottom of the parent&#39;s font.</li>
+<li><code>&lt;length&gt;</code>: Raises or lowers the element by a fixed amount relative to the baseline (e.g., <code class="language-css">5px</code>, <code class="language-css">-0.2em</code>).</li>
+<li><code>&lt;percentage&gt;</code>: Raises or lowers the element relative to the <code class="language-css">line-height</code> of the element itself.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a small image (<code class="language-html">&lt;img&gt;</code>) right after the &quot;External Link&quot; text, inside the <code class="language-html">&lt;a&gt;</code> tag. We&#39;re using a placeholder image source for now.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;External Link &lt;img src=&quot;placeholder-icon.png&quot; alt=&quot;icon&quot; class=&quot;link-icon&quot;&gt;&lt;/a&gt; &lt;!-- Added image inside link --&gt;
+</code></pre>
+<p>✅ <strong>Now, switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule for the new <code class="language-css">.link-icon</code> class.</li>
+<li>We give it a small height and apply <code class="language-css">vertical-align: middle;</code> to try and center it with the link text.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Vertical Align Example */
+.link-icon {
+  height: 1em; /* Size relative to font size */
+  vertical-align: middle; /* Align icon vertically with text */
+}
+</code></pre>
+<ul>
+<li>We also removed the <code class="language-css">p { color: hotpink; }</code> rule as it was just for the specificity demo and was being overridden anyway.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see a small broken image icon (since <code class="language-text">placeholder-icon.png</code> doesn&#39;t exist) next to &quot;External Link&quot;.</li>
+<li>Due to <code class="language-css">vertical-align: middle;</code>, this icon should be roughly vertically centered alongside the link text, rather than sitting strictly on the baseline. The exact alignment can depend on the font and icon size.</li>
+</ul>
+<p><code class="language-css">vertical-align</code> is essential for fine-tuning the alignment of inline elements like images, icons, or form controls relative to surrounding text.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

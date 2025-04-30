@@ -9,86 +9,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="preload" href="./utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
-  <link rel="stylesheet" href="./utils/styles/explanationStyle.css">
-  <link href="./utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>44. Introduction to the CSS Cascade</h1>
-<p>What happens when multiple CSS rules target the same element and try to set the same property (like <code class="language-css">color</code>)? The browser needs a system to decide which rule &quot;wins&quot;. This system is called the <strong>Cascade</strong>.</p>
-<p><strong>What&#39;s New?</strong></p>
+  <h1>44. DOCTYPE: Syntax Details</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s look closely at the syntax: <code class="language-html">&lt;!DOCTYPE html&gt;</code></p>
 <ul>
-<li><strong>HTML Pruning:</strong> Removed the <code class="language-html">&lt;h2&gt;</code>, <code class="language-html">&lt;div&gt;</code>, and the latter two <code class="language-html">&lt;p&gt;</code> elements from the previous example.</li>
-<li><strong>HTML Modification:</strong> Added a <code class="language-html">class=&quot;special&quot;</code> attribute to the remaining paragraph.</li>
-<li><strong>CSS Pruning:</strong> Removed the general sibling combinator rule (<code class="language-css">h2 ~ p</code>).</li>
-<li><strong>CSS Addition:</strong> Added a new rule targeting the class <code class="language-css">.special</code>, which conflicts with the existing <code class="language-css">p</code> rule for the <code class="language-css">color</code> property.</li>
+<li><strong><code class="language-html">&lt;!</code> and <code class="language-html">&gt;</code>:</strong> These delimit the declaration. It looks like a tag but isn&#39;t technically an HTML element itself.</li>
+<li><strong><code class="language-text">DOCTYPE</code>:</strong> The keyword indicating this is a Document Type Declaration. Case-insensitive, but uppercase is conventional.</li>
+<li><strong><code class="language-text">html</code>:</strong> Specifies the type of document – in this case, HTML. For the HTML5 DOCTYPE, this is all that&#39;s needed. It&#39;s case-insensitive, but lowercase is conventional.</li>
 </ul>
-<pre class="language-html"><code class="language-html">&lt;!-- index.html snippet --&gt;
-&lt;body&gt;
-  &lt;h1&gt;CSS Cascade Demo&lt;/h1&gt; &lt;!-- Changed H1 text --&gt;
-
-  &lt;p class=&quot;special&quot;&gt;This paragraph has conflicting styles.&lt;/p&gt; &lt;!-- Modified P, added class --&gt;
-
-  &lt;!-- Pruned previous sibling examples --&gt;
-
-  &lt;!-- Commented out paragraph remains --&gt;
-  &lt;!-- &lt;p&gt;This paragraph is commented out and won&#39;t appear.&lt;/p&gt; --&gt;
-
-  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre class="language-css"><code class="language-css">/* style.css snippet */
-/* Updated P rule */
-p {
-  font-style: italic;
-  color: #ccc; /* Rule 1: Sets color */
-}
-
-/* Removed general sibling combinator rule */
-/*
-h2 ~ p { ... }
-*/
-
-/* Added conflicting rule */
-.special {
-  color: lightcoral; /* Rule 2: Also sets color */
-  font-weight: bold;
-}
-
-/* CSS files can also have comments! */
-</code></pre>
-<p><strong>The Cascade Problem</strong></p>
-<p>Look at our CSS:</p>
-<ol>
-<li>The <code class="language-css">p</code> rule says the paragraph text should be <code class="language-css">#ccc</code> (light gray).</li>
-<li>The <code class="language-css">.special</code> rule says the paragraph text should be <code class="language-css">lightcoral</code>.</li>
-</ol>
-<p>Our paragraph (<code class="language-html">&lt;p class=&quot;special&quot;&gt;</code>) is matched by <em>both</em> selectors. Which color will it actually be? The Cascade algorithm determines the winner based on three main factors (in order of precedence):</p>
-<ol>
-<li><strong>Origin and Importance:</strong> Where the style comes from (browser default, user stylesheet, author stylesheet) and whether <code class="language-css">!important</code> is used. For now, we&#39;re only concerned with our own &quot;author&quot; styles. <code class="language-css">!important</code> provides an override mechanism, but should generally be avoided if possible.</li>
-<li><strong>Specificity:</strong> How specific is the selector that applies the rule? More specific selectors beat less specific ones.</li>
-<li><strong>Source Order:</strong> If two rules have the same origin/importance and the same specificity, the rule that appears <strong>last</strong> in the CSS code wins.</li>
-</ol>
-<p><strong>Applying the Cascade (Simplified)</strong></p>
+<p><strong>Key Rules:</strong></p>
 <ul>
-<li><strong>Origin/Importance:</strong> Both our <code class="language-css">p</code> and <code class="language-css">.special</code> rules are author styles and neither uses <code class="language-css">!important</code>. So this factor is a tie.</li>
-<li><strong>Specificity:</strong> A class selector (<code class="language-css">.special</code>) is considered <strong>more specific</strong> than a type selector (<code class="language-css">p</code>). We&#39;ll dive into how specificity is calculated next, but for now, know that <code>.special</code> is stronger than <code>p</code>.</li>
-<li><strong>Result:</strong> Because the <code class="language-css">.special</code> selector is more specific, its declaration (<code class="language-css">color: lightcoral;</code>) will win over the <code class="language-css">color: #ccc;</code> from the <code class="language-css">p</code> rule.</li>
+<li><strong>Must be first:</strong> Nothing, not even whitespace or comments, can precede the DOCTYPE declaration on the first line.</li>
+<li><strong>Only one:</strong> A document must have exactly one DOCTYPE declaration.</li>
 </ul>
-<p><strong>✅ Guided Observation:</strong></p>
-<ul>
-<li>👀 Refresh the browser preview.</li>
-<li>👀 Observe the paragraph (&quot;This paragraph has conflicting styles.&quot;). It should be <strong>light coral</strong>, not light gray (<code class="language-css">#ccc</code>). It should also be <strong>bold</strong> (from <code class="language-css">.special</code>) and <em>italic</em> (from <code class="language-css">p</code> - note that <code class="language-css">font-style</code> wasn&#39;t conflicting, so both apply).</li>
-<li>✅ Inspect the paragraph in DevTools. In the Styles pane:<ul>
-<li>You&#39;ll see the <code class="language-css">.special</code> rule applying <code class="language-css">color: lightcoral</code> and <code class="language-css">font-weight: bold</code>.</li>
-<li>You&#39;ll see the <code class="language-css">p</code> rule applying <code class="language-css">font-style: italic</code>.</li>
-<li>Crucially, you should see the <code class="language-css">color: #ccc</code> declaration within the <code class="language-css">p</code> rule <strong>crossed out</strong>, indicating that it lost the cascade resolution to the more specific <code class="language-css">.special</code> rule.</li>
-</ul>
-</li>
-</ul>
-<p>Understanding the cascade is fundamental to debugging CSS and predicting how styles will apply. Specificity is the most common factor you&#39;ll deal with in author styles.</p>
+<p>It&#39;s simple, but getting it right and placing it correctly is the essential first step.</p>
+<p>✅ Still viewing the empty <code class="language-text">index.html</code>.</p>
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

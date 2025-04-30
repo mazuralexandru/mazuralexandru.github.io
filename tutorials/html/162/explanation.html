@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>162. Attribute Selectors: Syntax</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Attribute selectors use square brackets <code class="language-css">[]</code> around the attribute criteria. Here are the common forms:</p>
+<ol>
+<li><strong>Presence <code class="language-css">[attribute]</code></strong>: Selects elements that simply <em>have</em> the specified attribute, regardless of its value.<ul>
+<li>Example: <code class="language-css">[title]</code> selects any element with a <code class="language-html">title</code> attribute.</li>
+</ul>
+</li>
+<li><strong>Exact Value <code class="language-css">[attribute=&quot;value&quot;]</code></strong>: Selects elements where the attribute has an <em>exact</em> matching value.<ul>
+<li>Example: <code class="language-css">[type=&quot;submit&quot;]</code> selects elements with <code class="language-html">type=&quot;submit&quot;</code>.</li>
+</ul>
+</li>
+<li><strong>Whitespace-separated list contains <code class="language-css">[attribute~=&quot;value&quot;]</code></strong>: Selects elements where the attribute value is a list of space-separated words, and one of them exactly matches the value. (Often used with <code class="language-html">class</code>, but <code class="language-css">.value</code> is usually simpler).<ul>
+<li>Example: <code class="language-css">[data-tags~=&quot;news&quot;]</code> selects elements where <code class="language-html">data-tags</code> contains the word &quot;news&quot;.</li>
+</ul>
+</li>
+<li><strong>Starts with value-hyphen <code class="language-css">[attribute|=&quot;value&quot;]</code></strong>: Selects elements where the attribute value is exactly &quot;value&quot; or starts with &quot;value&quot; immediately followed by a hyphen (<code class="language-text">-</code>). Primarily used for language subcodes.<ul>
+<li>Example: <code class="language-css">[lang|=&quot;en&quot;]</code> selects elements with <code class="language-html">lang=&quot;en&quot;</code> or <code class="language-html">lang=&quot;en-US&quot;</code>.</li>
+</ul>
+</li>
+<li><strong>Starts with value <code class="language-css">[attribute^=&quot;value&quot;]</code></strong>: Selects elements where the attribute value <em>begins</em> with the specified string.<ul>
+<li>Example: <code class="language-css">a[href^=&quot;https://&quot;]</code> selects links whose <code class="language-html">href</code> starts with &quot;https://&quot;.</li>
+</ul>
+</li>
+<li><strong>Ends with value <code class="language-css">[attribute$=&quot;value&quot;]</code></strong>: Selects elements where the attribute value <em>ends</em> with the specified string.<ul>
+<li>Example: <code class="language-css">img[src$=&quot;.png&quot;]</code> selects images whose <code class="language-html">src</code> ends with &quot;.png&quot;.</li>
+</ul>
+</li>
+<li><strong>Contains substring <code class="language-css">[attribute*=&quot;value&quot;]</code></strong>: Selects elements where the attribute value <em>contains</em> the specified substring anywhere within it.<ul>
+<li>Example: <code class="language-css">a[href*=&quot;example.com&quot;]</code> selects links whose <code class="language-html">href</code> contains &quot;example.com&quot;.</li>
+</ul>
+</li>
+</ol>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We added a <code class="language-html">title</code> attribute to the paragraph: <code class="language-html">title=&quot;Standard Paragraph&quot;</code>.</li>
+<li>We added a link (<code class="language-html">&lt;a&gt;</code>) with an <code class="language-html">href</code> attribute pointing to an external site and a <code class="language-html">target=&quot;_blank&quot;</code> attribute.</li>
+</ul>
+<p>✅ <strong>Now, switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We added rules using attribute selectors:<ul>
+<li><code class="language-css">p[title]</code> styles any paragraph with a <code class="language-html">title</code> attribute (adds a border).</li>
+<li><code class="language-css">a[target=&quot;_blank&quot;]</code> styles any link that opens in a new tab (adds a small icon after it using pseudo-elements, which we&#39;ll cover later, and changes color).</li>
+</ul>
+</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The paragraph now has a dotted gray border because it has a <code class="language-html">title</code> attribute.</li>
+<li>The link (&quot;External Link&quot;) is styled differently (cyan color, small arrow icon) because it has <code class="language-html">target=&quot;_blank&quot;</code>.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

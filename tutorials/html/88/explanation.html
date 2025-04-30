@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>88. Whitespace in CSS</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>How does CSS handle whitespace (spaces, tabs, line breaks)?</p>
+<p>Generally, CSS is <strong>whitespace-insensitive</strong> outside of property values. This means you can format your code for readability without affecting how it works.</p>
+<p>These are typically equivalent:</p>
+<pre class="language-css"><code class="language-css">/* Compact */
+p{color:red;font-size:16px;} 
+</code></pre>
+<pre class="language-css"><code class="language-css">/* Readable */
+p {
+  color: red;
+  font-size: 16px;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css">/* Also valid, though less conventional */
+p 
+{
+    color:      red;
+
+    font-size:  16px;
+}
+</code></pre>
+<ul>
+<li><strong>Readability:</strong> Use whitespace (indentation, line breaks) consistently to make your CSS easy to read and understand. The second example above is the most common and recommended format.</li>
+<li><strong>Property Values:</strong> Whitespace <em>can</em> be significant <em>within</em> property values (e.g., separating multiple values for <code class="language-css">margin</code> or <code class="language-css">font-family</code>, or within a <code class="language-css">url()</code> value).</li>
+<li><strong>Selectors:</strong> Whitespace can also be significant within complex selectors (e.g., descendant combinator <code class="language-css">div p</code> vs. <code class="language-css">divp</code>).</li>
+</ul>
+<p>Use a code formatter (like Prettier) to automatically maintain consistent and readable whitespace formatting.</p>
+<p>✅ Still viewing the empty <code class="language-text">style.css</code>. Now that we understand the syntax, let&#39;s link this file to our HTML.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

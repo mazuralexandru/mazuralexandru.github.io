@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>177. Adjacent Sibling Combinator (<code class="language-css">+</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <strong>Adjacent Sibling Combinator</strong> is represented by the plus sign (<code class="language-css">+</code>) between two selectors.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">element1 + element2</code></li>
+<li><strong>Meaning:</strong> Selects any element matching <code class="language-css">element2</code> only if it <strong>immediately follows</strong> an element matching <code class="language-css">element1</code>, and both elements share the same parent.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule: <code class="language-css">h1 + p</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Adjacent Sibling Combinator Example */
+h1 + p {
+  margin-top: 5px; /* Reduce top margin only for paragraphs directly after an h1 */
+  color: lightgreen; /* Change color for emphasis */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the second paragraph (&quot;This paragraph follows the heading.&quot;). It should now be <strong>light green</strong> and appear slightly closer vertically to the heading above it (its default top margin might be reduced or overridden by this rule, depending on browser defaults).</li>
+<li>The <em>first</em> paragraph (&quot;This is a standard paragraph.&quot;) is <strong>not</strong> affected because it does <em>not</em> immediately follow the <code class="language-html">&lt;h1&gt;</code>.</li>
+<li>This combinator is useful for adjusting spacing or styles based on the immediately preceding element.</li>
+</ul>
+<p>👀 Check the HTML structure in <code class="language-text">index.html</code> to confirm that the second <code class="language-html">&lt;p&gt;</code> directly follows the <code class="language-html">&lt;h1&gt;</code> within the <code class="language-html">.container</code> div.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

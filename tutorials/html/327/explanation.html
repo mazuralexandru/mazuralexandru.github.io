@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>327. Directional Overflow Properties: <code class="language-css">overflow-x</code> &amp; <code class="language-css">overflow-y</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Instead of using the <code class="language-css">overflow</code> shorthand (which applies the same behavior to both horizontal and vertical overflow), you can control overflow independently for each axis using <code class="language-css">overflow-x</code> and <code class="language-css">overflow-y</code>.</p>
+<ul>
+<li><strong><code class="language-css">overflow-x</code>:</strong> Controls overflow along the horizontal (x) axis.</li>
+<li><strong><code class="language-css">overflow-y</code>:</strong> Controls overflow along the vertical (y) axis.</li>
+<li><strong>Values:</strong> Both properties accept the same values as <code class="language-css">overflow</code>: <code class="language-css">visible</code>, <code class="language-css">hidden</code>, <code class="language-css">scroll</code>, <code class="language-css">auto</code>.</li>
+<li><strong>Use Case:</strong> Allows different handling for horizontal vs. vertical overflow. For example, you might want vertical scrolling (<code class="language-css">overflow-y: auto;</code>) but want to clip any horizontal overflow (<code class="language-css">overflow-x: hidden;</code>).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the <code class="language-css">overflow: auto;</code> shorthand.</li>
+<li>We&#39;ve added <code class="language-css">overflow-y: scroll;</code> (force vertical scrollbar always).</li>
+<li>We&#39;ve added <code class="language-css">overflow-x: hidden;</code> (clip any horizontal overflow).</li>
+</ul>
+<pre class="language-css"><code class="language-css">.overflow-box {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid orange;
+  background-color: rgba(0, 0, 100, 0.2);
+  margin-bottom: 1em; 
+  /* overflow: auto; &lt;- Removed */
+  overflow-y: scroll; /* Always show vertical scrollbar */
+  overflow-x: hidden; /* Clip horizontal overflow */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The box should now <strong>always</strong> have a vertical scrollbar (due to <code class="language-css">overflow-y: scroll;</code>), even if the content technically fits.</li>
+<li>There should be no horizontal scrollbar, and if any content <em>did</em> overflow horizontally, it would be clipped (due to <code class="language-css">overflow-x: hidden;</code>).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>203. CSS Color Values: <code class="language-css">currentColor</code> Keyword</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p><code class="language-css">currentColor</code> is a dynamic keyword value that resolves to the computed value of the element&#39;s own <code class="language-css">color</code> property.</p>
+<ul>
+<li><strong>Purpose:</strong> Allows you to make other properties (like borders, backgrounds, SVG fills/strokes) automatically match the element&#39;s current text color, without having to repeat the color value. If the text <code class="language-css">color</code> changes (e.g., on hover, or via inheritance), any property set to <code class="language-css">currentColor</code> will update automatically.</li>
+<li><strong>Syntax:</strong> <code class="language-css">property: currentColor;</code></li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><strong>Borders matching text:</strong> <code class="language-css">border: 1px solid currentColor;</code></li>
+<li><strong>Backgrounds matching text:</strong> (Less common, but possible) <code class="language-css">background-color: currentColor;</code></li>
+<li><strong>SVG Icons:</strong> Styling the <code class="language-css">fill</code> or <code class="language-css">stroke</code> of SVG icons to match the surrounding text color is a very common use case.<pre class="language-css"><code class="language-css">.icon { 
+  fill: currentColor; /* SVG icon color matches text color */
+  width: 1em; 
+  height: 1em; 
+}
+button { color: blue; }
+button .icon { /* Icon inside blue button will be blue */ }
+a { color: green; }
+a .icon { /* Icon inside green link will be green */ }
+</code></pre>
+</li>
+<li><strong>Gradients or Shadows:</strong> Using the text color as part of a gradient or shadow.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve modified the <code class="language-css">p[title]</code> rule. Instead of <code class="language-css">border: 1px dotted gray;</code>, it now uses <code class="language-css">border: 1px dotted currentColor;</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Use currentColor for the border */
+p[title] {
+  border: 1px dotted currentColor; /* Border color now matches text color */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The first paragraph (&quot;This is a standard paragraph.&quot;) still has a dotted border, but the border color should now be <strong>yellow</strong>, matching the paragraph&#39;s text color (which is set to yellow by the <code class="language-css">.container &gt; p</code> rule).</li>
+<li>If we were to change the <code class="language-css">color</code> of <code class="language-css">.container &gt; p</code>, the border color on the first paragraph would automatically update to match because it uses <code class="language-css">currentColor</code>.</li>
+</ul>
+<p><code class="language-css">currentColor</code> promotes consistency and reduces repetition when styles should be tied to the text color.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

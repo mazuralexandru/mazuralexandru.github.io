@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>127. Internal Stylesheets: Purpose Explained</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The primary purpose of using an internal stylesheet with the <code class="language-html">&lt;style&gt;</code> element is to <strong>embed CSS rules directly within the HTML <code class="language-html">&lt;head&gt;</code></strong>.</p>
+<p>This keeps the styles associated with a single HTML page contained within that page&#39;s file. Unlike inline styles, you can use standard CSS selectors (<code class="language-css">h1</code>, <code class="language-css">p</code>, classes, IDs, etc.) to target multiple elements efficiently from one location within the document.</p>
+<p>It offers better organization than scattering inline styles throughout the <code class="language-html">&lt;body&gt;</code>, but lacks the reusability and caching benefits of external stylesheets.</p>
+<p>👀 Viewing <code class="language-text">index.html</code> shows our current structure where styles are primarily external (linked via <code class="language-html">&lt;link&gt;</code>). An internal stylesheet would move those rules (or add new ones) inside the <code class="language-html">&lt;head&gt;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
