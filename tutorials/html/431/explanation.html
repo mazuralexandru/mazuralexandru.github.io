@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>431. <code class="language-css">background-image</code>: Syntax (<code class="language-css">url()</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The most common way to specify a background image is using the <code class="language-css">url()</code> function.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">background-image: url(&#39;path/or/url/to/image.format&#39;);</code><ul>
+<li>The path inside <code class="language-css">url()</code> follows the same rules as <code class="language-html">href</code> or <code class="language-html">src</code> (can be relative or absolute).</li>
+<li>Quotes around the path are optional but recommended for clarity and to handle paths with special characters.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a <code class="language-css">background-image</code> property to <code class="language-css">.bg-box</code>, pointing to a placeholder image URL.</li>
+<li>We&#39;ve also temporarily set <code class="language-css">background-color: transparent;</code> so the image is clearly visible against the body background.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.bg-box {
+    background-color: transparent; /* Temporarily remove solid color */
+    background-image: url(&#39;images/placeholder-pattern.png&#39;); /* Add image */
+    padding: 2em;
+    margin-bottom: 1em;
+    border: 1px dashed #fff; 
+    min-height: 150px; /* Ensure box is tall enough to see pattern */
+}
+</code></pre>
+<ul>
+<li>We added a <code class="language-css">min-height</code> to ensure the box is tall enough to see the background effect.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code></strong> to see the HTML structure.</p>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Instead of a solid color, the box should now be filled with a repeating pattern (assuming <code class="language-text">placeholder-pattern.png</code> represents a small tileable image).</li>
+<li>By default, background images <strong>repeat</strong> both horizontally and vertically to fill the element&#39;s background painting area (content + padding). We&#39;ll control this repetition next.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>379. Semantic HTML Structure for Navigation (<code class="language-html">&lt;nav&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Now let&#39;s combine our knowledge of lists and links to build a common UI pattern: a navigation bar.</p>
+<p>First, it&#39;s crucial to use semantic HTML to structure the navigation. The <code class="language-html">&lt;nav&gt;</code> element is specifically designed for this.</p>
+<ul>
+<li><strong>Purpose:</strong> The <code>&lt;nav&gt;</code> element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples include main site navigation, menus, tables of contents, or indexes.</li>
+<li><strong>Semantics &amp; Accessibility:</strong><ul>
+<li>Using <code>&lt;nav&gt;</code> clearly identifies major navigation blocks to browsers, assistive technologies (like screen readers, which announce it as a &quot;navigation landmark&quot;), and search engines.</li>
+<li>Not all groups of links need to be in a <code>&lt;nav&gt;</code> element – a simple list of links in a page footer, for example, doesn&#39;t necessarily warrant a <code>&lt;nav&gt;</code>. Use it for primary navigation sections.</li>
+</ul>
+</li>
+<li><strong>Display:</strong> By default, <code>&lt;nav&gt;</code> is a block-level element.</li>
+</ul>
+<p>🗑️ <strong>Code Pruning:</strong> We&#39;ve cleared <code>index.html</code> and <code>style.css</code> again to focus solely on building a navigation bar.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a basic structure for a navigation menu using <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, and <code>&lt;a&gt;</code>.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong> You should see a simple, default-styled unordered list (likely with bullets and indentation, depending on browser defaults and our base styles) contained within the <code>&lt;nav&gt;</code> landmark. This semantic structure is the foundation for styling our navigation bar.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

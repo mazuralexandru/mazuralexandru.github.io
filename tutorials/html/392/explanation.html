@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>392. <code>width</code> &amp; <code>height</code> Attributes: CLS &amp; Aspect Ratio</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While CSS is the primary way to control image dimensions for layout, the <code class="language-html">width</code> and <code class="language-html">height</code> attributes on the <code class="language-html">&lt;img&gt;</code> tag itself play a crucial role, especially for <strong>performance and layout stability</strong>.</p>
+<ul>
+<li><strong>Purpose:</strong> These attributes provide hints to the browser about the image&#39;s <strong>intrinsic aspect ratio</strong> (the ratio of its width to its height) <em>before</em> the image file is fully downloaded.</li>
+<li><strong>Preventing CLS (Cumulative Layout Shift):</strong><ul>
+<li>If you don&#39;t provide <code class="language-html">width</code> and <code class="language-html">height</code>, the browser initially doesn&#39;t know how much space to reserve for the image.</li>
+<li>When the image finally loads, it suddenly pops into place, potentially pushing other content down the page. This jarring shift in layout is called CLS and is bad for user experience (and search engine rankings).</li>
+<li>By providing the <code class="language-html">width</code> and <code class="language-html">height</code> attributes (matching the image&#39;s actual dimensions or at least its aspect ratio), the browser can calculate the aspect ratio early and reserve the correct amount of vertical space in the layout <em>before</em> the image downloads. This prevents the content jump when the image appears.</li>
+</ul>
+</li>
+<li><strong>Syntax:</strong> <code class="language-html">&lt;img src=&quot;...&quot; alt=&quot;...&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;</code><ul>
+<li>The values should be unitless integers representing pixels.</li>
+<li>Use the image&#39;s <strong>intrinsic (natural) dimensions</strong> or values that maintain the correct aspect ratio.</li>
+</ul>
+</li>
+<li><strong>Interaction with CSS:</strong><ul>
+<li>CSS <code class="language-css">width</code>, <code class="language-css">height</code>, and <code class="language-css">max-width</code> properties will typically override the HTML <code class="language-html">width</code> and <code class="language-html">height</code> attributes for the <em>final rendered size</em>.</li>
+<li>However, the browser still uses the HTML attributes initially to calculate the aspect ratio and reserve space, preventing CLS.</li>
+</ul>
+</li>
+<li><strong>Best Practice:</strong> <strong>Always include <code class="language-html">width</code> and <code class="language-html">height</code> attributes on your <code class="language-html">&lt;img&gt;</code> tags</strong>, reflecting the image&#39;s intrinsic dimensions or aspect ratio, even if you also control the size with CSS.</li>
+</ul>
+<p>👀 We will add an <code class="language-html">&lt;img&gt;</code> tag with <code class="language-html">src</code>, <code class="language-html">alt</code>, <code class="language-html">width</code>, and <code class="language-html">height</code> attributes to <code class="language-text">index.html</code> soon.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>387. Horizontal Nav (Flexbox): Alignment (<code class="language-css">justify-content</code>, <code class="language-css">align-items</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Flexbox provides powerful properties for aligning items within the flex container.</p>
+<ul>
+<li><strong><code class="language-css">justify-content</code>:</strong> Controls alignment of items along the <strong>main axis</strong> (the direction items flow - <code>row</code> by default for <code>display: flex</code>).<ul>
+<li><code class="language-css">flex-start</code> (Default): Items packed toward the start line.</li>
+<li><code class="language-css">flex-end</code>: Items packed toward the end line.</li>
+<li><code class="language-css">center</code>: Items centered along the line.</li>
+<li><code class="language-css">space-between</code>: Items evenly distributed; first item at the start, last item at the end, space is maximized <em>between</em> items.</li>
+<li><code class="language-css">space-around</code>: Items evenly distributed with equal space <em>around</em> each item (half-size space at ends).</li>
+<li><code class="language-css">space-evenly</code>: Items evenly distributed with equal space between them <em>and</em> at the ends.</li>
+</ul>
+</li>
+<li><strong><code class="language-css">align-items</code>:</strong> Controls alignment of items along the <strong>cross axis</strong> (perpendicular to the main axis). For a default row direction, this controls vertical alignment.<ul>
+<li><code class="language-css">stretch</code> (Default): Items stretch to fill the container&#39;s cross size (height in a row).</li>
+<li><code class="language-css">flex-start</code>: Items packed toward the cross-start edge (top in a row).</li>
+<li><code class="language-css">flex-end</code>: Items packed toward the cross-end edge (bottom in a row).</li>
+<li><code class="language-css">center</code>: Items centered on the cross axis (vertically centered in a row).</li>
+<li><code class="language-css">baseline</code>: Items aligned based on their text baselines.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">justify-content: center;</code> to the <code class="language-css">nav ul</code> rule to center the navigation items horizontally within the <code>ul</code> container.</li>
+</ul>
+<pre class="language-css"><code class="language-css">nav ul {
+    display: flex; 
+    list-style: none; 
+    padding: 0;       
+    margin: 0;        
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 0.5em 0; 
+    gap: 0.5em; 
+    justify-content: center; /* Center items horizontally */
+    /* align-items: center; /* Could be used for vertical centering if needed */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The navigation items (&quot;Home&quot;, &quot;About&quot;, etc.) should now be <strong>centered horizontally</strong> as a group within the faint dark background area of the <code>&lt;ul&gt;</code>.</li>
+<li>Compare this to the <code>text-align: center</code> used in the inline-block method, which centered the <em>inline content</em> within the <code>ul</code>. Flexbox centers the <em>flex items</em> (<code>&lt;li&gt;</code>) themselves within the flex container (<code>&lt;ul&gt;</code>).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

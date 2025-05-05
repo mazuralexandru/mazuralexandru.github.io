@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>415. <code class="language-css">filter</code> Property: Common Filter Functions</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Let&#39;s explore some common filter functions and apply them.</p>
+<ul>
+<li><strong><code class="language-css">grayscale(percentage|number)</code>:</strong> Converts the image to grayscale. <code class="language-css">0%</code> or <code class="language-css">0</code> is original, <code class="language-css">100%</code> or <code class="language-css">1</code> is fully grayscale.</li>
+<li><strong><code class="language-css">sepia(percentage|number)</code>:</strong> Applies a sepia tone. <code class="language-css">0%</code>/<code class="language-css">0</code> is original, <code class="language-css">100%</code>/<code class="language-css">1</code> is full sepia.</li>
+<li><strong><code class="language-css">brightness(percentage|number)</code>:</strong> Adjusts brightness. <code class="language-css">100%</code>/<code class="language-css">1</code> is original, <code>&lt;100%</code> darkens, <code>&gt;100%</code> brightens.</li>
+<li><strong><code class="language-css">contrast(percentage|number)</code>:</strong> Adjusts contrast. <code class="language-css">100%</code>/<code class="language-css">1</code> is original.</li>
+<li><strong><code class="language-css">blur(length)</code>:</strong> Applies a Gaussian blur. Value is a length like <code class="language-css">px</code>, <code class="language-css">em</code>. <code class="language-css">0</code> is no blur.</li>
+<li><strong><code class="language-css">invert(percentage|number)</code>:</strong> Inverts colors. <code class="language-css">100%</code>/<code class="language-css">1</code> is full inversion (like a photo negative).</li>
+<li><strong><code class="language-css">opacity(percentage|number)</code>:</strong> Applies transparency. <code class="language-css">100%</code>/<code class="language-css">1</code> is fully opaque, <code class="language-css">0%</code>/<code class="language-css">0</code> is fully transparent. Similar to the <code class="language-css">opacity</code> property.</li>
+<li><strong><code class="language-css">saturate(percentage|number)</code>:</strong> Adjusts color saturation. <code class="language-css">100%</code>/<code class="language-css">1</code> is original, <code class="language-css">0%</code>/<code class="language-css">0</code> is grayscale, <code>&gt;100%</code> increases saturation.</li>
+<li><strong><code class="language-css">hue-rotate(angle)</code>:</strong> Rotates colors around the color wheel. Value is an angle like <code class="language-css">90deg</code>, <code class="language-css">0.5turn</code>.</li>
+<li><strong><code class="language-css">drop-shadow(...)</code>:</strong> Similar syntax to <code class="language-css">box-shadow</code> (<code class="language-css">h-offset v-offset blur color</code>), but applies the shadow to the shape of the element&#39;s <em>content</em> (including transparency) rather than its box.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added rules for new image classes: <code class="language-css">.img-grayscale</code> and <code class="language-css">.img-sepia</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Image Filter Examples */
+.img-grayscale {
+    filter: grayscale(100%);
+}
+
+.img-sepia {
+    filter: sepia(80%);
+}
+
+.img-blur-hover:hover {
+    filter: blur(3px);
+    transition: filter 0.3s ease-in-out;
+}
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added two more images with the new classes, and a third with a hover effect class.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;img 
+        src=&quot;images/placeholder-landscape.jpg&quot; 
+        alt=&quot;Original Placeholder landscape image (300x200)&quot; 
+        width=&quot;300&quot; height=&quot;200&quot;
+        class=&quot;block-image&quot;&gt;
+
+    &lt;img 
+        src=&quot;images/placeholder-landscape.jpg&quot; 
+        alt=&quot;Grayscale Placeholder landscape image&quot; 
+        width=&quot;300&quot; height=&quot;200&quot;
+        class=&quot;block-image img-grayscale&quot;&gt;
+
+    &lt;img 
+        src=&quot;images/placeholder-landscape.jpg&quot; 
+        alt=&quot;Sepia Placeholder landscape image&quot; 
+        width=&quot;300&quot; height=&quot;200&quot;
+        class=&quot;block-image img-sepia&quot;&gt;
+
+    &lt;img 
+        src=&quot;images/placeholder-landscape.jpg&quot; 
+        alt=&quot;Blur on Hover Placeholder landscape image&quot; 
+        width=&quot;300&quot; height=&quot;200&quot;
+        class=&quot;block-image img-blur-hover&quot;&gt;
+
+    &lt;p&gt;Some text following the block image.&lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should now see four image areas (likely broken icons with borders).</li>
+<li>The second image area should appear fully grayscale (though this might be hard to tell with the broken icon).</li>
+<li>The third image area should have a strong sepia tone applied (again, hard to see without a real image).</li>
+<li>Hovering over the fourth image area should apply a blur effect.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

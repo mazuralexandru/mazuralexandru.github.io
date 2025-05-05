@@ -1,0 +1,14 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 4: Styling Links Deep Dive */
+
+a { /* Target all anchor tags */
+  color: inherit; /* Make links inherit text color from parent */
+  text-decoration: none; /* Remove default underline */
+}

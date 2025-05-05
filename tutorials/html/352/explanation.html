@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>352. Advanced Marker Styling (<code class="language-css">::marker</code>): Purpose &amp; Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>For more direct control over the list marker itself (the bullet or number), modern CSS provides the <code class="language-css">::marker</code> pseudo-element.</p>
+<ul>
+<li><strong>Purpose:</strong> To select and apply styles directly to the marker box of a list item (<code class="language-html">&lt;li&gt;</code>), separating marker styling from the list item&#39;s content styling.</li>
+<li><strong>Syntax:</strong> You target the list item (or the list container) and append <code class="language-css">::marker</code>.<ul>
+<li><code class="language-css">li::marker { ... }</code> (Style markers for all list items)</li>
+<li><code class="language-css">ul li::marker { ... }</code> (Style markers only for items in unordered lists)</li>
+<li><code class="language-css">.my-list-item::marker { ... }</code> (Style marker for items with a specific class)</li>
+</ul>
+</li>
+<li><strong>Relationship to <code class="language-css">list-style-*</code>:</strong> The <code class="language-css">::marker</code> styles are applied <em>after</em> the <code class="language-css">list-style-*</code> properties. You can use <code class="language-css">::marker</code> to override the color or size derived from the list item, or even replace the marker entirely using the <code class="language-css">content</code> property within the <code class="language-css">::marker</code> rule.</li>
+</ul>
+<p>This pseudo-element offers a more robust and direct way to customize markers compared to older techniques like background images or <code>::before</code> pseudo-elements, although the range of properties applicable to <code>::marker</code> is somewhat limited.</p>
+<p>👀 We&#39;ll add an example using <code>::marker</code> in the next step.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

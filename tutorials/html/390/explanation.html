@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>390. <code>src</code> Attribute: Path &amp; Formats</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The most critical attribute for the <code class="language-html">&lt;img&gt;</code> element is <code class="language-html">src</code> (source).</p>
+<ul>
+<li><strong>Purpose:</strong> Specifies the <strong>path or URL</strong> to the image file that should be displayed.</li>
+<li><strong>Syntax:</strong> <code class="language-html">src=&quot;path/to/image.format&quot;</code></li>
+<li><strong>Value Types:</strong> Similar to the <code class="language-html">href</code> attribute for links:<ul>
+<li><strong>Absolute URL:</strong> A full web address (e.g., <code class="language-html">src=&quot;https://example.com/images/logo.png&quot;</code>). Used for images hosted on other servers or CDNs.</li>
+<li><strong>Relative URL:</strong> A path relative to the current HTML file&#39;s location (e.g., <code class="language-html">src=&quot;images/photo.jpg&quot;</code>, <code class="language-html">src=&quot;../assets/icon.svg&quot;</code>). Most common for project assets.</li>
+<li><strong>Data URLs:</strong> Embed image data directly (less common, generally only for very small images).</li>
+</ul>
+</li>
+<li><strong>Common Image Formats:</strong><ul>
+<li><strong>JPEG/JPG:</strong> Best for photographs, complex images with many colors. Lossy compression (quality loss for smaller size).</li>
+<li><strong>PNG:</strong> Good for graphics with transparency, logos, icons, screenshots. Lossless compression (no quality loss, potentially larger files than JPEG).</li>
+<li><strong>GIF:</strong> Best for simple animations. Limited color palette.</li>
+<li><strong>SVG:</strong> Vector format. Scalable without quality loss. Ideal for logos, icons, illustrations. Defined using XML.</li>
+<li><strong>WebP:</strong> Modern format offering both lossy and lossless compression, often smaller file sizes than JPEG/PNG with good quality. Excellent browser support.</li>
+<li><strong>AVIF:</strong> Newer format, often providing even better compression than WebP, especially for HDR images. Browser support is growing rapidly.</li>
+</ul>
+</li>
+<li><strong>Optimization:</strong> It&#39;s crucial to optimize images for the web:<ul>
+<li><strong>Resize:</strong> Serve images at the dimensions they will be displayed, don&#39;t rely on the browser to shrink huge images.</li>
+<li><strong>Compress:</strong> Use appropriate formats and compression tools (online or offline) to reduce file size without significant visual degradation. Smaller files mean faster page loads.</li>
+</ul>
+</li>
+</ul>
+<p>Choosing the right format and optimizing images are key aspects of web performance.</p>
+<p>👀 We will add an <code class="language-html">&lt;img&gt;</code> tag with a <code class="language-html">src</code> attribute to <code class="language-text">index.html</code> soon.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>363. Link Attribute: <code class="language-html">download</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>The <code class="language-html">download</code> attribute instructs the browser to download the linked URL instead of navigating to it.</p>
+<ul>
+<li><strong>Purpose:</strong> To trigger a file download prompt when the user clicks the link.</li>
+<li><strong>Syntax:</strong><ul>
+<li><code class="language-html">&lt;a href=&quot;path/to/file.pdf&quot; download&gt;Download PDF&lt;/a&gt;</code> (Boolean attribute - browser suggests filename based on URL).</li>
+<li><code class="language-html">&lt;a href=&quot;path/to/image.jpg&quot; download=&quot;my-vacation-photo.jpg&quot;&gt;Download Image&lt;/a&gt;</code> (With value - suggests a specific filename for the download).</li>
+</ul>
+</li>
+<li><strong>Behavior:</strong> When clicked, the browser should initiate a download of the resource specified in the <code class="language-html">href</code> attribute, using the optional value of the <code>download</code> attribute as the suggested filename.</li>
+<li><strong>Same-Origin Policy:</strong> This attribute generally only works reliably for same-origin URLs (files hosted on the same domain as the HTML page). For cross-origin URLs, browser behavior might vary due to security policies (it might navigate instead of downloading).</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new link demonstrating the <code>download</code> attribute.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;hr&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;document.txt&quot; download&gt;Download Text File&lt;/a&gt;&lt;br&gt; &lt;!-- Simple download --&gt;
+        &lt;a href=&quot;image.png&quot; download=&quot;custom-name.png&quot;&gt;Download Image with Custom Name&lt;/a&gt; &lt;!-- Download with filename --&gt;
+    &lt;/p&gt;
+</code></pre>
+<p><em>(Note: These files don&#39;t actually exist in our project, so clicking them won&#39;t work, but the HTML structure is correct).</em></p>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see two new links related to downloading. Visually, they look like normal links.</li>
+<li>If these links pointed to real files on the same origin, clicking them would typically trigger a download dialog in the browser instead of navigating away from the current page.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

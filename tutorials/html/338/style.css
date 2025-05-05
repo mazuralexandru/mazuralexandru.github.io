@@ -1,0 +1,15 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 2: Styling Lists */
+
+/* Reset default list styles */
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}

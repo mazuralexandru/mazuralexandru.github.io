@@ -1,0 +1,72 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 4: Styling Links Deep Dive */
+/* CORRECT ORDER - LVHA */
+
+a:link { 
+  color: cyan; 
+  text-decoration: none; 
+}
+
+a:visited { 
+  color: mediumpurple; 
+  text-decoration: none; 
+}
+
+a:hover { 
+  color: lightcoral; 
+  text-decoration: underline; 
+}
+
+a:active { 
+  color: red; 
+}
+
+/* Focus styles should generally come after :visited */
+a:focus { 
+   outline: none; 
+}
+a:focus-visible {
+  outline: 2px dashed orange; 
+  outline-offset: 2px; 
+}
+
+/* Button-like Link Styling */
+.button-link {
+  display: inline-block; /* Allow padding, margin, etc. but flow inline */
+  padding: 0.6em 1.2em;
+  margin: 0.5em; /* Add some space around the button */
+  background-color: #007bff; /* Example blue */
+  color: white; /* Text color - Overrides a:link/a:visited */
+  border: 1px solid transparent; /* Base border */
+  border-radius: 4px;
+  text-decoration: none; /* Ensure no underline */
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer; /* Indicate clickability */
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover & Focus states for button link */
+.button-link:hover,
+.button-link:focus-visible {
+  background-color: #0056b3; /* Darker blue */
+  border-color: #0056b3;
+  color: white; /* Ensure text color remains white */
+  text-decoration: none; /* Keep underline off */
+  outline: 2px solid skyblue; /* Custom focus outline */
+   outline-offset: 1px;
+}
+
+/* Active state for button link */
+.button-link:active {
+  background-color: #004085; /* Even darker blue */
+  border-color: #004085;
+  color: white; /* Ensure text color remains white */
+}

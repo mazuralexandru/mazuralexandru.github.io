@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>382. Horizontal Nav (Inline Block): <code class="language-css">display: inline-block</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The key step in the inline-block technique for horizontal navigation is to change the <code>display</code> property of the list items (<code class="language-html">&lt;li&gt;</code>) from their default <code>list-item</code> (which behaves like <code>block</code>) to <code>inline-block</code>.</p>
+<ul>
+<li><strong>Effect:</strong> Setting <code class="language-css">display: inline-block;</code> on the <code class="language-html">&lt;li&gt;</code> elements causes them to:<ul>
+<li>Flow horizontally next to each other, like inline elements.</li>
+<li>Respect width, height, padding, and vertical margins, like block elements.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">display: inline-block;</code> to the <code class="language-css">nav li</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">nav li {
+    margin: 0; /* Reset li margin */
+    display: inline-block; /* Make list items flow horizontally */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The list items (&quot;Home&quot;, &quot;About&quot;, &quot;Services&quot;, &quot;Contact&quot;) should now appear <strong>horizontally</strong> next to each other, centered within the faint dark background of the <code>&lt;ul&gt;</code>.</li>
+<li>They no longer stack vertically.</li>
+<li>Because they are now <code>inline-block</code>, they respect the padding we added to the <code>&lt;a&gt;</code> tags inside them, creating clickable areas.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

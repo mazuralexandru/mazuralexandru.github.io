@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>403. Images as Inline Elements &amp; <code class="language-css">vertical-align</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>By default, <code class="language-html">&lt;img&gt;</code> is an inline-level element (specifically, a replaced inline element). This means it flows within lines of text. However, its default vertical alignment can sometimes look awkward.</p>
+<ul>
+<li><strong>Default Alignment:</strong> Usually aligns the <strong>bottom</strong> of the image with the <strong>baseline</strong> of the surrounding text. This often leaves a small gap below the image.</li>
+<li><strong><code class="language-css">vertical-align</code> Property:</strong> Controls the vertical positioning of an inline-level element relative to its line box. We saw this briefly with the link icon earlier. Common values include <code class="language-css">baseline</code> (default), <code class="language-css">middle</code>, <code class="language-css">top</code>, <code class="language-css">bottom</code>, <code class="language-css">text-top</code>, <code class="language-css">text-bottom</code>.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the previous <code class="language-css">.sample-image</code> styles.</li>
+<li>We&#39;ve added a new rule for <code class="language-css">img.inline-example</code> setting <code class="language-css">vertical-align: middle;</code> and a fixed height.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Inline Image Alignment */
+img.inline-example {
+    height: 1.2em; /* Size relative to text */
+    vertical-align: middle; /* Align vertically with text */
+    margin: 0 0.25em; /* Add small horizontal space */
+    /* Note: width and vertical margins are mostly ignored on inline */
+}
+
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a paragraph containing text interspersed with <code class="language-html">&lt;img&gt;</code> elements using the <code class="language-html">inline-example</code> class.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;h1&gt;Image Alignment&lt;/h1&gt;
+
+    &lt;p&gt;
+        Text flows around inline images. This image 
+        &lt;img src=&quot;icon1.png&quot; alt=&quot;Icon 1&quot; class=&quot;inline-example&quot; width=&quot;16&quot; height=&quot;16&quot;&gt; 
+        should align nicely with the text using vertical-align. Here&#39;s another one 
+        &lt;img src=&quot;icon2.png&quot; alt=&quot;Icon 2&quot; class=&quot;inline-example&quot; width=&quot;16&quot; height=&quot;16&quot;&gt; 
+        to show how they sit on the line.
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see the paragraph text with two (broken) image icons within it.</li>
+<li>Because <code class="language-html">&lt;img&gt;</code> is inline and we&#39;ve set <code class="language-css">vertical-align: middle;</code>, the icons should appear roughly vertically centered within the line of text, rather than sitting awkwardly on the baseline.</li>
+<li>Notice that setting <code class="language-css">width</code> or vertical <code class="language-css">margin</code>/<code class="language-css">padding</code> on these inline images would have little to no effect.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

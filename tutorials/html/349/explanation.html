@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>349. Controlling List Indentation: Customizing <code class="language-css">padding-left</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>To customize the indentation of your lists, you simply override the default browser padding by setting your own <code class="language-css">padding-left</code> value on the <code class="language-html">&lt;ul&gt;</code> or <code class="language-html">&lt;ol&gt;</code> element.</p>
+<ul>
+<li><strong>Units:</strong> You can use any valid length unit (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, etc.). Using relative units like <code class="language-css">em</code> or <code class="language-css">rem</code> is often preferred so the indentation scales appropriately with the font size.</li>
+<li><strong><code>margin-left</code>:</strong> While <code class="language-css">padding-left</code> controls the indentation relative to the markers (when <code class="language-css">list-style-position: outside</code>), you might also use <code class="language-css">margin-left</code> on the list element if you need to control the spacing between the entire list block (including its padding area) and the edge of its container.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We already set <code class="language-css">padding-left: 2em;</code> for the <code class="language-html">ul</code> elements.</li>
+<li>Let&#39;s add a different padding to the <code class="language-html">ol</code> elements to restore some indentation, but less than the <code class="language-html">ul</code>. We&#39;ll also restore a default marker type.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style Ordered Lists */
+ol {
+   /* list-style: none; &lt;- Removed reset */
+   list-style-type: decimal; /* Restore default numbers */
+   padding-left: 1.5em; /* Add custom indentation */
+   margin-bottom: 1em; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The ordered lists (&quot;Morning Routine&quot;, &quot;Top 3&quot;) should now be indented again, but likely slightly less than the unordered list (&quot;Favorite Fruits&quot;) because we used <code>1.5em</code> vs <code>2em</code>.</li>
+<li>The &quot;Morning Routine&quot; list should have decimal numbers (1, 2, 3).</li>
+<li>The &quot;Top 3&quot; list should still show Roman numerals (III, IV, V) because the HTML attribute overrides the CSS <code class="language-css">list-style-type</code>.</li>
+</ul>
+<p>This shows how <code class="language-css">padding-left</code> is the primary way to control list indentation.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

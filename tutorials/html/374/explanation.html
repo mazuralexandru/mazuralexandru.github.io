@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>374. Styling Order (LVHA Rule): Problem &amp; Recommendation</h1>
+<p><strong>Files Modified:</strong> <code>None</code> (Reverted <code>index.html</code> and <code>style.css</code> to previous state for context)</p>
+<p>We&#39;ve now seen the main link state pseudo-classes: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>, and <code>:focus</code>/<code>:focus-visible</code>. A common pitfall arises because these pseudo-classes all have the <strong>same specificity</strong> (0,0,1,0 - one pseudo-class).</p>
+<ul>
+<li><p><strong>The Problem:</strong> When selectors have equal specificity, the <strong>source order</strong> determines which rule wins. The rule defined <em>later</em> in the stylesheet overrides earlier ones. If you define your link state rules in the wrong order, some styles might never appear. For example, if <code>:link</code> comes after <code>:visited</code>, unvisited links might incorrectly show the visited style. If <code>:hover</code> comes before <code>:link</code>, the hover effect might be immediately overridden by the <code>:link</code> rule.</p>
+</li>
+<li><p><strong>The Recommendation (LVHA Rule):</strong> To ensure all states work correctly, follow this specific order when defining your link state rules:</p>
+<ol>
+<li><code class="language-css">:link</code> (Unvisited)</li>
+<li><code class="language-css">:visited</code> (Visited)</li>
+<li><code class="language-css">:hover</code> (Mouse over)</li>
+<li><code class="language-css">:active</code> (Clicking)</li>
+</ol>
+<p>A common mnemonic is <strong>L</strong>o<strong>V</strong>e <strong>HA</strong>te.</p>
+</li>
+<li><p><strong>Where does <code>:focus</code>/<code>:focus-visible</code> fit?</strong> This is slightly more debatable, but common placements are:</p>
+<ul>
+<li><strong>Between <code>:visited</code> and <code>:hover</code>:</strong> Ensures focus styles override visited styles but are overridden by hover/active styles.</li>
+<li><strong>After <code>:active</code>:</strong> Ensures focus styles are the strongest and remain visible even during hover/active states (often preferred for accessibility).</li>
+</ul>
+<p>The key is to be consistent and test the behavior. Placing it last (<code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>, <code>:focus</code>/<code>:focus-visible</code>) is often the safest bet for ensuring the focus style is always visible when needed.</p>
+</li>
+</ul>
+<p>👀 <strong>Observe <code class="language-text">style.css</code>:</strong> We have reverted the CSS back to the state after the <code>:focus-visible</code> step (Lesson 372). Notice the order: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>, <code>:focus</code>, <code>:focus-visible</code>. This follows the recommended practice, placing focus styles last.</p>
+<p>👀 Switch to <code class="language-text">index.html</code> (reverted to the link examples from Lesson 365) to see the target HTML for these styles.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

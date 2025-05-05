@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>368. Link State: <code class="language-css">:visited</code> &amp; Privacy Restrictions</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code>:visited</code> pseudo-class allows you to style links that the user has previously visited.</p>
+<ul>
+<li><p><strong><code class="language-css">:visited</code>:</strong></p>
+<ul>
+<li><strong>Selects:</strong> Links (<code class="language-html">&lt;a&gt;</code> elements with an <code class="language-html">href</code> attribute) whose target URL is present in the browser&#39;s history.</li>
+<li><strong>Purpose:</strong> Provides a visual cue that a link leads to a page the user has already seen.</li>
+</ul>
+</li>
+<li><p><strong>Privacy Restrictions:</strong> To prevent websites from potentially sniffing a user&#39;s browsing history (by checking the computed style of many different links), browsers heavily <strong>restrict</strong> the CSS properties that can be effectively changed using <code>:visited</code>. You can generally only change:</p>
+<ul>
+<li><code class="language-css">color</code></li>
+<li><code class="language-css">background-color</code></li>
+<li><code class="language-css">border-color</code> (and individual border sides)</li>
+<li>SVG <code class="language-css">fill</code> and <code class="language-css">stroke</code> colors</li>
+<li>Column rule colors</li>
+<li>Transparency cannot be changed (e.g., you can&#39;t make visited links semi-transparent using <code>rgba()</code> if they weren&#39;t already).</li>
+<li>You <strong>cannot</strong> change layout, font size, <code>text-decoration</code>, add background images, etc., based on the visited state.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule for <code class="language-css">a:visited</code>.</li>
+<li>We&#39;re setting a different color (<code class="language-css">mediumpurple</code>) for visited links.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style visited links differently */
+a:visited { 
+  color: mediumpurple; /* Different color for visited links */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the links in <code class="language-text">index.html</code>.</li>
+<li>If the simulated browser environment tracks history, any links you <em>might</em> have &quot;visited&quot; (like potentially the placeholder <code>#</code> link if clicked previously, or maybe the DuckDuckGo link if the environment allows external navigation tracking) could now appear <strong>medium purple</strong> instead of cyan. Links definitely not visited should remain cyan.</li>
+<li>This subtle color change is the primary way browsers allow styling for visited links due to privacy constraints.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

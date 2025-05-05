@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>417. Styling the <code>&lt;figure&gt;</code> Container Introduction</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Now let&#39;s combine images and captions using <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> and explore how to style the container.</p>
+<p>🗑️ <strong>Code Pruning:</strong> We&#39;ve cleared the previous image filter examples from <code class="language-text">index.html</code> and <code class="language-text">style.css</code> to focus on figures.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a <code class="language-html">&lt;figure&gt;</code> element containing an <code class="language-html">&lt;img&gt;</code> and a <code class="language-html">&lt;figcaption&gt;</code>.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;h1&gt;Styling Figures&lt;/h1&gt;
+
+    &lt;figure&gt;
+        &lt;img 
+            src=&quot;images/placeholder-landscape.jpg&quot; 
+            alt=&quot;Placeholder landscape image (300x200)&quot; 
+            width=&quot;300&quot; 
+            height=&quot;200&quot;&gt;
+        &lt;figcaption&gt;This is the caption for the figure above.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>The CSS is currently empty except for the universal reset and basic H1 style.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see the heading, the (broken) image icon, and the caption text below it.</li>
+<li>The browser applies default styling:<ul>
+<li>The <code class="language-html">&lt;figure&gt;</code> likely has some default <code class="language-css">margin</code> around it.</li>
+<li>The <code class="language-html">&lt;img&gt;</code> takes up its intrinsic space (or the space reserved by its width/height attributes).</li>
+<li>The <code class="language-html">&lt;figcaption&gt;</code> appears below the image as a block element.</li>
+</ul>
+</li>
+</ul>
+<p>We&#39;ll now style the <code class="language-html">&lt;figure&gt;</code> container itself.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

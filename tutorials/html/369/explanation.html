@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>369. Link State: <code class="language-css">:hover</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code>:hover</code> pseudo-class is essential for providing interactive feedback when a user positions their mouse pointer over a link.</p>
+<ul>
+<li><strong><code class="language-css">:hover</code>:</strong><ul>
+<li><strong>Selects:</strong> An element (not just links, but commonly used on them) when the user&#39;s pointing device (like a mouse cursor) is hovering over it.</li>
+<li><strong>Purpose:</strong> To visually indicate that an element is interactive and currently under the user&#39;s pointer.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule for <code class="language-css">a:hover</code>.</li>
+<li>We&#39;re changing the <code class="language-css">color</code> and adding back the <code class="language-css">text-decoration: underline;</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style links on hover */
+a:hover { 
+  color: lightcoral; /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Move your mouse cursor over any of the links in <code class="language-text">index.html</code>.</li>
+<li>When the cursor is over a link, its text color should change to <strong>light coral</strong>, and an <strong>underline</strong> should appear.</li>
+<li>When the cursor moves away, the link should revert to its <code>:link</code> (cyan) or <code>:visited</code> (medium purple) style.</li>
+<li>This immediate visual feedback is crucial for usability.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

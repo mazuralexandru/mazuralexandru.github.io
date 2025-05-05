@@ -1,0 +1,50 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Section 5: Navigation Bar Implementation */
+
+/* Technique 1: Inline Block - COMMENTED OUT */
+/* ... */
+
+/* Technique 2: Flexbox (Preferred) */
+nav ul {
+    display: flex; /* Enable Flexbox */
+    list-style: none; /* Remove bullets */
+    padding: 0;       /* Remove default padding */
+    margin: 0;        /* Remove default margin */
+    background-color: rgba(0, 0, 0, 0.2); /* Keep background for visibility */
+    padding: 0.5em 0; /* Keep vertical padding */
+    gap: 0.5em; /* Add space BETWEEN flex items (li) */
+    justify-content: center; /* Center items horizontally */
+    /* align-items: center; /* Could be used for vertical centering if needed */
+}
+
+/* No specific display needed on li for flexbox */
+
+
+/* Basic link styling within nav */
+nav a {
+    text-decoration: none;
+    color: lightblue; 
+    padding: 0.5em 1em; 
+    display: block; /* Keep link filling the li area */
+    border-radius: 4px; 
+}
+
+nav a:hover, 
+nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>332. Description Lists (<code class="language-html">&lt;dl&gt;</code>)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The third type of list is the <strong>description list</strong> (formerly definition list), created using the <code class="language-html">&lt;dl&gt;</code> element.</p>
+<ul>
+<li><strong>Purpose:</strong> Represents a list of associated names (terms) and values (descriptions). It&#39;s ideal for glossaries, metadata lists (like key-value pairs), or any list where each item has a distinct term and an associated explanation.</li>
+<li><strong>Structure:</strong> The <code class="language-html">&lt;dl&gt;</code> element acts as the container. Inside it, you group terms and descriptions:<ul>
+<li><code class="language-html">&lt;dt&gt;</code> (Description Term): Contains the term/name being defined or described.</li>
+<li><code class="language-html">&lt;dd&gt;</code> (Description Details): Contains the description, definition, or value associated with the preceding term(s).</li>
+</ul>
+</li>
+<li><strong>Grouping Rules:</strong> One or more <code class="language-html">&lt;dt&gt;</code> elements must be followed by one or more <code class="language-html">&lt;dd&gt;</code> elements. You can have multiple terms associated with one description, or one term associated with multiple descriptions.<pre class="language-html"><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language - for structure.&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets - for presentation.&lt;/dd&gt;
+  &lt;dd&gt;Makes things look pretty.&lt;/dd&gt;
+
+  &lt;dt&gt;Term A&lt;/dt&gt;
+  &lt;dt&gt;Term B&lt;/dt&gt;
+  &lt;dd&gt;Description for both A and B.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+</li>
+<li><strong><code class="language-html">&lt;div&gt;</code> Wrapper:</strong> While not strictly required by older specs, wrapping each term/description pair (or group) within a <code class="language-html">&lt;div&gt;</code> inside the <code class="language-html">&lt;dl&gt;</code> is now permitted and often recommended, especially for easier CSS styling (e.g., using Flexbox or Grid on the <code class="language-html">&lt;div&gt;</code> pairs).<pre class="language-html"><code class="language-html"> &lt;dl&gt;
+   &lt;div&gt;
+     &lt;dt&gt;Term&lt;/dt&gt;
+     &lt;dd&gt;Description&lt;/dd&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+     &lt;dt&gt;Another Term&lt;/dt&gt;
+     &lt;dd&gt;Another Description&lt;/dd&gt;
+   &lt;/div&gt;
+ &lt;/dl&gt;
+</code></pre>
+</li>
+<li><strong>Default Styling:</strong> Browsers typically render <code class="language-html">&lt;dd&gt;</code> elements with some indentation (usually <code>margin-left</code>).</li>
+</ul>
+<p>👀 Observe the current <code class="language-text">index.html</code>. We&#39;ll add a <code>&lt;dl&gt;</code> example next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

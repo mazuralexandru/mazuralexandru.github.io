@@ -1,0 +1,25 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Background Reset Example */
+.origin-box {
+    width: 300px;
+    height: 150px;
+    padding: 25px; /* Significant padding */
+    border: 10px dashed orange; /* Thick border */
+    margin: 2em auto;
+    
+    /* Replaced complex background with none */
+    background: none; 
+}

@@ -1,0 +1,63 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 2: Styling Lists */
+
+
+/* Style Unordered Lists */
+ul {
+  list-style: square inside; /* Shorthand */
+  padding-left: 2em; /* Add indentation back */
+  margin-bottom: 1em; /* Add space below list */
+}
+
+/* Style Nested Unordered Lists */
+ul ul {
+    list-style-type: circle; /* Use circles for nested items */
+    margin-top: 0.25em; /* Add some space above nested list */
+    margin-bottom: 0.5em; /* Add space below nested list */
+    /* list-style-position is inherited as 'inside' */
+}
+
+
+/* Style Ordered Lists */
+ol {
+   list-style-type: decimal; /* Restore default numbers */
+   padding-left: 1.5em; /* Add custom indentation */
+   margin-bottom: 1em; 
+}
+
+/* Style List Items */
+li {
+    margin-bottom: 0.5em; /* Add space below each list item */
+}
+
+/* Style specific list items */
+ol li {
+    background-color: rgba(144, 238, 144, 0.1); /* Faint light green */
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+/* Style list markers directly */
+ul li::marker {
+    color: orange;
+    font-size: 1.2em; /* Make marker slightly larger */
+}
+
+/* Styling Description Lists */
+dt { /* Target Description Terms */
+    font-weight: bold;
+    margin-bottom: 0.25em; /* Space below term, before description */
+}
+
+dd { /* Target Description Details */
+    /* Default browser margin-left usually provides indentation */
+    margin-bottom: 1em; /* Space below description, before next term */
+    margin-left: 2em; /* Explicitly set indentation */
+}

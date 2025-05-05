@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>376. Common Link Styling: Color/Underline on Hover/Focus</h1>
+<p><strong>Files Modified:</strong> <code>None</code> (Refining existing styles)</p>
+<p>Let&#39;s refine the common pattern of changing color and adding/removing underlines for interaction states.</p>
+<p>Our current setup in <code class="language-text">style.css</code> already implements this:</p>
+<ul>
+<li><strong>Base State (<code>:link</code>, <code>:visited</code>):</strong><ul>
+<li><code class="language-css">text-decoration: none;</code> (Underline removed)</li>
+<li>Specific colors are set (cyan for <code>:link</code>, mediumpurple for <code>:visited</code>).</li>
+</ul>
+</li>
+<li><strong>Interaction State (<code>:hover</code>):</strong><ul>
+<li><code class="language-css">text-decoration: underline;</code> (Underline added back)</li>
+<li><code class="language-css">color: lightcoral;</code> (Color changes)</li>
+</ul>
+</li>
+<li><strong>Focus State (<code>:focus-visible</code>):</strong><ul>
+<li>Applies an <code>outline</code> for visibility, doesn&#39;t necessarily change text decoration or color unless desired (could be combined with <code>:hover</code> styles if needed: <code class="language-css">a:hover, a:focus-visible { ... }</code>).</li>
+</ul>
+</li>
+</ul>
+<p>This pattern ensures:</p>
+<ol>
+<li>Links are initially distinct (color) but not underlined (common design choice).</li>
+<li>Hovering provides clear feedback (color change, underline appears).</li>
+<li>Keyboard focus provides clear feedback (outline appears).</li>
+</ol>
+<p>👀 Review the current rules in <code class="language-text">style.css</code> and observe the corresponding effects in the preview (<code class="language-text">index.html</code>). This combination of removing default decoration and re-adding it on hover/focus is a very standard technique.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

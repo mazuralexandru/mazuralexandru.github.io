@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>371. Link State: <code class="language-css">:focus</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code>:focus</code> pseudo-class is critically important for <strong>accessibility</strong>. It styles an element when it receives focus, typically via keyboard navigation (using the Tab key) or sometimes by clicking.</p>
+<ul>
+<li><strong><code class="language-css">:focus</code>:</strong><ul>
+<li><strong>Selects:</strong> An element (links, buttons, form inputs, etc.) that currently has keyboard focus.</li>
+<li><strong>Purpose:</strong> Provides a clear visual indicator of which element is currently active for keyboard interaction. Without a visible focus style, keyboard users cannot tell where they are on the page.</li>
+<li><strong>Default Styling:</strong> Browsers typically provide a default focus outline (often a blue or dotted ring), but this is frequently overridden (and sometimes completely removed, which is bad practice) by CSS resets or custom styles.</li>
+<li><strong>Requirement:</strong> You <strong>must</strong> ensure that focusable elements have a clearly visible focus state. If you remove the browser&#39;s default outline, you must provide an alternative using properties like <code>outline</code>, <code>border</code>, <code>background-color</code>, etc.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule for <code class="language-css">a:focus</code>.</li>
+<li>We&#39;re applying a distinct <code>outline</code> style. The outline property draws a line <em>outside</em> the element&#39;s border without affecting layout space.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style links when focused */
+a:focus { 
+  /* Ensure a clear visual indicator for keyboard users */
+  outline: 2px dashed orange; 
+  outline-offset: 2px; /* Add space between element and outline */
+  /* Optionally change other styles too */
+  /* background-color: rgba(255, 165, 0, 0.2); */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Try navigating through the links using the <strong>Tab</strong> key on your keyboard (you might need to click into the preview area first to give it focus).</li>
+<li>As each link receives keyboard focus, you should see a <strong>dashed orange outline</strong> appear around it.</li>
+<li>Pressing Shift+Tab will navigate backwards.</li>
+<li>This outline clearly indicates which link is currently selected for keyboard activation (pressing Enter would follow the focused link).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Removed previous image filter styles */
+
+/* Styles for figure/figcaption will be added */

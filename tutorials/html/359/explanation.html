@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>359. <code class="language-html">href</code> Attribute Recap</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>The <code class="language-html">href</code> (Hypertext Reference) attribute is the <strong>most crucial attribute</strong> for the <code class="language-html">&lt;a&gt;</code> element. It specifies the destination URL of the hyperlink.</p>
+<ul>
+<li><strong>Purpose:</strong> Defines where the link points to. Without a valid <code class="language-html">href</code>, the <code class="language-html">&lt;a&gt;</code> element represents a placeholder link and isn&#39;t interactive.</li>
+<li><strong>Value Types:</strong><ul>
+<li><strong>Absolute URL:</strong> A full web address, including the protocol (<code class="language-html">http://</code> or <code class="language-html">https://</code>). Used for linking to external websites.<ul>
+<li>Example: <code class="language-html">&lt;a href=&quot;https://www.google.com&quot;&gt;Google&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li><strong>Relative URL:</strong> A path relative to the current HTML document&#39;s location. Used for linking to other pages or files within the same website.<ul>
+<li>Example: <code class="language-html">&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;</code> (links to <code>about.html</code> in the same folder)</li>
+<li>Example: <code class="language-html">&lt;a href=&quot;/images/logo.png&quot;&gt;Logo&lt;/a&gt;</code> (links to <code>logo.png</code> in the <code>images</code> folder at the site root)</li>
+<li>Example: <code class="language-html">&lt;a href=&quot;../contact.html&quot;&gt;Contact&lt;/a&gt;</code> (links to <code>contact.html</code> in the parent folder)</li>
+</ul>
+</li>
+<li><strong>Fragment Identifier:</strong> A hash (<code>#</code>) followed by the <code>id</code> of an element on the <em>same</em> page. Used for linking to specific sections within the current document.<ul>
+<li>Example: <code class="language-html">&lt;a href=&quot;#section-two&quot;&gt;Go to Section 2&lt;/a&gt;</code> (links to <code>&lt;div id=&quot;section-two&quot;&gt;</code>)</li>
+</ul>
+</li>
+<li><strong>Other Protocols:</strong> Can also use <code class="language-html">mailto:</code>, <code class="language-html">tel:</code>, or even <code class="language-html">javascript:</code> (though the latter is generally discouraged for accessibility and maintainability reasons).</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added examples of different <code class="language-html">href</code> types: an absolute URL, a fragment identifier link (which won&#39;t work yet as the target doesn&#39;t exist), and placeholder links.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;p&gt;
+        Visit our &lt;a href=&quot;about.html&quot;&gt;About Us&lt;/a&gt; page (Relative).&lt;br&gt;
+        Search on &lt;a href=&quot;https://duckduckgo.com&quot;&gt;DuckDuckGo&lt;/a&gt; (Absolute).&lt;br&gt;
+        Go to &lt;a href=&quot;#bottom&quot;&gt;Bottom Section&lt;/a&gt; (Fragment - needs target).&lt;br&gt;
+        This is a &lt;a href=&quot;#&quot;&gt;Placeholder Link&lt;/a&gt;.&lt;br&gt;
+        This is &lt;a &gt;Not a Link (no href)&lt;/a&gt;.
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see several pieces of linked text.</li>
+<li>The &quot;About Us&quot; and &quot;DuckDuckGo&quot; links look like standard links.</li>
+<li>The &quot;Bottom Section&quot; link also looks like a link, but clicking it won&#39;t do anything yet.</li>
+<li>The &quot;Placeholder Link&quot; (<code class="language-html">href=&quot;#&quot;</code>) looks like a link and clicking it might jump to the top of the page.</li>
+<li>The final &quot;Not a Link&quot; text should appear as plain text, not a link, because it lacks the <code class="language-html">href</code> attribute.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

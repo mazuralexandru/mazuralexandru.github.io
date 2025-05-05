@@ -1,0 +1,38 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Apply styles directly to body for background example */
+body {
+  /* Ensure enough height to scroll */
+  min-height: 150vh; /* Taller than viewport */
+
+  /* Background properties */
+  background-image: url('images/placeholder-landscape.jpg'); /* Use larger image */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll; /* Default - background scrolls with page */
+
+  /* Reset base styles we might have removed */
+  background-color: #2e2e2e; 
+  color: #E0E0E0; 
+  font-family: sans-serif; 
+  padding: 15px; 
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: white; /* Make sure text is visible */
+    text-shadow: 1px 1px 2px black;
+}
+p {
+    margin-bottom: 1em;
+    background-color: rgba(0,0,0,0.5); /* Make text readable over image */
+    padding: 0.5em;
+}

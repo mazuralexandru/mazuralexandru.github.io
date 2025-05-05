@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>344. <code class="language-css">list-style-position</code>: Visual Difference</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s recap the visual difference between <code class="language-css">list-style-position: outside</code> and <code class="language-css">inside</code>:</p>
+<ul>
+<li><p><strong><code class="language-css">outside</code> (Default):</strong></p>
+<ul>
+<li>Marker sits in the padding/margin area.</li>
+<li>Wrapped text aligns under the start of the <em>text</em>, creating a hanging indent effect.</li>
+<li>Generally preferred for standard lists for better readability.</li>
+</ul>
+</li>
+<li><p><strong><code class="language-css">inside</code>:</strong></p>
+<ul>
+<li>Marker is part of the text flow, at the beginning of the first line.</li>
+<li>Wrapped text aligns under the <em>marker</em>.</li>
+<li>Can look slightly cramped or less organized for multi-line items compared to <code>outside</code>.</li>
+</ul>
+</li>
+</ul>
+<p>👀 Observe the preview (<code class="language-text">index.html</code>) again. The unordered list (&quot;Favorite Fruits&quot;) uses <code class="language-css">inside</code>, while the ordered lists (&quot;Morning Routine&quot;, &quot;Top 3&quot;) use the default <code class="language-css">outside</code>. Compare how the markers align relative to the text, especially if you imagine the items wrapping onto multiple lines.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

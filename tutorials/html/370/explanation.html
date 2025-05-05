@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>370. Link State: <code class="language-css">:active</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code>:active</code> pseudo-class styles a link during the brief moment it is being activated by the user (e.g., while the mouse button is pressed down on the link).</p>
+<ul>
+<li><strong><code class="language-css">:active</code>:</strong><ul>
+<li><strong>Selects:</strong> An element (commonly links or buttons) during the time the user activates it.</li>
+<li><strong>Purpose:</strong> Provides brief visual feedback confirming the activation action.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule for <code class="language-css">a:active</code>.</li>
+<li>We&#39;re changing the <code class="language-css">color</code> to bright red.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style links when active/clicked */
+a:active { 
+  color: red; /* Change color while actively clicking */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Click and <strong>hold down</strong> the mouse button on any of the links in <code class="language-text">index.html</code>.</li>
+<li>While the mouse button is held down, the link&#39;s text color should briefly turn <strong>red</strong>.</li>
+<li>When you release the mouse button, the link will either navigate (if it&#39;s a real link) or revert to its <code>:hover</code> (if the cursor is still over it) or <code>:link</code>/<code>:visited</code> state.</li>
+<li>This <code>:active</code> state provides immediate feedback that the click is being registered.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

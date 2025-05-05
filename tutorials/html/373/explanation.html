@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>373. Link State: <code class="language-css">:focus-within</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>The <code>:focus-within</code> pseudo-class is applied to a parent element when <em>that element itself or any of its descendants</em> receives focus.</p>
+<ul>
+<li><strong><code class="language-css">:focus-within</code>:</strong><ul>
+<li><strong>Selects:</strong> An element when it contains the focused element.</li>
+<li><strong>Purpose:</strong> Useful for highlighting a larger container (like a form section, a card, or a menu) when one of its internal elements (like an input field or a link) receives focus. This helps users understand the context of the focused element.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Code Pruning:</strong> We&#39;ve cleared <code>index.html</code> and <code>style.css</code> to set up a specific example for <code>:focus-within</code>.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve created a <code class="language-html">&lt;form&gt;</code> containing a <code class="language-html">&lt;div&gt;</code> (acting as a field group) which holds a <code class="language-html">&lt;label&gt;</code> and an <code class="language-html">&lt;input&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We add basic styling for the <code class="language-html">div</code> (the field group).</li>
+<li>We add the key rule: <code class="language-css">div:focus-within</code>. This rule targets the <code class="language-html">div</code> <em>only when</em> an element inside it (in this case, the <code class="language-html">&lt;input&gt;</code>) receives focus. We apply a background color change.</li>
+<li>We also add a basic focus style for the input itself for clarity.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Focus Within Example */
+div {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Style the parent div when an element inside it gets focus */
+div:focus-within {
+  background-color: rgba(255, 255, 0, 0.15); /* Highlight container */
+  border-color: yellow;
+}
+
+/* Basic focus style for the input itself */
+input:focus {
+  outline: 2px solid skyblue;
+}
+
+label {
+    margin-right: 0.5em;
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Click inside the input field or Tab to it using the keyboard.</li>
+<li>When the input field receives focus, the entire <code class="language-html">&lt;div&gt;</code> container surrounding the label and input should get a <strong>faint yellow background</strong> and a yellow border, highlighting the active form group.</li>
+<li>When the input loses focus (click outside or Tab away), the background highlight on the <code class="language-html">&lt;div&gt;</code> should disappear.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

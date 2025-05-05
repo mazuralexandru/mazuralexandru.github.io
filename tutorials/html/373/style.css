@@ -1,0 +1,39 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Focus Within Example */
+div {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+/* Style the parent div when an element inside it gets focus */
+div:focus-within {
+  background-color: rgba(255, 255, 0, 0.15); /* Highlight container */
+  border-color: yellow;
+}
+
+/* Basic focus style for the input itself */
+input:focus {
+  outline: 2px solid skyblue;
+}
+
+label {
+    margin-right: 0.5em;
+    display: inline-block; /* Allow margin */
+    width: 80px; /* Align labels */
+    text-align: right;
+}
+
+button {
+    margin-left: 88px; /* Align button roughly */
+    padding: 0.5em 1em;
+}

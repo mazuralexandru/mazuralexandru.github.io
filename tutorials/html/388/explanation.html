@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>388. Horizontal Nav (Flexbox): Styling Links &amp; Advantages</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>With the Flexbox container (<code class="language-html">&lt;ul&gt;</code>) set up for layout, spacing (<code class="language-css">gap</code>), and alignment (<code class="language-css">justify-content</code>), the final step is simply styling the links (<code class="language-html">&lt;a&gt;</code>) themselves, just as we did with the inline-block method.</p>
+<p>Our existing <code class="language-css">nav a</code> rules already handle:</p>
+<ul>
+<li>Removing default <code class="language-css">text-decoration</code>.</li>
+<li>Setting <code class="language-css">color</code>.</li>
+<li>Adding <code class="language-css">padding</code> to increase the clickable area.</li>
+<li>Setting <code class="language-css">display: block;</code> within the <code class="language-html">&lt;li&gt;</code> to make the padding effective and fill the list item.</li>
+<li>Adding <code class="language-css">border-radius</code>.</li>
+<li>Providing <code>:hover</code> and <code>:focus-visible</code> styles for feedback.</li>
+</ul>
+<p><strong>Flexbox Advantages Recap:</strong></p>
+<ul>
+<li><strong>No Whitespace Issues:</strong> Flexbox ignores whitespace between HTML elements, eliminating the awkward gaps seen with <code>inline-block</code>.</li>
+<li><strong>Powerful Alignment:</strong> Properties like <code>justify-content</code> and <code>align-items</code> provide sophisticated control over item distribution and alignment along both axes.</li>
+<li><strong>Flexible Sizing:</strong> Flex items can easily grow (<code class="language-css">flex-grow</code>) or shrink (<code class="language-css">flex-shrink</code>) to distribute space.</li>
+<li><strong>Ordering:</strong> The <code>order</code> property can visually reorder flex items independently of their HTML source order (use with caution regarding accessibility).</li>
+<li><strong>Simpler Spacing:</strong> The <code>gap</code> property provides a clean way to manage spacing between items.</li>
+</ul>
+<p>For these reasons, Flexbox (and its two-dimensional counterpart, CSS Grid) are the standard, preferred methods for creating layouts like horizontal navigation bars in modern web development, largely replacing older techniques like <code>inline-block</code> or floats.</p>
+<p>👀 Review the final navigation bar in the preview (<code class="language-text">index.html</code>) and the corresponding Flexbox rules in <code class="language-text">style.css</code>. Experiment with changing <code>justify-content</code> to <code>flex-start</code>, <code>flex-end</code>, or <code>space-between</code> in DevTools to see the different alignment options.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>367. Link States &amp; Pseudo-classes: Purpose, <code class="language-css">:link</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>To make links interactive and provide visual feedback, CSS uses <strong>pseudo-classes</strong>. These are keywords added to selectors that specify a special state of the selected element(s). For links, the main states are unvisited, visited, hovered, active, and focused.</p>
+<ul>
+<li><strong>Purpose:</strong> Allow styling links differently depending on their state or how the user is interacting with them. This is crucial for usability and accessibility.</li>
+</ul>
+<p>Let&#39;s start with the <code>:link</code> pseudo-class.</p>
+<ul>
+<li><strong><code class="language-css">:link</code>:</strong><ul>
+<li><strong>Selects:</strong> Links (<code class="language-html">&lt;a&gt;</code> elements with an <code class="language-html">href</code> attribute) that the user has <strong>not yet visited</strong>.</li>
+<li><strong>Usage:</strong> Used to define the default appearance of unvisited links.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve modified the <code class="language-css">a</code> rule to specifically be <code class="language-css">a:link</code>. This explicitly targets only unvisited links for the initial style.</li>
+<li>We&#39;ve set a specific color (<code class="language-css">cyan</code>) for unvisited links, overriding the <code>inherit</code> value from the previous step.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Section 4: Styling Links Deep Dive */
+
+/* Style unvisited links */
+a:link { 
+  color: cyan; /* Specific color for unvisited links */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Style visited links differently (next step) */
+/* a:visited { ... } */
+
+/* Style links on hover (later step) */
+/* a:hover { ... } */
+
+/* Style links when active/clicked (later step) */
+/* a:active { ... } */
+
+/* Style links when focused (later step) */
+/* a:focus { ... } */
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the links in <code class="language-text">index.html</code>.</li>
+<li>All the links with <code>href</code> attributes (including <code>mailto:</code> and <code>tel:</code>) should now appear <strong>cyan</strong>, assuming you haven&#39;t visited <code>about.html</code> or <code>duckduckgo.com</code> recently in this simulated environment.</li>
+<li>The underline remains removed.</li>
+<li>The text &quot;Not a Link&quot; is still unaffected as it&#39;s not a link.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

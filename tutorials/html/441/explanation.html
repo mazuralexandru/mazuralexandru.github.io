@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>441. <code class="language-css">background-position</code>: Four-value Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The four-value syntax for <code class="language-css">background-position</code> provides more explicit control by specifying an offset from a chosen edge.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">background-position: &lt;edge-keyword&gt; &lt;length-percentage&gt;? &lt;edge-keyword&gt;? &lt;length-percentage&gt;?</code><ul>
+<li>You specify a horizontal edge (<code class="language-css">left</code> or <code class="language-css">right</code>) followed optionally by its offset.</li>
+<li>You then specify a vertical edge (<code class="language-css">top</code> or <code class="language-css">bottom</code>) followed optionally by its offset.</li>
+<li>The order of horizontal/vertical pairs doesn&#39;t matter.</li>
+</ul>
+</li>
+<li><strong>Examples:</strong><ul>
+<li><code class="language-css">background-position: right 20px bottom 10px;</code> (Image is 20px from the right edge and 10px from the bottom edge).</li>
+<li><code class="language-css">background-position: top 5px left 15px;</code> (Image is 15px from the left edge and 5px from the top edge - equivalent to <code class="language-css">15px 5px</code>).</li>
+<li><code class="language-css">background-position: right center;</code> (Equivalent to <code class="language-css">right 50%</code> or <code class="language-css">right</code>).</li>
+<li><code class="language-css">background-position: bottom 10% left;</code> (Aligned to the left edge, 10% up from the bottom edge).</li>
+</ul>
+</li>
+</ul>
+<p>This syntax is less common than the two-value syntax but offers precise control when aligning relative to edges other than the top-left.</p>
+<p>👀 We are not currently using the four-value syntax in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

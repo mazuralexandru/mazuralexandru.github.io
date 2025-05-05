@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>439. <code class="language-css">background-position</code>: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s review the syntax options for <code class="language-css">background-position</code>:</p>
+<ul>
+<li><strong>One Value:</strong><ul>
+<li><code class="language-css">background-position: center;</code> (Equivalent to <code class="language-css">center center</code>)</li>
+<li><code class="language-css">background-position: top;</code> (Equivalent to <code class="language-css">center top</code>)</li>
+<li><code class="language-css">background-position: left;</code> (Equivalent to <code class="language-css">left center</code>)</li>
+<li><code class="language-css">background-position: 25%;</code> (Equivalent to <code class="language-css">25% 50%</code> or <code class="language-css">25% center</code>)</li>
+<li><code class="language-css">background-position: 50px;</code> (Equivalent to <code class="language-css">50px 50%</code> or <code class="language-css">50px center</code>)</li>
+</ul>
+</li>
+<li><strong>Two Values:</strong> (Horizontal Vertical)<ul>
+<li><code class="language-css">background-position: top left;</code> or <code class="language-css">left top;</code> (Order of keywords doesn&#39;t matter if using two keywords)</li>
+<li><code class="language-css">background-position: center bottom;</code></li>
+<li><code class="language-css">background-position: 20px 40px;</code> (20px from left, 40px from top)</li>
+<li><code class="language-css">background-position: right 10%;</code> (Align right edge, 10% from top)</li>
+<li><code class="language-css">background-position: 10% top;</code> (10% from left, align top edge)</li>
+</ul>
+</li>
+<li><strong>Three/Four Values (Edge Offsets):</strong> Allows specifying an offset from a specific edge other than top/left.<ul>
+<li><code class="language-css">background-position: bottom 10px right 20px;</code> (20px from right edge, 10px from bottom edge)</li>
+<li><code class="language-css">background-position: right 50px center;</code> (50px from right edge, centered vertically)</li>
+</ul>
+</li>
+</ul>
+<p>The two-value syntax is the most common. Percentages are useful for positioning relative to the container size, while keywords and lengths provide absolute positioning.</p>
+<p>👀 Our current rule uses the two-value syntax for both layers: <code class="language-css">background-position: center top, center center;</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

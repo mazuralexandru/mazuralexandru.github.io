@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>437. <code class="language-css">background-repeat</code>: Shorthand (1 vs 2 values)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>As mentioned, the <code class="language-css">background-repeat</code> property accepts either one or two values:</p>
+<ul>
+<li><strong>One Value:</strong> Sets both horizontal and vertical repetition simultaneously.<ul>
+<li><code class="language-css">background-repeat: repeat;</code> means <code class="language-css">repeat repeat</code></li>
+<li><code class="language-css">background-repeat: no-repeat;</code> means <code class="language-css">no-repeat no-repeat</code></li>
+<li><code class="language-css">background-repeat: repeat-x;</code> means <code class="language-css">repeat no-repeat</code></li>
+<li><code class="language-css">background-repeat: repeat-y;</code> means <code class="language-css">no-repeat repeat</code></li>
+</ul>
+</li>
+<li><strong>Two Values:</strong> Sets horizontal repetition first, then vertical repetition.<ul>
+<li><code class="language-css">background-repeat: repeat space;</code> (Repeat horizontally, space out vertically)</li>
+<li><code class="language-css">background-repeat: round no-repeat;</code> (Round horizontally, don&#39;t repeat vertically)</li>
+</ul>
+</li>
+</ul>
+<p>Using one value is common when you want the same behavior on both axes (like <code class="language-css">no-repeat</code> or <code class="language-css">repeat</code>). Use two values when you need different horizontal and vertical tiling.</p>
+<p>👀 Our current rule uses one value: <code class="language-css">background-repeat: no-repeat;</code>. This applies <code class="language-css">no-repeat</code> to both the horizontal and vertical directions for both background layers.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

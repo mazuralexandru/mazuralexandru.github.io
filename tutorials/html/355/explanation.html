@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>355. Styling Description Lists (<code class="language-html">&lt;dl&gt;</code>, <code class="language-html">&lt;dt&gt;</code>, <code class="language-html">&lt;dd&gt;</code>): Common Layouts</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Description lists (<code class="language-html">&lt;dl&gt;</code>) often require specific styling to achieve desired layouts beyond the browser default (term on one line, description indented below).</p>
+<p><strong>Common Layout Approaches:</strong></p>
+<ol>
+<li><p><strong>Default Browser Style:</strong></p>
+<ul>
+<li><code>&lt;dt&gt;</code> acts like a block element.</li>
+<li><code>&lt;dd&gt;</code> acts like a block element with default <code>margin-left</code> for indentation.</li>
+<li>This is often sufficient for simple glossaries.</li>
+</ul>
+</li>
+<li><p><strong>Inline Term and Description:</strong></p>
+<ul>
+<li>Goal: Place the term and its description on the same line, often with the term bolded.</li>
+<li>Technique: Might involve setting <code class="language-css">display: inline;</code> on both <code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code> (potentially problematic if descriptions are long) or, more robustly, using Flexbox or Grid on a wrapper <code class="language-html">&lt;div&gt;</code> around each <code>dt</code>/<code>dd</code> pair (or directly on the <code>dl</code> if the structure allows).</li>
+</ul>
+</li>
+<li><p><strong>Two-Column Layout:</strong></p>
+<ul>
+<li>Goal: Place the term in one column and the description in an adjacent column.</li>
+<li>Technique: Almost always requires CSS Grid or Flexbox applied to the parent <code class="language-html">&lt;dl&gt;</code> (or wrapper <code class="language-html">&lt;div&gt;</code>s).<ul>
+<li><strong>Grid:</strong> Define two columns on the <code class="language-html">&lt;dl&gt;</code> (<code class="language-css">display: grid; grid-template-columns: auto 1fr;</code>). Each <code class="language-html">&lt;dt&gt;</code> and <code class="language-html">&lt;dd&gt;</code> automatically flows into the next available grid cell.</li>
+<li><strong>Flexbox:</strong> Might involve setting <code class="language-css">display: flex;</code> on wrapper <code class="language-html">&lt;div&gt;</code>s around each pair, with fixed width on the <code class="language-html">&lt;dt&gt;</code> and <code class="language-css">flex-grow: 1;</code> on the <code class="language-html">&lt;dd&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Styling <code class="language-html">&lt;dl&gt;</code> often involves overriding default margins and using more advanced layout techniques depending on the desired visual outcome.</p>
+<p>👀 Look at the Description List (&quot;Web Technologies&quot;) in <code class="language-text">index.html</code>. It currently uses the default browser layout. We&#39;ll apply some basic styling next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

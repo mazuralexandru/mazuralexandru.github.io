@@ -1,0 +1,23 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Image styles */
+.sample-image {
+  /* width: 250px; <- Removed fixed width */
+  max-width: 100%; /* Scale down to fit container, but don't exceed original size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove potential bottom space, treat as block */
+  border: 2px solid yellow; 
+  margin: 1em auto; /* Center the block image */
+}

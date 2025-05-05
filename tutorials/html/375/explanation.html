@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>375. Styling Order (LVHA Rule): Example</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Let&#39;s demonstrate the importance of the LVHA order. We&#39;ll intentionally put the rules in an incorrect order and see what happens.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve reordered the link pseudo-class rules incorrectly: Hover -&gt; Active -&gt; Visited -&gt; Link. We&#39;ve also simplified the styles slightly for clarity.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Section 4: Styling Links Deep Dive */
+/* INCORRECT ORDER - Hover/Active might get overridden */
+
+a:hover { 
+  color: lightcoral; 
+  text-decoration: underline; 
+}
+
+a:active { 
+  color: red; 
+}
+
+a:visited { 
+  color: mediumpurple; 
+  text-decoration: none; 
+}
+
+a:link { 
+  color: cyan; 
+  text-decoration: none; 
+}
+
+/* Focus styles omitted for this specific demo */
+a:focus { 
+   outline: none; 
+}
+a:focus-visible {
+  outline: 2px dashed orange; 
+  outline-offset: 2px; 
+}
+
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li><strong>Hover:</strong> Try hovering over an <em>unvisited</em> link (cyan). Does the hover style (lightcoral, underline) apply correctly? It might, but it might also be immediately overridden by the later <code>:link</code> rule in some interpretations or edge cases. Now hover over a <em>visited</em> link (mediumpurple). Does the hover style apply? It likely won&#39;t because the <code>:visited</code> rule comes later and has the same specificity.</li>
+<li><strong>Active:</strong> Try clicking and holding on a link. Does it turn red? It might be overridden by the <code>:link</code> or <code>:visited</code> rules defined later.</li>
+</ul>
+<p>Now, let&#39;s fix the order.</p>
+<p>✅ <strong>Modify <code class="language-text">style.css</code> again:</strong></p>
+<ul>
+<li>Reorder the rules to the correct LVHA sequence.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Section 4: Styling Links Deep Dive */
+/* CORRECT ORDER - LVHA */
+
+a:link { 
+  color: cyan; 
+  text-decoration: none; 
+}
+
+a:visited { 
+  color: mediumpurple; 
+  text-decoration: none; 
+}
+
+a:hover { 
+  color: lightcoral; 
+  text-decoration: underline; 
+}
+
+a:active { 
+  color: red; 
+}
+
+/* Focus styles should generally come after :visited */
+a:focus { 
+   outline: none; 
+}
+a:focus-visible {
+  outline: 2px dashed orange; 
+  outline-offset: 2px; 
+}
+
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li><strong>Hover:</strong> Hovering over <em>any</em> link (visited or unvisited) should now reliably apply the lightcoral color and underline, because the <code>:hover</code> rule comes after <code>:link</code> and <code>:visited</code>.</li>
+<li><strong>Active:</strong> Clicking and holding on <em>any</em> link should now reliably apply the red color, because <code>:active</code> comes last among these interaction states.</li>
+</ul>
+<p>This demonstrates why adhering to the LVHA order (and placing focus styles appropriately) is crucial for predictable link styling.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

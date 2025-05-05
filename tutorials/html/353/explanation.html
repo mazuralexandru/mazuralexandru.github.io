@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>353. <code class="language-css">::marker</code>: Stylable Properties &amp; Use Cases</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>While not all CSS properties can be applied to the <code class="language-css">::marker</code> pseudo-element, several useful ones are typically supported:</p>
+<ul>
+<li><strong><code class="language-css">color</code>:</strong> Changes the color of the marker text or symbol.</li>
+<li><strong><code class="language-css">font-size</code></strong>, <strong><code class="language-css">font-weight</code></strong>, <strong><code class="language-css">font-family</code></strong>, etc.: Allows changing the font characteristics of the marker.</li>
+<li><strong><code class="language-css">content</code>:</strong> Allows you to replace the default marker with custom text or symbols (including emojis or Unicode characters). Use <code class="language-css">content: &quot;&quot;</code>; to effectively hide the marker.</li>
+<li><strong>Animation/Transition Properties:</strong> Can often be applied for effects.</li>
+</ul>
+<p>Properties related to the box model (<code class="language-css">padding</code>, <code class="language-css">margin</code>, <code class="language-css">border</code>, <code class="language-css">background</code>) generally <strong>cannot</strong> be applied directly to the <code class="language-css">::marker</code> itself.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Changing the color of bullets or numbers.</li>
+<li>Using custom symbols (like arrows <code>→</code>, checkmarks <code>✓</code>, or emojis <code>✅</code>) instead of standard markers via the <code class="language-css">content</code> property.</li>
+<li>Adjusting the size or weight of the marker independently from the list item text.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a rule targeting the markers of list items within unordered lists (<code class="language-css">ul li::marker</code>).</li>
+<li>We&#39;re changing their color and making them slightly larger.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style list markers directly */
+ul li::marker {
+    color: orange;
+    font-size: 1.2em; /* Make marker slightly larger */
+}
+
+/* Example using content to replace marker */
+/* 
+ul ul li::marker {
+    content: &quot;➤ &quot;; 
+    color: lightblue;
+} 
+*/
+</code></pre>
+<p><em>(Note: The <code>content</code> example is commented out but shows how you could replace the circle with an arrow).</em></p>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the &quot;Favorite Fruits&quot; list. The square markers (for top-level items) and circle markers (for nested items) should now be <strong>orange</strong> and potentially slightly larger than before.</li>
+<li>The ordered list markers remain unaffected as the selector specifically targets markers within <code class="language-html">ul</code>.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

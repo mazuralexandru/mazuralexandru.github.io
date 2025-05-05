@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>361. Link Attribute: <code class="language-html">target</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code></p>
+<p>The <code class="language-html">target</code> attribute specifies <em>where</em> to open the linked document when the link is clicked.</p>
+<ul>
+<li><p><strong>Purpose:</strong> Controls the browsing context (window or tab) for the link destination.</p>
+</li>
+<li><p><strong>Common Values:</strong></p>
+<ul>
+<li><code class="language-html">_self</code>: (Default) Opens the linked document in the <strong>same</strong> frame or window where the link was clicked.</li>
+<li><code class="language-html">_blank</code>: Opens the linked document in a <strong>new</strong> unnamed window or tab. This is commonly used for external links to keep the user on your site.</li>
+<li><code class="language-html">_parent</code>: Opens the linked document in the parent frame (used with HTML framesets, which are largely obsolete).</li>
+<li><code class="language-html">_top</code>: Opens the linked document in the full body of the window, cancelling out all frames (used with framesets).</li>
+<li><code class="language-html">&lt;frame-name&gt;</code>: Opens the linked document in a specifically named frame (used with framesets).</li>
+</ul>
+</li>
+<li><p><strong>Security Note for <code>_blank</code>:</strong> When using <code class="language-html">target=&quot;_blank&quot;</code>, it&#39;s strongly recommended to also add <code class="language-html">rel=&quot;noopener noreferrer&quot;</code> for security and privacy reasons (explained next).</p>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve added the <code class="language-html">target=&quot;_blank&quot;</code> attribute to the DuckDuckGo link.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;p&gt;
+        Visit our &lt;a href=&quot;about.html&quot;&gt;About Us&lt;/a&gt; page (Relative).&lt;br&gt;
+        Search on &lt;a href=&quot;https://duckduckgo.com&quot; target=&quot;_blank&quot;&gt;DuckDuckGo&lt;/a&gt; (Absolute, New Tab).&lt;br&gt; &lt;!-- Added target --&gt;
+        Go to &lt;a href=&quot;#bottom&quot;&gt;Bottom Section&lt;/a&gt; (Fragment - needs target).&lt;br&gt;
+        This is a &lt;a href=&quot;#&quot;&gt;Placeholder Link&lt;/a&gt;.&lt;br&gt;
+        This is &lt;a &gt;Not a Link (no href)&lt;/a&gt;.
+    &lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Hover over the &quot;DuckDuckGo&quot; link. Your browser might show a tooltip indicating it will open in a new tab.</li>
+<li>Clicking the &quot;DuckDuckGo&quot; link should now open the search engine in a new browser tab or window, while the other links (like &quot;About Us&quot;) would typically open in the current tab (if <code>about.html</code> existed).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

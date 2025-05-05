@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>430. <code class="language-css">background-image</code> Introduction</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While solid colors are useful, CSS also allows you to set one or more images (or gradients, which are treated as images) as the background of an element using the <code class="language-css">background-image</code> property.</p>
+<ul>
+<li><strong>Purpose:</strong> To apply decorative images or gradients behind an element&#39;s content.</li>
+<li><strong>Layering:</strong> You can specify multiple background images, separated by commas. The first image listed is the topmost layer, painted on top of subsequent images. The <code class="language-css">background-color</code> is drawn <em>beneath</em> all images.</li>
+<li><strong>Syntax:</strong> <code class="language-css">background-image: none | &lt;image&gt; [, &lt;image&gt;]*</code><ul>
+<li><code>&lt;image&gt;</code> is typically a <code class="language-css">url()</code> function or a gradient function (<code class="language-css">linear-gradient()</code>, <code class="language-css">radial-gradient()</code>, etc.).</li>
+<li><code class="language-css">none</code> explicitly removes any background image.</li>
+</ul>
+</li>
+</ul>
+<p>This property opens up many possibilities for visual design, from subtle patterns to full photographic backgrounds or complex layered effects.</p>
+<p>👀 Look at <code class="language-text">index.html</code> and <code class="language-text">style.css</code>. We&#39;ll add a <code class="language-css">background-image</code> to our <code class="language-css">.bg-box</code> next.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

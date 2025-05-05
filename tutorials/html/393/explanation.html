@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>393. <code>&lt;figure&gt;</code> &amp; <code>&lt;figcaption&gt;</code> Review</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Sometimes, an image (or other content like a code block, diagram, or quote) is self-contained and requires a caption directly associated with it. For this purpose, HTML provides the <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> elements.</p>
+<ul>
+<li><strong><code class="language-html">&lt;figure&gt;</code>:</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents self-contained content, often with a caption, that is referenced from the main text and could potentially be moved to a different part of the page (like an appendix) without affecting the main flow. It&#39;s not just for images, but commonly used for them.</li>
+<li><strong>Display:</strong> Block-level element. Browsers might add default margins.</li>
+</ul>
+</li>
+<li><strong><code class="language-html">&lt;figcaption&gt;</code>:</strong><ul>
+<li><strong>Semantic Meaning:</strong> Represents the caption or legend for the content of its parent <code class="language-html">&lt;figure&gt;</code> element.</li>
+<li><strong>Placement:</strong> Must be placed as the <strong>first or last</strong> child directly inside the <code class="language-html">&lt;figure&gt;</code> element. A figure can only contain one <code class="language-html">&lt;figcaption&gt;</code>.</li>
+<li><strong>Display:</strong> Block-level element.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;figure&gt;
+  &lt;img src=&quot;photo.jpg&quot; alt=&quot;Description of photo.&quot; width=&quot;400&quot; height=&quot;300&quot;&gt;
+  &lt;figcaption&gt;Fig. 1: A descriptive caption for the photo.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+  &lt;figcaption&gt;Listing 1: Example Code Block&lt;/figcaption&gt;
+  &lt;pre&gt;&lt;code&gt;
+  // Code goes here
+  &lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+</code></pre>
+<p>Using <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> creates a strong semantic association between the content and its caption, which is beneficial for accessibility and content understanding.</p>
+<p>👀 We will add a <code class="language-html">&lt;figure&gt;</code> example to <code class="language-text">index.html</code> later.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

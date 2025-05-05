@@ -1,0 +1,30 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Background Clip Example */
+.origin-box {
+    width: 300px;
+    height: 150px;
+    padding: 25px; /* Significant padding */
+    border: 10px dashed orange; /* Thick border */
+    margin: 2em auto;
+    /* background-color: rgba(0, 100, 0, 0.2); */ /* Remove background color */
+    
+    background-image: url('images/placeholder-pattern.png');
+    background-repeat: repeat; /* Let's make it repeat again */
+    background-size: 40px; 
+    background-position: top left; /* Position relative to padding-box now */
+    background-origin: padding-box; /* Position relative to padding edge (Default) */
+    background-clip: content-box; /* Clip background to content area */
+}

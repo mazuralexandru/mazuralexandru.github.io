@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>414. <code class="language-css">filter</code> Property: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">filter</code> property accepts one or more <strong>filter functions</strong> as its value.</p>
+<ul>
+<li><strong>Syntax:</strong> <code class="language-css">filter: none | &lt;filter-function&gt;+ ;</code><ul>
+<li><code class="language-css">none</code>: (Default) No filter is applied.</li>
+<li><code>&lt;filter-function&gt;</code>: One or more filter functions, separated by spaces.</li>
+</ul>
+</li>
+<li><strong>Filter Function Syntax:</strong> Generally <code class="language-css">function-name(value)</code>. The <code class="language-css">value</code> type depends on the function (e.g., length, percentage, angle, number).</li>
+<li><strong>Multiple Filters:</strong> If multiple filter functions are listed, they are applied sequentially in the order they appear.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre class="language-css"><code class="language-css">/* Apply a single filter */
+img {
+  filter: grayscale(100%); 
+}
+
+/* Apply multiple filters */
+img:hover {
+  filter: brightness(1.2) contrast(110%) sepia(30%); 
+}
+
+/* Remove filters */
+img.no-filter {
+  filter: none;
+}
+</code></pre>
+<p>👀 We&#39;ll apply some specific filter functions to our image in <code class="language-text">style.css</code> in the next steps.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

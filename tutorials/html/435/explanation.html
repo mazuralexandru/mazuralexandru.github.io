@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>435. <code class="language-css">background-repeat</code>: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The <code class="language-css">background-repeat</code> property can accept one or two values:</p>
+<ul>
+<li><strong>One Value:</strong> Applies the specified repeat behavior in both horizontal and vertical directions.<ul>
+<li><code class="language-css">background-repeat: repeat;</code> (tiles both ways)</li>
+<li><code class="language-css">background-repeat: no-repeat;</code> (shows once)</li>
+<li><code class="language-css">background-repeat: repeat-x;</code> (tiles horizontally only)</li>
+<li><code class="language-css">background-repeat: repeat-y;</code> (tiles vertically only)</li>
+<li><code class="language-css">background-repeat: space;</code> (spaces out tiles both ways)</li>
+<li><code class="language-css">background-repeat: round;</code> (scales and tiles both ways)</li>
+</ul>
+</li>
+<li><strong>Two Values:</strong> The first value specifies the horizontal repeat, the second specifies the vertical repeat.<ul>
+<li><code class="language-css">background-repeat: repeat no-repeat;</code> (Tiles horizontally, shows once vertically)</li>
+<li><code class="language-css">background-repeat: round space;</code> (Rounds horizontally, spaces vertically)</li>
+</ul>
+</li>
+<li><strong>Multiple Backgrounds:</strong> If you have multiple background images defined with <code class="language-css">background-image</code>, you can specify repeat behaviors for each layer, separated by commas. The order corresponds to the order in <code class="language-css">background-image</code>.<ul>
+<li><code class="language-css">background-image: url(one.png), url(two.gif);</code></li>
+<li><code class="language-css">background-repeat: no-repeat, repeat-y;</code> (one.png doesn&#39;t repeat, two.gif repeats vertically)</li>
+</ul>
+</li>
+</ul>
+<p>👀 Look at the <code class="language-css">.bg-box</code> rule in <code class="language-text">style.css</code>. We used the one-value syntax <code class="language-css">background-repeat: no-repeat;</code>, which applies to both the gradient and the pattern image layers.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

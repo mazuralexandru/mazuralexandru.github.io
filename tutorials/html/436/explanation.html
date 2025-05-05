@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>436. <code class="language-css">background-repeat</code>: Values</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s clarify the different repeat values:</p>
+<ul>
+<li><strong><code class="language-css">repeat</code> (Default):</strong> Tiles the image infinitely in both directions. If the image is smaller than the container, it will be repeated to fill it.</li>
+<li><strong><code class="language-css">repeat-x</code>:</strong> Tiles the image horizontally only. The vertical position is determined by <code class="language-css">background-position</code>.</li>
+<li><strong><code class="language-css">repeat-y</code>:</strong> Tiles the image vertically only. The horizontal position is determined by <code class="language-css">background-position</code>.</li>
+<li><strong><code class="language-css">no-repeat</code>:</strong> Displays the image only once. Its position is determined by <code class="language-css">background-position</code>.</li>
+<li><strong><code class="language-css">space</code>:</strong> Tiles the image as many times as possible without clipping. If there&#39;s leftover space after fitting whole tiles, that space is distributed evenly <em>between</em> the tiles. The first/last tiles touch the edges of the container.</li>
+<li><strong><code class="language-css">round</code>:</strong> Tiles the image as many times as possible. If there&#39;s leftover space, the browser <em>stretches or squashes</em> the image dimensions slightly so that an integer number of tiles fits perfectly within the container without gaps or clipping.</li>
+</ul>
+<p>The <code class="language-css">space</code> and <code class="language-css">round</code> values are less common but can be useful for creating seamless patterns without hard edges or partial tiles.</p>
+<p>👀 Our current <code class="language-css">background-repeat: no-repeat;</code> ensures the pattern image and gradient only appear once.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

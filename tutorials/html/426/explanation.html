@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>426. CSS Backgrounds vs. HTML <code>&lt;img&gt;</code></h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Before diving into CSS background properties, it&#39;s crucial to understand when to use a CSS background versus an HTML <code class="language-html">&lt;img&gt;</code> element. The choice depends on the <strong>semantic meaning</strong> of the image.</p>
+<ul>
+<li><p><strong>Use <code class="language-html">&lt;img&gt;</code> When:</strong></p>
+<ul>
+<li>The image conveys <strong>content</strong> or information relevant to the page&#39;s topic.</li>
+<li>The image needs <strong>alternative text</strong> (<code class="language-html">alt</code> attribute) for accessibility (screen readers) and SEO.</li>
+<li>The image is the primary focus (e.g., a product photo, a user avatar, a diagram).</li>
+<li>You want the image to be easily saved or copied by the user.</li>
+<li>The image is part of the document&#39;s structure (like within a <code class="language-html">&lt;figure&gt;</code>).</li>
+</ul>
+</li>
+<li><p><strong>Use CSS <code class="language-css">background-image</code> When:</strong></p>
+<ul>
+<li>The image is purely <strong>decorative</strong> or stylistic. It doesn&#39;t add information, only visual flair.</li>
+<li>The image is intended to be part of the element&#39;s design, like a background pattern, a gradient, or an icon intrinsically linked to a UI element&#39;s style.</li>
+<li>The image should <em>not</em> appear if CSS is disabled.</li>
+<li>The image doesn&#39;t need alt text (because it&#39;s decorative).</li>
+<li>You need advanced positioning or repeating capabilities offered by CSS background properties.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Key Difference:</strong> Content images belong in the HTML (<code class="language-html">&lt;img&gt;</code>) because they are part of the <em>content</em>. Decorative images belong in the CSS (<code class="language-css">background-image</code>) because they are part of the <em>presentation</em>. Making the right choice improves semantics, accessibility, and maintainability.</p>
+<p>👀 Review the <code class="language-html">&lt;img&gt;</code> tag in <code class="language-text">index.html</code>. This image represents content (a placeholder landscape) and has <code class="language-html">alt</code> text, making <code class="language-html">&lt;img&gt;</code> the appropriate choice. If we just wanted a pattern behind some text, <code class="language-css">background-image</code> would be better.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

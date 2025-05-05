@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>457. <code class="language-css">background</code> Shorthand: Purpose</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The main reasons for using the <code class="language-css">background</code> shorthand are:</p>
+<ol>
+<li><strong>Conciseness:</strong> It significantly reduces the amount of code needed when setting multiple background properties simultaneously. Compare the single <code class="language-css">background</code> line in our example to the seven individual lines it replaced.</li>
+<li><strong>Readability (sometimes):</strong> For common combinations (like setting a color, image, repeat, and position), the shorthand can be quite readable once you understand the syntax.</li>
+<li><strong>Resetting:</strong> Provides a quick way to reset all background properties to their initial values using <code class="language-css">background: none;</code>.</li>
+</ol>
+<p>However, remember the potential downside: <strong>unintentionally resetting properties</strong>. If you only want to change the <code class="language-css">background-color</code>, using the longhand <code class="language-css">background-color</code> property is safer than using the <code class="language-css">background</code> shorthand, which would also reset <code class="language-css">background-image</code>, <code class="language-css">background-repeat</code>, etc., to their defaults. Use the shorthand when you intend to define most or all of the background characteristics at once.</p>
+<p>👀 Review the shorthand used in <code class="language-text">style.css</code> for the <code class="language-css">.origin-box</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

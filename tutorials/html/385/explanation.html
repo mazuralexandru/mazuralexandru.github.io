@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>385. Horizontal Nav (Flexbox): <code class="language-css">display: flex</code>, Reset</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Now let&#39;s implement the same horizontal navigation using the modern and preferred <strong>Flexbox</strong> approach.</p>
+<p>Flexbox (Flexible Box Layout) is a one-dimensional layout model designed for distributing items along a single axis (row or column).</p>
+<ul>
+<li><strong>Step 1: Enable Flexbox:</strong> Apply <code class="language-css">display: flex;</code> to the <strong>container</strong> element whose direct children you want to arrange. In our navigation example, the container is the <code class="language-html">&lt;ul&gt;</code> element.</li>
+<li><strong>Step 2: Reset List Styles:</strong> As before, we need to remove the default list styles from the <code class="language-html">&lt;ul&gt;</code>.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve commented out the previous <code>inline-block</code> styles.</li>
+<li>We&#39;ve added a new section for Flexbox.</li>
+<li>The <code class="language-css">nav ul</code> rule now has <code class="language-css">display: flex;</code> added.</li>
+<li>We ensure <code class="language-css">list-style</code>, <code class="language-css">margin</code>, and <code class="language-css">padding</code> are reset on the <code>ul</code>.</li>
+<li>We remove the <code>text-align: center</code> as Flexbox uses different properties for alignment.</li>
+<li>We remove the styles previously applied to <code>nav li</code> as Flexbox controls item layout directly.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Section 5: Navigation Bar Implementation */
+
+/* Technique 1: Inline Block - COMMENTED OUT */
+/* 
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    padding: 0.5em 0; 
+}
+nav li {
+    margin: 0; 
+    display: inline-block; 
+    margin-right: 0.5em; 
+}
+nav li:last-child {
+    margin-right: 0;
+}
+*/
+
+/* Technique 2: Flexbox (Preferred) */
+nav ul {
+    display: flex; /* Enable Flexbox */
+    list-style: none; /* Remove bullets */
+    padding: 0;       /* Remove default padding */
+    margin: 0;        /* Remove default margin */
+    background-color: rgba(0, 0, 0, 0.2); /* Keep background for visibility */
+    padding: 0.5em 0; /* Keep vertical padding */
+    /* Alignment and spacing properties will be added */
+}
+
+/* No specific display needed on li for flexbox */
+/* nav li { } */
+
+
+/* Basic link styling within nav */
+nav a {
+    text-decoration: none;
+    color: lightblue; 
+    padding: 0.5em 1em; 
+    display: block; /* Keep link filling the li area */
+    border-radius: 4px; 
+}
+
+nav a:hover, 
+nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The list items (&quot;Home&quot;, &quot;About&quot;, etc.) should now be arranged <strong>horizontally</strong> again.</li>
+<li>Crucially, the potential small gaps caused by HTML whitespace in the <code>inline-block</code> method should be gone. Flexbox arranges its direct children (<code>&lt;li&gt;</code> elements in this case) without being affected by whitespace between them in the source.</li>
+<li>The items are likely bunched up at the start (left side) of the container. We&#39;ll add spacing and alignment next.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Background Origin Example */
+.origin-box {
+    width: 300px;
+    height: 150px;
+    padding: 25px; /* Significant padding */
+    border: 10px dashed orange; /* Thick border */
+    margin: 2em auto;
+    background-color: rgba(0, 100, 0, 0.2); /* Faint green */
+
+    background-image: url('images/placeholder-pattern.png');
+    background-repeat: no-repeat;
+    background-size: 40px; 
+    background-position: top left; /* Position at 0 0 */
+    background-origin: border-box; /* Position relative to border edge */
+    /* Try changing to padding-box (default) or content-box */
+}

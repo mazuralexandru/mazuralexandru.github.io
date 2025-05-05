@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>420. Styling <code>&lt;figure&gt;</code>: Borders, Backgrounds, Padding</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>You can apply standard box model properties like <code class="language-css">border</code>, <code class="language-css">background-color</code>, and <code class="language-css">padding</code> to the <code class="language-html">&lt;figure&gt;</code> element to visually group the image and its caption.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">padding</code>, <code class="language-css">border</code>, and <code class="language-css">background-color</code> to the <code class="language-css">figure</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">figure {
+  margin: 0; 
+  margin-bottom: 1.5em; 
+  max-width: 500px; 
+  padding: 1em; /* Add padding around image and caption */
+  border: 1px solid #555; /* Add a border */
+  background-color: rgba(255, 255, 255, 0.03); /* Slight background tint */
+}
+
+/* ... rest of styles ... */
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code></strong> to see the HTML structure.</p>
+<p>✨ <strong>Observe the Preview:</strong> The <code class="language-html">&lt;figure&gt;</code> element (containing the image and caption) should now have:</p>
+<ul>
+<li>A faint background color, distinct from the main page background.</li>
+<li>A 1px solid gray border around it.</li>
+<li>1em of padding between the border and the content (the image and the caption).</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

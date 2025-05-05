@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>449. <code class="language-css">background-attachment</code>: <code class="language-css">local</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">local</code> value is specifically for elements that themselves have scrollbars.</p>
+<ul>
+<li><strong>Behavior:</strong> The background image is positioned relative to the element&#39;s <strong>content</strong>. If the element has scrollbars (e.g., due to <code class="language-css">overflow: scroll</code> or <code class="language-css">auto</code>), the background image will <strong>scroll along with the content inside the element</strong>.</li>
+<li><strong>Contrast with <code class="language-css">scroll</code>:</strong> With <code class="language-css">scroll</code> (the default), if an element has scrollbars, its background image remains fixed relative to the element&#39;s <em>border box</em> and does not scroll with the content <em>within</em> the element. <code class="language-css">local</code> makes the background scroll <em>with</em> the internal content.</li>
+</ul>
+<p>✅ <strong>Code Pruning &amp; Setup:</strong> Cleared previous styles/HTML.</p>
+<p>✅ <strong>Observe <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>Added a <code class="language-html">&lt;div&gt;</code> with class <code class="language-html">scroll-box</code> containing several paragraphs to make it taller than its fixed height.</li>
+</ul>
+<p>✅ <strong>Switch to <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>Added styles for <code class="language-css">.scroll-box</code>:<ul>
+<li>Fixed <code class="language-css">height</code>.</li>
+<li>Set <code class="language-css">overflow: scroll;</code> to force scrollbars.</li>
+<li>Applied a repeating background image.</li>
+<li>Set <code class="language-css">background-attachment: local;</code>.</li>
+</ul>
+</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Background Attachment: local Example */
+.scroll-box {
+    height: 200px; /* Fixed height */
+    width: 80%;
+    margin: 2em auto;
+    overflow: scroll; /* Force scrollbars */
+    border: 1px solid cyan;
+    padding: 1em;
+
+    background-image: url(&#39;images/placeholder-pattern.png&#39;); /* Repeating pattern */
+    background-size: 40px; /* Make pattern visible */
+    background-repeat: repeat; /* Let it repeat */
+    background-attachment: local; /* Background scrolls WITH content */
+    /* Try changing to &#39;scroll&#39; (default) in DevTools */
+}
+
+.scroll-box p {
+    margin-bottom: 1em;
+    /* Making text transparent to see background clearly */
+    color: transparent; 
+    text-shadow: 0 0 2px rgba(255,255,255,0.5); /* Slight shadow to see text exists */
+}
+</code></pre>
+<ul>
+<li>We made the text transparent with a slight shadow just to make the background scrolling more obvious.</li>
+</ul>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should see a box with a cyan border and a repeating background pattern. It will have a vertical scrollbar because the content is taller than the box&#39;s fixed height.</li>
+<li>As you <strong>scroll the content <em>inside</em> the box</strong> using its scrollbar, the background pattern should <strong>move along with the text</strong>.</li>
+<li><strong>Experiment:</strong> Use DevTools to change <code class="language-css">background-attachment</code> to <code class="language-css">scroll</code> (or remove it). Now, when you scroll the content inside the box, the background pattern should remain fixed relative to the box itself, and the text should scroll over it.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

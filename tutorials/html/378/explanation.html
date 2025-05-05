@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>378. Image Links Styling</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>When an image (<code class="language-html">&lt;img&gt;</code>) is wrapped in a link (<code class="language-html">&lt;a&gt;</code>), you might want to apply visual feedback on hover or focus. Since the <code>&lt;img&gt;</code> itself isn&#39;t directly interactive in the same way text is, you typically style either the containing <code>&lt;a&gt;</code> tag or apply effects directly to the <code>&lt;img&gt;</code> using CSS.</p>
+<p><strong>Common Techniques:</strong></p>
+<ol>
+<li><p><strong>Styling the <code>&lt;a&gt;</code> Container:</strong></p>
+<ul>
+<li>Give the <code>&lt;a&gt;</code> tag <code>display: inline-block;</code> so it respects padding/borders.</li>
+<li>Apply <code>:hover</code> or <code>:focus-visible</code> styles to the <code>&lt;a&gt;</code> tag, such as:<ul>
+<li>Adding an <code>outline</code> or <code>border</code>.</li>
+<li>Changing the <code>background-color</code> (if appropriate).</li>
+<li>Applying a subtle <code>box-shadow</code>.</li>
+</ul>
+</li>
+<li>Example:<pre class="language-css"><code class="language-css">a.image-link { display: inline-block; }
+a.image-link:hover,
+a.image-link:focus-visible { outline: 2px solid orange; }
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Styling the <code>&lt;img&gt;</code> Directly:</strong></p>
+<ul>
+<li>Target the <code>&lt;img&gt;</code> inside the link on hover/focus states of the <em>link</em>.</li>
+<li>Apply effects like:<ul>
+<li><code>opacity</code>: Make the image slightly transparent or opaque.</li>
+<li><code>filter</code>: Use CSS filters like <code>brightness()</code>, <code>contrast()</code>, <code>saturate()</code>, or <code>drop-shadow()</code>.</li>
+<li><code>transform</code>: Apply scaling (<code>scale()</code>) or slight movement (<code>translate()</code>). Remember to add <code>transition</code> for smoothness.</li>
+</ul>
+</li>
+<li>Example:<pre class="language-css"><code class="language-css">a:hover img,
+a:focus-visible img {
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>Choosing the best technique depends on the desired visual effect. Applying styles to the <code>&lt;a&gt;</code> container often provides clearer focus indication, while styling the <code>&lt;img&gt;</code> directly allows for more visual effects on the image itself.</p>
+<p>👀 Look at the image link example in <code class="language-text">index.html</code>. Currently, it inherits the basic link styles, but we could apply specific container or image styles on hover/focus using the techniques above in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

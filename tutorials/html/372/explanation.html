@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>372. Link State: <code class="language-css">:focus-visible</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>A common design request is to have focus styles appear for keyboard users but <em>not</em> when an element (like a button or link) is simply clicked with a mouse. The <code>:focus-visible</code> pseudo-class addresses this.</p>
+<ul>
+<li><p><strong><code class="language-css">:focus-visible</code>:</strong></p>
+<ul>
+<li><strong>Selects:</strong> An element that has focus, but only when the browser determines (via heuristics) that displaying a visible focus indicator is appropriate (typically when focus was received via keyboard or script). It usually does <em>not</em> match when focus is received via a mouse click on elements that don&#39;t typically need a persistent focus ring after clicking (like links or buttons).</li>
+<li><strong>Purpose:</strong> To provide clear focus indicators for keyboard users without adding potentially distracting focus styles for mouse users who just clicked an element.</li>
+<li><strong>Browser Support:</strong> Well-supported in modern browsers.</li>
+</ul>
+</li>
+<li><p><strong>Common Pattern:</strong></p>
+<ol>
+<li>Optionally remove the default <code>:focus</code> outline if it appears undesirably on mouse clicks (but only if you provide a <code>:focus-visible</code> style!).</li>
+<li>Define distinct, visible styles using <code>:focus-visible</code>.</li>
+</ol>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve modified the <code>:focus</code> rule to remove the default outline (this is <strong>only</strong> acceptable because we are adding a <code>:focus-visible</code> style).</li>
+<li>We&#39;ve added a new rule for <code class="language-css">a:focus-visible</code> that applies the orange dashed outline.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style links when focused (potentially removing default for mouse users) */
+a:focus { 
+  /* Example: Remove default outline IF providing focus-visible */
+   outline: none; 
+}
+
+/* Style links ONLY when focus is visibly indicated (keyboard/script) */
+a:focus-visible {
+  outline: 2px dashed orange; 
+  outline-offset: 2px; 
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li><strong>Keyboard Navigation:</strong> Use the Tab key. Links should still get the <strong>dashed orange outline</strong> when focused via the keyboard (now matched by <code>:focus-visible</code>).</li>
+<li><strong>Mouse Click:</strong> Click on one of the links. It should <em>not</em> retain the dashed orange outline after the click (because <code>:focus-visible</code> typically doesn&#39;t match on mouse clicks for links, and we removed the basic <code>:focus</code> outline). The link might briefly flash red due to the <code>:active</code> style.</li>
+</ul>
+<p>This pattern provides accessibility for keyboard users while maintaining a potentially cleaner visual appearance for mouse interaction.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

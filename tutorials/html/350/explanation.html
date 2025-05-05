@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>350. Styling List Items (<code class="language-html">&lt;li&gt;</code>): Spacing</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Often, you&#39;ll want to control the vertical spacing <em>between</em> individual list items (<code class="language-html">&lt;li&gt;</code>). The default spacing is usually minimal or non-existent.</p>
+<ul>
+<li><strong>Method:</strong> The standard way to add space between list items is to apply <code class="language-css">margin-top</code> or (more commonly) <code class="language-css">margin-bottom</code> to the <code class="language-html">&lt;li&gt;</code> elements themselves.</li>
+<li><strong>Units:</strong> Again, relative units like <code class="language-css">em</code> or <code class="language-css">rem</code> are often good choices so the spacing scales with the text size.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule targeting all <code class="language-html">li</code> elements (inside both <code class="language-html">ul</code> and <code class="language-html">ol</code>).</li>
+<li>We&#39;re adding a small bottom margin to each list item.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style List Items */
+li {
+    margin-bottom: 0.5em; /* Add space below each list item */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>You should now see a small amount of vertical space appear <em>between</em> each item in all the lists (&quot;Favorite Fruits&quot;, &quot;Morning Routine&quot;, &quot;Top 3&quot;, and the nested apple list). This generally improves readability compared to having the items tightly packed together.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>404. Making Images Block-Level</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">index.html</code>, <code class="language-text">style.css</code></p>
+<p>Often, you want an image to behave like a distinct block, taking up its own line and allowing for easy horizontal centering using <code class="language-css">margin: auto;</code>.</p>
+<ul>
+<li><strong>Technique:</strong> Set <code class="language-css">display: block;</code> on the <code class="language-html">&lt;img&gt;</code> element.</li>
+<li><strong>Effect:</strong><ul>
+<li>The image now forces line breaks before and after itself, stacking vertically like a paragraph.</li>
+<li>It respects <code class="language-css">width</code> and <code class="language-css">height</code>.</li>
+<li>Crucially, if it has an explicit <code class="language-css">width</code> less than its container, <code class="language-css">margin-left: auto;</code> and <code class="language-css">margin-right: auto;</code> will now work to center it horizontally.</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the previous inline styles.</li>
+<li>We&#39;ve added a rule for <code class="language-css">.block-image</code>.</li>
+<li>It sets <code class="language-css">display: block;</code>, <code class="language-css">max-width: 100%;</code> (for responsiveness), an explicit <code class="language-css">width</code>, and <code class="language-css">margin: 1em auto;</code> to center it and add vertical space.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Block Image Alignment */
+.block-image {
+    display: block; /* Treat image as a block */
+    max-width: 100%; /* Responsive */
+    height: auto; /* Maintain aspect ratio */
+    width: 300px; /* Explicit width needed for auto margin centering */
+    margin: 1em auto; /* Center horizontally, add vertical margin */
+    border: 2px solid lightgreen; /* Visualize */
+}
+
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code>:</strong></p>
+<ul>
+<li>We&#39;ve removed the previous inline image examples.</li>
+<li>We&#39;ve added a standalone <code class="language-html">&lt;img&gt;</code> with the <code class="language-html">block-image</code> class.</li>
+</ul>
+<pre class="language-html"><code class="language-html">    &lt;h1&gt;Image Alignment&lt;/h1&gt;
+
+    &lt;img 
+        src=&quot;images/placeholder-landscape.jpg&quot; 
+        alt=&quot;Placeholder landscape image (300x200)&quot; 
+        width=&quot;300&quot; 
+        height=&quot;200&quot;
+        class=&quot;block-image&quot;&gt;
+
+    &lt;p&gt;Some text following the block image.&lt;/p&gt;
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The image (area) should now appear on its own line, centered horizontally within the page body.</li>
+<li>The paragraph below it appears on a new line, respecting the vertical margin set on the image.</li>
+<li>This is a standard way to handle standalone images that need centering or specific block-level layout treatment.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

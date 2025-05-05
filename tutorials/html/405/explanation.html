@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>405. Using Flexbox/Grid Containers for Image Alignment</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While <code class="language-css">display: block;</code> and <code class="language-css">margin: auto;</code> work well for simple horizontal centering, more complex alignments (vertical centering, distributing multiple images, aligning images with adjacent text blocks) are much more easily handled using modern CSS layout modules: <strong>Flexbox</strong> and <strong>CSS Grid</strong>.</p>
+<ul>
+<li><strong>Concept:</strong> Instead of styling the image directly for alignment, you wrap the image(s) in a container element (like a <code class="language-html">&lt;div&gt;</code>) and apply <code class="language-css">display: flex;</code> or <code class="language-css">display: grid;</code> to the container.</li>
+<li><strong>Flexbox:</strong><ul>
+<li>Use properties like <code class="language-css">justify-content</code> (for main-axis alignment, e.g., centering horizontally) and <code class="language-css">align-items</code> (for cross-axis alignment, e.g., centering vertically) on the container.</li>
+<li>Excellent for arranging items in a single row or column.</li>
+</ul>
+</li>
+<li><strong>Grid:</strong><ul>
+<li>Define rows and columns on the container using <code class="language-css">grid-template-columns</code> and <code class="language-css">grid-template-rows</code>.</li>
+<li>Place items within the grid explicitly (<code class="language-css">grid-column</code>, <code class="language-css">grid-row</code>) or let them flow automatically.</li>
+<li>Use alignment properties like <code class="language-css">justify-items</code>, <code class="language-css">align-items</code>, <code class="language-css">justify-self</code>, <code class="language-css">align-self</code>.</li>
+<li>Ideal for two-dimensional layouts.</li>
+</ul>
+</li>
+</ul>
+<p>We will cover Flexbox and Grid in detail in later modules. For now, just be aware that they are the <strong>preferred modern techniques</strong> for most layout tasks, including complex image alignment scenarios, offering more power and flexibility than older methods.</p>
+<p>👀 Look at <code class="language-text">index.html</code>. To use Flexbox/Grid, we would wrap the <code class="language-html">&lt;img&gt;</code> in a <code class="language-html">&lt;div&gt;</code> and apply the layout styles to that <code class="language-html">&lt;div&gt;</code> in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

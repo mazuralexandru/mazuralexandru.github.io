@@ -1,0 +1,37 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Section 6: Styling Figures & Captions */
+
+/* Styling Figure Elements */
+figure {
+  /* margin: 0; <- Remove this */
+  margin-top: 0; /* Explicitly reset top */
+  margin-bottom: 1.5em; 
+  margin-left: auto; /* Add auto left margin */
+  margin-right: auto; /* Add auto right margin */
+  max-width: 500px; /* Constrain figure width */
+  padding: 1em; /* Add padding around image and caption */
+  border: 1px solid #555; /* Add a border */
+  background-color: rgba(255, 255, 255, 0.03); /* Slight background tint */
+}
+
+/* Add styles for the image inside the figure */
+figure img {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+}
+
+/* Styles for figcaption will be added */

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>395. <code>&lt;figure&gt;</code> &amp; <code>&lt;figcaption&gt;</code>: Structure</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The structural rules for <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> are important for validity:</p></p>
+<ul>
+<li><p><strong><code class="language-html">&lt;figcaption&gt;</code> Placement:</strong> The <code class="language-html">&lt;figcaption&gt;</code> element, if present, <strong>must</strong> be the <strong>first</strong> or the <strong>last</strong> child element directly inside the <code class="language-html">&lt;figure&gt;</code> tags. It cannot be placed in the middle of other content within the figure.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- CORRECT: figcaption first --&gt;
+&lt;figure&gt;
+  &lt;figcaption&gt;Caption Text&lt;/figcaption&gt;
+  &lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;
+  &lt;p&gt;Optional related paragraph&lt;/p&gt;
+&lt;/figure&gt;
+
+&lt;!-- CORRECT: figcaption last --&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;
+  &lt;p&gt;Optional related paragraph&lt;/p&gt;
+  &lt;figcaption&gt;Caption Text&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- INCORRECT: figcaption in the middle --&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;
+  &lt;figcaption&gt;Caption Text&lt;/figcaption&gt; &lt;!-- Invalid placement --&gt;
+  &lt;p&gt;Optional related paragraph&lt;/p&gt;
+&lt;/figure&gt;
+</code></pre>
+</li>
+<li><p><strong>Only One <code class="language-html">&lt;figcaption&gt;</code>:</strong> A <code class="language-html">&lt;figure&gt;</code> element can contain <strong>at most one</strong> <code class="language-html">&lt;figcaption&gt;</code> element.</p>
+</li>
+<li><p><strong>Figure Content:</strong> The <code class="language-html">&lt;figure&gt;</code> element itself can contain various flow content besides the optional <code class="language-html">&lt;figcaption&gt;</code>, such as images, code blocks, paragraphs, headings, etc., as long as they form part of the self-contained unit being captioned.</p>
+</li>
+</ul>
+<p>Adhering to this structure ensures your markup is valid and the relationship between the figure and its caption is correctly understood by browsers and assistive technologies.</p>
+<p>👀 We&#39;ll add a correctly structured <code class="language-html">&lt;figure&gt;</code> to <code class="language-text">index.html</code> later.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

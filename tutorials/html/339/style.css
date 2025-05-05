@@ -1,0 +1,29 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 2: Styling Lists */
+
+/* Reset default list styles */
+/* ul, ol {
+  list-style: none;
+  padding-left: 0;
+} */ /* Commenting out the general reset for now */
+
+/* Style Unordered Lists */
+ul {
+  list-style-type: square; /* Use squares for bullets */
+  padding-left: 2em; /* Add indentation back */
+  margin-bottom: 1em; /* Add space below list */
+}
+
+/* Keep ordered lists reset for now */
+ol {
+   list-style: none;
+   padding-left: 0;
+   margin-bottom: 1em; /* Add space below list */
+}

@@ -1,0 +1,39 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Background Attachment: local Example */
+.scroll-box {
+    height: 200px; /* Fixed height */
+    width: 80%;
+    margin: 2em auto;
+    overflow: scroll; /* Force scrollbars */
+    border: 1px solid cyan;
+    padding: 1em;
+
+    background-image: url('images/placeholder-pattern.png'); /* Repeating pattern */
+    background-size: 40px; /* Make pattern visible */
+    background-repeat: repeat; /* Let it repeat */
+    background-attachment: local; /* Background scrolls WITH content */
+    /* Try changing to 'scroll' (default) in DevTools */
+}
+
+.scroll-box p {
+    margin-bottom: 1em;
+    /* Making text transparent to see background clearly */
+    color: transparent; 
+    text-shadow: 0 0 2px rgba(255,255,255,0.5); /* Slight shadow to see text exists */
+}
+.scroll-box p:last-child {
+    margin-bottom: 0;
+}

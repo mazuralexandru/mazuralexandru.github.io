@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>409. Decorative Styling: <code class="language-css">padding</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>As we know from the box model, <code class="language-css">padding</code> adds space between the content area and the border. While less common for images than for text containers, you might use it if you want the image&#39;s border to be spaced away from the image content itself.</p>
+<ul>
+<li><strong>Effect:</strong> Creates space <em>inside</em> the border. The background color/image extends into the padding.</li>
+<li><strong><code class="language-css">box-sizing</code>:</strong> Remember that with the default <code class="language-css">content-box</code>, padding adds to the total size. With <code class="language-css">border-box</code> (which we set globally), padding takes space from the content area.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">padding: 10px;</code> to the <code class="language-css">.block-image</code> rule.</li>
+<li>We&#39;ve also added a <code class="language-css">background-color</code> to the image element itself so we can see the padding area distinctly from the page background.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.block-image {
+    display: block; 
+    max-width: 100%; 
+    height: auto; 
+    width: 300px; 
+    margin: 2em auto 3em auto; 
+    border: 4px solid steelblue; 
+    padding: 10px; /* Add padding inside the border */
+    background-color: #444; /* Add background to see padding area */
+}
+
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code></strong> to see the HTML structure.</p>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>There should now be a 10px gap between the image content area (where the broken icon is) and the steel-blue border.</li>
+<li>This gap should have the dark gray (<code class="language-css">#444</code>) background color we applied.</li>
+<li>Because we&#39;re using <code class="language-css">box-sizing: border-box;</code>, the overall rendered width of the element (including padding and border) should still be dictated by the <code class="language-css">width: 300px;</code> rule. The <em>content area</em> inside has shrunk to accommodate the padding and border.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

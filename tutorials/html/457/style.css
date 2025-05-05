@@ -1,0 +1,41 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Background Shorthand Example */
+.origin-box {
+    width: 300px;
+    height: 150px;
+    padding: 25px; /* Significant padding */
+    border: 10px dashed orange; /* Thick border */
+    margin: 2em auto;
+    
+    /* Replaced individual properties with shorthand: */
+    background: 
+        rgba(0, 100, 0, 0.2) /* color (will be behind image) */
+        url('images/placeholder-pattern.png') /* image */
+        repeat /* repeat */
+        scroll /* attachment (default, explicit here) */
+        top left / 40px /* position / size */
+        padding-box /* origin (default, explicit here) */
+        content-box; /* clip */
+
+    /* Individual properties that were replaced: */
+    /* background-color: rgba(0, 100, 0, 0.2); */
+    /* background-image: url('images/placeholder-pattern.png'); */
+    /* background-repeat: repeat; */
+    /* background-size: 40px;  */
+    /* background-position: top left; */
+    /* background-origin: padding-box; */
+    /* background-clip: content-box; */
+}

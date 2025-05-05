@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>455. <code class="language-css">background-clip</code>: Values</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s review the effect of the main <code class="language-css">background-clip</code> values:</p>
+<ul>
+<li><strong><code class="language-css">border-box</code> (Default):</strong> The background (color or image) extends to the outside edge of the border. It is painted <em>underneath</em> the border itself.</li>
+<li><strong><code class="language-css">padding-box</code>:</strong> The background extends to the outside edge of the padding (the inside edge of the border). The background is clipped <em>by</em> the border area; it does not paint underneath the border.</li>
+<li><strong><code class="language-css">content-box</code>:</strong> The background extends only to the edge of the content area. It does not paint under the padding or the border.</li>
+</ul>
+<p>The <code class="language-css">text</code> value is more specialized and clips the background to the shape of the text itself, often used with transparent text color to create text filled with images or gradients.</p>
+<p>👀 Our current rule <code class="language-css">background-clip: content-box;</code> restricts the repeating background pattern to only appear behind the text &quot;Box Content Here&quot;.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

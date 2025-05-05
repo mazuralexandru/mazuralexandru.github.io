@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>335. Nested Lists</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Lists can be nested inside other lists to create hierarchical structures or outlines.</p>
+<ul>
+<li><strong>Purpose:</strong> To represent sub-items or sub-categories within a main list item.</li>
+<li><strong>Syntax:</strong> A nested list (<code class="language-html">&lt;ul&gt;</code> or <code class="language-html">&lt;ol&gt;</code>) must be placed <strong>inside</strong> a list item (<code class="language-html">&lt;li&gt;</code>) of the parent list. It cannot be placed directly inside the parent <code class="language-html">&lt;ul&gt;</code> or <code class="language-html">&lt;ol&gt;</code> tags between list items.</li>
+<li><strong>Correct Nesting:</strong><pre class="language-html"><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Parent Item 1&lt;/li&gt;
+  &lt;li&gt;Parent Item 2
+    &lt;ul&gt; &lt;!-- Nested list starts INSIDE the parent &lt;li&gt; --&gt;
+      &lt;li&gt;Child Item 2.1&lt;/li&gt;
+      &lt;li&gt;Child Item 2.2&lt;/li&gt;
+    &lt;/ul&gt; &lt;!-- Nested list ends INSIDE the parent &lt;li&gt; --&gt;
+  &lt;/li&gt; &lt;!-- Parent &lt;li&gt; ends --&gt;
+  &lt;li&gt;Parent Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li><strong>Incorrect Nesting:</strong><pre class="language-html"><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Parent Item 1&lt;/li&gt;
+  &lt;li&gt;Parent Item 2&lt;/li&gt; 
+  &lt;ul&gt; &lt;!-- INCORRECT: Nested list between &lt;li&gt; elements --&gt;
+    &lt;li&gt;Child Item 2.1&lt;/li&gt;
+    &lt;li&gt;Child Item 2.2&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li&gt;Parent Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li><strong>Default Styling:</strong> Browsers typically apply different marker styles (e.g., disc -&gt; circle -&gt; square for <code class="language-html">&lt;ul&gt;</code>) and increase indentation for nested lists.</li>
+</ul>
+<p>👀 Look at the list examples in <code class="language-text">index.html</code>. We&#39;ll add a nested list in the next step.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

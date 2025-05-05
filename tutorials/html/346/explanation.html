@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>346. <code class="language-css">list-style-image</code>: Behavior &amp; Limitations</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>While using custom images for list markers seems appealing, the <code class="language-css">list-style-image</code> property has significant limitations that often lead developers to choose alternative techniques:</p>
+<ul>
+<li><strong>Positioning Control:</strong> You have very little control over the precise vertical alignment and horizontal position of the image marker relative to the list item text. It often doesn&#39;t align exactly as desired across different browsers or font sizes. The <code class="language-css">list-style-position</code> property still applies (<code class="language-css">outside</code> vs. <code class="language-css">inside</code>).</li>
+<li><strong>Size Control:</strong> You cannot directly control the size of the marker image using CSS via this property. The browser will typically display the image at its intrinsic size. You need to create the image at the exact size you want it displayed.</li>
+<li><strong>Performance:</strong> Using many small images for list markers can potentially increase the number of HTTP requests compared to using standard markers or CSS-generated ones.</li>
+<li><strong>Alternatives:</strong> Because of these limitations, developers often prefer alternative methods for custom list markers:<ul>
+<li><strong><code>::marker</code> Pseudo-element:</strong> Using <code class="language-css">content: url(&#39;image.png&#39;);</code> or <code class="language-css">content: &#39;✓&#39;;</code> within a <code class="language-css">::marker</code> rule offers more direct control (though styling options are still somewhat limited).</li>
+<li><strong>Background Images:</strong> Applying a <code class="language-css">background-image</code> to the <code class="language-html">&lt;li&gt;</code> element (often with adjusted <code class="language-css">padding-left</code> and <code class="language-css">background-position</code>/<code class="language-css">background-size</code>) provides much greater control over size and positioning. This is a very common technique.</li>
+<li><strong>Pseudo-elements (<code>::before</code>):</strong> Adding an icon or symbol using the <code class="language-css">::before</code> pseudo-element on the <code class="language-html">&lt;li&gt;</code> and positioning it appropriately also offers significant flexibility.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Conclusion:</strong> While <code class="language-css">list-style-image</code> exists, be aware of its limitations. For precise control over custom list markers, consider using <code class="language-css">::marker</code> or background image techniques on the <code class="language-html">&lt;li&gt;</code> element.</p>
+<p>👀 Our current lists use standard markers (<code class="language-css">square</code>, <code class="language-css">circle</code>, <code class="language-css">lower-alpha</code>, <code class="language-html">type=&quot;I&quot;</code>).</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Basic H1 style for context */
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Section 7: CSS Backgrounds */
+
+.bg-box {
+    /* background-color: rgba(44, 62, 80, 0.5); */ /* Temporarily remove solid color */
+    background-color: transparent; 
+    background-image: url('images/placeholder-pattern.png'); /* Add image (will likely appear broken, but demonstrates tiling) */
+    padding: 2em;
+    margin-bottom: 1em;
+    border: 1px dashed #fff; /* Add border to see box extent */
+    min-height: 150px; /* Ensure box is tall enough to see pattern */
+}

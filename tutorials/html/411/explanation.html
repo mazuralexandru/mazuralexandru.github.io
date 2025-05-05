@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>411. Decorative Styling: <code class="language-css">box-shadow</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>The <code class="language-css">box-shadow</code> property adds shadow effects to an element&#39;s box.</p>
+<ul>
+<li><strong>Purpose:</strong> Creates drop shadows or inner shadows to give elements a sense of depth or emphasis.</li>
+<li><strong>Syntax:</strong> <code class="language-css">box-shadow: [inset]? h-offset v-offset blur-radius spread-radius color [, ...];</code><ul>
+<li><code class="language-css">inset</code> (Optional): Changes the shadow from an outer drop shadow (default) to an inner shadow.</li>
+<li><code class="language-css">h-offset</code>: Horizontal offset (positive = right, negative = left). (Required)</li>
+<li><code class="language-css">v-offset</code>: Vertical offset (positive = down, negative = up). (Required)</li>
+<li><code class="language-css">blur-radius</code> (Optional): Larger values increase blur; 0 = sharp shadow. Defaults to 0.</li>
+<li><code class="language-css">spread-radius</code> (Optional): Positive values expand the shadow size, negative values shrink it. Defaults to 0.</li>
+<li><code class="language-css">color</code> (Optional): Color of the shadow. Defaults to the element&#39;s <code class="language-css">color</code> if omitted, but often specified explicitly (e.g., semi-transparent black <code class="language-css">rgba(0,0,0,0.5)</code>).</li>
+<li><strong>Multiple Shadows:</strong> You can apply multiple shadows by comma-separating the definitions.</li>
+</ul>
+</li>
+<li><strong>Difference from <code class="language-css">text-shadow</code>:</strong> <code class="language-css">box-shadow</code> applies to the element&#39;s entire box, following its <code class="language-css">border-radius</code>, while <code class="language-css">text-shadow</code> applies only to the text content itself.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a <code class="language-css">box-shadow</code> to the <code class="language-css">.block-image</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">.block-image {
+    display: block; 
+    max-width: 100%; 
+    height: auto; 
+    width: 300px; 
+    margin: 2em auto 3em auto; 
+    border: 4px solid steelblue; 
+    padding: 10px; 
+    background-color: #444; 
+    border-radius: 15px; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Add drop shadow */
+}
+
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code></strong> to see the HTML structure.</p>
+<p>✨ <strong>Observe the Preview:</strong> The image box should now appear slightly lifted off the page, with a soft, semi-transparent black shadow offset down and to the right.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

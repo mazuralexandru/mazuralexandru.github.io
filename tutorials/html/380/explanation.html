@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>380. Navigation Structure: Common Pattern &amp; Accessibility</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s examine the common HTML pattern we used for navigation and its accessibility implications:</p>
+<pre class="language-html"><code class="language-html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<ul>
+<li><strong><code>&lt;nav&gt;</code>:</strong> Provides the landmark role (<code>navigation</code>), signaling this is a primary navigation block.</li>
+<li><strong><code>&lt;ul&gt;</code>:</strong> Semantically groups the navigation items as an unordered list. This is appropriate because the order of main navigation links usually isn&#39;t strictly sequential or hierarchical in meaning (though visual order matters). Using a list helps screen readers announce the number of items (&quot;List, 4 items&quot;).</li>
+<li><strong><code>&lt;li&gt;</code>:</strong> Each list item contains a single navigation link.</li>
+<li><strong><code>&lt;a&gt;</code>:</strong> The actual hyperlink element.</li>
+</ul>
+<p><strong>Accessibility Considerations:</strong></p>
+<ul>
+<li><strong>Landmark:</strong> The <code>&lt;nav&gt;</code> element itself acts as a landmark, allowing users of assistive technology to quickly jump directly to the navigation.</li>
+<li><strong>List Semantics:</strong> The <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> structure provides context about the group of links.</li>
+<li><strong>Multiple <code>&lt;nav&gt;</code> Elements:</strong> If a page has multiple <code>&lt;nav&gt;</code> elements (e.g., main site navigation, secondary sidebar navigation, breadcrumbs), it&#39;s crucial to distinguish them using <code>aria-label</code> or <code>aria-labelledby</code>.<pre class="language-html"><code class="language-html">&lt;nav aria-label=&quot;Main Site&quot;&gt;
+  &lt;ul&gt;...&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav aria-label=&quot;Table of Contents&quot;&gt;
+  &lt;ul&gt;...&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+</li>
+<li><strong>Current Page Indication:</strong> Visually highlighting the link corresponding to the current page is important. This is often done by adding a specific class (e.g., <code>class=&quot;active&quot;</code>) to the <code>&lt;a&gt;</code> or <code>&lt;li&gt;</code> element of the current page and styling that class differently in CSS. Sometimes <code>aria-current=&quot;page&quot;</code> is also added for better screen reader feedback.</li>
+</ul>
+<p>Using this semantic structure (<code>nav &gt; ul &gt; li &gt; a</code>) provides a solid, accessible foundation before we even apply CSS for visual styling.</p>
+<p>👀 Review the structure in <code class="language-text">index.html</code>. It follows this recommended pattern.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

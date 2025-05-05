@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>345. List Marker Image (<code class="language-css">list-style-image</code>): Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>CSS allows you to replace the standard list marker (bullet or number) with a custom image using the <code class="language-css">list-style-image</code> property.</p>
+<ul>
+<li><strong>Purpose:</strong> To use custom graphics as list markers for unique visual styling.</li>
+<li><strong>Syntax:</strong> <code class="language-css">list-style-image: url(&#39;path/to/your-image.png&#39;);</code><ul>
+<li>The value is the <code class="language-css">url()</code> function, containing the path (relative or absolute) to the image file you want to use.</li>
+<li>Common image formats like PNG, JPG, GIF, SVG can be used. Small, simple icons usually work best.</li>
+</ul>
+</li>
+<li><strong>Placement:</strong> Like <code class="language-css">list-style-type</code>, this property is typically set on the list container (<code class="language-html">&lt;ul&gt;</code> or <code class="language-html">&lt;ol&gt;</code>) or specific list items (<code class="language-html">&lt;li&gt;</code>).</li>
+<li><strong>Fallback:</strong> If the image fails to load, the browser will typically fall back to displaying the marker specified by <code class="language-css">list-style-type</code>. Therefore, it&#39;s good practice to set both <code class="language-css">list-style-image</code> and a fallback <code class="language-css">list-style-type</code>.</li>
+</ul>
+<p>👀 We won&#39;t add an image marker right now as it requires an actual image file, but the syntax involves the <code class="language-css">url()</code> function pointing to the image source.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

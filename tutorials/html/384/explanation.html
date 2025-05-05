@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>384. Horizontal Nav (Inline Block): Whitespace Issue</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>A well-known quirk of the <code>display: inline-block;</code> technique relates to <strong>whitespace in the HTML source code</strong>.</p>
+<ul>
+<li><p><strong>The Issue:</strong> Any whitespace (spaces, tabs, newlines) between the closing <code class="language-html">&lt;/li&gt;</code> tag of one item and the opening <code class="language-html">&lt;li&gt;</code> tag of the next item in your HTML source code is treated like a single space by the browser when rendering the inline-block elements.</p>
+</li>
+<li><p><strong>Effect:</strong> This often results in small, unwanted visual gaps between the inline-block list items, even if you set their margins to zero. The size of this gap depends on the current <code>font-size</code>.</p>
+</li>
+<li><p><strong>Example HTML causing the gap:</strong></p>
+<pre class="language-html"><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt; &lt;!-- Newline/space here --&gt;
+  &lt;li&gt;Item 2&lt;/li&gt; &lt;!-- Newline/space here --&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li><p><strong>Common Workarounds (often feel like hacks):</strong></p>
+<ol>
+<li><strong>Remove Whitespace in HTML:</strong> Write the HTML with no spaces or newlines between the <code>&lt;li&gt;</code> tags (hard to read and maintain).<pre class="language-html"><code class="language-html">&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;li&gt;Item 3&lt;/li&gt;&lt;/ul&gt;
+</code></pre>
+</li>
+<li><strong>HTML Comments:</strong> Use HTML comments to bridge the gap.<pre class="language-html"><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;&lt;!--
+  --&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;!--
+  --&gt;&lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</li>
+<li><strong>Negative Margins:</strong> Apply a negative <code>margin-left</code> to the <code>&lt;li&gt;</code> elements to counteract the space (value depends on font size, feels fragile).</li>
+<li><strong>Font Size Zero:</strong> Set <code>font-size: 0;</code> on the parent <code>&lt;ul&gt;</code> (making the whitespace characters have zero width) and then reset the desired <code>font-size</code> on the child <code>&lt;li&gt;</code> elements. This is quite effective but can feel indirect.</li>
+</ol>
+</li>
+<li><p><strong>Why Flexbox is Better:</strong> Modern layout methods like Flexbox inherently avoid this whitespace issue, making them a much cleaner solution for horizontal lists.</p>
+</li>
+</ul>
+<p>👀 Look at the preview. You might see tiny gaps between the navigation items that aren&#39;t accounted for by the <code>margin-right</code> we set. These are likely due to the newlines between the <code>&lt;li&gt;</code> tags in <code class="language-text">index.html</code>. We won&#39;t apply a workaround here, but it&#39;s important to be aware of this issue when using <code>inline-block</code> for layouts.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

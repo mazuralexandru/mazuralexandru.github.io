@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>347. List Style Shorthand (<code class="language-css">list-style</code>)</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Similar to <code class="language-css">padding</code>, <code class="language-css">margin</code>, and <code class="language-css">border</code>, CSS provides a shorthand property for list styles: <code class="language-css">list-style</code>.</p>
+<ul>
+<li><strong>Purpose:</strong> Allows you to set <code class="language-css">list-style-type</code>, <code class="language-css">list-style-position</code>, and <code class="language-css">list-style-image</code> in a single declaration.</li>
+<li><strong>Syntax:</strong> <code class="language-css">list-style: value1 value2 value3;</code><ul>
+<li>You can provide one, two, or all three values.</li>
+<li>The order of the values does <strong>not</strong> matter.</li>
+<li>Any omitted properties are reset to their initial values (<code class="language-css">disc</code>, <code class="language-css">outside</code>, <code class="language-css">none</code> respectively).</li>
+</ul>
+</li>
+<li><strong>Common Use:</strong> Often used to reset all list styles with <code class="language-css">list-style: none;</code>.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve modified the <code class="language-css">ul</code> rule to use the <code class="language-css">list-style</code> shorthand, combining the <code class="language-css">square</code> type and <code class="language-css">inside</code> position.</li>
+<li>We&#39;ve explicitly reset the ordered list styles using <code class="language-css">list-style: none;</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style Unordered Lists */
+ul {
+  /* list-style-type: square; */ 
+  /* list-style-position: inside; */
+  list-style: square inside; /* Shorthand */
+  padding-left: 2em; 
+  margin-bottom: 1em; 
+}
+
+/* Style Nested Unordered Lists */
+ul ul {
+    list-style-type: circle; 
+    margin-top: 0.25em; 
+    margin-bottom: 0.5em; 
+    /* Position is inherited as &#39;inside&#39; */
+}
+
+
+/* Style Ordered Lists */
+ol {
+   /* list-style-type: lower-alpha; */
+   /* padding-left: 2em; */
+   list-style: none; /* Reset type and position, remove padding */
+   padding-left: 0;
+   margin-bottom: 1em; 
+}
+
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The &quot;Favorite Fruits&quot; list should look the same as before (square markers, positioned inside).</li>
+<li>The ordered lists (&quot;Morning Routine&quot;, &quot;Top 3&quot;) should now have <strong>no markers and no indentation</strong>, as <code class="language-css">list-style: none;</code> resets both the type and position (position defaults to <code>outside</code> but has no effect without a marker), and we also set <code>padding-left: 0;</code>.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

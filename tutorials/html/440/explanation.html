@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>440. <code class="language-css">background-position</code>: Values (Keywords, Lengths, Percentages)</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s clarify how the different value types for <code class="language-css">background-position</code> work:</p>
+<ul>
+<li><strong>Keywords (<code class="language-css">top</code>, <code class="language-css">bottom</code>, <code class="language-css">left</code>, <code class="language-css">right</code>, <code class="language-css">center</code>):</strong><ul>
+<li>Align the corresponding edge or center of the background image with the corresponding edge or center of the background positioning area (usually the padding box).</li>
+<li><code class="language-css">top left</code> aligns the image&#39;s top-left corner with the container&#39;s top-left padding edge.</li>
+<li><code class="language-css">center center</code> aligns the center of the image with the center of the container.</li>
+<li><code class="language-css">bottom right</code> aligns the image&#39;s bottom-right corner with the container&#39;s bottom-right padding edge.</li>
+</ul>
+</li>
+<li><strong>Lengths (<code class="language-css">px</code>, <code class="language-css">em</code>, <code class="language-css">rem</code>, etc.):</strong><ul>
+<li>Specify an offset from the <strong>top-left</strong> edge of the background positioning area.</li>
+<li><code class="language-css">background-position: 20px 50px;</code> places the top-left corner of the image 20px from the container&#39;s left edge and 50px from its top edge.</li>
+</ul>
+</li>
+<li><strong>Percentages (<code class="language-css">%</code>):</strong><ul>
+<li>This is slightly less intuitive. A percentage value <code class="language-css">X% Y%</code> aligns the point <code class="language-css">X%</code> across and <code class="language-css">Y%</code> down within the <em>image</em> with the corresponding point <code class="language-css">X%</code> across and <code class="language-css">Y%</code> down within the <em>background positioning area</em>.</li>
+<li><code class="language-css">0% 0%</code> = top left.</li>
+<li><code class="language-css">100% 100%</code> = bottom right.</li>
+<li><code class="language-css">50% 50%</code> = center center.</li>
+<li><code class="language-css">25% 75%</code> aligns the point 25% across / 75% down the image with the point 25% across / 75% down the container.</li>
+</ul>
+</li>
+</ul>
+<p>Keywords and lengths are often the most straightforward for positioning, while percentages are useful for relative alignment.</p>
+<p>👀 Our current rule uses keywords: <code class="language-css">center top</code> for the gradient and <code class="language-css">center center</code> for the pattern image.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

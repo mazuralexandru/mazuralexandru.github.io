@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>396. <code>&lt;figure&gt;</code> &amp; <code>&lt;figcaption&gt;</code>: Accessibility</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Using <code class="language-html">&lt;figure&gt;</code> and <code class="language-html">&lt;figcaption&gt;</code> correctly significantly enhances accessibility:</p></p>
+<ul>
+<li><strong>Programmatic Association:</strong> The browser and assistive technologies understand that the <code class="language-html">&lt;figcaption&gt;</code> provides a description or title for the content within the <code class="language-html">&lt;figure&gt;</code>. Screen readers can announce this relationship, for example, reading the caption when the user navigates to the figure&#39;s image.</li>
+<li><strong>Relationship to <code class="language-html">alt</code> Text:</strong><ul>
+<li>The <code class="language-html">alt</code> attribute on an <code class="language-html">&lt;img&gt;</code> inside a <code class="language-html">&lt;figure&gt;</code> should still describe the image itself (what it visually depicts).</li>
+<li>The <code class="language-html">&lt;figcaption&gt;</code> provides broader context, interpretation, or a title for the figure as a whole.</li>
+<li>They serve complementary purposes. The <code class="language-html">alt</code> text describes the image; the <code class="language-html">&lt;figcaption&gt;</code> describes the figure (which contains the image). Avoid simply repeating the <code class="language-html">alt</code> text in the <code class="language-html">&lt;figcaption&gt;</code> or vice versa.</li>
+<li>If the <code class="language-html">&lt;figcaption&gt;</code> adequately describes the image content (e.g., the caption <em>is</em> the full description needed), the image&#39;s <code class="language-html">alt</code> attribute might sometimes be empty (<code class="language-html">alt=&quot;&quot;</code>), but providing both is often clearer.</li>
+</ul>
+</li>
+<li><strong>Landmark Potential:</strong> While <code class="language-html">&lt;figure&gt;</code> isn&#39;t a landmark role by default, it provides structure that can be navigated by some assistive technologies.</li>
+</ul>
+<p>Using these elements semantically helps create a richer, more understandable experience for all users, especially those relying on assistive technology.</p>
+<p>👀 Think about how you would describe an image in <code class="language-html">alt</code> versus how you would caption the overall figure containing that image.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

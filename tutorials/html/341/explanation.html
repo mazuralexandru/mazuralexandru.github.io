@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>341. <code class="language-css">list-style-type</code> Affecting Nested Lists</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>How does <code class="language-css">list-style-type</code> affect nested lists?</p>
+<ul>
+<li><strong>Inheritance:</strong> The <code class="language-css">list-style-type</code> property is inherited. If you set it on a parent list (<code class="language-html">ul</code>), child lists (<code class="language-html">ul</code> nested inside an <code class="language-html">li</code>) will inherit that same style unless overridden.</li>
+<li><strong>Browser Defaults:</strong> Browsers often have default styles that apply different markers to different nesting levels (e.g., <code>ul { list-style-type: disc; }</code>, <code>ul ul { list-style-type: circle; }</code>, <code>ul ul ul { list-style-type: square; }</code>). These browser defaults might override simple inheritance if your own rules aren&#39;t specific enough.</li>
+<li><strong>Explicit Styling:</strong> To ensure consistent or specific styling for nested lists, you need to write CSS rules that target them directly, often using descendant combinators.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added a new rule targeting nested unordered lists: <code class="language-css">ul ul</code>.</li>
+<li>This rule sets their <code class="language-css">list-style-type</code> to <code class="language-css">circle</code>.</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style Nested Unordered Lists */
+ul ul {
+    list-style-type: circle; /* Use circles for nested items */
+    margin-top: 0.25em; /* Add some space above nested list */
+    margin-bottom: 0.5em; /* Add space below nested list */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Look at the &quot;Favorite Fruits&quot; list.</li>
+<li>The top-level items (&quot;Apples&quot;, &quot;Bananas&quot;, &quot;Oranges&quot;) should still have <strong>square</strong> markers (from the <code class="language-css">ul</code> rule).</li>
+<li>The nested items under &quot;Apples&quot; (&quot;Granny Smith&quot;, &quot;Fuji&quot;) should now have <strong>circle</strong> markers, because the more specific <code class="language-css">ul ul</code> rule overrides the inherited <code class="language-css">square</code> style.</li>
+<li>We also added some vertical margin to space out the nested list slightly.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

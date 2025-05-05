@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>416. <code class="language-css">filter</code> Property: Use Cases &amp; Performance</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s quickly recap the use cases and mention performance for the <code class="language-css">filter</code> property.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><strong>Hover/Active States:</strong> Easily change image appearance on interaction (e.g., desaturate, brighten).</li>
+<li><strong>UI Feedback:</strong> Blur inactive background elements when a modal dialog opens.</li>
+<li><strong>Theming:</strong> Apply consistent tones (like sepia or grayscale) across images.</li>
+<li><strong>Basic Adjustments:</strong> Simple brightness, contrast, or saturation tweaks without needing image editors.</li>
+<li><strong>Drop Shadows on Non-Rectangular Shapes:</strong> <code class="language-css">filter: drop-shadow(...)</code> creates shadows based on the actual pixels of an image (including transparency), unlike <code class="language-css">box-shadow</code> which applies to the rectangular box.</li>
+</ul>
+<p><strong>Performance Considerations:</strong></p>
+<ul>
+<li>Applying complex filters (especially <code class="language-css">blur()</code> and <code class="language-css">drop-shadow()</code>) can be computationally intensive for the browser, particularly if applied to large elements or animated frequently.</li>
+<li>Overuse of filters can potentially impact rendering performance and battery life on less powerful devices.</li>
+<li>Test performance, especially on target devices, if using filters heavily or in animations. Use browser developer tools (Performance tab) to profile rendering.</li>
+</ul>
+<p>While powerful, use filters judiciously, keeping performance implications in mind.</p>
+<p>👀 Look at the examples in <code class="language-text">index.html</code> and the corresponding filter rules in <code class="language-text">style.css</code>.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

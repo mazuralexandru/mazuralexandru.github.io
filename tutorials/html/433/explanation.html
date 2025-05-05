@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>433. <code class="language-css">background-image</code>: Gradients</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>CSS gradients are generated images, allowing you to create smooth color transitions without needing an actual image file. They are treated as values for <code class="language-css">background-image</code>.</p>
+<ul>
+<li><strong><code class="language-css">linear-gradient()</code>:</strong> Creates a gradient along a straight line.<ul>
+<li><strong>Syntax:</strong> <code class="language-css">linear-gradient([&lt;angle&gt; | to &lt;side-or-corner&gt;]?, &lt;color-stop-list&gt;)</code></li>
+<li><strong>Direction:</strong> Can be an angle (<code class="language-css">45deg</code>, <code class="language-css">0deg</code> is to top) or keywords (<code class="language-css">to top</code>, <code class="language-css">to bottom left</code>, etc.). Defaults to <code class="language-css">to bottom</code>.</li>
+<li><strong>Color Stops:</strong> Comma-separated list of colors, optionally with positions (percentages or lengths). Colors are blended evenly between stops if positions aren&#39;t specified.</li>
+<li><strong>Example:</strong> <code class="language-css">linear-gradient(to right, red, yellow)</code> (Red on left fading to yellow on right)</li>
+<li><strong>Example:</strong> <code class="language-css">linear-gradient(135deg, blue, green 40%, orange)</code> (Diagonal, blue to green stopping at 40%, then green to orange)</li>
+</ul>
+</li>
+<li><strong><code class="language-css">radial-gradient()</code>:</strong> Creates a gradient radiating outwards from a central point.<ul>
+<li><strong>Syntax:</strong> <code class="language-css">radial-gradient([&lt;shape&gt; || &lt;size&gt;]? [at &lt;position&gt;]?, &lt;color-stop-list&gt;)</code></li>
+<li><strong>Shape:</strong> <code class="language-css">circle</code> or <code class="language-css">ellipse</code> (default).</li>
+<li><strong>Size:</strong> Keywords like <code class="language-css">closest-side</code>, <code class="language-css">farthest-corner</code> (default), or explicit lengths/percentages.</li>
+<li><strong>Position:</strong> Keywords (<code class="language-css">center</code>, <code class="language-css">top</code>, etc.) or lengths/percentages, defining the gradient&#39;s center. Defaults to <code class="language-css">center</code>.</li>
+<li><strong>Example:</strong> <code class="language-css">radial-gradient(circle at center, yellow, red)</code> (Yellow circle fading to red)</li>
+</ul>
+</li>
+<li><strong>Repeating Gradients:</strong> <code class="language-css">repeating-linear-gradient()</code> and <code class="language-css">repeating-radial-gradient()</code> create patterns by repeating the defined color stops.</li>
+</ul>
+<p>Gradients are incredibly versatile for backgrounds, button effects, overlays, and more.</p>
+<p>👀 Look at the <code class="language-css">.bg-box</code> rule in <code class="language-text">style.css</code>. The first background layer uses <code class="language-css">linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)</code>. This creates a vertical gradient starting with semi-transparent black at the top and fading to fully transparent at the bottom.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

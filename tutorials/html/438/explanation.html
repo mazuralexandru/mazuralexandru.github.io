@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>438. <code class="language-css">background-position</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>When a background image is not repeated (<code class="language-css">no-repeat</code>) or repeated only along one axis, the <code class="language-css">background-position</code> property controls its initial placement within the background positioning area (which defaults to the padding box).</p>
+<ul>
+<li><strong>Purpose:</strong> To set the starting position of a background image.</li>
+<li><strong>Syntax:</strong> <code class="language-css">background-position: value;</code><ul>
+<li>Accepts one or two values.</li>
+<li>If one value is given:<ul>
+<li>If it&#39;s a keyword like <code class="language-css">top</code>, <code class="language-css">bottom</code>, <code class="language-css">center</code>, it sets that position along one axis, and the other axis defaults to <code class="language-css">center</code>. (<code class="language-css">background-position: top;</code> is same as <code class="language-css">top center;</code>)</li>
+<li>If it&#39;s <code class="language-css">left</code> or <code class="language-css">right</code>, it sets the horizontal position, and vertical defaults to <code class="language-css">center</code>.</li>
+<li>If it&#39;s a length or percentage, it sets the horizontal position (offset from left), and vertical defaults to <code class="language-css">50%</code> (center).</li>
+</ul>
+</li>
+<li>If two values are given:<ul>
+<li>The first sets the horizontal position (<code class="language-css">left</code>, <code class="language-css">center</code>, <code class="language-css">right</code>, length, or percentage).</li>
+<li>The second sets the vertical position (<code class="language-css">top</code>, <code class="language-css">center</code>, <code class="language-css">bottom</code>, length, or percentage).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Default:</strong> <code class="language-css">0% 0%</code> or <code class="language-css">top left</code>.</li>
+<li><strong>Multiple Backgrounds:</strong> Use comma-separated values to position each background layer independently.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added <code class="language-css">background-position: center top, center center;</code> to the <code class="language-css">.bg-box</code> rule.<ul>
+<li>The first value (<code class="language-css">center top</code>) applies to the first image layer (the gradient).</li>
+<li>The second value (<code class="language-css">center center</code>) applies to the second image layer (the pattern image).</li>
+</ul>
+</li>
+</ul>
+<pre class="language-css"><code class="language-css">.bg-box {
+    background-color: transparent; 
+    background-image: 
+        linear-gradient(to bottom, rgba(0,0,0,0.5), transparent), 
+        url(&#39;images/placeholder-pattern.png&#39;); 
+    background-repeat: no-repeat; 
+    background-position: center top, center center; /* Position layers */
+    padding: 2em;
+    margin-bottom: 1em;
+    border: 1px dashed #fff; 
+    min-height: 150px; 
+}
+</code></pre>
+<p>✅ <strong>Switch to <code class="language-text">index.html</code></strong> to see the HTML structure.</p>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>The gradient should still start dark at the top and fade downwards, positioned horizontally centered (<code class="language-css">center top</code>).</li>
+<li>The pattern image (icon) should now be positioned in the <strong>center</strong> of the box, both horizontally and vertically (<code class="language-css">center center</code>), instead of at the top-left default.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

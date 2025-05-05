@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>443. <code class="language-css">background-size</code>: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>Let&#39;s review the syntax options for <code class="language-css">background-size</code>:</p>
+<ul>
+<li><strong>One Value:</strong><ul>
+<li><code class="language-css">auto</code>: Uses the image&#39;s intrinsic dimensions.</li>
+<li><code class="language-css">&lt;length&gt;</code>: Sets the width; height becomes <code>auto</code> (maintains aspect ratio).</li>
+<li><code class="language-css">&lt;percentage&gt;</code>: Sets the width relative to the background positioning area; height becomes <code>auto</code>.</li>
+<li><code class="language-css">cover</code>: Scales to cover the area.</li>
+<li><code class="language-css">contain</code>: Scales to fit within the area.</li>
+</ul>
+</li>
+<li><strong>Two Values:</strong><ul>
+<li><code class="language-css">auto auto</code>: Same as single <code>auto</code>.</li>
+<li><code class="language-css">&lt;length&gt; &lt;length&gt;</code>: Sets explicit width and height.</li>
+<li><code class="language-css">&lt;percentage&gt; &lt;percentage&gt;</code>: Sets explicit width and height relative to the background positioning area.</li>
+<li><code class="language-css">&lt;length&gt; auto</code>: Sets width; height maintains aspect ratio.</li>
+<li><code class="language-css">auto &lt;length&gt;</code>: Sets height; width maintains aspect ratio.</li>
+<li><code class="language-css">&lt;percentage&gt; auto</code>: Sets width relative to container; height maintains aspect ratio.</li>
+<li><code class="language-css">auto &lt;percentage&gt;</code>: Sets height relative to container; width maintains aspect ratio.</li>
+</ul>
+</li>
+<li><strong>Multiple Backgrounds:</strong> Use comma-separated values, one for each layer defined in <code class="language-css">background-image</code>.<ul>
+<li><code class="language-css">background-size: auto, 50px, cover;</code> (Applies to first, second, third layers respectively).</li>
+</ul>
+</li>
+</ul>
+<p>Choosing the right value depends on whether you need fixed dimensions, proportional scaling relative to the container, or full covering/containment.</p>
+<p>👀 Our current rule uses two comma-separated values: <code class="language-css">background-size: auto, 50px;</code>. <code>auto</code> applies to the gradient layer, and <code>50px</code> applies to the pattern image layer.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

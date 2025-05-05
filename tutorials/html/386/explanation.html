@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>386. Horizontal Nav (Flexbox): Spacing with <code class="language-css">gap</code></h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>One of the major advantages of Flexbox is the <code class="language-css">gap</code> property (also usable in CSS Grid).</p>
+<ul>
+<li><strong>Purpose:</strong> Defines the size of the gutters (gaps) between flex items (or grid items). It controls the spacing <em>between</em> items without adding space at the start or end of the container.</li>
+<li><strong>Syntax:</strong> <code class="language-css">gap: value;</code> (sets both row and column gap) or <code class="language-css">row-gap: value;</code> / <code class="language-css">column-gap: value;</code>. For a single row/column layout, just <code>gap</code> is sufficient.</li>
+<li><strong>Applies To:</strong> The flex container (in our case, the <code class="language-html">&lt;ul&gt;</code>).</li>
+<li><strong>Benefit:</strong> Much simpler and cleaner than adding margins to individual flex items (<code class="language-html">&lt;li&gt;</code>) and then removing the margin from the last item.</li>
+</ul>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added the <code class="language-css">gap</code> property to the <code class="language-css">nav ul</code> rule.</li>
+</ul>
+<pre class="language-css"><code class="language-css">nav ul {
+    display: flex; 
+    list-style: none; 
+    padding: 0;       
+    margin: 0;        
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 0.5em 0; 
+    gap: 0.5em; /* Add space BETWEEN flex items (li) */
+    /* Alignment properties will be added */
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>There should now be a consistent horizontal gap (<code>0.5em</code>) between each of the navigation items (&quot;Home&quot;, &quot;About&quot;, &quot;Services&quot;, &quot;Contact&quot;).</li>
+<li>This spacing is achieved with a single property on the container, avoiding the need for extra selectors like <code>:last-child</code> to remove margins.</li>
+</ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

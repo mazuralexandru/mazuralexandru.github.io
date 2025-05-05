@@ -1,0 +1,38 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 2: Styling Lists */
+
+
+/* Style Unordered Lists */
+ul {
+  list-style: square inside; /* Shorthand */
+  padding-left: 2em; /* Add indentation back */
+  margin-bottom: 1em; /* Add space below list */
+}
+
+/* Style Nested Unordered Lists */
+ul ul {
+    list-style-type: circle; /* Use circles for nested items */
+    margin-top: 0.25em; /* Add some space above nested list */
+    margin-bottom: 0.5em; /* Add space below nested list */
+    /* list-style-position is inherited as 'inside' */
+}
+
+
+/* Style Ordered Lists */
+ol {
+   list-style-type: decimal; /* Restore default numbers */
+   padding-left: 1.5em; /* Add custom indentation */
+   margin-bottom: 1em; 
+}
+
+/* Style List Items */
+li {
+    margin-bottom: 0.5em; /* Add space below each list item */
+}

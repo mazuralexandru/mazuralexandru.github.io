@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>428. <code class="language-css">background-color</code>: Syntax</h1>
+<p><strong>Files Modified:</strong> <code>None</code></p>
+<p>The syntax for <code class="language-css">background-color</code> is straightforward:</p>
+<p><code class="language-css">background-color: &lt;color&gt;;</code></p>
+<p>Where <code>&lt;color&gt;</code> can be any valid CSS color value:</p>
+<ul>
+<li><strong>Keyword:</strong> <code class="language-css">red</code>, <code class="language-css">blue</code>, <code class="language-css">transparent</code>, <code class="language-css">lightcyan</code></li>
+<li><strong>Hexadecimal:</strong> <code class="language-css">#ff0000</code>, <code class="language-css">#f0f8ff</code> (aliceblue)</li>
+<li><strong>RGB/RGBA:</strong> <code class="language-css">rgb(255, 99, 71)</code>, <code class="language-css">rgba(46, 62, 80, 0.8)</code> (semi-transparent version of our current background)</li>
+<li><strong>HSL/HSLA:</strong> <code class="language-css">hsl(210, 14%, 83%)</code>, <code class="language-css">hsla(210, 14%, 83%, 0.5)</code></li>
+<li><strong><code class="language-css">currentColor</code>:</strong> Uses the element&#39;s text color.</li>
+</ul>
+<p>👀 Look at the <code class="language-css">.bg-box</code> rule in <code class="language-text">style.css</code>. We used a hexadecimal value: <code class="language-css">#2c3e50</code>. Try changing this value in DevTools to <code class="language-css">transparent</code> or <code class="language-css">rgba(255, 0, 0, 0.3)</code> to see the effect.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* Universal Box Sizing Reset */
+html {
+  box-sizing: border-box; 
+}
+*, *::before, *::after { 
+  box-sizing: inherit; 
+}
+
+/* Section 4: Styling Links Deep Dive */
+
+/* Style unvisited links */
+a:link { 
+  color: cyan; /* Specific color for unvisited links */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Style visited links differently (next step) */
+/* a:visited { ... } */
+
+/* Style links on hover (later step) */
+/* a:hover { ... } */
+
+/* Style links when active/clicked (later step) */
+/* a:active { ... } */
+
+/* Style links when focused (later step) */
+/* a:focus { ... } */

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- Adjust paths if utils is not at the same level as the generated HTML -->
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squarebolds.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldm.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="preload" href="../../../../utils/fonts/pixelgrid-squareboldxl.woff" as="font" type="font/woff" crossorigin="">
+  <link rel="stylesheet" href="../../../../utils/styles/explanationStyle.css">
+  <link href="../../../../utils/styles/explanationPrismTheme.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>351. Styling List Items (<code class="language-html">&lt;li&gt;</code>): Backgrounds, Borders, Padding</h1>
+<p><strong>Files Modified:</strong> <code class="language-text">style.css</code></p>
+<p>Since <code class="language-html">&lt;li&gt;</code> elements are block-level by default within their list container, you can style them individually just like other block elements using properties like <code class="language-css">background-color</code>, <code class="language-css">border</code>, and <code class="language-css">padding</code>.</p>
+<p>This allows you to create visually distinct list items, perhaps for task lists, feature comparisons, or styled navigation.</p>
+<p>✅ <strong>Observe <code class="language-text">style.css</code>:</strong></p>
+<ul>
+<li>We&#39;ve added some background, padding, and border-radius specifically to the <code class="language-html">&lt;li&gt;</code> elements <em>within</em> the ordered list (<code class="language-css">ol li</code>).</li>
+</ul>
+<pre class="language-css"><code class="language-css">/* Style specific list items */
+ol li {
+    background-color: rgba(144, 238, 144, 0.1); /* Faint light green */
+    padding: 0.5em;
+    border-radius: 4px;
+}
+</code></pre>
+<p>✨ <strong>Observe the Preview:</strong></p>
+<ul>
+<li>Each item in the &quot;Morning Routine&quot; and &quot;Top 3&quot; ordered lists should now have a faint light green background, some internal padding, and slightly rounded corners.</li>
+<li>The unordered list items remain unstyled in this way.</li>
+</ul>
+<p>This demonstrates how you can target and style individual list items to achieve various visual effects.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
